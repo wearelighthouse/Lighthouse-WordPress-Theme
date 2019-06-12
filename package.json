@@ -20,6 +20,7 @@
   "homepage": "https://github.com/wearelighthouse/lighthouse-wordpress-theme#readme",
   "dependencies": {},
   "devDependencies": {
+    "del": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2"
   }
