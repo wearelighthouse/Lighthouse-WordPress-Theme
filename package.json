@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "gulp",
+    "prod": "gulp production",
+    "watch": "gulp watch"
+  },
+  "name": "lighthouse-wp-theme-2019",
+  "description": "",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wearelighthouse/lighthouse-wordpress-theme.git"
+  },
+  "author": "John Evans <burntcustard@gmail.com> (http://burnt.io)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wearelighthouse/lighthouse-wordpress-theme/issues"
+  },
+  "homepage": "https://github.com/wearelighthouse/lighthouse-wordpress-theme#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-once": "^2.0.3",
+    "gulp-sass": "^4.0.2"
+  }
+}
