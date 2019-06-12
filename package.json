@@ -21,7 +21,6 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-once": "^2.0.3",
     "gulp-sass": "^4.0.2"
   }
 }
