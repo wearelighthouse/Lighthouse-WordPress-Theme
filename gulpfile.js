@@ -1,4 +1,4 @@
-const browserSync = require('browser-sync');
+const browserSync = require('browser-sync').create();
 const cleanCSS = require('gulp-clean-css');
 const del = require('del');
 const gulp = require('gulp');
@@ -54,7 +54,7 @@ function reload(cb) {
 }
 
 function watch(cb) {
-  gulp.watch(paths.src + '/scss/*.scss', cssTranspile);
+  gulp.watch(paths.src + '/scss/**/*.scss', cssTranspile);
   gulp.watch(markup).on('change', browserSync.reload);
 }
 
