@@ -19,13 +19,11 @@ function registerFooterOptions()
 
     $cmb->add_field([
         'show_names' => false,
-    		'name'    => 'Main Content',
-    		'id'      => 'content',
+    		'id'      => 'footer_content',  // "content" conflicts with WP default id
     		'type'    => 'wysiwyg',
         'options' => [
             'media_buttons' => false,
-            'editor_css' => '<script>background-color: blue;</script>',
-            'textarea_rows' => 5,
+            'textarea_rows' => 5
         ]
   	]);
 

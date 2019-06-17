@@ -1,0 +1,42 @@
+/**
+ * Custom Admin area styling.
+ * Lots of !important because overwriting default cmb2 styles. Quite hacky.
+ */
+
+/**
+ * cmb2 repeater with only one item in the group.
+ */
+
+.cmb-repeat--single .cmb-group-description {
+  border-bottom: 0 !important;
+}
+
+.cmb-repeat--single .cmb-repeat-group-field {
+  border-bottom: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.cmb-repeat--single .cmb-remove-field-row {
+  margin: 0 !important;
+}
+
+/**
+ * cmb2 fields without the container / wrapper
+ */
+
+.cmb-row--nowrap {
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.cmb-row--nowrap .cmb-group-title {
+  border-bottom: 1px solid #eee !important;
+  background: none !important;
+}
+
+.cmb-row--nowrap .postbox.closed h3 {
+  border: none !important;
+}
