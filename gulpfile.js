@@ -19,6 +19,12 @@ function clean(cb) {
   cb();
 }
 
+function images() {
+  return gulp
+    .src(paths.src + '/img/*')
+    .pipe(gulp.dest(paths.dist + '/img'));
+}
+
 function scss() {
   return gulp
     .src([paths.src + '/scss/style.scss'])
@@ -63,6 +69,7 @@ exports.clean = clean;
 exports.watch = gulp.series(
   gulp.parallel(
     browserSyncInit,
+    images,
     scss,
     js
   ),
@@ -72,6 +79,7 @@ exports.watch = gulp.series(
 exports.default = gulp.series(
   clean,
   gulp.parallel(
+    images,
     gulp.series(
       scss,
       cssMinifiy
