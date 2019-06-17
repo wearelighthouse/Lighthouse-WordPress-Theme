@@ -19,7 +19,7 @@ function clean(cb) {
   cb();
 }
 
-function cssTranspile() {
+function scss() {
   return gulp
     .src([paths.src + '/scss/style.scss'])
     .pipe(sass({includePaths: ['./node_modules']})
@@ -54,7 +54,7 @@ function reload(cb) {
 }
 
 function watch(cb) {
-  gulp.watch(paths.src + '/scss/**/*.scss', cssTranspile);
+  gulp.watch(paths.src + '/scss/**/*.scss', scss);
   gulp.watch(markup).on('change', browserSync.reload);
 }
 
@@ -63,7 +63,7 @@ exports.clean = clean;
 exports.watch = gulp.series(
   gulp.parallel(
     browserSyncInit,
-    cssTranspile,
+    scss,
     js
   ),
   watch
@@ -73,7 +73,7 @@ exports.default = gulp.series(
   clean,
   gulp.parallel(
     gulp.series(
-      cssTranspile,
+      scss,
       cssMinifiy
     ),
     js
