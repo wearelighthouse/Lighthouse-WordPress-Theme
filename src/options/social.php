@@ -4,7 +4,7 @@ function registerSocialOptions()
 {
     $cmb = new_cmb2_box([
         'id'           => 'social',
-        'title'        => 'Social',
+        'title'        => 'Social Links',
         'object_types' => ['options-page'],
         'option_key'   => 'social',
         'position'     => 28,

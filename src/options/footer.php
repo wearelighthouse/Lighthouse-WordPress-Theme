@@ -7,7 +7,7 @@ function registerFooterOptions()
     		'title'        => 'Footer',
     		'object_types' => ['options-page'],
     		'option_key'   => 'footer',
-        'position'     => 28,
+        'position'     => 29,
     		'icon_url'     => 'dashicons-editor-insertmore'
   	]);
 

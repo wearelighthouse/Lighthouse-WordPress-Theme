@@ -4,7 +4,7 @@ function registerContactOptions()
 {
     $cmb = new_cmb2_box([
     		'id'           => 'contact',
-    		'title'        => 'Contact',
+    		'title'        => 'Contact Details',
     		'object_types' => ['options-page'],
     		'option_key'   => 'contact',
         'position'     => 28,
