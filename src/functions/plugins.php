@@ -4,6 +4,11 @@ function registerRequiredPlugins()
 {
     $plugins = [
         [
+            'name' => 'Classic Editor',
+            'slug' => 'classic-editor',
+            'required' => true
+        ],
+        [
             'name' => 'Disable Comments',
             'slug' => 'disable-comments'
         ]

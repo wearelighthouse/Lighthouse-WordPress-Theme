@@ -1,6 +1,10 @@
 {
     "name": "wearelighthouse/lighthouse-wp-theme-2019",
     "require": {
+        "cmb2/cmb2": "^2.4",
         "tgmpa/tgm-plugin-activation": "^2.6"
+    },
+    "autoload": {
+        "files": ["vendor/cmb2/cmb2/init.php"]
     }
 }
