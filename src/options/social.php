@@ -7,7 +7,7 @@ function registerSocialOptions()
         'title'        => 'Social',
         'object_types' => ['options-page'],
         'option_key'   => 'social',
-        'position'     => 29,
+        'position'     => 28,
         'icon_url'     => 'dashicons-twitter'
     ]);
 

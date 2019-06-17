@@ -8,7 +8,7 @@ function registerContactOptions()
     		'object_types' => ['options-page'],
     		'option_key'   => 'contact',
         'position'     => 28,
-    		'icon_url'     => 'dashicons-editor-insertmore'
+    		'icon_url'     => 'dashicons-email-alt'
   	]);
 
     $group = $cmb->add_field([
