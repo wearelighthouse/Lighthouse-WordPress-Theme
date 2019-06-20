@@ -40,3 +40,8 @@
 .cmb-row--nowrap .postbox.closed h3 {
   border: none !important;
 }
+
+.cmb2-options-page .cmb2-type-title--simple {
+  margin-top: -1px !important;
+  background-color: #fff !important;
+}

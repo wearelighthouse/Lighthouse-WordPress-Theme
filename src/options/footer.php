@@ -12,13 +12,7 @@ function registerFooterOptions()
   	]);
 
     $cmb->add_field([
-        'name'    => 'Main content',
-        'id'      => 'content_title',
-        'type'    => 'title'
-    ]);
-
-    $cmb->add_field([
-        'show_names' => false,
+        'name'    => 'Main Content',
     		'id'      => 'footer_content',  // "content" conflicts with WP default id
     		'type'    => 'wysiwyg',
         'options' => [
@@ -26,6 +20,14 @@ function registerFooterOptions()
             'textarea_rows' => 5
         ]
   	]);
+
+    $cmb->add_field([
+        'name'    => 'Contact Details',
+        'id'      => 'content_details',
+        'type'    => 'title',
+        'desc'    => 'Pulled from the <a href="/">contact details options</a>',
+        'classes' => 'cmb2-type-title--simple'
+    ]);
 
     $cmb->add_field([
         'name' => 'Copyright Text',
