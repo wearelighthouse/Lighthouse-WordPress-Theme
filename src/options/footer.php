@@ -35,6 +35,17 @@ function registerFooterOptions()
         'type' => 'text',
         'default' => 'Ⓒ 2019 Lighthouse London Studio Ltd'
     ]);
+
+    $cmb->add_field([
+        'name'    => 'Links',
+        'id'      => 'footer_links',
+        'type'    => 'wysiwyg',
+        'options' => [
+            'media_buttons' => false,
+            'textarea_rows' => 5
+        ],
+        'desc'    => 'comma or newline separated list of links'
+    ]);
 }
 
 add_action('cmb2_init', 'registerFooterOptions');
