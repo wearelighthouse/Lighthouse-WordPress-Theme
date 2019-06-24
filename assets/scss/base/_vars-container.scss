@@ -1,7 +1,8 @@
 & {
-  --ContainerWidth: 98vw;
+  --container-width: 82vw;
+  --edge-gutter: 0;
 
-  @include breakpoint(from-large) {
-    --ContainerWidth: calc(90vw);
+  @include breakpoint(from-medium) {
+    --edge-gutter: 1rem;
   }
 }

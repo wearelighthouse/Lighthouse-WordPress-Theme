@@ -4,12 +4,14 @@
 $color-white: #FFFFFF;
 $color-black: #000000;
 
+$color-blackcurrant: #151931;
 
 // Colors used to automatically generate font and background color utilities.
 
 $auto-colors: (
   'white': $color-white,
   'black': $color-black,
+  'blackcurrant': $color-blackcurrant,
   'transparent': transparent,
   'currentColor': currentColor
 );

@@ -10,8 +10,8 @@ const paths = {
 }
 
 const markup = [
-  paths.src + '*.html',
-  paths.src + '*.php'
+  '**/*.html',
+  '**/*.php'
 ]
 
 function clean(cb) {

@@ -1,5 +1,25 @@
 
 .o-container {
-  @extend .u-mh-auto;
-  width: var(--ContainerWidth);
+
+  // Text or whatever content sits in here
+  &__inner {
+    @extend .u-mh-auto;
+    width: var(--container-width);
+    max-width: $global-max-width;
+  }
+
+  // Container with horizontal and vertical border on desktop
+  &--bordered {
+    margin: var(--edge-gutter);
+  }
+
+  &--h-bordered {
+    margin-right: var(--edge-gutter);
+    margin-left: var(--edge-gutter);
+  }
+
+  &--v-bordered {
+    margin-top: var(--edge-gutter);
+    margin-bottom: var(--edge-gutter);
+  }
 }

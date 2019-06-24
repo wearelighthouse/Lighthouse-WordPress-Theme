@@ -1,5 +1,9 @@
 <!doctype html>
 
+<?php
+  $dist = get_template_directory_uri() . '/dist';
+?>
+
 <html lang="en-GB">
 
 <head>
