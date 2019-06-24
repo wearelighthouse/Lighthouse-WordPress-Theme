@@ -54,11 +54,6 @@ function browserSyncInit(cb) {
   cb();
 }
 
-function reload(cb) {
-  browserSync.reload();
-  cb();
-}
-
 function watch(cb) {
   gulp.watch(paths.src + '/scss/**/*.scss', scss);
   gulp.watch(markup).on('change', browserSync.reload);
