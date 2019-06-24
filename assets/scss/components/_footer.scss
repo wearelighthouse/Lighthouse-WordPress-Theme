@@ -1,4 +1,5 @@
 .c-footer {
+  @extend .o-section-clip;
   @extend .o-section-clip--corner-top-right;
   @extend %u-bgcolor-blackcurrant;
   @extend %u-color-white;

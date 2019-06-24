@@ -9,8 +9,8 @@
   &--corner-top-right {
     clip-path: polygon(
       0 0,
-      calc(60 * #{$pc}) 0,
-      100% calc(5 * #{$pc}),
+      calc(57 * #{$pc}) 0,
+      100% calc(6 * #{$pc}),
       100% 100%,
       0 100%,
       0 0
@@ -26,5 +26,11 @@
       0 100%,
       0 0
     );
+  }
+
+  // Section-clips don't show on teeny tiny screens.
+  // Is at the end to override the specific section-clips
+  @include breakpoint(upto-small) {
+    clip-path: none;
   }
 }
