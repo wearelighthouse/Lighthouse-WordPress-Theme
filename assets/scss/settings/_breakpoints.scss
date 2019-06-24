@@ -1,5 +1,5 @@
 $breakpoint-minimum: 320px;
-$breakpoint-large: 1200px;
+$breakpoint-large: $global-max-width;
 
 $breakpoint-smallest-font: $breakpoint-minimum;
 $breakpoint-largest-font: $breakpoint-large;
@@ -24,9 +24,9 @@ $global-breakpoints: (
  *    from-breakpoint-a--upto-breakpoint-b (where breakpoint b > breakpoint a)
  */
 $global-breakpoints: map-merge($global-breakpoints, make-width-breakpoints((
-  small: 400px,
+  small: 420px,
   medium: 800px,
-  large: 1200px,
+  large: $global-max-width,
 )));
 
 // Print all the breakpoints to check they have been generated as intended

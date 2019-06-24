@@ -1,8 +1,9 @@
 & {
-  --container-width: 82vw;
-  --edge-gutter: 0;
+  --container-width: calc(76vw + 2rem);
+  --container-v-pad: calc(2rem + 4%);
+  --edge-gutter: 0rem;
 
-  @include breakpoint(from-medium) {
+  @include breakpoint(from-small) {
     --edge-gutter: 1rem;
   }
 }

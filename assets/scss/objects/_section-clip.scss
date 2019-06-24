@@ -1,0 +1,30 @@
+/**
+ * When edge gutter goes to 0 (e.g. because on mobile), $pc goes to 0,
+ * and the clip-paths automagically become normal rectangles!
+ */
+.o-section-clip {
+
+  $pc: calc((100vw - var(--edge-gutter) * 2) / 100);
+
+  &--corner-top-right {
+    clip-path: polygon(
+      0 0,
+      calc(60 * #{$pc}) 0,
+      100% calc(5 * #{$pc}),
+      100% 100%,
+      0 100%,
+      0 0
+    );
+  }
+
+  &--ramp-bottom-right {
+    clip-path: polygon(
+      0 0,
+      100% 100%,
+      100% calc(30 * #{$pc}),
+      calc(80 * #{pc}) calc(30 * #{$pc}),
+      0 100%,
+      0 0
+    );
+  }
+}

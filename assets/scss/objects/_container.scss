@@ -1,6 +1,9 @@
 
 .o-container {
 
+  padding-top: var(--container-v-pad);
+  padding-bottom: var(--container-v-pad);
+
   // Text or whatever content sits in here
   &__inner {
     @extend .u-mh-auto;
