@@ -1,0 +1,43 @@
+
+@include make-utility((
+  alias: 'mh-auto',
+  class: true,
+  margin-left: auto,
+  margin-right: auto
+));
+
+@for $value from -4 through 4 {
+
+  @include make-utility((
+    alias: 'mt-' + $value,
+    margin-top: $value * 1rem
+  ));
+
+  @include make-utility((
+    alias: 'mr-' + $value,
+    margin-right: $value * 1rem
+  ));
+
+  @include make-utility((
+    alias: 'mb-' + $value,
+    margin-bottom: $value * 1rem
+  ));
+
+  @include make-utility((
+    alias: 'ml-' + $value,
+    margin-left: $value * 1rem
+  ));
+
+  @include make-utility((
+    alias: 'mv-' + $value,
+    margin-top: $value * 1rem,
+    margin-bottom: $value * 1rem
+  ));
+
+  @include make-utility((
+    alias: 'mh-' + $value,
+    margin-right: $value * 1rem,
+    margin-left: $value * 1rem
+  ));
+
+}

@@ -14,6 +14,7 @@
       @extend %u-mv-1;
       @extend %u-mh-2;
       @extend %u-pos-relative;
+      @extend %u-pv-2;
 
       @include breakpoint(from-medium) {
         width: 21rem;
@@ -38,6 +39,12 @@
         @include breakpoint(upto-medium) {
           width: 2rem;
         }
+      }
+
+      p {
+        // TODO: Make a scope for these
+        margin: 0;
+        line-height: 1.5;
       }
     }
 
