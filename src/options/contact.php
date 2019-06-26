@@ -29,7 +29,7 @@ function registerContactOptions()
     // Id's for group's fields only need to be unique for the group. Prefix is not needed.
     $cmb->add_group_field($group, [
     	'name' => 'Text',
-    	'id'   => 'title',
+    	'id'   => 'text',
     	'type' => 'wysiwyg',
       'options' => [
         'media_buttons' => false,

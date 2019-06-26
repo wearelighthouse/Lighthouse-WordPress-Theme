@@ -13,7 +13,7 @@ function registerFooterOptions()
 
     $cmb->add_field([
         'name'    => 'Main Content',
-    		'id'      => 'footer_content',  // "content" conflicts with WP default id
+    		'id'      => 'main_content',  // "content" conflicts with WP default id
     		'type'    => 'wysiwyg',
         'options' => [
             'media_buttons' => false,
@@ -23,28 +23,28 @@ function registerFooterOptions()
 
     $cmb->add_field([
         'name'    => 'Contact Details',
-        'id'      => 'content_details',
+        'id'      => 'contact_details_title',
         'type'    => 'title',
-        'desc'    => 'Pulled from the <a href="/">contact details options</a>',
+        'desc'    => 'Pulled from the <a href="/wp-admin/admin.php?page=contact">contact details options</a>',
         'classes' => 'cmb2-type-title--simple'
     ]);
 
     $cmb->add_field([
         'name' => 'Copyright Text',
-        'id'   => 'copyright_text',
+        'id'   => 'copyright',
         'type' => 'text',
         'default' => 'Ⓒ 2019 Lighthouse London Studio Ltd'
     ]);
 
     $cmb->add_field([
         'name'    => 'Links',
-        'id'      => 'footer_links',
+        'id'      => 'links',
         'type'    => 'wysiwyg',
         'options' => [
             'media_buttons' => false,
             'textarea_rows' => 5
         ],
-        'desc'    => 'comma or newline separated list of links'
+        'desc'    => 'Comma, newline, or paragraph separated list of links'
     ]);
 }
 

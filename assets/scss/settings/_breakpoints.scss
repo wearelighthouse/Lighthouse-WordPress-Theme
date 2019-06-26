@@ -25,7 +25,7 @@ $global-breakpoints: (
  */
 $global-breakpoints: map-merge($global-breakpoints, make-width-breakpoints((
   small: 501px,  // Allows the "mobile view" on Chrome Desktop (it's min-width is 500px)
-  medium: 800px,
+  medium: 800px,  // Just large enough to not display on portrait tablets
   large: $global-max-width,
 )));
 
