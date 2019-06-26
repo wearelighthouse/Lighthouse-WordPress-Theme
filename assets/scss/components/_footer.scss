@@ -3,4 +3,73 @@
   @extend .o-section-clip--corner-top-right;
   @extend %u-bgcolor-blackcurrant;
   @extend %u-color-white;
+
+  &__contact {
+    @extend %u-flex;
+    @extend %u-fd-column--upto-medium;
+    @extend %u-mh--2;
+    @extend %u-mv-1;
+
+    &__box {
+      @extend %u-mv-1;
+      @extend %u-mh-2;
+      @extend %u-pos-relative;
+
+      @include breakpoint(from-medium) {
+        width: 21rem;
+      }
+
+      // The 2nd box can't shrink (but others can).
+      // This is very content-related and TODO: Make er not specifically no.2
+      &:nth-child(2) {
+        flex-shrink: 0;
+      }
+
+      // Horizontal lins above each contact details box
+      &:before {
+        @extend %u-block;
+        @extend %u-content;
+        @extend %u-pos-absolute;
+        @extend %u-top;
+        @extend %u-left;
+        @extend %u-width-100pc--from-medium;
+        border-top: 2px solid $color-white;
+
+        @include breakpoint(upto-medium) {
+          width: 2rem;
+        }
+      }
+    }
+
+    &:after {
+      @extend %u-block;
+      @extend %u-content;
+    }
+  }
+
+  &__lower {
+    @extend %u-flex--from-medium;
+    @extend %u-fd-column--upto-medium;
+    @extend %u-ai-center--from-medium;
+    @extend %u-jc-space-between--from-medium;
+  }
+
+  &__links,
+  &__copyright {
+    @extend %u-mv-1;
+  }
+
+  &__links {
+    @extend %u-flex;
+    @extend %u-mh--1--upto-medium;
+
+    &__link-container {
+      @extend %u-mh-1;
+      @extend %u-nowrap;
+    }
+
+    a {
+      @extend %u-underline;
+    }
+  }
 }

@@ -44,7 +44,7 @@ function registerFooterOptions()
             'media_buttons' => false,
             'textarea_rows' => 5
         ],
-        'desc'    => 'Comma, newline, or paragraph separated list of links'
+        'desc'    => 'Newline or paragraph separated list of links'
     ]);
 }
 

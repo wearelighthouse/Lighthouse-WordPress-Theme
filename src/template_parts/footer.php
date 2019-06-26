@@ -9,6 +9,8 @@ $instagramURL = getOption('social', 'instagram');
 $footerLinks = getOption('footer', 'links');
 $copyright = getOption('footer', 'copyright');
 
+$footerLinks = $footerLinks ? autoa($footerLinks) : null;
+
 ?>
 
 <footer class="c-footer o-container o-container--bordered">
@@ -41,9 +43,13 @@ $copyright = getOption('footer', 'copyright');
       <?php endif; ?>
 
       <?php if ($footerLinks) : ?>
-        <div class="c-footer__links">
-
-        </div>
+        <ul class="c-footer__links">
+          <?php foreach ($footerLinks as $link) : ?>
+            <li class="c-footer__links__link-container">
+              <?= $link ?>
+            </li>
+          <?php endforeach; ?>
+        </ul>
       <?php endif; ?>
 
       <?php if ($copyright) : ?>

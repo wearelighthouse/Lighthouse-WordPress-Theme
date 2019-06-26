@@ -43,6 +43,12 @@ a {
   text-decoration: none;
 }
 
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 // Reset some button styling
 button {
   margin: 0;

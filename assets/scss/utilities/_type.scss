@@ -17,3 +17,8 @@
   alias: underline,
   text-decoration: underline
 ));
+
+@include make-utility((
+  alias: nowrap,
+  white-space: nowrap
+));
