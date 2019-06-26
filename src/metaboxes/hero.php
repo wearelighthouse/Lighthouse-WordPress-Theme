@@ -6,13 +6,15 @@ return [
         [
             'name' => 'Text Content',
             'id'   => 'content',
-            'type' => 'wysiwyg'
+            'type' => 'wysiwyg',
+            'options' => [
+              'textarea_rows' => 9
+            ]
         ],
         [
-            'name' => 'Color',
-            'id'   => 'color',
+            'name' => 'Background Color',
+            'id'   => 'background-color',
             'type' => 'radio',
-            'show_option_none' => false,
             'default' => 'orange-pink',
             'options' => [
                 'orange-pink' => '<div class="cmb2-radio-bg cmb2-radio-bg--orange">Orange → Pink</div>',
