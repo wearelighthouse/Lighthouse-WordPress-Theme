@@ -45,3 +45,21 @@
   margin-top: -1px !important;
   background-color: #fff !important;
 }
+
+.cmb2-radio-bg {
+  display: inline-block;
+  padding: 3px;
+  color: #fff;
+}
+
+/**
+ * Fancy colored backgrounds for radio button labels. TODO: Use the real colors!
+ */
+
+.cmb2-radio-bg--orange {
+  background: linear-gradient(135deg, #FC835E, #FE5284);
+}
+
+.cmb2-radio-bg--blue {
+  background: linear-gradient(135deg, #7abbd9, #98cdc3);
+}

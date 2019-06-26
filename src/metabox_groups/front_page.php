@@ -13,7 +13,7 @@ function registerFrontPageMetaboxes()
     $groupID = basename(__FILE__, '.php');
 
     addMetaboxes($groupInfo, [
-        'placeholder_metabox'
+        'hero'
     ], $groupID);
 
 }
