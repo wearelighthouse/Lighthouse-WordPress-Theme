@@ -51,7 +51,7 @@ function svgSprites() {
     mode: {
       symbol: {
         dest: '.',
-        sprite: './spritesheet.svg'
+        sprite: './sprites.svg'
       }
     }
   };
@@ -71,9 +71,15 @@ function browserSyncInit(cb) {
   cb();
 }
 
+function reload(cb) {
+  browserSync.reload();
+  cb();
+}
+
 function watch(cb) {
   gulp.watch(paths.src + '/scss/**/*.scss', scss);
-  gulp.watch(markup).on('change', browserSync.reload);
+  gulp.watch(paths.src + '/svg/sprites/**/*.svg', gulp.series(svgSprites, reload));
+  gulp.watch(markup).on('change', reload);
 }
 
 exports.clean = clean;
@@ -82,7 +88,7 @@ exports.watch = gulp.series(
   gulp.parallel(
     browserSyncInit,
     images,
-    svg,
+    svgSprites,
     scss,
     js
   ),
@@ -93,7 +99,7 @@ exports.default = gulp.series(
   clean,
   gulp.parallel(
     images,
-    svg,
+    svgSprites,
     gulp.series(
       scss,
       cssMinifiy

@@ -1,34 +1,40 @@
+<?php
+
+  $svgSpriteSheet = get_template_directory_uri() . '/dist/svg/sprites.svg';
+
+?>
+
 
 <div class="c-social-links">
 
   <?php if ($twitterURL) : ?>
-    <a href="<?php $twitterURL ?>">
-      <svg viewBox="0 0 20 20" style="display: inline; height: 20px; width: 20px;">
-        <use xlink:href="<?= get_template_directory_uri() ?>/dist/svg/sprite.svg#twitter"></use>
+    <a href="<?php $twitterURL ?>" class="c-social-links__link">
+      <svg viewBox="0 0 40 40" style="display: inline-block; height: 40px; width: 40px;">
+        <use xlink:href="<?= $svgSpriteSheet ?>#social--twitter"></use>
       </svg>
     </a>
   <?php endif; ?>
 
   <?php if ($facebookURL) : ?>
-    <a href="<?php $facebookURL ?>">
-      <svg viewBox="0 0 20 20" style="display: inline; height: 20px; width: 20px;">
-        <use xlink:href="<?= get_template_directory_uri() ?>/dist/svg/sprite.svg#facebook"></use>
+    <a href="<?php $facebookURL ?>" class="c-social-links__link">
+      <svg viewBox="0 0 40 40" style="display: inline-block; height: 40px; width: 40px;">
+        <use xlink:href="<?= $svgSpriteSheet ?>#social--facebook"></use>
       </svg>
     </a>
   <?php endif; ?>
 
   <?php if ($linkedInURL) : ?>
-    <a href="<?php $linkedInURL ?>">
-      <svg viewBox="0 0 20 20" style="display: inline; height: 20px; width: 20px;">
-        <use xlink:href="<?= get_template_directory_uri() ?>/dist/svg/sprite.svg#linkedin"></use>
+    <a href="<?php $linkedInURL ?>" class="c-social-links__link">
+      <svg viewBox="0 0 40 40" style="display: inline-block; height: 40px; width: 40px;">
+        <use xlink:href="<?= $svgSpriteSheet ?>#social--linkedin"></use>
       </svg>
     </a>
   <?php endif; ?>
 
   <?php if ($instagramURL) : ?>
-    <a href="<?php $instagramURL ?>">
-      <svg viewBox="0 0 20 20" style="display: inline; height: 20px; width: 20px;">
-        <use xlink:href="<?= get_template_directory_uri() ?>/dist/svg/sprite.svg#instagram"></use>
+    <a href="<?php $instagramURL ?>" class="c-social-links__link">
+      <svg viewBox="0 0 40 40" style="display: inline-block; height: 40px; width: 40px;">
+        <use xlink:href="<?= $svgSpriteSheet ?>#social--instagram"></use>
       </svg>
     </a>
   <?php endif; ?>
