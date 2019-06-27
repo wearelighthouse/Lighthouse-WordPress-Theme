@@ -3,6 +3,7 @@ const cleanCSS = require('gulp-clean-css');
 const del = require('del');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const svgSprite = require('gulp-svg-sprite');
 
 const paths = {
   src: 'assets',
@@ -45,6 +46,22 @@ function cssMinifiy() {
     .pipe(gulp.dest(paths.dist + '/css'));
 }
 
+function svgSprites() {
+  const config = {
+    mode: {
+      symbol: {
+        dest: '.',
+        sprite: './spritesheet.svg'
+      }
+    }
+  };
+
+  return gulp
+    .src(paths.src + '/svg/sprites/**/*.svg')
+    .pipe(svgSprite(config))
+    .pipe(gulp.dest(paths.dist + '/svg'));
+}
+
 function js(cb) {
   cb();
 }
@@ -65,6 +82,7 @@ exports.watch = gulp.series(
   gulp.parallel(
     browserSyncInit,
     images,
+    svg,
     scss,
     js
   ),
@@ -75,6 +93,7 @@ exports.default = gulp.series(
   clean,
   gulp.parallel(
     images,
+    svg,
     gulp.series(
       scss,
       cssMinifiy
