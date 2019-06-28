@@ -1,0 +1,14 @@
+.c-social-links {
+  @extend %u-flex;
+  margin: -5px;
+
+  &__link {
+    @extend %u-block;
+    @extend %u-bgcolor-white;
+    @extend %u-color-blackcurrant;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 50%;
+  }
+}
