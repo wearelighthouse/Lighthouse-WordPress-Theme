@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Hero',
+    'title' => 'Header',
     'fields' => [
         [
             'name' => 'Text Content',
@@ -20,6 +20,27 @@ return [
                 'orange-pink' => '<div class="cmb2-radio-bg cmb2-radio-bg--orange">Orange → Pink</div>',
                 'blue-turquoise' => '<div class="cmb2-radio-bg cmb2-radio-bg--blue">Blue → Turquoise</div>'
             ]
+        ],
+        [
+            'name' => 'Background Style',
+            'id'   => 'background-style',
+            'type' => 'radio',
+            'options' => [
+                'header-a' => 'Header A',
+                'header-b' => 'Header B'
+            ]
+        ],
+        [
+            'name' => 'Logo',
+            'id'   => 'logo',
+            'type' => 'file',
+            'desc' => 'Client logo or related image that sits underneath the text. Preferably an SVG with <code>fill="currentColor"</code>'
+        ],
+        [
+            'name' => 'Illustration',
+            'id'   => 'image',
+            'type' => 'file',
+            'desc' => 'Large image that sits on the right of the header'
         ]
     ]
 ];

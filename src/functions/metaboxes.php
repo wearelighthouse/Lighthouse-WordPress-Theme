@@ -23,6 +23,7 @@ function addMetaboxes($groupInfo, $metaboxIDs, $groupID = false)
         $cmb = new_cmb2_box(array_merge($groupInfo, [
             'id' => $prefix,
             'title' => $metabox['title'],
+            'classes' => 'cmb2-' . str_replace(' ', '-', $metaboxID),
             'show_names' => isset($metabox['show_names']) ? $metabox['show_names'] : true
         ]));
 

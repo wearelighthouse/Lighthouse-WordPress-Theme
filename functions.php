@@ -22,6 +22,13 @@ require_once __DIR__ . '/src/options/social.php';
 // Update CSS within in Admin
 function admin_style()
 {
-  wp_enqueue_style('admin-styles', get_template_directory_uri().'/admin.css');
+  wp_enqueue_style('admin-styles', get_template_directory_uri() . '/admin.css');
 }
 add_action('admin_enqueue_scripts', 'admin_style');
+
+// Do some funky JS on the admin pages
+function admin_script()
+{
+  wp_enqueue_script('admin-script', get_template_directory_uri() . '/admin.js');
+}
+add_action('admin_enqueue_scripts', 'admin_script');

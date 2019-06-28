@@ -13,7 +13,8 @@ function registerFrontPageMetaboxes()
     $groupID = basename(__FILE__, '.php');
 
     addMetaboxes($groupInfo, [
-        'hero'
+        'hero',
+        'test'
     ], $groupID);
 
 }
