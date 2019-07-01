@@ -1,8 +1,11 @@
 .c-footer {
-  @extend .o-section-clip;
-  @extend .o-section-clip--corner-top-right;
-  @extend %u-bgcolor-blackcurrant;
-  @extend %u-color-white;
+
+  &__inner {
+    @extend .o-section-clip;
+    @extend .o-section-clip--corner-top-right;
+    @extend %u-bgcolor-blackcurrant;
+    @extend %u-color-white;
+  }
 
   &__contact {
     @extend %u-flex;

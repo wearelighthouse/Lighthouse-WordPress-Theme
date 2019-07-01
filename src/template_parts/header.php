@@ -8,15 +8,20 @@
 
 ?>
 
-<header class="c-header">
-  <div class="c-header__inner">
-    <div class="c-header__logo-container">
-      <a href="/">
-        <img src="<?= get_template_directory_uri() ?>/dist/svg/lighthouse-logo.svg"/>
-      </a>
-    </div>
-    <nav class="c-header__nav c-header__nav--desktop">
-      <?php wp_nav_menu($navMenuSettings); ?>
-    </nav>
+<header class="c-header o-container o-container--bordered">
+  <div class="c-header__inner o-container__inner">
+
+      <div class="c-header__logo-container">
+        <a href="/">
+          <svg viewBox="0 0 150 28" style="display: inline-block; width: 150px; height: 28px;">
+            <use xlink:href="<?= get_template_directory_uri() ?>/dist/svg/lighthouse-logo.svg#a"></use>
+          </svg>
+        </a>
+      </div>
+
+      <nav class="c-header__nav c-header__nav--desktop">
+        <?php wp_nav_menu($navMenuSettings); ?>
+      </nav>
+
   </div>
 </header>

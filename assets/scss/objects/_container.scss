@@ -1,28 +1,32 @@
 
 .o-container {
-
-  padding-top: var(--container-v-pad);
-  padding-bottom: var(--container-v-pad);
+  @extend %u-width-100pc;
+  box-sizing: border-box;
 
   // Text or whatever content sits in here
   &__inner {
     @extend .u-mh-auto;
     width: var(--container-width);
     max-width: $global-max-width;
+
+    &--v-pad {
+      padding-top: var(--container-v-pad);
+      padding-bottom: var(--container-v-pad);
+    }
   }
 
   // Container with horizontal and vertical border on desktop
   &--bordered {
-    margin: var(--edge-gutter);
+    padding: var(--edge-gutter);
   }
 
   &--h-bordered {
-    margin-right: var(--edge-gutter);
-    margin-left: var(--edge-gutter);
+    padding-right: var(--edge-gutter);
+    padding-left: var(--edge-gutter);
   }
 
   &--v-bordered {
-    margin-top: var(--edge-gutter);
-    margin-bottom: var(--edge-gutter);
+    padding-top: var(--edge-gutter);
+    padding-bottom: var(--edge-gutter);
   }
 }
