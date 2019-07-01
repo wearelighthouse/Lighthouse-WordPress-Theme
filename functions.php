@@ -24,6 +24,7 @@ require_once __DIR__ . '/src/options/social.php';
 
 // Post Types
 require_once __DIR__ . '/src/post_types/service.php';
+require_once __DIR__ . '/src/post_types/work.php';
 
 // Update CSS within in Admin
 function admin_style()
