@@ -77,16 +77,24 @@ function browserSyncInit(cb) {
   cb();
 }
 
-function reload(cb) {
-  browserSync.reload();
-  cb();
-}
-
 function watch(cb) {
   gulp.watch(paths.src + '/scss/**/*.scss', scss);
   gulp.watch(paths.src + '/svg/single/**/*.svg', browserSync.reload);
-  gulp.watch(paths.src + '/svg/sprites/**/*.svg', gulp.series(svgSprites, reload));
-  gulp.watch(markup).on('change', browserSync.reload);
+
+  gulp.watch(paths.src + '/svg/sprites/**/*.svg').on('all', (eventName, path) => {
+    svgSprites();
+    switch (eventName) {
+      case 'change': console.log(path + ' changed and spritesheet modified'); break;
+      case 'add': console.log(path + ' added to spritesheet'); break;
+      case 'unlink': console.log(path + ' removed from spritesheet'); break;
+    }
+    browserSync.reload();
+  });
+
+  gulp.watch(markup).on('all', (event, path, stats) => {
+    console.log('Markup changed: ' + path);
+    browserSync.reload();
+  });
 }
 
 exports.clean = clean;
