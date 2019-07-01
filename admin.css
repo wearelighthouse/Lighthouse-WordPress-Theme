@@ -53,6 +53,20 @@
 }
 
 /**
+ * cmb2 Style fixes and tweaks
+ */
+
+h2.cmb-group-name {
+  display: block !important;
+  padding: 5px 0 !important;
+  font-weight: 600 !important;
+}
+
+.cmb-nested.cmb-field-list.cmb-repeatable-group > .cmb-row {
+  border: 0;
+}
+
+/**
  * Fancy colored backgrounds for radio button labels. TODO: Use the real colors!
  */
 

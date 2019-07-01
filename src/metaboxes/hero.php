@@ -41,7 +41,7 @@ return [
             'name' => 'Illustration',
             'id'   => 'image',
             'type' => 'file',
-            'desc' => 'Large image that sits on the right of the header'
+            'desc' => 'Large image displayed on the right of the header'
         ]
     ]
 ];

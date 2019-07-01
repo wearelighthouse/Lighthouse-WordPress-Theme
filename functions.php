@@ -16,6 +16,7 @@ require_once __DIR__ . '/src/metabox_groups/front_page.php';
 require_once __DIR__ . '/src/metabox_groups/hero.php';
 require_once __DIR__ . '/src/metabox_groups/page.php';
 require_once __DIR__ . '/src/metabox_groups/service.php';
+require_once __DIR__ . '/src/metabox_groups/team.php';
 
 // Options Pages
 require_once __DIR__ . '/src/options/contact.php';
@@ -24,6 +25,7 @@ require_once __DIR__ . '/src/options/social.php';
 
 // Post Types
 require_once __DIR__ . '/src/post_types/service.php';
+require_once __DIR__ . '/src/post_types/team.php';
 require_once __DIR__ . '/src/post_types/work.php';
 
 // Update CSS within in Admin
