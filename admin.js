@@ -23,10 +23,9 @@ function moveHeroField() {
   var margin = getComputedStyle(heroContainer).marginBottom;
   heroContainer.style.marginTop = margin;
   heroContainer.style.marginBottom = 0;
-  console.log(heroContainer.getElementsByClassName('ui-sortable-handle')[0]);
   heroContainer.getElementsByClassName('ui-sortable-handle')[0].classList.remove('ui-sortable-handle');
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
-    moveHeroField();
+    //moveHeroField();
 });

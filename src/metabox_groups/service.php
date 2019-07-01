@@ -1,10 +1,10 @@
 <?php
 
-function registerPageMetaboxes()
+function registerServiceMetaboxes()
 {
 
     $groupInfo = [
-        'object_types' => ['page']
+        'object_types' => ['service']
     ];
 
     $groupID = basename(__FILE__, '.php');
@@ -15,4 +15,4 @@ function registerPageMetaboxes()
 
 }
 
-add_action('cmb2_admin_init', 'registerPageMetaboxes');
+add_action('cmb2_admin_init', 'registerServiceMetaboxes');

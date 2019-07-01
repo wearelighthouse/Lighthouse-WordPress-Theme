@@ -13,7 +13,9 @@ require_once __DIR__ . '/src/functions/pr.php';
 
 // Metabox Groups
 require_once __DIR__ . '/src/metabox_groups/front_page.php';
+require_once __DIR__ . '/src/metabox_groups/hero.php';
 require_once __DIR__ . '/src/metabox_groups/page.php';
+require_once __DIR__ . '/src/metabox_groups/service.php';
 
 // Options Pages
 require_once __DIR__ . '/src/options/contact.php';

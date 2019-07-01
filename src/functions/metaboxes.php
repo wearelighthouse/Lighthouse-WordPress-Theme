@@ -74,3 +74,15 @@ function getPostMeta($metaName, $postID = null)
 
     return $postMeta;
 }
+
+/**
+ * Exclude metabox on specific IDs. From:
+ * https://github.com/CMB2/CMB2-Snippet-Library/blob/master/conditional-display/exclude-for-ids.php
+ * @param  object $cmb CMB2 object
+ * @return bool        True/false whether to show the metabox
+ */
+function cmb2_exclude_for_ids( $cmb ) {
+	$ids_to_exclude = $cmb->prop( 'exclude_ids', array() );
+	$excluded = in_array( $cmb->object_id(), $ids_to_exclude, true );
+	return ! $excluded;
+}
