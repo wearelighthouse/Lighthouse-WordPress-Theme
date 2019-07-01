@@ -79,7 +79,16 @@ function browserSyncInit(cb) {
 
 function watch(cb) {
   gulp.watch(paths.src + '/scss/**/*.scss', scss);
-  gulp.watch(paths.src + '/svg/single/**/*.svg', browserSync.reload);
+
+  gulp.watch(paths.src + '/svg/single/**/*.svg').on('all', (eventName, path) => {
+    svgSprites();
+    switch (eventName) {
+      case 'change': console.log(path + ' changed'); break;
+      case 'add': console.log(path + ' added'); break;
+      case 'unlink': console.log(path + ' removed'); break;
+    }
+    browserSync.reload();
+  });
 
   gulp.watch(paths.src + '/svg/sprites/**/*.svg').on('all', (eventName, path) => {
     svgSprites();
