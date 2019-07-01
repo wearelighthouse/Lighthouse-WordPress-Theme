@@ -2,7 +2,7 @@
 function moveHeroField() {
   var heroField = document.getElementsByClassName('cmb2-hero');
 
-  if (!heroField) {
+  if (!heroField || !heroField[0]) {
     // There's no hero / header custom metabox on this page
     return false;
   }
@@ -23,7 +23,8 @@ function moveHeroField() {
   var margin = getComputedStyle(heroContainer).marginBottom;
   heroContainer.style.marginTop = margin;
   heroContainer.style.marginBottom = 0;
-  heroContainer.getElementsByClassName('ui-sortable-handle')[0].removeClass('ui-sortable-handle');
+  console.log(heroContainer.getElementsByClassName('ui-sortable-handle')[0]);
+  heroContainer.getElementsByClassName('ui-sortable-handle')[0].classList.remove('ui-sortable-handle');
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {

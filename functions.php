@@ -13,11 +13,15 @@ require_once __DIR__ . '/src/functions/pr.php';
 
 // Metabox Groups
 require_once __DIR__ . '/src/metabox_groups/front_page.php';
+require_once __DIR__ . '/src/metabox_groups/page.php';
 
-// Options pages
+// Options Pages
 require_once __DIR__ . '/src/options/contact.php';
 require_once __DIR__ . '/src/options/footer.php';
 require_once __DIR__ . '/src/options/social.php';
+
+// Post Types
+require_once __DIR__ . '/src/post_types/service.php';
 
 // Update CSS within in Admin
 function admin_style()
