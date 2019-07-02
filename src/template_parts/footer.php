@@ -13,10 +13,10 @@ $footerLinks = $footerLinks ? autoa($footerLinks) : null;
 
 ?>
 
-<footer class=" c-footer o-container o-container--bordered">
-  <div class="c-footer__inner">
+<footer class="o-container-section o-container-section--bordered">
+  <div class="c-footer">
 
-    <div class="o-container__inner o-container__inner--v-pad">
+    <div class="o-container-content o-container-content--v-pad">
 
       <?php if ($mainContent) : ?>
         <div class="c-footer__main-content s-wysiwyg--large">

@@ -1,16 +1,12 @@
+
 .c-header {
-  @extend %u-pos-absolute;
-  @extend %u-top;
-  @extend %u-z-index-1;
   @extend %u-color-white;
 
-  &__inner {
-    @extend %u-pv-2;
-    @extend %u-width-100pc;
-    @extend %u-flex;
-    @extend %u-ai-center;
-    @extend %u-jc-space-between;
-  }
+  @extend %u-pv-2;
+  @extend %u-width-100pc;
+  @extend %u-flex;
+  @extend %u-ai-center;
+  @extend %u-jc-space-between;
 
   &__nav {
     ul {

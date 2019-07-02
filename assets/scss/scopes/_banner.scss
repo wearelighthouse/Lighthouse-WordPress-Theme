@@ -1,0 +1,26 @@
+
+.s-banner {
+
+  @extend %u-color-white;
+
+  @for $level from 1 through 5 {
+    h#{$level} {
+      @extend .type-h#{$level};
+      margin: 0;
+    }
+  }
+
+  p {
+    @extend .type-p;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  strong {
+    color: black;
+  }
+
+}

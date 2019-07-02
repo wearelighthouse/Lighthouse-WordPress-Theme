@@ -1,19 +1,9 @@
-
-.o-container {
+/**
+ * A container which is a large, full width section of the page. Usually a <section>.
+ */
+.o-container-section {
   @extend %u-width-100pc;
   box-sizing: border-box;
-
-  // Text or whatever content sits in here
-  &__inner {
-    @extend .u-mh-auto;
-    width: var(--container-width);
-    max-width: $global-max-width;
-
-    &--v-pad {
-      padding-top: var(--container-v-pad);
-      padding-bottom: var(--container-v-pad);
-    }
-  }
 
   // Container with horizontal and vertical border on desktop
   &--bordered {
@@ -28,5 +18,9 @@
   &--v-bordered {
     padding-top: var(--edge-gutter);
     padding-bottom: var(--edge-gutter);
+  }
+
+  &--100vh {
+    height: 100vh;
   }
 }

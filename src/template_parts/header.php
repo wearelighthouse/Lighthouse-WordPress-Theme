@@ -8,8 +8,8 @@
 
 ?>
 
-<header class="c-header o-container o-container--bordered">
-  <div class="c-header__inner o-container__inner">
+<header class="o-container-section o-container-section--bordered o-container-header">
+  <div class="c-header o-container-content">
 
       <div class="c-header__logo-container">
         <a href="/">
