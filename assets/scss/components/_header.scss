@@ -8,6 +8,10 @@
   @extend %u-ai-center;
   @extend %u-jc-space-between;
 
+  &__home-link {
+    @extend %u-block;
+  }
+
   &__nav {
     ul {
       @extend %u-flex;

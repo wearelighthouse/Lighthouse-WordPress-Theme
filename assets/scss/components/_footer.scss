@@ -2,8 +2,8 @@
 
   @extend %u-bgcolor-blackcurrant;
   @extend %u-color-white;
-  @extend .o-section-clip;
   @extend .o-section-clip--corner-top-right;
+  @extend .o-section-clip--no-mobile;
 
   &__contact {
     @extend %u-flex;

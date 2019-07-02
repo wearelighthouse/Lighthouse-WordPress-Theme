@@ -4,13 +4,14 @@
  */
 .o-section-clip {
 
-  $pc: calc((100vw - var(--edge-gutter) * 2) / 100);
+  $pcw: calc((100vw - var(--edge-gutter) * 2) / 100); // Percent width
+  $pch: calc((100vh - var(--edge-gutter) * 2) / 100); // Percent height (when is 100vh)
 
   &--corner-top-right {
     clip-path: polygon(
       0 0,
-      calc(57 * #{$pc}) 0,
-      100% calc(6 * #{$pc}),
+      calc(57 * #{$pcw}) 0,
+      100% calc(6 * #{$pcw}),
       100% 100%,
       0 100%,
       0 0
@@ -20,17 +21,19 @@
   &--ramp-bottom-right {
     clip-path: polygon(
       0 0,
-      100% 100%,
-      100% calc(30 * #{$pc}),
-      calc(80 * #{pc}) calc(30 * #{$pc}),
+      100% 0,
+      100% calc(100% - 3rem),
+      77% calc(100% - 3rem),
       0 100%,
       0 0
     );
   }
 
-  // Section-clips don't show on teeny tiny screens.
+  // Not all section-clips show on teeny tiny screens.
   // Is at the end to override the specific section-clips
-  @include breakpoint(upto-small) {
-    clip-path: none;
+  &--no-mobile {
+    @include breakpoint(upto-small) {
+      clip-path: none;
+    }
   }
 }
