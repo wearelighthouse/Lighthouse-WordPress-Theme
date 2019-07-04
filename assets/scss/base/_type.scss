@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Sosh';
+  font-weight: 400;
+  src: url('../font/Sosh-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Sosh';
+  font-weight: 500;
+  src: url('../font/Sosh-Medium.otf');
+}
+
+@font-face {
+  font-family: 'Sosh';
+  font-weight: 700;
+  src: url('../font/Sosh-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Tiempos';
+  font-weight: 400;
+  src: url('../font/TiemposTextTest-Regular');
+}
+
+@font-face {
+  font-family: 'Tiempos';
+  font-weight: 600;
+  src: url('../font/TiemposTextTest-Semibold');
+}
+
+body {
+  font-family: 'Sosh', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: $color-blackcurrant;
+}

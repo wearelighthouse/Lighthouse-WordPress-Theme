@@ -20,6 +20,12 @@ function clean(cb) {
   cb();
 }
 
+function fonts() {
+  return gulp
+    .src(paths.src + '/font/*')
+    .pipe(gulp.dest(paths.dist + '/font'));
+}
+
 function images() {
   return gulp
     .src(paths.src + '/img/*')
@@ -111,6 +117,7 @@ exports.clean = clean;
 exports.watch = gulp.series(
   gulp.parallel(
     browserSyncInit,
+    fonts,
     images,
     svgs,
     svgSprites,
@@ -123,6 +130,7 @@ exports.watch = gulp.series(
 exports.default = gulp.series(
   clean,
   gulp.parallel(
+    fonts,
     images,
     svgs,
     svgSprites,
