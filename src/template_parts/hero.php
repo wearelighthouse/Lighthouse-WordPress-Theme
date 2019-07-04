@@ -2,7 +2,7 @@
 
   $text = getPostMeta('hero_hero_content');
   $bgcolor = getPostMeta('hero_hero_background-color');
-
+  
 ?>
 
 <section class="o-container-section o-container-section--bordered o-container-section--100vh">

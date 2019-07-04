@@ -5,8 +5,12 @@
 
   @for $level from 1 through 5 {
     h#{$level} {
-      @extend .type-h#{$level};
+      @extend .type-headline;
       margin: 0;
+
+      strong {
+        color: $color-blackcurrant;
+      }
     }
   }
 

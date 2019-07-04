@@ -22,3 +22,13 @@
   alias: nowrap,
   white-space: nowrap
 ));
+
+@include make-utility((
+  alias: sosh,
+  font-family: unquote('Sosh, sans-serif')
+));
+
+@include make-utility((
+  alias: tiempos,
+  font-family: unquote('Tiempos, sans-serif')
+));
