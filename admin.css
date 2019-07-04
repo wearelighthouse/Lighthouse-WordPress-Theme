@@ -70,6 +70,10 @@ h2.cmb-group-name {
  * Fancy colored backgrounds for radio button labels. TODO: Use the real colors!
  */
 
+.cmb2-radio-bg--gray {
+  background: #7E7E81;
+}
+
 .cmb2-radio-bg--orange {
   background: linear-gradient(135deg, #FC835E, #FE5284);
 }

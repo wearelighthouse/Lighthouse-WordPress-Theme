@@ -18,6 +18,7 @@ return [
             'type' => 'radio',
             'default' => 'orange-pink',
             'options' => [
+                'placeholder' => '<div class="cmb2-radio-bg cmb2-radio-bg--gray">Placeholder</div>',
                 'orange-pink' => '<div class="cmb2-radio-bg cmb2-radio-bg--orange">Orange → Pink</div>',
                 'blue-turquoise' => '<div class="cmb2-radio-bg cmb2-radio-bg--blue">Blue → Turquoise</div>'
             ]
