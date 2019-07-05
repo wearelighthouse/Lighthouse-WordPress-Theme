@@ -8,7 +8,8 @@
       @extend .type-headline;
       margin: 0;
 
-      strong {
+      em {
+        font-style: normal;
         color: $color-blackcurrant;
       }
     }
@@ -21,10 +22,6 @@
 
   a {
     text-decoration: underline;
-  }
-
-  strong {
-    color: black;
   }
 
 }

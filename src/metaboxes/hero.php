@@ -7,7 +7,7 @@ return [
             'name' => 'Text Content',
             'id'   => 'content',
             'type' => 'wysiwyg',
-            'desc' => 'Use <b>bold</b> to indicate that text should display <b>black</b> rather than the standard <b>white</b> header text color',
+            'desc' => 'Use italics to indicate that text should display <b>black</b> rather than the standard <b>white</b> header text color',
             'options' => [
               'textarea_rows' => 9
             ]
