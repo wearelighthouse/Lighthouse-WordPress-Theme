@@ -9,3 +9,15 @@
     font-size: #{toPx($largest)};
   }
 }
+
+@mixin lineScale($smallest, $largest) {
+  line-height: #{$smallest};
+
+  @media (min-width: #{toPx($breakpoint-smallest-font)}) and (max-width: #{toPx($breakpoint-largest-font)}) {
+    line-height: calc(#{$smallest} * (#{stripUnit($largest)} - #{stripUnit($smallest)}) * ((100vw - #{toPx($breakpoint-smallest-font)}) / (#{stripUnit($breakpoint-largest-font)} - #{stripUnit($breakpoint-smallest-font)})));
+  }
+
+  @media (min-width: #{toPx($breakpoint-largest-font)}) {
+    line-height: #{$largest};
+  }
+}

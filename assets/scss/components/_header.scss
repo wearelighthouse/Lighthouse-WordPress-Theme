@@ -2,7 +2,7 @@
 .c-header {
   @extend %u-color-white;
 
-  @extend %u-pv-2;
+  @extend %u-pv-5;
   @extend %u-width-100pc;
   @extend %u-flex;
   @extend %u-ai-center;
@@ -13,9 +13,18 @@
   }
 
   &__nav {
+    @extend .type-link;
+    @extend %u-flex;
+    @extend %u-fw-wrap;
+    @extend %u-mh--2;
+
     ul {
       @extend %u-flex;
       @extend %u-fw-wrap;
+
+      li {
+        @extend %u-mh-2;
+      }
     }
   }
 }

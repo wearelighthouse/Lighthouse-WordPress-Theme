@@ -2,7 +2,10 @@
 
   $text = getPostMeta('hero_hero_content');
   $bgcolor = getPostMeta('hero_hero_background-color');
-  
+
+  // Format the text nicely, similar to wpautop
+  $text = str_replace(' er <h1> or something', '', $text);
+
 ?>
 
 <section class="o-container-section o-container-section--bordered o-container-section--100vh">

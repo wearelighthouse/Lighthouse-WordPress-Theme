@@ -1,5 +1,20 @@
 
+.type-p,
+.type-p--large,
+.type-p--small {
+  @extend %u-sosh;
+  letter-spacing: 1px;
+}
+
 .type-p {
   @include fontScale(18, 20);
-  line-height: 1.5;
+  @include lineScale(1.5, 2);
+}
+
+.type-p--large {
+  @include fontScale(20, 24);
+}
+
+.type-p--small {
+  font-size: 16px;
 }

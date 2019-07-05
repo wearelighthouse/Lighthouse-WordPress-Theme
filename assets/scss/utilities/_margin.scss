@@ -6,43 +6,43 @@
   margin-right: auto
 ));
 
-@for $value from -4 through 4 {
+@for $value from -8 through 8 {
 
   @include make-utility((
     alias: 'm-' + $value,
-    margin: $value * 1rem
+    margin: $value * .5rem
   ));
 
   @include make-utility((
     alias: 'mt-' + $value,
-    margin-top: $value * 1rem
+    margin-top: $value * .5rem
   ));
 
   @include make-utility((
     alias: 'mr-' + $value,
-    margin-right: $value * 1rem
+    margin-right: $value * .5rem
   ));
 
   @include make-utility((
     alias: 'mb-' + $value,
-    margin-bottom: $value * 1rem
+    margin-bottom: $value * .5rem
   ));
 
   @include make-utility((
     alias: 'ml-' + $value,
-    margin-left: $value * 1rem
+    margin-left: $value * .5rem
   ));
 
   @include make-utility((
     alias: 'mv-' + $value,
-    margin-top: $value * 1rem,
-    margin-bottom: $value * 1rem
+    margin-top: $value * .5rem,
+    margin-bottom: $value * .5rem
   ));
 
   @include make-utility((
     alias: 'mh-' + $value,
-    margin-right: $value * 1rem,
-    margin-left: $value * 1rem
+    margin-right: $value * .5rem,
+    margin-left: $value * .5rem
   ));
 
 }

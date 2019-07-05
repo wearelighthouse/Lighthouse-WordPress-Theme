@@ -8,14 +8,14 @@
   &__contact {
     @extend %u-flex;
     @extend %u-fd-column--upto-medium;
-    @extend %u-mh--2;
-    @extend %u-mv-1;
+    @extend %u-mh--4;
+    @extend %u-mv-2;
 
     &__box {
-      @extend %u-mv-1;
-      @extend %u-mh-2;
+      @extend %u-mv-2;
+      @extend %u-mh-4;
       @extend %u-pos-relative;
-      @extend %u-pv-2;
+      @extend %u-pv-4;
 
       @include breakpoint(from-medium) {
         width: 21rem;

@@ -25,5 +25,6 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-sass": "^4.0.2",
     "gulp-svg-sprite": "^1.5.0"
-  }
+  },
+  "dependencies": {}
 }

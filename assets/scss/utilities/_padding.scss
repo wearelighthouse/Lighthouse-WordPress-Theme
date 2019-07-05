@@ -1,36 +1,36 @@
 
-@for $value from -4 through 4 {
+@for $value from -8 through 8 {
 
   @include make-utility((
     alias: 'pt-' + $value,
-    padding-top: $value * 1rem
+    padding-top: $value * .5rem
   ));
 
   @include make-utility((
     alias: 'pr-' + $value,
-    padding-right: $value * 1rem
+    padding-right: $value * .5rem
   ));
 
   @include make-utility((
     alias: 'pb-' + $value,
-    padding-bottom: $value * 1rem
+    padding-bottom: $value * .5rem
   ));
 
   @include make-utility((
     alias: 'pl-' + $value,
-    padding-left: $value * 1rem
+    padding-left: $value * .5rem
   ));
 
   @include make-utility((
     alias: 'pv-' + $value,
-    padding-top: $value * 1rem,
-    padding-bottom: $value * 1rem
+    padding-top: $value * .5rem,
+    padding-bottom: $value * .5rem
   ));
 
   @include make-utility((
     alias: 'ph-' + $value,
-    padding-right: $value * 1rem,
-    padding-left: $value * 1rem
+    padding-right: $value * .5rem,
+    padding-left: $value * .5rem
   ));
 
 }
