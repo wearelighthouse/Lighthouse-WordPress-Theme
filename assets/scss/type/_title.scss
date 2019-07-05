@@ -1,0 +1,7 @@
+
+.type-title {
+  @include fontScale(32, 36);
+  @extend %u-tiempos;
+  font-weight: 600;
+  letter-spacing: .08em;
+}

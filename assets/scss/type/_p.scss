@@ -13,8 +13,10 @@
 
 .type-p--large {
   @include fontScale(20, 24);
+  line-height: 1.5;
 }
 
 .type-p--small {
   font-size: 16px;
+  line-height: 1.5;
 }

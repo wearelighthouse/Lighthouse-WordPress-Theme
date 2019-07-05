@@ -1,0 +1,7 @@
+
+.type-subtitle {
+  @include fontScale(24, 32);
+  @extend %u-sosh;
+  letter-spacing: .01em;
+  line-height: 1.5;
+}
