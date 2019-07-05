@@ -11,13 +11,13 @@
 }
 
 @mixin lineScale($smallest, $largest) {
-  line-height: #{$smallest};
+  line-height: #{toPx($smallest)};
 
   @media (min-width: #{toPx($breakpoint-smallest-font)}) and (max-width: #{toPx($breakpoint-largest-font)}) {
-    line-height: calc(#{$smallest} * (#{stripUnit($largest)} - #{stripUnit($smallest)}) * ((100vw - #{toPx($breakpoint-smallest-font)}) / (#{stripUnit($breakpoint-largest-font)} - #{stripUnit($breakpoint-smallest-font)})));
+    line-height: calc(#{toPx($smallest)} + (#{stripUnit($largest)} - #{stripUnit($smallest)}) * ((100vw - #{toPx($breakpoint-smallest-font)}) / (#{stripUnit($breakpoint-largest-font)} - #{stripUnit($breakpoint-smallest-font)})));
   }
 
   @media (min-width: #{toPx($breakpoint-largest-font)}) {
-    line-height: #{$largest};
+    line-height: #{toPx($largest)};
   }
 }
