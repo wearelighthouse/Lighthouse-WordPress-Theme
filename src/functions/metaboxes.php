@@ -17,6 +17,10 @@ function addField($prefix, $cmb, $field)
 
 function addMetaboxes($groupInfo, $metaboxIDs, $groupID = false)
 {
+    if (!$metaboxIDs) {
+        return false;
+    }
+
     foreach ($metaboxIDs as $i => $metaboxID) {
         $prefix = $groupID ? $groupID . '_' . $metaboxID : $metaboxID;
         $metabox = require __DIR__ . '/../metaboxes/' . $metaboxID . '.php';
