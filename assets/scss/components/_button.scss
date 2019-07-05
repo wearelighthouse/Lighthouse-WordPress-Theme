@@ -1,4 +1,36 @@
 
 .c-button {
-  @extend %u-mh-auto;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--simple {
+    @extend %u-pos-relative;
+
+    &:after {
+      @extend %u-pos-absolute;
+      @extend %u-content;
+      @extend %u-bg-color-white;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      transition: all $transition-fast;
+    }
+
+    &:focus {
+      outline: 1px dotted $color-white;
+      outline-offset: 3px;
+    }
+
+    &:hover:after {
+      width: 1rem;
+    }
+
+    &--flipped:after {
+      right: 0;
+      left: auto;
+    }
+  }
 }

@@ -5,4 +5,9 @@
   @extend %u-jc-center;
   @extend %u-bg-color-black;
   @extend .o-section-clip--ramp-bottom-right;
+
+  &__content {
+    margin-top: 5rem; // Includes room for header. TODO: Set to actual header height?
+    margin-bottom: 3rem;
+  }
 }
