@@ -5,11 +5,15 @@
   @extend .o-section-clip--corner-top-right;
   @extend .o-section-clip--no-mobile;
 
+  &__main-content {
+    @extend %u-mt-2;
+  }
+
   &__contact {
     @extend %u-flex;
     @extend %u-fd-column--upto-medium;
     @extend %u-mh--4;
-    @extend %u-mv-2;
+    @extend %u-mv-6;
 
     &__box {
       @extend %u-mv-2;
@@ -34,14 +38,13 @@
         @extend %u-pos-absolute;
         @extend %u-top;
         @extend %u-left;
-        width: 3rem;
+        width: 50px;
         border-top: 2px solid $color-white;
       }
 
       p {
-        // TODO: Make a scope for these
-        margin: 0;
-        line-height: 1.5;
+        @extend %u-m-0;
+        @extend %u-line-height-2;
       }
     }
 
@@ -58,17 +61,18 @@
     @extend %u-jc-space-between--from-medium;
   }
 
+  &__social,
   &__links,
   &__copyright {
-    @extend %u-mv-1;
+    @extend %u-mv-2;
   }
 
   &__links {
     @extend %u-flex;
-    @extend %u-mh--1--upto-medium;
+    @extend %u-mh--2--upto-medium;
 
     &__link-container {
-      @extend %u-mh-1;
+      @extend %u-mh-2;
       @extend %u-nowrap;
     }
 

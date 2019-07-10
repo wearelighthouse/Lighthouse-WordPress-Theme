@@ -1,14 +1,14 @@
 .c-social-links {
   @extend %u-flex;
-  margin: -5px;
+  @extend %u-m--1;
 
   &__link {
     @extend %u-block;
     @extend %u-bg-color-white;
     @extend %u-color-blackcurrant;
     @extend %u-round;
+    @extend %u-m-1;
     width: 40px;
     height: 40px;
-    margin: 5px;
   }
 }

@@ -19,7 +19,7 @@ $footerLinks = $footerLinks ? autoa($footerLinks) : null;
     <div class="o-container-content o-container-content--v-pad">
 
       <?php if ($mainContent) : ?>
-        <div class="c-footer__main-content s-wysiwyg--large">
+        <div class="c-footer__main-content s-banner">
           <?= wpautop($mainContent); ?>
         </div>
       <?php endif; ?>
@@ -27,7 +27,7 @@ $footerLinks = $footerLinks ? autoa($footerLinks) : null;
       <?php if ($contactBoxes) : ?>
         <address class="c-footer__contact">
           <?php foreach ($contactBoxes as $contactBox) : ?>
-            <div class="c-footer__contact__box">
+            <div class="c-footer__contact__box type-p--small u-line-height-2">
               <?php if(isset($contactBox['text'])) : ?>
                 <?= wpautop($contactBox['text']) ?>
               <?php endif; ?>
@@ -36,7 +36,7 @@ $footerLinks = $footerLinks ? autoa($footerLinks) : null;
         </address>
       <?php endif; ?>
 
-      <div class="c-footer__lower">
+      <div class="c-footer__lower type-p--small">
 
         <?php if ($twitterURL || $facebookURL || $linkedInURL || $instagramURL) : ?>
           <div class="c-footer__social">

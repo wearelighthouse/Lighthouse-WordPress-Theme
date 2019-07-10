@@ -32,3 +32,8 @@
   alias: tiempos,
   font-family: unquote('Tiempos, sans-serif')
 ));
+
+@include make-utility((
+  line-height: 2,
+  class: true
+));
