@@ -2,7 +2,7 @@
 
   $text = getPostMeta('hero_hero_content');
   $bgcolor = getPostMeta('hero_hero_background-color');
-  
+
   // From page has a 100vh header instead of as-big-as-it-needs-to-be
   $frontPageSectionClass = is_front_page() ? ' o-container-section--100vh' : '';
 
