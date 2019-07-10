@@ -16,7 +16,7 @@ return [
             'name' => 'Background Color',
             'id'   => 'background-color',
             'type' => 'radio',
-            'default' => 'orange-pink',
+            'default' => 'placeholder',
             'options' => [
                 'placeholder' => '<div class="cmb2-radio-bg cmb2-radio-bg--gray">Placeholder</div>',
                 'orange-pink' => '<div class="cmb2-radio-bg cmb2-radio-bg--orange">Orange → Pink</div>',

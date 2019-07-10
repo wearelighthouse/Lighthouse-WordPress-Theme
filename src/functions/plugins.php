@@ -11,6 +11,10 @@ function registerRequiredPlugins()
         [
             'name' => 'Disable Comments',
             'slug' => 'disable-comments'
+        ],
+        [
+            'name' => 'Safe SVG',
+            'slug' => 'safe-svg'
         ]
     ];
 

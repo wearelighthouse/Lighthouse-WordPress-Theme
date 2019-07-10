@@ -17,7 +17,7 @@ return [
                     'name' => 'Logo',
                     'id'   => 'logo',
                     'type' => 'file',
-                    'desc' => 'Client logos. Preferably SVGs.'
+                    'desc' => 'Client logos. Preferably SVGs compressed with <a href="https://jakearchibald.github.io/svgomg'
                 ],
             ]
         ]
