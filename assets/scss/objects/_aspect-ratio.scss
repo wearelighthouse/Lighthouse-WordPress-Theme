@@ -6,7 +6,6 @@
  * To use a specific aspect ratio it must be included in the ratio list
  *     `((horizontal:vertical), (...), (...), ...)`
  */
-
 @each $ratio in ((16:9), (2:1), (1:1)) {
 
   $h: first(map-keys($ratio));

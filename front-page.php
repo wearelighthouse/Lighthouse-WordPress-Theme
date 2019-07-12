@@ -6,7 +6,7 @@
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
     <?php $globalLinkBlocks = getPostMeta('link_blocks_group')?>
-    <?php include(locate_template('src/template_parts/link_blocks_services.php')) ?>
+    <?php include(locate_template('src/template_parts/link_blocks_grid.php')) ?>
 
   <?php endwhile; ?>
 </main>
