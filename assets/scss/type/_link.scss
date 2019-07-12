@@ -1,8 +1,7 @@
 
 .type-link {
-  @include fontScale(16, 17);
   @extend %u-sosh;
+  font-size: 17px;
   font-weight: 400;
   letter-spacing: 1px;
-  //letter-spacing: .01389em;
 }

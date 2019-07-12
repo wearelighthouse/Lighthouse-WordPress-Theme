@@ -23,7 +23,7 @@
     </div>
   <?php endif; ?>
   <?php if ($linkText && $linkURL) : ?>
-    <a class="c-link-block__link c-button c-button__underlined" href="<?= $linkURL ?>">
+    <a class="c-link-block__link c-button c-button--underlined" href="<?= $linkURL ?>">
       <?= $linkText ?>
     </a>
   <?php endif; ?>

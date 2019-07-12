@@ -6,6 +6,18 @@
   margin-right: auto
 ));
 
+@include make-utility((
+  alias: 'mt-auto',
+  class: true,
+  margin-top: auto,
+));
+
+@include make-utility((
+  alias: 'mb-auto',
+  class: true,
+  margin-bottom: auto,
+));
+
 @for $value from -8 through 8 {
 
   @include make-utility((

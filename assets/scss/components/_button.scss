@@ -35,6 +35,53 @@
   }
 
   &--underlined {
-    
+    @extend .type-link;
+    @extend %u-pos-relative;
+    padding-bottom: 1rem;
+    font-weight: 700;
+
+    $hLineWidth: 107px;
+    $dLineWidth: 27px;
+    $totalLineWidth: $hLineWidth + $dLineWidth;
+    $hLineWidthPc: (1 / $totalLineWidth) * $hLineWidth;
+    $dLineWidthPc: (1 / $totalLineWidth) * $dLineWidth;
+    $transition-speed: $transition-fast;
+    $transition-func: linear;
+
+    &:before,
+    &:after {
+      @extend %u-block;
+      @extend %u-pos-absolute;
+      @extend %u-bottom;
+      @extend %u-left;
+      @extend %u-content;
+      @extend %u-bg-color-gray;
+      height: 2px;
+      box-shadow: inset 0 0 0 $color-blackcurrant;
+    }
+
+    &:before {
+      width: $hLineWidth;
+      transition: $transition-speed * $hLineWidthPc all $transition-speed * $dLineWidthPc $transition-func;
+    }
+
+    &:after {
+      width: $dLineWidth;
+      margin-left: $hLineWidth;
+      transform: rotate(21deg);
+      transform-origin: top left;
+      transition: all $transition-speed * $dLineWidthPc $transition-func;
+    }
+
+    &:hover {
+      &:before {
+        box-shadow: inset $hLineWidth 0 0 $color-blackcurrant;
+        transition: all $transition-speed * $hLineWidthPc $transition-func;
+      }
+      &:after {
+        box-shadow: inset $dLineWidth 0 0 $color-blackcurrant;
+        transition: $transition-speed * $dLineWidthPc all $transition-speed * $hLineWidthPc $transition-func;
+      }
+    }
   }
 }

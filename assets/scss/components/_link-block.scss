@@ -1,4 +1,25 @@
 
 .c-link-block {
+  @extend %u-flex;
+  @extend %u-fd-column;
+  @extend %u-ai-flex-start;
   @extend %u-pr-8--from-medium;
+
+  &__title {
+    margin-top: 1.2em;
+    margin-bottom: 1em;
+  }
+
+  &__desc {
+    margin-top: 0;
+    margin-bottom: 1em; // Plus margins from <p>s inside
+
+    p:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    @extend %u-mt-auto;
+  }
 }
