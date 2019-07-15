@@ -78,6 +78,7 @@
         box-shadow: inset $hLineWidth 0 0 $color-blackcurrant;
         transition: all $transition-speed * $hLineWidthPc $transition-func;
       }
+
       &:after {
         box-shadow: inset $dLineWidth 0 0 $color-blackcurrant;
         transition: $transition-speed * $dLineWidthPc all $transition-speed * $hLineWidthPc $transition-func;
