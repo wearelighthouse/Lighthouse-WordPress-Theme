@@ -86,9 +86,9 @@ function browserSyncInit(cb) {
 function watch(cb) {
   gulp.watch(paths.src + '/scss/**/*.scss', scss);
 
-  gulp.watch(paths.src + '/svg/single/**/*.svg').on('all', (eventName, path) => {
+  gulp.watch(paths.src + '/svg/single/**/*.svg').on('all', (event, path) => {
     svgSprites();
-    switch (eventName) {
+    switch (event) {
       case 'change': console.log(path + ' changed'); break;
       case 'add': console.log(path + ' added'); break;
       case 'unlink': console.log(path + ' removed'); break;
@@ -96,9 +96,9 @@ function watch(cb) {
     browserSync.reload();
   });
 
-  gulp.watch(paths.src + '/svg/sprites/**/*.svg').on('all', (eventName, path) => {
+  gulp.watch(paths.src + '/svg/sprites/**/*.svg').on('all', (event, path) => {
     svgSprites();
-    switch (eventName) {
+    switch (event) {
       case 'change': console.log(path + ' changed and spritesheet modified'); break;
       case 'add': console.log(path + ' added to spritesheet'); break;
       case 'unlink': console.log(path + ' removed from spritesheet'); break;
