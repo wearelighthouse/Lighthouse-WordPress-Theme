@@ -35,29 +35,34 @@ $ cd wp-content/themes/ &&
   cd Lighthouse-Wordpress-Theme
 ```
 
-4. Create your own .env from .env.example - then edit it to change the database details.
+4. Fetch the fonts
+```
+$ ./assets/font/fetch.sh
+```
+
+5. Create your own .env from .env.example - then edit it to change the database details.
 ```
 $ cp .env.example .env
 ```
 
-4. Install PHP dependencies.
+6. Install PHP dependencies.
 ```
 $ composer install
 ```
 
-5. Install NPM dependencies.
+7. Install NPM dependencies.
 ```
 $ npm i
 ```
 
-6. Start the docker container. See the [Makefile](/Makefile) for other docker commands.
+8. Start the docker container. See the [Makefile](/Makefile) for other docker commands.
 ```
 $ make up
 ```
 
-7. Get browserSync running and watching for local file changes. For other build tasks, see [gulpfile.js](/gulpfile.js).
+9. Get browserSync running and watching for local file changes. For other build tasks, see [gulpfile.js](/gulpfile.js).
 ```
 $ npm run watch
 ```
 
-8. If required, go through the local WordPress installation. The `host` for your database is probably `db` not `localhost`. Then select the Lighthouse WordPress Theme in the themes menu.
+10. If required, go through the local WordPress installation. The `host` for your database is probably `db` not `localhost`. Then select the Lighthouse WordPress Theme in the themes menu.

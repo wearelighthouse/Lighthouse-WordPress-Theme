@@ -22,7 +22,7 @@ function clean(cb) {
 
 function fonts() {
   return gulp
-    .src(paths.src + '/font/*')
+    .src(paths.src + '/font/**/*')
     .pipe(gulp.dest(paths.dist + '/font'));
 }
 

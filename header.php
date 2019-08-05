@@ -13,6 +13,8 @@
   <meta name="description" content="<?= bloginfo('description') ?>">
   <?php wp_head(); ?>
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?= $dist ?>/font/sailec/sailec.css">
+  <link rel="stylesheet" type="text/css" href="<?= $dist ?>/font/tiempos/tiempos.css">
   <link rel="stylesheet" type="text/css" href="<?= $dist ?>/css/style.css">
 </head>
 

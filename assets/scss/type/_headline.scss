@@ -1,7 +1,12 @@
 
 .type-headline {
   @include fontScale(36, 72);
-  @extend %u-sosh;
-  font-weight: 700;
+  //@extend %u-sosh;
+
+  font-family: Sailec-Bold;
+	font-weight: normal;
+	font-style: normal;
+
+  //font-weight: 700;
   letter-spacing: .01389em;
 }
