@@ -1,0 +1,9 @@
+
+.type-inline-link-white {
+  @extend %u-sosh;
+
+  &:focus,
+  &:hover {
+    color: $color-orange;
+  }
+}

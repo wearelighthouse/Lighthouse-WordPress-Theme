@@ -1,0 +1,10 @@
+
+.s-inline-links {
+  overflow: auto;
+
+  &--white {
+    a {
+      @extend .type-inline-link-white;
+    }
+  }
+}
