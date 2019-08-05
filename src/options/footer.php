@@ -33,7 +33,7 @@ function registerFooterOptions()
         'name' => 'Copyright Text',
         'id'   => 'copyright',
         'type' => 'text',
-        'default' => 'Ⓒ 2019 Lighthouse London Studio Ltd'
+        'default' => '© 2019 Lighthouse London Studio Ltd'
     ]);
 
     $cmb->add_field([
