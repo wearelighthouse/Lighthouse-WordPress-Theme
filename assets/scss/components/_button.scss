@@ -35,10 +35,10 @@
   }
 
   &--underlined {
-    @extend .type-link;
+    @extend .type-cta;
     @extend %u-pos-relative;
+    @extend %u-bold;
     padding-bottom: 1rem;
-    font-weight: 700;
 
     $hLineWidth: 107px;
     $dLineWidth: 27px;

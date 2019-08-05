@@ -7,6 +7,7 @@
     h#{$level} {
       margin: 0;
 
+      // The dark colored text in the banners
       em {
         font-style: normal;
         color: $color-blackcurrant;
@@ -27,7 +28,7 @@
   }
 
   p {
-    @extend .type-p--large;
+    @extend .type-p;
     margin-bottom: 1rem;
   }
 

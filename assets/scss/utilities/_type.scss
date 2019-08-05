@@ -14,6 +14,11 @@
 }
 
 @include make-utility((
+  alias: bold,
+  font-weight: 500 // Actually "semibold", but avoids browsers trying to make bolder
+));
+
+@include make-utility((
   alias: underline,
   text-decoration: underline
 ));
@@ -24,8 +29,8 @@
 ));
 
 @include make-utility((
-  alias: sosh,
-  font-family: unquote('Sosh, sans-serif')
+  alias: sailec,
+  font-family: unquote('Sailec, sans-serif')
 ));
 
 @include make-utility((

@@ -15,10 +15,11 @@
   }
 
   &__nav {
-    @extend .type-link;
+    @extend .type-cta;
     @extend %u-flex;
     @extend %u-fw-wrap;
     @extend %u-mh--2;
+    font-size: 18px;
 
     ul {
       @extend %u-flex;

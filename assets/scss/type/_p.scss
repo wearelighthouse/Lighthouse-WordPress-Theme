@@ -2,13 +2,12 @@
 .type-p,
 .type-p--large,
 .type-p--small {
-  @extend %u-sosh;
-  letter-spacing: 1px;
+  @extend %u-sailec;
 }
 
 .type-p {
   @include fontScale(18, 20);
-  @include lineScale(32, 38);
+  @include lineScale(32, 34);
 }
 
 .type-p--large {
