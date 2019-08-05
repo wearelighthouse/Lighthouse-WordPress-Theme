@@ -87,7 +87,7 @@ function watch(cb) {
   gulp.watch(paths.src + '/scss/**/*.scss', scss);
 
   gulp.watch(paths.src + '/svg/single/**/*.svg').on('all', (event, path) => {
-    svgSprites();
+    svgs();
     switch (event) {
       case 'change': console.log(path + ' changed'); break;
       case 'add': console.log(path + ' added'); break;

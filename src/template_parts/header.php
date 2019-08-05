@@ -12,7 +12,7 @@
   <div class="c-header o-container-content">
 
     <a href="/" class="c-header__home-link">
-      <svg viewBox="0 0 150 28" style="display: block; width: 150px; height: 28px;">
+      <svg viewBox="0 0 150 38" style="display: block; width: 150px; height: 38px;">
         <use xlink:href="<?= get_template_directory_uri() ?>/dist/svg/lighthouse-logo.svg#a"></use>
       </svg>
     </a>

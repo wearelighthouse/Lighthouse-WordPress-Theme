@@ -12,6 +12,10 @@
     @extend %u-block;
     @extend .c-button--simple;
     @extend .c-button--simple--flipped;
+
+    &:after {
+      bottom: 3px; // Because it's a big SVG not text, move the underline up a bit
+    }
   }
 
   &__nav {
@@ -19,6 +23,7 @@
     @extend %u-flex;
     @extend %u-fw-wrap;
     @extend %u-mh--2;
+    margin-top: 5px; // Line up with Lighthouse logo text
     font-size: 18px;
 
     ul {
