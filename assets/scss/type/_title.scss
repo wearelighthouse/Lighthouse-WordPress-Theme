@@ -2,6 +2,6 @@
 .type-title {
   @include fontScale(26, 32);
   @extend %u-tiempos;
-  font-weight: semibold;
-  letter-spacing: .08em;
+  @extend %u-vbold;
+  letter-spacing: .03em;
 }
