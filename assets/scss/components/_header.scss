@@ -12,9 +12,10 @@
     @extend %u-block;
     @extend .c-button--simple;
     @extend .c-button--simple--flipped;
+    padding: 0; // Get rid of the button padding, as the SVG is a big anyway
 
     &:after {
-      bottom: 3px; // Because it's a big SVG not text, move the underline up a bit
+      bottom: -2px; // Because it's a big SVG not text, move the underline a bit
     }
   }
 
@@ -37,6 +38,10 @@
           // Set this here as it's tricky to get in the with WP menu PHP
           @extend .c-button--simple;
         }
+      }
+
+      .current-menu-item a {
+        @extend .c-button--simple--active;
       }
     }
   }

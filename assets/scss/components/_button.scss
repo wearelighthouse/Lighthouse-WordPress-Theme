@@ -7,13 +7,15 @@
 
   &--simple {
     @extend %u-pos-relative;
+    padding-top: 6px;
+    padding-bottom: 6px;
 
     &:after {
       @extend %u-pos-absolute;
       @extend %u-content;
       @extend %u-bg-color-white;
-      bottom: -2px;
-      left: 0;
+      @extend %u-bottom;
+      @extend %u-left;
       width: 0;
       height: 2px;
       transition: all $transition-fast;
@@ -31,6 +33,10 @@
     &--flipped:after {
       right: 0;
       left: auto;
+    }
+
+    &--active:after {
+      width: 100% !important; // Boo
     }
   }
 
