@@ -9,6 +9,7 @@
     @extend %u-pos-relative;
     padding-top: 6px;
     padding-bottom: 6px;
+    outline-offset: 3px;
 
     &:after {
       @extend %u-pos-absolute;
@@ -21,13 +22,26 @@
       transition: all $transition-fast;
     }
 
-    &:focus {
-      outline: 1px dotted $color-white;
-      outline-offset: 3px;
-    }
-
     &:hover:after {
       width: 1rem;
+    }
+
+    // Focus w/ keyboard
+    &.focus-visible {
+      outline: 1px dotted $color-white;
+
+      &:after {
+        width: 1rem;
+      }
+    }
+
+    // Focus w/ mouse not keyboard
+    &:focus:not(.focus-visible) {
+      outline: none;
+
+      &:after {
+        width: 100%;
+      }
     }
 
     &--flipped:after {

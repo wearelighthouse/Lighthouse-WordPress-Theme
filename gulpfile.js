@@ -115,6 +115,7 @@ function watch(cb) {
 exports.clean = clean;
 
 exports.watch = gulp.series(
+  clean,
   gulp.parallel(
     browserSyncInit,
     fonts,

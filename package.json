@@ -26,5 +26,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-svg-sprite": "^1.5.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "focus-visible": "^5.0.2"
+  }
 }
