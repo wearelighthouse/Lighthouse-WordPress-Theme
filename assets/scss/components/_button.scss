@@ -71,7 +71,6 @@
       @extend %u-left;
       @extend %u-content;
       @extend %u-width-100pc;
-      @extend %u-bg-color-gray;
       clip-path: polygon(
         0 0,
         calc(100% - 22px) 0,
@@ -93,16 +92,14 @@
     }
   }
 
-  &--underlined-dark {
-    &:after {
-      background-image: linear-gradient($color-blackcurrant, $color-blackcurrant);
-    }
+  &--underlined-dark:after {
+    @extend %u-bg-color-gray;
+    background-image: linear-gradient($color-blackcurrant, $color-blackcurrant);
   }
 
-  &--underlined-light {
-    &:after {
-      background-image: linear-gradient($color-orange, $color-orange);
-    }
+  &--underlined-light:after {
+    @extend %u-bg-color-white;
+    background-image: linear-gradient($color-orange, $color-orange);
   }
 
 }
