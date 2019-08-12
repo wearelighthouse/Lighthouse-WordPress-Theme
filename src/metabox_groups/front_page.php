@@ -12,9 +12,9 @@ function registerFrontPageMetaboxes()
 
     addMetaboxes($groupInfo, [
         'link_blocks',
-        'client_logos',
-        'cta_banner',
-        // Add another link_blocks here
+        'contact_us_banner',
+        // Add another link_blocks here (if/when we can do more than 1 link_blocks.
+        // Otherwise different metaboxes for the big case study links?)
     ], $groupID);
 
 }

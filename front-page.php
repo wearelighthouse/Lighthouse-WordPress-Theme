@@ -8,6 +8,8 @@
     <?php $globalLinkBlocks = getPostMeta('link_blocks_group')?>
     <?php include(locate_template('src/template_parts/link_blocks_grid.php')) ?>
 
+    <?php include(locate_template('src/template_parts/contact_us_banner.php')) ?>
+
   <?php endwhile; ?>
 </main>
 
