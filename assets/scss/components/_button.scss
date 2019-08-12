@@ -54,7 +54,16 @@
     }
   }
 
-  &--underlined {
+  &--underlined:after {
+    /* dev-only:start */
+    margin-left: .5ch;
+    font-family: monospace;
+    content: '- Use just c-button--underlined-dark or c-button--underlined-light!';
+    /* dev-only:end */
+  }
+
+  &--underlined-light,
+  &--underlined-dark {
     @extend .type-cta;
     @extend %u-pos-relative;
     padding-bottom: 1.5rem; // Enough space for the underline
@@ -77,14 +86,26 @@
         0 0
       );
       height: 10px;
-      background-image: linear-gradient($color-blackcurrant, $color-blackcurrant);
       background-repeat: no-repeat;
       background-size: 0% 100%;
       transition: .2s background-size;
     }
 
+    &:focus:after,
     &:hover:after {
       background-size: 100% 100%;
+    }
+  }
+
+  &--underlined-dark {
+    &:after {
+      background-image: linear-gradient($color-blackcurrant, $color-blackcurrant);
+    }
+  }
+
+  &--underlined-light {
+    &:after {
+      background-image: linear-gradient($color-orange, $color-orange);
     }
   }
 

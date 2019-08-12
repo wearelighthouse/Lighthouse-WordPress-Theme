@@ -1,0 +1,10 @@
+
+.c-cta-banner {
+  @extend %u-bg-color-blackcurrant;
+  @extend %u-color-white;
+
+  &__button {
+    @extend %u-inline-flex;
+    @extend %u-mt-8;
+  }
+}

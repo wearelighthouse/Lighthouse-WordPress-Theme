@@ -23,6 +23,7 @@
     "del": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
+    "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-svg-sprite": "^1.5.0"
   },

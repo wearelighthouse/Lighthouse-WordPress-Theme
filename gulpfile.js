@@ -2,6 +2,7 @@ const browserSync = require('browser-sync').create();
 const cleanCSS = require('gulp-clean-css');
 const del = require('del');
 const gulp = require('gulp');
+const replace = require('gulp-replace');
 const sass = require('gulp-sass');
 const svgSprite = require('gulp-svg-sprite');
 
@@ -47,9 +48,15 @@ function scss() {
     .pipe(browserSync.stream());
 }
 
+/**
+ * Minifies CSS, and removes any _rules_ (not classes!) between:
+ * 'dev-only:start' and 'dev-only:end' tags.
+ */
 function cssMinifiy() {
+  replaceRegex = /(\/\* dev-only:start \*\/[^]*\/\* dev-only:end \*\/)/g;
   return gulp
     .src(paths.dist + '/css/*.css')
+    .pipe(replace(replaceRegex, ''))
     .pipe(cleanCSS({debug: true}, (details) => {
       var originalSize = Math.round(details.stats.originalSize / 1000) + 'KB';
       var minifiedSize = Math.round(details.stats.minifiedSize / 1000) + 'KB';

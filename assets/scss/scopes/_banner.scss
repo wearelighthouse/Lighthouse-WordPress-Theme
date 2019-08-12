@@ -1,6 +1,5 @@
 
 .s-banner {
-
   @extend %u-color-white;
 
   @for $level from 1 through 5 {
@@ -20,11 +19,15 @@
   }
 
   h2 {
-    @extend .type-subtitle;
+    @extend .type-headline; // It's basically a headline, but not a -plz-only-1-h1-
   }
 
   h3 {
+    @extend .type-title;
+  }
 
+  h4 {
+    @extend .type-subtitle;
   }
 
   p {
