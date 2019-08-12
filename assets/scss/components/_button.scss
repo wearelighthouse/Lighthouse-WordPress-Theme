@@ -54,12 +54,8 @@
     }
   }
 
-  &--underlined:after {
-    /* dev-only:start */
-    margin-left: .5ch;
-    font-family: monospace;
-    content: '- Use just c-button--underlined-dark or c-button--underlined-light!';
-    /* dev-only:end */
+  &--underlined {
+    @include error('Use c-button--underlined-dark or c-button--underlined-light, instead of c-button--underlined');
   }
 
   &--underlined-light,

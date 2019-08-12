@@ -53,10 +53,9 @@ function scss() {
  * 'dev-only:start' and 'dev-only:end' tags.
  */
 function cssMinifiy() {
-  replaceRegex = /(\/\* dev-only:start \*\/[^]*\/\* dev-only:end \*\/)/g;
   return gulp
     .src(paths.dist + '/css/*.css')
-    .pipe(replace(replaceRegex, ''))
+    .pipe(replace(/(\/\* dev-only:start \*\/[^]*\/\* dev-only:end \*\/)/g, ''))
     .pipe(cleanCSS({debug: true}, (details) => {
       var originalSize = Math.round(details.stats.originalSize / 1000) + 'KB';
       var minifiedSize = Math.round(details.stats.minifiedSize / 1000) + 'KB';

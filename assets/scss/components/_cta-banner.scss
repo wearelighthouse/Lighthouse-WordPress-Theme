@@ -5,6 +5,7 @@
 
   &__button {
     @extend %u-inline-flex;
+    @extend %u-fw-wrap;
     @extend %u-mt-8;
   }
 }
