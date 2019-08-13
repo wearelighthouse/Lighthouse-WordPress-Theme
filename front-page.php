@@ -10,6 +10,8 @@
 
     <?php include(locate_template('src/template_parts/contact_us_banner.php')) ?>
 
+    <div class="placeholder" style="height: 200px;"></div>
+
   <?php endwhile; ?>
 </main>
 

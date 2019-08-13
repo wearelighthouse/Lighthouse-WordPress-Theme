@@ -16,10 +16,18 @@
     }
   }
 
+  &__text {
+    br {
+      @extend %u-display-none--upto-large;
+    }
+  }
+
   &__button {
     @extend %u-inline-flex;
     @extend %u-fw-wrap;
-    @extend %u-mt-8;
+    @extend %u-mb-6--upto-medium;
+    @extend %u-mt-4--upto-medium;
+    @extend %u-mt-8--from-medium;
   }
 
   &__clients {
