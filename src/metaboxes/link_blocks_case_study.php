@@ -1,49 +1,35 @@
 <?php
 
 return [
-    'title' => 'Link Blocks',
+    'title' => 'Case Study Link Blocks',
     'fields' => [
         [
             'id' => 'group',
             'type' => 'group',
             'options' => [
-                'group_title'   => 'Link Block {#}',
-                'add_button'    => 'Add New Link Block',
-                'remove_button' => 'Remove Link Block',
+                'group_title'   => 'Case Study {#}',
+                'add_button'    => 'Add New Case Study',
+                'remove_button' => 'Remove Case Study',
                 'sortable'      => true
             ],
             'sub_fields' => [
                 [
-                    'name'    => 'Type',
-                    'id'      => 'type',
-                    'type'    => 'radio_inline',
-                    'default' => 'case-study',
-                    'options' => [
-                        'case-study' => 'Case Study',
-                        'service' => 'Service'
-                    ]
-                ],
-                [
-                    'name' => 'Logo',
+                    'name' => 'Client Logo',
                     'id'   => 'logo',
                     'type' => 'file',
-                    'desc' => 'Client logos or Service icons. Preferably SVGs compressed with <a href="https://jakearchibald.github.io/svgomg" target="_blank">jakearchibald.github.io/svgomg</a>.'
+                    'desc' => 'Preferably <a href="https://jakearchibald.github.io/svgomg" target="_blank">compressed SVGs</a>.'
                 ],
                 [
                     'name' => 'Title',
                     'id'   => 'title',
-                    'type' => 'text'
-                ],
-                [
-                    'name' => 'Description',
-                    'id'   => 'description',
                     'type' => 'textarea_small'
                 ],
                 [
                     'name'    => 'Link Text',
                     'id'      => 'link_text',
                     'default' => 'Find out more',
-                    'type'    => 'text_medium'
+                    'type'    => 'text_medium',
+                    'desc'    => 'Only visible for large Case Study Link Blocks on desktop.'
                 ],
                 [
                     'name' => 'Link URL',
@@ -63,16 +49,10 @@ return [
                     'desc' => 'Foreground image positioned on top of the gray backgrounded Link Block'
                 ],
                 [
-                    'name' => 'Illustration BG [mobile]',
-                    'id'   => 'image_bg_small',
-                    'type' => 'file',
-                    'desc' => 'Mobile (small) version of the Illusatration background'
-                ],
-                [
-                    'name' => 'Illustration FG [mobile]',
+                    'name' => 'Illustration [Mobile]',
                     'id'   => 'image_fg_small',
                     'type' => 'file',
-                    'desc' => 'Mobile (small) version of the Illusatration foreground'
+                    'desc' => 'Mobile (small) version of the Illusatration'
                 ]
             ]
         ]
