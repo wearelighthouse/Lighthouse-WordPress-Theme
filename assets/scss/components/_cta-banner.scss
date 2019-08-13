@@ -3,6 +3,38 @@
   @extend %u-bg-color-blackcurrant;
   @extend %u-color-white;
 
+  // The fancy background:
+
+  @extend %u-pos-relative;
+  @extend %u-ov-hidden;
+
+  &:before,
+  &:after {
+    @extend %u-content;
+    @extend %u-pos-absolute;
+  }
+
+  &:before {
+    @extend %u-top;
+    @extend %u-left;
+    width: 67vmax;
+    height: 67vmax;
+    background: linear-gradient(90deg, rgba($color-white, 0), rgba($color-white, .1));
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &:after {
+    @extend %u-right;
+    @extend %u-round;
+    top: 20rem;
+    width: 70vmax;
+    height: 70vmax;
+    background: linear-gradient(90deg, rgba($color-white, 0), rgba($color-white, .2));
+    transform: translate(calc(50% - 27vw), -20vw);
+  }
+
+  // End fancy background
+
   $self: &;
 
   &__inner {
@@ -35,7 +67,7 @@
     @extend %u-fw-wrap;
     @extend %u-ai-center;
     @extend %u-jc-center;
-    @extend %u-mr--2;
+    @extend %u-mr--2--from-medium;
 
     &__img-container {
       @extend %u-inline-flex;
