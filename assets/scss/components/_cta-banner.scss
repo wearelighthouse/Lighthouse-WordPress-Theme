@@ -17,8 +17,8 @@
   &:before {
     @extend %u-top;
     @extend %u-left;
-    width: 67vmax;
-    height: 67vmax;
+    width: calc(17rem + 50vw);
+    height: calc(17rem + 50vw);
     background: linear-gradient(90deg, rgba($color-white, 0), rgba($color-white, .1));
     transform: translate(-50%, -50%) rotate(45deg);
   }
@@ -27,10 +27,10 @@
     @extend %u-right;
     @extend %u-round;
     top: 20rem;
-    width: 70vmax;
-    height: 70vmax;
-    background: linear-gradient(90deg, rgba($color-white, 0), rgba($color-white, .2));
-    transform: translate(calc(50% - 27vw), -20vw);
+    width: calc(35rem + 26vw);
+    height: calc(35rem + 26vw);
+    background: linear-gradient(90deg, rgba($color-white, 0), rgba($color-white, .25));
+    transform: translate(calc(50% - 25vw), -20vw) rotate(15deg);
   }
 
   // End fancy background
@@ -57,7 +57,7 @@
   &__button {
     @extend %u-inline-flex;
     @extend %u-fw-wrap;
-    @extend %u-mb-6--upto-medium;
+    @extend %u-mb-8--upto-medium;
     @extend %u-mt-4--upto-medium;
     @extend %u-mt-8--from-medium;
   }
