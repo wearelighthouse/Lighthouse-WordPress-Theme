@@ -1,10 +1,12 @@
 
 @include make-utility((
-  alias: 'width-100' + $global-unit-percent,
-  class: true,
-  width: 100%
-));
-
-@include make-utility((
   width: 1px
 ));
+
+@each $value in (50, 100) {
+  @include make-utility((
+    alias: 'width-' + $value + $global-unit-percent,
+    class: true,
+    width: $value * 1%
+  ));
+}

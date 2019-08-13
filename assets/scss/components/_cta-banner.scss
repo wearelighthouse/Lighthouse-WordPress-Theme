@@ -3,9 +3,45 @@
   @extend %u-bg-color-blackcurrant;
   @extend %u-color-white;
 
+  $self: &;
+
+  &__inner {
+    @extend %u-flex;
+    @extend %u-ai-center;
+    @extend %u-jc-space-between--from-medium;
+    @extend %u-fd-column--upto-medium;
+
+    & > * {
+      @extend %u-width-50pc--from-medium;
+    }
+  }
+
   &__button {
     @extend %u-inline-flex;
     @extend %u-fw-wrap;
     @extend %u-mt-8;
+  }
+
+  &__clients {
+    @extend %u-flex;
+    @extend %u-fw-wrap;
+    @extend %u-ai-center;
+    @extend %u-jc-center;
+    @extend %u-mr--2;
+
+    &__img-container {
+      @extend %u-inline-flex;
+      @extend %u-ai-center;
+      @extend %u-jc-center;
+      flex-basis: 30%;
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+
+    &__img {
+      //@extend %u-mh-6; // Controlled by flexyness?
+      @extend %u-mh-2;
+      @extend %u-mv-4;
+    }
   }
 }

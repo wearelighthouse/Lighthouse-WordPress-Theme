@@ -35,16 +35,10 @@ return [
             ],
             'sub_fields' => [
                 [
-                    'name' => 'Client Name',
-                    'id'   => 'name',
-                    'type' => 'text',
-                    'desc' => 'Used for screen reader and SEO-ey text'
-                ],
-                [
                     'name' => 'Logo',
                     'id'   => 'logo',
                     'type' => 'file',
-                    'desc' => 'Preferably SVGs compressed with <a href="https://jakearchibald.github.io/svgomg" target="_blank">jakearchibald.github.io/svgomg</a>.'
+                    'desc' => 'Preferably <a href="https://jakearchibald.github.io/svgomg" target="_blank">compressed SVGs</a>. With alt tags e.g. \'KPMG\' or \'V&A\''
                 ]
             ]
         ]
