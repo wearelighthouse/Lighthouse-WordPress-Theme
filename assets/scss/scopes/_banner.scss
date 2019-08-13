@@ -39,4 +39,8 @@
     text-decoration: underline;
   }
 
+  br {
+    @extend %u-display-none--upto-medium;
+  }
+
 }

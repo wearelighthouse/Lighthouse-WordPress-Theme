@@ -6,6 +6,38 @@
   @extend .o-section-clip--corner-top-right;
   @extend .o-section-clip--no-mobile;
 
+  // The fancy background:
+
+  @extend %u-pos-relative;
+  @extend %u-ov-hidden;
+
+  &:before,
+  &:after {
+    @extend %u-content;
+    @extend %u-pos-absolute;
+  }
+
+  &:before {
+    @extend %u-bottom;
+    @extend %u-left;
+    @extend %u-round;
+    width: calc(17rem + 45vw);
+    height: calc(17rem + 45vw);
+    background: linear-gradient(90deg, rgba($color-white, 0), rgba($color-white, .12));
+    transform: translate(-5%, 45%) rotate(30deg);
+  }
+
+  &:after {
+    @extend %u-right;
+    top: 20rem;
+    width: calc(30rem + 20vw);
+    height: calc(30rem + 20vw);
+    background: linear-gradient(rgba($color-white, .01), rgba($color-white, .5));
+    transform: translate(calc(50% - 10vw), -35vw) rotate(-135deg);
+  }
+
+  // End fancy background
+
   &__main-content {
     @extend %u-mt-2;
   }
