@@ -40,19 +40,19 @@ return [
                     'name' => 'Illustration BG [desktop]',
                     'id'   => 'image_bg_large',
                     'type' => 'file',
-                    'desc' => 'Background image that sits inside the gray backgrounded Link Block Illustration.'
+                    'desc' => 'Background image that sits inside the gray background section.'
                 ],
                 [
                     'name' => 'Illustration FG [desktop]',
                     'id'   => 'image_fg_large',
                     'type' => 'file',
-                    'desc' => 'Foreground image positioned on top of the gray backgrounded Link Block'
+                    'desc' => 'Foreground image positioned on top of the gray backgrounded section'
                 ],
                 [
-                    'name' => 'Illustration [Mobile]',
+                    'name' => 'Illustration [mobile]',
                     'id'   => 'image_fg_small',
                     'type' => 'file',
-                    'desc' => 'Mobile (small) version of the Illusatration'
+                    'desc' => 'Mobile (small) version of the foreground illustration'
                 ],
                 [
                     'name' => 'Display Size',

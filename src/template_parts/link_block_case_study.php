@@ -19,17 +19,17 @@
 <div class="c-link-block c-link-block--case-study <?= $sizeClass ?>">
   <div class="c-link-block__background">
     <?php if ($bgImg) : ?>
-      <?= wp_get_attachment_image($imageID, $size = 'case-study-bg-large') ?>
+      <?= wp_get_attachment_image($imageID, $size = 'link-block-case-study-bg-large') ?>
     <?php endif; ?>
   </div>
   <?php if ($fgImgLarge) : ?>
     <div class="c-link-block__foreground-image-large">
-      <?= wp_get_attachment_image($imageID, $size = 'case-study-fg-large') ?>
+      <?= wp_get_attachment_image($imageID, $size = 'link-block-case-study-fg-large') ?>
     </div>
   <?php endif; ?>
   <?php if ($fgImgSmall) : ?>
     <div class="c-link-block__foreground-image-small">
-      <?= wp_get_attachment_image($imageID, $size = 'case-study-fg-small') ?>
+      <?= wp_get_attachment_image($imageID, $size = 'link-block-case-study-fg-small') ?>
     </div>
   <?php endif; ?>
   <div class="c-link-block__content">
