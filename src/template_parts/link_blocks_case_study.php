@@ -5,9 +5,12 @@
 
   pr("test");
 
+  pr($globalLinkBlocksCaseStudy);
+
 ?>
 
 <?php if ($caseStudies && is_array($caseStudies)) : ?>
+  <?php pr("test2"); ?>
   <section class="o-container-section o-container-section--h-bordered">
     <div class="o-container-content o-container-content--v-pad o-container-link-blocks o-container-link-blocks--grid">
       <?php foreach ($caseStudies as $caseStudy) : ?>

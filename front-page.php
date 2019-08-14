@@ -11,7 +11,8 @@
     <?php include(locate_template('src/template_parts/contact_us_banner.php')) ?>
 
     <?php $globalLinkBlocksCaseStudy = getPostMeta('link_blocks_case_study_group') ?>
-    <?php includeTemplate('src/template_parts/link_blocks_case_study.php') ?>
+    <?php pr($globalLinkBlocksCaseStudy); ?>
+    <?php include(locate_template('src/template_parts/link_blocks_case_study.php')) ?>
 
     <div class="placeholder" style="height: 200px;"></div>
 
