@@ -22,7 +22,7 @@ return [
                 [
                     'name' => 'Title',
                     'id'   => 'title',
-                    'type' => 'textarea_small'
+                    'type' => 'text'
                 ],
                 [
                     'name'    => 'Link Text',

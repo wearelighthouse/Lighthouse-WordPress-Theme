@@ -3,6 +3,8 @@
   // There should be a global variable of sorts with some link blocks in
   $caseStudies = $globalLinkBlocksCaseStudy; // ?
 
+  pr("test");
+
 ?>
 
 <?php if ($caseStudies && is_array($caseStudies)) : ?>

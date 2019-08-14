@@ -6,6 +6,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 // Functions
 require_once __DIR__ . '/src/functions/autoa.php';
 require_once __DIR__ . '/src/functions/get_option.php';
+require_once __DIR__ . '/src/functions/include_template.php';
 require_once __DIR__ . '/src/functions/menus.php';
 require_once __DIR__ . '/src/functions/metaboxes.php';
 require_once __DIR__ . '/src/functions/plugins.php';
@@ -41,9 +42,3 @@ function admin_script()
   wp_enqueue_script('admin-script', get_template_directory_uri() . '/admin.js');
 }
 add_action('admin_enqueue_scripts', 'admin_script');
-
-// Shorthand for include(locate_template('...'))
-function includeTemplate($path)
-{
-  return include(locate_template($path));
-}
