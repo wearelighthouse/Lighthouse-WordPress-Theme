@@ -8,10 +8,11 @@
 @mixin error($message) {
   &:after {
     /* dev-only:start */
-    width: 100%;
-    font-family: monospace;
-    font-size: 14px;
-    content: 'Error: ' + $message;
+    clip-path: none !important;
+    width: 100% !important;
+    font-family: monospace !important;
+    font-size: 14px !important;
+    content: 'Error: ' + $message !important;
     /* dev-only:end */
   }
 }

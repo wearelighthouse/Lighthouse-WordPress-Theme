@@ -4,23 +4,70 @@
   @extend %u-fd-column;
   @extend %u-ai-flex-start;
   @extend %u-mv-5--upto-medium;
-  @extend %u-pr-8--from-medium;
 
-  &__title {
-    margin-top: 1.2em;
-    margin-bottom: 1em;
-  }
-
-  &__desc {
-    margin-top: 0;
-    margin-bottom: 1em; // Plus margins from <p>s inside
-
-    p:first-of-type {
-      margin-top: 0;
-    }
-  }
+  $self: &;
 
   &__link {
     @extend %u-mt-auto;
+  }
+
+  &--service {
+    @extend %u-pr-8--from-medium;
+
+    #{$self}__title {
+      margin-top: 1.2em;
+      margin-bottom: 1em;
+    }
+
+    #{$self}__desc {
+      margin-top: 0;
+      margin-bottom: 1em; // Plus margins from <p>s inside
+
+      p:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &--case-study {
+    @extend %u-pos-relative;
+    @extend %u-color-blackcurrant;
+
+    #{$self}__title {
+      margin-top: 1em;
+      margin-bottom: 2em;
+    }
+
+    #{$self}__logo {
+      @extend %u-bg-color-currentColor;
+    }
+
+    // Gray background
+    #{$self}__background {
+      @extend %u-content;
+      @extend %u-pos-absolute;
+      @extend %u-top;
+      @extend %u-left;
+      @extend %u-bg-color-gray-light;
+      @extend %u-z-index--1;
+    }
+  }
+
+  &--case-study--large {
+    @extend %u-width-100pc;
+    @extend %u-flex;
+    @extend %u-jc-center;
+    height: 30rem;
+
+    #{$self}__content {
+      max-width: 25rem;
+      margin-left: calc(50% + 3rem);
+    }
+
+    // Gray background + image
+    #{$self}__background {
+      width: calc(50% + 6rem);
+      height: 100%;
+    }
   }
 }

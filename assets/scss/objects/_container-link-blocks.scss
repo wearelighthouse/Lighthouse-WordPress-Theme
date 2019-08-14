@@ -1,6 +1,11 @@
 
 .o-container-link-blocks {
 
+  &--flex {
+    @extend %u-flex;
+    @extend %u-fw-wrap;
+  }
+
   &--grid {
     @extend %u-flex--upto-medium;
     @extend %u-fd-column--upto-medium;

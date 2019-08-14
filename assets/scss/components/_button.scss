@@ -55,7 +55,7 @@
   }
 
   &--underlined {
-    @include error('Use c-button--underlined-dark or c-button--underlined-light, instead of c-button--underlined');
+    @include error('Use just c-button--underlined-dark or c-button--underlined-light, instead of c-button--underlined');
   }
 
   &--underlined-light,
