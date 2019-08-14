@@ -2,6 +2,8 @@
 .o-container-link-blocks {
 
   &--grid {
+    @extend %u-flex--upto-medium;
+    @extend %u-fd-column--upto-medium;
     @extend %u-grid--from-medium;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 1rem;

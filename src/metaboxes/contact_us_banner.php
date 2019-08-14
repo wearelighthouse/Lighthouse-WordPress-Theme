@@ -38,7 +38,7 @@ return [
                     'name' => 'Logo',
                     'id'   => 'logo',
                     'type' => 'file',
-                    'desc' => 'Preferably <a href="https://jakearchibald.github.io/svgomg" target="_blank">compressed SVGs</a>. With alt tags e.g. \'KPMG\' or \'V&A\''
+                    'desc' => '<a href="https://jakearchibald.github.io/svgomg" target="_blank">Compressed</a> SVGs that include stroke or fill color. With alt tags e.g. \'KPMG\' or \'V&A\''
                 ]
             ]
         ]

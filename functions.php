@@ -41,3 +41,9 @@ function admin_script()
   wp_enqueue_script('admin-script', get_template_directory_uri() . '/admin.js');
 }
 add_action('admin_enqueue_scripts', 'admin_script');
+
+// Shorthand for include(locate_template('...'))
+function includeTemplate($path)
+{
+  return include(locate_template($path));
+}

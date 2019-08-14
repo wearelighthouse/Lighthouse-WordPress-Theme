@@ -53,6 +53,16 @@ return [
                     'id'   => 'image_fg_small',
                     'type' => 'file',
                     'desc' => 'Mobile (small) version of the Illusatration'
+                ],
+                [
+                    'name' => 'Display Size',
+                    'id'   => 'size',
+                    'type' => 'radio_inline',
+                    'options' => [
+                        'small' => 'Small',
+                        'large' => 'Large'
+                    ],
+                    'default' => 'small'
                 ]
             ]
         ]

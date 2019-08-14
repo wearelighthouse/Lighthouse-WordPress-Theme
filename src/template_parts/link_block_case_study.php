@@ -1,16 +1,16 @@
 <?php
-  $type = isset($linkBlock['type']) ? $linkBlock['type'] : '';
   $classes = $type ? 'c-link-block--' . $type : '';
-  $logo = isset($linkBlock['logo']) ? $linkBlock['logo'] : false;
+  $icon = isset($linkBlock['icon']) ? $linkBlock['icon'] : false;
   $title = isset($linkBlock['title']) ? $linkBlock['title'] : '';
   $desc = isset($linkBlock['description']) ? $linkBlock['description'] : '';
   $linkText = isset($linkBlock['link_text']) ? $linkBlock['link_text'] : '';
   $linkURL = isset($linkBlock['link_url']) ? $linkBlock['link_url'] : '';
+  $size = isset($linkBlock['size']) ? $linkBlock['size'] : '';
 ?>
 
 <div class="c-link-block <?= $classes ?>">
-  <?php if ($logo) : ?>
-    <img class="c-link-block__service-logo" src="<?= $logo ?>"/>
+  <?php if ($icon) : ?>
+    <img class="c-link-block__service-logo" src="<?= $icon ?>"/>
   <?php endif; ?>
   <?php if ($title) : ?>
     <h3 class="c-link-block__title type-title">
