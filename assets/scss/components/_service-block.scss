@@ -1,0 +1,35 @@
+
+.c-service-block {
+  @extend %u-flex;
+  @extend %u-fd-column;
+  @extend %u-ai-flex-start;
+  @extend %u-mv-5--upto-medium;
+  @extend %u-pr-8--from-medium;
+
+  $self: &;
+
+  &__link {
+    @extend %u-mt-auto;
+  }
+
+  &__title {
+    margin-top: 1.2em;
+    margin-bottom: 1em;
+  }
+
+  &__desc {
+    margin-bottom: 2em;
+
+    *:first-child {
+      margin-top: 0;
+    }
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
