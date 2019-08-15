@@ -7,3 +7,13 @@
     color: $color-orange;
   }
 }
+
+.type-inline-link-orange {
+  @extend %u-sailec;
+  @extend %u-color-orange;
+
+  &:focus,
+  &:hover {
+    @extend %u-underline;
+  }
+}

@@ -35,10 +35,6 @@
     margin-bottom: 1rem;
   }
 
-  a {
-    text-decoration: underline;
-  }
-
   br {
     @extend %u-display-none--upto-medium;
   }
