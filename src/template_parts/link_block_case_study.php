@@ -11,8 +11,8 @@
   $linkURL = isset($caseStudy['link_url']) ? $caseStudy['link_url'] : '';
   $bgImg = isset($caseStudy['image_bg_large']) ? $caseStudy['image_bg_large'] : false;
   $bgImgId = $bgImg ? $caseStudy['image_bg_large_id'] : false;
-  $fgImgLarge = isset($caseStudy['image_fg_large']) ? $caseStudy['image_fg_large'] : false;
-  $fgImgSmall = isset($caseStudy['image_fg_small']) ? $caseStudy['image_fg_small'] : false;
+  $fgImgLargeId = isset($caseStudy['image_fg_large_id']) ? $caseStudy['image_fg_large_id'] : false;
+  $fgImgSmallId = isset($caseStudy['image_fg_small_id']) ? $caseStudy['image_fg_small_id'] : false;
   $size = isset($caseStudy['size']) ? $caseStudy['size'] : '';
   $sizeClass = $size && $size === 'large' ? 'c-link-block--case-study--large' : 'c-link-block--case-study--small';
 ?>
@@ -20,23 +20,25 @@
 <div class="c-link-block c-link-block--case-study <?= $sizeClass ?>">
   <div class="c-link-block__background">
     <?php if ($bgImg) : ?>
-      <?= wp_get_attachment_image($bgImgId, $size = 'link-block-case-study-bg-large') ?>
+      <div class="c-link-block__background-image">
+        <?= wp_get_attachment_image($bgImgId, $size = 'link-block-case-study-bg-large') ?>
+      </div>
+    <?php endif; ?>
+    <?php if ($fgImgLargeId) : ?>
+      <div class="c-link-block__foreground-image-large">
+        <?= wp_get_attachment_image($fgImgLargeId, $size = 'link-block-case-study-fg-large') ?>
+      </div>
     <?php endif; ?>
   </div>
-  <?php if ($fgImgLarge) : ?>
-    <div class="c-link-block__foreground-image-large">
-      <?= wp_get_attachment_image($imageID, $size = 'link-block-case-study-fg-large') ?>
-    </div>
-  <?php endif; ?>
-  <?php if ($fgImgSmall) : ?>
-    <div class="c-link-block__foreground-image-small">
-      <?= wp_get_attachment_image($imageID, $size = 'link-block-case-study-fg-small') ?>
-    </div>
-  <?php endif; ?>
   <div class="c-link-block__content">
     <?php if ($logoSrc) : ?>
       <div class="c-link-block__logo"
            style="<?= $logoMask ?>">
+      </div>
+    <?php endif; ?>
+    <?php if ($fgImgSmallId) : ?>
+      <div class="c-link-block__foreground-image-small">
+        <?= wp_get_attachment_image($fgImgSmallId, $size = 'link-block-case-study-fg-small') ?>
       </div>
     <?php endif; ?>
     <?php if ($title) : ?>

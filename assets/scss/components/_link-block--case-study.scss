@@ -4,10 +4,11 @@
 
   @extend %u-pos-relative;
   @extend %u-color-blackcurrant;
-  @extend %u-pv-4--upto-small;
+  @extend %u-pv-5--upto-small;
 
   #{$self}__title {
-    @extend %u-mt-3;
+    @extend %u-mt-6--upto-small;
+    @extend %u-mt-4--from-small;
   }
 
   #{$self}__logo {
@@ -16,10 +17,19 @@
 
   // Gray background
   #{$self}__background {
-    @extend %u-content;
     @extend %u-pos-absolute;
-    @extend %u-bg-color-gray-light;
     @extend %u-z-index--1;
+
+    &:before {
+      @extend %u-content;
+      @extend %u-pos-absolute;
+      @extend %u-bg-color-gray-light;
+      @extend %u-top;
+      @extend %u-right;
+      @extend %u-bottom;
+      @extend %u-left;
+      @extend %u-z-index--1;
+    }
   }
 }
 
@@ -29,7 +39,9 @@
   @extend %u-width-100pc;
   @extend %u-flex;
   @extend %u-jc-center;
-  @extend %u-mv-6;
+  @extend %u-mt-12--upto-small;
+  @extend %u-mb-6--from-small;
+  // mt--from-small is in breakpoint(from-small) because it's 'uge
 
   #{$self}__title {
     // This flips between being a link and not being a link on desktop/mobile
@@ -58,6 +70,7 @@
   }
 
   #{$self}__content {
+    @extend %u-pos-relative;
     @extend %u-mh-auto--upto-small;
 
     @include breakpoint(upto-small) {
@@ -68,12 +81,19 @@
     }
   }
 
-  // Gray background + image
+  // Gray contains the grey background and bg & fg images
   #{$self}__background {
     @extend %u-height-100pc--upto-small;
     @extend %u-width-100pc--upto-small;
     @extend %u-flex;
     @extend %u-ai-center;
+
+    img {
+      @extend %u-block;
+    }
+  }
+
+  #{$self}__background-image {
 
     img {
       @extend %u-display-none--upto-small;
@@ -83,13 +103,46 @@
     }
   }
 
+  // Floaty on top image
+  #{$self}__foreground-image-large {
+    @extend %u-display-none--upto-small;
+    @extend %u-flex--from-small;
+    @extend %u-ai-flex-end;
+    @extend %u-pos-absolute;
+    @extend %u-top;
+    width: 100%;
+    max-width: 872px;
+    height: calc(100% + 2rem);
+    margin-top: -5rem;
+
+    img {
+      @extend %u-width-100pc;
+      max-width: 410px;
+      height: auto;
+      margin-right: 8%;
+      margin-left: 8%;
+    }
+  }
+
+  #{$self}__foreground-image-small {
+    @extend %u-display-none--from-small;
+    @extend %u-pos-absolute;
+    @extend %u-right;
+    top: -5.25rem; // TODO: un-magic-ify this number if possible
+
+    img {
+      width: 125px;
+      height: 125px;
+    }
+  }
+
   @include breakpoint(from-small) {
-    height: 30rem;
+    height: 31rem;
+    margin-top: 7rem;
 
     #{$self}__background {
-      top: 2rem;
       width: calc(50% + 8rem);
-      height: calc(100% - 2rem);
+      height: 100%;
     }
 
     &:nth-child(odd) {
@@ -99,15 +152,23 @@
 
       #{$self}__background {
         left: 0;
-        clip-path: polygon(
-          0 0,
-          100% 0,
-          100% 64px,
-          calc(100% - 32px) 100%,
-          0 100%,
-          0 0
-        );
         justify-content: flex-end; // Keep bg image near center of screen
+
+        &:before {
+          clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 82px,
+            calc(100% - 48px) 100%,
+            0 100%,
+            0 0
+          );
+        }
+      }
+
+      #{$self}__foreground-image-large {
+        padding-right: 3rem;
+        box-sizing: border-box;
       }
     }
 
@@ -124,16 +185,22 @@
 
       #{$self}__background {
         right: 0;
-        clip-path: polygon(
-          0 0,
-          100% 0,
-          100% 64px,
-          100% 100%,
-          32px 100%,
-          0 64px,
-          0 0
-        );
         justify-content: flex-start; // Keep bg image near center of screen
+
+        &:before {
+          clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            48px 100%,
+            0 82px,
+            0 0
+          );
+        }
+      }
+
+      #{$self}__foreground-image-large {
+        justify-content: flex-end;
       }
     }
   }
