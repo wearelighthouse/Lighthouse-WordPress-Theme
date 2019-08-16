@@ -5,13 +5,13 @@
 
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
-    <?php $globalLinkBlocksService = getPostMeta('link_blocks_service_group') ?>
-    <?php include(locate_template('src/template_parts/link_blocks_service_grid.php')) ?>
+    <?php $globalBlocksService = getPostMeta('blocks_service_group') ?>
+    <?php include(locate_template('src/template_parts/blocks_service_grid.php')) ?>
 
     <?php include(locate_template('src/template_parts/contact_us_banner.php')) ?>
 
-    <?php $globalLinkBlocksCaseStudy = getPostMeta('link_blocks_case_study_group') ?>
-    <?php include(locate_template('src/template_parts/link_blocks_case_study.php')) ?>
+    <?php $globalBlocksCaseStudy = getPostMeta('blocks_case_study_group') ?>
+    <?php include(locate_template('src/template_parts/blocks_case_study.php')) ?>
 
     <div class="placeholder" style="height: 200px;"></div>
 

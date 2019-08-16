@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Service Link Blocks',
+    'title' => 'Service Blocks',
     'fields' => [
         [
             'id' => 'group',

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Case Study Link Blocks',
+    'title' => 'Case Study Blocks',
     'fields' => [
         [
             'id' => 'group',

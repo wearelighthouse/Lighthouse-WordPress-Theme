@@ -12,9 +12,9 @@ function registerFrontPageMetaboxes()
 
     addMetaboxes($groupInfo, [
         //'link_blocks', // Renamed to "services"
-        'link_blocks_service',
+        'blocks_service',
         'contact_us_banner',
-        'link_blocks_case_study'
+        'blocks_case_study'
         //
     ], $groupID);
 
