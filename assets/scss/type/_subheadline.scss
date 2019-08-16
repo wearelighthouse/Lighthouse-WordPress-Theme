@@ -1,0 +1,8 @@
+
+.type-subheadline {
+  @include fontScale(20, 21);
+  @extend %u-sailec;
+  @extend %u-bold;
+  letter-spacing: .5px;
+  line-height: 1.25;
+}
