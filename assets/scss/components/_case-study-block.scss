@@ -2,8 +2,11 @@
 .c-case-study-block {
   $self: &;
 
+  @extend %u-flex;
+  @extend %u-fd-column;
+  @extend %u-ai-flex-start;
+  @extend %u-mv-5--upto-medium;
   @extend %u-pos-relative;
-  @extend %u-color-blackcurrant;
   @extend %u-pv-5--upto-small;
 
   #{$self}__title {
@@ -33,9 +36,8 @@
   }
 }
 
-.c-link-block--case-study--large {
-  $self: &;
-  $self: '.c-link-block';
+.c-case-study-block--large {
+  $self: '.c-case-study-block';
 
   @extend %u-width-100pc;
   @extend %u-flex;

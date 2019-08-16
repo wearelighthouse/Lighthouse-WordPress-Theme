@@ -14,41 +14,41 @@
   $fgImgLargeId = isset($caseStudy['image_fg_large_id']) ? $caseStudy['image_fg_large_id'] : false;
   $fgImgSmallId = isset($caseStudy['image_fg_small_id']) ? $caseStudy['image_fg_small_id'] : false;
   $size = isset($caseStudy['size']) ? $caseStudy['size'] : '';
-  $sizeClass = $size && $size === 'large' ? 'c-link-block--case-study--large' : 'c-link-block--case-study--small';
+  $sizeClass = $size && $size === 'large' ? 'c-case-study-block--large' : 'c-case-study-block--small';
 ?>
 
-<div class="c-link-block c-link-block--case-study <?= $sizeClass ?>">
-  <div class="c-link-block__background">
+<div class="c-case-study-block <?= $sizeClass ?>">
+  <div class="c-case-study-block__background">
     <?php if ($bgImg) : ?>
-      <div class="c-link-block__background-image">
+      <div class="c-case-study-block__background-image">
         <?= wp_get_attachment_image($bgImgId, $size = 'link-block-case-study-bg-large') ?>
       </div>
     <?php endif; ?>
     <?php if ($fgImgLargeId) : ?>
-      <div class="c-link-block__foreground-image-large">
+      <div class="c-case-study-block__foreground-image-large">
         <?= wp_get_attachment_image($fgImgLargeId, $size = 'link-block-case-study-fg-large') ?>
       </div>
     <?php endif; ?>
   </div>
-  <div class="c-link-block__content">
+  <div class="c-case-study-block__content">
     <?php if ($logoSrc) : ?>
-      <div class="c-link-block__logo"
+      <div class="c-case-study-block__logo"
            style="<?= $logoMask ?>">
       </div>
     <?php endif; ?>
     <?php if ($fgImgSmallId) : ?>
-      <div class="c-link-block__foreground-image-small">
+      <div class="c-case-study-block__foreground-image-small">
         <?= wp_get_attachment_image($fgImgSmallId, $size = 'link-block-case-study-fg-small') ?>
       </div>
     <?php endif; ?>
     <?php if ($title) : ?>
-      <h3 class="c-link-block__title">
-        <a href="<?= $linkURL  ?>" class="c-link-block__title__link"><?= $title ?></a>
-        <span class="c-link-block__title__plain"><?= $title ?></span>
+      <h3 class="c-case-study-block__title">
+        <a href="<?= $linkURL  ?>" class="c-case-study-block__title__link"><?= $title ?></a>
+        <span class="c-case-study-block__title__plain"><?= $title ?></span>
       </h3>
     <?php endif; ?>
     <?php if ($linkText && $linkURL) : ?>
-      <a class="c-link-block__link c-button c-button--underlined-dark" href="<?= $linkURL ?>">
+      <a class="c-case-study-block__link c-button c-button--underlined-dark" href="<?= $linkURL ?>">
         <?= $linkText ?>
       </a>
     <?php endif; ?>
