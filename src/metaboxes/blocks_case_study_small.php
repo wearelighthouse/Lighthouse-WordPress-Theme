@@ -8,7 +8,7 @@ return [
             'type' => 'wysiwyg',
             'desc' => 'Use <b>Heading 3</b> as a title to the case study blocks section',
             'options' => [
-              'textarea_rows' => 9
+                'textarea_rows' => 9
             ]
         ],
         [
@@ -38,10 +38,16 @@ return [
                     'type' => 'text_url'
                 ],
                 [
+                    'name' => 'Illustration [desktop]',
+                    'id'   => 'image_fg_medium',
+                    'type' => 'file',
+                    'desc' => 'Desktop (medium) version of the illustration'
+                ],
+                [
                     'name' => 'Illustration [mobile]',
                     'id'   => 'image_fg_small',
                     'type' => 'file',
-                    'desc' => 'Mobile (small) version of the foreground illustration'
+                    'desc' => 'Mobile (small) version of the illustration'
                 ]
             ]
         ]
