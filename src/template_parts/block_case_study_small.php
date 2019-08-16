@@ -9,15 +9,10 @@
   $title = isset($caseStudy['title']) ? $caseStudy['title'] : '';
   $linkText = isset($caseStudy['link_text']) ? $caseStudy['link_text'] : '';
   $linkURL = isset($caseStudy['link_url']) ? $caseStudy['link_url'] : '';
-  $bgImg = isset($caseStudy['image_bg_large']) ? $caseStudy['image_bg_large'] : false;
-  $bgImgId = $bgImg ? $caseStudy['image_bg_large_id'] : false;
-  $fgImgLargeId = isset($caseStudy['image_fg_large_id']) ? $caseStudy['image_fg_large_id'] : false;
   $fgImgSmallId = isset($caseStudy['image_fg_small_id']) ? $caseStudy['image_fg_small_id'] : false;
-  $size = isset($caseStudy['size']) ? $caseStudy['size'] : '';
-  $sizeClass = $size && $size === 'large' ? 'c-case-study-block--large' : 'c-case-study-block--small';
 ?>
 
-<div class="c-case-study-block <?= $sizeClass ?>">
+<div class="c-case-study-block c-case-study-block--small">
   <div class="c-case-study-block__background">
     <?php if ($bgImg) : ?>
       <div class="c-case-study-block__background-image">

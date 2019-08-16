@@ -11,11 +11,9 @@ function registerFrontPageMetaboxes()
     $groupID = basename(__FILE__, '.php');
 
     addMetaboxes($groupInfo, [
-        //'link_blocks', // Renamed to "services"
         'blocks_service',
         'contact_us_banner',
-        'blocks_case_study'
-        //
+        'blocks_case_study_large'
     ], $groupID);
 
 }

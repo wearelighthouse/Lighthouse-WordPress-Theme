@@ -1,8 +1,16 @@
 <?php
 
 return [
-    'title' => 'Case Study Blocks',
+    'title' => 'Case Study Blocks (Small)',
     'fields' => [
+        [
+            'id' => 'intro',
+            'type' => 'wysiwyg',
+            'desc' => 'Use <h3> as a title to the case study blocks section',
+            'options' => [
+              'textarea_rows' => 9
+            ]
+        ],
         [
             'id' => 'group',
             'type' => 'group',
@@ -37,32 +45,10 @@ return [
                     'type' => 'text_url'
                 ],
                 [
-                    'name' => 'Illustration BG [desktop]',
-                    'id'   => 'image_bg_large',
-                    'type' => 'file',
-                    'desc' => 'Background image that sits inside the gray background section.'
-                ],
-                [
-                    'name' => 'Illustration FG [desktop]',
-                    'id'   => 'image_fg_large',
-                    'type' => 'file',
-                    'desc' => 'Foreground image positioned on top of the gray backgrounded section.'
-                ],
-                [
                     'name' => 'Illustration [mobile]',
                     'id'   => 'image_fg_small',
                     'type' => 'file',
                     'desc' => 'Mobile (small) version of the foreground illustration'
-                ],
-                [
-                    'name' => 'Display Size',
-                    'id'   => 'size',
-                    'type' => 'radio_inline',
-                    'options' => [
-                        'small' => 'Small',
-                        'large' => 'Large'
-                    ],
-                    'default' => 'small'
                 ]
             ]
         ]

@@ -4,6 +4,16 @@ return [
     'title' => 'Service Blocks',
     'fields' => [
         [
+            'name' => 'Grid Layout',
+            'id' => 'grid_setting',
+            'type' => 'radio_inline',
+            'options' => [
+                '2x2' => '2×2',
+                '3x3' => '3×3'
+            ],
+            'default' => '2x2'
+        ],
+        [
             'id' => 'group',
             'type' => 'group',
             'options' => [

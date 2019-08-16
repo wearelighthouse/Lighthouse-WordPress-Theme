@@ -10,7 +10,9 @@ function registerServiceMetaboxes()
     $groupID = basename(__FILE__, '.php');
 
     addMetaboxes($groupInfo, [
-        'test'
+        'blocks_service',
+        'blocks_case_study_small',
+        'contact_us_banner',
     ], $groupID);
 
 }
