@@ -6,7 +6,7 @@ return [
         [
             'id' => 'intro',
             'type' => 'wysiwyg',
-            'desc' => 'Use <h3> as a title to the case study blocks section',
+            'desc' => 'Use <b>Heading 3</b> as a title to the case study blocks section',
             'options' => [
               'textarea_rows' => 9
             ]
@@ -31,13 +31,6 @@ return [
                     'name' => 'Title',
                     'id'   => 'title',
                     'type' => 'text'
-                ],
-                [
-                    'name'    => 'Link Text',
-                    'id'      => 'link_text',
-                    'default' => 'Find out more',
-                    'type'    => 'text_medium',
-                    'desc'    => 'Only visible for large Case Study Link Blocks on desktop.'
                 ],
                 [
                     'name' => 'Link URL',
