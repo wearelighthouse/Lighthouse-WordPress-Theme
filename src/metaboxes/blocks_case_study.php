@@ -46,7 +46,7 @@ return [
                     'name' => 'Illustration FG [desktop]',
                     'id'   => 'image_fg_large',
                     'type' => 'file',
-                    'desc' => 'Foreground image positioned on top of the gray backgrounded section'
+                    'desc' => 'Foreground image positioned on top of the gray backgrounded section.'
                 ],
                 [
                     'name' => 'Illustration [mobile]',

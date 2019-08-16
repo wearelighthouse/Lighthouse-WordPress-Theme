@@ -30,10 +30,10 @@ return [
                     'type' => 'textarea_small'
                 ],
                 [
-                    'name'    => 'Link Text',
-                    'id'      => 'link_text',
-                    'default' => 'Find out more',
-                    'type'    => 'text_medium'
+                    'name' => 'Link Text',
+                    'id'   => 'link_text',
+                    'type' => 'text_medium',
+                    'desc' => 'E.g. "Find out more". Both Link Text & Link URL must be set for the the link to appear.'
                 ],
                 [
                     'name' => 'Link URL',
