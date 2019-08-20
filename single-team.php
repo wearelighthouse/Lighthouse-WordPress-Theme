@@ -33,8 +33,7 @@ $heroImage = get_the_post_thumbnail($post->ID);
 
 <section class="o-container-section o-container-section--bordered">
     <div>
-	  <?= apply_filters('the_content', $post->post_content ); ?>
-	  <?php
+	    <?php
 
 		if (isset($teamSocial[0]['link'])):
 			foreach($teamSocial as $social):
@@ -44,6 +43,9 @@ $heroImage = get_the_post_thumbnail($post->ID);
 			endforeach;
 		endif;
 		?>
+    </div>
+    <div>
+	  <?= apply_filters('the_content', $post->post_content ); ?>
     </div>
 </section>
 
