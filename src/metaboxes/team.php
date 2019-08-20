@@ -3,7 +3,7 @@
 return [
     'title' => 'Team Member Settings',
     'fields' => [
-        [
+        /*[
             'name' => 'Colour',
             'id'   => 'color',
             'type' => 'select',
@@ -13,7 +13,7 @@ return [
                 'orange',
                 'blue'
             ]
-        ],
+        ],*/
         [
             'name' => 'Full Name',
             'id'   => 'name',
@@ -22,6 +22,11 @@ return [
         [
             'name' => 'Title',
             'id'   => 'title',
+            'type' => 'text'
+        ],
+        [
+            'name' => 'Title short',
+            'id'   => 'title_short',
             'type' => 'text'
         ],
         [
@@ -54,7 +59,7 @@ return [
                 [
                     'name' => 'Link',
                     'id'   => 'link',
-                    'type' => 'text_url'
+                    'type' => 'text'
                 ]
             ]
         ]
