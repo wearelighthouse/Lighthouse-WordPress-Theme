@@ -1,11 +1,23 @@
 <?php
 
-  $text = getPostMeta('hero_hero_content');
+  if (isset($heroContent)):
+	$text= $heroContent;
+  else:
+	$text = getPostMeta('hero_hero_content');
+  endif;
+  
+  if (isset($heroImage)):
+	$image= $heroImage;
+  else:
+	$mage = '';
+  endif;
+
+  
   $bgcolor = getPostMeta('hero_hero_background-color');
   $bgcolor1 = getPostMeta('hero_hero_background-color-1');
   $bgcolor2 = getPostMeta('hero_hero_background-color-2');
   
-  if ($bgcolor1):
+  if ($bgcolor1 && $bgcolor1 != '#ffffff'):
 	$heroClass = '';
 	$heroStyle = ' style="background: linear-gradient(135deg, ' . $bgcolor1 . ', ' . $bgcolor2 . ');"';
   else:
