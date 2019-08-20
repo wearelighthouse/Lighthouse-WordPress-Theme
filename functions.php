@@ -1,5 +1,7 @@
 <?
 
+add_theme_support( 'post-thumbnails' ); 
+
 // Autoloading for plugins etc.
 require_once __DIR__ . '/vendor/autoload.php';
 
