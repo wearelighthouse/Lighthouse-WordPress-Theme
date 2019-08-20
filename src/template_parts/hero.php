@@ -9,7 +9,7 @@
   if (isset($heroImage)):
 	$image= $heroImage;
   else:
-	$mage = '';
+	$image = false;
   endif;
 
   
@@ -36,6 +36,11 @@
       <?php if ($text) : ?>
         <div class="c-hero__text s-banner">
           <?= wpautop($text) ?>
+        </div>
+      <?php endif; ?>
+      <?php if ($image) : ?>
+        <div class="c-hero__text s-banner">
+          <?= $image ?>
         </div>
       <?php endif; ?>
     </div>

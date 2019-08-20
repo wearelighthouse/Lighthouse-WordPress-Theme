@@ -33,9 +33,6 @@ $heroImage = get_the_post_thumbnail($post->ID);
 
 <section class="o-container-section o-container-section--bordered">
     <div>
-	  <?= get_the_post_thumbnail($post->ID); ?>
-    </div>
-    <div>
 	  <?= apply_filters('the_content', $post->post_content ); ?>
 	  <?php
 
