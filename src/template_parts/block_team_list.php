@@ -6,7 +6,6 @@ $args = array(
     'order' => 'asc',
     'post_status' => 'publish',
     'posts_per_page' => -1,
-    'post__not_in' => array($post->ID)
 );
 
 $team = new WP_Query( $args );
