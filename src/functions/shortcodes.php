@@ -5,13 +5,18 @@ function shortcode_screen_function($atts) {
 	extract(shortcode_atts(array(
 		'id' => '',
 		'type' => '',
+		'bg' => '',
 	), $atts));
 	
+	// screen images
 	$screens = explode(',',$id);
-	
 	$screenCount = count($screens);
-	
 	$screenType = strtolower($type) == 'mobile' ? 'mobile' : 'desktop';
+	
+	// background image
+	if ($bg):
+		$bgUrl = wp_get_attachment_image_url($bg, 'original');
+	endif;
 	
 	$output = '<div class="' . $screenType . ' count-' . $screenCount . '">';
 	
