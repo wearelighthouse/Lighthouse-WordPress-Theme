@@ -21,6 +21,7 @@ $heroContent = '<h1>' . $teamName . '</h1>
 
 $heroImage = get_the_post_thumbnail($post->ID);
 
+
 ?>
 
 <?php get_header(); ?>
