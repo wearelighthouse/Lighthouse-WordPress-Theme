@@ -11,6 +11,17 @@ $socialType = array(
 	'Stackoverflow'
 );
 
+$teamTitleShort = getPostMeta('team_team_title_short', $post->ID);
+$teamTitle = getPostMeta('team_team_title', $post->ID);
+$teamName = getPostMeta('team_team_name', $post->ID);
+$teamSocial = getPostMeta('team_team_social', $post->ID); 
+
+$heroContent = '<h1>' . $teamName . '</h1>
+<p>' . $teamTitle . '</p>';
+
+$heroImage = get_the_post_thumbnail($post->ID);
+
+
 ?>
 
 <?php get_header(); ?>
@@ -21,18 +32,10 @@ $socialType = array(
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
 <section class="o-container-section o-container-section--bordered">
-    <?php 
-	    $teamTitleShort = getPostMeta('team_team_title_short');
-		$teamTitle = getPostMeta('team_team_title');
-		$teamName = getPostMeta('team_team_name');
-		$teamSocial = getPostMeta('team_team_social'); 
-    ?>
     <div>
 	  <?= get_the_post_thumbnail($post->ID); ?>
     </div>
     <div>
-      <h1><?= $teamName; ?></h1>
-	  <h2><?= $teamTitle; ?></h2>
 	  <?= apply_filters('the_content', $post->post_content ); ?>
 	  <?php
 
