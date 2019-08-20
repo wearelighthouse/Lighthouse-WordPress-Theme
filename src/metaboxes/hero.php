@@ -25,14 +25,14 @@ return [
             ]
         ],
         [
-	        'name'    => 'Background colour 1', 'cmb2',
-			'id'      => 'background_colour_1',
+	        'name'    => 'Background color 1', 'cmb2',
+			'id'      => 'background-color-1',
 			'type'    => 'colorpicker',
 			'default' => '#ffffff',
         ],
         [
-	        'name'    => 'Background colour 2', 'cmb2',
-			'id'      => 'background_colour_2',
+	        'name'    => 'Background color 2', 'cmb2',
+			'id'      => 'background-color-2',
 			'type'    => 'colorpicker',
 			'default' => '#ffffff',
         ],
