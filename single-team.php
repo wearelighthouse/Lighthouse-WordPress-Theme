@@ -22,10 +22,10 @@ $socialType = array(
 
 <section class="o-container-section o-container-section--bordered">
     <?php 
-	    $teamTitleShort = getPostMeta('team_team_title_short', $post->ID);
-		$teamTitle = getPostMeta('team_team_title', $post->ID);
-		$teamName = getPostMeta('team_team_name', $post->ID);
-		$teamSocial = getPostMeta('team_team_social', $post->ID); 
+	    $teamTitleShort = getPostMeta('team_team_title_short');
+		$teamTitle = getPostMeta('team_team_title');
+		$teamName = getPostMeta('team_team_name');
+		$teamSocial = getPostMeta('team_team_social'); 
     ?>
     <div>
 	  <?= get_the_post_thumbnail($post->ID); ?>
@@ -36,11 +36,13 @@ $socialType = array(
 	  <?= apply_filters('the_content', $post->post_content ); ?>
 	  <?php
 
-		foreach($teamSocial as $social):
-			$linkPre = $social['type'] == 1 ? 'mailto:' : '';
-
-			echo '<a href="' . $linkPre . $social['link'] . '">' . $socialType[$social['type']] . '</a>';
-		endforeach;
+		if (isset($teamSocial[0]['link'])):
+			foreach($teamSocial as $social):
+				$linkPre = $social['type'] == 1 ? 'mailto:' : '';
+	
+				echo '<a href="' . $linkPre . $social['link'] . '">' . $socialType[$social['type']] . '</a>';
+			endforeach;
+		endif;
 		?>
     </div>
 </section>
