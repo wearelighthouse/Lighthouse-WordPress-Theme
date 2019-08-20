@@ -38,11 +38,13 @@ $heroImage = get_the_post_thumbnail($post->ID);
 	  <?= apply_filters('the_content', $post->post_content ); ?>
 	  <?php
 
-		foreach($teamSocial as $social):
-			$linkPre = $social['type'] == 1 ? 'mailto:' : '';
-
-			echo '<a href="' . $linkPre . $social['link'] . '">' . $socialType[$social['type']] . '</a>';
-		endforeach;
+		if (isset($teamSocial[0]['link'])):
+			foreach($teamSocial as $social):
+				$linkPre = $social['type'] == 1 ? 'mailto:' : '';
+	
+				echo '<a href="' . $linkPre . $social['link'] . '">' . $socialType[$social['type']] . '</a>';
+			endforeach;
+		endif;
 		?>
     </div>
 </section>
