@@ -5,7 +5,8 @@ function registerWorkPostType()
 
     $supports = [
         'title',
-        'editor'
+        'editor',
+        'excerpt'
     ];
 
     register_post_type('work', [
