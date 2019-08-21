@@ -1,6 +1,9 @@
 <?php
-
-
+	$heroContent = '<h1>' . get_the_excerpt() . '</h1>';
+	$heroImage = getPostMeta('work_work_image_large', $post->ID);
+	
+	// get the stats
+	$stats = getPostMeta('work_work_stats', $post->ID);
 ?>
 
 <?php get_header(); ?>
@@ -15,6 +18,23 @@
 		<?php echo the_content(); ?>
 	
 	</div>
+	
+<?php
+	if ($stats):
+?>	<div class="o-container-content">
+		
+		<div>
+		<?php foreach($stats as $stat): ?>
+			<div>
+				<?= $stat['stat_number']; ?><br />
+				<?= $stat['stat_text']; ?>
+			</div>
+		<?php endforeach; ?>
+		</div>
+	
+	</div><?php
+	endif;		
+?>
 
   <?php endwhile; ?>
 </main>
