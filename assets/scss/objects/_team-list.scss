@@ -1,0 +1,93 @@
+/**
+ * A container for the team list, with a max width and optional vertical padding
+ */
+.o-team-list {
+  @extend .u-mh-auto;
+  width: var(--container-width);
+  max-width: 1100px;
+  
+  @extend %u-flex;
+  flex-wrap: wrap;
+  align-content: center;
+
+  &--v-pad {
+    padding-top: var(--container-v-pad);
+    padding-bottom: var(--container-v-pad);
+  }
+  
+  a {
+	  @extend %u-block;
+  	width:130px;
+  	margin:auto;
+  	margin-bottom:2rem;
+  	
+  	@include breakpoint(from-small) {
+      width: 150px;
+      margin-bottom:3rem;
+    }
+    
+    @include breakpoint(from-medium) {
+      width: 33.333333333%;
+    }
+    
+    @include breakpoint(from-large) {
+      width: 25%;
+    }
+  }
+  
+  &__image {
+	  position: relative;
+	  height: 160px;
+	  display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    
+    @include breakpoint(from-medium) {
+      height: 180px;
+      }
+	  
+	  &:before {
+  	  @extend %u-block;
+		  @extend %u-round;
+		  content:'';
+		  position: absolute;
+		  bottom:0;
+		  left:50%;
+		  margin-left:-65px; 
+		  width: 130px;
+		  height: 130px;
+		  background: linear-gradient(90deg, rgba(252,252,252,1) 0%, rgba(201,201,201,1) 100%);
+		  z-index: 1;
+		  
+		  @include breakpoint(from-medium) {
+        width: 150px;
+        height: 150px;
+        margin-left:-75px;
+      }
+	  }
+	  
+	  img {
+		  width: 130px; height: auto; 
+		  border-radius: 0 0 75px 75px;
+		  z-index: 2;
+		  
+		  @include breakpoint(from-medium) {
+        width: 150px;
+      }
+	  }
+  }
+  
+  &__title {
+	  text-align: center;
+	  h2 {
+	  	font-size: 1.3rem;
+	  	font-weight: 700;
+	  	margin-top:1.3rem; 
+	  }
+	   
+	  p {
+		font-size: 1.3rem;  
+		margin:0.7rem 0 0 0;
+	  }
+  }
+}
