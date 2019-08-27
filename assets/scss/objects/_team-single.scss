@@ -1,0 +1,43 @@
+/**
+ * A container for the team list, with a max width and optional vertical padding
+ */
+.o-team-links {
+  li {
+    display: inline-block;
+    margin-right:20px;
+    margin-right:1.2rem;
+    
+  }
+  a {
+    display: block;
+    width:40px; 
+    height: 40px;
+    background:$color-blackcurrant;
+    @extend %u-round;
+    text-indent: -9999px;
+  }
+  &__website {
+    
+  }
+  &__email {
+    
+  }
+	&__twitter {
+    
+  }
+	&__linkedin {
+    
+  }
+	&__dribbble {
+    
+  }
+	&__github {
+    
+  }
+	&__instagram {
+    
+  }
+	&__stackoverflow {
+    
+  }
+}
