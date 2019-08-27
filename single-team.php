@@ -1,15 +1,15 @@
 <?php
 
-$socialType = array(
-	'Generic',
-	'Email',
-	'Twitter',
+$socialType = [
+	'website',
+	'email',
+	'twitter',
 	'LinkedIn',
-	'Dribble',
-	'GitHub',
-	'Instagram',
-	'Stackoverflow'
-);
+	'dribbble',
+	'github',
+	'instagram',
+	'stackoverflow'
+];
 
 $teamTitleShort = getPostMeta('team_team_title_short', $post->ID);
 $teamTitle = getPostMeta('team_team_title', $post->ID);
@@ -32,18 +32,18 @@ $heroImage = get_the_post_thumbnail($post->ID);
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
 <section class="o-container-section o-container-section--bordered">
-    <div>
+    <ul class="o-team-links">
 	    <?php
 
 		if (isset($teamSocial[0]['link'])):
 			foreach($teamSocial as $social):
 				$linkPre = $social['type'] == 1 ? 'mailto:' : '';
 	
-				echo '<a href="' . $linkPre . $social['link'] . '">' . $socialType[$social['type']] . '</a>';
+				echo '<li><a class="o-team-links__' . $socialType[$social['type']] . '" href="' . $linkPre . $social['link'] . '">' . $socialType[$social['type']] . '</a></li>';
 			endforeach;
 		endif;
 		?>
-    </div>
+    </ul>
     <div>
 	  <?= apply_filters('the_content', $post->post_content ); ?>
     </div>
