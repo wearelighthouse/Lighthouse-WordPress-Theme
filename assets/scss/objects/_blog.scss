@@ -1,0 +1,44 @@
+/**
+ * A container for the team list, with a max width and optional vertical padding
+ */
+.o-blog {
+  max-width: $global-max-width;
+  &__date {
+    
+  }
+  &__title {
+    
+  }
+}
+
+.o-blog-nav {
+  display: flex;
+  a, span {
+    display: inline-block;
+    height: 20px;
+    min-width: 20px;
+    padding:1.3rem 1.3rem;
+    text-align: center; 
+    margin:0;
+  }
+  a {
+    border-bottom:3px $color-gray solid;
+    &:hover {
+      color:$color-orange;
+      border-bottom:3px $color-orange solid;
+    }
+  }
+  span {
+    color:$color-gray;
+    &.current {
+      color:$color-blackcurrant;
+      border-bottom:3px $color-blackcurrant solid;
+    }
+  }
+  
+  &.compact {
+    a, span {
+    padding:0.9rem 0.9rem;
+    }
+  }
+}

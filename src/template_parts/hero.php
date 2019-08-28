@@ -1,29 +1,30 @@
 <?php
 
-  if (isset($heroContent)):
-	$text= $heroContent;
-  else:
-	$text = getPostMeta('hero_hero_content');
-  endif;
+  if (isset($heroContent)) {
+  	$text= $heroContent;    
+  } else {
+  	$text = getPostMeta('hero_hero_content');    
+  }
   
-  if (isset($heroImage)):
-	$image= $heroImage;
-  else:
-	$image = false;
-  endif;
+  if (isset($heroImage)) {
+    $image= $heroImage;  
+  } else {
+    $image = false;  
+  }
 
-  
-  $bgcolor = getPostMeta('hero_hero_background-color');
-  $bgcolor1 = getPostMeta('hero_hero_background-color-1');
-  $bgcolor2 = getPostMeta('hero_hero_background-color-2');
-  
-  if ($bgcolor1 && $bgcolor1 != '#ffffff'):
-	$heroClass = '';
-	$heroStyle = ' style="background: linear-gradient(135deg, ' . $bgcolor1 . ', ' . $bgcolor2 . ');"';
-  else:
-  	$heroClass = $bgcolor ? ' u-bg-gradient--' . $bgcolor : '' ;
-  	$heroStyle = '';
-  endif;
+  if (!isset($heroClass)) {
+    $bgcolor = getPostMeta('hero_hero_background-color');
+    $bgcolor1 = getPostMeta('hero_hero_background-color-1');
+    $bgcolor2 = getPostMeta('hero_hero_background-color-2');
+    
+    if ($bgcolor1 && $bgcolor1 != '#ffffff'){
+      $heroClass = '';
+    	$heroStyle = ' style="background: linear-gradient(135deg, ' . $bgcolor1 . ', ' . $bgcolor2 . ');"';
+    } else {
+      $heroClass = $bgcolor ? ' u-bg-gradient--' . $bgcolor : '' ;
+    	$heroStyle = '';
+    }
+  }
 
   // From page has a 100vh header instead of as-big-as-it-needs-to-be
   $frontPageSectionClass = is_front_page() ? ' o-container-section--100vh' : '';
