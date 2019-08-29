@@ -14,7 +14,7 @@
 
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
-    <section class="o-container-section o-container-section--bordered">
+    <section class="o-container-section o-container-section--bordered content-grid">
       <?= the_content(); ?>
     </section>
 

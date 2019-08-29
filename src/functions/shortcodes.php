@@ -15,15 +15,27 @@ function shortcode_screen_function($atts)
 	$screenCount = count($screens);
 	$screenType = strtolower($type) == 'mobile' ? 'mobile' : 'desktop';
 	
+	global $post;
+	
 	// background image
-	if ($bg):
-		$bgUrl = wp_get_attachment_image_url($bg, 'original');
-	endif;
+	if ($bg) {
+  	
+  	$bgUrl = ' style="background-image:url(' . wp_get_attachment_image_url($bg, 'original') . ')"';
+  	$bgUrl = '';
+  	$bgImage = wp_get_attachment_image($bg, 'original', '', ['class' => 'o-screens__bg']);
+	} else {
+  	$bgUrl = '';
+  	$bgImage = '';
+	}
 	
-	$output = '<div class="o-screens ' . $screenType . ' count-' . $screenCount . '">';
+	$output = '<div class="o-screens ' . $screenType . ' count-' . $screenCount . '"' . $bgUrl . '>' . $bgImage;
 	
-	foreach ($screens as $screen){
-  	$output .= '<div class="o-screens__screen"><div class="o-screens__chrome"><div class="o-screens__mask">' . wp_get_attachment_image($screen, 'original') . '</div></div></div>';
+	$i = 1;
+	foreach ($screens as $screen) {
+  	// alt text
+    $alt = $post->post_title . ' ' . ucfirst($screenType) . ' Screenshot ' . $i;
+  	$output .= '<div class="o-screens__screen"><div class="o-screens__chrome"><div class="o-screens__mask">' . wp_get_attachment_image($screen, 'original' , '', ["alt" => $alt]) . '</div></div></div>';
+  	$i++;
 	}
 	
 	$output .= '</div>';
