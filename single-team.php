@@ -19,7 +19,7 @@ $teamSocial = getPostMeta('team_team_social', $post->ID);
 $heroContent = '<h1>' . $teamName . '</h1>
 <p>' . $teamTitle . '</p>';
 
-$heroImage = get_the_post_thumbnail($post->ID);
+$heroImage = '<div class="team-image">' . get_the_post_thumbnail($post->ID) . '</div>';
 
 
 ?>
@@ -31,7 +31,7 @@ $heroImage = get_the_post_thumbnail($post->ID);
 
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
-<section class="o-container-section o-container-section--bordered">
+<section class="o-container-section o-container-section--bordered content-grid">
     <ul class="o-team-links">
 	    <?php
 
@@ -44,9 +44,7 @@ $heroImage = get_the_post_thumbnail($post->ID);
 		endif;
 		?>
     </ul>
-    <div>
 	  <?= apply_filters('the_content', $post->post_content ); ?>
-    </div>
 </section>
 
 <section class="o-container-section o-container-section--bordered">

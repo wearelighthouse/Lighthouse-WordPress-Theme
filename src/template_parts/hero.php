@@ -40,7 +40,7 @@
         </div>
       <?php endif; ?>
       <?php if ($image) : ?>
-        <div class="c-hero__text s-banner">
+        <div class="c-hero__image s-banner">
           <?= $image ?>
         </div>
       <?php endif; ?>
