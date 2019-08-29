@@ -38,7 +38,7 @@
     justify-content: center;
     
     .o-screens__screen {
-      width: 35%;
+      width: 30%;
     }
     
     .o-screens__bg {
@@ -49,7 +49,6 @@
       
       &-2 {
         .o-screens__screen {
-          width: 30%;
           margin-left:1rem;
           margin-right:1rem;
         } 
@@ -61,8 +60,8 @@
       
       &-3 {
         .o-screens__screen {
-          margin-left:0.5rem;
-          margin-right:0.5rem;
+          margin-left:1rem;
+          margin-right:1rem;
         }
         
         .o-screens__bg {
