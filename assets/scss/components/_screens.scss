@@ -1,0 +1,55 @@
+.o-screens {
+  display: flex;
+  position: relative;
+  
+  &.mobile {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    
+    .o-screens__chrome {
+      background:$color-gray-deep;
+      padding:1rem;
+      border-radius: 20px;
+    }
+    
+    .o-screens__mask {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+  }
+  
+  &.desktop {
+    box-shadow:10px 10px 60px rgba($color-black, 0.14);
+    max-width: 1400px;
+    
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .o-screens__chrome {
+      padding-top:20px;
+      background:$color-gray-deep;
+      border-radius:6px 6px 0 0;
+      
+      &:before {
+        content:'⬤ ⬤ ⬤';
+        position: absolute;
+        top:12px;
+        left:12px;
+        font-size: 10px;
+        letter-spacing: 1px;
+        color:#444444;
+      }
+      @include breakpoint(from-medium) {
+        padding-top:37px;
+      }
+    }
+  }
+}
