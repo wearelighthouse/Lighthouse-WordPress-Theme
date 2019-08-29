@@ -3,3 +3,48 @@
   @extend %u-tiempos;
   font-size: 26px;
 }
+
+.quote {
+  padding:1rem 0;
+  margin:1rem 0;
+  border-top:1px #DEDEE2 solid;
+  border-bottom:1px #DEDEE2 solid;
+  
+  p {
+    font-family: 'Tiempos', serif;
+    color: $color-orange;
+    font-size:1.4rem;
+    line-height: 1.4;
+  }
+  
+  &__image {
+    display: block;
+    width:60px;
+    margin-right: 1.5rem;
+  }
+  
+  &__person {
+    line-height: 1.6;
+  }
+  
+  &__name {
+    display: block;
+    font-weight: 700;
+  }
+  
+  footer {
+    display: flex;
+  }
+  
+  .team-image {
+    img {
+      position: absolute;
+      left:0;
+      bottom: 0;
+    }
+    &:before {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}

@@ -62,15 +62,14 @@ function shortcode_quote_function($atts, $content = null)
 	$personID = array_search ($name, $team);
 	
 	if ($lighthouse) {
-		$image = '<div>' . get_the_post_thumbnail( $personID, 'bio-tiny' ) . '</div>';
+		$image = '<div class="quote__image team-image">' . get_the_post_thumbnail( $personID, 'bio-tiny' ) . '</div>';
 		$personUrl = get_permalink($personID);
-		$personName = '<a href="' . $personUrl . '">' . $name . '</a>';
-		$personName .= '<div>' . getPostMeta('team_team_title_short', $personID); '</div>';
+		$personName = '<div class="quote__person"><a href="' . $personUrl . '" class="quote__name">' . $name . '</a>' . getPostMeta('team_team_title_short', $personID); '</div>';
 	} else {
 		$image = '';
-		$personName = $name;
+		$personName = '<div class="quote__person"><span class="quote__name">' . $name . '</span>';
 		if ($title != '') {
-			$personName .= '<div>' . $title;
+			$personName .= $title;
 		}
 		if ($company_url != '') {
 		  $company = '<a href="' . $company_url . '" target="_blank">' . $company . '</a>';	
@@ -78,11 +77,11 @@ function shortcode_quote_function($atts, $content = null)
 		if ($company != '') {
 		  $personName .= ', ' . $company;
 		}
-		 $personName .= '</div>';
+		 $personName .= '</div></div>';
 		
 	}
    
-    $quote =  '	<blockquote>' . "\n";
+    $quote =  '	<blockquote class="quote">' . "\n";
 	$quote .= apply_filters('the_content',$content);
 	$quote .= '<footer>' . $image . $personName . '</footer>';
 	$quote .= '	</blockquote>' . "\n";

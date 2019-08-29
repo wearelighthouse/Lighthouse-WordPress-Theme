@@ -41,3 +41,22 @@
     
   }
 }
+
+.single-team {
+  .c-hero {
+    &__image {
+      width: 308px;
+    }
+    
+    .team-image {
+      &:before {
+        width:308px;
+        height: 308px;
+        opacity: 0.2;
+      }
+      img {
+        border-radius:0 0 154px 154px;
+      }
+    }
+  }
+}

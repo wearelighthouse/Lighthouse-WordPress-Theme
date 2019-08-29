@@ -18,7 +18,7 @@ $team = new WP_Query( $args );
   $teamTitleShort = getPostMeta('team_team_title_short', $person->ID); 
 ?>
 	<a href="<?= get_the_permalink($person->ID); ?>" class="o-team-list__content">
-		<div class="o-team-list__image">
+		<div class="o-team-list__image team-image">
 			<?= get_the_post_thumbnail($person->ID); ?>
 		</div>
 		<div class="o-team-list__title">

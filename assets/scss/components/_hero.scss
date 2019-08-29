@@ -8,7 +8,17 @@
   @extend .o-section-clip--ramp-bottom-right;
 
   &__content {
+    display: flex;
     margin-top: 5rem; // Includes room for header. TODO: Set to actual header height?
     margin-bottom: 3rem;
+  }
+  
+  @include breakpoint(from-medium) {  
+    &__text {
+      width: 70%;
+    }
+    &__image {  
+      width: 30%;
+    }
   }
 }
