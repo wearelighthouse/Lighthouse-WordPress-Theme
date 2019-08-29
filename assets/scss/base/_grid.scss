@@ -1,5 +1,5 @@
 .content-grid {
-  max-width: 1035px;
+  max-width: $global-max-width;
   
   @include breakpoint(from-medium) {
     display: grid;
@@ -23,5 +23,19 @@
     h2 + p {
       margin-top:0;
     }
+  }
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: 3fr 7fr; 
+  grid-gap: 1rem;
+  
+  &__left {
+    grid-column: 1;
+  }
+  
+  &__right {
+    grid-column: 2;
   }
 }

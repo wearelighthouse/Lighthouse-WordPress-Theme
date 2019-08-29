@@ -3,11 +3,52 @@
  */
 .o-blog {
   max-width: $global-max-width;
-  &__date {
+  
+  &__post {
+    border-top:1px solid #DEDEE2;
+    padding-top:2rem;
+    margin-bottom:2rem;
     
+    &:first-child {
+      border:0;
+    }
+    
+    @include breakpoint(from-medium) {
+      padding-top:4rem;
+      margin-bottom:4rem;  
+    }
   }
-  &__title {
+  
+  &__category {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  @include breakpoint(from-medium) {
+    margin:0 auto;
     
+    
+    &__post {
+      display: grid;
+      grid-template-columns: 3fr 7fr; 
+      grid-gap: 1rem;
+    }
+    
+    &__info {
+      grid-column: 1;
+      
+      p {
+        margin-top:0;
+      }
+    }
+    
+    &__title {
+      grid-column: 2;
+    }
+  }
+  
+  .o-blog-nav {
+    grid-column: 2;
   }
 }
 
