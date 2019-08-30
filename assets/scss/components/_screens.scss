@@ -59,9 +59,10 @@
       }
       
       &-3 {
+        justify-content:space-between;
         .o-screens__screen {
-          margin-left:1rem;
-          margin-right:1rem;
+          margin-left:0;
+          margin-right:0;
         }
         
         .o-screens__bg {

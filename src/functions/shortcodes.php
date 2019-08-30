@@ -89,10 +89,8 @@ function shortcode_quote_function($atts, $content = null)
       $clutchScore = '<div class="quote__clutch"><span class="quote__clutch-score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div>';
     }
 	}
-	
-
-   
-    $quote =  '	<blockquote class="quote">' . "\n";
+ 
+  $quote =  '	<blockquote class="quote">' . "\n";
 	$quote .= apply_filters('the_content',$content);
 	$quote .= '<footer>' . $image . $personName . $clutchScore . '</footer>';
 	$quote .= '	</blockquote>' . "\n";
@@ -109,131 +107,94 @@ function shortcode_image_function($atts) {
 		'alt' => '',
 		'caption' => '',
 		'size' => '',
-		'max_width' => '',
-		'responsive' => 'true',
-		'border' => '',
-		'page' => '',
-		'url' => '',
+		'bg' => '',
+		'size' => '',
 	), $atts));
 	
-	$img = '';
-	$breaks = array('400w', '800w', '1200w');
+	$output = '';
 	
-	if ( $alt == '' ):
-		$alt == 'caption';
-	endif;
+	switch ($size) {
+  	case 'full':
+    	$size = 'full';
+    	break;
+    	
+    case 'small':
+    	$size = 'small';
+    	break;
+    	
+    case 'medium':
+    	$size = 'medium';
+    	break;
+    	
+  	default:
+    	$size = 'large';
+	}
+
+  $imgArray = explode(',', $id);
+  $count = count($imgArray);
+  
+  if ($bg) {
+    if (strpos($bg, '#') === false) {
+      $bg = '#' . $bg;
+    }
+    $bgColor = ' style="background-color: ' . $bg . '"';
+  } else {
+    $bgColor = '';
+  }
+  
+  if ($size == 'full') {
+    $output .= '</section><section class="o-container-section o-container-section--bordered">';
+  }
+  
+	$output .= '<div class="o-images count-' . $count . ' size-' . $size . '"' . $bgColor . '>';
+  
+  foreach ($imgArray as $imgId) {
+    $output .= '<div class="o-images__image">' . wp_get_attachment_image($imgId, 'original', '', ['alt' => 'Alt']) . '</div>';
+  }
+  
+  if ( $alt == '' ) {
+  	$alt == 'caption';
+	}
 	
-	if ( $responsive != 'true' ):
-		$image_pre = wp_get_attachment_image_src( $id, $size );
-	else: 
-		$image_pre = wp_get_attachment_image_src( $id, 'pre-load' );
-	endif;
+	$output .= '</div>';
 	
-	if ( $url != '' ):
-		$img = '<a href="' . $url . '" target="_blank">';
-	endif;
-	
-	if ( $page == 'Home' ):
-	
-		$img .= '<img src="' . $image_pre[0] . '" data-src="' . $image_pre[0] . '" data-sizes="auto" class="image__image lazyload" alt="' . $alt . '"';
-		
-		$size_class = ' image--full';
-		$img_medium = image_downsize($id, 'medium');
-		$img_large = image_downsize($id, 'large');
-		$img_huge = image_downsize($id, 'huge');
-		$breakpoints = ' data-srcset="' . $img_medium[0] . ' ' . $breaks[0] . ', ' . $img_large[0] . ' ' . $breaks[1] . ', ' . $img_huge[0] .  ' ' . $breaks[2] . '"';
-		
-		$img .= $breakpoints . '>';
-		
-		if ( $url != '' ):
-  		$img .= '</a>';
-  	endif;
-		
-		$output .= '	<figure class="section image limit' . $size_class . $caption_class . $border_class . '"' . $max . '>
-		
-			' . $img . '
-	' . $caption_text . '
-		
-		</figure>';
-	
-	else:
-		
-		$max = $max_width == '' ? '' : ' style="max-width:' . $max_width . 'px; width:100%;"';
-		
-		$img .= '<img src="' . $image_pre[0] . '" data-src="' . $image_pre[0] . '" data-sizes="auto" class="image__image lazyload" alt="' . $alt . '"';
-		
-		$border_class = $border == '' ? '' : ' image--border';
-		
-		switch ( $size ):
-			case 'small':
-				$image = wp_get_attachment_image_src( $id, 'small' );
-				$size_class = ' image--small';
-				$breakpoints = '';
-				break;
-				
-			case 'medium':
-				$size_class = ' image--medium';
-				$img_medium = image_downsize($id, 'medium');
-				$breakpoints = ' data-srcset="' . $img_medium[0] . ' ' . $breaks[0] . '"';
-				break;
-				
-			case 'huge':
-				$size_class = ' image--full';
-				$img_medium = image_downsize($id, 'medium');
-				$img_large = image_downsize($id, 'large');
-				$img_huge = image_downsize($id, 'huge');
-				$breakpoints = ' data-srcset="' . $img_medium[0] . ' ' . $breaks[0] . ', ' . $img_large[0] . ' ' . $breaks[1] . ', ' . $img_huge[0] .  ' ' . $breaks[2] . '"';
-				break;
-		
-			default:
-				$size_class = ' image--full';
-				$img_medium = image_downsize($id, 'medium');
-				$img_large = image_downsize($id, 'large');
-				$breakpoints = ' data-srcset="' . $img_medium[0] . ' ' . $breaks[0] . ', ' . $img_large[0] . ' ' . $breaks[1] . '"';
-			
-		endswitch;
-		
-		if ( $responsive != 'true' ):
-			$breakpoints = '';
-		endif;
-		
-		$caption_class = $caption == '' ? '' : ' image--captioned';
-		$caption_text = $caption == '' ? '' : '		<figcaption class="image__caption">' . $caption . '</figcaption>';
-		
-		$img .= $breakpoints . '>';
-		
-		if ( $url != '' ):
-  		$img .= '</a>';
-  	endif;
-		
-		$output = '';
-		
-		if ( $size == 'huge' ):
-			
-		$output .= '	</section>
-		<figure class="section image' . $size_class . $caption_class . $border_class . '"' . $max . '>
-		
-			' . $img . '
-	' . $caption_text . '
-		
-		</figure>
-		<section class="section content limit container">';
-			
-		else:
-		
-		$output .= '	<figure class="section image limit' . $size_class . $caption_class . $border_class . '"' . $max . '>
-		
-			' . $img . '
-	' . $caption_text . '
-		
-		</figure>';
-		
-		endif;
-	
-	endif; //  if home
+	if ($size == 'full') {
+    $output .= '</section><section class="o-container-section o-container-section--bordered content-grid">';
+  }
 	
 	return $output;
 	
+}
+
+function shortcode_ad_function($atts, $content = null) 
+{
+
+	// get the vars
+	extract(shortcode_atts(array(
+		'id' => '',
+		'text' => '',
+		'align' => '',
+	), $atts));
+	
+	// Get the page
+	$adPage = get_page($id);
+	
+	$adAlign = $align == 'center' ? 'center' : 'left';
+	
+	$ad = '<div class="ad ad__' . $adAlign . '">';
+	
+	if ($adPage->post_type == 'work') {
+  	// get case study block
+	} else {
+  	$ad .= '<h3>' . $adPage->post_title . '</h3>';
+  	$ad .= '<p>' . strip_tags($text) . '</p>';
+  	$ad .= '<a href="' . get_permalink($id) . '">Read more</a>';
+	}
+
+  $ad .= '</div>';
+	
+	wp_reset_query();
+	return $ad;
 }
 
 // register them all here
@@ -241,6 +202,7 @@ function register_shortcodes(){
   add_shortcode('screen', 'shortcode_screen_function');
   add_shortcode('quote', 'shortcode_quote_function');
   add_shortcode('image', 'shortcode_image_function');
+  add_shortcode('ad', 'shortcode_ad_function');
 }
 
 add_action( 'init', 'register_shortcodes');

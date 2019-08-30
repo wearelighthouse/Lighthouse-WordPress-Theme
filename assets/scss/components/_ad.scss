@@ -1,0 +1,24 @@
+.ad {
+  padding:0.8rem;
+  border-radius: 10px;
+  background:lighten($color-gray, 10%);
+    
+  h3 {
+    font-weight: 700;
+    font-family: 'Tiempos', serif;
+  }
+  p {
+    margin:0.2rem 0 0;
+  }
+  a {
+    color:$color-orange;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  
+  &__center {
+    margin:0 20%;
+  }
+}
