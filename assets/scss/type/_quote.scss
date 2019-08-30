@@ -14,7 +14,6 @@
     font-family: 'Tiempos', serif;
     color: $color-orange;
     font-size:1.4rem;
-    line-height: 1.4;
   }
   
   &__image {
@@ -32,7 +31,27 @@
     font-weight: 700;
   }
   
+  &__clutch {
+    display: block;
+    position: absolute; 
+    bottom:0.2rem;
+    right: 0;
+    font-weight: 700;
+    background: url(../../dist/svg/clutch-logo.svg) no-repeat 0 0;
+    background-size: 68px 19px;
+    padding-left:70px;
+    align-self: right;
+    
+    &-score {
+      display: inline-block;
+      width: 65px;
+      height: 13px;
+      background: url(../../dist/svg/clutch-star.svg) repeat-x 0 0;  
+    }
+  }
+  
   footer {
+    position: relative;
     display: flex;
   }
   

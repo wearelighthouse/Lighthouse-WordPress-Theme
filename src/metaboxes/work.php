@@ -34,10 +34,15 @@ return [
             'type' => 'select',
             'show_option_none' => true,
             'options'          => array(
-				'5' => '5',
-				'4.5'   => '4.5',
-				'4'     => '4',
-			),
+      				'5' => '5',
+      				'4.5'   => '4.5',
+      				'4'     => '4',
+      			),
+        ],
+        [
+            'name' => 'Clutch URL',
+            'id'   => 'clutch_url',
+            'type' => 'text_url'
         ],
         [
             'id' => 'stats',
