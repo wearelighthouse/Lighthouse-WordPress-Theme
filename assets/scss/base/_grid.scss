@@ -5,7 +5,7 @@
     display: grid;
     margin:0 auto;
     grid-template-columns: 4fr 6fr; 
-    grid-column-gap: 1rem;
+    grid-column-gap: 3rem;
     
     .o-screens {
       grid-column: 1;
@@ -17,12 +17,18 @@
     }
     
     h2,
-    .o-team-links {
+    .o-team-links, 
+    .ad.ad__left {
       grid-column: 1;
     }
     
     h2 + p {
       margin-top:0;
+    }
+    
+    .ad.ad__center {
+      grid-column: 1;
+      grid-column-end: span 2;
     }
   }
 }
