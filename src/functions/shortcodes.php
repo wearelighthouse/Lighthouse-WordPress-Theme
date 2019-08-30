@@ -47,6 +47,11 @@ function shortcode_screen_function($atts)
 function shortcode_quote_function($atts, $content = null) 
 {
 	global $team;
+	
+	// get Clutch score
+	global $post;
+	$clutch = getPostMeta('work_work_clutch_score', $post->ID);
+	$clutchScore = '';
 
 	// get the vars
 	extract(shortcode_atts(array(
@@ -65,6 +70,7 @@ function shortcode_quote_function($atts, $content = null)
 		$image = '<div class="quote__image team-image">' . get_the_post_thumbnail( $personID, 'bio-tiny' ) . '</div>';
 		$personUrl = get_permalink($personID);
 		$personName = '<div class="quote__person"><a href="' . $personUrl . '" class="quote__name">' . $name . '</a>' . getPostMeta('team_team_title_short', $personID); '</div>';
+		$clutchScore = '';
 	} else {
 		$image = '';
 		$personName = '<div class="quote__person"><span class="quote__name">' . $name . '</span>';
@@ -77,13 +83,18 @@ function shortcode_quote_function($atts, $content = null)
 		if ($company != '') {
 		  $personName .= ', ' . $company;
 		}
-		 $personName .= '</div></div>';
+		$personName .= '</div>';
 		
+		if ($clutch > 0) {
+      $clutchScore = '<div class="quote__clutch"><span class="quote__clutch-score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div>';
+    }
 	}
+	
+
    
     $quote =  '	<blockquote class="quote">' . "\n";
 	$quote .= apply_filters('the_content',$content);
-	$quote .= '<footer>' . $image . $personName . '</footer>';
+	$quote .= '<footer>' . $image . $personName . $clutchScore . '</footer>';
 	$quote .= '	</blockquote>' . "\n";
 
 	wp_reset_query();

@@ -4,6 +4,8 @@
 	
 	// get the stats
 	$stats = getPostMeta('work_work_stats', $post->ID);
+	
+	$clutch = getPostMeta('work_work_clutch_score', $post->ID);
 ?>
 
 <?php get_header(); ?>
@@ -13,7 +15,7 @@
   
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
-	<div class="o-container-content">
+	<div class="o-container-content content-grid">
 		
 		<?php echo the_content(); ?>
 	
@@ -21,17 +23,16 @@
 	
 <?php
 	if ($stats):
-?>	<div class="o-container-content">
-		
-		<div>
+?>	<div class="o-container-content content-grid">
+  		<h2>Results</h2>
+			<div class="o-work-results">
 		<?php foreach($stats as $stat): ?>
-			<div>
-				<?= $stat['stat_number']; ?><br />
-				<?= $stat['stat_text']; ?>
-			</div>
+  			<div class="o-work-results__result">
+  				<p><span class="o-work-results__number"><?= $stat['stat_number']; ?></span>
+          <span class="o-work-results__text"><?= $stat['stat_text']; ?></span></p>
+  			</div>
 		<?php endforeach; ?>
-		</div>
-	
+			</div>	
 	</div><?php
 	endif;		
 ?>

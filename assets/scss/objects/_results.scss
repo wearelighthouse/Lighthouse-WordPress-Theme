@@ -1,0 +1,37 @@
+.o-work-results {
+  display: flex;
+  
+  border-top:1px $color-gray solid;
+  border-bottom:1px $color-gray solid;
+  padding:1rem 0 1.4rem;
+  
+  @include breakpoint(from-medium) {
+    padding:2rem 0 2.6rem;  
+  }
+  
+  p {
+    margin:0;
+  }
+  
+  &__result {
+    width: 33.33333333%;
+    text-align: center;
+  }
+  
+  &__number {
+    font-family: 'Tiempos', serif;
+    font-weight: 700;
+    display: block;
+    font-size: 4rem;
+    margin-bottom:0.4rem;
+  }
+  
+  &__text {
+    color:$color-orange;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+}

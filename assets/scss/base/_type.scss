@@ -1,5 +1,19 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   font-family: 'Sailec', sans-serif;
   font-size: 18px;
   color: $color-blackcurrant;
+}
+
+h2 {
+  font-family: 'Tiempos', serif;
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.6;
 }
