@@ -1,5 +1,8 @@
 .o-images {
   
+  margin-top: var(--container-v-pad);
+  margin-bottom: var(--container-v-pad);
+  
   @include breakpoint(from-medium) {
     &.count-2 {
       display: flex;

@@ -33,12 +33,22 @@
     z-index: 1;
   }
   
+  &__caption {
+  }
   
   &.mobile {
     justify-content: center;
     
     .o-screens__screen {
-      width: 30%;
+      width: 190px;
+      
+      @include breakpoint(from-medium) {
+        width: 250px;
+      }
+      
+      @include breakpoint(from-large) {
+        width: 300px;
+      }
     }
     
     .o-screens__bg {
@@ -48,10 +58,31 @@
     &.count {
       
       &-2 {
+        justify-content:space-between;
+        
         .o-screens__screen {
-          margin-left:1rem;
-          margin-right:1rem;
-        } 
+          &:nth-child(1) {
+            margin-left:0.5rem;
+          }
+        }
+        
+        @include breakpoint(from-medium) {
+          justify-content:center;
+          
+          .o-screens__screen {
+            margin-left:1rem;
+            margin-right:1rem;
+          } 
+        }
+        
+        @include breakpoint(from-medium) {
+          justify-content:center;
+          
+          .o-screens__screen {
+            margin-left:2rem;
+            margin-right:2rem;
+          } 
+        }
         
         .o-screens__bg {
           width: 90%;
@@ -60,9 +91,15 @@
       
       &-3 {
         justify-content:space-between;
+        
         .o-screens__screen {
           margin-left:0;
           margin-right:0;
+          
+          &:nth-child(1) {
+            margin-left:0.5rem;
+            margin-right:0.5rem;
+          }
         }
         
         .o-screens__bg {
@@ -83,9 +120,18 @@
     
     .o-screens__chrome {
       background:$color-gray-deep;
-      padding:1rem;
-      border-radius: 20px;
+      padding:6%;
+      border-radius: 18px;
       box-shadow:10px 10px 60px rgba($color-black, 0.14);
+      
+      @include breakpoint(from-medium) {
+        border-radius: 20px; 
+        padding:0.8rem;  
+      }
+      
+      @include breakpoint(from-large) {
+        border-radius: 22px;
+      }
     }
     
     .o-screens__mask {
@@ -123,11 +169,17 @@
       &:before {
         content:'⬤ ⬤ ⬤';
         position: absolute;
-        top:12px;
-        left:12px;
-        font-size: 10px;
+        top:7px;
+        left:7px;
+        font-size: 6px;
         letter-spacing: 1px;
         color:#444444;
+        
+        @include breakpoint(from-medium) {
+          top:12px;
+          left:12px;
+          font-size: 10px; 
+        }
       }
       @include breakpoint(from-medium) {
         padding-top:37px;
