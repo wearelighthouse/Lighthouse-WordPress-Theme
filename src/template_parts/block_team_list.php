@@ -17,15 +17,17 @@ $team = new WP_Query( $args );
 <?php foreach($team->posts as $person): 
   $teamTitleShort = getPostMeta('team_team_title_short', $person->ID); 
 ?>
-	<a href="<?= get_the_permalink($person->ID); ?>" class="o-team-list__content">
-		<div class="o-team-list__image team-image">
-			<?= get_the_post_thumbnail($person->ID); ?>
-		</div>
-		<div class="o-team-list__title">
-			<h2><?= $person->post_title; ?></h2>
-			<p><?= $teamTitleShort; ?>&nbsp;</p>
-		</div>
-	</a>
+  <div class="o-team-list__person">
+  	<a href="<?= get_the_permalink($person->ID); ?>" class="o-team-list__content">
+  		<div class="o-team-list__image team-image">
+  			<?= get_the_post_thumbnail($person->ID); ?>
+  		</div>
+  		<div class="o-team-list__title">
+  			<h2><?= $person->post_title; ?></h2>
+  			<p><?= $teamTitleShort; ?>&nbsp;</p>
+  		</div>
+  	</a>
+  </div>
 <?php endforeach; ?>
 	</div>
 </section>
