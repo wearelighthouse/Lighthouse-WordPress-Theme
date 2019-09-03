@@ -17,6 +17,8 @@
   }
 
   &__category {
+    @include fontScale(16, 18);
+    color: $color-gray;
     font-weight: 700;
     text-transform: uppercase;
   }
@@ -35,6 +37,7 @@
       grid-column: 1;
 
       p {
+        margin-bottom: .5rem;
         margin-top: 0;
       }
     }
