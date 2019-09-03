@@ -14,13 +14,12 @@ $socialType = [
 $teamTitleShort = getPostMeta('team_team_title_short', $post->ID);
 $teamTitle = getPostMeta('team_team_title', $post->ID);
 $teamName = getPostMeta('team_team_name', $post->ID);
-$teamSocial = getPostMeta('team_team_social', $post->ID); 
+$teamSocial = getPostMeta('team_team_social', $post->ID);
 
 $heroContent = '<h1>' . $teamName . '</h1>
 <p>' . $teamTitle . '</p>';
 
 $heroImage = '<div class="team-image">' . get_the_post_thumbnail($post->ID) . '</div>';
-
 
 ?>
 
@@ -38,7 +37,7 @@ $heroImage = '<div class="team-image">' . get_the_post_thumbnail($post->ID) . '<
 		if (isset($teamSocial[0]['link'])):
 			foreach($teamSocial as $social):
 				$linkPre = $social['type'] == 1 ? 'mailto:' : '';
-	
+
 				echo '<li><a class="o-team-links__' . $socialType[$social['type']] . '" href="' . $linkPre . $social['link'] . '">' . $socialType[$social['type']] . '</a></li>';
 			endforeach;
 		endif;
