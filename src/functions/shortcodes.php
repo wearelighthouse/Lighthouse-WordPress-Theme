@@ -1,6 +1,6 @@
 <?php
 
-function shortcode_screen_function($atts) 
+function shortcode_screen_function($atts)
 {
 
 	extract(shortcode_atts(array(
@@ -10,23 +10,23 @@ function shortcode_screen_function($atts)
 		'alt' => '',
 		'caption' => '',
 	), $atts));
-	
+
 	// screen images
 	$screens = explode(',',$id);
 	$screenCount = count($screens);
 	$screenType = strtolower($type) == 'mobile' ? 'mobile' : 'desktop';
-	
+
 	if ($caption) {
   	$captionText = '<div class="o-screens__caption">' . $caption . '</div>';
 	} else {
   	$captionText = '';
 	}
-	
+
 	global $post;
-	
+
 	// background image
 	if ($bg) {
-  	
+
   	$bgUrl = ' style="background-image:url(' . wp_get_attachment_image_url($bg, 'original') . ')"';
   	$bgUrl = '';
   	$bgImage = wp_get_attachment_image($bg, 'original', '', ['class' => 'o-screens__bg']);
@@ -34,9 +34,9 @@ function shortcode_screen_function($atts)
   	$bgUrl = '';
   	$bgImage = '';
 	}
-	
+
 	$output = '<div class="o-screens ' . $screenType . ' count-' . $screenCount . '"' . $bgUrl . '>' . $bgImage;
-	
+
 	$i = 1;
 	foreach ($screens as $screen) {
   	// alt text
@@ -44,17 +44,17 @@ function shortcode_screen_function($atts)
   	$output .= '<div class="o-screens__screen"><div class="o-screens__chrome"><div class="o-screens__mask">' . wp_get_attachment_image($screen, 'original' , '', ["alt" => $alt]) . '</div></div></div>';
   	$i++;
 	}
-	
+
 	$output .= '</div>';
-	
+
 	return $output;
-	
+
 }
 
-function shortcode_quote_function($atts, $content = null) 
+function shortcode_quote_function($atts, $content = null)
 {
 	global $team;
-	
+
 	// get Clutch score
 	global $post;
 	$clutch = getPostMeta('work_work_clutch_score', $post->ID);
@@ -68,11 +68,11 @@ function shortcode_quote_function($atts, $content = null)
 		'company' => '',
 		'company_url' => '',
 	), $atts));
-	
+
 	// is it one of us?
 	$lighthouse = array_search($name,$team) !== false ? true : false;
 	$personID = array_search ($name, $team);
-	
+
 	if ($lighthouse) {
 		$image = '<div class="quote__image team-image">' . get_the_post_thumbnail( $personID, 'bio-tiny' ) . '</div>';
 		$personUrl = get_permalink($personID);
@@ -85,18 +85,18 @@ function shortcode_quote_function($atts, $content = null)
 			$personName .= $title;
 		}
 		if ($company_url != '') {
-		  $company = '<a href="' . $company_url . '" target="_blank">' . $company . '</a>';	
+		  $company = '<a href="' . $company_url . '" target="_blank">' . $company . '</a>';
 		}
 		if ($company != '') {
 		  $personName .= ', ' . $company;
 		}
 		$personName .= '</div>';
-		
+
 		if ($clutch > 0) {
       $clutchScore = '<div class="clutch"><span class="clutch-score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div>';
     }
 	}
- 
+
   $quote =  '	<blockquote class="quote">' . "\n";
 	$quote .= apply_filters('the_content',$content);
 	$quote .= '<footer>' . $image . $personName . $clutchScore . '</footer>';
@@ -107,7 +107,7 @@ function shortcode_quote_function($atts, $content = null)
 }
 
 function shortcode_image_function($atts) {
-	
+
 	// get the vars
 	extract(shortcode_atts(array(
 		'id' => '',
@@ -117,29 +117,29 @@ function shortcode_image_function($atts) {
 		'bg' => '',
 		'size' => '',
 	), $atts));
-	
+
 	$output = '';
-	
+
 	switch ($size) {
   	case 'full':
     	$size = 'full';
     	break;
-    	
+
     case 'small':
     	$size = 'small';
     	break;
-    	
+
     case 'medium':
     	$size = 'medium';
     	break;
-    	
+
   	default:
     	$size = 'large';
 	}
 
   $imgArray = explode(',', $id);
   $count = count($imgArray);
-  
+
   if ($bg) {
     if (strpos($bg, '#') === false) {
       $bg = '#' . $bg;
@@ -148,32 +148,32 @@ function shortcode_image_function($atts) {
   } else {
     $bgColor = '';
   }
-  
+
   if ($size == 'full') {
     $output .= '</section><section class="o-container-section o-container-section--bordered">';
   }
-  
+
 	$output .= '<div class="o-images count-' . $count . ' size-' . $size . '"' . $bgColor . '>';
-  
+
   foreach ($imgArray as $imgId) {
     $output .= '<div class="o-images__image">' . wp_get_attachment_image($imgId, 'original', '', ['alt' => 'Alt']) . '</div>';
   }
-  
+
   if ( $alt == '' ) {
   	$alt == 'caption';
 	}
-	
+
 	$output .= '</div>';
-	
+
 	if ($size == 'full') {
     $output .= '</section><section class="o-container-section o-container-section--bordered content-grid">';
   }
-	
+
 	return $output;
-	
+
 }
 
-function shortcode_ad_function($atts, $content = null) 
+function shortcode_ad_function($atts, $content = null)
 {
 
 	// get the vars
@@ -182,14 +182,14 @@ function shortcode_ad_function($atts, $content = null)
 		'text' => '',
 		'align' => '',
 	), $atts));
-	
+
 	// Get the page
 	$adPage = get_page($id);
-	
+
 	$adAlign = $align == 'center' ? 'center' : 'left';
-	
+
 	$ad = '<div class="ad ad__' . $adAlign . '">';
-	
+
 	if ($adPage->post_type == 'work') {
   	// get case study block
 	} else {
@@ -199,7 +199,7 @@ function shortcode_ad_function($atts, $content = null)
 	}
 
   $ad .= '</div>';
-	
+
 	wp_reset_query();
 	return $ad;
 }
