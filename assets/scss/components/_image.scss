@@ -1,34 +1,34 @@
 .o-images {
-  
-  margin-top: var(--container-v-pad);
+
   margin-bottom: var(--container-v-pad);
-  
+  margin-top: var(--container-v-pad);
+
   @include breakpoint(from-medium) {
     &.count-2 {
       display: flex;
-      
+
       .o-images__image {
         width: 50%;
       }
     }
   }
-  
+
   &__image {
-    
+
     img {
       display: block;
-      width: 100%;
       height: auto;
+      width: 100%;
     }
   }
-  
-  
+
+
   &.size {
     &-medium {
       grid-column: 2;
     }
   }
-  
+
   &.size {
     &-large {
       grid-column: 1;
@@ -36,18 +36,18 @@
     }
   }
 
-  
+
   &.size {
     &-full {
-      width:100%;
-      
+      width: 100%;
+
       &.count-1 {
         .o-images__image {
-          width: 100%;
+          margin: 0 auto;
           max-width: $global-max-width;
-          margin:0 auto;
+          width: 100%;
         }
-        
+
       }
     }
   }
