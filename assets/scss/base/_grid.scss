@@ -2,12 +2,11 @@
   @extend .s-wysiwyg;
   max-width: $global-max-width;
 
-
   @include breakpoint(from-medium) {
     display: grid;
-    margin:0 auto;
-    grid-template-columns: 4fr 6fr;
     grid-column-gap: 3rem;
+    grid-template-columns: 4fr 6fr;
+    margin: 0 auto;
 
     .o-screens {
       grid-column: 1;
@@ -29,7 +28,8 @@
       margin-top:0;
     }
 
-    .ad.ad__center {
+    .ad.ad__center,
+    iframe {
       grid-column: 1;
       grid-column-end: span 2;
     }
