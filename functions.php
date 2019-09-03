@@ -1,6 +1,6 @@
 <?
 
-add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-thumbnails' );
 
 // Get all the people's names for the quote shortcodes
 $args = [
@@ -33,6 +33,7 @@ require_once __DIR__ . '/src/functions/shortcodes.php';
 require_once __DIR__ . '/src/metabox_groups/front_page.php';
 require_once __DIR__ . '/src/metabox_groups/hero.php';
 require_once __DIR__ . '/src/metabox_groups/page.php';
+require_once __DIR__ . '/src/metabox_groups/post.php';
 require_once __DIR__ . '/src/metabox_groups/service.php';
 require_once __DIR__ . '/src/metabox_groups/team.php';
 require_once __DIR__ . '/src/metabox_groups/work.php';
