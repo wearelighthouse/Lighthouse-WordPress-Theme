@@ -8,6 +8,7 @@ function shortcode_screen_function($atts)
 		'type' => '',
 		'bg' => '',
 		'alt' => '',
+		'caption' => '',
 	), $atts));
 
 	// screen images
@@ -15,7 +16,13 @@ function shortcode_screen_function($atts)
 	$screenCount = count($screens);
 	$screenType = strtolower($type) == 'mobile' ? 'mobile' : 'desktop';
 
-	global $post;
+	if ($caption) {
+  	$captionText = '<div class="o-screens__caption">' . $caption . '</div>';
+	} else {
+  	$captionText = '';
+	}
+
+  global $post;
 
 	// background image
 	if ($bg) {
@@ -86,7 +93,7 @@ function shortcode_quote_function($atts, $content = null)
 		$personName .= '</div>';
 
 		if ($clutch > 0) {
-      $clutchScore = '<div class="quote__clutch"><span class="quote__clutch-score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div>';
+      $clutchScore = '<div class="clutch"><span class="clutch-score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div>';
     }
 	}
 

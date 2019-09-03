@@ -2,7 +2,7 @@
 
 // Bios (peoples faces) TODO: Review size
 add_image_size('bio', 768, 768, true);
-add_image_size('bio-tiny', 66, 66, true);
+add_image_size('bio-tiny', 66, 66, false);
 
 // Case Study Link Block Background
 add_image_size('link-block-case-study-bg-large', 872, 496);

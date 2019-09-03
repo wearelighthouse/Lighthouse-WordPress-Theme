@@ -5,65 +5,54 @@
 }
 
 .quote {
-  padding:1rem 0;
-  margin:1rem 0;
-  border-top:1px #DEDEE2 solid;
-  border-bottom:1px #DEDEE2 solid;
-  
+  border-bottom: 1px #DEDEE2 solid;
+  border-top: 1px #DEDEE2 solid;
+  margin: 3rem 0;
+  padding: 2rem 0;
+
   p {
-    font-family: 'Tiempos', serif;
     color: $color-orange;
-    font-size:1.4rem;
+    font-family: 'Tiempos', serif;
+    font-size: 1.4rem;
+    margin-top: 0;
   }
-  
+
   &__image {
     display: block;
-    width:60px;
     margin-right: 1.5rem;
+    width: 60px;
   }
-  
+
   &__person {
     line-height: 1.6;
   }
-  
+
   &__name {
     display: block;
     font-weight: 700;
   }
-  
-  &__clutch {
-    display: block;
-    position: absolute; 
-    bottom:0.2rem;
-    right: 0;
-    font-weight: 700;
-    background: url(../../dist/svg/clutch-logo.svg) no-repeat 0 0;
-    background-size: 68px 19px;
-    padding-left:70px;
-    align-self: right;
-    
-    &-score {
-      display: inline-block;
-      width: 65px;
-      height: 13px;
-      background: url(../../dist/svg/clutch-star.svg) repeat-x 0 0;  
-    }
-  }
-  
+
   footer {
-    position: relative;
     display: flex;
+    position: relative;
   }
-  
+
   .team-image {
     img {
-      position: absolute;
-      left:0;
+      border-radius: 0 0 30px 30px;
       bottom: 0;
+      left: 0;
+      position: absolute;
     }
     &:before {
-      width: 60px;
       height: 60px;
+      width: 60px;
     }
+  }
+
+  .clutch {
+    bottom: .2rem;
+    position: absolute;
+    right: 0;
   }
 }

@@ -1,0 +1,19 @@
+.clutch {
+  align-self: right;
+  background: url(../../dist/svg/clutch-logo.svg) no-repeat 0 0;
+  background-size: 68px 19px;
+  display: block;
+  font-weight: 700;
+  padding-left: 70px;
+
+  &-score {
+    background: url(../../dist/svg/clutch-star.svg) repeat-x 0 0;
+    display: inline-block;
+    height: 13px;
+    width: 65px;
+  }
+}
+
+h2 + .clutch {
+  margin-top: 2rem;
+}
