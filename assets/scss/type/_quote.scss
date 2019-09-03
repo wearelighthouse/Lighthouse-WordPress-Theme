@@ -5,53 +5,53 @@
 }
 
 .quote {
-  padding:2rem 0;
-  margin:3rem 0;
-  border-top:1px #DEDEE2 solid;
-  border-bottom:1px #DEDEE2 solid;
-  
+  border-bottom: 1px #DEDEE2 solid;
+  border-top: 1px #DEDEE2 solid;
+  margin: 3rem 0;
+  padding: 2rem 0;
+
   p {
-    font-family: 'Tiempos', serif;
     color: $color-orange;
-    font-size:1.4rem;
-    margin-top:0;
+    font-family: 'Tiempos', serif;
+    font-size: 1.4rem;
+    margin-top: 0;
   }
-  
+
   &__image {
     display: block;
-    width:60px;
     margin-right: 1.5rem;
+    width: 60px;
   }
-  
+
   &__person {
     line-height: 1.6;
   }
-  
+
   &__name {
     display: block;
     font-weight: 700;
   }
-  
+
   footer {
-    position: relative;
     display: flex;
+    position: relative;
   }
-  
+
   .team-image {
     img {
-      position: absolute;
-      left:0;
       bottom: 0;
+      left: 0;
+      position: absolute;
     }
     &:before {
-      width: 60px;
       height: 60px;
+      width: 60px;
     }
   }
-  
+
   .clutch {
-    position: absolute; 
-    bottom:0.2rem;
+    bottom: .2rem;
+    position: absolute;
     right: 0;
   }
 }

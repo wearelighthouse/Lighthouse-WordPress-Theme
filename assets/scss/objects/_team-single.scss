@@ -4,41 +4,41 @@
 .o-team-links {
   li {
     display: inline-block;
-    margin-right:20px;
-    margin-right:1.2rem;
-    
+    margin-right: 1.2rem;
+
   }
   a {
-    display: block;
-    width:40px; 
-    height: 40px;
-    background:$color-blackcurrant;
     @extend %u-round;
+    background: $color-blackcurrant;
+    display: block;
+    height: 40px;
     text-indent: -9999px;
+    width: 40px;
   }
+  
   &__website {
-    
+
   }
   &__email {
-    
+
   }
 	&__twitter {
-    
+
   }
 	&__linkedin {
-    
+
   }
 	&__dribbble {
-    
+
   }
 	&__github {
-    
+
   }
 	&__instagram {
-    
+
   }
 	&__stackoverflow {
-    
+
   }
 }
 
@@ -47,15 +47,15 @@
     &__image {
       width: 308px;
     }
-    
+
     .team-image {
       &:before {
-        width:308px;
         height: 308px;
-        opacity: 0.2;
+        opacity: .2;
+        width: 308px;
       }
       img {
-        border-radius:0 0 154px 154px;
+        border-radius: 0 0 154px 154px;
       }
     }
   }

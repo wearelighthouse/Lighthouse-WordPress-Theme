@@ -1,52 +1,49 @@
-/**
- * A container for the team list, with a max width and optional vertical padding
- */
 .o-blog {
   max-width: $global-max-width;
-  
+
   &__post {
-    border-top:1px solid #DEDEE2;
-    padding-top:2rem;
-    margin-bottom:2rem;
-    
+    border-top: 1px solid #DEDEE2;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+
     &:first-child {
-      border:0;
+      border: 0;
     }
-    
+
     @include breakpoint(from-medium) {
-      padding-top:4rem;
-      margin-bottom:4rem;  
+      margin-bottom: 4rem;
+      padding-top: 4rem;
     }
   }
-  
+
   &__category {
-    text-transform: uppercase;
     font-weight: 700;
+    text-transform: uppercase;
   }
-  
+
   @include breakpoint(from-medium) {
     margin:0 auto;
-    
-    
+
+
     &__post {
       display: grid;
-      grid-template-columns: 3fr 7fr; 
       grid-gap: 1rem;
+      grid-template-columns: 3fr 7fr;
     }
-    
+
     &__info {
       grid-column: 1;
-      
+
       p {
-        margin-top:0;
+        margin-top: 0;
       }
     }
-    
+
     &__title {
       grid-column: 2;
     }
   }
-  
+
   .o-blog-nav {
     grid-column: 2;
   }
@@ -54,32 +51,34 @@
 
 .o-blog-nav {
   display: flex;
-  a, span {
+  a,
+  span {
     display: inline-block;
     height: 20px;
+    margin: 0;
     min-width: 20px;
-    padding:1.3rem 1.3rem;
-    text-align: center; 
-    margin:0;
+    padding: 1.3rem;
+    text-align: center;
   }
   a {
-    border-bottom:3px $color-gray solid;
+    border-bottom: 3px $color-gray solid;
     &:hover {
-      color:$color-orange;
-      border-bottom:3px $color-orange solid;
+      border-bottom: 3px $color-orange solid;
+      color: $color-orange;
     }
   }
   span {
-    color:$color-gray;
+    color: $color-gray;
     &.current {
-      color:$color-blackcurrant;
-      border-bottom:3px $color-blackcurrant solid;
+      border-bottom: 3px $color-blackcurrant solid;
+      color: $color-blackcurrant;
     }
   }
-  
+
   &.compact {
-    a, span {
-    padding:0.9rem 0.9rem;
+    a,
+    span {
+    padding: .9rem .9rem;
     }
   }
 }
