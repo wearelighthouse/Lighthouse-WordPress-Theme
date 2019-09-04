@@ -21,6 +21,8 @@
   $bgcolor2 = getPostMeta('hero_hero_bg_color_2');
   if ($bgcolor1 && $bgcolor1) {
     $customGradient = ' style="background: linear-gradient(135deg, ' . $bgcolor1 . ', ' . $bgcolor2 . ');"';
+  } else {
+    $customGradient = '';
   }
 
   // From page has a 100vh header instead of as-big-as-it-needs-to-be
