@@ -28,14 +28,17 @@
     }
   }
 
+  $heroStyle = getPostMeta('hero_hero_style');
+  $modifierClass = $heroStyle ? ' c-hero--' . $heroStyle : '';
+
   // From page has a 100vh header instead of as-big-as-it-needs-to-be
   $frontPageSectionClass = is_front_page() ? ' o-container-section--100vh' : '';
 
 ?>
 
 <section class="o-container-section o-container-section--bordered <?= $frontPageSectionClass ?>">
-  <div class="c-hero">
-    <div class="c-hero__background<?= $heroClass ?>" <?= $heroStyle ?>></div>
+  <div class="c-hero<?= $modifierClass ?>">
+    <div class="c-hero__background"></div>
     <div class="o-container-content o-container-content--v-pad c-hero__content">
       <?php if ($text) : ?>
         <div class="c-hero__text s-banner">
@@ -43,7 +46,7 @@
         </div>
       <?php endif; ?>
       <?php if ($image) : ?>
-        <div class="c-hero__image s-banner">
+        <div class="c-hero__image">
           <?= $image ?>
         </div>
       <?php endif; ?>

@@ -14,7 +14,7 @@ return [
         ],
         [
             'name' => 'Style',
-            'id'   => 'background-color',
+            'id'   => 'style',
             'type' => 'radio',
             'default' => 'orange-pink',
             'options' => [
@@ -25,13 +25,13 @@ return [
         ],
         [
 	        'name'    => 'Custom Gradient Start', 'cmb2',
-          'id'      => 'background-color-1',
+          'id'      => 'bg-color-1',
           'type'    => 'colorpicker',
           'default' => '#ffffff'
         ],
         [
 	        'name'    => 'Custom Gradient End', 'cmb2',
-          'id'      => 'background-color-2',
+          'id'      => 'bg-color-2',
           'type'    => 'colorpicker',
           'default' => '#ffffff'
         ],

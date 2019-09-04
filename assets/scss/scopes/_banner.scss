@@ -1,6 +1,5 @@
 
 .s-banner {
-  @extend %u-color-white;
 
   @for $level from 1 through 5 {
     h#{$level} {

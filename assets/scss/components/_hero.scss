@@ -6,6 +6,8 @@
   @extend %u-jc-center;
   @extend %u-pos-relative;
 
+  $self: &;
+
   &__background {
     @extend %u-pos-absolute;
     @extend %u-top;
@@ -22,12 +24,26 @@
     margin-bottom: 3rem;
   }
 
-  // @include breakpoint(from-medium) {
-  //   &__text {
-  //     width: 70%;
-  //   }
-  //   &__image {
-  //     width: 30%;
-  //   }
-  // }
+  &--orange-pink {
+    #{$self}__text {
+      @extend %u-color-white;
+    }
+
+    // White text
+    #{$self}__background {
+      @extend %u-bg-gradient--orange-pink;
+    }
+  }
+
+  &--gray-standard #{$self}__background,
+  &--gray-gradient #{$self}__background {
+    @extend %u-bg-color-gray-light;
+  }
+
+  &--gray-gradient #{$self}__text {
+    h1 {
+      font-family: 'tiempos';
+      // Do gradient text here?
+    }
+  }
 }
