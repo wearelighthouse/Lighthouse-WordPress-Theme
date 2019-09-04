@@ -19,19 +19,19 @@ return [
             'default' => 'orange-pink',
             'options' => [
                 'orange-pink'   => '<div class="cmb2-radio-bg cmb2-radio-bg--orange">Orange → Pink</div>',
-                'grey-standard' => '<div class="cmb2-radio-bg cmb2-radio-bg--gray-standard"><span>Grey With Standard h1</div>',
-                'grey-gradient' => '<div class="cmb2-radio-bg cmb2-radio-bg--gray-gradient"><span>Grey With Gradient h1</span></div>'
+                'gray-standard' => '<div class="cmb2-radio-bg cmb2-radio-bg--gray-standard"><span>Grey With Standard h1</div>',
+                'gray-gradient' => '<div class="cmb2-radio-bg cmb2-radio-bg--gray-gradient"><span>Grey With Gradient h1</span></div>'
             ]
         ],
         [
 	        'name'    => 'Custom Gradient Start', 'cmb2',
-          'id'      => 'bg-color-1',
+          'id'      => 'bg_color_1',
           'type'    => 'colorpicker',
           'default' => '#ffffff'
         ],
         [
 	        'name'    => 'Custom Gradient End', 'cmb2',
-          'id'      => 'bg-color-2',
+          'id'      => 'bg_color_2',
           'type'    => 'colorpicker',
           'default' => '#ffffff'
         ],

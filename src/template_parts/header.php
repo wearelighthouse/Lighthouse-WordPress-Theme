@@ -6,10 +6,13 @@
     'container' => false
   ];
 
+  $heroStyle = getPostMeta('hero_hero_style');
+  $headerStyle = strpos($heroStyle, 'gray') !== false ? ' u-color-blackcurrant' : ' u-color-white';
+
 ?>
 
 <header class="o-container-section o-container-section--bordered o-container-header">
-  <div class="c-header o-container-content">
+  <div class="c-header o-container-content <?= $headerStyle ?> ">
 
     <a href="/" class="c-header__home-link">
       <svg viewBox="0 0 150 38" style="display: block; width: 150px; height: 38px;">
