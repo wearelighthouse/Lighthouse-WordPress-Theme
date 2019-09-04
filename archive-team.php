@@ -1,9 +1,9 @@
 <?php
-  $teamPage = get_page_by_title('Team');
-  $heroContent = getPostMeta('hero_hero_content', $teamPage->ID);
-  $bgcolor = getPostMeta('hero_hero_background-color', $teamPage->ID);
-  $heroClass = $bgcolor ? ' u-bg-gradient--' . $bgcolor : '' ;
-  $heroStyle = '';
+  $post = get_page_by_title('Team');
+
+  // Setup postdata so the_content() will work outside the loop. Don't need to
+  // wp_reset_postdata() because the loop doesn't need to keep going after this
+  setup_postdata($post);
 ?>
 
 <?php get_header(); ?>
@@ -17,9 +17,10 @@
 	</section>
 
 	<section class="o-container-section o-container-section--bordered content-grid">
-	   <?= apply_filters('the_content', $teamPage->post_content); ?>
+     <?= the_content() ?>
 	</section>
 
 </main>
 
 <?php get_footer(); ?>
+
