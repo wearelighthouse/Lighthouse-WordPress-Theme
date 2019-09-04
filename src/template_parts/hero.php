@@ -1,22 +1,24 @@
 <?php
 
-  if (isset($heroContent)) {
-  	$text= $heroContent;    
-  } else {
-  	$text = getPostMeta('hero_hero_content');    
+  $text = getPostMeta('hero_hero_content');
+
+  // If the hero content doesn't include an h1 (or doesn't exist at all),
+  // then preappend the post_title as an <h1>
+  if (strpos($text, '<h1>') === false) {
+    $text = "<h1>$post->post_title</h1>" . $text;
   }
-  
+
   if (isset($heroImage)) {
-    $image= $heroImage;  
+    $image = $heroImage;
   } else {
-    $image = false;  
+    $image = false;
   }
 
   if (!isset($heroClass)) {
     $bgcolor = getPostMeta('hero_hero_background-color');
     $bgcolor1 = getPostMeta('hero_hero_background-color-1');
     $bgcolor2 = getPostMeta('hero_hero_background-color-2');
-    
+
     if ($bgcolor1 && $bgcolor1 != '#ffffff'){
       $heroClass = '';
     	$heroStyle = ' style="background: linear-gradient(135deg, ' . $bgcolor1 . ', ' . $bgcolor2 . ');"';

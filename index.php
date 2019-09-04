@@ -1,9 +1,5 @@
 <?php
-  $blog = get_page_by_title('Blog');
-  $heroContent = getPostMeta('hero_hero_content', $blog->ID);
-  $bgcolor = getPostMeta('hero_hero_background-color', $blog->ID);
-  $heroClass = $bgcolor ? ' u-bg-gradient--' . $bgcolor : '' ;
-  $heroStyle = '';
+  $post = get_page_by_title('Blog');
 ?>
 
 <?php get_header(); ?>

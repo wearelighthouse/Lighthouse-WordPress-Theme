@@ -1,4 +1,4 @@
-<section class="o-container-section o-container-section--bordered o-blog pagination blog-grid">
+<section class="o-container-content pagination blog-grid">
 
   <nav class="o-blog-nav compact blog-grid__right">
   <?php

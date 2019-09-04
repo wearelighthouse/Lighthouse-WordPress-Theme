@@ -10,6 +10,18 @@
     padding: var(--edge-gutter);
   }
 
+  &--bordered-content {
+    padding: 0 1rem;
+
+    @include breakpoint(frome-small) {
+      padding: 0 2rem;
+    }
+
+    @include breakpoint(from-medium) {
+      padding: 0 4rem;
+    }
+  }
+
   &--h-bordered {
     padding-right: var(--edge-gutter);
     padding-left: var(--edge-gutter);
