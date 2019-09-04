@@ -13,7 +13,7 @@ function registerFrontPageMetaboxes()
     addMetaboxes($groupInfo, [
         'blocks_service',
         'contact_us_banner',
-        'blocks_case_study_large'
+        'case_study_list'
     ], $groupID);
 
 }
