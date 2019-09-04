@@ -11,8 +11,13 @@
 
     <?php include(locate_template('src/template_parts/contact_us_banner.php')) ?>
 
-    <?php $globalBlocksCaseStudy = getPostMeta('blocks_case_study_large_group') ?>
-    <?php include(locate_template('src/template_parts/block_section_case_study_large.php')) ?>
+    <?php
+      $caseStudies = getPostMeta('front_page_case_study_list_client', $post->ID);
+      foreach ($caseStudies as $caseStudyId) {
+      $caseStudySize = 'large';
+      include(locate_template('src/template_parts/block_case_study.php'));
+    }
+    ?>
 
     <div class="placeholder" style="height: 200px;"></div>
 

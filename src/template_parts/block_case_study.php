@@ -1,21 +1,27 @@
 <?php
-  $logoSrc = isset($caseStudy['logo']) ? $caseStudy['logo'] : false;
+  //$caseStudySize = isset($caseStudySize) ? 'large' : 'small';
+
+  //get the case study vars
+  $caseStudy = get_page($caseStudyId);
+
+  $logoSrc = getPostMeta('hero_hero_logo', $caseStudy->ID);
+  $logoId = getPostMeta('hero_hero_logo_id', $caseStudy->ID);
   if ($logoSrc) {
-    $logoAlt = get_post_meta($caseStudy['logo_id'], '_wp_attachment_image_alt', true);
-    $logoAltAttr = $logoAlt ? 'alt="' . $logoAlt . '"' : '';
-    $logoMeta = wp_get_attachment_metadata($caseStudy['logo_id']);
+    //$logoAlt = get_post_meta($caseStudy->ID, '_wp_attachment_image_alt', true);
+    //$logoAltAttr = $logoAlt ? 'alt="' . $caseStudy->post_title . ' logo"' : '';
+    $logoMeta = wp_get_attachment_metadata($logoId);
     $logoMask = "-webkit-mask-image: url({$logoSrc}); mask-image: url({$logoSrc}); width: {$logoMeta['width']}px; height: {$logoMeta['height']}px";
   }
-  $title = isset($caseStudy['title']) ? $caseStudy['title'] : '';
-  $linkText = isset($caseStudy['link_text']) ? $caseStudy['link_text'] : '';
-  $linkURL = isset($caseStudy['link_url']) ? $caseStudy['link_url'] : '';
-  $fgImgSmallId = isset($caseStudy['image_fg_small_id']) ? $caseStudy['image_fg_small_id'] : false;
-  $bgImg = isset($caseStudy['image_bg_large']) ? $caseStudy['image_bg_large'] : false;
-  $bgImgId = $bgImg ? $caseStudy['image_bg_large_id'] : false;
-  $fgImgLargeId = isset($caseStudy['image_fg_large_id']) ? $caseStudy['image_fg_large_id'] : false;
+  $title = get_the_excerpt($caseStudy->ID);
+  $linkText = 'Read more';
+  $linkURL = get_the_permalink($caseStudy->ID);
+  $fgImgSmallId = getPostMeta('work_work_image_small_id', $caseStudy->ID);
+  $bgImg = getPostMeta('work_work_image_large', $caseStudy->ID);
+  $bgImgId = getPostMeta('work_work_image_large_id', $caseStudy->ID);
+  $fgImgLargeId = getPostMeta('work_work_image_medium_id', $caseStudy->ID);
 ?>
 
-<div class="c-case-study-block c-case-study-block--large">
+<div class="c-case-study-block c-case-study-block--<?= $caseStudySize; ?>">
   <div class="c-case-study-block__background">
     <?php if ($bgImg) : ?>
       <div class="c-case-study-block__background-image">

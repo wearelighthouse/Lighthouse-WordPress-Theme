@@ -1,9 +1,5 @@
 <?php
-  $teamPage = get_page_by_title('Team');
-  $heroContent = getPostMeta('hero_hero_content', $teamPage->ID);
-  $bgcolor = getPostMeta('hero_hero_background-color', $teamPage->ID);
-  $heroClass = $bgcolor ? ' u-bg-gradient--' . $bgcolor : '' ;
-  $heroStyle = '';
+  $post = get_page_by_title('Team');
 ?>
 
 <?php get_header(); ?>

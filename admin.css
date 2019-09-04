@@ -81,3 +81,7 @@ h2.cmb-group-name {
 .cmb2-radio-bg--blue {
   background: linear-gradient(135deg, #7abbd9, #98cdc3);
 }
+
+.cmb2-radio-bg--gray {
+  background: gray;
+}

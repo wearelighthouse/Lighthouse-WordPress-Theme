@@ -1,4 +1,4 @@
-<section class="o-container-section o-container-section--bordered o-blog">
+<section class="o-container-content o-blog">
 
 <?php while (have_posts()) : the_post(); ?>
 
