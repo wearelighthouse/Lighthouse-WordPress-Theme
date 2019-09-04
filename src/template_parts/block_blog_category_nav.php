@@ -21,7 +21,7 @@ foreach ($categories as $v) {
   }
 }
 
-?><section class="o-container-section o-container-section--bordered o-blog">
+?><section class="o-container-content o-blog">
   <nav class="o-blog-nav">
     <?= $menu; ?>
   </nav>
