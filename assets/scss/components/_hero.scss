@@ -4,21 +4,30 @@
   @extend %u-flex;
   @extend %u-fd-column;
   @extend %u-jc-center;
-  @extend %u-bg-color-black;
-  @extend .o-section-clip--ramp-bottom-right;
+  @extend %u-pos-relative;
+
+  &__background {
+    @extend %u-pos-absolute;
+    @extend %u-top;
+    @extend %u-right;
+    @extend %u-bottom;
+    @extend %u-left;
+    @extend %u-z-index--1;
+    @extend .o-section-clip--ramp-bottom-right;
+  }
 
   &__content {
     display: flex;
     margin-top: 5rem; // Includes room for header. TODO: Set to actual header height?
     margin-bottom: 3rem;
   }
-  
-  @include breakpoint(from-medium) {  
-    &__text {
-      width: 70%;
-    }
-    &__image {  
-      width: 30%;
-    }
-  }
+
+  // @include breakpoint(from-medium) {
+  //   &__text {
+  //     width: 70%;
+  //   }
+  //   &__image {
+  //     width: 30%;
+  //   }
+  // }
 }

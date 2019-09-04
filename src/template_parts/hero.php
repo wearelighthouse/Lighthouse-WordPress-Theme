@@ -34,7 +34,8 @@
 ?>
 
 <section class="o-container-section o-container-section--bordered <?= $frontPageSectionClass ?>">
-  <div class="c-hero<?= $heroClass ?>"<?= $heroStyle; ?>>
+  <div class="c-hero">
+    <div class="c-hero__background<?= $heroClass ?>" <?= $heroStyle ?>></div>
     <div class="o-container-content o-container-content--v-pad c-hero__content">
       <?php if ($text) : ?>
         <div class="c-hero__text s-banner">
