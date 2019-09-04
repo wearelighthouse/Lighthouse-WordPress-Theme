@@ -16,7 +16,7 @@
           break;
         }
         $caseStudySize = 'large';
-        include(locate_template('src/template_parts/block_case_study.php'))
+        include(locate_template('src/template_parts/block_case_study.php'));
         $i++;
       }
     ?>
