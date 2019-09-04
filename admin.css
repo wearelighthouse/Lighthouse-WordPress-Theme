@@ -95,3 +95,7 @@ h2.cmb-group-name {
   background: linear-gradient(135deg, #FC835E, #FE5284);
   color: #FFF;
 }
+
+.cmb2-radio-bg--gray {
+  background: gray;
+}

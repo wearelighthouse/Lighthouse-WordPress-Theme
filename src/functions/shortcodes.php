@@ -22,7 +22,7 @@ function shortcode_screen_function($atts)
   	$captionText = '';
 	}
 
-	global $post;
+  global $post;
 
 	// background image
 	if ($bg) {
@@ -188,17 +188,34 @@ function shortcode_ad_function($atts, $content = null)
 
 	$adAlign = $align == 'center' ? 'center' : 'left';
 
-	$ad = '<div class="ad ad__' . $adAlign . '">';
+	switch ($align) {
+		case 'center':
+			$adAlign = 'center';
+			break;
+		case 'left':
+			$adAlign = 'left';
+			break;
+		default:
+			$adAlign = 'right';
+
+	}
+
+	$adType = $adPage->post_type == 'work' ? ' ad__service' : ' ad__work';
+
+	$ad = '<div class="ad ad__' . $adAlign . $adType . '">';
+	$ad .= '<div class="ad__content">';
 
 	if ($adPage->post_type == 'work') {
   	// get case study block
+
 	} else {
-  	$ad .= '<h3>' . $adPage->post_title . '</h3>';
+		$ad .= '<p class="ad__sub-title">What we do</p>';
+		$ad .= '<h3>' . $adPage->post_title . '</h3>';
   	$ad .= '<p>' . strip_tags($text) . '</p>';
   	$ad .= '<a href="' . get_permalink($id) . '">Read more</a>';
 	}
 
-  $ad .= '</div>';
+  $ad .= '</div></div>';
 
 	wp_reset_query();
 	return $ad;
