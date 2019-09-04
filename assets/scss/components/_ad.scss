@@ -1,24 +1,58 @@
 .ad {
-  padding:0.8rem;
-  border-radius: 10px;
-  background:lighten($color-gray, 10%);
-    
+
+  border-bottom: 1px solid $color-gray;
+  border-top: 1px solid $color-gray;
+  padding: 2.5rem 0;
+
+  &__content {
+    position: relative;
+    padding: 3rem;
+    clip-path: polygon(100% 0, 100% 50%, 93% 100%, 0 100%, 0 0);
+    padding-right: 30%;
+  }
+
+  &__service {
+    .ad__content {
+      background: $color-gray;
+    }
+  }
+
+  &__work {
+    .ad__content {
+      background: $color-blackcurrant;
+      color: $color-white;
+    }
+  }
+
   h3 {
+    @include fontScale(24, 30);
     font-weight: 700;
-    font-family: 'Tiempos', serif;
+    margin-bottom: 2rem;
   }
+
   p {
-    margin:0.2rem 0 0;
+    margin:0.2rem 0 1rem;
+
+    &.ad__sub-title {
+      @include fontScale(14, 18);
+      color: $color-orange;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: .2rem;
+    }
   }
+
   a {
-    color:$color-orange;
+    color: $color-white;
     font-size: 0.9rem;
-    text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
   }
-  
+
   &__center {
     margin:0 20%;
+  }
+
+  &__column {
   }
 }
