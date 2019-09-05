@@ -19,7 +19,7 @@
 
   $bgcolor1 = getPostMeta('hero_hero_bg_color_1');
   $bgcolor2 = getPostMeta('hero_hero_bg_color_2');
-  if ($bgcolor1 && $bgcolor1) {
+  if ($bgcolor1 && $bgcolor1 !== '#ffffff' && $bgcolor2 && $bgcolor2 !== '#ffffff') {
     $customGradient = ' style="background: linear-gradient(135deg, ' . $bgcolor1 . ', ' . $bgcolor2 . ');"';
   } else {
     $customGradient = '';

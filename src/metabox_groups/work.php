@@ -22,7 +22,11 @@ add_action('cmb2_admin_init', 'registerWorkMetaboxes');
 function registerWorkPageMetaboxes()
 {
 
-    $workPage = get_page_by_title('Our work');
+    $workPage = get_page_by_title('our work');
+
+    if (!$workPage) {
+      return;
+    }
 
     $groupInfo = [
         'object_types' => ['page'],
