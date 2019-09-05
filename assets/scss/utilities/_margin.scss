@@ -18,6 +18,12 @@
   margin-bottom: auto,
 ));
 
+@include make-utility((
+  alias: 'ml-auto',
+  class: true,
+  margin-left: auto,
+));
+
 @for $value from -8 through 12 {
 
   @include make-utility((

@@ -19,23 +19,27 @@
 
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
-    <section class="o-container-content content-grid">
-      <?= the_content(); ?>
+    <section class="o-container-section o-container-section--bordered">
+      <div class="o-container-content c-content-grid">
+        <?= the_content(); ?>
+      </div>
     </section>
 
     <?php if ($stats): ?>
-      <section class="o-container-content o-container-results content-grid">
-        <h2>Results</h2>
-    		<?= $clutchScore; ?>
-        <div class="o-work-results">
-          <?php foreach($stats as $stat): ?>
-  					<div class="o-work-results__result">
-      				<p>
-                <span class="o-work-results__number"><?= $stat['stat_number']; ?></span>
-                <span class="o-work-results__text"><?= $stat['stat_text']; ?></span>
-              </p>
-  					</div>
-          <?php endforeach; ?>
+      <section class="o-container-section o-container-section--bordered">
+        <div class="o-container-content c-content-grid">
+          <h2>Results</h2>
+      		<?= $clutchScore; ?>
+          <div class="o-work-results">
+            <?php foreach($stats as $stat): ?>
+    					<div class="o-work-results__result">
+        				<p>
+                  <span class="o-work-results__number"><?= $stat['stat_number']; ?></span>
+                  <span class="o-work-results__text"><?= $stat['stat_text']; ?></span>
+                </p>
+    					</div>
+            <?php endforeach; ?>
+          </div>
         </div>
       </section>
     <?php	endif; ?>
