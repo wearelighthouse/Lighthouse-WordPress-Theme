@@ -27,30 +27,26 @@
 
     <?php if ($stats): ?>
       <section class="o-container-section o-container-section--bordered">
-        <div class="o-container-content c-content-grid">
-          <h2>Results</h2>
-      		<?= $clutchScore; ?>
-          <div class="o-work-results">
+        <div class="o-container-content c-work-results">
 
-            <?php foreach($stats as $stat): ?>
-    					<div class="o-work-results__result">
-        				<p>
-                  <span class="o-work-results__number"><?= $stat['stat_number']; ?></span>
-                  <span class="o-work-results__text"><?= $stat['stat_text']; ?></span>
-                </p>
-    					</div>
-            <?php endforeach; ?>
+          <?php foreach($stats as $stat): ?>
+  					<div class="c-work-results__result">
+      				<p>
+                <span class="c-work-results__number"><?= $stat['stat_number']; ?></span>
+                <span class="c-work-results__text"><?= $stat['stat_text']; ?></span>
+              </p>
+  					</div>
+          <?php endforeach; ?>
 
-            <?php if ($clutch) : ?>
-        			<div class="o-work-results__result o-work-results__result--clutch">
-        				<p>
-                  <span class="o-work-results__number" style="width:<?= ($clutch*24);?>px"><?= $clutch;?></span>
-                  <span class="o-work-results__text"></span>
-                </p>
-        			</div>
-        		<?php endif; ?>
+          <?php if ($clutch) : ?>
+      			<div class="c-work-results__result c-work-results__result--clutch">
+      				<p>
+                <span class="c-work-results__number" style="width:<?= ($clutch*24);?>px"><?= $clutch;?></span>
+                <span class="c-work-results__text"></span>
+              </p>
+      			</div>
+      		<?php endif; ?>
 
-          </div>
         </div>
       </section>
     <?php	endif; ?>
