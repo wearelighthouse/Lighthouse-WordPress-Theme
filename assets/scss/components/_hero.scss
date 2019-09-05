@@ -4,21 +4,49 @@
   @extend %u-flex;
   @extend %u-fd-column;
   @extend %u-jc-center;
-  @extend %u-bg-color-black;
-  @extend .o-section-clip--ramp-bottom-right;
+  @extend %u-pos-relative;
+
+  $self: &;
+
+  &__background {
+    @extend %u-pos-absolute;
+    @extend %u-top;
+    @extend %u-right;
+    @extend %u-bottom;
+    @extend %u-left;
+    @extend %u-z-index--1;
+    @extend .o-section-clip--ramp-bottom-right;
+  }
 
   &__content {
     display: flex;
     margin-top: 5rem; // Includes room for header. TODO: Set to actual header height?
     margin-bottom: 3rem;
   }
-  
-  @include breakpoint(from-medium) {  
-    &__text {
-      width: 70%;
+
+  &--orange-pink {
+    #{$self}__text {
+      @extend %u-color-white;
     }
-    &__image {  
-      width: 30%;
+
+    // White text
+    #{$self}__background {
+      @extend %u-bg-gradient--orange-pink;
+    }
+  }
+
+  &--gray-standard #{$self}__background,
+  &--gray-gradient #{$self}__background {
+    @extend %u-bg-color-gray-light;
+  }
+
+  &--gray-gradient #{$self}__text {
+    h1 {
+      // Do gradient text here?
+      background: linear-gradient(135deg, #FC845B, #FE497A);
+      font-family: 'tiempos';
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }

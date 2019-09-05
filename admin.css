@@ -46,12 +46,6 @@
   background-color: #fff !important;
 }
 
-.cmb2-radio-bg {
-  display: inline-block;
-  padding: 3px;
-  color: #fff;
-}
-
 /**
  * cmb2 Style fixes and tweaks
  */
@@ -70,16 +64,36 @@ h2.cmb-group-name {
  * Fancy colored backgrounds for radio button labels. TODO: Use the real colors!
  */
 
-.cmb2-radio-bg--gray {
-  background: #7E7E81;
+ .cmb2-radio-bg {
+   display: inline-flex;
+   align-items: center;
+   height: 20px;
+   padding: 4px;
+   font-weight: 500;
+   font-size: 15px;
+ }
+
+.cmb2-radio-bg--gray-standard {
+  background: #F7F7F9;
+  color: #151931;
+}
+
+.cmb2-radio-bg--gray-gradient {
+  background: #F7F7F9;
+}
+.cmb2-radio-bg--gray-gradient span {
+  background: linear-gradient(135deg, #FC845B, #FE497A);
+  font-family: serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 3px;
+  -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .cmb2-radio-bg--orange {
   background: linear-gradient(135deg, #FC835E, #FE5284);
-}
-
-.cmb2-radio-bg--blue {
-  background: linear-gradient(135deg, #7abbd9, #98cdc3);
+  color: #FFF;
 }
 
 .cmb2-radio-bg--gray {

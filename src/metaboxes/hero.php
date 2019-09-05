@@ -13,37 +13,27 @@ return [
             ]
         ],
         [
-            'name' => 'Background Color',
-            'id'   => 'background-color',
+            'name' => 'Style',
+            'id'   => 'style',
             'type' => 'radio',
-            'default' => 'placeholder',
+            'default' => 'orange-pink',
             'options' => [
-                'placeholder' => '<div class="cmb2-radio-bg cmb2-radio-bg--gray">Placeholder</div>',
-                'orange-pink' => '<div class="cmb2-radio-bg cmb2-radio-bg--orange">Orange → Pink</div>',
-                'blue-turquoise' => '<div class="cmb2-radio-bg cmb2-radio-bg--blue">Blue → Turquoise</div>',
-                'grey' => '<div class="cmb2-radio-bg cmb2-radio-bg--blue">Grey → Other Grey?</div>'
+                'orange-pink'   => '<div class="cmb2-radio-bg cmb2-radio-bg--orange">Orange → Pink</div>',
+                'gray-standard' => '<div class="cmb2-radio-bg cmb2-radio-bg--gray-standard"><span>Grey With Standard h1</div>',
+                'gray-gradient' => '<div class="cmb2-radio-bg cmb2-radio-bg--gray-gradient"><span>Grey With Gradient h1</span></div>'
             ]
         ],
         [
-	        'name'    => 'Background color 1', 'cmb2',
-			'id'      => 'background-color-1',
-			'type'    => 'colorpicker',
-			'default' => '#ffffff',
+	        'name'    => 'Custom Gradient Start', 'cmb2',
+          'id'      => 'bg_color_1',
+          'type'    => 'colorpicker',
+          'default' => '#ffffff'
         ],
         [
-	        'name'    => 'Background color 2', 'cmb2',
-			'id'      => 'background-color-2',
-			'type'    => 'colorpicker',
-			'default' => '#ffffff',
-        ],
-        [
-            'name' => 'Background Style',
-            'id'   => 'background-style',
-            'type' => 'radio',
-            'options' => [
-                'header-a' => 'Header A',
-                'header-b' => 'Header B'
-            ]
+	        'name'    => 'Custom Gradient End', 'cmb2',
+          'id'      => 'bg_color_2',
+          'type'    => 'colorpicker',
+          'default' => '#ffffff'
         ],
         [
             'name' => 'Logo',

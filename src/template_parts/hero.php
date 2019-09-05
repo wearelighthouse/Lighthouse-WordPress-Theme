@@ -14,18 +14,15 @@
     $image = false;
   }
 
-  if (!isset($heroClass)) {
-    $bgcolor = getPostMeta('hero_hero_background-color');
-    $bgcolor1 = getPostMeta('hero_hero_background-color-1');
-    $bgcolor2 = getPostMeta('hero_hero_background-color-2');
+  $heroStyle = getPostMeta('hero_hero_style');
+  $modifierClass = $heroStyle ? ' c-hero--' . $heroStyle : '';
 
-    if ($bgcolor1 && $bgcolor1 != '#ffffff'){
-      $heroClass = '';
-    	$heroStyle = ' style="background: linear-gradient(135deg, ' . $bgcolor1 . ', ' . $bgcolor2 . ');"';
-    } else {
-      $heroClass = $bgcolor ? ' u-bg-gradient--' . $bgcolor : '' ;
-    	$heroStyle = '';
-    }
+  $bgcolor1 = getPostMeta('hero_hero_bg_color_1');
+  $bgcolor2 = getPostMeta('hero_hero_bg_color_2');
+  if ($bgcolor1 && $bgcolor1 !== '#ffffff' && $bgcolor2 && $bgcolor2 !== '#ffffff') {
+    $customGradient = ' style="background: linear-gradient(135deg, ' . $bgcolor1 . ', ' . $bgcolor2 . ');"';
+  } else {
+    $customGradient = '';
   }
 
   // From page has a 100vh header instead of as-big-as-it-needs-to-be
@@ -34,7 +31,8 @@
 ?>
 
 <section class="o-container-section o-container-section--bordered <?= $frontPageSectionClass ?>">
-  <div class="c-hero<?= $heroClass ?>"<?= $heroStyle; ?>>
+  <div class="c-hero<?= $modifierClass ?>">
+    <div class="c-hero__background" <?= $customGradient ?>></div>
     <div class="o-container-content o-container-content--v-pad c-hero__content">
       <?php if ($text) : ?>
         <div class="c-hero__text s-banner">
@@ -42,7 +40,7 @@
         </div>
       <?php endif; ?>
       <?php if ($image) : ?>
-        <div class="c-hero__image s-banner">
+        <div class="c-hero__image">
           <?= $image ?>
         </div>
       <?php endif; ?>
