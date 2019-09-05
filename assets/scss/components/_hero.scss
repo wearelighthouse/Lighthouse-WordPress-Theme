@@ -42,8 +42,11 @@
 
   &--gray-gradient #{$self}__text {
     h1 {
-      font-family: 'tiempos';
       // Do gradient text here?
+      background: linear-gradient(135deg, #FC845B, #FE497A);
+      font-family: 'tiempos';
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }
