@@ -33,14 +33,22 @@
   }
 
   &__team-image {
+    @extend %u-pos-relative;
+
     img {
+      @extend %u-block;
       @extend %u-pos-absolute;
       @extend %u-bottom;
       @extend %u-left;
+      @extend %u-right;
       border-radius: 0 0 30px 30px;
     }
 
     &:before {
+      @extend %u-block;
+      @extend %u-bg-color-gray-light;
+      @extend %u-content;
+      @extend %u-round;
       width: 60px;
       height: 60px;
     }

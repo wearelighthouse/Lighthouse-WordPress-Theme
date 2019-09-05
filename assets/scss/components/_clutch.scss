@@ -1,8 +1,6 @@
 .c-clutch {
   @extend %u-inline-flex;
-
-  //font-weight: 700;
-  //padding-left: 70px;
+  @extend %u-ai-center;
 
   &__logo {
     width: 68px;
@@ -12,13 +10,13 @@
   }
 
   &__score {
-    //display: inline-block;
     width: 65px;
     height: 13px;
+    margin-left: 6px;
     background: url('../../dist/svg/clutch-star.svg') repeat-x 0 0;
   }
 }
 
-h2 + .clutch {
+h2 + .c-clutch {
   margin-top: 2rem;
 }

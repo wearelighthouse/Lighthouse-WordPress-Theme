@@ -74,7 +74,7 @@ function shortcode_quote_function($atts, $content = null)
 	$personID = array_search ($name, $team);
 
 	if ($lighthouse) {
-		$image = '<div class="c-blockquote__image team-image">' . get_the_post_thumbnail( $personID, 'bio-tiny' ) . '</div>';
+		$image = '<div class="c-blockquote__image c-blockquote__team-image">' . get_the_post_thumbnail( $personID, 'bio-tiny' ) . '</div>';
 		$personUrl = get_permalink($personID);
 		$personName = '<div class="c-blockquote__person"><a href="' . $personUrl . '" class="c-blockquote__name">' . $name . '</a>' . getPostMeta('team_team_title_short', $personID); '</div>';
 		$clutchScore = '';
