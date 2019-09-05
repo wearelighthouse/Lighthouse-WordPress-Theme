@@ -1,14 +1,14 @@
 <?php
-	$heroContent = '<h1>' . get_the_excerpt() . '</h1>';
-	//$heroImage = getPostMeta('work_work_image_large', $post->ID);
+  $heroContent = '<h1>' . get_the_excerpt() . '</h1>';
+  //$heroImage = getPostMeta('work_work_image_large', $post->ID);
 
-	// get the stats
-	$stats = getPostMeta('work_work_stats', $post->ID);
+  // get the stats
+  $stats = getPostMeta('work_work_stats', $post->ID);
 
-	$clutch = getPostMeta('work_work_clutch_score', $post->ID);
-	$clutchScore = '';
-	if ($clutch > 0) {
-    $clutchScore = '<div class="clutch"><span class="clutch-score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div>';
+  $clutch = getPostMeta('work_work_clutch_score', $post->ID);
+  $clutchScore = '';
+  if ($clutch > 0) {
+    $clutchScore = '<div class="c-clutch"><div class="c-clutch__logo"></div><div class="c-clutch__score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div></div>';
   }
 ?>
 
@@ -19,38 +19,41 @@
 
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
-	<section class="o-container-content content-grid">
+    <section class="o-container-section o-container-section--bordered">
+      <div class="o-container-content c-content-grid">
+        <?= the_content(); ?>
+      </div>
+    </section>
 
-		<?php echo the_content(); ?>
+    <?php if ($stats): ?>
+      <section class="o-container-section o-container-section--bordered">
+        <div class="o-container-content c-content-grid">
+          <h2>Results</h2>
+      		<?= $clutchScore; ?>
+          <div class="o-work-results">
 
-	</section>
+            <?php foreach($stats as $stat): ?>
+    					<div class="o-work-results__result">
+        				<p>
+                  <span class="o-work-results__number"><?= $stat['stat_number']; ?></span>
+                  <span class="o-work-results__text"><?= $stat['stat_text']; ?></span>
+                </p>
+    					</div>
+            <?php endforeach; ?>
 
-<?php
-	if ($stats):
-?>	<section class="o-container-content o-container-results">
+            <?php if ($clutch) : ?>
+        			<div class="o-work-results__result o-work-results__result--clutch">
+        				<p>
+                  <span class="o-work-results__number" style="width:<?= ($clutch*24);?>px"><?= $clutch;?></span>
+                  <span class="o-work-results__text"></span>
+                </p>
+        			</div>
+        		<?php endif; ?>
 
-			<div class="o-work-results">
-		<?php foreach($stats as $stat): ?>
-  			<div class="o-work-results__result">
-  				<p><span class="o-work-results__number"><?= $stat['stat_number']; ?></span><span class="o-work-results__text"><?= $stat['stat_text']; ?></span></p>
-  			</div>
-		<?php endforeach; ?>
-
-		<?php
-		if ($clutch) {
-			?>
-			<div class="o-work-results__result o-work-results__result--clutch">
-				<p><span class="o-work-results__number" style="width:<?= ($clutch*24);?>px"><?= $clutch;?></span><span class="o-work-results__text">
-				<span class="o-work-results__text"></span></p>
-			</div>
-			<?php
-
-		}
-		?>
-			</div>
-	</section><?php
-	endif;
-?>
+          </div>
+        </div>
+      </section>
+    <?php	endif; ?>
 
 <?php
 

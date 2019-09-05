@@ -1,0 +1,56 @@
+
+.c-blockquote {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-top: 1px $color-gray solid;
+  border-bottom: 1px $color-gray solid;
+
+  p {
+    @extend .type-quote;
+    margin-top: 0;
+  }
+
+  &__image {
+    display: block;
+    width: 60px;
+    margin-right: 1.5rem;
+  }
+
+  &__person {
+    line-height: 1.6;
+  }
+
+  &__name {
+    display: block;
+    font-weight: 500;
+  }
+
+  footer {
+    @extend %u-flex;
+    @extend %u-ai-center;
+    @extend %u-pos-relative;
+    @extend %u-mt-4;
+  }
+
+  &__team-image {
+    @extend %u-pos-relative;
+
+    img {
+      @extend %u-block;
+      @extend %u-pos-absolute;
+      @extend %u-bottom;
+      @extend %u-left;
+      @extend %u-right;
+      border-radius: 0 0 30px 30px;
+    }
+
+    &:before {
+      @extend %u-block;
+      @extend %u-bg-color-gray-light;
+      @extend %u-content;
+      @extend %u-round;
+      width: 60px;
+      height: 60px;
+    }
+  }
+}

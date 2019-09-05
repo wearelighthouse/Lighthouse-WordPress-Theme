@@ -1,19 +1,22 @@
-.clutch {
-  align-self: right;
-  background: url(../../dist/svg/clutch-logo.svg) no-repeat 0 0;
-  background-size: 68px 19px;
-  display: block;
-  font-weight: 700;
-  padding-left: 70px;
+.c-clutch {
+  @extend %u-inline-flex;
+  @extend %u-ai-center;
 
-  &-score {
-    background: url(../../dist/svg/clutch-star.svg) repeat-x 0 0;
-    display: inline-block;
-    height: 13px;
+  &__logo {
+    width: 68px;
+    height: 19px;
+    background: url('../../dist/svg/clutch-logo.svg') no-repeat 0 0;
+    background-size: 68px 19px;
+  }
+
+  &__score {
     width: 65px;
+    height: 13px;
+    margin-left: 6px;
+    background: url('../../dist/svg/clutch-star.svg') repeat-x 0 0;
   }
 }
 
-h2 + .clutch {
+h2 + .c-clutch {
   margin-top: 2rem;
 }

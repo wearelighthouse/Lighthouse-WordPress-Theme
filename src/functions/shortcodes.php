@@ -74,13 +74,13 @@ function shortcode_quote_function($atts, $content = null)
 	$personID = array_search ($name, $team);
 
 	if ($lighthouse) {
-		$image = '<div class="quote__image team-image">' . get_the_post_thumbnail( $personID, 'bio-tiny' ) . '</div>';
+		$image = '<div class="c-blockquote__image c-blockquote__team-image">' . get_the_post_thumbnail( $personID, 'bio-tiny' ) . '</div>';
 		$personUrl = get_permalink($personID);
-		$personName = '<div class="quote__person"><a href="' . $personUrl . '" class="quote__name">' . $name . '</a>' . getPostMeta('team_team_title_short', $personID); '</div>';
+		$personName = '<div class="c-blockquote__person"><a href="' . $personUrl . '" class="c-blockquote__name">' . $name . '</a>' . getPostMeta('team_team_title_short', $personID); '</div>';
 		$clutchScore = '';
 	} else {
 		$image = '';
-		$personName = '<div class="quote__person"><span class="quote__name">' . $name . '</span>';
+		$personName = '<div class="c-blockquote__person"><span class="c-blockquote__name">' . $name . '</span>';
 		if ($title != '') {
 			$personName .= $title;
 		}
@@ -93,11 +93,11 @@ function shortcode_quote_function($atts, $content = null)
 		$personName .= '</div>';
 
 		if ($clutch > 0) {
-      $clutchScore = '<div class="clutch"><span class="clutch-score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div>';
+      $clutchScore = '<div class="c-clutch u-ml-auto"><div class="c-clutch__logo"></div><div class="c-clutch__score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div></div>';
     }
 	}
 
-  $quote =  '	<blockquote class="quote">' . "\n";
+  $quote =  '	<blockquote class="c-blockquote">' . "\n";
 	$quote .= apply_filters('the_content',$content);
 	$quote .= '<footer>' . $image . $personName . $clutchScore . '</footer>';
 	$quote .= '	</blockquote>' . "\n";
