@@ -10,7 +10,9 @@ function registerWorkMetaboxes()
     $groupID = basename(__FILE__, '.php');
 
     addMetaboxes($groupInfo, [
-        'work'
+        'work',
+        'sector_list',
+        'service_list'
     ], $groupID);
 
 }
