@@ -31,19 +31,15 @@
 
           <?php foreach($stats as $stat): ?>
   					<div class="c-work-results__result">
-      				<p>
-                <span class="c-work-results__number"><?= $stat['stat_number']; ?></span>
-                <span class="c-work-results__text"><?= $stat['stat_text']; ?></span>
-              </p>
+              <strong class="c-work-results__number"><?= $stat['stat_number']; ?></strong>
+              <span class="c-work-results__text"><?= $stat['stat_text']; ?></span>
   					</div>
           <?php endforeach; ?>
 
           <?php if ($clutch) : ?>
       			<div class="c-work-results__result c-work-results__result--clutch">
-      				<p>
-                <span class="c-work-results__number" style="width:<?= ($clutch*24);?>px"><?= $clutch;?></span>
-                <span class="c-work-results__text"></span>
-              </p>
+              <span class="c-work-results__number" style="width:<?= ($clutch*24);?>px"><?= $clutch;?></span>
+              <span class="c-work-results__text"></span>
       			</div>
       		<?php endif; ?>
 

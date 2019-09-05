@@ -3,3 +3,9 @@
   alias: 'round',
   border-radius: 50%
 ));
+
+@include make-utility((
+  alias: 'gray-borders',
+  border-top: 1px $color-gray solid,
+  border-bottom: 1px $color-gray solid
+));

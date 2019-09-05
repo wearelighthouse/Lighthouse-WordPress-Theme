@@ -1,9 +1,8 @@
 
 .c-blockquote {
+  @extend %u-gray-borders;
   margin: 3rem 0;
   padding: 2rem 0;
-  border-top: 1px $color-gray solid;
-  border-bottom: 1px $color-gray solid;
 
   p {
     @extend .type-quote;
