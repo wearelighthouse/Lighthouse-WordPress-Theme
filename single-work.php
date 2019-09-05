@@ -52,16 +52,29 @@
 	endif;
 ?>
 
+<?php
+
+$linkList = '';
+// get the service
+$services = getPostMeta('work_service_list_service', $post->ID);
+foreach ($services as $service) {
+	$linkList .= '<li><a href="' . get_permalink($service) . '">' . get_the_title($service) . '</a></li>';
+}
+$sectors = getPostMeta('work_sector_list_sector', $post->ID);
+foreach ($sectors as $sector) {
+	$linkList .= '<li><a href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
+}
+
+// get the sector
+
+?>
+
 <section class="o-container-content o-work-footer">
 
 	<div class="o-work-footer__column">
 		<h3>See more&hellip;</h3>
 		<ul class="o-work-footer__list">
-				<li><a href="">Idea to Launch</a></li>
-				<li><a href="">Automotive</a></li>
-				<li><a href="">UX / UI design</a></li>
-				<li><a href="">Charity</a></li>
-				<li><a href="">MVP development</a></li>
+			<?= $linkList; ?>
 		</ul>
 	</div>
 
