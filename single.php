@@ -17,14 +17,15 @@
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
     <?php if ($podcastEmbed): ?>
-    <section class="o-container-section o-container-section--bordered content-grid">
-      <?= $podcastEmbed; ?>
-    </section>
+      <section class="o-container-section o-container-section--bordered content-grid">
+        <?= $podcastEmbed; ?>
+      </section>
     <?php endif; ?>
 
-
-    <section class="o-container-section o-container-section--bordered content-grid">
-      <?= the_content(); ?>
+    <section class="o-container-section o-container-section--bordered">
+      <div class="o-container-content content-grid">
+        <?= the_content(); ?>
+      </div>
     </section>
 
   <?php endwhile; ?>
