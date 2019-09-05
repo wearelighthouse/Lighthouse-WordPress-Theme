@@ -55,26 +55,37 @@
       </section>
     <?php	endif; ?>
 
-    <section class="o-container-content o-work-footer">
+<?php
 
-    	<div class="o-work-footer__column">
-    		<h3>See more&hellip;</h3>
-    		<ul class="o-work-footer__list">
-    				<li><a href="">Idea to Launch</a></li>
-    				<li><a href="">Automotive</a></li>
-    				<li><a href="">UX / UI design</a></li>
-    				<li><a href="">Charity</a></li>
-    				<li><a href="">MVP development</a></li>
-    		</ul>
-    	</div>
+	$linkList = '';
+	// get the service
+	$services = getPostMeta('work_service_list_service', $post->ID);
+	foreach ($services as $service) {
+		$linkList .= '<li><a href="' . get_permalink($service) . '">' . get_the_title($service) . '</a></li>';
+	}
+	$sectors = getPostMeta('work_sector_list_sector', $post->ID);
+	foreach ($sectors as $sector) {
+		$linkList .= '<li><a href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
+	}
 
-    	<div class="o-work-footer__column">
+?>
 
-    		<h2>If you've got a product idea you want to bring to life, talk to us</h2>
-    		<p><a href="#" class="c-case-study-block__link c-button c-button--underlined-dark" href="/contact/">Get in touch</a></p>
-    	</div>
+<section class="o-container-content o-work-footer">
 
-    </section>
+	<div class="o-work-footer__column">
+		<h3>See more&hellip;</h3>
+		<ul class="o-work-footer__list">
+			<?= $linkList; ?>
+		</ul>
+	</div>
+
+	<div class="o-work-footer__column">
+
+		<h2>If you've got a product idea you want to bring to life, talk to us</h2>
+		<p><a href="#" class="c-case-study-block__link c-button c-button--underlined-dark" href="/contact/">Get in touch</a></p>
+	</div>
+
+</section>
 
   <?php endwhile; ?>
 
