@@ -3,7 +3,7 @@
 $teamTitleShort = getPostMeta('team_team_title_short', $post->ID);
 $teamTitle = getPostMeta('team_team_title', $post->ID);
 $teamName = getPostMeta('team_team_name', $post->ID);
-$teamSocial = getPostMeta('team_team_social', $post->ID);
+$socials = getPostMeta('team_team_social', $post->ID);
 
 $heroImage = '<div class="team-image">' . get_the_post_thumbnail($post->ID) . '</div>';
 
@@ -17,26 +17,12 @@ $heroImage = '<div class="team-image">' . get_the_post_thumbnail($post->ID) . '<
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
 		<section class="o-container-section o-container-section--bordered">
-      <div class="o-container-content c-content-grid">
+      <div class="o-container-content o-container-content--v-pad c-content-grid">
 
-    		<ul class="o-team-links">
-
-					<?php if (isset($teamSocial[0]['link'])) : ?>
-						<?php foreach($teamSocial as $social) : ?>
-							<?php
-							  $linkPre = $social['type'] === 'Email' ? 'mailto:' : '';
-							?>
-
-							<li>
-								<a class="o-team-links__<?= strToLower($social['type']) ?>"
-									 href="<?= $social['link'] ?>">
-									<?= $social['type'] ?>
-								</a>
-							</li>
-
-						<?php endforeach; ?>
-					<?php endif; ?>
-    		</ul>
+				<div class="c-content-grid__left">
+					<?php $socialLinksStyle = 'dark' ?>
+					<?php include(locate_template('src/template_parts/social_links.php')) ?>
+				</div>
 
 				<?= apply_filters('the_content', $post->post_content ); ?>
 			</div>

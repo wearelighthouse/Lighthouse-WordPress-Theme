@@ -2,10 +2,6 @@
 
 $mainContent = getOption('footer', 'main_content');
 $contactBoxes = getOption('contact', 'group');
-$twitterURL = getOption('social', 'twitter');
-$facebookURL = getOption('social', 'facebook');
-$linkedInURL = getOption('social', 'linkedin');
-$instagramURL = getOption('social', 'instagram');
 $footerLinks = getOption('footer', 'links');
 $copyright = getOption('footer', 'copyright');
 
@@ -50,12 +46,10 @@ $footerLinks = $footerLinks ? autoa($footerLinks) : null;
 
       <div class="c-footer__lower type-p--smal">
 
-        <?php if ($twitterURL || $facebookURL || $linkedInURL || $instagramURL) : ?>
-          <?php $socialLinksStyle = 'light' ?>
-          <div class="c-footer__social">
-            <?php include(locate_template('src/template_parts/social_links.php')) ?>
-          </div>
-        <?php endif; ?>
+        <?php $socialLinksStyle = 'light' ?>
+        <div class="c-footer__social">
+          <?php include(locate_template('src/template_parts/social_links.php')) ?>
+        </div>
 
         <?php if ($footerLinks) : ?>
           <ul class="c-footer__links">
