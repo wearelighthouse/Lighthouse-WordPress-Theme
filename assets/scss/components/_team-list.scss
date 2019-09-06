@@ -15,7 +15,9 @@
   }
 
   &__person {
-    @extend %u-block;
+    @extend %u-flex;
+    @extend %u-fd-column;
+    @extend %u-ai-center;
     @extend %u-width-100pc;
     @extend %u-mv-4; // Should be enough for Dans Lego person hair
   }
@@ -46,12 +48,13 @@
   &__name {
     @extend .type-p;
     @extend %u-bold;
-    @extend %u-mt-3;
+    @extend %u-mt-4;
   }
 
   &__title {
     @extend .type-p;
-    @extend %u-mt-2;
+    margin-top: .75rem;
+    margin-bottom: 0;
   }
 
 }

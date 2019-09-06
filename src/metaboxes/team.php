@@ -48,12 +48,11 @@ return [
                     'options' => [
                         'Generic' => 'Generic',
                         'Email' => 'Email',
-                        'Twitter' => 'Twitter',
-                        'LinkedIn' => 'LinkedIn',
-                        'Dribble' => 'Dribble',
+                        'Dribbble' => 'Dribbble',
                         'GitHub' => 'GitHub',
                         'Instagram' => 'Instagram',
-                        'Stackoverflow' => 'Stackoverflow'
+                        'LinkedIn' => 'LinkedIn',
+                        'Twitter' => 'Twitter'
                     ]
                 ],
                 [
