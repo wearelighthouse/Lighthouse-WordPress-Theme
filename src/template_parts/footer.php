@@ -9,6 +9,18 @@ $instagramURL = getOption('social', 'instagram');
 $footerLinks = getOption('footer', 'links');
 $copyright = getOption('footer', 'copyright');
 
+$socials = [];
+
+foreach(['twitter', 'facebook', 'linkedin', 'instagram'] as $site) {
+  $link = getOption('social', $site);
+  if ($link) {
+    array_push($socials, [
+      'type' => $site,
+      'link' => $link
+    ]);
+  }
+}
+
 $footerLinks = $footerLinks ? autoa($footerLinks) : null;
 
 ?>
