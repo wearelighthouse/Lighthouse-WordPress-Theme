@@ -2,6 +2,7 @@
 // Global color variables
 
 $color-white:        #FFFFFF;
+$color-gray-bluish:  #F7F7F9;
 $color-gray-light:   #F7F7F7;
 $color-gray:         #DEDEE2;
 $color-gray-dark:    #7E7E81;
@@ -15,6 +16,7 @@ $color-orange:       #FC895B;
 
 $auto-colors: (
   'white': $color-white,
+  'gray-bluish': $color-gray-bluish,
   'gray-light': $color-gray-light,
   'gray': $color-gray,
   'gray-dark': color-gray-dark,

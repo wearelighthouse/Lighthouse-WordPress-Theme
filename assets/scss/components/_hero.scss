@@ -24,6 +24,16 @@
     margin-bottom: 3rem;
   }
 
+  &__text {
+
+  }
+
+  &__image {
+    @extend %u-ml-auto;
+    // width: // Whatever the image width is?
+    height: 0;
+  }
+
   &--orange-pink {
     #{$self}__text {
       @extend %u-color-white;
@@ -37,7 +47,7 @@
 
   &--gray-standard #{$self}__background,
   &--gray-gradient #{$self}__background {
-    @extend %u-bg-color-gray-light;
+    @extend %u-bg-color-gray-bluish;
   }
 
   &--gray-gradient #{$self}__text {
