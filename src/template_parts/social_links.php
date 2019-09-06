@@ -1,11 +1,12 @@
 <?php
 
   $svgSpriteSheet = get_template_directory_uri() . '/dist/svg/sprites.svg';
+  $class = $socialLinksStyle ? 'c-social-links--' . $socialLinksStyle : '';
 
 ?>
 
 
-<div class="c-social-links">
+<div class="c-social-links <?= $class ?>">
 
   <?php if ($twitterURL) : ?>
     <a href="<?= $twitterURL ?>" class="c-social-links__link">

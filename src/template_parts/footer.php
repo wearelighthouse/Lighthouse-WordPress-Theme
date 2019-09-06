@@ -36,9 +36,10 @@ $footerLinks = $footerLinks ? autoa($footerLinks) : null;
         </address>
       <?php endif; ?>
 
-      <div class="c-footer__lower type-p--small">
+      <div class="c-footer__lower type-p--smal">
 
         <?php if ($twitterURL || $facebookURL || $linkedInURL || $instagramURL) : ?>
+          <?php $socialLinksStyle = 'light' ?>
           <div class="c-footer__social">
             <?php include(locate_template('src/template_parts/social_links.php')) ?>
           </div>

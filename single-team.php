@@ -43,7 +43,7 @@ $heroImage = '<div class="team-image">' . get_the_post_thumbnail($post->ID) . '<
 		</section>
 
 		<section class="o-container-section o-container-section--bordered">
-			<div class="o-container-content c-content-grid">
+			<div class="o-container-content">
 	    <?php include(locate_template('src/template_parts/block_team_list.php')) ?>
 		</section>
 
