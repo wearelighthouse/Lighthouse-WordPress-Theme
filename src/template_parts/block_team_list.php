@@ -12,20 +12,18 @@ $team = new WP_Query( $args );
 
 ?>
 
-<div class="o-container-content o-container-content--v-pad o-team-list">
+<div class="o-container-content o-container-content--v-pad c-team-list">
   <?php foreach($team->posts as $person) : ?>
     <?php
       $teamTitleShort = getPostMeta('team_team_title_short', $person->ID);
     ?>
-    <div class="o-team-list__person">
-    	<a href="<?= get_the_permalink($person->ID); ?>" class="o-team-list__content">
-    		<div class="o-team-list__image team-image">
+    <div class="c-team-list__person">
+    	<a href="<?= get_the_permalink($person->ID); ?>" class="c-team-list__content">
+    		<div class="c-team-list__image team-image">
     			<?= get_the_post_thumbnail($person->ID); ?>
     		</div>
-    		<div class="o-team-list__title">
-    			<h2><?= $person->post_title; ?></h2>
-    			<p><?= $teamTitleShort; ?>&nbsp;</p>
-    		</div>
+  			<h3 class="c-team-list__name"><?= $person->post_title; ?></h3>
+  			<p class="c-team-list__title"><?= $teamTitleShort; ?></p>
     	</a>
     </div>
   <?php endforeach; ?>

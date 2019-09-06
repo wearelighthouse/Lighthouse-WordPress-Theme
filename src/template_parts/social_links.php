@@ -12,7 +12,7 @@
       <?php if ($social['type'] && $social['link']) : ?>
         <a href="<?= $social['link'] ?>" class="c-social-links__link">
           <svg viewBox="0 0 40 40" style="display: inline-block; height: 40px; width: 40px;">
-            <use xlink:href="<?= $svgSpriteSheet ?>#social--<?= strToLower($social['type']) ?>"></use>
+            <use xlink:href="<?= $svgSpriteSheet ?>#icon--<?= strToLower($social['type']) ?>"></use>
           </svg>
         </a>
       <?php endif; ?>

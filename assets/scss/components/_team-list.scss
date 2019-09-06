@@ -1,0 +1,57 @@
+
+.c-team-list {
+  @extend %u-grid--from-small;
+
+  @include breakpoint(from-small--upto-medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint(from-medium--upto-large) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include breakpoint(from-large) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__person {
+    @extend %u-block;
+    @extend %u-width-100pc;
+    @extend %u-mv-4; // Should be enough for Dans Lego person hair
+  }
+
+  &__content {
+    @extend %u-flex;
+    @extend %u-fd-column;
+    @extend %u-ai-center;
+    @extend %u-text-align-center;
+  }
+
+  &__image {
+    $size: 150px;
+    width: $size;
+    height: $size;
+
+    img {
+      @extend %u-round;
+      border-radius: 0 0 #{$size / 2} #{$size / 2};
+
+      &:before {
+        width: $size;
+        height: $size;
+      }
+    }
+  }
+
+  &__name {
+    @extend .type-p;
+    @extend %u-bold;
+    @extend %u-mt-3;
+  }
+
+  &__title {
+    @extend .type-p;
+    @extend %u-mt-2;
+  }
+
+}
