@@ -4,7 +4,6 @@
   // Setup postdata so the_content() will work outside the loop. Don't need to
   // wp_reset_postdata() because the loop doesn't need to keep going after this
   setup_postdata($post);
-
 ?>
 
 <?php get_header(); ?>
@@ -18,7 +17,7 @@
 	</section>
 
   <section class="o-container-section o-container-section--bordered">
-    <div class="o-container-content c-content-grid">
+    <div class="o-container-content o-container-content--v-pad c-content-grid">
       <?= the_content() ?>
     </div>
 	</section>
