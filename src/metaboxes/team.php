@@ -46,14 +46,14 @@ return [
                     'type'    => 'select',
                     'default' => 'Generic',
                     'options' => [
-                        'Generic',
-                        'Email',
-                        'Twitter',
-                        'LinkedIn',
-                        'Dribble',
-                        'GitHub',
-                        'Instagram',
-                        'Stackoverflow'
+                        'Generic' => 'Generic',
+                        'Email' => 'Email',
+                        'Twitter' => 'Twitter',
+                        'LinkedIn' => 'LinkedIn',
+                        'Dribble' => 'Dribble',
+                        'GitHub' => 'GitHub',
+                        'Instagram' => 'Instagram',
+                        'Stackoverflow' => 'Stackoverflow'
                     ]
                 ],
                 [
