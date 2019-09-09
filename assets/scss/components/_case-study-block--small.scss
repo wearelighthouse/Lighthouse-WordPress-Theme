@@ -1,0 +1,19 @@
+
+.c-case-study-block--small {
+  $self: '.c-case-study-block';
+
+  #{$self}__title {
+    // This DOES NOT flip between being a link and not being a link on desktop/mobile
+
+    &__link {
+      @extend .type-subtitle;
+      line-height: 1.3; // Has to be smaller for hovering to not fall between lines
+
+      &:focus,
+      &:hover {
+        @extend %u-underline;
+      }
+    }
+  }
+
+}

@@ -24,14 +24,19 @@
 
 <div class="c-case-study-block c-case-study-block--<?= $caseStudySize; ?>">
   <div class="c-case-study-block__background">
-    <?php if ($imgBackgroundId) : ?>
+    <?php if ($caseStudySize === 'large' && $imgBackgroundId) : ?>
       <div class="c-case-study-block__image-background">
         <?= wp_get_attachment_image($imgBackgroundId, $size = 'link-block-case-study-bg-large') ?>
       </div>
     <?php endif; ?>
-    <?php if ($imgLargeId) : ?>
+    <?php if ($caseStudySize === 'large' && $imgLargeId) : ?>
       <div class="c-case-study-block__image-large">
         <?= wp_get_attachment_image($imgLargeId, $size = 'link-block-case-study-fg-large') ?>
+      </div>
+    <?php endif; ?>
+    <?php if ($caseStudySize === 'small' && $imgMediumId) : ?>
+      <div class="c-case-study-block__image-medium">
+        <?= wp_get_attachment_image($imgMediumId, $size = 'link-block-case-study-fg-medium') ?>
       </div>
     <?php endif; ?>
   </div>
@@ -49,10 +54,12 @@
     <?php if ($title) : ?>
       <h3 class="c-case-study-block__title">
         <a href="<?= $linkURL  ?>" class="c-case-study-block__title__link"><?= $title ?></a>
-        <span class="c-case-study-block__title__plain"><?= $title ?></span>
+        <?php if ($caseStudySize === 'large') : ?>
+          <span class="c-case-study-block__title__plain"><?= $title ?></span>
+        <?php endif; ?>
       </h3>
     <?php endif; ?>
-    <?php if ($linkText && $linkURL) : ?>
+    <?php if ($caseStudySize === 'large' && $linkText && $linkURL) : ?>
       <a class="c-case-study-block__link c-button c-button--underlined-dark" href="<?= $linkURL ?>">
         <?= $linkText ?>
       </a>
