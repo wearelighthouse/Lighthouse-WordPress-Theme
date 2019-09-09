@@ -1,5 +1,5 @@
 <?php
-  $caseStudySize = 'large';
+  $caseStudySize = 'small';
 ?>
 
 <?php if ((isset($globalCaseStudyIds) && !empty($globalCaseStudyIds)) || isset($globalIntro)) : ?>
@@ -15,9 +15,9 @@
 
     <?php if (isset($globalCaseStudyIds) && !empty($globalCaseStudyIds)) : ?>
 
-      <div class="o-container-link-blocks o-container-link-blocks--flex">
+      <div class="o-container-content o-container-content--v-pad o-container-link-blocks o-container-link-blocks--grid">
         <?php foreach ($globalCaseStudyIds as $caseStudyId) : ?>
-          <?php include(locate_template('src/template_parts/block_case_study_small.php')) ?>
+          <?php include(locate_template('src/template_parts/block_case_study.php')) ?>
         <?php endforeach; ?>
       </div>
 
