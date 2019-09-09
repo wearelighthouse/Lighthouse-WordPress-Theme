@@ -100,7 +100,7 @@
     }
   }
 
-  #{$self}__background-image {
+  #{$self}__image-background {
 
     img {
       @extend %u-display-none--upto-small;
@@ -111,7 +111,7 @@
   }
 
   // Floaty on top image
-  #{$self}__foreground-image-large {
+  #{$self}__image-large {
     @extend %u-display-none--upto-small;
     @extend %u-flex--from-small;
     @extend %u-ai-flex-end;
@@ -131,7 +131,7 @@
     }
   }
 
-  #{$self}__foreground-image-small {
+  #{$self}__image-small {
     @extend %u-display-none--from-small;
     @extend %u-pos-absolute;
     @extend %u-right;
@@ -173,7 +173,7 @@
         }
       }
 
-      #{$self}__foreground-image-large {
+      #{$self}__image-large {
         padding-right: 3rem;
         box-sizing: border-box;
       }
@@ -206,7 +206,7 @@
         }
       }
 
-      #{$self}__foreground-image-large {
+      #{$self}__image-large {
         justify-content: flex-end;
       }
     }

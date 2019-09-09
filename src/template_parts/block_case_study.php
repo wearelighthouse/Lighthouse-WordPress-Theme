@@ -17,21 +17,21 @@
   //$imgLarge = getPostMeta('work_work_options_image_large', $caseStudyId);
   $imgLargeId = getPostMeta('work_work_options_image_large_id', $caseStudyId);
   //$ImgMedium = getPostMeta('work_work_options_image_medium', $caseStudyId);
-  $ImgMediumId = getPostMeta('work_work_options_image_medium_id', $caseStudyId);
+  $imgMediumId = getPostMeta('work_work_options_image_medium_id', $caseStudyId);
   //$ImgSmall = getPostMeta('work_work_options_image_small', $caseStudyId);
-  $ImgSmallId = getPostMeta('work_work_options_image_small_id', $caseStudyId);
+  $imgSmallId = getPostMeta('work_work_options_image_small_id', $caseStudyId);
 ?>
 
 <div class="c-case-study-block c-case-study-block--<?= $caseStudySize; ?>">
   <div class="c-case-study-block__background">
-    <?php if ($bgImg) : ?>
-      <div class="c-case-study-block__background-image">
-        <?= wp_get_attachment_image($bgImgId, $size = 'link-block-case-study-bg-large') ?>
+    <?php if ($imgBackgroundId) : ?>
+      <div class="c-case-study-block__image-background">
+        <?= wp_get_attachment_image($imgBackgroundId, $size = 'link-block-case-study-bg-large') ?>
       </div>
     <?php endif; ?>
-    <?php if ($fgImgLargeId) : ?>
-      <div class="c-case-study-block__foreground-image-large">
-        <?= wp_get_attachment_image($fgImgLargeId, $size = 'link-block-case-study-fg-large') ?>
+    <?php if ($imgLargeId) : ?>
+      <div class="c-case-study-block__image-large">
+        <?= wp_get_attachment_image($imgLargeId, $size = 'link-block-case-study-fg-large') ?>
       </div>
     <?php endif; ?>
   </div>
@@ -41,9 +41,9 @@
            style="<?= $logoMask ?>">
       </div>
     <?php endif; ?>
-    <?php if ($fgImgSmallId) : ?>
-      <div class="c-case-study-block__foreground-image-small">
-        <?= wp_get_attachment_image($fgImgSmallId, $size = 'link-block-case-study-fg-small') ?>
+    <?php if ($imgSmallId) : ?>
+      <div class="c-case-study-block__image-small">
+        <?= wp_get_attachment_image($imgSmallId, $size = 'link-block-case-study-fg-small') ?>
       </div>
     <?php endif; ?>
     <?php if ($title) : ?>
