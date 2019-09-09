@@ -1,24 +1,21 @@
 <?php
-  //$caseStudySize = isset($caseStudySize) ? 'large' : 'small';
+  $caseStudySize = isset($caseStudySize) ? $caseStudySize : 'small';
 
-  //get the case study vars
-  $caseStudy = get_page($caseStudyId);
-
-  $logoSrc = getPostMeta('hero_hero_logo', $caseStudy->ID);
-  $logoId = getPostMeta('hero_hero_logo_id', $caseStudy->ID);
+  $logoSrc = getPostMeta('hero_hero_logo', $caseStudyId);
+  $logoId = getPostMeta('hero_hero_logo_id', $caseStudyId);
   if ($logoSrc) {
-    //$logoAlt = get_post_meta($caseStudy->ID, '_wp_attachment_image_alt', true);
+    //$logoAlt = get_post_meta($caseStudyId, '_wp_attachment_image_alt', true);
     //$logoAltAttr = $logoAlt ? 'alt="' . $caseStudy->post_title . ' logo"' : '';
     $logoMeta = wp_get_attachment_metadata($logoId);
     $logoMask = "-webkit-mask-image: url({$logoSrc}); mask-image: url({$logoSrc}); width: {$logoMeta['width']}px; height: {$logoMeta['height']}px";
   }
-  $title = get_the_excerpt($caseStudy->ID);
+  $title = get_the_excerpt($caseStudyId);
   $linkText = 'Read more';
-  $linkURL = get_the_permalink($caseStudy->ID);
-  $fgImgSmallId = getPostMeta('work_work_image_small_id', $caseStudy->ID);
-  $bgImg = getPostMeta('work_work_image_large', $caseStudy->ID);
-  $bgImgId = getPostMeta('work_work_image_large_id', $caseStudy->ID);
-  $fgImgLargeId = getPostMeta('work_work_image_medium_id', $caseStudy->ID);
+  $linkURL = get_the_permalink($caseStudyId);
+  $fgImgSmallId = getPostMeta('work_work_image_small_id', $caseStudyId);
+  $bgImg = getPostMeta('work_work_image_large', $caseStudyId);
+  $bgImgId = getPostMeta('work_work_image_large_id', $caseStudyId);
+  $fgImgLargeId = getPostMeta('work_work_image_medium_id', $caseStudyId);
 ?>
 
 <div class="c-case-study-block c-case-study-block--<?= $caseStudySize; ?>">

@@ -1,6 +1,6 @@
 <?php
   $post = get_page_by_title('our work');
-  $caseStudies = getPostMeta('work_case_study_list_client', $post->ID);
+  $caseStudyIds = getPostMeta('work_case_study_list_client', $post->ID);
 ?>
 
 <?php get_header(); ?>
@@ -9,10 +9,13 @@
 
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
-    <?php foreach ($caseStudies as $i => $caseStudyId) : ?>
-      <?php $caseStudySize = $i < 3 ? 'large' : 'small' ?>
-      <?php include(locate_template('src/template_parts/block_case_study.php')) ?>
-    <?php endforeach; ?>
+    <?php $globalCaseStudyIds = array_slice($caseStudyIds, 0, 2); // 1st 3 case studies ?>
+    <?php include(locate_template('src/template_parts/block_section_case_study_large.php')) ?>
+
+    <?php if (isset($caseStudies) && count($caseStudyIds) > 2) : ?>
+      <?php $globalCaseStudyIds = array_slice($caseStudyIds, 2, -1); // the remaining ?>
+      <?php include(locate_template('src/template_parts/block_section_case_study_small.php')) ?>
+    <?php endif ?>
 
 </main>
 
