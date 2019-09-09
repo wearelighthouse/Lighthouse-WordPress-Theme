@@ -9,7 +9,7 @@
     $logoMeta = wp_get_attachment_metadata($logoId);
     $logoMask = "-webkit-mask-image: url({$logoSrc}); mask-image: url({$logoSrc}); width: {$logoMeta['width']}px; height: {$logoMeta['height']}px";
   }
-  $title = get_the_excerpt($caseStudyId);
+  $title = has_excerpt($caseStudyId) ? get_the_excerpt($caseStudyId) : get_the_title($caseStudyId);
   $linkText = 'Read more';
   $linkURL = get_the_permalink($caseStudyId);
   $fgImgSmallId = getPostMeta('work_work_image_small_id', $caseStudyId);

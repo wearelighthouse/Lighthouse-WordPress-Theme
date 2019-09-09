@@ -38,7 +38,8 @@ function registerWorkPageMetaboxes()
     $groupID = basename(__FILE__, '.php');
 
     addMetaboxes($groupInfo, [
-        'case_study_list'
+        'case_study_list',
+        'contact_us_banner'
     ], $groupID);
 
 }

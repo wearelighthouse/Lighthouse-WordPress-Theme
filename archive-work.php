@@ -1,6 +1,10 @@
 <?php
   $post = get_page_by_title('our work');
   $caseStudyIds = getPostMeta('work_case_study_list_client', $post->ID);
+
+  setup_postdata($post);
+
+  pr($post->ID);
 ?>
 
 <?php get_header(); ?>
@@ -11,6 +15,8 @@
 
     <?php $globalCaseStudyIds = array_slice($caseStudyIds, 0, 2); // 1st 3 case studies ?>
     <?php include(locate_template('src/template_parts/block_section_case_study_large.php')) ?>
+
+    <?php include(locate_template('src/template_parts/contact_us_banner.php')) ?>
 
     <?php if (isset($caseStudies) && count($caseStudyIds) > 2) : ?>
       <?php $globalCaseStudyIds = array_slice($caseStudyIds, 2, -1); // the remaining ?>
