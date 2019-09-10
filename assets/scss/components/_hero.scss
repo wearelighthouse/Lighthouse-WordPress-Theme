@@ -19,6 +19,7 @@
   }
 
   &__content {
+    @extend %u-pos-relative;
     display: flex;
     margin-top: 5rem; // Includes room for header. TODO: Set to actual header height?
     margin-bottom: 3rem;
@@ -29,10 +30,12 @@
   }
 
   &__image {
-    @extend %u-ml-auto;
-    // width: // Whatever the image width is?
+    @extend %u-pos-absolute;
+    @extend %u-right;
+    @extend %u-display-none--upto-medium;
+    width: 50vw;
     max-width: 600px;
-    height: 0;
+    transform: translateX(25%);
 
     img {
       @extend %u-width-100pc;

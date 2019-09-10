@@ -3,5 +3,5 @@
   @include fontScale(36, 68);
   @extend %u-sailec;
   @extend %u-bold;
-  line-height: 1.25;
+  // line-height: 1.2; // Done in reset
 }
