@@ -50,16 +50,16 @@
 <?php
 
 	$linkList = '';
-  
+
 	$services = getPostMeta('work_service_list_service', $post->ID);
-  if (isset($services)) {
+  if ($services) {
     foreach ($services as $service) {
       $linkList .= '<li><a href="' . get_permalink($service) . '">' . get_the_title($service) . '</a></li>';
     }
   }
 
 	$sectors = getPostMeta('work_sector_list_sector', $post->ID);
-  if (isset($sectors)) {
+  if ($sectors) {
   	foreach ($sectors as $sector) {
   		$linkList .= '<li><a href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
   	}
@@ -69,12 +69,14 @@
 
 <section class="o-container-content o-work-footer">
 
-	<div class="o-work-footer__column">
-		<h3>See more&hellip;</h3>
-		<ul class="o-work-footer__list">
-			<?= $linkList; ?>
-		</ul>
-	</div>
+  <?php if ($linkList) : ?>
+  	<div class="o-work-footer__column">
+  		<h3>See more&hellip;</h3>
+  		<ul class="o-work-footer__list">
+  			<?= $linkList; ?>
+  		</ul>
+  	</div>
+  <?php endif; ?>
 
 	<div class="o-work-footer__column">
 

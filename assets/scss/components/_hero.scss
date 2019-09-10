@@ -20,13 +20,18 @@
 
   &__content {
     @extend %u-pos-relative;
-    display: flex;
-    margin-top: 5rem; // Includes room for header. TODO: Set to actual header height?
-    margin-bottom: 3rem;
+    @extend %u-flex;
+    @extend %u-fd-column;
+    @extend %u-ai-flex-start;
+    margin-top: 6rem; // Includes room for header. TODO: Set to actual header height?
   }
 
   &__text {
+    @extend %u-mb-4;
+  }
 
+  &__client-logo {
+    @extend %u-mt-4;
   }
 
   &__image {

@@ -24,6 +24,10 @@
   // From page has a 100vh header instead of as-big-as-it-needs-to-be
   $frontPageSectionClass = is_front_page() ? ' o-container-section--100vh' : '';
 
+  $clientLogoId = getPostMeta('work_work_options_logo_id');
+  $clientLogoSrc = getPostMeta('work_work_options_logo');
+  $clientLogoAlt = get_post_meta($clientLogoId, '_wp_attachment_image_alt', true);
+  $clientLogoAltAttr = $clientLogoAlt ? 'alt="' . $clientLogoAlt . '"' : '';
 ?>
 
 <section class="o-container-section o-container-section--bordered <?= $frontPageSectionClass ?>">
@@ -34,6 +38,11 @@
         <div class="c-hero__text s-banner">
           <?= wpautop($text) ?>
         </div>
+      <?php endif; ?>
+      <?php if ($clientLogoId) : ?>
+        <img class="c-hero__client-logo"
+             src="<?= $clientLogoSrc ?>"
+             <?= $clientLogoAltAttr ?>/>
       <?php endif; ?>
       <?php if ($imageId) : ?>
         <div class="c-hero__image">
