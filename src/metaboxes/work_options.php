@@ -4,10 +4,10 @@ return [
     'title' => 'Case Study Settings',
     'fields' => [
         [
-            'name' => 'Client Logo',
+            'name' => 'Logo',
             'id'   => 'logo',
             'type' => 'file',
-            'desc' => 'Preferably <a href="https://jakearchibald.github.io/svgomg" target="_blank">compressed SVGs</a>.'
+            'desc' => 'Client logo or related image that sits underneath the text. Preferably a <a href="https://jakearchibald.github.io/svgomg" target="_blank">compressed</a> SVG with <code>fill="#fff"</code>'
         ],
         [
             'name' => 'Link Block Title',

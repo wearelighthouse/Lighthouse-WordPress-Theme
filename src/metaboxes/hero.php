@@ -36,12 +36,6 @@ return [
           'default' => '#ffffff'
         ],
         [
-            'name' => 'Logo',
-            'id'   => 'logo',
-            'type' => 'file',
-            'desc' => 'Client logo or related image that sits underneath the text. Preferably an SVG with <code>fill="currentColor"</code>'
-        ],
-        [
             'name' => 'Illustration',
             'id'   => 'image',
             'type' => 'file',
