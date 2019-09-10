@@ -1,5 +1,11 @@
 <?php
   $caseStudySize = isset($caseStudySize) ? $caseStudySize : 'small';
+  
+  if (isset($caseStudyCount) && $caseStudyCount > 2) {
+    $staggeredClass = ' c-case-study-block--small--staggered';
+  } else {
+    $staggeredClass = '';
+  }
 
   $logoSrc = getPostMeta('work_work_options_logo', $caseStudyId);
   $logoId = getPostMeta('work_work_options_logo_id', $caseStudyId);
@@ -22,7 +28,7 @@
   $imgSmallId = getPostMeta('work_work_options_image_small_id', $caseStudyId);
 ?>
 
-<div class="c-case-study-block c-case-study-block--<?= $caseStudySize; ?>">
+<div class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?>">
   <div class="c-case-study-block__background">
     <?php if ($caseStudySize === 'large' && $imgBackgroundId) : ?>
       <div class="c-case-study-block__image-background">

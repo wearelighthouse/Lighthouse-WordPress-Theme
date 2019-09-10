@@ -5,7 +5,7 @@
   @extend %u-flex;
   @extend %u-fd-column;
   @extend %u-ai-flex-start;
-  @extend %u-mv-5--upto-medium;
+  @extend %u-mv-5--upto-small;
   @extend %u-pos-relative;
   @extend %u-pv-5--upto-small;
   @extend %u-mt-12--upto-small;
@@ -59,4 +59,8 @@
       @extend %u-z-index--1;
     }
   }
+}
+
+.c-empty-case-study-block {
+  @extend %u-display-none--upto-small;
 }

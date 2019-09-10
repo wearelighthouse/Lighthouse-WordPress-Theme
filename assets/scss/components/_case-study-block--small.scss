@@ -79,4 +79,33 @@
     }
   }
 
+  &--staggered {
+
+    @extend %u-width-100pc--upto-small;
+
+    @include breakpoint(from-small) {
+      flex-grow: 1;
+      min-width: 400px;
+      max-width: 500px;
+    }
+
+    @include breakpoint(from-medium) {
+      //width: 500px; // So when staggered they're not too big
+    }
+
+    &:nth-child(even) {
+      @extend %u-ml-auto--from-small;
+    }
+
+    @include breakpoint(from-large) {
+      margin-bottom: 4px;
+
+      // So the next ones doesn't sneak up onto the same line
+      &:nth-child(odd) {
+        min-width: 500px;
+        margin-right: 50%;
+      }
+    }
+  }
+
 }
