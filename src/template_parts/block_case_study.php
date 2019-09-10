@@ -1,8 +1,12 @@
 <?php
   $caseStudySize = isset($caseStudySize) ? $caseStudySize : 'small';
-  
-  if (isset($caseStudyCount) && $caseStudyCount > 2) {
-    $staggeredClass = ' c-case-study-block--small--staggered';
+
+  if ($caseStudySize === 'small') {
+    if (isset($caseStudyCount) && $caseStudyCount > 2) {
+      $staggeredClass = ' c-case-study-block--small--staggered';
+    } else {
+      $staggeredClass = ' c-case-study-block--small--pair';
+    }
   } else {
     $staggeredClass = '';
   }

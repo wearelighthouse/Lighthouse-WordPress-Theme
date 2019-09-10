@@ -25,6 +25,11 @@
       &:hover {
         @extend %u-underline;
       }
+
+      @include breakpoint(upto-small) {
+        // Stick to mobile font size rather than scaling, to match small case study blocks
+        font-size: 26px;
+      }
     }
   }
 
@@ -121,7 +126,7 @@
         width: stretch;
         width: -moz-available;
         width: -webkit-fill-available;
-        margin-right: calc(50% + 5rem);
+        margin-right: calc(50% + 7.3rem); // Was 5rem before uuhmmm
       }
 
       #{$self}__background {

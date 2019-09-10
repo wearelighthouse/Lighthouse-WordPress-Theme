@@ -11,9 +11,9 @@
     padding-bottom: var(--container-v-pad);
   }
 
-  &--full-width--upto-medium {
-    @include breakpoint(upto-medium) {
-      width: 100%;
+  &--auto-width--from-medium {
+    @include breakpoint(from-medium) {
+      width: auto;
     }
   }
 }
