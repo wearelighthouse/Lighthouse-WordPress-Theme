@@ -5,8 +5,7 @@
   @extend %u-width-100pc;
   @extend %u-flex;
   @extend %u-jc-center;
-  @extend %u-mt-12--upto-small;
-  @extend %u-mb-6--from-small;
+  // margin-top & margin-bottom are in _case-study-block.scss
   // mt--from-small is in breakpoint(from-small) because it's 'uge
 
   #{$self}__title {
@@ -47,18 +46,6 @@
     }
   }
 
-  // Gray contains the grey background and bg & fg images
-  #{$self}__background {
-    @extend %u-height-100pc--upto-small;
-    @extend %u-width-100pc--upto-small;
-    @extend %u-flex;
-    @extend %u-ai-center;
-
-    img {
-      @extend %u-block;
-    }
-  }
-
   #{$self}__image-background {
 
     img {
@@ -87,18 +74,6 @@
       height: auto;
       margin-right: 8%;
       margin-left: 8%;
-    }
-  }
-
-  #{$self}__image-small {
-    @extend %u-display-none--from-small;
-    @extend %u-pos-absolute;
-    @extend %u-right;
-    top: -5.25rem; // TODO: un-magic-ify this number if possible
-
-    img {
-      width: 125px;
-      height: 125px;
     }
   }
 

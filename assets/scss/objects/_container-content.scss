@@ -10,4 +10,10 @@
     padding-top: var(--container-v-pad);
     padding-bottom: var(--container-v-pad);
   }
+
+  &--full-width-mobile {
+    @include breakpoint(upto-small) {
+      width: 100%;
+    }
+  }
 }

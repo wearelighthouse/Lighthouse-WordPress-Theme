@@ -8,6 +8,22 @@
   @extend %u-mv-5--upto-medium;
   @extend %u-pos-relative;
   @extend %u-pv-5--upto-small;
+  @extend %u-mt-12--upto-small;
+  @extend %u-mb-6--from-small;
+
+  #{$self}__image-small {
+    @extend %u-display-none--from-small;
+    @extend %u-pos-absolute;
+    @extend %u-right;
+    @extend %u-translateY--50pc;
+    top: -2.5rem;
+
+    img {
+      @extend %u-block;
+      width: 125px;
+      height: 125px;
+    }
+  }
 
   #{$self}__title {
     @extend %u-mt-6--upto-small;
@@ -18,10 +34,19 @@
     @extend %u-bg-color-currentColor;
   }
 
-  // Gray background
+  // Gray contains the grey background and bg & fg images
   #{$self}__background {
+    @extend %u-height-100pc--upto-small;
+    @extend %u-width-100pc--upto-small;
+    @extend %u-flex;
+    @extend %u-ai-center;
     @extend %u-pos-absolute;
     @extend %u-z-index--1;
+    @extend %u-top;
+
+    img {
+      @extend %u-block;
+    }
 
     &:before {
       @extend %u-content;

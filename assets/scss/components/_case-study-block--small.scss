@@ -2,27 +2,6 @@
 .c-case-study-block--small {
   $self: '.c-case-study-block';
 
-  #{$self}__background {
-    @extend %u-flex;
-    @extend %u-width-100pc;
-    @extend %u-height-100pc;
-    @extend %u-ai-center;
-
-    &:before {
-      right: 100px;
-      left: 100px;
-
-      clip-path: polygon(
-        0 0,
-        100% 0,
-        100% 50%,
-        calc(100% - 38px) 100%,
-        0 100%,
-        0 0
-      );
-    }
-  }
-
   #{$self}__image-medium {
     @extend %u-display-none--upto-small;
     width: 200px;
@@ -38,14 +17,8 @@
     @extend %u-display-none--from-small;
   }
 
-  #{$self}__content {
-    @extend %u-pos-absolute;
-    @extend %u-height-100pc;
-    left: 50%;
-  }
-
   #{$self}__logo {
-    @extend %u-mt-8;
+    @extend %u-mt-8--from-small;
   }
 
   #{$self}__title {
@@ -65,8 +38,45 @@
     }
   }
 
+  #{$self}__background {
+    @extend %u-width-100pc;
+    @extend %u-height-100pc;
+  }
+
+  #{$self}__content {
+    @extend %u-mh-auto--upto-small;
+    @extend %u-height-100pc--from-small;
+    @extend %u-pos-relative--upto-small;
+    @extend %u-pos-absolute--from-small;
+
+    @include breakpoint(upto-small) {
+      width: var(--container-width);
+    }
+
+    @include breakpoint(from-small) {
+      left: calc(100px + 30%);
+    }
+  }
+
   @include breakpoint(from-small) {
     height: 320px;
+
+    #{$self}__background {
+
+      &:before {
+        clip-path: polygon(
+          0 0,
+          100% 0,
+          100% 50%,
+          calc(100% - 38px) 100%,
+          0 100%,
+          0 0
+        );
+        width: 300px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
   }
 
 }
