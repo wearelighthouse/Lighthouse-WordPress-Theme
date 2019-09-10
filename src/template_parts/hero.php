@@ -8,11 +8,7 @@
     $text = "<h1>$post->post_title</h1>" . $text;
   }
 
-  if (isset($heroImage)) {
-    $image = $heroImage;
-  } else {
-    $image = false;
-  }
+  $imageId = isset($heroImage) ? $heroImage : getPostMeta('hero_hero_image_id');
 
   $heroStyle = getPostMeta('hero_hero_style');
   $modifierClass = $heroStyle ? ' c-hero--' . $heroStyle : '';
@@ -39,9 +35,9 @@
           <?= wpautop($text) ?>
         </div>
       <?php endif; ?>
-      <?php if ($image) : ?>
+      <?php if ($imageId) : ?>
         <div class="c-hero__image">
-          <?= $image ?>
+            <?= wp_get_attachment_image($imageId, $size = 'case-study-header') ?>
         </div>
       <?php endif; ?>
     </div>

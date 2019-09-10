@@ -50,15 +50,20 @@
 <?php
 
 	$linkList = '';
-	// get the service
+  
 	$services = getPostMeta('work_service_list_service', $post->ID);
-	foreach ($services as $service) {
-		$linkList .= '<li><a href="' . get_permalink($service) . '">' . get_the_title($service) . '</a></li>';
-	}
+  if (isset($services)) {
+    foreach ($services as $service) {
+      $linkList .= '<li><a href="' . get_permalink($service) . '">' . get_the_title($service) . '</a></li>';
+    }
+  }
+
 	$sectors = getPostMeta('work_sector_list_sector', $post->ID);
-	foreach ($sectors as $sector) {
-		$linkList .= '<li><a href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
-	}
+  if (isset($sectors)) {
+  	foreach ($sectors as $sector) {
+  		$linkList .= '<li><a href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
+  	}
+  }
 
 ?>
 

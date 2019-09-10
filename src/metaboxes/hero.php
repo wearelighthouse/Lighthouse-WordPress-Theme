@@ -39,7 +39,7 @@ return [
             'name' => 'Illustration',
             'id'   => 'image',
             'type' => 'file',
-            'desc' => 'Large image displayed on the right of the header'
+            'desc' => 'Large image displayed on the right of the header. 1200x1200 for case studies. Preferably <a href="https://tinypng.com/">compressed</a>!'
         ]
     ]
 ];

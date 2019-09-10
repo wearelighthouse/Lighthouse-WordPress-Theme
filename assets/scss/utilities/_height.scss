@@ -8,3 +8,7 @@
 @include make-utility((
   height: 1px
 ));
+
+@include make-utility((
+  height: auto
+));

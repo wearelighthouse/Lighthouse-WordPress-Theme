@@ -31,7 +31,13 @@
   &__image {
     @extend %u-ml-auto;
     // width: // Whatever the image width is?
+    max-width: 600px;
     height: 0;
+
+    img {
+      @extend %u-width-100pc;
+      @extend %u-height-auto;
+    }
   }
 
   &--orange-pink {
