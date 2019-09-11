@@ -7,7 +7,7 @@ return [
             'name' => 'Logo',
             'id'   => 'logo',
             'type' => 'file',
-            'desc' => 'Client logo or related image that sits underneath the text. Preferably a <a href="https://jakearchibald.github.io/svgomg" target="_blank">compressed</a> SVG with <code>fill="#fff"</code>'
+            'desc' => 'Preferably a <a href="https://jakearchibald.github.io/svgomg" target="_blank">compressed</a> SVG with <code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</code> at the start, and <code>fill="#fff"</code>'
         ],
         [
             'name' => 'Link Block Title',

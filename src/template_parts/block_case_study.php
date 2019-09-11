@@ -14,21 +14,16 @@
   $logoSrc = getPostMeta('work_work_options_logo', $caseStudyId);
   $logoId = getPostMeta('work_work_options_logo_id', $caseStudyId);
   if ($logoSrc) {
-    //$logoAlt = get_post_meta($caseStudyId, '_wp_attachment_image_alt', true);
-    //$logoAltAttr = $logoAlt ? 'alt="' . $caseStudy->post_title . ' logo"' : '';
+    $logoAlt = get_post_meta($logoId, '_wp_attachment_image_alt', true);
     $logoMeta = wp_get_attachment_metadata($logoId);
     $logoMask = "-webkit-mask-image: url({$logoSrc}); mask-image: url({$logoSrc}); width: {$logoMeta['width']}px; height: {$logoMeta['height']}px";
   }
   $title = getPostMeta('work_work_options_link_block_title', $caseStudyId);
   $linkText = 'Find out more';
   $linkURL = get_the_permalink($caseStudyId);
-  //$imgLarge = getPostMeta('work_work_options_image_background', $caseStudyId);
   $imgBackgroundId = getPostMeta('work_work_options_image_background_id', $caseStudyId);
-  //$imgLarge = getPostMeta('work_work_options_image_large', $caseStudyId);
   $imgLargeId = getPostMeta('work_work_options_image_large_id', $caseStudyId);
-  //$ImgMedium = getPostMeta('work_work_options_image_medium', $caseStudyId);
   $imgMediumId = getPostMeta('work_work_options_image_medium_id', $caseStudyId);
-  //$ImgSmall = getPostMeta('work_work_options_image_small', $caseStudyId);
   $imgSmallId = getPostMeta('work_work_options_image_small_id', $caseStudyId);
 ?>
 
@@ -54,6 +49,11 @@
     <?php if ($logoSrc) : ?>
       <div class="c-case-study-block__logo"
            style="<?= $logoMask ?>">
+        <?php if ($logoAlt) : ?>
+          <span class="o-dictate">
+            <?= $logoAlt ?>
+          </span>
+        <?php endif; ?>
       </div>
     <?php endif; ?>
     <?php if ($imgSmallId) : ?>
