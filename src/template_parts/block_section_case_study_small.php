@@ -6,6 +6,9 @@
   <section class="o-container-section o-container-section--h-bordered">
 
     <?php if (isset($globalIntro)) : ?>
+      <div class="o-container-content">
+        <h3 class="type-title"><?= $globalIntro ?></h3>
+      </div>
       <div class="">
         <?= wpautop($globalIntro) ?>
       </div>

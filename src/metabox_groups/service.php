@@ -11,6 +11,7 @@ function registerServiceMetaboxes()
 
     addMetaboxes($groupInfo, [
         'blocks_service',
+        'case_study_list',
         'contact_us_banner',
     ], $groupID);
 
