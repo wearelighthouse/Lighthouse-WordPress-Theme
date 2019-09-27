@@ -2,8 +2,8 @@
 
 function addField($prefix, $cmb, $field)
 {
-  $field['id'] = isset($field['id']) ? $field['id'] : '';
-  $field['id'] = $prefix . '_' . $field['id'];
+  $field['id'] = isset($field['id']) ? '_' . $field['id'] : '';
+  $field['id'] = $prefix . $field['id'];
 
   if ($field['type'] === 'group' && $field['sub_fields']) {
       $groupField = $cmb->add_field($field);

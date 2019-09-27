@@ -1,7 +1,7 @@
 <?php
 
   $globalBlocksServiceGroup = getPostMeta('blocks_service_group');
-  $globalBlocksServiceGrid = getPostMeta('blocks_service_grid_setting');
+  $globalBlocksServiceGrid = getPostMeta('blocks_service_layout');
   $globalCaseStudyIds = getPostMeta('work_case_study_list_client');
   $globalIntro = 'Ideas launched...';
 

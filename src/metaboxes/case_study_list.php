@@ -18,7 +18,6 @@ return [
     'fields' => [
         [
             'name' => 'Client',
-            'id'   => 'client',
             'type' => 'select',
             'repeatable' => true,
             'show_option_none' => true,

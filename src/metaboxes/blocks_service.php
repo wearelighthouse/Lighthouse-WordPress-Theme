@@ -4,10 +4,11 @@ return [
     'title' => 'Service Blocks',
     'fields' => [
         [
-            'name' => 'Grid Layout',
-            'id' => 'grid_setting',
+            'name' => 'Layout',
+            'id' => 'layout',
             'type' => 'radio_inline',
             'options' => [
+                'single' => 'single',
                 '2x2' => '2×2',
                 '3x3' => '3×3'
             ],

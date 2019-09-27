@@ -19,8 +19,8 @@ function registerServiceArchiveMetaboxes()
     $groupID = basename(__FILE__, '.php');
 
     addMetaboxes($groupInfo, [
-        'case_study_list',
-        'contact_us_banner'
+        'blocks_service',
+        'case_study_list'
     ], $groupID);
 }
 
