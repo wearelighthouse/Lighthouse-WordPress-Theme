@@ -12,7 +12,7 @@ return [
                 '2-column' => '2 column',
                 '3-column' => '3 column'
             ],
-            'default' => '2x2'
+            'default' => '2-column'
         ],
         [
             'id' => 'group',

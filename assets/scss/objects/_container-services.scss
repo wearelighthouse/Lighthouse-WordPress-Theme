@@ -7,7 +7,6 @@
     @extend %u-grid--from-medium;
 
     grid-template-columns: 1fr 1fr;
-
   }
 
   &--2-column {
@@ -16,10 +15,7 @@
     @extend %u-grid--from-medium;
 
     grid-template-columns: 1fr 1fr;
-
-    @include breakpoint(from-medium--upto-large) {
-      width: 100%;
-    }
+    grid-row-gap: 2rem;
   }
 
   &--3-column {
@@ -28,9 +24,6 @@
     @extend %u-grid--from-medium;
 
     grid-template-columns: 1fr 1fr 1fr;
-
-    @include breakpoint(from-medium--upto-large) {
-      width: 100%;
-    }
+    grid-row-gap: 1rem;
   }
 }

@@ -6,7 +6,8 @@
 function registerServiceMetaboxes()
 {
     $groupInfo = [
-        'object_types' => ['service']
+        'object_types' => ['service'],
+        'context'      => 'after_title'
     ];
 
     $groupID = basename(__FILE__, '.php');

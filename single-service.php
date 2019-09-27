@@ -1,8 +1,8 @@
 <?php
 
-  $globalBlocksServiceGroup = getPostMeta('blocks_service_group');
-  $globalBlocksServiceLayout = getPostMeta('blocks_service_layout');
-  $globalCaseStudyIds = getPostMeta('work_case_study_list_client');
+  $globalBlocksServiceGroup = getPostMeta('service_single_blocks_service_group');
+  $globalBlocksServiceLayout = getPostMeta('service_single_blocks_service_layout');
+  $globalCaseStudyIds = getPostMeta('service_single_case_study_list');
   $globalIntro = 'Ideas launched...';
 
 ?>
@@ -23,8 +23,6 @@
     <?php endif; ?>
 
     <?php include(locate_template('src/template_parts/contact_us_banner.php')) ?>
-
-    <div class="placeholder" style="height: 100px;"></div>
 
   <?php endwhile; ?>
 </main>
