@@ -21,13 +21,13 @@
       <?php
         $caseStudyCount = count($globalCaseStudyIds);
         if ($caseStudyCount > 2) {
-          $caseStudyCountainerClass = ' o-container-link-blocks--flex';
+          $caseStudyCountainerClass = ' o-container-case-studies--flex';
         } else {
-          $caseStudyCountainerClass = ' o-container-content--auto-width--from-medium o-container-link-blocks--grid';
+          $caseStudyCountainerClass = ' o-container-content--auto-width--from-medium o-container-case-studies--grid';
         }
       ?>
 
-      <div class="o-container-content o-container-content--v-pad o-container-link-blocks <?= $caseStudyCountainerClass ?>">
+      <div class="o-container-content o-container-content--v-margin o-container-case-studies <?= $caseStudyCountainerClass ?>">
         <?php foreach ($globalCaseStudyIds as $i => $caseStudyId) : ?>
           <?php include(locate_template('src/template_parts/block_case_study.php')) ?>
         <?php endforeach; ?>

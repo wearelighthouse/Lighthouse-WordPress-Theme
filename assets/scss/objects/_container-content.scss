@@ -11,6 +11,17 @@
     padding-bottom: var(--container-v-pad);
   }
 
+  &--v-margin {
+    margin-top: var(--container-v-pad);
+    margin-bottom: var(--container-v-pad);
+  }
+
+  // Padding on top, collapsable margin on the bottom
+  &--v-pad-margin {
+    margin-bottom: var(--container-v-pad);
+    padding-top: var(--container-v-pad);
+  }
+
   &--auto-width--from-medium {
     @include breakpoint(from-medium) {
       width: auto;

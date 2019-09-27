@@ -4,7 +4,7 @@
   @extend %u-fd-column;
   @extend %u-ai-flex-start;
   @extend %u-mv-5--upto-medium;
-  @extend %u-pr-8--from-medium;
+  @extend %u-pr-7--from-medium; // 3.5rem. It's a bit of a magic number
 
   $self: &;
 

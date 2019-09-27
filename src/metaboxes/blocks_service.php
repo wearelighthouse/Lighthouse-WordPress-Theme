@@ -9,8 +9,8 @@ return [
             'type' => 'radio_inline',
             'options' => [
                 'single' => 'single',
-                '2x2' => '2×2',
-                '3x3' => '3×3'
+                '2-column' => '2 column',
+                '3-column' => '3 column'
             ],
             'default' => '2x2'
         ],
