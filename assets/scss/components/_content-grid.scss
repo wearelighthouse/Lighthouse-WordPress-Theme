@@ -25,6 +25,11 @@
     margin-top: calc((var(--container-width) / 20) + 3rem);
   }
 
+  & > *:last-child {
+    margin-bottom: 2rem;
+    margin-bottom: calc((var(--container-width) / 20) + 3rem);
+  }
+
   @include breakpoint(from-medium) {
 
     display: grid;
