@@ -5,6 +5,7 @@ const gulp = require('gulp');
 const replace = require('gulp-replace');
 const sass = require('gulp-sass');
 const svgSprite = require('gulp-svg-sprite');
+const terser = require('gulp-terser');
 
 const paths = {
   src: 'assets',
@@ -80,8 +81,13 @@ function svgSprites() {
     .pipe(gulp.dest(paths.dist + '/svg'));
 }
 
-function js(cb) {
-  cb();
+function js() {
+  return gulp.src(paths.src + '/js/main.js')
+    .pipe(terser({
+      keep_fnames: true,
+      mangle: false
+    }))
+    .pipe(gulp.dest(paths.dist + '/js'));
 }
 
 function browserSyncInit(cb) {

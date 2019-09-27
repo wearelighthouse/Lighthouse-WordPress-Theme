@@ -16,6 +16,7 @@
   <link rel="stylesheet" type="text/css" href="<?= $dist ?>/font/sailec/sailec.css">
   <link rel="stylesheet" type="text/css" href="<?= $dist ?>/font/tiempos/tiempos.css">
   <link rel="stylesheet" type="text/css" href="<?= $dist ?>/css/style.css">
+  <script async src="<?= $dist ?>/js/main.js">></script>
   <script defer src="<?= get_template_directory_uri() ?>/node_modules/focus-visible/dist/focus-visible.min.js"></script>
 <?php
 
