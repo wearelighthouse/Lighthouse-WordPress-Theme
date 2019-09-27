@@ -58,8 +58,8 @@ function cssMinifiy() {
     .src(paths.dist + '/css/*.css')
     .pipe(replace(/(\/\* dev-only:start \*\/[^]*\/\* dev-only:end \*\/)/g, ''))
     .pipe(cleanCSS({debug: true}, (details) => {
-      var originalSize = Math.round(details.stats.originalSize / 1000) + 'KB';
-      var minifiedSize = Math.round(details.stats.minifiedSize / 1000) + 'KB';
+      var originalSize = details.stats.originalSize + 'B';
+      var minifiedSize = details.stats.minifiedSize + 'B';
       console.log(`Minified ${details.name} from ${originalSize} to ${minifiedSize}`);
     }))
     .pipe(gulp.dest(paths.dist + '/css'));

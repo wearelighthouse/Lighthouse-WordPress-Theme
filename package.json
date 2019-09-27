@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "gulp",
-    "prod": "gulp production",
+    "prod": "gulp",
     "watch": "gulp watch"
   },
   "name": "lighthouse-wp-theme-2019",
