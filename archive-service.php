@@ -1,6 +1,6 @@
 <?php
-  $post = get_page_by_title('our work');
-  $caseStudyIds = getPostMeta('work_archive_case_study_list_client', $post->ID);
+  $post = get_page_by_title('services');
+  $caseStudyIds = getPostMeta('service_case_study_list_client', $post->ID);
 ?>
 
 <?php get_header(); ?>

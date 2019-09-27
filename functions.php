@@ -36,7 +36,8 @@ require_once __DIR__ . '/src/metabox_groups/page.php';
 require_once __DIR__ . '/src/metabox_groups/post.php';
 require_once __DIR__ . '/src/metabox_groups/service.php';
 require_once __DIR__ . '/src/metabox_groups/team.php';
-require_once __DIR__ . '/src/metabox_groups/work.php';
+require_once __DIR__ . '/src/metabox_groups/work_archive.php';
+require_once __DIR__ . '/src/metabox_groups/work_single.php';
 
 // Options Pages
 require_once __DIR__ . '/src/options/contact.php';

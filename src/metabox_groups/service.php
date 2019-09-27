@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Register metaboxes for service posts
+ */
 function registerServiceMetaboxes()
 {
 
@@ -18,3 +21,8 @@ function registerServiceMetaboxes()
 }
 
 add_action('cmb2_admin_init', 'registerServiceMetaboxes');
+
+/**
+ * Register metaboxes for service archive page
+ */
+ 
