@@ -34,6 +34,7 @@
 
   p {
     @extend .type-p;
+    max-width: 37rem; // This gives the small text in banners a fixed max-width. It works, but is a bit magic
     margin-top: 1.5em;
     margin-bottom: 1rem; // Fixed margin bottom? John can't remember what this is about
   }
