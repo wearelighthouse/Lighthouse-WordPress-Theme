@@ -1,17 +1,19 @@
 <?php
 
+/**
+ * Register metaboxes for work archive page
+ */
 function registerWorkArchiveMetaboxes()
 {
+    $page = get_page_by_title('our work') ?: get_page_by_title('work');
 
-    $workPage = get_page_by_title('our work');
-
-    if (!$workPage) {
+    if (!$page) {
       return;
     }
 
     $groupInfo = [
         'object_types' => ['page'],
-        'show_on'	     => ['id' => $workPage->ID]
+        'show_on'	     => ['id' => $page->ID]
     ];
 
     $groupID = basename(__FILE__, '.php');
@@ -20,7 +22,6 @@ function registerWorkArchiveMetaboxes()
         'case_study_list',
         'contact_us_banner'
     ], $groupID);
-
 }
 
 add_action('cmb2_admin_init', 'registerWorkArchiveMetaboxes');

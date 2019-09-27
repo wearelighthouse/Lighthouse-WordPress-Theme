@@ -1,8 +1,10 @@
 <?php
 
+/**
+ * Register metaboxes for the single work (i.e. case study) posts
+ */
 function registerWorkSingleMetaboxes()
 {
-
     $groupInfo = [
         'object_types' => ['work']
     ];
@@ -14,7 +16,6 @@ function registerWorkSingleMetaboxes()
         'sector_list',
         'service_list'
     ], $groupID);
-
 }
 
 add_action('cmb2_admin_init', 'registerWorkSingleMetaboxes');
