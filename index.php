@@ -7,12 +7,9 @@
 <main>
 
   <?php include(locate_template('src/template_parts/hero.php')) ?>
-
-  <?php include(locate_template('src/template_parts/block_blog_category_nav.php')) ?>
-
-  <?php include(locate_template('src/template_parts/block_blog_article_list.php')) ?>
-
-  <?php include(locate_template('src/template_parts/block_blog_pagination.php')) ?>
+  <?php include(locate_template('src/template_parts/blog_category_nav.php')) ?>
+  <?php include(locate_template('src/template_parts/blog_article_list.php')) ?>
+  <?php include(locate_template('src/template_parts/blog_pagination.php')) ?>
 
 </main>
 

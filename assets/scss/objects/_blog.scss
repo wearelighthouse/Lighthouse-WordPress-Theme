@@ -51,41 +51,6 @@
   }
 }
 
-.o-blog-nav {
-  display: flex;
-  margin-bottom: 4rem;
-  a,
-  span {
-    display: inline-block;
-    height: 20px;
-    margin: 0;
-    min-width: 20px;
-    padding: 1.3rem;
-    text-align: center;
-  }
-  a {
-    border-bottom: 3px $color-gray solid;
-    &:hover {
-      border-bottom: 3px $color-orange solid;
-      color: $color-orange;
-    }
-  }
-  span {
-    color: $color-gray;
-    &.current {
-      border-bottom: 3px $color-blackcurrant solid;
-      color: $color-blackcurrant;
-    }
-  }
-
-  &.compact {
-    a,
-    span {
-    padding: .9rem .9rem;
-    }
-  }
-}
-
 .pagination {
   @include breakpoint(from-medium) {
     display: grid;

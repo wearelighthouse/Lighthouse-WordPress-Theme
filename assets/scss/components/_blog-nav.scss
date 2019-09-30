@@ -1,0 +1,28 @@
+
+.c-blog-nav {
+  @extend %u-flex;
+  @extend %u-fw-wrap;
+  @extend %u-mv-8;
+
+  &__item {
+    @extend %u-border-box;
+    @extend %u-inline-block;
+    @extend %u-pad-2;
+    @extend %u-text-align-center;
+    @extend %u-bold;
+    border-bottom: 3px $color-gray solid;
+
+    @include breakpoint(from-small) {
+      min-width: 110px;
+    }
+
+    &--current {
+      border-bottom: 3px $color-blackcurrant solid;
+    }
+
+    &:focus,
+    &:hover {
+      border-bottom: 3px $color-orange solid;
+    }
+  }
+}

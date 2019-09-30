@@ -2,6 +2,11 @@
 @for $value from -8 through 8 {
 
   @include make-utility((
+    alias: 'pad-' + $value,
+    padding: $value * .5rem
+  ));
+
+  @include make-utility((
     alias: 'pt-' + $value,
     padding-top: $value * .5rem
   ));
