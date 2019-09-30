@@ -5,11 +5,11 @@
 
 ?>
 
-<?php if (isset($socials) && !empty($socials)) : ?>
+<?php if (isset($socials) && !empty($socials) && isset($socials[0]['link'])) : ?>
   <div class="c-social-links <?= $class ?>">
 
     <?php foreach($socials as $social) : ?>
-      <?php if ($social['type'] && $social['link']) : ?>
+      <?php if (isset($social['type']) && isset($social['link'])) : ?>
         <a href="<?= $social['link'] ?>" class="c-social-links__link">
           <svg viewBox="0 0 40 40" style="display: inline-block; height: 40px; width: 40px;">
             <use xlink:href="<?= $svgSpriteSheet ?>#icon--<?= strToLower($social['type']) ?>"></use>
