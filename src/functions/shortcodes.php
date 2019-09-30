@@ -57,7 +57,7 @@ function shortcode_quote_function($atts, $content = null)
 
 	// get Clutch score
 	global $post;
-	$clutch = getPostMeta('work_work_clutch_score', $post->ID);
+	$clutch = getPostMeta('work_single_work_clutch_score', $post->ID);
 	$clutchScore = '';
 
 	// get the vars

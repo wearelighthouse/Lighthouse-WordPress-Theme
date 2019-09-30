@@ -30,8 +30,8 @@
   // From page has a 100vh header instead of as-big-as-it-needs-to-be
   $frontPageSectionClass = is_front_page() ? ' o-container-section--100vh' : '';
 
-  $clientLogoId = getPostMeta('work_work_options_logo_id');
-  $clientLogoSrc = getPostMeta('work_work_options_logo');
+  $clientLogoId = getPostMeta('work_single_work_options_logo_id');
+  $clientLogoSrc = getPostMeta('work_single_work_options_logo');
   $clientLogoAlt = get_post_meta($clientLogoId, '_wp_attachment_image_alt', true);
   $clientLogoAltAttr = $clientLogoAlt ? 'alt="' . $clientLogoAlt . '"' : '';
 ?>
