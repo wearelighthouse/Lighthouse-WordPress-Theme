@@ -3,7 +3,9 @@
   @extend .o-container-content;
   @extend %u-flex;
   @extend %u-fw-wrap;
-  @extend %u-mv-8;
+  @extend %u-mt-8;
+  @extend %u-mb-2--upto-medium;
+  @extend %u-mb-6--from-medium;
 
   &__item {
     @extend %u-border-box;

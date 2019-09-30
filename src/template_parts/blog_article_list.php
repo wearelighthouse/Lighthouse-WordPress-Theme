@@ -20,9 +20,9 @@
       <?php endif; ?>
     </div>
     <div class="c-blog-link__content">
-      <h2 class="c-blog-link__content__title type-subtitle">
-        <a href="<?= the_permalink(); ?>"><?= the_title(); ?></a>
-      </h2>
+      <a href="<?= the_permalink(); ?>" class="c-blog-link__content__title">
+        <?= the_title(); ?>
+      </a>
       <div class="c-blog-link__content__excerpt"><?= the_excerpt(); ?></div>
     </div>
   </div>
