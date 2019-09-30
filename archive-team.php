@@ -1,4 +1,5 @@
 <?php
+  global $post;
   $post = get_page_by_title('Team');
 
   pr($post);
