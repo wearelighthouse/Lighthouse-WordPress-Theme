@@ -41,7 +41,7 @@
     <div class="c-hero__background" <?= $customGradient ?>></div>
     <div class="o-container-content o-container-content--v-pad c-hero__content">
       <?php if ($text) : ?>
-        <div class="c-hero__text s-banner">
+        <div class="c-hero__text s-banner<?= ($imageId) ? ' c-hero__text--with-image' : '' ?>">
           <?= wpautop($text, false) // Don't remove <br> ?>
         </div>
       <?php endif; ?>

@@ -30,6 +30,12 @@
     @extend %u-mb-4;
   }
 
+  @include breakpoint(from-medium) {
+    &__text--with-image {
+      max-width: 60%;
+    }
+  }
+
   &__client-logo {
     @extend %u-mt-4;
   }
