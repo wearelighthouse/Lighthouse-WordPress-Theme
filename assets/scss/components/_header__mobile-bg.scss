@@ -1,0 +1,9 @@
+
+.c-header__mobile-bg {
+  @extend %u-pos-absolute;
+  @extend %u-bg-color-blackcurrant;
+  @extend %u-z-index--1;
+  width: calc(100vw - var(--edge-gutter) * 2);
+  height: calc(100vh - var(--edge-gutter) * 2);
+  height: 0;
+}

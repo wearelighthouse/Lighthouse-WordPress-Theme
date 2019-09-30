@@ -11,8 +11,10 @@
 
 ?>
 
-<header class="o-container-section o-container-section--bordered o-container-header">
-  <div class="c-header o-container-content <?= $headerStyle ?> ">
+<header class="c-header">
+  <div class="c-header__mobile-bg"></div>
+
+  <div class="c-header__inner o-container-content <?= $headerStyle ?> ">
 
     <a href="/" class="c-header__home-link">
       <svg viewBox="0 0 150 38" style="display: block; width: 150px; height: 38px;">

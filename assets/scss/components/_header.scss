@@ -1,12 +1,17 @@
 
 .c-header {
+  @extend .o-container-section;
+  @extend .o-container-section--bordered;
+  @extend .o-container-header;
   @extend %u-color-white;
 
-  @extend %u-pv-5;
-  @extend %u-width-100pc;
-  @extend %u-flex;
-  @extend %u-ai-center;
-  @extend %u-jc-space-between;
+  &__inner {
+    @extend %u-pv-5;
+    @extend %u-width-100pc;
+    @extend %u-flex;
+    @extend %u-ai-center;
+    @extend %u-jc-space-between;
+  }
 
   &__home-link {
     @extend %u-block;
