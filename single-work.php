@@ -3,9 +3,9 @@
   //$heroImage = getPostMeta('work_work_image_large', $post->ID);
 
   // get the stats
-  $stats = getPostMeta('work_work_stats', $post->ID);
+  $stats = getPostMeta('work_single_work_stats', $post->ID);
 
-  $clutch = getPostMeta('work_work_clutch_score', $post->ID);
+  $clutch = getPostMeta('work_single_work_clutch_score', $post->ID);
   $clutchScore = '';
   if ($clutch > 0) {
     $clutchScore = '<div class="c-clutch"><div class="c-clutch__logo"></div><div class="c-clutch__score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div></div>';
