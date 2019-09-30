@@ -1,5 +1,6 @@
 
 .c-blog-nav {
+  @extend .o-container-content;
   @extend %u-flex;
   @extend %u-fw-wrap;
   @extend %u-mv-8;

@@ -24,8 +24,6 @@
 
 ?>
 
-<section class="o-container-content o-blog">
-  <nav class="c-blog-nav">
-    <?= $menuItems; ?>
-  </nav>
-</section>
+<nav class="c-blog-nav">
+  <?= $menuItems; ?>
+</nav>

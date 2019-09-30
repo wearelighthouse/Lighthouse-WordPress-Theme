@@ -1,28 +1,30 @@
-<section class="o-container-content o-blog">
+<section class="o-container-content">
 
-<?php while (have_posts()) : the_post(); ?>
+  <?php while (have_posts()) : the_post(); ?>
 
-<?php
-  $categories = get_the_category();
-  // pr($categories);
-  if ( count($categories) > 1) {
-    $category = $categories[1]->name;
-  } else {
-    $category = $categories[0]->name;
-  }
-?>
+  <?php
+    $categories = get_the_category();
+    // pr($categories);
+    if ( count($categories) > 1) {
+      $category = $categories[1]->name;
+    } else {
+      $category = $categories[0]->name;
+    }
+  ?>
 
-<div class="o-blog__post">
-  <div class="o-blog__info">
-  <p><?= the_date(); ?></p>
-  <p class="o-blog__category o-blog__<?= strtolower($category); ?>"><?= $category; ?></p>
+  <div class="c-blog-link">
+    <div class="c-blog-link__info">
+      <span class="c-blog-link__info__date"><?= get_the_date(get_option('date_format')) ?></span>
+      <span class="c-blog-link__info__category"><?= $category; ?></span>
+    </div>
+    <div class="c-blog-link__content">
+      <h2 class="c-blog-link__content__title type-subtitle">
+        <a href="<?= the_permalink(); ?>"><?= the_title(); ?></a>
+      </h2>
+      <div class="c-blog-link__content__excerpt"><?= the_excerpt(); ?></div>
+    </div>
   </div>
-  <div class="o-blog__title">
-  <h2><a href="<?= the_permalink(); ?>"><?= the_title(); ?></a></h2>
-  <p><?= the_excerpt(); ?></p>
-  </div>
-</div>
 
-<?php endwhile; ?>
+  <?php endwhile; ?>
 
 </section>

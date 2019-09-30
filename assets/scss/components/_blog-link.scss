@@ -1,0 +1,50 @@
+.c-blog-link {
+  @extend %u-pv-7;
+
+  &:not(:first-child) {
+    border-top: 1px solid $color-gray;
+  }
+
+  @include breakpoint(from-medium) {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 3fr 7fr;
+  }
+
+  &__info {
+    @extend %u-flex;
+    @extend %u-fd-column--from-medium;
+    @include fontScale(16, 18);
+
+    &__date,
+    &__category {
+      @extend %u-mb-3;
+    }
+
+    &__date {
+
+    }
+
+    &__category {
+      @extend %u-bold;
+      @extend %u-uppercase;
+      @extend %u-ml-auto--upto-medium;
+    }
+  }
+
+  &__content {
+
+    &__title {
+
+      a:hover {
+        @extend %u-underline;
+      }
+    }
+
+    &__excerpt {
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

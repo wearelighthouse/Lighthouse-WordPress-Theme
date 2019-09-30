@@ -1,54 +1,6 @@
 .o-blog {
   max-width: $global-max-width;
 
-  &__post {
-    border-top: 1px solid #DEDEE2;
-    margin-bottom: 2rem;
-    padding-top: 2rem;
-
-    &:first-child {
-      border: 0;
-    }
-
-    @include breakpoint(from-medium) {
-      margin-bottom: 4rem;
-      padding-top: 4rem;
-    }
-  }
-
-  &__category {
-    @include fontScale(16, 18);
-    color: $color-gray;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
-  @include breakpoint(from-medium) {
-    margin: 0 auto;
-
-    &__post {
-      display: grid;
-      grid-gap: 1rem;
-      grid-template-columns: 3fr 7fr;
-    }
-
-    &__info {
-      grid-column: 1;
-
-      p {
-        margin-bottom: .5rem;
-        margin-top: 0;
-      }
-    }
-
-    &__title {
-      grid-column: 2;
-    }
-  }
-
-  .o-blog-nav {
-    grid-column: 2;
-  }
 }
 
 .pagination {
