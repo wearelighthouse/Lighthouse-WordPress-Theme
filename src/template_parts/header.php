@@ -7,7 +7,6 @@
   ];
 
   $heroStyle = getPostMeta('hero_hero_style');
-  var_dump($heroStyle);
   $headerStyle = (!$heroStyle || strpos($heroStyle, 'gray') !== false) ? ' u-color-blackcurrant' : ' u-color-white';
 
 ?>

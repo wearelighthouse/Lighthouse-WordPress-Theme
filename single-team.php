@@ -1,15 +1,16 @@
 <?php
+  // Get <head>, WordPress stuff, opening <body>
+  get_header();
 
-$teamTitleShort = getPostMeta('team_team_title_short', $post->ID);
-$teamTitle = getPostMeta('team_team_title', $post->ID);
-$teamName = getPostMeta('team_team_name', $post->ID);
-$socials = getPostMeta('team_team_social', $post->ID);
+  $teamTitleShort = getPostMeta('team_team_title_short', $post->ID);
+  $teamTitle = getPostMeta('team_team_title', $post->ID);
+  $teamName = getPostMeta('team_team_name', $post->ID);
+  $socials = getPostMeta('team_team_social', $post->ID);
+  $heroImage = '<div class="team-image">' . get_the_post_thumbnail($post->ID) . '</div>';
 
-$heroImage = '<div class="team-image">' . get_the_post_thumbnail($post->ID) . '</div>';
-
+  // Get the actual site header
+  get_template_part('src/template_parts/header');
 ?>
-
-<?php get_header(); ?>
 
 <main>
   <?php while (have_posts()) : the_post(); ?>

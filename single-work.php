@@ -1,4 +1,7 @@
 <?php
+  // Get <head>, WordPress stuff, opening <body>
+  get_header();
+
   $heroContent = '<h1>' . get_the_excerpt() . '</h1>';
   //$heroImage = getPostMeta('work_work_image_large', $post->ID);
 
@@ -10,9 +13,10 @@
   if ($clutch > 0) {
     $clutchScore = '<div class="c-clutch"><div class="c-clutch__logo"></div><div class="c-clutch__score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div></div>';
   }
-?>
 
-<?php get_header(); ?>
+  // Get the actual site header
+  get_template_part('src/template_parts/header');
+?>
 
 <main>
   <?php while (have_posts()) : the_post(); ?>

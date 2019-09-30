@@ -1,11 +1,10 @@
 <?php
-  $heroContent = '<h1>' . $post->post_title . '</h1>';
-  $bgcolor = getPostMeta('hero_hero_background-color', $post->ID);
-  $heroClass = $bgcolor ? ' u-bg-gradient--' . $bgcolor : '' ;
-  $heroStyle = '';
-?>
+  // Get <head>, WordPress stuff, opening <body>
+  get_header();
 
-<?php get_header(); ?>
+  // Get the actual site header
+  get_template_part('src/template_parts/header');
+?>
 
 <main>
   <?php while (have_posts()) : the_post(); ?>
