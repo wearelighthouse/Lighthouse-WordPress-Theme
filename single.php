@@ -1,11 +1,4 @@
 <?php
-  $heroContent = '<h1>' . $post->post_title . '</h1>';
-  $heroContent .= '<p>' . get_the_date('jS F Y', $post->ID) . '</p>';
-  $blog = get_page_by_title('Blog');
-  $bgcolor = getPostMeta('hero_hero_background-color', $blog->ID);
-  $heroClass = $bgcolor ? ' u-bg-gradient--' . $bgcolor : '' ;
-  $heroStyle = '';
-
   $podcastEmbed = getPostMeta('post_post_podcast_embed', $post->ID);
 ?>
 

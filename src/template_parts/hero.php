@@ -9,8 +9,14 @@
   }
 
   $imageId = isset($heroImage) ? $heroImage : getPostMeta('hero_hero_image_id');
-
   $heroStyle = getPostMeta('hero_hero_style');
+
+  // Add date to blog post hero banner & make the it the correct gradient style
+  if (is_singular('post')) {
+    $text .= '<br><p>' . get_the_date('jS F Y', $post->ID) . '</p>';
+    $heroStyle = 'gray-gradient-small';
+  }
+
   $modifierClass = $heroStyle ? ' c-hero--' . $heroStyle : '';
 
   $bgcolor1 = getPostMeta('hero_hero_bg_color_1');

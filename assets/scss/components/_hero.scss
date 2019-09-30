@@ -60,13 +60,25 @@
   }
 
   &--gray-standard #{$self}__background,
-  &--gray-gradient #{$self}__background {
+  &--gray-gradient #{$self}__background,
+  &--gray-gradient-small #{$self}__background, {
     @extend %u-bg-color-gray-bluish;
   }
 
   &--gray-gradient #{$self}__text {
     h1 {
       // Do gradient text here?
+      background: linear-gradient(135deg, #FC845B, #FE497A);
+      font-family: 'tiempos';
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &--gray-gradient-small #{$self}__text {
+    h1 {
+      // Do gradient text here?
+      @include fontScale(32, 57);
       background: linear-gradient(135deg, #FC845B, #FE497A);
       font-family: 'tiempos';
       -webkit-background-clip: text;
