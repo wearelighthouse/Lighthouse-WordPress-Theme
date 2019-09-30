@@ -1,19 +1,13 @@
-
-<?php
-  $post = get_page_by_title('Team');
-  setup_postdata($post);
-?>
-
 <?php get_header(); ?>
 
 <?php
-
   // Setup postdata so the_content() will work outside the loop. Don't need to
   // wp_reset_postdata() because the loop doesn't need to keep going after this
-
   $post = get_page_by_title('Team');
   setup_postdata($post);
 ?>
+
+<?php get_template_part('src/template_parts/header') ?>
 
 <main>
 
