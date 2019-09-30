@@ -15,12 +15,10 @@
 
   <?php include(locate_template('src/template_parts/hero.php')) ?>
 
-	<section class="o-container-section o-container-section--bordered">
-    <?php include(locate_template('src/template_parts/block_team_list.php')) ?>
-	</section>
-
   <section class="o-container-section o-container-section--bordered">
-    <div class="o-container-content o-container-content--v-pad c-content-grid">
+    <?php include(locate_template('src/template_parts/block_team_list.php')) ?>
+
+    <div class="o-container-content c-content-grid">
       <?= the_content() ?>
     </div>
 	</section>

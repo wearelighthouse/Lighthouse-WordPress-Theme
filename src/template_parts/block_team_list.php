@@ -12,7 +12,7 @@ $team = new WP_Query( $args );
 
 ?>
 
-<div class="o-container-content o-container-content--v-pad c-team-list">
+<div class="o-container-content o-container-content--v-margin c-team-list">
   <?php foreach($team->posts as $person) : ?>
     <?php
       $teamTitleShort = getPostMeta('team_team_title_short', $person->ID);
