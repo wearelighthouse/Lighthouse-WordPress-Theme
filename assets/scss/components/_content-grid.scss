@@ -54,11 +54,20 @@
       grid-column: 1;
     }
 
+    // Compensate for gap above large text because of it's size + line height
+    h3 {
+      transform: translateY(-2px);
+    }
+
     h2 + p,
     h3 + p,
     h4 + p {
       margin-top: 2rem;
       margin-top: calc((var(--container-width) / 20) + 3rem);
+    }
+
+    h2 {
+      grid-column: 1 / -1;
     }
 
     .ad.ad__center,
