@@ -2,6 +2,9 @@
   --container-width: calc(68vw + 4rem);
   --container-v-pad: calc(2rem + 4%);
   --edge-gutter: 0rem;
+  // To start with, pretend the scrollbars are massive, that way anything with
+  // width: 100vw - var(--scrollbar-width) things start at 0px width
+  --scrollbar-width: 100vw;
 
   @include breakpoint(from-small) {
     --edge-gutter: 1rem;
