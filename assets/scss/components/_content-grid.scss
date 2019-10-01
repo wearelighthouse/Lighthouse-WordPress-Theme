@@ -3,31 +3,34 @@
 
   h2 {
     @extend .type-headline; // It's basically a headline, but not a -plz-only-1-h1-
+    margin-bottom: 1rem;
   }
 
   h3 {
     @extend .type-title;
+    margin-bottom: 1rem;
   }
 
   h4 {
     @extend .type-subtitle;
+    margin-bottom: 1rem;
   }
 
   h5 {
     @extend .type-subheadline; // Basically just normal text but bold w/margins
     margin-top: 1.25em;
+    margin-bottom: 1rem;
   }
 
-  h2,
-  h3,
-  h4 {
+  h2:not(:first-child),
+  h3:not(:first-child),
+  h4:not(:first-child) {
     margin-top: 2rem;
     margin-top: calc((var(--container-width) / 20) + 3rem);
   }
 
-  & > *:last-child {
-    margin-bottom: 2rem;
-    margin-bottom: calc((var(--container-width) / 20) + 3rem);
+  & > p:first-of-type {
+    margin-top: 0;
   }
 
   @include breakpoint(from-medium) {
@@ -59,9 +62,9 @@
       transform: translateY(-2px);
     }
 
-    h2 + p,
-    h3 + p,
-    h4 + p {
+    h2:not(:first-child) + p,
+    h3:not(:first-child) + p,
+    h4:not(:first-child) + p {
       margin-top: 2rem;
       margin-top: calc((var(--container-width) / 20) + 3rem);
     }
