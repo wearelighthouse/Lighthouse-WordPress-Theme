@@ -2,10 +2,11 @@
 
   $args = array(
       'post_type' => 'team',
-      'orderby'   => 'menu_order',
+      'orderby' => 'menu_order',
       'order' => 'asc',
       'post_status' => 'publish',
       'posts_per_page' => -1,
+      'post__not_in' => [get_the_ID()]
   );
 
   $team = new WP_Query( $args );
