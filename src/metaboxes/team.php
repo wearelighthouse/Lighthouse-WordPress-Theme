@@ -3,30 +3,9 @@
 return [
     'title' => 'Team Member Settings',
     'fields' => [
-        /*[
-            'name' => 'Colour',
-            'id'   => 'color',
-            'type' => 'select',
-            'options' => [
-                'green',
-                'red',
-                'orange',
-                'blue'
-            ]
-        ],*/
         [
-            'name' => 'Full Name',
-            'id'   => 'name',
-            'type' => 'text'
-        ],
-        [
-            'name' => 'Title',
+            'name' => 'Job Title',
             'id'   => 'title',
-            'type' => 'text'
-        ],
-        [
-            'name' => 'Title short',
-            'id'   => 'title_short',
             'type' => 'text'
         ],
         [

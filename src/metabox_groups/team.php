@@ -4,7 +4,8 @@ function registerTeamMetaboxes()
 {
 
     $groupInfo = [
-        'object_types' => ['team']
+        'object_types' => ['team'],
+        'context'      => 'after_title'
     ];
 
     $groupID = basename(__FILE__, '.php');
