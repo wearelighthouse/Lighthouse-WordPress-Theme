@@ -18,6 +18,9 @@
   get_template_part('src/template_parts/header');
 ?>
 
+<?php // Work pages can have full-width stuff that needs the --scrollbar-width variable ?>
+<script src="<?= get_template_directory_uri()?>/dist/js/scrollbar-width.min.js"></script>
+
 <main>
   <?php while (have_posts()) : the_post(); ?>
 

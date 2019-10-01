@@ -81,12 +81,25 @@ function svgSprites() {
     .pipe(gulp.dest(paths.dist + '/svg'));
 }
 
+/**
+ * Minify and copy JavaScript in main.js (and anything it imports) to /dist
+ */
 function js() {
-  return gulp.src(paths.src + '/js/main.js')
+  return gulp
+    .src(paths.src + '/js/main.js')
     .pipe(terser({
       keep_fnames: true,
       mangle: false
     }))
+    .pipe(gulp.dest(paths.dist + '/js'));
+}
+
+/**
+ * Copy any already-minified JavaScript libraries etc. over to /dist
+ */
+function jsLib() {
+  return gulp
+    .src(paths.src + '/js/*.min.js')
     .pipe(gulp.dest(paths.dist + '/js'));
 }
 
@@ -135,7 +148,8 @@ exports.watch = gulp.series(
     svgs,
     svgSprites,
     scss,
-    js
+    js,
+    jsLib
   ),
   watch
 );
@@ -151,6 +165,7 @@ exports.default = gulp.series(
       scss,
       cssMinifiy
     ),
-    js
+    js,
+    jsLib
   )
 );
