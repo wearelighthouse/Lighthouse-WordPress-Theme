@@ -1,4 +1,8 @@
 <?php
+  /**
+   * Blog archive page
+   */
+
   // Get <head>, WordPress stuff, opening <body>
   get_header();
 
