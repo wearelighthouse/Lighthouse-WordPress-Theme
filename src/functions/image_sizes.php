@@ -1,7 +1,9 @@
 <?php
 
-// Bios (peoples faces) TODO: Review size
-add_image_size('bio', 768, 768, true);
+// Bios (peoples faces)
+add_image_size('bio-large', 600, 660);
+add_image_size('bio-medium', 400, 440);
+add_image_size('bio-small', 300, 330);
 add_image_size('bio-tiny', 66, 66, false);
 
 // Case Study Header Image
