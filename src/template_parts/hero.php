@@ -28,7 +28,8 @@
   }
 
   // From page has a 100vh header instead of as-big-as-it-needs-to-be
-  $frontPageSectionClass = is_front_page() ? ' o-container-section--100vh' : '';
+  // Has been temporarily removed because it's toooo tall. CSS was also commented out.
+  $frontPageSectionClass = is_front_page() ? '' : '';
 
   $clientLogoId = getPostMeta('work_single_work_options_logo_id');
   $clientLogoSrc = getPostMeta('work_single_work_options_logo');
