@@ -37,6 +37,11 @@
       #{$self}__name {
         @extend %u-underline;
       }
+
+      #{$self}__image:after {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   }
 

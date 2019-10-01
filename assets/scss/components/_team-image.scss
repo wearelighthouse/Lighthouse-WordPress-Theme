@@ -24,7 +24,8 @@
     height: auto;
   }
 
-  &:before {
+  &:before,
+  &:after {
     @extend %u-block;
     @extend %u-round;
     @extend %u-content;
@@ -32,7 +33,17 @@
     @extend %u-z-index--1;
     width: var(--size);
     height: var(--size);
+  }
+
+  &:before {
     background: linear-gradient(135deg, rgba(252, 252, 252, 1) 0%, rgba(201, 201, 201, 1) 100%);
+  }
+
+  &:after {
+    transform: scale(0);
+    opacity: 0;
+    background: $gradient-orange-pink;
+    transition: .15s all;
   }
 
   &--mobile-only {
