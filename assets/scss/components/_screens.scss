@@ -85,7 +85,7 @@
         }
 
         .o-screens__bg {
-          width: 90%;
+          width: calc(100vw - var(--scrollbar-width));
         }
       }
 
