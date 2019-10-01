@@ -35,7 +35,7 @@ $footerLinks = $footerLinks ? autoa($footerLinks) : null;
       <?php if ($contactBoxes) : ?>
         <address class="c-footer__contact">
           <?php foreach ($contactBoxes as $contactBox) : ?>
-            <div class="c-footer__contact__box type-p--small u-line-height-2">
+            <div class="c-footer__contact__box">
               <?php if(isset($contactBox['text'])) : ?>
                 <?= wpautop($contactBox['text']) ?>
               <?php endif; ?>
