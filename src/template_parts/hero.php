@@ -43,7 +43,7 @@
     <div class="o-container-content o-container-content--v-pad c-hero__content">
       <?php if ($text) : ?>
         <div class="c-hero__text s-banner<?= (isset($heroImage) || $imageId) ? ' c-hero__text--with-image' : '' ?>">
-          <?= wpautop($text, false) // Don't remove <br> ?>
+          <?= wpautop($text) // Don't remove <br> ? or do? ?>
         </div>
       <?php endif; ?>
       <?php if ($clientLogoId) : ?>
