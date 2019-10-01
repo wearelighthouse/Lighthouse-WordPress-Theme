@@ -2,11 +2,10 @@
   // Get <head>, WordPress stuff, opening <body>
   get_header();
 
-  $teamTitleShort = getPostMeta('team_team_title_short', $post->ID);
   $teamTitle = getPostMeta('team_team_title', $post->ID);
-  $teamName = getPostMeta('team_team_name', $post->ID);
   $socials = getPostMeta('team_team_social', $post->ID);
-  $heroImage = '<div class="team-image">' . get_the_post_thumbnail($post->ID) . '</div>';
+  $teamImage = get_the_post_thumbnail($post);
+  $heroImage = '<div class="c-hero__team-image"><div class="c-team-image c-team-image--desktop-only">' . $teamImage . '</div></div>';
 
   // Get the actual site header
   get_template_part('src/template_parts/header');
@@ -19,6 +18,10 @@
 
 		<section class="o-container-section o-container-section--bordered">
       <div class="o-container-content o-container-content--v-pad c-content-grid">
+
+        <div class="c-team-image c-team-image--mobile-only">
+          <?= $teamImage ?>
+        </div>
 
 				<div class="c-content-grid__left">
 					<?php $socialLinksStyle = 'dark' ?>

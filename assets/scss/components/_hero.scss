@@ -27,7 +27,7 @@
   }
 
   &__text {
-    @extend %u-mb-4;
+    @extend %u-mb-6;
   }
 
   @include breakpoint(from-medium) {
@@ -51,6 +51,27 @@
     img {
       @extend %u-width-100pc;
       @extend %u-height-auto;
+    }
+  }
+
+  // Like the normal hero image but er different and for the team-member photos
+  &__team-image {
+    @extend %u-pos-absolute;
+    @extend %u-right;
+    width: 300px;
+    height: 300px;
+    transform: translateY(-10%);
+
+    &:before {
+      @extend %u-width-100pc;
+      @extend %u-height-100pc;
+      opacity: .8;
+    }
+
+    img {
+      @extend %u-width-100pc;
+      @extend %u-height-auto;
+      border-radius: 0 0 150px 150px;
     }
   }
 

@@ -1,14 +1,14 @@
 <?php
 
-$args = array(
-    'post_type' => 'team',
-    'orderby'   => 'menu_order',
-    'order' => 'asc',
-    'post_status' => 'publish',
-    'posts_per_page' => -1,
-);
+  $args = array(
+      'post_type' => 'team',
+      'orderby'   => 'menu_order',
+      'order' => 'asc',
+      'post_status' => 'publish',
+      'posts_per_page' => -1,
+  );
 
-$team = new WP_Query( $args );
+  $team = new WP_Query( $args );
 
 ?>
 
@@ -19,7 +19,7 @@ $team = new WP_Query( $args );
     ?>
     <div class="c-team-list__person">
     	<a href="<?= get_the_permalink($person->ID); ?>" class="c-team-list__content">
-    		<div class="c-team-list__image team-image">
+    		<div class="c-team-list__image">
     			<?= get_the_post_thumbnail($person->ID); ?>
     		</div>
   			<h3 class="c-team-list__name"><?= $person->post_title; ?></h3>

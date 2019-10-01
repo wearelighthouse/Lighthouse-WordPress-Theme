@@ -1,6 +1,7 @@
 
 .c-social-links {
   @extend %u-flex;
+  @extend %u-fw-wrap;
   @extend %u-m--1;
 
   $self: &;

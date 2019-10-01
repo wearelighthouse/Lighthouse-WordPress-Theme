@@ -8,7 +8,7 @@
     $text = "<h1>$post->post_title</h1>" . $text;
   }
 
-  $imageId = isset($heroImage) ? $heroImage : getPostMeta('hero_hero_image_id');
+  $imageId = getPostMeta('hero_hero_image_id');
   $heroStyle = getPostMeta('hero_hero_style');
 
   // Add date to blog post hero banner & make the it the correct gradient style
@@ -50,7 +50,9 @@
              src="<?= $clientLogoSrc ?>"
              <?= $clientLogoAltAttr ?>/>
       <?php endif; ?>
-      <?php if ($imageId) : ?>
+      <?php if (isset($heroImage)) : ?>
+        <?= $heroImage ?>
+      <?php elseif ($imageId) : ?>
         <div class="c-hero__image">
             <?= wp_get_attachment_image($imageId, $size = 'case-study-header') ?>
         </div>

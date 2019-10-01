@@ -29,6 +29,8 @@
     @extend %u-fd-column;
     @extend %u-ai-center;
     @extend %u-text-align-center;
+    @extend %u-jc-flex-start;
+    //@extend %u-mt-auto;
 
     &:focus,
     &:hover {
@@ -39,19 +41,9 @@
   }
 
   &__image {
-    $size: 150px;
-    width: $size;
-    height: $size;
-
-    img {
-      @extend %u-round;
-      border-radius: 0 0 #{$size / 2} #{$size / 2};
-
-      &:before {
-        width: $size;
-        height: $size;
-      }
-    }
+    @extend .c-team-image;
+    @extend .c-team-image--small;
+    height: 181px; // Slightly hacky magic number to line 'em up
   }
 
   &__name {

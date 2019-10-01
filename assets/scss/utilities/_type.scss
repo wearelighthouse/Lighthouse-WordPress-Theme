@@ -3,7 +3,6 @@
   @include make-utility((
     alias: $value,
     text-transform: $value,
-    class: true
   ));
 }
 
