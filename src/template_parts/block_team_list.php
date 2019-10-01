@@ -16,7 +16,7 @@
 <div class="o-container-content o-container-content--v-margin c-team-list">
   <?php foreach($team->posts as $person) : ?>
     <?php
-      $teamTitleShort = getPostMeta('team_team_title_short', $person->ID);
+      $teamTitleShort = getPostMeta('team_team_title', $person->ID);
     ?>
     <div class="c-team-list__person">
     	<a href="<?= get_the_permalink($person->ID); ?>" class="c-team-list__content">
