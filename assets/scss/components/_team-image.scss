@@ -43,7 +43,7 @@
     transform: scale(0);
     opacity: 0;
     background: $gradient-orange-pink;
-    transition: .15s all;
+    transition: .15s transform, .3s opacity;
   }
 
   &--mobile-only {
