@@ -39,9 +39,21 @@ function shortcode_screen_function($atts)
 
 	$i = 1;
 	foreach ($screens as $screen) {
+		$mediaType = get_post_mime_type($screen);
+
+		if (strpos($mediaType, 'video') === false) {
+			$alt = $post->post_title . ' ' . ucfirst($screenType) . ' Screenshot ' . $i;
+	  	$output .= '<div class="o-screens__screen"><div class="o-screens__chrome"><div class="o-screens__mask">' . wp_get_attachment_image($screen, 'original' , '', ["alt" => $alt]) . '</div></div></div>';
+		} else {
+			$videoUrl = wp_get_attachment_url($screen);
+			echo $videoUrl;
+			$output .= '<div class="o-screens__screen"><div class="o-screens__chrome"><div class="o-screens__mask"><video width="320" height="240" autoplay>
+			  <source src="http:' . $videoUrl . '" type="video/mp4">
+			Your browser does not support the video tag.
+			</video></div></div></div>';
+		}
   	// alt text
-    $alt = $post->post_title . ' ' . ucfirst($screenType) . ' Screenshot ' . $i;
-  	$output .= '<div class="o-screens__screen"><div class="o-screens__chrome"><div class="o-screens__mask">' . wp_get_attachment_image($screen, 'original' , '', ["alt" => $alt]) . '</div></div></div>';
+
   	$i++;
 	}
 

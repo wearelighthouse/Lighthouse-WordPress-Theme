@@ -116,6 +116,14 @@
         top: 0;
         width: 100%;
       }
+
+      video {
+        display: block;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+      }
     }
 
     .o-screens__chrome {
