@@ -23,3 +23,11 @@ $aliases: (
   class: true,
   box-sizing: border-box
 ));
+
+.u-display-none--upto-medium {
+  @extend %u-display-none--upto-medium;
+}
+
+.u-display-none--from-medium {
+  @extend %u-display-none--from-medium;
+}

@@ -17,24 +17,27 @@
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
 		<section class="o-container-section o-container-section--bordered">
-      <div class="o-container-content o-container-content--v-pad c-content-grid">
-
-        <div class="c-team-image c-team-image--mobile-only">
+      <div class="o-container-content o-container-content--v-margin">
+        <div class="o-container-content c-team-image c-team-image--mobile-only">
           <?= $teamImage ?>
         </div>
+      </div>
 
-				<div class="c-content-grid__left">
+      <div class="o-container-content o-container-content--v-margin c-content-grid">
+				<div class="c-content-grid__left u-display-none--upto-medium">
 					<?php $socialLinksStyle = 'dark' ?>
 					<?php include(locate_template('src/template_parts/social_links.php')) ?>
 				</div>
 
 				<?= apply_filters('the_content', $post->post_content ); ?>
 			</div>
-		</section>
 
-		<section class="o-container-section o-container-section--bordered">
-			<div class="o-container-content">
-	    <?php include(locate_template('src/template_parts/block_team_list.php')) ?>
+      <div class="o-container-content o-container-content--v-margin u-display-none--from-medium">
+        <?php $socialLinksStyle = 'dark' ?>
+        <?php include(locate_template('src/template_parts/social_links.php')) ?>
+      </div>
+
+      <?php include(locate_template('src/template_parts/block_team_list.php')) ?>
 		</section>
 
   <?php endwhile; ?>
