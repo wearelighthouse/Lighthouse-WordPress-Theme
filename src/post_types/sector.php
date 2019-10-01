@@ -25,7 +25,7 @@ function registerSectorPostType()
         ],
         'public' => true,
         'menu_position' => 20,
-        'menu_icon' => 'dashicons-carrot',
+        'menu_icon' => 'dashicons-palmtree',
         'supports' => $supports,
         'taxonomies' => [],
         'hierarchical' => true
