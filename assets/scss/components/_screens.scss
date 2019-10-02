@@ -194,4 +194,9 @@
       }
     }
   }
+
+  // Remove the margin-top of a screen following a screen
+  & + .o-screen {
+    margin-top: 0;
+  }
 }
