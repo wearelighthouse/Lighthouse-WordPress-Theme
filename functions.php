@@ -27,7 +27,6 @@ require_once __DIR__ . '/src/functions/menus.php';
 require_once __DIR__ . '/src/functions/metaboxes.php';
 require_once __DIR__ . '/src/functions/plugins.php';
 require_once __DIR__ . '/src/functions/pr.php';
-require_once __DIR__ . '/src/functions/shortcodes.php';
 
 // Metabox Groups
 require_once __DIR__ . '/src/metabox_groups/front_page.php';
@@ -50,6 +49,21 @@ require_once __DIR__ . '/src/post_types/sector.php';
 require_once __DIR__ . '/src/post_types/service.php';
 require_once __DIR__ . '/src/post_types/team.php';
 require_once __DIR__ . '/src/post_types/work.php';
+
+// Shortcodes
+require_once __DIR__ . '/src/shortcodes/ad.php';
+require_once __DIR__ . '/src/shortcodes/image.php';
+require_once __DIR__ . '/src/shortcodes/quote.php';
+require_once __DIR__ . '/src/shortcodes/screen.php';
+
+function registerShortcodes()
+{
+  add_shortcode('screen', 'screenShortcode');
+  add_shortcode('quote', 'quoteShortcode');
+  add_shortcode('image', 'imageShortcode');
+  add_shortcode('ad', 'adShortcode');
+}
+add_action( 'init', 'registerShortcodes');
 
 // Update CSS within in Admin
 function admin_style()

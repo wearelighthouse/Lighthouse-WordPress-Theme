@@ -41,7 +41,8 @@
 
   &__client-logo {
     @extend %u-mt-4;
-    @extend %u-mb-2;
+    @extend %u-mb-4--upto-medium;
+    @extend %u-mb-2--from-medium;
   }
 
   &__image {
