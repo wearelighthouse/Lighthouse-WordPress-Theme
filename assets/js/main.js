@@ -1,10 +1,21 @@
 
 if (document.readyState === "complete" || document.readyState === "loaded") {
-  addMenuToggleListener(document.querySelectorAll('.js-menu-button')[0]);
+  init();
 } else {
-  document.addEventListener('DOMContentLoaded', function() {
-    addMenuToggleListener(document.querySelectorAll('.js-menu-button')[0]);
+  document.addEventListener('DOMContentLoaded', init);
+}
+
+function init() {
+  addMenuToggleListener(document.querySelectorAll('.js-menu-button')[0]);
+  document.addEventListener('keydown', (event) => {
+    if (event.altKey && event.code === 'KeyA') {
+      addressToClipboard();
+    }
   });
+}
+
+function addressToClipboard() {
+  navigator.clipboard.writeText('Unit 29, Finsbury Business Center, 40 Bowling Green Lane, London EC1R 0NE');
 }
 
 function addMenuToggleListener(button) {
