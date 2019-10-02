@@ -162,7 +162,7 @@ function shortcode_image_function($atts) {
   }
 
   if ($size == 'full') {
-    $output .= '</section><section class="o-container-section o-container-section--bordered">';
+    $output .= '</div><div class="o-container-section o-container-section--bordered">';
   }
 
 	$output .= '<div class="o-images count-' . $count . ' size-' . $size . '"' . $bgColor . '>';
@@ -178,7 +178,7 @@ function shortcode_image_function($atts) {
 	$output .= '</div>';
 
 	if ($size == 'full') {
-    $output .= '</section><section class="o-container-section o-container-section--bordered content-grid">';
+    $output .= '</div><div class="o-container-content o-container-content--v-margin c-content-grid">';
   }
 
 	return $output;
