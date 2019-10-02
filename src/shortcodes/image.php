@@ -1,37 +1,23 @@
 <?php
 
-function imageShortcode($atts) {
+function imageShortcode($atts)
+{
 
-	// get the vars
-	extract(shortcode_atts(array(
-		'id' => '',
-		'alt' => '',
-		'caption' => '',
-		'size' => '',
-		'bg' => '',
-		'size' => '',
-	), $atts));
+  $atts = shortcode_atts([
+    'id' => '',
+    'size' => 'large',
+  ], $atts);
+
+  $allowedImgSizes = ['', 'small', 'medium', 'large', 'full'];
+
+  if (!in_array($atts['size'], $allowedImgSizes) {
+    return new WP_Error('Invalid image shortcode size, must be one of: "' . implode('", "', $allowedImgSizes) . '"';
+  }
 
 	$output = '';
 
-	switch ($size) {
-  	case 'full':
-    	$size = 'full';
-    	break;
+  $imgArray = array_map('trim', explode(',', $id));
 
-    case 'small':
-    	$size = 'small';
-    	break;
-
-    case 'medium':
-    	$size = 'medium';
-    	break;
-
-  	default:
-    	$size = 'large';
-	}
-
-  $imgArray = explode(',', $id);
   $count = count($imgArray);
 
   if ($bg) {
@@ -50,7 +36,7 @@ function imageShortcode($atts) {
 	$output .= '<div class="o-images count-' . $count . ' size-' . $size . '"' . $bgColor . '>';
 
   foreach ($imgArray as $imgId) {
-    $output .= '<div class="o-images__image">' . wp_get_attachment_image($imgId, 'original', '', ['alt' => 'Alt']) . '</div>';
+    $output .= '<div class="o-images__image">' . wp_get_attachment_image($imgId, 'original', '', ['loading' => 'lazy']) . '</div>';
   }
 
   if ( $alt == '' ) {
