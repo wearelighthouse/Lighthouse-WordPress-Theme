@@ -5,6 +5,8 @@
   @extend .o-container-header;
   @extend %u-color-white;
 
+  $self: &;
+
   &__inner {
     @extend %u-pv-5;
     @extend %u-width-100pc;
@@ -33,30 +35,10 @@
     }
   }
 
-  &__nav {
-    @extend .type-cta;
-    @extend %u-flex;
-    @extend %u-fw-wrap;
-    @extend %u-mh--2;
-    margin-top: 5px; // Line up with Lighthouse logo text
-    font-size: 18px;
-
-    ul {
-      @extend %u-flex;
-      @extend %u-fw-wrap;
-
-      li {
-        @extend %u-mh-2;
-
-        a {
-          // Set this here as it's tricky to get in the with WP menu PHP
-          @extend .c-button--simple;
-        }
-      }
-
-      .current-menu-item a {
-        @extend .c-button--simple--active;
-      }
+  &--mobile-menu-open {
+    #{$self}__mobile-bg,
+    #{$self}__nav {
+      transform: translateY(0);
     }
   }
 }

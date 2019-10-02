@@ -1,0 +1,45 @@
+
+.c-header__nav {
+  @extend .type-cta;
+  @extend %u-pos-absolute--upto-medium;
+  @extend %u-flex;
+  @extend %u-fw-wrap;
+  @extend %u-mh--2;
+  font-size: 18px;
+  transition: .2s transform;
+
+  ul {
+    @extend %u-flex;
+    @extend %u-fw-wrap;
+    @extend %u-fd-column--upto-medium;
+
+    li {
+      @extend %u-mv-2--upto-medium;
+      @extend %u-mh-6--upto-medium;
+      @extend %u-mh-2--from-medium;
+
+      a {
+        // Set this here as it's tricky to get in the with WP menu PHP
+        @extend .c-button--simple;
+      }
+    }
+
+    .current-menu-item a {
+      @extend .c-button--simple--active;
+    }
+  }
+
+  @include breakpoint(upto-medium) {
+    font-size: 26px;
+    transform: translateY(-100vh); // Starts hidden
+
+    ul {
+      margin-top: 8rem;
+      transform: translateY(50%); // Because it's "centered" in the header still
+    }
+  }
+
+  @include breakpoint(from-medium) {
+    margin-top: 5px; // Line up with Lighthouse logo text
+  }
+}

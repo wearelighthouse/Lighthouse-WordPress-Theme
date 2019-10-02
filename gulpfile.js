@@ -135,6 +135,13 @@ function watch(cb) {
     console.log('Markup changed: ' + path);
     browserSync.reload();
   });
+
+  gulp.watch(paths.src + '/js/**/*.js').on('all', (event, path) => {
+    console.log('JavaScript changed: ' + path);
+    js();
+    jsLib();
+    browserSync.reload();
+  });
 }
 
 exports.clean = clean;

@@ -11,7 +11,7 @@
 
 ?>
 
-<header class="c-header">
+<header class="c-header js-header">
   <div class="c-header__mobile-bg"></div>
 
   <div class="c-header__inner o-container-content <?= $headerStyle ?> ">
@@ -25,6 +25,12 @@
     <nav class="c-header__nav c-header__nav--desktop">
       <?php wp_nav_menu($navMenuSettings); ?>
     </nav>
+
+    <button role="switch"
+            class="c-menu-button c-menu-button--lines js-menu-button"
+            aria-checked="false"
+            aria-label="Open Menu">
+    </button>
 
   </div>
 </header>

@@ -1,0 +1,47 @@
+
+.c-menu-button {
+  @extend %u-display-none--from-medium;
+  @extend %u-pos-relative;
+  width: 30px;
+  height: 30px;
+  margin-top: 3px; // Hacky number to line up with other things in the header
+  color: inherit; // Reset button color - could move to _reset.scss
+
+  &:before,
+  &:after {
+    @extend %u-block;
+    @extend %u-pos-absolute;
+    @extend %u-content;
+    @extend %u-bg-color-currentColor;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 3px;
+    transition: .15s transform;
+  }
+
+  &--lines {
+    &:before {
+      transform: translate(-50%, calc(-50% - 5px));
+    }
+
+    &:after {
+      transform: translate(-50%, calc(-50% + 5px));
+    }
+  }
+
+  &--close {
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  // Focus w/ keyboard
+  &.focus-visible {
+    outline: 1px dotted currentColor;
+  }
+}
