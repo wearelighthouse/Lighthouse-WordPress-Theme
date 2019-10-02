@@ -6,6 +6,7 @@ function imageShortcode($atts)
   $atts = shortcode_atts([
     'id' => '',
     'size' => 'large',
+    'bg-color' => ''
   ], $atts);
 
   $allowedImgSizes = ['', 'small', 'medium', 'large', 'full'];
@@ -14,39 +15,19 @@ function imageShortcode($atts)
     return new WP_Error('Invalid image shortcode size, must be one of: "' . implode('", "', $allowedImgSizes) . '"';
   }
 
-	$output = '';
+  $imgIdArray = array_map('trim', explode(',', $attrs['id']));
 
-  $imgArray = array_map('trim', explode(',', $id));
+  $className = 'c-images';
+  $output = 'div class="c-images"' . ($attrs['bg-color'] ? ' style="background:' . $attrs['bg-color'] . '"');
 
-  $count = count($imgArray);
-
-  if ($bg) {
-    if (strpos($bg, '#') === false) {
-      $bg = '#' . $bg;
-    }
-    $bgColor = ' style="background-color: ' . $bg . '"';
-  } else {
-    $bgColor = '';
-  }
-
-  if ($size == 'full') {
-    $output .= '</div><div>';
-  }
-
-	$output .= '<div class="o-images count-' . $count . ' size-' . $size . '"' . $bgColor . '>';
-
-  foreach ($imgArray as $imgId) {
+  foreach ($imgIdArray as $imgId) {
     $output .= '<div class="o-images__image">' . wp_get_attachment_image($imgId, 'original', '', ['loading' => 'lazy']) . '</div>';
   }
 
-  if ( $alt == '' ) {
-  	$alt == 'caption';
-	}
+  $output .= '</div>';
 
-	$output .= '</div>';
-
-	if ($size == 'full') {
-    $output .= '</div><div class="o-container-content o-container-content--v-margin c-content-grid">';
+  if ($atts['size'] === 'full') {
+	   $output = '</div>' . $output . '<div class="o-container-content o-container-content--v-margin c-content-grid">';
   }
 
 	return $output;
