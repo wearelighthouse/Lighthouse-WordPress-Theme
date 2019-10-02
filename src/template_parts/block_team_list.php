@@ -21,7 +21,7 @@
     <div class="c-team-list__person">
     	<a href="<?= get_the_permalink($person->ID); ?>" class="c-team-list__content">
     		<div class="c-team-list__image">
-    			<?= get_the_post_thumbnail($person->ID, 'bio-small', ['loading' => 'lazy']); ?>
+          <img src="<?= wp_get_attachment_image_src(get_post_thumbnail_id($person), 'bio-small')[0] ?>" width="150px" height="165px" loading="lazy">
     		</div>
   			<h3 class="c-team-list__name"><?= $person->post_title; ?></h3>
   			<p class="c-team-list__title"><?= $teamTitleShort; ?></p>
