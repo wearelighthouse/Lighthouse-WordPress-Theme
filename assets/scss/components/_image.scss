@@ -49,4 +49,9 @@
       }
     }
   }
+
+  // Remove the margin-top of a screen following a screen
+  & + .o-images {
+    margin-top: 0;
+  }
 }
