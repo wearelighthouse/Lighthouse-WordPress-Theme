@@ -210,8 +210,8 @@
 
   $self: &;
 
-  margin-top: var(--container-v-pad);
-  margin-bottom: var(--container-v-pad);
+  margin-top: calc(var(--container-v-pad) * 2);
+  margin-bottom: calc(var(--container-v-pad) * 2);
 
   img {
     @extend %u-block;
@@ -249,26 +249,53 @@
   }
 
   &__device {
+    @extend %u-pos-relative;
+    box-shadow: 1px 3px 20px rgba(0, 0, 0, .2);
 
     &--desktop {
+      @extend %u-ov-hidden;
+      width: var(--container-width);
       max-width: $global-max-width;
+      border-radius: 7px;
+
+      // TODO: Set :before and :after px values off css variable that
+      // changes between breakpoints or dynamically somehow
+
+      &:before {
+        @extend %u-content;
+        @extend %u-flex;
+        @extend %u-bg-color-gray-deep;
+        @extend %u-ai-center;
+        @extend %u-jc-flex-start;
+        height: 36px;
+      }
+
+      &:after {
+        @extend %u-content;
+        @extend %u-pos-absolute;
+        @extend %u-left;
+        @extend %u-round;
+        top: 14px;
+        width: 9px;
+        height: 9px;
+        box-shadow: 16px 0 0 #444, 31px 0 0 #444, 46px 0 0 #444;
+      }
 
       &--light {
 
       }
 
       &--dark {
-
+        color: #444;
       }
     }
 
     &--mobile {
       @extend %u-flex;
       @extend %u-mv-2;
-      margin-right: 50px;
-      margin-left: 50px;
+      @extend %u-mh-6--from-small;
+
       border-radius: 34px;
-      box-shadow: 1px 2px 18px rgba(0, 0, 0, .2);
 
       img {
         width: 260px;
@@ -276,7 +303,6 @@
         background-color: #333; // Makes sure there's no "gaps"
         border-radius: 20px;
       }
-
 
       &--light {
 
