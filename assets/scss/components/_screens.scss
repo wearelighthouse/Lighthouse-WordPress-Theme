@@ -200,3 +200,51 @@
     margin-top: 0;
   }
 }
+
+.c-screens {
+  @extend %u-pos-relative;
+  @extend %u-flex;
+
+  $self: &;
+
+  &__background {
+    @extend %u-pos-absolute;
+    @extend %u-left--from-small;
+    @extend %u-top--from-small;
+    @extend %u-width-100pc--from-small;
+  }
+
+  &__screen {
+
+  }
+
+  &__device {
+    &--desktop {
+      max-width: $global-max-width;
+
+      &--light {
+
+      }
+
+      &--dark {
+
+      }
+    }
+
+    &--mobile {
+
+      &--light {
+
+      }
+
+      &--dark {
+
+      }
+    }
+  }
+
+  // Remove the margin-top of a screen shortcode following a screen shortcode
+  & + #{$self} {
+    margin-top: 0;
+  }
+}

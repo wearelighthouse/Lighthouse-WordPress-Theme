@@ -113,8 +113,8 @@
     }
   }
 
-  // Remove the margin-top of a screen following a screen
-  & + .c-images {
+  // Remove the margin-top of an image shortcode following an image shortcode
+  & + #{$self} {
     margin-top: 0;
   }
 }
