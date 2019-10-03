@@ -204,21 +204,52 @@
 .c-screens {
   @extend %u-pos-relative;
   @extend %u-flex;
+  @extend %u-fw-wrap;
+  @extend %u-ai-center;
+  @extend %u-jc-center;
 
   $self: &;
 
+  margin-top: var(--container-v-pad);
+  margin-bottom: var(--container-v-pad);
+
+  img {
+    @extend %u-block;
+    @extend %u-width-100pc;
+    @extend %u-height-auto;
+  }
+
   &__background {
     @extend %u-pos-absolute;
-    @extend %u-left--from-small;
-    @extend %u-top--from-small;
-    @extend %u-width-100pc--from-small;
+    @extend %u-z-index--1;
+
+    width: 100%;
+    width: calc(100vw - var(--scrollbar-width));
+
+    @include breakpoint(upto-medium) {
+      overflow: hidden;
+      height: 100%;
+
+      img {
+        position: absolute;
+        left: 50%;
+        width: auto;
+        height: 100%;
+        transform: translateX(-50%);
+      }
+    }
+
+    @include breakpoint(from-medium) {
+
+    }
   }
 
   &__screen {
-
+    @extend %u-flex;
   }
 
   &__device {
+
     &--desktop {
       max-width: $global-max-width;
 
@@ -232,6 +263,20 @@
     }
 
     &--mobile {
+      @extend %u-flex;
+      @extend %u-mv-2;
+      margin-right: 50px;
+      margin-left: 50px;
+      border-radius: 34px;
+      box-shadow: 1px 2px 18px rgba(0, 0, 0, .2);
+
+      img {
+        width: 260px;
+        margin: 14px;
+        background-color: #333; // Makes sure there's no "gaps"
+        border-radius: 20px;
+      }
+
 
       &--light {
 
@@ -239,6 +284,11 @@
 
       &--dark {
 
+        img {
+          // TODO: Refine box shadow "highlight"
+          box-shadow: 0 0 14px #666,
+                      0 0 0 14px #333;
+        }
       }
     }
   }

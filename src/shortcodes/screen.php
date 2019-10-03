@@ -1,9 +1,5 @@
 <?php
 
-/**
- *
- *
- */
 function screenShortcode($atts)
 {
 
@@ -12,7 +8,6 @@ function screenShortcode($atts)
 		'device' => 'desktop', // 'desktop' (default) or 'mobile'
 		'background' => '',    // background image id (preferably an SVG)
 		'theme' => 'dark',     // 'dark' (default) or 'light'
-		'gap' => 'medium'      // 'small', 'medium' (default) or 'large'
   ], $atts);
 
 	$mediaIdArray = array_map('trim', explode(',', $atts['id'])); // Image or video IDs
