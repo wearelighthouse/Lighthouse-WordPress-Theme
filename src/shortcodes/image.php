@@ -46,7 +46,8 @@ function imageShortcode($atts)
   $output .= '</div>';
 
   if ($atts['size'] === 'full' || $bgColorArray[0]) {
-	   $output = '</div><div class="o-container-content--v-margin">' . $output . '</div><div class="o-container-content o-container-content--v-margin c-content-grid">';
+	   $output = '</div><div class="o-container-content--v-margin">' . $output;
+     $output .= '</div><div class="o-container-content o-container-content--v-margin c-content-grid">';
   }
 
 	return $output;
