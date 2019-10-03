@@ -19,7 +19,6 @@ function imageShortcode($atts)
   $imgIdArray = array_map('trim', explode(',', $atts['id']));
   $bgColorArray = array_map('trim', explode(',', $atts['background']));
   $singleBgColorAttr = (count($bgColorArray) === 1 && $bgColorArray[0] ? ' style="background:' . $bgColorArray[0] . '"' : '');
-  echo $atts['background'];
 
   $className = 'c-images';
   $className .= ' c-images--' . $atts['size'];

@@ -1,66 +1,12 @@
-.o-images {
-
-  margin-bottom: var(--container-v-pad);
-  margin-top: var(--container-v-pad);
-
-  @include breakpoint(from-medium) {
-    &.count-2 {
-      display: flex;
-
-      .o-images__image {
-        width: 50%;
-      }
-    }
-  }
-
-  &__image {
-
-    img {
-      display: block;
-      height: auto;
-      width: 100%;
-    }
-  }
-
-
-  &.size {
-    &-medium {
-      grid-column: 2;
-    }
-  }
-
-  &.size {
-    &-large {
-      grid-column: 1;
-      grid-column-end: span 2;
-    }
-  }
-
-
-  &.size {
-    &-full {
-      width: 100%;
-
-      &.count-1 {
-        .o-images__image {
-          width: 100%;
-        }
-
-      }
-    }
-  }
-
-  // Remove the margin-top of a screen following a screen
-  & + .o-images {
-    margin-top: 0;
-  }
-}
 
 .c-images {
   @extend %u-flex;
   @extend %u-fw-wrap;
 
   $self: &;
+
+  margin-top: var(--container-v-pad);
+  margin-bottom: var(--container-v-pad);
 
   &__image {
     @extend %u-border-box;
@@ -77,14 +23,18 @@
     }
   }
 
-  &--large {
+  &--medium {
+    grid-column: 2;
+  }
 
+  &--large {
+    grid-column: 1;
+    grid-column-end: span 2;
   }
 
   // Image shorcode with single id (i.e. only one image)
   &--multi-bg-color > :first-child:last-child,
   &--single-bg-color > :first-child:last-child {
-    width: 100%;
 
     img {
       width: var(--container-width);
@@ -92,7 +42,7 @@
     }
   }
 
-  &--full > :first-child:last-child {
+  & > :first-child:last-child {
     width: 100%;
   }
 
@@ -163,4 +113,8 @@
     }
   }
 
+  // Remove the margin-top of a screen following a screen
+  & + .c-images {
+    margin-top: 0;
+  }
 }
