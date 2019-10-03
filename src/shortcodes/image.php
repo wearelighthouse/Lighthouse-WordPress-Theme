@@ -23,7 +23,15 @@ function imageShortcode($atts)
 
   $className = 'c-images';
   $className .= ' c-images--' . $atts['size'];
-  $className .= ' c-images--' . ($singleBgColorAttr ? 'single-color' : 'multi-color');
+  if (count($bgColorArray) > 1) {
+    $className .= ' c-images--multi-bg-color';
+  } else {
+    if ($bgColorArray[0] === '') {
+      $className .= ' c-images--no-bg-color';
+    } else {
+      $className .= ' c-images--single-bg-color';
+    }
+  }
   $output = '<div class="' . $className . '"' . $singleBgColorAttr . '>';
 
   foreach ($imgIdArray as $i => $imgId) {

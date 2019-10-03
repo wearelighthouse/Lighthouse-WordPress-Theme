@@ -77,8 +77,26 @@
     }
   }
 
+  &--large {
 
-  &--multi-color {
+  }
+
+  // Image shorcode with single id (i.e. only one image)
+  &--multi-bg-color > :first-child:last-child,
+  &--single-bg-color > :first-child:last-child {
+    width: 100%;
+
+    img {
+      width: var(--container-width);
+      max-width: $global-max-width;
+    }
+  }
+
+  &--full > :first-child:last-child {
+    width: 100%;
+  }
+
+  &--multi-bg-color {
     #{$self}__image {
       padding: calc((100vw - var(--container-width)) / 2);
 
@@ -92,7 +110,7 @@
     }
   }
 
-  &--single-color {
+  &--single-bg-color {
     #{$self}__image {
       padding: calc((100vw - var(--container-width)) / 2);
 
