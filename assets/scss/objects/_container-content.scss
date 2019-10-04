@@ -27,11 +27,4 @@
       width: auto;
     }
   }
-
-  // If we end up with an empty container, that sits after another container,
-  // then the empty one shouldn't display at all. This fixes spacing between
-  // screens and big images. Mostly. I think.
-  & + .o-container-content:empty {
-    @extend %u-display-none;
-  }
 }

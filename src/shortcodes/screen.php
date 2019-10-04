@@ -73,7 +73,7 @@ function screenShortcode($atts)
 	$output .= '</div>';
 
 	// Always close previous c-content-grid container, output screens, start new c-content grid:
-	$output = '</div><div class="o-container-content--v-margin">' . $output;
+	$output = '</div><div class="o-container-content--v-margin u-following-empty-hidden">' . $output;
 	$output .= '</div><div class="o-container-content o-container-content--v-margin c-content-grid">';
 
 	return $output;
