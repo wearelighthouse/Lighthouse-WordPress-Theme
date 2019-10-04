@@ -261,13 +261,20 @@
       // TODO: Set :before and :after px values off css variable that
       // changes between breakpoints or dynamically somehow
 
+      // Trying to get a CSS variable to be 36px from the width from 1035px
+
+      // Trying to get 36px from 100vw @ 1440px, scaling down at "half speed"
+      --titleBarSize: calc(1.25vw + 18px);
+      --titleBarMax: 36px;
+
       &:before {
         @extend %u-content;
         @extend %u-flex;
         @extend %u-bg-color-gray-deep;
         @extend %u-ai-center;
         @extend %u-jc-flex-start;
-        height: 36px;
+        height: var(--titleBarSize);
+        max-height: var(--titleBarMax);
       }
 
       &:after {
@@ -275,10 +282,24 @@
         @extend %u-pos-absolute;
         @extend %u-left;
         @extend %u-round;
+
+        // From ~1440px screen, and as a fallback if vars/calcs not supported
         top: 14px;
         width: 9px;
         height: 9px;
         box-shadow: 16px 0 0 #444, 31px 0 0 #444, 46px 0 0 #444;
+
+        @include breakpoint(upto-full) {
+          // These are all calculated from --titleBarSize,
+          // with 100 / 36 * intended px size / 100
+          top: calc(.389 * var(--titleBarSize)); // 14px;
+          width: calc(.25 * var(--titleBarSize));
+          height: calc(.25 * var(--titleBarSize));
+          // The dots
+          box-shadow: calc(.444 * var(--titleBarSize)) 0 0 #444,
+                      calc(.861 * var(--titleBarSize)) 0 0 #444,
+                      calc(1.27 * var(--titleBarSize)) 0 0 #444;
+        }
       }
 
       &--light {
