@@ -48,7 +48,7 @@ function imageShortcode($atts)
   // If it's fullsize image/s, close previous c-content-grid container, output images, start new c-content grid:
   if ($atts['size'] === 'full' || $bgColorArray[0]) {
 	  $output = '</div>' . $output;
-    $output .= '<div class="o-container-content o-container-content--v-margin c-content-grid">';
+    $output .= '<div class="o-container-content o-container-content--v-margin c-content-grid u-hide-if-empty">';
   }
 
 	return $output;
