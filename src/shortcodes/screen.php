@@ -11,12 +11,12 @@ function screenShortcode($atts)
 		'theme' => 'dark',     // 'dark' (default) or 'light'
   ], $atts);
 
-	if (!$atts['device']) {
+	if (!$atts['device'] || $atts['device'] === '') {
 		$atts['device'] = $atts['type'];
 	}
 
 	if (!$atts['device']) {
-		$atts['device'] = $atts['desktop'];
+		$atts['device'] = 'desktop';
 	}
 
 	$mediaIdArray = array_map('trim', explode(',', $atts['id'])); // Image or video IDs
