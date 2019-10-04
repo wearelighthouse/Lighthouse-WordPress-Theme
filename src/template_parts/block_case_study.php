@@ -11,20 +11,20 @@
     $staggeredClass = '';
   }
 
-  $logoSrc = getPostMeta('work_work_options_logo', $caseStudyId);
-  $logoId = getPostMeta('work_work_options_logo_id', $caseStudyId);
+  $logoSrc = getPostMeta('work_single_work_options_logo', $caseStudyId);
+  $logoId = getPostMeta('work_single_work_options_logo_id', $caseStudyId);
   if ($logoSrc) {
     $logoAlt = get_post_meta($logoId, '_wp_attachment_image_alt', true);
     $logoMeta = wp_get_attachment_metadata($logoId);
     $logoMask = "-webkit-mask-image: url({$logoSrc}); mask-image: url({$logoSrc}); width: {$logoMeta['width']}px; height: {$logoMeta['height']}px";
   }
-  $title = getPostMeta('work_work_options_link_block_title', $caseStudyId);
+  $title = getPostMeta('work_single_work_options_link_block_title', $caseStudyId);
   $linkText = 'Find out more';
   $linkURL = get_the_permalink($caseStudyId);
-  $imgBackgroundId = getPostMeta('work_work_options_image_background_id', $caseStudyId);
-  $imgLargeId = getPostMeta('work_work_options_image_large_id', $caseStudyId);
-  $imgMediumId = getPostMeta('work_work_options_image_medium_id', $caseStudyId);
-  $imgSmallId = getPostMeta('work_work_options_image_small_id', $caseStudyId);
+  $imgBackgroundId = getPostMeta('work_single_work_options_image_background_id', $caseStudyId);
+  $imgLargeId = getPostMeta('work_single_work_options_image_large_id', $caseStudyId);
+  $imgMediumId = getPostMeta('work_single_work_options_image_medium_id', $caseStudyId);
+  $imgSmallId = getPostMeta('work_single_work_options_image_small_id', $caseStudyId);
 ?>
 
 <div class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?>">
