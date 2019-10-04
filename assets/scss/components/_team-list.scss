@@ -49,7 +49,7 @@
   &__image {
     @extend .c-team-image;
     @extend .c-team-image--small;
-    height: 181px; // Slightly hacky magic number to line 'em up
+    height: 175px; // Slightly hacky magic number to line 'em up
   }
 
   &__name {
