@@ -58,14 +58,14 @@
 
 	$linkList = '';
 
-	$services = getPostMeta('work_service_list_service', $post->ID);
+	$services = getPostMeta('work_single_service_list_service', $post->ID);
   if ($services) {
     foreach ($services as $service) {
       $linkList .= '<li><a href="' . get_permalink($service) . '">' . get_the_title($service) . '</a></li>';
     }
   }
 
-	$sectors = getPostMeta('work_sector_list_sector', $post->ID);
+	$sectors = getPostMeta('work_single_sector_list_sector', $post->ID);
   if ($sectors) {
   	foreach ($sectors as $sector) {
   		$linkList .= '<li><a href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
