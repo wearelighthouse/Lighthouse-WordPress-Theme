@@ -6,9 +6,14 @@ function screenShortcode($atts)
   $atts = shortcode_atts([
 		'id' => '',            // attachment id or array of ids
 		'device' => 'desktop', // 'desktop' (default) or 'mobile'
+		'type' => '',          // an alias for 'device'
 		'background' => '',    // background image id (preferably an SVG)
 		'theme' => 'dark',     // 'dark' (default) or 'light'
   ], $atts);
+
+	if (!$atts['device']) {
+		$atts['device'] = $atts['type'];
+	}
 
 	$mediaIdArray = array_map('trim', explode(',', $atts['id'])); // Image or video IDs
 	$deviceArray = array_map('trim', explode(',', $atts['device'])); // 'phone' or 'desktop' screen type
