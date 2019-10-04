@@ -26,13 +26,13 @@
 
     <?php include(locate_template('src/template_parts/contact_us_banner.php')) ?>
 
-  <?php endwhile; ?>
+    <section class="o-container-section o-container-section--bordered">
+      <div class="o-container-content c-content-grid">
+        <?php the_content(); ?>
+      </div>
+    </section>
 
-  <section class="o-container-section o-container-section--bordered">
-    <div class="o-container-content c-content-grid">
-      <?php the_content(); ?>
-    </div>
-  </section>
+  <?php endwhile; ?>
 </main>
 
 <?php get_footer(); ?>

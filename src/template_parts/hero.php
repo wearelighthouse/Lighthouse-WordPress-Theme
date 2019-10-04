@@ -17,7 +17,7 @@
     $heroStyle = 'gray-gradient-small';
   }
 
-  $modifierClass = $heroStyle ? ' c-hero--' . $heroStyle : '';
+  $modifierClass = ' c-hero--' . ($heroStyle ? $heroStyle : 'orange-pink');
 
   $bgcolor1 = getPostMeta('hero_hero_bg_color_1');
   $bgcolor2 = getPostMeta('hero_hero_bg_color_2');

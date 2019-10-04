@@ -28,6 +28,7 @@
 
   &__text {
     @extend %u-mb-6;
+    min-height: 160px;
   }
 
   // Some magic numbers for sizing & text-container-sizing
@@ -35,7 +36,6 @@
   @include breakpoint(from-medium) {
     &__text--with-image {
       max-width: 66%;
-      min-height: 160px;
     }
   }
 

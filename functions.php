@@ -33,6 +33,7 @@ require_once __DIR__ . '/src/metabox_groups/front_page.php';
 require_once __DIR__ . '/src/metabox_groups/hero.php';
 require_once __DIR__ . '/src/metabox_groups/page.php';
 require_once __DIR__ . '/src/metabox_groups/post.php';
+require_once __DIR__ . '/src/metabox_groups/sector_single.php';
 require_once __DIR__ . '/src/metabox_groups/service_archive.php';
 require_once __DIR__ . '/src/metabox_groups/service_single.php';
 require_once __DIR__ . '/src/metabox_groups/team.php';

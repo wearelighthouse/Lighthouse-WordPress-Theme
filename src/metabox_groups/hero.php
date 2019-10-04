@@ -4,7 +4,7 @@ function registerHeroMetaboxes()
 {
 
     $groupInfo = [
-        'object_types' => ['page', 'service', 'work', 'team'],
+        'object_types' => [ 'page', 'sector', 'service', 'team', 'work' ],
         'context'      => 'after_title',
         'exclude_ids'  => [], // Exclude metabox on these post-ids
       	'show_on_cb'   => 'cmb2_exclude_for_ids' // function should return a bool value
