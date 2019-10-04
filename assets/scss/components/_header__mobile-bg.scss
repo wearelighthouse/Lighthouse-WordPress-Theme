@@ -6,5 +6,5 @@
   width: calc(100vw - var(--edge-gutter) * 2);
   height: calc(100vh - var(--edge-gutter) * 2);
   transform: translateY(-100vh);
-  transition: .2s all; // TODO: Change to just transform?
+  transition: .2s transform;
 }
