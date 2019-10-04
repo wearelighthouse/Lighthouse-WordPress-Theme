@@ -2,14 +2,13 @@
 .c-screens {
   @extend %u-pos-relative;
   @extend %u-flex;
-  @extend %u-fw-wrap;
   @extend %u-ai-center;
-  @extend %u-jc-center;
+  @extend %u-fw-wrap;
 
   $self: &;
 
-  margin-top: calc(var(--container-v-pad) * 2);
-  margin-bottom: calc(var(--container-v-pad) * 2);
+  margin-top: calc(var(--container-v-pad) * 1.5);
+  margin-bottom: calc(var(--container-v-pad) * 1.5);
 
   img {
     @extend %u-block;
@@ -42,13 +41,12 @@
     }
   }
 
-  &__screen {
-    @extend %u-flex;
-  }
-
   &__device {
     @extend %u-pos-relative;
     box-shadow: 1px 3px 20px rgba(0, 0, 0, .2);
+
+    margin-top: calc(var(--container-v-pad) / 2);
+    margin-bottom: calc(var(--container-v-pad) / 2);
 
     &--desktop {
       @extend %u-ov-hidden;
@@ -106,7 +104,6 @@
 
     &--mobile {
       @extend %u-flex;
-      @extend %u-mv-2;
       @extend %u-mh-6--from-small;
 
       border-radius: 34px;
@@ -129,6 +126,61 @@
           box-shadow: 0 0 14px #666,
                       0 0 0 14px #333;
         }
+      }
+    }
+  }
+
+  &--mobile,
+  &--desktop {
+    @extend %u-jc-center;
+  }
+
+  // Just desktop screens
+  &--desktop {
+    @extend %u-fd-column;
+  }
+
+  // A single desktop and a single mobile
+  &--mobile-desktop,
+  &--desktop-mobile {
+    @extend %u-jc-center--upto-large;
+    @extend %u-jc-center--from-full;
+
+    @include breakpoint(from-large) {
+      flex-wrap: nowrap;
+
+      .c-screens__device--mobile {
+        margin-left: 6rem;
+        margin-right: 6rem;
+      }
+    }
+
+    @include breakpoint(from-large--upto-full) {
+      overflow: hidden;
+
+      .c-screens__device--desktop {
+        flex-shrink: 0;
+        width: $global-max-width;
+      }
+    }
+  }
+
+  &--mobile-desktop {
+    @extend %u-jc-flex-start--from-large--upto-full;
+
+    @include breakpoint(from-full) {
+      .c-screens__device--mobile {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &--desktop-mobile {
+    @extend %u-jc-flex-end--from-large--upto-full;
+
+    @include breakpoint(from-full) {
+      .c-screens__device--mobile {
+        margin-right: 0;
       }
     }
   }

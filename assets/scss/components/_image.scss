@@ -5,8 +5,8 @@
 
   $self: &;
 
-  margin-top: var(--container-v-pad);
-  margin-bottom: var(--container-v-pad);
+  margin-top: calc(var(--container-v-pad) * 1.5);
+  margin-bottom: calc(var(--container-v-pad) * 1.5);
 
   &__image {
     @extend %u-border-box;
@@ -19,17 +19,23 @@
     img {
       @extend %u-width-100pc;
       @extend %u-height-auto;
-      //max-width: $global-max-width / 2;
     }
   }
 
   &--medium {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     grid-column: 2;
   }
 
   &--large {
     grid-column: 1;
     grid-column-end: span 2;
+
+    @include breakpoint(upto-medium) {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
   }
 
   // Image shorcode with single id (i.e. only one image)

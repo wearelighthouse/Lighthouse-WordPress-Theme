@@ -28,7 +28,24 @@ function screenShortcode($atts)
 		$deviceArray = array_pad($deviceArray, count($mediaIdArray), $deviceArray[0]);
 	}
 
-	$output = '<div class="c-screens">';
+  $output = '<div class="o-container-content--v-margin c-screens';
+  // Figure out if it's a mix or just one of desktop and/or mobile
+  if (in_array('mobile', $deviceArray, true) && in_array('desktop', $deviceArray, true)) {
+    if ($deviceArray[0] === 'mobile') {
+      $output .= ' c-screens--mobile-desktop';
+    }
+    if ($deviceArray[0] === 'desktop') {
+      $output .= ' c-screens--desktop-mobile';
+    }
+  } else {
+    if (in_array('mobile', $deviceArray, true)) {
+      $output .= ' c-screens--mobile';
+    }
+    if (in_array('desktop', $deviceArray, true)) {
+      $output .= ' c-screens--desktop';
+    }
+  }
+  $output .= '">';
 
 	if ($atts['background']) {
 		$output .= '<div class="c-screens__background"><img src=' . wp_get_attachment_url($atts['background'])  .  '></div>';
@@ -37,16 +54,10 @@ function screenShortcode($atts)
 	foreach ($mediaIdArray as $i => $mediaId) {
 		$mediaType = get_post_mime_type($mediaId);
 
-		$screenClass = 'c-screens__screen';
-		$screenClass .= ' c-screens__screen--' . $deviceArray[$i];
-		$screenClass .= ' c-screens__screen--' . $deviceArray[$i] . '--' . $atts['theme'];
-
 		$deviceClass = 'c-screens__device';
 		$deviceClass .= ' c-screens__device--' . $deviceArray[$i];
 		$deviceClass .= ' c-screens__device--' . $deviceArray[$i] . '--' . $atts['theme'];
 
-		// "Screen" i.e. the whole thing
-		$output .= '<div class="' . $screenClass . '">';
 		// "Device" inside, i.e. the thing with the phone or desktop border
 		$output .= '<div class="' . $deviceClass . '">';
 
@@ -65,16 +76,16 @@ function screenShortcode($atts)
 			$output .= '<div class="c-screens__screen__unknown">' . $mediaId . '</div>';
 		}
 
-		// Closing tags for this single screen
-		$output .= '</div></div>';
+		// Closing tags for this single device
+		$output .= '</div>';
 	}
 
 	// Closing tag for this set of screens
 	$output .= '</div>';
 
 	// Always close previous c-content-grid container, output screens, start new c-content grid:
-	$output = '</div><div class="o-container-content--v-margin u-following-empty-hidden">' . $output;
-	$output .= '</div><div class="o-container-content o-container-content--v-margin c-content-grid">';
+	$output = '</div>' . $output;
+	$output .= '<div class="o-container-content o-container-content--v-margin c-content-grid u-hide-if-empty">';
 
 	return $output;
 }

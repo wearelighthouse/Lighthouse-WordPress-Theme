@@ -3,17 +3,17 @@
 
   h2 {
     @extend .type-headline; // It's basically a headline, but not a -plz-only-1-h1-
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   h3 {
     @extend .type-title;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   h4 {
     @extend .type-subtitle;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   h5 {
@@ -29,8 +29,10 @@
     margin-top: calc((var(--container-width) / 20) + 3rem);
   }
 
-  & > p:first-of-type {
-    margin-top: 0;
+  & > h2:first-child,
+  & > h3:first-child,
+  & > h4:first-child {
+    margin-top: 1rem;
   }
 
   @include breakpoint(from-medium) {

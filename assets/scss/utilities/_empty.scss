@@ -1,7 +1,4 @@
 
-// If we end up with an empty container element, that sits after this,
-// then the empty element shouldn't display at all. This fixes spacing between
-// screens and big images. Mostly. I think. It's a bit hacky.
-.u-following-empty-hidden + *:empty {
+.u-hide-if-empty:empty {
   display: none;
 }
