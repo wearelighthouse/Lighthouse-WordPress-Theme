@@ -1,0 +1,45 @@
+
+.c-hero__background {
+  @extend %u-pos-absolute;
+  @extend %u-top;
+  @extend %u-right;
+  @extend %u-bottom;
+  @extend %u-left;
+  @extend %u-z-index--1;
+  @extend %u-ov-hidden;
+
+  // Using empty divs for this sucks. TODO: Figure out a way to just :before and :after
+
+  & > * {
+    @extend %u-content;
+    @extend %u-pos-absolute;
+    pointer-events: none;
+  }
+
+  :nth-child(1) {
+    @extend %u-left;
+    @extend %u-bottom;
+    width: calc(30rem + 20vw);
+    height: calc(30rem + 20vw);
+    background: linear-gradient(rgba($color-white, 0), rgba($color-white, .5));
+    transform: translate(calc(55vw - 560px), 50%) rotate(-45deg);
+  }
+
+  :nth-child(2) {
+    @extend %u-left;
+    @extend %u-round;
+    @extend %u-top;
+    width: calc(30rem + 20vw);
+    height: calc(30rem + 20vw);
+    background: linear-gradient(rgba($color-white, 0), rgba($color-white, .4));
+    transform: translate(calc(-5vw - 30px), -50%) rotate(90deg);
+  }
+
+  :nth-child(3) {
+
+  }
+
+  :nth-child(4) {
+
+  }
+}

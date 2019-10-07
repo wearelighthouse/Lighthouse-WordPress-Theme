@@ -39,7 +39,12 @@
 
 <section class="o-container-section o-container-section--bordered <?= $frontPageSectionClass ?>">
   <div class="c-hero<?= $modifierClass ?>">
-    <div class="c-hero__background o-section-clip--ramp-bottom-right" <?= $customGradient ?>></div>
+    <div class="c-hero__background o-section-clip--ramp-bottom-right" <?= $customGradient ?>>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <div class="o-container-content o-container-content--v-pad c-hero__content">
       <?php if ($text) : ?>
         <div class="c-hero__text s-banner<?= (isset($heroImage) || $imageId) ? ' c-hero__text--with-image' : '' ?>">

@@ -8,15 +8,6 @@
 
   $self: &;
 
-  &__background {
-    @extend %u-pos-absolute;
-    @extend %u-top;
-    @extend %u-right;
-    @extend %u-bottom;
-    @extend %u-left;
-    @extend %u-z-index--1;
-  }
-
   &__content {
     @extend %u-pos-relative;
     @extend %u-flex;
