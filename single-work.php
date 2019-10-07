@@ -14,6 +14,8 @@
     $clutchScore = '<div class="c-clutch"><div class="c-clutch__logo"></div><div class="c-clutch__score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div></div>';
   }
 
+  $contactText = getPostMeta('work_single_work_options_footer_contact_text');
+
   // Get the actual site header
   get_template_part('src/template_parts/header');
 ?>
@@ -85,11 +87,14 @@
   	</div>
   <?php endif; ?>
 
-	<div class="o-work-footer__column">
-
-		<h2>If you've got a product idea you want to bring to life, talk to us</h2>
-		<p><a href="#" class="c-case-study-block__link c-button c-button--underlined-dark" href="/contact/">Get in touch</a></p>
-	</div>
+  <?php if ($contactText) : ?>
+  	<div class="o-work-footer__column">
+  		<h2><?= $contactText ?></h2>
+      <a href="#" class="u-inline-block c-button c-button--underlined-dark" href="/contact/">
+        Get in touch
+      </a>
+  	</div>
+  <?php endif ?>
 
 </section>
 

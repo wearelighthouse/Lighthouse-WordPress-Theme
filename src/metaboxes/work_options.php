@@ -76,6 +76,12 @@ return [
                     'type' => 'text',
                 ],
             ]
+        ],
+        [
+            'name' => 'Get in touch text',
+            'id'   => 'footer_contact_text',
+            'type' => 'text',
+            'default' => 'If you\'ve got a product idea you want to bring to life, talk to us'
         ]
     ]
 ];
