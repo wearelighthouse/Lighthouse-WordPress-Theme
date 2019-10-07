@@ -67,7 +67,7 @@ function screenShortcode($atts)
 
 		// If its a video, wrap in <video> tags
 		if (strpos($mediaType, 'video') !== false) {
-			$output .= '<video width="320" height="240" autoplay>';
+			$output .= '<video width="320" height="240" autoplay muted loop>';
 			$output .= '<source src="' . wp_get_attachment_url($mediaId) . '" type="' . $mediaType . '">';
 			$output .= '</video>';
 
