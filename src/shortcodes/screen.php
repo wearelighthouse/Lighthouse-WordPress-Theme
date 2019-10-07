@@ -53,6 +53,10 @@ function screenShortcode($atts)
 
 	foreach ($mediaIdArray as $i => $mediaId) {
 		$mediaType = get_post_mime_type($mediaId);
+    // Convert from WordPress video type to proper HTML video type string
+    if ($mediaType === 'video/mpeg') {
+      $mediaType = 'video/mp4';
+    }
 
 		$deviceClass = 'c-screens__device';
 		$deviceClass .= ' c-screens__device--' . $deviceArray[$i];

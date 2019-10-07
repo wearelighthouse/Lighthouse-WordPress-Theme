@@ -10,18 +10,18 @@
   margin-top: calc(var(--container-v-pad) * 1.5);
   margin-bottom: calc(var(--container-v-pad) * 1.5);
 
-  img {
-    @extend %u-block;
-    @extend %u-width-100pc;
-    @extend %u-height-auto;
-  }
-
   &__background {
     @extend %u-pos-absolute;
     @extend %u-z-index--1;
 
     width: 100%;
     width: calc(100vw - var(--scrollbar-width));
+
+    img {
+      @extend %u-block;
+      @extend %u-width-100pc;
+      @extend %u-height-auto;
+    }
 
     @include breakpoint(upto-medium) {
       overflow: hidden;
@@ -47,6 +47,12 @@
 
     margin-top: calc(var(--container-v-pad) / 2);
     margin-bottom: calc(var(--container-v-pad) / 2);
+
+    & > * {
+      @extend %u-block;
+      @extend %u-width-100pc;
+      @extend %u-height-auto;
+    }
 
     &--desktop {
       @extend %u-ov-hidden;
@@ -108,7 +114,7 @@
 
       border-radius: 34px;
 
-      img {
+      & > * {
         width: 260px;
         margin: 14px;
         background-color: #333; // Makes sure there's no "gaps"
@@ -121,7 +127,7 @@
 
       &--dark {
 
-        img {
+        & > * {
           // TODO: Refine box shadow "highlight"
           box-shadow: 0 0 14px #666,
                       0 0 0 14px #333;
