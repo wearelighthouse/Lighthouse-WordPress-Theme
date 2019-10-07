@@ -1,6 +1,20 @@
 
 .c-work-footer {
+  @extend %u-flex;
+  @extend %u-fd-column--upto-medium;
+  @extend %u-mh--2;
+
   &__box {
+    @extend %u-width-50pc--from-medium;
+    @extend %u-mv-2;
+    @extend %u-mh-2;
+    @extend %u-pv-4;
+    @extend %u-pos-relative;
     @extend %u-has-mini-separator;
+
+    & > :first-child {
+      margin-top: 0;
+      margin-bottom: 2rem;
+    }
   }
 }

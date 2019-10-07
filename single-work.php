@@ -63,39 +63,43 @@
 	$services = getPostMeta('work_single_service_list_service', $post->ID);
   if ($services) {
     foreach ($services as $service) {
-      $linkList .= '<li><a href="' . get_permalink($service) . '">' . get_the_title($service) . '</a></li>';
+      $linkList .= '<li><a class="c-tag" href="' . get_permalink($service) . '">' . get_the_title($service) . '</a></li>';
     }
   }
 
 	$sectors = getPostMeta('work_single_sector_list_sector', $post->ID);
   if ($sectors) {
   	foreach ($sectors as $sector) {
-  		$linkList .= '<li><a href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
+  		$linkList .= '<li><a class="c-tag" href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
   	}
   }
 
 ?>
 
-<section class="o-container-content o-work-footer">
+<section class="o-container-section o-container-section--bordered">
+  <div class="o-container-content o-container-content--v-margin">
+    <div class="c-work-footer">
 
-  <?php if ($linkList) : ?>
-  	<div class="o-work-footer__column">
-  		<h3>See more&hellip;</h3>
-  		<ul class="o-work-footer__list">
-  			<?= $linkList; ?>
-  		</ul>
-  	</div>
-  <?php endif; ?>
+      <?php if ($linkList) : ?>
+      	<div class="c-work-footer__box">
+      		<h3 class="type-cta">See more&hellip;</h3>
+      		<ul class="o-tag-list">
+      			<?= $linkList; ?>
+      		</ul>
+      	</div>
+      <?php endif; ?>
 
-  <?php if ($contactText) : ?>
-  	<div class="o-work-footer__column">
-  		<h2><?= $contactText ?></h2>
-      <a href="#" class="u-inline-block c-button c-button--underlined-dark" href="/contact/">
-        Get in touch
-      </a>
-  	</div>
-  <?php endif ?>
+      <?php if ($contactText) : ?>
+      	<div class="c-work-footer__box">
+      		<p class="type-static-subtitle"><?= $contactText ?></p>
+          <a href="#" class="u-inline-block c-button c-button--underlined-dark" href="/contact/">
+            Get in touch
+          </a>
+      	</div>
+      <?php endif ?>
 
+    </div>
+  </div>
 </section>
 
   <?php endwhile; ?>

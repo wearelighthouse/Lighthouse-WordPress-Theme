@@ -1,0 +1,9 @@
+
+.o-tag-list {
+  
+  li {
+    @extend %u-inline-flex;
+    margin-right: .7rem;
+    margin-bottom: .7rem;
+  }
+}

@@ -1,0 +1,12 @@
+/**
+ * A non-scaling version of the subtitle type, which stays at it's smaller
+ * (mobile) 26px size, and has a smaller line-height so that "clickables"
+ * using it don't have the mouse cursor "fall" between the lines.
+ * Used on the small case-study-blocks and in the case-study footer.
+ */
+.type-static-subtitle {
+  @extend %u-sailec;
+  @extend %u-bold;
+  font-size: 26px; // Stuck at the mobile font size rather than scaling
+  line-height: 1.3; // Has to be smaller for hovering to not fall between lines
+}

@@ -1,0 +1,16 @@
+/**
+ * Tag-button-things that appear at the bottom of case-studies
+ * (inside c-work-footer). Was previously in o-work.scss.
+ * Should be <a>s.
+ */
+.c-tag {
+  @extend .type-p--small;
+  @extend %u-bg-color-gray-light;
+  padding: .5rem .7rem;
+  border-radius: 4px;
+
+  &:focus,
+  &:hover {
+    @extend %u-underline;
+  }
+}

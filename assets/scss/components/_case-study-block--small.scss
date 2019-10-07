@@ -27,9 +27,7 @@
     @extend %u-mt-6;
 
     &__link {
-      @extend .type-subtitle;
-      font-size: 26px; // Stuck at the mobile font size rather than scaling
-      line-height: 1.3; // Has to be smaller for hovering to not fall between lines
+      @extend .type-static-subtitle;
 
       &:focus,
       &:hover {
