@@ -14,6 +14,22 @@
     $clutchScore = '<div class="c-clutch"><div class="c-clutch__logo"></div><div class="c-clutch__score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div></div>';
   }
 
+  $linkList = '';
+
+  $services = getPostMeta('work_single_service_list_service', $post->ID);
+  if ($services) {
+    foreach ($services as $service) {
+      $linkList .= '<li><a class="c-tag" href="' . get_permalink($service) . '">' . get_the_title($service) . '</a></li>';
+    }
+  }
+
+  $sectors = getPostMeta('work_single_sector_list_sector', $post->ID);
+  if ($sectors) {
+    foreach ($sectors as $sector) {
+      $linkList .= '<li><a class="c-tag" href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
+    }
+  }
+
   $contactText = getPostMeta('work_single_work_options_footer_contact_text');
 
   // Get the actual site header
@@ -56,51 +72,33 @@
       </section>
     <?php	endif; ?>
 
-<?php
+    <?php
 
-	$linkList = '';
+    ?>
 
-	$services = getPostMeta('work_single_service_list_service', $post->ID);
-  if ($services) {
-    foreach ($services as $service) {
-      $linkList .= '<li><a class="c-tag" href="' . get_permalink($service) . '">' . get_the_title($service) . '</a></li>';
-    }
-  }
+    <section class="o-container-content o-container-content--v-margin">
+      <div class="c-work-footer">
 
-	$sectors = getPostMeta('work_single_sector_list_sector', $post->ID);
-  if ($sectors) {
-  	foreach ($sectors as $sector) {
-  		$linkList .= '<li><a class="c-tag" href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
-  	}
-  }
+        <?php if ($linkList) : ?>
+        	<div class="c-work-footer__box">
+        		<h3 class="type-cta">See more&hellip;</h3>
+        		<ul class="o-tag-list">
+        			<?= $linkList; ?>
+        		</ul>
+        	</div>
+        <?php endif; ?>
 
-?>
+        <?php if ($contactText) : ?>
+        	<div class="c-work-footer__box">
+        		<p class="type-static-subtitle"><?= $contactText ?></p>
+            <a href="#" class="u-inline-block c-button c-button--underlined-dark" href="/contact/">
+              Get in touch
+            </a>
+        	</div>
+        <?php endif ?>
 
-<section class="o-container-section o-container-section--bordered">
-  <div class="o-container-content o-container-content--v-margin">
-    <div class="c-work-footer">
-
-      <?php if ($linkList) : ?>
-      	<div class="c-work-footer__box">
-      		<h3 class="type-cta">See more&hellip;</h3>
-      		<ul class="o-tag-list">
-      			<?= $linkList; ?>
-      		</ul>
-      	</div>
-      <?php endif; ?>
-
-      <?php if ($contactText) : ?>
-      	<div class="c-work-footer__box">
-      		<p class="type-static-subtitle"><?= $contactText ?></p>
-          <a href="#" class="u-inline-block c-button c-button--underlined-dark" href="/contact/">
-            Get in touch
-          </a>
-      	</div>
-      <?php endif ?>
-
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
   <?php endwhile; ?>
 
