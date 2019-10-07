@@ -57,6 +57,7 @@
       @extend %u-mh-4;
       @extend %u-pos-relative;
       @extend %u-pv-4;
+      @extend %u-has-mini-separator;
 
       @include breakpoint(from-medium) {
         width: 21rem;
@@ -66,17 +67,6 @@
       // This is very content-related and TODO: Make er not specifically no.2
       &:nth-child(2) {
         flex-shrink: 0;
-      }
-
-      // Horizontal lins above each contact details box
-      &:before {
-        @extend %u-block;
-        @extend %u-content;
-        @extend %u-pos-absolute;
-        @extend %u-top;
-        @extend %u-left;
-        width: 50px;
-        border-top: 2px solid $color-white;
       }
 
       p {

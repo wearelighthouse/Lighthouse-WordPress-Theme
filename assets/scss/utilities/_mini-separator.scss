@@ -1,0 +1,16 @@
+
+%u-mini-separator {
+  @extend %u-block;
+  @extend %u-content;
+  @extend %u-pos-absolute;
+  @extend %u-top;
+  @extend %u-left;
+  width: 50px;
+  border-top: 2px solid currentColor;
+}
+
+%u-has-mini-separator {
+  &:before {
+    @extend %u-mini-separator;
+  }
+}
