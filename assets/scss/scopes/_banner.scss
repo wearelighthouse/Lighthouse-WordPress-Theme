@@ -29,7 +29,7 @@
 
   h5 {
     @extend .type-subheadline; // Basically just normal text but bold w/margins
-    margin-top: 1.25em;
+    margin-top: 1.5em;
   }
 
   p {
@@ -41,6 +41,10 @@
 
   br {
     @extend %u-display-none--upto-medium;
+  }
+
+  a {
+    @extend %u-underline;
   }
 
 }

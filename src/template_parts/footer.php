@@ -19,10 +19,12 @@ foreach(['twitter', 'facebook', 'linkedin', 'instagram'] as $site) {
 
 $footerLinks = $footerLinks ? autoa($footerLinks) : null;
 
+$clipClasses = is_404() ? '' : 'o-section-clip--corner-top-right o-section-clip--no-mobile';
+
 ?>
 
 <footer class="o-container-section o-container-section--bordered">
-  <div class="c-footer">
+  <div class="c-footer <?= $clipClasses ?>">
 
     <div class="o-container-content o-container-content--v-pad">
 
