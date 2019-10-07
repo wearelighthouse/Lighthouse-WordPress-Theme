@@ -16,12 +16,14 @@
     pointer-events: none;
   }
 
+  $circleSize: calc(22rem + 20vw);
+
   :nth-child(1) {
     @extend %u-left;
     @extend %u-bottom;
     width: calc(30rem + 20vw);
     height: calc(30rem + 20vw);
-    background: linear-gradient(rgba($color-white, 0), rgba($color-white, .5));
+    background: linear-gradient(rgba($color-white, 0), rgba($color-white, .4));
     transform: translate(calc(55vw - 560px), 50%) rotate(-45deg);
   }
 
@@ -29,14 +31,30 @@
     @extend %u-left;
     @extend %u-round;
     @extend %u-top;
-    width: calc(30rem + 20vw);
-    height: calc(30rem + 20vw);
-    background: linear-gradient(rgba($color-white, 0), rgba($color-white, .4));
-    transform: translate(calc(-5vw - 30px), -50%) rotate(90deg);
+    width: $circleSize;
+    height: $circleSize;
+    background: linear-gradient(
+      rgba($color-white, 0) 25%,
+      rgba($color-white, .02) 50%,
+      rgba($color-white, .1) 75%,
+      rgba($color-white, .25)
+    );
+    transform: translate(calc(-5vw - 30px), -45%) rotate(45deg);
   }
 
   :nth-child(3) {
-
+    @extend %u-left;
+    @extend %u-round;
+    @extend %u-bottom;
+    width: $circleSize;
+    height: $circleSize;
+    background: linear-gradient(
+      rgba($color-white, 0) 25%,
+      rgba($color-white, .02) 50%,
+      rgba($color-white, .1) 75%,
+      rgba($color-white, .25)
+    );
+    transform: translate(calc(50vw + 250px), 35%) rotate(-135deg);
   }
 
   :nth-child(4) {
