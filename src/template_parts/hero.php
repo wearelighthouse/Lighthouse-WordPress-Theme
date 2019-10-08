@@ -17,6 +17,9 @@
     $heroStyle = 'gray-gradient-small';
   }
 
+  // Put the text through WordPresses formatter to get <p>s etc.
+  $text = wpautop($text);
+
   $modifierClass = ' c-hero--' . ($heroStyle ? $heroStyle : 'orange-pink');
 
   $bgcolor1 = getPostMeta('hero_hero_bg_color_1');
@@ -30,6 +33,16 @@
   // From page has a 100vh header instead of as-big-as-it-needs-to-be
   // Has been temporarily removed because it's toooo tall. CSS was also commented out.
   $frontPageSectionClass = is_front_page() ? '' : '';
+
+  // Flip around <h1> and <p> on the front page, for SEO
+  if (is_front_page()) {
+    $patterns = [ '/<p>/', '/<\/p>/', '/<h1>/', '/<\/h1>/' ];
+    $replacements = [ '<h1>', '</h1>', '<p>', '</p>' ];
+    $text = preg_replace($patterns, $replacements, $text, 1);
+    $scope = 's-banner-flipped-h1';
+  } else {
+    $scope = 's-banner';
+  }
 
   $clientLogoId = getPostMeta('work_single_work_options_logo_id');
   $clientLogoSrc = getPostMeta('work_single_work_options_logo');
@@ -47,8 +60,8 @@
     </div>
     <div class="o-container-content o-container-content--v-pad c-hero__content">
       <?php if ($text) : ?>
-        <div class="c-hero__text s-banner<?= (isset($heroImage) || $imageId) ? ' c-hero__text--with-image' : '' ?>">
-          <?= wpautop($text) // Don't remove <br> ? or do? ?>
+        <div class="c-hero__text <?= $scope ?><?= (isset($heroImage) || $imageId) ? ' c-hero__text--with-image' : '' ?>">
+          <?= $text ?>
         </div>
       <?php endif; ?>
       <?php if ($clientLogoId) : ?>

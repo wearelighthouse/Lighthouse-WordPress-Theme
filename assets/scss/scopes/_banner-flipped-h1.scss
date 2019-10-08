@@ -1,0 +1,30 @@
+
+.s-banner-flipped-h1 {
+
+  p:first-child {
+    @extend .type-headline;
+    margin: 0;
+    line-height: 1.2;
+
+    em {
+      font-style: normal;
+      color: $color-blackcurrant;
+    }
+  }
+
+  h1 {
+    @extend .type-p;
+    max-width: 37rem; // This gives the small text in banners a fixed max-width. It works, but is a bit magic
+    margin-top: 1.5em;
+    margin-bottom: 1rem; // Fixed margin bottom? John can't remember what this is about
+  }
+
+  br {
+    @extend %u-display-none--upto-medium;
+  }
+
+  a {
+    @extend %u-underline;
+  }
+
+}
