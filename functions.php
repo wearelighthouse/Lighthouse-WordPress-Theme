@@ -109,3 +109,24 @@ function removeGutenbergCSS()
   wp_dequeue_style('wp-block-library');
 }
 add_action('wp_enqueue_scripts', 'removeGutenbergCSS');
+
+/**
+ * Highlight 'Blog' nav menu item on all blog pages, 'Services' on service pages etc.
+ */
+function addCustomNavClasses($classes = [], $menu_item = false)
+{
+  // This menu item is already the current one, do nothin'
+  if (in_array('current-menu-item', $classes)) {
+    return $classes;
+  }
+
+  if ($menu_item->title === 'Blog' && is_singular('post') ||
+      $menu_item->title === 'Services' && is_singular('service') ||
+      $menu_item->title === 'Work' && is_singular('work') ||
+      $menu_item->title === 'Team' && is_singular('team')) {
+    $classes[] = 'current-menu-item';
+  }
+
+  return $classes;
+}
+add_filter('nav_menu_css_class', 'addCustomNavClasses', 100, 2);

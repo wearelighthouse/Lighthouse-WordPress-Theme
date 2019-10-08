@@ -1,5 +1,6 @@
 
 .c-header__mobile-bg {
+  @extend %u-block;
   @extend %u-pos-absolute;
   @extend %u-bg-color-blackcurrant;
   @extend %u-z-index--1;

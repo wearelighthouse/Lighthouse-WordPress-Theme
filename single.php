@@ -1,5 +1,8 @@
 <?php
   $podcastEmbed = getPostMeta('post_post_podcast_embed', $post->ID);
+
+  // Get the actual site header
+  get_template_part('src/template_parts/header');
 ?>
 
 <?php get_header(); ?>

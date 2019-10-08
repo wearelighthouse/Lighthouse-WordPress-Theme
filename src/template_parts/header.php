@@ -7,12 +7,12 @@
   ];
 
   $heroStyle = getPostMeta('hero_hero_style');
-  $headerStyle = strpos($heroStyle, 'gray') !== false ? ' u-color-blackcurrant' : ' u-color-white';
+  $headerStyle = (strpos($heroStyle, 'gray') !== false || is_singular('post')) ? ' u-color-blackcurrant' : ' u-color-white';
 
 ?>
 
 <header class="c-header js-header">
-  <div class="c-header__mobile-bg"></div>
+  <div class="c-header__mobile-bg" style="display: none"></div>
 
   <div class="c-header__inner o-container-content <?= $headerStyle ?> ">
 
