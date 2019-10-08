@@ -11,13 +11,17 @@
     margin-left: 0;
     padding-left: 0;
     list-style: none;
+
+    @extend %u-flex;
+    @extend %u-fw-wrap;
+    align-items: baseline;
   }
 
   .gform_fields {
     @extend %u-flex;
     @extend %u-fw-wrap;
     @extend %u-mh--2;
-    @extend %u-mv-2;
+    @extend %u-mv-6;
 
     .gfield {
       @extend %u-ph-2;
@@ -33,6 +37,8 @@
 
   .ginput_container {
     @extend %u-pos-relative;
+    @extend %u-width-100pc;
+    order: 1; // After the name and validation messages
 
     &:before,
     &:after {
@@ -46,11 +52,11 @@
     }
 
     &:before {
-      @extend %u-bg-color-currentColor;
+      @extend %u-bg-color-gray;
     }
 
     &:after {
-      @extend %u-bg-gradient--orange-pink;
+      @extend %u-bg-color-currentColor;
       transform: scale(0);
       transition: .1s transform;
     }
@@ -62,6 +68,7 @@
   }
 
   .ginput_container_textarea {
+    @extend %u-mt-2;
     padding: 2px;
 
     &:before,
@@ -86,15 +93,26 @@
     margin: 2px;
     border: none;
     font-size: unset;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   textarea {
+    @extend .type-p;
     @extend %u-bg-color-white;
+    @extend %u-border-box;
+    @extend %u-pad-2;
     margin: 0;
-    padding: 0;
     resize: vertical;
   }
+}
 
+.validation_message {
+  @extend .type-p--small;
+  @extend %u-ml-auto;
+  color: $color-red;
 }
 
 .gform_button {

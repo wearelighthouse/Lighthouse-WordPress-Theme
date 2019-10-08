@@ -1,6 +1,10 @@
 
 .c-button {
 
+  &:focus {
+    outline: none;
+  }
+
   &:hover {
     cursor: pointer;
   }
@@ -84,6 +88,10 @@
       background-repeat: no-repeat;
       background-size: 0% 100%;
       transition: .2s background-size;
+    }
+
+    &.focus-visible {
+      outline: 1px dotted currentColor;
     }
 
     &:focus:after,
