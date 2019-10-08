@@ -27,7 +27,7 @@
   $imgSmallId = getPostMeta('work_single_work_options_image_small_id', $caseStudyId);
 ?>
 
-<div class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?>">
+<a href="<?= $linkURL ?>" class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?>">
   <div class="c-case-study-block__background">
     <?php if ($caseStudySize === 'large' && $imgBackgroundId) : ?>
       <div class="c-case-study-block__image-background">
@@ -63,16 +63,16 @@
     <?php endif; ?>
     <?php if ($title) : ?>
       <h3 class="c-case-study-block__title">
-        <a href="<?= $linkURL  ?>" class="c-case-study-block__title__link"><?= $title ?></a>
+        <div href="<?= $linkURL  ?>" class="c-case-study-block__title__link"><?= $title ?></div>
         <?php if ($caseStudySize === 'large') : ?>
           <span class="c-case-study-block__title__plain"><?= $title ?></span>
         <?php endif; ?>
       </h3>
     <?php endif; ?>
     <?php if ($caseStudySize === 'large' && $linkText && $linkURL) : ?>
-      <a class="c-case-study-block__link c-button c-button--underlined-dark" href="<?= $linkURL ?>">
+      <div href="<?= $linkURL  ?>" class="c-case-study-block__link c-button c-button--underlined-dark">
         <?= $linkText ?>
-      </a>
+      </div>
     <?php endif; ?>
   </div>
-</div>
+</a>

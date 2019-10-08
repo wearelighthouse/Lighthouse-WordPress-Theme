@@ -11,6 +11,10 @@
   @extend %u-mt-12--upto-small;
   @extend %u-mb-6--from-small;
 
+  // The block itself, if an <a> can't be clicked, but the background and
+  // the words can be...
+  pointer-events: none;
+
   #{$self}__image-small {
     @extend %u-display-none--from-small;
     @extend %u-pos-absolute;
@@ -41,8 +45,8 @@
     @extend %u-flex;
     @extend %u-ai-center;
     @extend %u-pos-absolute;
-    @extend %u-z-index--1;
     @extend %u-top;
+    pointer-events: all;
 
     img {
       @extend %u-block;
@@ -57,6 +61,29 @@
       @extend %u-bottom;
       @extend %u-left;
       @extend %u-z-index--1;
+    }
+  }
+
+  #{$self}__content {
+    @extend %u-flex;
+    @extend %u-fd-column;
+    @extend %u-ai-flex-start;
+    @extend %u-z-index-1;
+
+    & > * {
+      pointer-events: all;
+    }
+  }
+
+  // Make the links have focus/hover when block interacted with
+  &:focus,
+  &:hover {
+    #{$self}__link:after {
+      background-size: 100% 100%;
+    }
+
+    #{$self}__title__link {
+      text-decoration: underline;
     }
   }
 }

@@ -14,12 +14,14 @@
     &__plain {
       @extend %u-display-none--upto-small;
       @extend .type-title;
+      pointer-events: all;
     }
 
     &__link {
       @extend %u-display-none--from-small;
       @extend .type-subtitle;
       line-height: 1.3; // Has to be smaller for hovering to not fall between lines
+      pointer-events: all;
 
       &:focus,
       &:hover {

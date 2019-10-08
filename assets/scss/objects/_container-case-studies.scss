@@ -6,7 +6,7 @@
     @extend %u-fw-wrap;
 
     @include breakpoint(upto-small) {
-      width: 100%;
+      width: 100% !important; // TODO: Figure out why important needed & remove
     }
   }
 
