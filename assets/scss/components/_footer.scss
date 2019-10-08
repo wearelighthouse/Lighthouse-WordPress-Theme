@@ -37,7 +37,7 @@
   // End fancy background
 
   &__main-content {
-    @extend %u-mt-2;
+    @extend %u-mt-2--from-small;
 
     a {
       @extend .type-inline-link-orange;
@@ -92,7 +92,8 @@
   &__social,
   &__links,
   &__copyright {
-    @extend %u-mv-2;
+    @extend %u-mt-2;
+    @extend %u-mb-2--from-small;
   }
 
   &__links {

@@ -40,8 +40,17 @@
     }
   }
 
-  // Focus w/ keyboard
-  &.focus-visible {
+  // Replace default focus
+  &:focus {
     outline: 1px dotted currentColor;
   }
+
+  &:-moz-focusring {
+    outline: none;
+  }
+
+  // Focus w/ keyboard
+  // &.focus-visible {
+  //   outline: 1px dotted currentColor;
+  // }
 }
