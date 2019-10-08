@@ -7,16 +7,24 @@
   @extend %u-mh--2;
   font-size: 18px;
   transition: .2s transform;
+  pointer-events: none;
 
-  ul {
+  .menu {
     @extend %u-flex;
     @extend %u-fw-wrap;
     @extend %u-fd-column--upto-medium;
+    pointer-events: all;
 
-    li {
+    .menu-item {
       @extend %u-mv-2--upto-medium;
       @extend %u-mh-6--upto-medium;
       @extend %u-mh-2--from-medium;
+
+      @for $i from 0 to 6 {
+        &:nth-child(#{$i}) {
+          transition: .2s all $i * .1s;
+        }
+      }
 
       a {
         // Set this here as it's tricky to get in the with WP menu PHP
@@ -33,9 +41,14 @@
     font-size: 26px;
     transform: translateY(-100vh); // Starts hidden
 
-    ul {
+    .menu {
       margin-top: 8rem;
       transform: translateY(50%); // Because it's "centered" in the header still
+
+      .menu-item {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
     }
   }
 

@@ -21,6 +21,7 @@
     @extend .c-button--simple--flipped;
     padding: 0; // Get rid of the button padding, as the SVG is a big anyway
     outline-offset: 5px;
+    transition: .2s color;
 
     &:after {
       bottom: -2px; // Because it's a big SVG not text, move the underline a bit
@@ -36,9 +37,20 @@
   }
 
   &--mobile-menu-open {
+    & > * {
+      color: $color-white !important;
+    }
+
     #{$self}__mobile-bg,
     #{$self}__nav {
       transform: translateY(0);
+    }
+
+    #{$self}__nav {
+      .menu-item {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 }

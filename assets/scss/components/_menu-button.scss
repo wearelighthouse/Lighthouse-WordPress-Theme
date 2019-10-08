@@ -6,6 +6,7 @@
   height: 30px;
   margin-top: 3px; // Hacky number to line up with other things in the header
   color: inherit; // Reset button color - could move to _reset.scss
+  transition: .2s color;
 
   &:before,
   &:after {
@@ -48,9 +49,4 @@
   &:-moz-focusring {
     outline: none;
   }
-
-  // Focus w/ keyboard
-  // &.focus-visible {
-  //   outline: 1px dotted currentColor;
-  // }
 }
