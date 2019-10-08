@@ -79,3 +79,33 @@ function admin_script()
   wp_enqueue_script('admin-script', get_template_directory_uri() . '/admin.js');
 }
 add_action('admin_enqueue_scripts', 'admin_script');
+
+// Don't load gravity forms styles
+function removeGravityFormsCSS()
+{
+  wp_deregister_style('gforms_formsmain_css');
+  wp_deregister_style('gforms_reset_css');
+  wp_deregister_style('gforms_ready_class_css');
+  wp_deregister_style('gforms_browsers_css');
+}
+add_action('gform_enqueue_scripts', 'removeGravityFormsCSS');
+
+// Turn the Gravity Forms <input> submit into a much more sensible <button>
+// From: https://gist.github.com/mannieschumpert/8334811#gistcomment-1400231
+function gf_make_submit_input_into_a_button_element($button_input, $form)
+{
+  // Save attribute string to $button_match[1]
+  preg_match("/<input([^\/>]*)(\s\/)*>/", $button_input, $button_match);
+
+  // Remove value attribute
+  $button_atts = str_replace("value='".$form['button']['text']."' ", "", $button_match[1]);
+
+  return '<button '.$button_atts.'>'.$form['button']['text'].'<i class="fa fa-refresh"></i></button>';
+}
+add_filter('gform_submit_button', 'gf_make_submit_input_into_a_button_element', 10, 2);
+
+function removeGutenbergCSS()
+{
+  wp_dequeue_style('wp-block-library');
+}
+add_action('wp_enqueue_scripts', 'removeGutenbergCSS');

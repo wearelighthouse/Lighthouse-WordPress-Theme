@@ -1,0 +1,105 @@
+// Gravity Forms related styles.
+// Assumes the normal gforms styling has been removed completely
+
+
+// Use gform_wrapper to end up more specific than s-content or other applied styles
+
+.gform_wrapper {
+
+  .gfield {
+    // Reset
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .gform_fields {
+    @extend %u-flex;
+    @extend %u-fw-wrap;
+    @extend %u-mh--2;
+    @extend %u-mv-2;
+
+    .gfield {
+      @extend %u-ph-2;
+      @extend %u-border-box;
+      @extend %u-width-100pc--upto-small;
+      @extend %u-width-50pc--from-small;
+
+      &.full-width {
+        width: 100%;
+      }
+    }
+  }
+
+  .ginput_container {
+    @extend %u-pos-relative;
+
+    &:before,
+    &:after {
+      @extend %u-content;
+      @extend %u-pos-absolute;
+      @extend %u-left;
+      @extend %u-bottom;
+      @extend %u-width-100pc;
+      height: 2px;
+      transform-origin: top left;
+    }
+
+    &:before {
+      @extend %u-bg-color-currentColor;
+    }
+
+    &:after {
+      @extend %u-bg-gradient--orange-pink;
+      transform: scale(0);
+      transition: .1s transform;
+    }
+
+    &:focus-within:after {
+      transform: scale(1);
+      transition: .2s transform;
+    }
+  }
+
+  .ginput_container_textarea {
+    padding: 2px;
+
+    &:before,
+    &:after {
+      z-index: -1;
+      height: 100%;
+    }
+
+    // Slower transition for big textarea box because it's not half-ish width
+    // @include breakpoint(from-medium) {
+    //   &:focus-within:after {
+    //     transition: .4s transform;
+    //   }
+    // }
+  }
+
+  input[type='text'],
+  textarea {
+    @extend %u-block;
+    @extend %u-pv-1;
+    @extend %u-width-100pc;
+    margin: 2px;
+    border: none;
+    font-size: unset;
+  }
+
+  textarea {
+    @extend %u-bg-color-white;
+    margin: 0;
+    padding: 0;
+    resize: vertical;
+  }
+
+}
+
+.gform_button {
+  background: none;
+  border: none;
+  @extend .c-button;
+  @extend .c-button--underlined-dark;
+}

@@ -1,6 +1,10 @@
 
 .c-button {
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &--simple {
     @extend %u-pos-relative;
     padding-top: 6px;

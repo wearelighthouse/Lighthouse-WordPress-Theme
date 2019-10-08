@@ -43,7 +43,8 @@
     @extend %u-display-none--upto-medium;
   }
 
-  a {
+  a:focus,
+  a:hover {
     @extend %u-underline;
   }
 
