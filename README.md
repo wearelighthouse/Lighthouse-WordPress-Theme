@@ -32,7 +32,7 @@ $ curl -o wordpress.zip https://wordpress.org/latest.zip &&
 ```
 $ cd wp-content/themes/ &&
   git clone https://github.com/wearelighthouse/Lighthouse-WordPress-Theme.git &&
-  cd Lighthouse-Wordpress-Theme
+  cd Lighthouse-WordPress-Theme
 ```
 
 4. Fetch the fonts
