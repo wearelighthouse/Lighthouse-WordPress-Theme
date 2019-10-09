@@ -1,4 +1,4 @@
-.PHONY: bash composer down install pull up
+.PHONY: bash composer down install pull up path
 
 MAKEPATH := $(abspath $(lastword $(MAKEFILE_LIST)))
 PWD := $(dir $(MAKEPATH))
@@ -33,3 +33,12 @@ pull:
 
 up:
 	docker-compose up -d
+
+path:
+	echo $(MAKEPATH)
+
+pwd:
+	echo $(PWD)
+
+project:
+	echo $(PROJECT)
