@@ -9,6 +9,7 @@ A WordPress Theme for the 2019 version of [wearelighthouse.com](https://wearelig
 
 - [Docker](https://www.docker.com/get-started)
 - [Node.js & NPM](https://nodejs.org/en/)
+- [Composer](https://getcomposer.org/)
 
 
 ### Step-by-step
@@ -32,7 +33,7 @@ $ curl -o wordpress.zip https://wordpress.org/latest.zip &&
 ```
 $ cd wp-content/themes/ &&
   git clone https://github.com/wearelighthouse/Lighthouse-WordPress-Theme.git &&
-  cd Lighthouse-Wordpress-Theme
+  cd Lighthouse-WordPress-Theme
 ```
 
 4. Fetch the fonts
