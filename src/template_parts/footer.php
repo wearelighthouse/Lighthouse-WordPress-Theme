@@ -49,6 +49,7 @@ $clipClasses = is_404() ? '' : 'o-section-clip--corner-top-right o-section-clip-
       <div class="c-footer__lower type-p--smal">
 
         <?php $socialLinksStyle = 'light' ?>
+        <?php $socialLinksLabel = 'Visit Lighthouse on ' ?>
         <div class="c-footer__social">
           <?php include(locate_template('src/template_parts/social_links.php')) ?>
         </div>

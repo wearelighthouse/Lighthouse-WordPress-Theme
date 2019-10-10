@@ -25,6 +25,7 @@
 
       <div class="o-container-content o-container-content--v-margin c-content-grid">
 				<div class="c-content-grid__left u-display-none--upto-medium">
+          <?php $socialLinksLabel = get_the_title() . ' on ' ?>
 					<?php $socialLinksStyle = 'dark' ?>
 					<?php include(locate_template('src/template_parts/social_links.php')) ?>
 				</div>
@@ -33,7 +34,6 @@
 			</div>
 
       <div class="o-container-content o-container-content--v-margin u-display-none--from-medium">
-        <?php $socialLinksStyle = 'dark' ?>
         <?php include(locate_template('src/template_parts/social_links.php')) ?>
       </div>
 
