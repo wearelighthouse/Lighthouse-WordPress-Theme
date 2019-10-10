@@ -122,8 +122,8 @@ function addCustomNavClasses($classes = [], $menu_item = false)
 
   if ($menu_item->title === 'Blog' && is_singular('post') ||
       $menu_item->title === 'Services' && is_singular('service') ||
-      $menu_item->title === 'Work' && is_singular('work') ||
-      $menu_item->title === 'Team' && is_singular('team')) {
+      $menu_item->title === 'Work' && (is_singular('work') || is_post_type_archive('work')) ||
+      $menu_item->title === 'Team' && (is_singular('team') || is_post_type_archive('team'))) {
     $classes[] = 'current-menu-item';
   }
 

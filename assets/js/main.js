@@ -1,5 +1,5 @@
 
-if (document.readyState === "complete" || document.readyState === "loaded") {
+if (document.readyState === "interactive" || document.readyState === "complete") {
   init();
 } else {
   document.addEventListener('DOMContentLoaded', init);
@@ -12,7 +12,14 @@ function init() {
       addressToClipboard();
     }
   });
+  setTimeout(() => {
+    document.body.classList.add('js-loaded');
+  }, 0);
 }
+
+window.addEventListener('beforeunload', function (e) {
+  document.body.classList.add('js-unloading');
+});
 
 function addressToClipboard() {
   navigator.clipboard.writeText('Unit 29, Finsbury Business Center, 40 Bowling Green Lane, London EC1R 0NE');

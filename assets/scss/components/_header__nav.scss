@@ -27,8 +27,10 @@
       }
     }
 
-    .current-menu-item a {
-      @extend .c-button--simple--active;
+    @at-root body:not(.js-unloading) .c-header__nav {
+      .current-menu-item a {
+        @extend .c-button--simple--active;
+      }
     }
   }
 
