@@ -43,8 +43,10 @@ function svgs() {
 function scss() {
   return gulp
     .src([paths.src + '/scss/style.scss'])
-    .pipe(sass({includePaths: ['./node_modules']})
-    .on("error", sass.logError))
+    .pipe(
+      sass({includePaths: ['./node_modules']})
+      .on('error', sass.logError)
+    )
     .pipe(gulp.dest(paths.dist + '/css'))
     .pipe(browserSync.stream());
 }
@@ -87,10 +89,10 @@ function svgSprites() {
 function js() {
   return gulp
     .src(paths.src + '/js/main.js')
-    .pipe(terser({
-      keep_fnames: true,
-      mangle: false
-    }))
+    .pipe(
+      terser({ keep_fnames: true, mangle: false })
+      .on('error', (error) => console.log(error.stack))
+    )
     .pipe(gulp.dest(paths.dist + '/js'));
 }
 

@@ -30,10 +30,12 @@ function toggleMenu(e) {
     // Open menu
     button.setAttribute('aria-checked', 'true');
     button.setAttribute('aria-label', 'Close Menu');
+    document.body.style.overflow = 'hidden';
   } else {
     // Close menu
     button.setAttribute('aria-checked', 'false');
     button.setAttribute('aria-label', 'Open Menu');
+    document.body.style.overflow = '';
   }
 
   // John would prefer classList.replace(), but it's not in iOS Safari or IE11
