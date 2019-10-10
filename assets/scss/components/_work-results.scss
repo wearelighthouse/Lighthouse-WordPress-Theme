@@ -1,0 +1,66 @@
+.c-work-results {
+  @extend %u-flex;
+  @extend %u-fw-wrap;
+  @extend %u-gray-borders;
+  @extend %u-pv-4;
+
+  @include breakpoint(from-medium) {
+    padding: 2rem 0 2.6rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  &__result {
+    @extend %u-fb-25pc;
+    @extend %u-fg-1;
+    @extend %u-fs-0;
+    @extend %u-ph-3;
+    @extend %u-pv-1;
+    @extend %u-border-box;
+    text-align: center;
+
+    &--clutch {
+
+      .c-work-results {
+
+        &__number {
+          @extend %u-inline-block;
+          width: 120px;
+          background: url('../../dist/svg/clutch-star.svg') repeat-x 0 50%;
+          background-size: 24px 24px;
+          text-indent: -9999px;
+        }
+
+        &__text {
+          width: 100%;
+          height: 19px;
+          background: url('../../dist/svg/clutch-logo.svg') no-repeat 50% 50%;
+          background-size: 68px 19px;
+        }
+      }
+    }
+  }
+
+  &__number,
+  &__text {
+    @extend %u-block;
+  }
+
+  &__number {
+    @extend %u-tiempos;
+    @extend %u-mb-1;
+    @include fontScale(50, 60);
+    @extend %u-vbold;
+  }
+
+  &__text {
+    @extend %u-color-orange;
+    @extend %u-uppercase;
+    @extend %u-bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 1.4;
+  }
+}
