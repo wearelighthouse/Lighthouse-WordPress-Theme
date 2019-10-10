@@ -65,7 +65,7 @@
         </div>
       <?php endif; ?>
       <?php if ($clientLogoId) : ?>
-        <div class="c-hero__client-logo-container" style="height: 60px">
+        <div class="c-hero__client-logo-container" style="height: 75px">
           <img class="c-hero__client-logo"
                src="<?= $clientLogoSrc ?>"
             <?= $clientLogoAltAttr ?>/>
