@@ -49,4 +49,8 @@
   &:-moz-focusring {
     outline: none;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
