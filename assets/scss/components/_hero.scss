@@ -28,10 +28,11 @@
     }
   }
 
-  &__client-logo {
-    @extend %u-mt-4;
-    @extend %u-mb-4--upto-medium;
-    @extend %u-mb-2--from-medium;
+  &__client-logo-container {
+    @extend %u-flex;
+    @extend %u-ai-center;
+    @extend %u-mt-2--from-medium;
+    @extend %u-mb-2--upto-medium;
   }
 
   &__image {
