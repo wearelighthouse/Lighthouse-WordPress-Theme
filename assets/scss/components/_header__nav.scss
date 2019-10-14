@@ -61,7 +61,7 @@
 
     @for $i from 0 to 6 {
       &:nth-child(#{$i}) {
-        transition: .2s transform $i * .1s, 1s opacity $i * .1s;
+        transition: .1s transform $i * .07s, .7s opacity $i * .07s;
       }
     }
   }
