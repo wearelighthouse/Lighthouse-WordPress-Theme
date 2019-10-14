@@ -90,7 +90,7 @@ function js() {
   return gulp
     .src(paths.src + '/js/main.js')
     .pipe(
-      terser({ keep_fnames: true, mangle: false })
+      terser({ keep_fnames: false, mangle: true })
       .on('error', (error) => console.log(error.stack))
     )
     .pipe(gulp.dest(paths.dist + '/js'));

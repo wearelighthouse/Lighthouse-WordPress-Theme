@@ -12,7 +12,7 @@ function init() {
   }, 0);
 
   // Add the menu button toggling event listener
-  addMenuToggleListener(document.querySelectorAll('.js-menu-button')[0]);
+  addMenuToggleListener(document.getElementsByClassName('js-menu-button')[0]);
 
   // Lazy loading
   const observerLoad = window.lozad('.js-lazy', {
