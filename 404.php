@@ -7,7 +7,7 @@
 ?>
 
 <main>
-  <?php // 1px padding-bottom gets rid of the "double" borders between header & footer, w/tiny extra space. ?>
+  <?php // No padding gets rid of the "double" borders between header & footer ?>
   <section class="o-container-section o-container-section--bordered" style="padding-bottom: unset">
     <div class="c-hero c-hero--orange-pink">
       <div class="c-hero__background"></div>

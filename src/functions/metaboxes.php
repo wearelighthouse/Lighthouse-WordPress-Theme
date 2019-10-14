@@ -58,6 +58,11 @@ function getPagePrefix()
 
 function getPostMeta($metaName, $postID = null)
 {
+    // 404 pages don't have postIDs and can't have postMeta
+    if (is_404()) {
+        return '';
+    }
+    
     $postID = $postID ? $postID : get_the_ID();
 
     if (!is_numeric($postID)) {
