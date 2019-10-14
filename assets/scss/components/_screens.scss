@@ -82,7 +82,7 @@
 
         // Animated image loading line
         box-shadow: -1035px 2px $color-orange;
-        transition: 2s box-shadow;
+        transition: 1.2s box-shadow;
       }
 
       &:after {
@@ -112,7 +112,7 @@
 
       .js-lazy {
         opacity: 0;
-        transition: .2s opacity 1s;
+        transition: .2s opacity .8s;
       }
 
       &.js-onscreen:before {
