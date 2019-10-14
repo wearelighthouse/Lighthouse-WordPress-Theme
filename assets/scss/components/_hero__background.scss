@@ -32,7 +32,7 @@
   :nth-child(2) {
     @extend %u-left;
     @extend %u-round;
-    @extend %u-top;
+    @extend %u-bottom;
     opacity: 0;
     width: $circleSize;
     height: $circleSize;
@@ -42,7 +42,7 @@
       rgba($color-white, .1) 75%,
       rgba($color-white, .2)
     );
-    transform: translate(calc(-10vw + 50px), -65%) rotate(45deg);
+    transform: translate(calc(-10vw + 50px), calc(10vw + -65%)) rotate(45deg);
     transition: 2s opacity, 1.5s transform .1s;
   }
 
@@ -59,7 +59,7 @@
       rgba($color-white, .1) 75%,
       rgba($color-white, .2)
     );
-    transform: translate(calc(50vw + 250px), 55%) rotate(-135deg);
+    transform: translate(calc(50vw + 250px), 50%) rotate(-135deg);
     transition: 2s opacity, 1.5s transform .1s;
   }
 
@@ -75,7 +75,7 @@
 
   :nth-child(2) {
     opacity: 1;
-    transform: translate(calc(-10vw + 50px), -45%) rotate(45deg);
+    transform: translate(calc(-10vw + 50px), calc(10vw + -60%)) rotate(45deg);
   }
 
   :nth-child(3) {
