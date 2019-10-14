@@ -19,7 +19,13 @@ function init() {
       rootMargin: '200px 0px', // syntax similar to that of CSS Margin
       threshold: 0.1, // ratio of element convergence
       loaded: function(element) {
-        element.classList.add('js-loaded');
+        element.parentNode.classList.add('js-child-loading');
+        element.classList.add('js-loading');
+
+        element.onload = function() {
+          element.parentNode.classList.add('js-child-loaded');
+          element.classList.add('js-loaded');
+        }
       }
   });
   observer.observe();

@@ -60,6 +60,7 @@
       --titleBarMax: 36px;
 
       @extend %u-ov-hidden;
+      @extend %u-bg-color-gray-bluish;
       width: var(--container-width);
       max-width: $global-max-width;
       height: 0;
@@ -78,6 +79,10 @@
         @extend %u-jc-flex-start;
         height: var(--titleBarSize);
         max-height: var(--titleBarMax);
+
+        // Animated image loading line
+        box-shadow: -1035px 1px $color-orange;
+        transition: 2s box-shadow;
       }
 
       &:after {
@@ -103,6 +108,20 @@
                       calc(.861 * var(--titleBarSize)) 0 0 #444,
                       calc(1.27 * var(--titleBarSize)) 0 0 #444;
         }
+      }
+
+      .js-lazy {
+        opacity: 0;
+        transition: .2s opacity;
+      }
+
+      &.js-child-loading:before {
+        // Animated image loading line
+        box-shadow: 0 1px $color-orange;
+      }
+
+      .js-loaded {
+          opacity: 1;
       }
 
       &--light {
