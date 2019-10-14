@@ -81,7 +81,7 @@
         max-height: var(--titleBarMax);
 
         // Animated image loading line
-        box-shadow: -1035px 1px $color-orange;
+        box-shadow: -1035px 2px $color-orange;
         transition: 2s box-shadow;
       }
 
@@ -112,16 +112,16 @@
 
       .js-lazy {
         opacity: 0;
-        transition: .2s opacity;
+        transition: .2s opacity 1s;
       }
 
-      &.js-child-loading:before {
+      &.js-onscreen:before {
         // Animated image loading line
-        box-shadow: 0 1px $color-orange;
+        box-shadow: 0 2px $color-orange;
       }
 
-      .js-loaded {
-          opacity: 1;
+      &.js-onscreen.js-child-loaded > .js-lazy {
+        opacity: 1 !important;
       }
 
       &--light {

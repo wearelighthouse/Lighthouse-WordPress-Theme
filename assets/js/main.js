@@ -15,20 +15,30 @@ function init() {
   addMenuToggleListener(document.querySelectorAll('.js-menu-button')[0]);
 
   // Lazy loading
-  const observer = window.lozad('.js-lazy', {
+  const observerLoad = window.lozad('.js-lazy', {
       rootMargin: '200px 0px', // syntax similar to that of CSS Margin
-      threshold: 0.1, // ratio of element convergence
       loaded: function(element) {
         element.parentNode.classList.add('js-child-loading');
         element.classList.add('js-loading');
 
         element.onload = function() {
+          element.parentNode.classList.remove('js-child-loading');
+          element.classList.remove('js-loading');
           element.parentNode.classList.add('js-child-loaded');
           element.classList.add('js-loaded');
         }
       }
   });
-  observer.observe();
+  observerLoad.observe();
+
+  const observerView = window.lozad('.js-half-onscreen-detect', {
+      threshold: 0.5, // ratio of element convergence
+      load: () => {},
+      loaded: function(element) {
+        element.classList.add('js-onscreen');
+      }
+  });
+  observerView.observe();
 
   // Add the keyboard shortcuts event listener
   document.addEventListener('keydown', (event) => {

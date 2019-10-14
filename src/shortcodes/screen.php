@@ -65,7 +65,7 @@ function screenShortcode($atts)
       $mediaType = 'video/mp4';
     }
 
-		$deviceClass = 'c-screens__device';
+		$deviceClass = 'c-screens__device js-half-onscreen-detect';
 		$deviceClass .= ' c-screens__device--' . $deviceArray[$i];
 		$deviceClass .= ' c-screens__device--' . $deviceArray[$i] . '--' . $atts['theme'];
 
