@@ -34,7 +34,7 @@ function imageShortcode($atts)
   $output = '<div class="' . $className . '"' . $singleBgColorAttr . '>';
 
   foreach ($imgIdArray as $i => $imgId) {
-    $img = wp_get_attachment_image($imgId, 'original', '', ['loading' => 'lazy']);
+    $img = lazyLoad(wp_get_attachment_image($imgId, 'original', ''));
     if (!$img) {
       echo 'Invalid image id in shortcode: "' . $imgId . '"';
       return;

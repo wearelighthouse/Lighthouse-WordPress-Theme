@@ -1,4 +1,3 @@
-
 if (document.readyState === "interactive" || document.readyState === "complete") {
   init();
 } else {
@@ -6,15 +5,31 @@ if (document.readyState === "interactive" || document.readyState === "complete")
 }
 
 function init() {
+
+  // Add JavaScript-has-loaded class to body
+  setTimeout(() => {
+    document.body.classList.add('js-loaded');
+  }, 0);
+
+  // Add the menu button toggling event listener
   addMenuToggleListener(document.querySelectorAll('.js-menu-button')[0]);
+
+  // Lazy loading
+  const observer = window.lozad('.js-lazy', {
+      rootMargin: '200px 0px', // syntax similar to that of CSS Margin
+      threshold: 0.1, // ratio of element convergence
+      loaded: function(element) {
+        element.classList.add('js-loaded');
+      }
+  });
+  observer.observe();
+
+  // Add the keyboard shortcuts event listener
   document.addEventListener('keydown', (event) => {
     if (event.altKey && event.code === 'KeyA') {
       addressToClipboard();
     }
   });
-  setTimeout(() => {
-    document.body.classList.add('js-loaded');
-  }, 0);
 }
 
 window.addEventListener('beforeunload', function (e) {

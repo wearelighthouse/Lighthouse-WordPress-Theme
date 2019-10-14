@@ -55,14 +55,20 @@
     }
 
     &--desktop {
-      @extend %u-ov-hidden;
-      width: var(--container-width);
-      max-width: $global-max-width;
-      border-radius: 7px;
-
       // 36px from 100vw @ 1440px, scaling down at "half speed"
       --titleBarSize: calc(1.25vw + 18px);
       --titleBarMax: 36px;
+
+      @extend %u-ov-hidden;
+      width: var(--container-width);
+      max-width: $global-max-width;
+      height: 0;
+      padding-bottom: calc(var(--container-width) * .54 + var(--titleBarSize) - 1px);
+      border-radius: 7px;
+
+      @include breakpoint(from-full) {
+        padding-bottom: 594px; // 558px img height + 36px title bar
+      }
 
       &:before {
         @extend %u-content;
