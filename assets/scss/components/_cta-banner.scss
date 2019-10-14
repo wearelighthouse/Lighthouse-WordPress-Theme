@@ -12,6 +12,7 @@
   &:after {
     @extend %u-content;
     @extend %u-pos-absolute;
+    pointer-events: none;
   }
 
   &:before {
