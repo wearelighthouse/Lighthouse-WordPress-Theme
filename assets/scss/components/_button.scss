@@ -95,6 +95,10 @@
       transition: .2s background-size;
     }
 
+    &::-moz-focus-inner {
+      border: 0;
+    }
+
     &.focus-visible {
       outline: 1px dotted currentColor;
     }
