@@ -3,7 +3,7 @@
  */
 .o-container-section {
   @extend %u-width-100pc;
-  box-sizing: border-box;
+  @extend %u-border-box;
 
   // Container with horizontal and vertical border on desktop
   &--bordered {
@@ -19,8 +19,4 @@
     padding-top: var(--edge-gutter);
     padding-bottom: var(--edge-gutter);
   }
-
-  // &--100vh {
-  //   height: 100vh;
-  // }
 }

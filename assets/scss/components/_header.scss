@@ -22,6 +22,7 @@
     padding: 0; // Get rid of the button padding, as the SVG is a big anyway
     outline-offset: 5px;
     transition: .2s color;
+    -webkit-tap-highlight-color: transparent;
 
     &:after {
       bottom: -2px; // Because it's a big SVG not text, move the underline a bit
@@ -33,6 +34,10 @@
       &:after {
         width: 80px; // Try to match the width of the text part of the SVG
       }
+    }
+
+    &:active {
+      outline: 1px dotted currentColor;
     }
   }
 

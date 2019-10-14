@@ -31,9 +31,11 @@
 
   // Not all section-clips show on teeny tiny screens.
   // Is at the end to override the specific section-clips
+  // This MUST be a value that computes to something other than 'none'
+  // - otherwise it will redo the stacking order and break z-indexes
   &--no-mobile {
     @include breakpoint(upto-small) {
-      clip-path: none;
+      clip-path: border-box;
     }
   }
 }

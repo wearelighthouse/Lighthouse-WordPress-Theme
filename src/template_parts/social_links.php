@@ -12,7 +12,7 @@
       <?php if (isset($social['type']) && isset($social['link'])) : ?>
         <?php $label = ($socialLinksLabel ?: '') . ' ' . ucfirst($social['type']); ?>
         <a href="<?= $social['link'] ?>" class="c-social-links__link" aria-label="<?= $label ?>">
-          <svg viewBox="0 0 40 40" style="display: inline-block; height: 40px; width: 40px;">
+          <svg viewBox="0 0 40 40" style="display: block; height: 40px; width: 40px;">
             <use xlink:href="<?= $svgSpriteSheet ?>#icon--<?= strToLower($social['type']) ?>"></use>
           </svg>
         </a>
