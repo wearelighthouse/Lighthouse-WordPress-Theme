@@ -1,0 +1,60 @@
+
+.c-social-link {
+  @extend %u-block;
+  @extend %u-pos-relative;
+  @extend %u-bg-color-currentColor;
+  @extend %u-round;
+  width: 40px;
+  height: 40px;
+  -webkit-tap-highlight-color: transparent;
+
+  &:before,
+  &:after {
+    @extend %u-round;
+    @extend %u-ov-hidden;
+    @extend %u-z-index--1;
+    @extend %u-content;
+    @extend %u-pos-absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+  }
+
+  &:before {
+    opacity: 0;
+    background: linear-gradient(135deg, #FC845B, #FE497A);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    &:before {
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+      opacity: 1;
+    }
+  }
+
+  &--dark {
+    fill: $color-white;
+
+    &:after {
+      background: $color-white;
+    }
+  }
+
+  &--light {
+    fill: $color-blackcurrant;
+
+    &:after {
+      background: $color-blackcurrant;
+    }
+  }
+}

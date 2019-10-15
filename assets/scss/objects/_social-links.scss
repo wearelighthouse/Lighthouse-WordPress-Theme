@@ -1,0 +1,10 @@
+
+.o-social-links {
+  @extend %u-flex;
+  @extend %u-fw-wrap;
+  @extend %u-m--1;
+
+  & > * {
+    @extend %u-m-1;
+  }
+}

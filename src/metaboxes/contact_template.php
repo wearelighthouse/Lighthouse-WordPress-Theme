@@ -35,8 +35,8 @@ return [
                     'type' => 'text'
                 ],
                 [
-                    'name' => 'Description',
-                    'id'   => 'description',
+                    'name' => 'Text',
+                    'id'   => 'text',
                     'type' => 'textarea_small'
                 ],
                 [
