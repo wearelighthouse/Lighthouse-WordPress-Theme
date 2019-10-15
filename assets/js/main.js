@@ -12,11 +12,20 @@ function setupObservers(lozad) {
         element.parentNode.classList.add('js-child-loading');
         element.classList.add('js-loading');
 
-        element.onload = function() {
-          element.parentNode.classList.remove('js-child-loading');
-          element.classList.remove('js-loading');
-          element.parentNode.classList.add('js-child-loaded');
-          element.classList.add('js-loaded');
+        if (element.tagName === 'IMG') {
+          element.addEventListener('load', (event) => {
+            element.parentNode.classList.remove('js-child-loading');
+            element.classList.remove('js-loading');
+            element.parentNode.classList.add('js-child-loaded');
+            element.classList.add('js-loaded');
+          });
+        } else if (element.tagName === 'VIDEO') {
+          element.addEventListener('canplay', (event) => {
+            element.parentNode.classList.remove('js-child-loading');
+            element.classList.remove('js-loading');
+            element.parentNode.classList.add('js-child-loaded');
+            element.classList.add('js-loaded');
+          });
         }
       }
   });

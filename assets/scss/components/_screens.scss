@@ -43,10 +43,14 @@
 
   &__device {
     @extend %u-pos-relative;
-    box-shadow: 1px 3px 20px rgba(0, 0, 0, .2);
 
     margin-top: calc(var(--container-v-pad) / 2);
     margin-bottom: calc(var(--container-v-pad) / 2);
+
+    .js-lazy {
+      opacity: 0;
+      transition: .2s opacity .8s;
+    }
 
     & > * {
       @extend %u-block;
@@ -110,11 +114,6 @@
         }
       }
 
-      .js-lazy {
-        opacity: 0;
-        transition: .2s opacity .8s;
-      }
-
       &.js-onscreen:before {
         // Animated image loading line
         box-shadow: 0 2px $color-orange;
@@ -125,10 +124,11 @@
       }
 
       &--light {
-
+        box-shadow: 1px 3px 20px rgba(0, 0, 0, .1);
       }
 
       &--dark {
+        box-shadow: 1px 3px 20px rgba(0, 0, 0, .2);
         color: #444;
       }
     }
@@ -140,23 +140,67 @@
       border-radius: 34px;
 
       & > * {
+        @extend %u-z-index-1;
+        opacity: 0;
+      }
+
+      & > *,
+      &:before {
         width: 260px;
+        height: 562px;
         margin: 14px;
-        background-color: #333; // Makes sure there's no "gaps"
         border-radius: 20px;
       }
 
-      &--light {
+      &:before,
+      &:after {
+        @extend %u-content;
+        @extend %u-block;
+        @extend %u-pos-absolute;
+        @extend %u-top;
+        @extend %u-left;
+        //@extend %u-z-index--1;
+      }
 
+      &:after {
+        margin: 14px;
+        //width: 224px;
+        width: 0;
+        height: 2px;
+        left: 18px;
+        top: -2px;
+        box-shadow: 0 2px $color-orange;
+        transition: 1s width;
+      }
+
+      &--light {
+        background-color: #fff;
+        box-shadow: 1px 3px 20px rgba(0, 0, 0, .1);
+
+        &:before {
+          box-shadow: 0 0 6px 8px #fff,
+                      0 0 2px 12px #eee,
+                      0 0 0 14px #ddd;
+        }
       }
 
       &--dark {
+        background-color: #333; // Makes sure there's no "gaps"
+        box-shadow: 1px 3px 20px rgba(0, 0, 0, .1);
 
-        & > * {
-          // TODO: Refine box shadow "highlight"
+        &:before {
           box-shadow: 0 0 14px #666,
                       0 0 0 14px #333;
         }
+      }
+
+      &.js-onscreen:after {
+        // Animated image loading line
+        width: 228px;
+      }
+
+      &.js-onscreen.js-child-loaded > .js-lazy {
+        opacity: 1 !important;
       }
     }
   }
