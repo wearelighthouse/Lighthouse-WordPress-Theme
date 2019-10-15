@@ -65,6 +65,9 @@ $clipClasses = is_404() ? '' : 'o-section-clip--corner-top-right o-section-clip-
         <?php endif; ?>
 
         <?php if ($copyright) : ?>
+          <?php
+            $copyright = str_replace('currentYear', date('Y'), $copyright);
+          ?>
           <div class="c-footer__copyright">
             <?= $copyright ?>
           </div>
