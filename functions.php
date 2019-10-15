@@ -30,6 +30,7 @@ require_once __DIR__ . '/src/functions/plugins.php';
 require_once __DIR__ . '/src/functions/pr.php';
 
 // Metabox Groups
+require_once __DIR__ . '/src/metabox_groups/contact_template.php';
 require_once __DIR__ . '/src/metabox_groups/front_page.php';
 require_once __DIR__ . '/src/metabox_groups/hero.php';
 require_once __DIR__ . '/src/metabox_groups/page.php';

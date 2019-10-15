@@ -1,22 +1,16 @@
 <?php
 
 return [
-    'title' => 'Team Member Settings',
+    'title' => 'Contact Template Options',
     'fields' => [
         [
-            'name' => 'Job Title',
-            'id'   => 'title',
-            'type' => 'text'
-        ],
-        [
-            'name' => 'Social',
-            'id'   => 'social',
+            'id' => 'blocks',
             'type' => 'group',
             'options' => [
-                'group_title'   => 'Social Link {#}',
-                'add_button'    => 'Add New Social Link',
-                'remove_button' => 'Remove Social Link',
-            		'sortable'      => true,
+                'group_title'   => 'Block {#}',
+                'add_button'    => 'Add New Block',
+                'remove_button' => 'Remove Block',
+                'sortable'      => true
             ],
             'sub_fields' => [
                 [
@@ -36,9 +30,19 @@ return [
                     ]
                 ],
                 [
-                    'name' => 'Link',
-                    'id'   => 'link',
+                    'name' => 'Title',
+                    'id'   => 'title',
                     'type' => 'text'
+                ],
+                [
+                    'name' => 'Description',
+                    'id'   => 'description',
+                    'type' => 'textarea_small'
+                ],
+                [
+                    'name' => 'Link URL',
+                    'id'   => 'link_url',
+                    'type' => 'text_url'
                 ]
             ]
         ]
