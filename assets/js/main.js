@@ -4,18 +4,9 @@ if (document.readyState === "interactive" || document.readyState === "complete")
   document.addEventListener('DOMContentLoaded', init);
 }
 
-function init() {
+function setupObservers(lozad) {
 
-  // Add JavaScript-has-loaded class to body
-  setTimeout(() => {
-    document.body.classList.add('js-loaded');
-  }, 0);
-
-  // Add the menu button toggling event listener
-  addMenuToggleListener(document.getElementsByClassName('js-menu-button')[0]);
-
-  // Lazy loading
-  const observerLoad = window.lozad('.js-lazy', {
+  const observerLoad = lozad('.js-lazy', {
       rootMargin: '200px 0px', // syntax similar to that of CSS Margin
       loaded: function(element) {
         element.parentNode.classList.add('js-child-loading');
@@ -31,7 +22,7 @@ function init() {
   });
   observerLoad.observe();
 
-  const observerView = window.lozad('.js-half-onscreen-detect', {
+  const observerView = lozad('.js-half-onscreen-detect', {
       threshold: 0.5, // ratio of element convergence
       load: () => {},
       loaded: function(element) {
@@ -39,6 +30,22 @@ function init() {
       }
   });
   observerView.observe();
+}
+
+function init() {
+
+  // Add JavaScript-has-loaded class to body
+  setTimeout(() => {
+    document.body.classList.add('js-loaded');
+  }, 0);
+
+  // Add the menu button toggling event listener
+  addMenuToggleListener(document.getElementsByClassName('js-menu-button')[0]);
+
+  // Not all pages have lozad for lazy loading, but on pages that do, set it up
+  if (window.lozad) {
+    setupObservers(window.lozad);
+  }
 
   // Add the keyboard shortcuts event listener
   document.addEventListener('keydown', (event) => {

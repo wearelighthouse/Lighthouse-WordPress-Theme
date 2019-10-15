@@ -112,6 +112,41 @@ function removeGutenbergCSS()
 }
 add_action('wp_enqueue_scripts', 'removeGutenbergCSS');
 
+function disableWPEmbeds() {
+  wp_dequeue_script('wp-embed');
+}
+add_Action('wp_footer', 'disableWPEmbeds');
+
+// Defer all the enqueued (not in head) JavaScript
+
+function deferScripts($tag, $handle)
+{
+  return str_replace(' src', ' defer src', $tag);
+}
+
+if (!is_admin()) {
+  add_filter('script_loader_tag', 'deferScripts', 10, 2);
+}
+
+// Move Gforms scripts to the footer
+add_filter( 'gform_init_scripts_footer', '__return_true' );
+
+// Wrap the inline scripts in DOMContentLoaded event listeners
+// to ensure they aren't triggered before jQuery loads.
+add_filter( 'gform_cdata_open', 'wrap_gform_cdata_open' );
+function wrap_gform_cdata_open( $content = '' )
+{
+  $content = 'document.addEventListener( "DOMContentLoaded", function() { ';
+  return $content;
+}
+add_filter( 'gform_cdata_close', 'wrap_gform_cdata_close' );
+
+function wrap_gform_cdata_close( $content = '' )
+{
+  $content = ' }, false );';
+  return $content;
+}
+
 /**
  * Highlight 'Blog' nav menu item on all blog pages, 'Services' on service pages etc.
  */
