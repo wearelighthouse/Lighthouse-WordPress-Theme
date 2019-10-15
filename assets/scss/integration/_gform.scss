@@ -121,3 +121,9 @@
   @extend .c-button;
   @extend .c-button--underlined-dark;
 }
+
+// Don't display stupid Font Awesome <i> tags in italic. Why?... because
+// a font-style: italic makes the italic fonts download when not needed.
+.fa {
+  font-style: normal;
+}
