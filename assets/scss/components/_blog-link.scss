@@ -36,12 +36,20 @@
 
     &__title {
       @extend .type-subtitle;
-      @extend %u-block;
+      @extend %u-inline-block;
+      margin-right: -.2em;
+      margin-left: -.2em;
+      padding-right: .2em;
+      padding-left: .2em;
 
       &:focus,
       &:hover {
         @extend %u-underline;
         outline: none;
+      }
+
+      &.focus-visible {
+        outline: 1px dotted currentColor;
       }
     }
 

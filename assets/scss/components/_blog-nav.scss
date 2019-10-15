@@ -28,5 +28,9 @@
       border-bottom: 3px $color-orange solid;
       outline: none;
     }
+
+    &.focus-visible {
+      outline: 1px dotted currentColor;
+    }
   }
 }
