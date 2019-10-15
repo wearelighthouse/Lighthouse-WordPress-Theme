@@ -157,7 +157,7 @@ function addCustomNavClasses($classes = [], $menu_item = false)
     return $classes;
   }
 
-  if ($menu_item->title === 'Blog' && is_singular('post') ||
+  if ($menu_item->title === 'Blog' && (is_singular('post') || get_the_title() === 'Blog') ||
       $menu_item->title === 'Services' && (is_singular('service') || is_post_type_archive('service')) ||
       $menu_item->title === 'Work' && (is_singular('work') || is_post_type_archive('work')) ||
       $menu_item->title === 'Team' && (is_singular('team') || is_post_type_archive('team'))) {

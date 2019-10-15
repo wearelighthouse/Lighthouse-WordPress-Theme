@@ -42,14 +42,15 @@
     margin-top: calc((var(--container-width) / 20) + 3rem);
   }
 
-  a {
+  p > a,
+  li > a {
     margin: -.05em -.1em;
     padding: .05em .1em;
     border-radius: 4px;
-  }
 
-  a:focus,
-  a:hover {
-    @extend %u-bg-color-gray-bluish;
+    &:focus,
+    &:hover {
+      @extend %u-bg-color-gray-bluish;
+    }
   }
 }
