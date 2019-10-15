@@ -3,6 +3,9 @@
 # Fetches font files, and @font-face CSS for loading the fonts.
 # They're not hosted on GitHub due to licence conditions.
 #
+# To zip up this file, from within a fonts/ directory, run:
+# $ zip -er fonts.zip sailec/* tiempos/*
+#
 
 echo "Fetching font files. The password is in the Lighthouse 1Pass!"
 cd assets/font
