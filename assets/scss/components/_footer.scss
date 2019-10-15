@@ -50,6 +50,13 @@
     @extend %u-mh--4;
     @extend %u-mt-6;
 
+    a {
+      margin-right: -.1em;
+      margin-left: -.1em;
+      padding-right: .1em;
+      padding-left: .1em;
+    }
+
     &__box {
       @extend %u-mv-2;
       @extend %u-mh-4;
@@ -108,6 +115,10 @@
 
     a {
       @extend .type-inline-link-white;
+      margin-right: -.1em;
+      margin-left: -.1em;
+      padding-right: .1em;
+      padding-left: .1em;
     }
   }
 }
