@@ -89,9 +89,9 @@
 
   &--gray-gradient #{$self}__text {
     h1 {
-      // Do gradient text here?
       background: linear-gradient(135deg, #FC845B, #FE497A);
       font-family: 'tiempos';
+      @extend %u-vbold;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -101,6 +101,7 @@
     h1 {
       // Do gradient text here?
       @include fontScale(32, 57);
+      @extend %u-vbold;
       background: linear-gradient(135deg, #FC845B, #FE497A);
       font-family: 'tiempos';
       -webkit-background-clip: text;
