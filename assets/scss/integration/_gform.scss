@@ -113,7 +113,7 @@
 .validation_message {
   @extend .type-p--small;
   @extend %u-ml-auto;
-  color: $color-red;
+  @extend %u-color-red;
 }
 
 .gform_button {
@@ -121,6 +121,10 @@
   border: none;
   @extend .c-button;
   @extend .c-button--underlined-dark;
+}
+
+.gfield_required {
+  @extend %u-color-red;
 }
 
 // Don't display stupid Font Awesome <i> tags in italic. Why?... because
