@@ -32,6 +32,7 @@ return [
                         'Instagram' => 'Instagram',
                         'LinkedIn' => 'LinkedIn',
                         'Location' => 'Location',
+                        'Phone' => 'Phone',
                         'Twitter' => 'Twitter'
                     ]
                 ],
