@@ -41,6 +41,7 @@
       &:focus,
       &:hover {
         @extend %u-underline;
+        outline: none;
       }
     }
 
