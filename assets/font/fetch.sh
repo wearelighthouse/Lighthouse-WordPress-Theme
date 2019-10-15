@@ -8,8 +8,8 @@ echo "Fetching font files. The password is in the Lighthouse 1Pass!"
 cd assets/font
 
 # Try wget, if that fails, use curl:
-wget -O fonts.zip https://www.dropbox.com/s/zq607eez5y5izff/fonts.zip?dl=0 || \
-curl -L -o fonts.zip https://www.dropbox.com/s/zq607eez5y5izff/fonts.zip?dl=0
+wget -O fonts.zip https://www.dropbox.com/s/wlbtno0c6tf8ooe/fonts.zip?dl=0 || \
+curl -L -o fonts.zip https://www.dropbox.com/s/wlbtno0c6tf8ooe/fonts.zip?dl=0
 
 echo "Extracting files then removing the .zip"
 unzip -q fonts.zip
