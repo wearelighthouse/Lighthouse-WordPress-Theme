@@ -86,6 +86,7 @@
     // }
   }
 
+  input[type='email'],
   input[type='text'],
   textarea {
     @extend %u-block;
