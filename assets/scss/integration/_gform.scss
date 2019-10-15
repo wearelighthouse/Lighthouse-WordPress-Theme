@@ -5,6 +5,7 @@
 // Use gform_wrapper to end up more specific than s-content or other applied styles
 
 .gform_wrapper {
+  grid-column: 1 / -1;
 
   .gfield {
     // Reset
@@ -35,7 +36,7 @@
     }
   }
 
-  .ginput_container {
+  .ginput_container:not(.ginput_complex) {
     @extend %u-pos-relative;
     @extend %u-width-100pc;
     order: 1; // After the name and validation messages
