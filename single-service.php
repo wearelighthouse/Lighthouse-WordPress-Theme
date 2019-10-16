@@ -5,7 +5,7 @@
   $globalBlocksServiceGroup = getPostMeta('service_single_blocks_service_group');
   $globalBlocksServiceLayout = getPostMeta('service_single_blocks_service_layout');
   $globalCaseStudyIds = getPostMeta('service_single_case_study_list');
-  $globalIntro = 'Ideas launched...';
+  $globalIntro = '<h2 class="type-title">Ideas launched...</h2>';
 
   // Get the actual site header
   get_template_part('src/template_parts/header');
@@ -18,9 +18,6 @@
     <?php include(locate_template('src/template_parts/block_section_services.php')) ?>
 
     <?php if ($globalCaseStudyIds) : ?>
-      <div class="o-container-content">
-        <h3 class="type-title">Ideas launched...</h3>
-      </div>
       <?php include(locate_template('src/template_parts/block_section_case_study_small.php')) ?>
     <?php endif; ?>
 
