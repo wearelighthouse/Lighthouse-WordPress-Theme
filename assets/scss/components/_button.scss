@@ -67,11 +67,17 @@
     @include error('Use just c-button--underlined-dark or c-button--underlined-light, instead of c-button--underlined');
   }
 
+  // We use @supports clip-path to figure out if we can make the underline bent
+  //  - if we can, we add clip-path and override defaults for padding & height.
   &--underlined-light,
   &--underlined-dark {
     @extend .type-cta;
     @extend %u-pos-relative;
-    padding-bottom: 1.5rem; // Enough space for the underline
+    padding-bottom: .5rem;
+
+    @supports (clip-path: polygon()) {
+      padding-bottom: 1.5rem; // Enough space for the underline
+    }
 
     &:after {
       @extend %u-block;
@@ -80,16 +86,21 @@
       @extend %u-left;
       @extend %u-content;
       @extend %u-width-100pc;
-      clip-path: polygon(
-        0 0,
-        calc(100% - 22px) 0,
-        100% 7px,
-        100% 9px,
-        calc(100% - 22px) 2px,
-        0 2px,
-        0 0
-      );
-      height: 10px;
+      height: 2px;
+
+      @supports (clip-path: polygon()) {
+        clip-path: polygon(
+          0 0,
+          calc(100% - 22px) 0,
+          100% 7px,
+          100% 9px,
+          calc(100% - 22px) 2px,
+          0 2px,
+          0 0
+        );
+        height: 10px;
+      }
+
       background-repeat: no-repeat;
       background-size: 0% 100%;
       transition: .2s background-size;
