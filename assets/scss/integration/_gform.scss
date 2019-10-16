@@ -8,14 +8,14 @@
   grid-column: 1 / -1;
 
   .gfield {
-    // Reset
-    margin-left: 0;
-    padding-left: 0;
-    list-style: none;
-
     @extend %u-flex;
     @extend %u-fw-wrap;
     align-items: baseline;
+
+    // Resets
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
   }
 
   .gform_fields {
@@ -36,7 +36,7 @@
     }
   }
 
-  .ginput_container:not(.ginput_complex) {
+  .ginput_container {
     @extend %u-pos-relative;
     @extend %u-width-100pc;
     order: 1; // After the name and validation messages
