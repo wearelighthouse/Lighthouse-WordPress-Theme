@@ -141,7 +141,40 @@
 
       & > * {
         @extend %u-z-index-1;
-        opacity: 0;
+      }
+
+      $fadeTime: .2s;
+      $loadTime: .4s;
+      $loadDelay: .4s;
+
+      & {
+        .js-lazy {
+          transition: $fadeTime opacity #{$loadTime * 1};
+        }
+
+        &:after {
+          transition: $loadTime width #{$loadTime * 0} linear;
+        }
+      }
+
+      & + & {
+        .js-lazy {
+          transition: $fadeTime opacity #{$loadTime * 2};
+        }
+
+        &:after {
+          transition: $loadTime width #{$loadTime * 1} linear;
+        }
+      }
+
+      & + & + & {
+        .js-lazy {
+          transition: $fadeTime opacity #{$loadTime * 3};
+        }
+
+        &:after {
+          transition: $loadTime width #{$loadTime * 2} linear;
+        }
       }
 
       & > *,
@@ -159,25 +192,22 @@
         @extend %u-pos-absolute;
         @extend %u-top;
         @extend %u-left;
-        //@extend %u-z-index--1;
       }
 
       &:after {
         margin: 14px;
-        //width: 224px;
         width: 0;
         height: 2px;
         left: 18px;
         top: -2px;
         box-shadow: 0 2px $color-orange;
-        transition: 1s width;
       }
 
       &--light {
-        background-color: #fff;
         box-shadow: 1px 3px 20px rgba(0, 0, 0, .1);
 
         &:before {
+          background-color: #fff;
           box-shadow: 0 0 6px 8px #fff,
                       0 0 2px 12px #eee,
                       0 0 0 14px #ddd;
@@ -185,10 +215,10 @@
       }
 
       &--dark {
-        background-color: #333; // Makes sure there's no "gaps"
-        box-shadow: 1px 3px 20px rgba(0, 0, 0, .1);
+        box-shadow: 1px 3px 20px rgba(0, 0, 0, .2s);
 
         &:before {
+          background-color: #333; // Makes sure there's no "gaps"s
           box-shadow: 0 0 14px #666,
                       0 0 0 14px #333;
         }
