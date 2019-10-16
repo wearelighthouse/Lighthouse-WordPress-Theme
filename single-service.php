@@ -4,8 +4,8 @@
 
   $globalBlocksServiceGroup = getPostMeta('service_single_blocks_service_group');
   $globalBlocksServiceLayout = getPostMeta('service_single_blocks_service_layout');
-  $globalCaseStudyIds = getPostMeta('service_single_case_study_list');
-  $globalIntro = '<h2 class="type-title">Ideas launched...</h2>';
+  $globalCaseStudyIds = getPostMeta('service_single_case_study_list_clients');
+  $globalIntro = getPostMeta('service_single_case_study_list_title');
 
   // Get the actual site header
   get_template_part('src/template_parts/header');

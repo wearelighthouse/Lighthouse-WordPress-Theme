@@ -17,7 +17,7 @@
 
     <?php include(locate_template('src/template_parts/contact_us_banner.php')) ?>
 
-    <?php $globalCaseStudyIds = getPostMeta('case_study_list') ?>
+    <?php $globalCaseStudyIds = getPostMeta('case_study_list_clients') ?>
     <?php include(locate_template('src/template_parts/block_section_case_study_large.php')) ?>
 
   <?php endwhile; ?>

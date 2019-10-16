@@ -7,7 +7,7 @@
 
     <?php if (isset($globalIntro)) : ?>
       <div class="o-container-content o-container-content--v-margin">
-        <?= wpautop($globalIntro) ?>
+        <h2 class="type-title"><?= $globalIntro ?></h2>
       </div>
 
       <?php $globalIntro = ''; ?>

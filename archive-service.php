@@ -4,7 +4,7 @@
 
   $post = get_page_by_title('services');
 
-  $caseStudyIds = getPostMeta('service_archive_case_study_list', $post->ID);
+  $caseStudyIds = getPostMeta('service_archive_case_study_list_clients', $post->ID);
   $blockServices = getPostMeta('service_archive_blocks_service_group');
   $globalBlocksServiceLayout = getPostMeta('service_archive_blocks_service_layout');
 

@@ -17,7 +17,14 @@ return [
     'title' => 'Case Study List',
     'fields' => [
         [
+            'name' => 'Title',
+            'id' => 'title',
+            'type' => 'text',
+            'placeholder' => 'E.g. Ideas launched...'
+        ],
+        [
             'name' => 'Client',
+            'id' => 'clients',
             'type' => 'select',
             'repeatable' => true,
             'show_option_none' => true,
