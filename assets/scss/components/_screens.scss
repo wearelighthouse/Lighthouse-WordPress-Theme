@@ -147,33 +147,33 @@
       $loadTime: .4s;
       $loadDelay: .4s;
 
-      & {
-        .js-lazy {
-          transition: $fadeTime opacity #{$loadTime * 1};
-        }
-
-        &:after {
-          transition: $loadTime width #{$loadTime * 0} linear;
-        }
+      .js-lazy {
+        transition: $fadeTime opacity #{$loadTime * 1};
       }
 
-      & + & {
-        .js-lazy {
-          transition: $fadeTime opacity #{$loadTime * 2};
-        }
-
-        &:after {
-          transition: $loadTime width #{$loadTime * 1} linear;
-        }
+      &:after {
+        transition: $loadTime width #{$loadTime * 0} linear;
       }
 
-      & + & + & {
-        .js-lazy {
-          transition: $fadeTime opacity #{$loadTime * 3};
+      @include breakpoint(from-large) {
+        & + & {
+          .js-lazy {
+            transition: $fadeTime opacity #{$loadTime * 2};
+          }
+
+          &:after {
+            transition: $loadTime width #{$loadTime * 1} linear;
+          }
         }
 
-        &:after {
-          transition: $loadTime width #{$loadTime * 2} linear;
+        & + & + & {
+          .js-lazy {
+            transition: $fadeTime opacity #{$loadTime * 3};
+          }
+
+          &:after {
+            transition: $loadTime width #{$loadTime * 2} linear;
+          }
         }
       }
 
