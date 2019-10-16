@@ -2,6 +2,7 @@ const browserSync = require('browser-sync').create();
 const cleanCSS = require('gulp-clean-css');
 const del = require('del');
 const gulp = require('gulp');
+const gzipSize = require('gzip-size');
 const replace = require('gulp-replace');
 const sass = require('gulp-sass');
 const svgSprite = require('gulp-svg-sprite');
@@ -62,7 +63,8 @@ function cssMinifiy() {
     .pipe(cleanCSS({debug: true}, (details) => {
       var originalSize = details.stats.originalSize + 'B';
       var minifiedSize = details.stats.minifiedSize + 'B';
-      console.log(`Minified ${details.name} from ${originalSize} to ${minifiedSize}`);
+      var gzipped = gzipSize.fileSync(details.path) + 'B';
+      console.log(`Minified ${details.name} from ${originalSize} to ${minifiedSize} (${gzipped} gzipped)`);
     }))
     .pipe(gulp.dest(paths.dist + '/css'));
 }
