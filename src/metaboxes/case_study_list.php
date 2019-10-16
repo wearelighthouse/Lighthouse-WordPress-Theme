@@ -23,7 +23,7 @@ return [
             'placeholder' => 'E.g. Ideas launched...'
         ],
         [
-            'name' => 'Client',
+            'name' => 'Clients',
             'id' => 'clients',
             'type' => 'select',
             'repeatable' => true,
