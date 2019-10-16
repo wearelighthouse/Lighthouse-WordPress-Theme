@@ -39,6 +39,7 @@
   }
 
   .ginput_container {
+    @extend %u-flex;
     @extend %u-pos-relative;
     @extend %u-width-100pc;
     order: 1; // After the name and validation messages
@@ -50,6 +51,7 @@
       @extend %u-left;
       @extend %u-bottom;
       @extend %u-width-100pc;
+      @extend %u-z-index--1;
       height: 2px;
       transform-origin: top left;
     }
@@ -76,7 +78,6 @@
 
     &:before,
     &:after {
-      z-index: -1;
       height: 100%;
     }
 
@@ -93,13 +94,13 @@
   textarea {
     @extend %u-block;
     @extend %u-pv-1;
-    @extend %u-width-100pc;
+    @extend %u-fg-1;
     margin: 2px;
     border: none;
     font-size: unset;
 
     &:focus {
-      outline: none;
+      outline: none; // Reset
     }
   }
 
