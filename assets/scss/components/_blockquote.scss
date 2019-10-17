@@ -41,6 +41,7 @@
 
   a:focus {
     outline: 1px dotted currentColor;
+    outline-offset: 4px;
   }
 
   footer {
