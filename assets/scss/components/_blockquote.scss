@@ -4,28 +4,43 @@
   margin: 3rem 0;
   padding: 2rem 0;
 
+  $self: &;
+
   p {
     @extend .type-quote;
     margin-top: 0;
   }
 
   &__image {
-    display: block;
+    @extend %u-block;
     width: 60px;
     margin-right: 1.5rem;
   }
 
   &__person {
+    @extend %u-flex;
+    @extend %u-fd-column;
+    @extend %u-fw-wrap;
+    @extend %u-jc-center;
+    height: 64px;
     line-height: 1.6;
   }
 
   &__name {
-    //display: block;
-    font-weight: 500;
+    @extend %u-block;
+    @extend %u-bold;
   }
 
-  &__title:before {
-    content: ' - ';
+  a:focus,
+  a:hover {
+
+    #{$self}__title {
+      @extend %u-underline;
+    }
+  }
+
+  a:focus {
+    outline: 1px dotted currentColor;
   }
 
   footer {

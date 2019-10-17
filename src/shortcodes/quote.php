@@ -37,7 +37,7 @@ function quoteShortcode($atts, $content = null)
 		$image .= get_the_post_thumbnail($lighthouseID, 'bio-tiny');
 		$image .= '</div>';
 
-		$href = 'href="' . get_permalink($lighthouseID); '"';
+		$href = 'href="' . get_permalink($lighthouseID) . '"';
 
 		$personTitle = getPostMeta('team_team_title', $lighthouseID);
 		$personTitle = $personTitle ? '<span class="c-blockquote__title">' . $personTitle . '</span>' : '';
