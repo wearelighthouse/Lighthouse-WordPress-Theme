@@ -1,7 +1,7 @@
 
 .type-quote {
   @include fontScale(24, 26);
-  @include lineScale(40, 35);
   @extend %u-tiempos;
   @extend %u-color-orange;
+  line-height: 40px;
 }

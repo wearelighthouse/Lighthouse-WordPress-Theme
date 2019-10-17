@@ -1,8 +1,8 @@
 
 .c-blockquote {
   @extend %u-gray-borders;
-  margin: 3rem 0;
-  padding: 2rem 0;
+  @extend %u-pv-5;
+  @extend %u-mv-6;
 
   $self: &;
 
@@ -48,7 +48,7 @@
     @extend %u-ai-center;
     @extend %u-jc-flex-start;
     @extend %u-pos-relative;
-    @extend %u-mt-4;
+    @extend %u-mt-5;
   }
 
   &__team-image {
