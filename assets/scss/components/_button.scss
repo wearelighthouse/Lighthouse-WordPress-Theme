@@ -75,7 +75,7 @@
     @extend %u-pos-relative;
     padding-bottom: .5rem;
 
-    @supports (clip-path: polygon()) {
+    @supports (clip-path: polygon(0 0)) {
       padding-bottom: 1.5rem; // Enough space for the underline
     }
 
@@ -88,7 +88,7 @@
       @extend %u-width-100pc;
       height: 2px;
 
-      @supports (clip-path: polygon()) {
+      @supports (clip-path: polygon(0 0)) {
         clip-path: polygon(
           0 0,
           calc(100% - 22px) 0,
