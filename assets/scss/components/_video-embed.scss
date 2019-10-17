@@ -1,0 +1,21 @@
+
+.c-video-embed {
+  @extend %u-width-100pc;
+  @extend %u-pos-relative;
+  margin-top: calc(var(--container-v-pad));
+  margin-bottom: calc(var(--container-v-pad));
+  grid-column: 1 / -1;
+
+  // Hacks to get the video to scale with 100% width properly >.>
+  height: 0;
+  padding-bottom: 56.21%;
+  clip-path: inset(1px 1px);
+
+  iframe {
+    @extend %u-width-100pc;
+    @extend %u-height-100pc;
+    @extend %u-pos-absolute;
+    @extend %u-top;
+    @extend %u-left;
+  }
+}
