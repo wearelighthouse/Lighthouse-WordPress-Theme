@@ -2,20 +2,6 @@
 
 add_theme_support( 'post-thumbnails' );
 
-// Get all the people's names for the quote shortcodes
-$args = [
-    'post_type' => 'team',
-    'post_status' => array('publish', 'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', 'trash'),
-    'posts_per_page' => -1,
-];
-
-$teamArray = new WP_Query( $args );
-$team = array();
-
-foreach ($teamArray->posts as $person) {
-	$team[$person->ID] = $person->post_title;
-}
-
 // Autoloading for plugins etc.
 require_once __DIR__ . '/vendor/autoload.php';
 

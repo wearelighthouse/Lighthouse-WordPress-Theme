@@ -20,13 +20,18 @@
   }
 
   &__name {
-    display: block;
+    //display: block;
     font-weight: 500;
+  }
+
+  &__title:before {
+    content: ' - ';
   }
 
   footer {
     @extend %u-flex;
     @extend %u-ai-center;
+    @extend %u-jc-flex-start;
     @extend %u-pos-relative;
     @extend %u-mt-4;
   }
