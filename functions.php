@@ -114,3 +114,13 @@ function addCustomNavClasses($classes = [], $menu_item = false)
   return $classes;
 }
 add_filter('nav_menu_css_class', 'addCustomNavClasses', 100, 2);
+
+// Changing wrapping oembeds from <p> to <div> with a specific classname, and...
+// add "nocookie" To WordPress oEmbeded Youtube Videos
+// from: https://wordpress.org/support/topic/video-shortcode-youtube-nocookie-not-working/
+function ev_youtube_nocookie_oembed($html) {
+  $html = str_replace('youtube.com', 'youtube-nocookie.com', $html);
+  $html = '<div class="c-video-embed">' . $html . '</div>';
+	return $html;
+}
+add_filter( 'embed_oembed_html', 'ev_youtube_nocookie_oembed' ); // WordPress
