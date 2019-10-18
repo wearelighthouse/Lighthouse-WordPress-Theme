@@ -1,5 +1,6 @@
 const browserSync = require('browser-sync').create();
 const cleanCSS = require('gulp-clean-css');
+const concatCSS = require('gulp-concat-css');
 const del = require('del');
 const gulp = require('gulp');
 const gzipSize = require('gzip-size');
@@ -25,7 +26,15 @@ function clean(cb) {
 
 function fonts() {
   return gulp
-    .src(paths.src + '/font/**/*')
+    .src([paths.src + '/font/**/*', '!' + paths.src + '/font/**/*.css', '!' + paths.src + '/font/fetch.sh'])
+    .pipe(gulp.dest(paths.dist + '/font'));
+}
+
+function fontCSS() {
+  return gulp
+    .src(paths.src + '/font/**/*.css')
+    .pipe(concatCSS('fonts.css'))
+    .pipe(cleanCSS())
     .pipe(gulp.dest(paths.dist + '/font'));
 }
 
@@ -155,6 +164,7 @@ exports.watch = gulp.series(
   gulp.parallel(
     browserSyncInit,
     fonts,
+    fontCSS,
     images,
     svgs,
     svgSprites,
@@ -169,6 +179,7 @@ exports.default = gulp.series(
   clean,
   gulp.parallel(
     fonts,
+    fontCSS,
     images,
     svgs,
     svgSprites,
