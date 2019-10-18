@@ -33,6 +33,7 @@ function quoteShortcode($atts, $content = null)
 	$lighthouseID = array_search($atts['name'], $team);
 
 	if ($lighthouseID !== false) {
+		$class = 'c-blockquote c-blockquote--lighthouse';
 		$image = '<div class="c-blockquote__image c-blockquote__team-image">';
 		$image .= get_the_post_thumbnail($lighthouseID, 'bio-tiny');
 		$image .= '</div>';
@@ -46,6 +47,7 @@ function quoteShortcode($atts, $content = null)
 
 		$clutchScore = '';
 	} else {
+		$class = 'c-blockquote c-blockquote--client';
 		$image = '';
 		$personName = '<span class="c-blockquote__name">' . $atts['name'] . '</span>';
 
@@ -67,7 +69,7 @@ function quoteShortcode($atts, $content = null)
 
 	$footer = '<footer>' . $person . $clutchScore . '</footer>';
 
-	$quote = '<blockquote class="c-blockquote">' . wpautop($content) . $footer . '</blockquote>';
+	$quote = '<blockquote class="' . $class . '">' . wpautop($content) . $footer . '</blockquote>';
 
 	wp_reset_query();
 	return $quote;

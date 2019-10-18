@@ -6,6 +6,14 @@
 
   $self: &;
 
+  &--lighthouse p {
+    @extend %u-color-orange;
+  }
+
+  &--client p {
+    @extend %u-color-pink;
+  }
+
   p {
     @extend .type-quote;
     margin-top: 0;
