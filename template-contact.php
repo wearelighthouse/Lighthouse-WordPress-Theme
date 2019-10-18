@@ -1,18 +1,14 @@
 <?php
   /* Template Name: Contact */
 
-  // Get <head>, WordPress stuff, opening <body>
-  get_header();
-
-  // Get the actual site header
-  get_template_part('src/template_parts/header');
-
   // Get the contact page link block things
   $blocks = getPostMeta('contact_template_contact_template_blocks');
 
   // Get the spritesheet URL
   $svgSpriteSheet = get_template_directory_uri() . '/dist/svg/sprites.svg';
 ?>
+
+<?php get_header(); ?>
 
 <main>
   <?php while (have_posts()) : the_post(); ?>

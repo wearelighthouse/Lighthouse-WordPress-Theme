@@ -1,16 +1,6 @@
-<?php
-  /**
-   * Blog archive page
-   */
+<?php get_header(); ?>
 
-  // Get <head>, WordPress stuff, opening <body>
-  get_header();
-
-  $post = get_page_by_title('Blog');
-
-  // Get the actual site header
-  get_template_part('src/template_parts/header');
-?>
+<?php $post = get_page_by_title('Blog'); ?>
 
 <main>
 

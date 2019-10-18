@@ -1,7 +1,4 @@
 <?php
-  // Get <head>, WordPress stuff, opening <body>
-  get_header();
-
   $heroContent = '<h1>' . get_the_excerpt() . '</h1>';
   //$heroImage = getPostMeta('work_work_image_large', $post->ID);
 
@@ -31,10 +28,9 @@
   }
 
   $contactText = getPostMeta('work_single_work_options_footer_contact_text');
-
-  // Get the actual site header
-  get_template_part('src/template_parts/header');
 ?>
+
+<?php get_header(); ?>
 
 <?php // Work pages can have full-width stuff that needs the --scrollbar-width variable ?>
 <script src="<?= get_template_directory_uri()?>/dist/js/scrollbar-width.min.js"></script>

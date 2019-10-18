@@ -18,7 +18,7 @@ function registerTeamPostType()
             'add_new_item' => 'Add New Team Member',
             'edit_item' => 'Edit Team Member'
         ],
-        'has_archive' => true,
+        'has_archive' => false,
         'rewrite' => [
             'slug' => 'team',
             'with_front' => false

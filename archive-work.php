@@ -1,13 +1,8 @@
 <?php
-  // Get <head>, WordPress stuff, opening <body>
-  get_header();
-
-  $post = get_page_by_title('our work') ?: get_page_by_title('work');
   $caseStudyIds = getPostMeta('work_archive_case_study_list_clients', $post->ID);
-
-  // Get the actual site header
-  get_template_part('src/template_parts/header');
 ?>
+
+<?php get_header(); ?>
 
 <main>
 

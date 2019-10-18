@@ -1,10 +1,5 @@
-<?php
-  // Get <head>, WordPress stuff, opening <body>
-  get_header();
 
-  // Get the actual site header
-  get_template_part('src/template_parts/header');
-?>
+<?php get_header(); ?>
 
 <main>
   <?php while (have_posts()) : the_post(); ?>

@@ -18,7 +18,7 @@ function registerWorkPostType()
             'add_new_item' => 'Add New Case Study',
             'edit_item' => 'Edit Case Study'
         ],
-        'has_archive' => true,
+        'has_archive' => 'false',
         'rewrite' => [
             'slug' => 'our-work',
             'with_front' => false

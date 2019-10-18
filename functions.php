@@ -6,6 +6,7 @@ add_theme_support( 'post-thumbnails' );
 require_once __DIR__ . '/vendor/autoload.php';
 
 // Functions
+require_once __DIR__ . '/src/functions/attach_template.php';
 require_once __DIR__ . '/src/functions/autoa.php';
 require_once __DIR__ . '/src/functions/get_option.php';
 require_once __DIR__ . '/src/functions/gforms.php';
@@ -90,7 +91,7 @@ function addCustomNavClasses($classes = [], $menu_item = false)
     return $classes;
   }
 
-  if ($menu_item->title === 'Blog' && (is_singular('post') || get_the_title() === 'Blog') ||
+  if ($menu_item->title === 'Blog' && (is_singular('post') || is_category()) ||
       $menu_item->title === 'Services' && (is_singular('service') || is_post_type_archive('service')) ||
       $menu_item->title === 'Work' && (is_singular('work') || is_post_type_archive('work')) ||
       $menu_item->title === 'Team' && (is_singular('team') || is_post_type_archive('team'))) {
@@ -110,3 +111,9 @@ function ev_youtube_nocookie_oembed($html) {
 	return $html;
 }
 add_filter( 'embed_oembed_html', 'ev_youtube_nocookie_oembed' ); // WordPress
+
+// Add "pseduo archive pages" for services, team, and work post types.
+// Note that 'has_archive' => false when declaring the post types.
+attachTemplateToPage('services', 'archive-service.php');
+attachTemplateToPage('team', 'archive-team.php');
+attachTemplateToPage(['work', 'our work'], 'archive-work.php');

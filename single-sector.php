@@ -1,13 +1,9 @@
 <?php
-  // Get <head>, WordPress stuff, opening <body>
-  get_header();
-
   $globalCaseStudyIds = getPostMeta('sector_single_case_study_list_clients', $post->ID);
   $globalIntro = getPostMeta('sector_single_case_study_list_title', $post->ID);
-
-  // Get the actual site header
-  get_template_part('src/template_parts/header');
 ?>
+
+<?php get_header(); ?>
 
 <main>
   <?php while (have_posts()) : the_post(); ?>
