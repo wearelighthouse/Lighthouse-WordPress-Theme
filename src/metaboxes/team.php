@@ -26,8 +26,9 @@ return [
                     'default' => 'Generic',
                     'options' => [
                         'Generic' => 'Generic',
-                        'Email' => 'Email',
+                        'CodePen' => 'CodePen',
                         'Dribbble' => 'Dribbble',
+                        'Email' => 'Email',
                         'GitHub' => 'GitHub',
                         'Instagram' => 'Instagram',
                         'LinkedIn' => 'LinkedIn',
