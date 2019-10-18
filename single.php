@@ -12,13 +12,12 @@
 
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
-    <?php if ($podcastEmbed): ?>
-      <section class="o-container-section o-container-section--bordered content-grid">
-        <?= $podcastEmbed; ?>
-      </section>
-    <?php endif; ?>
-
     <section class="o-container-section o-container-section--bordered">
+      <?php if ($podcastEmbed): ?>
+        <div class="o-container-content o-container-content--v-margin">
+          <?= $podcastEmbed; ?>
+        </div>
+      <?php endif; ?>
       <div class="o-container-content o-container-content--v-margin c-content-grid">
         <?= the_content(); ?>
       </div>
