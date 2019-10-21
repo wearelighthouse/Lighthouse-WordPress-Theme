@@ -18,6 +18,11 @@
   <script async src="<?= $dist ?>/js/main.js">></script>
   <script defer src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
   <script defer src="<?= get_template_directory_uri() ?>/node_modules/focus-visible/dist/focus-visible.min.js"></script>
+
+  <?php // preconnect/s for the Clutch Widget's fonts ?>
+  <?php if (is_front_page()) : ?>
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+  <?php endif; ?>
 <?php
 
 function getUserIpAddr(){
