@@ -19,7 +19,7 @@ function quoteShortcode($atts, $content = null)
 
 	// get Clutch score
 	global $post;
-	$clutch = getPostMeta('work_single_work_clutch_score', $post->ID);
+	$clutch = getPostMeta('work_single_work_options_clutch_score', $post->ID);
 	$clutchScore = '';
 
 	$atts = shortcode_atts([
