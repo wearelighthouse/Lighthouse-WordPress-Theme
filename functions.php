@@ -39,6 +39,7 @@ require_once __DIR__ . '/src/options/social.php';
 require_once __DIR__ . '/src/post_types/sector.php';
 require_once __DIR__ . '/src/post_types/service.php';
 require_once __DIR__ . '/src/post_types/team.php';
+require_once __DIR__ . '/src/post_types/transcript.php';
 require_once __DIR__ . '/src/post_types/work.php';
 
 // Shortcodes

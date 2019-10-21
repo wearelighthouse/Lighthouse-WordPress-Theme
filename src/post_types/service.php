@@ -17,7 +17,7 @@ function registerServicePostType()
             'add_new_item' => 'Add New Service',
             'edit_item' => 'Edit Service'
         ],
-        'has_archive' => true,
+        'has_archive' => false,
         'rewrite' => [
             'slug' => 'services',
             'with_front' => false
