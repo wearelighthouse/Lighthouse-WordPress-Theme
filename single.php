@@ -1,5 +1,6 @@
 <?php
   $podcastEmbed = getPostMeta('post_post_podcast_embed', $post->ID);
+  $transcript = getPostMeta('post_post_transcript', $post->ID);
 ?>
 
 <?php get_header(); ?>
@@ -16,6 +17,15 @@
         </div>
       <?php endif; ?>
       <div class="o-container-content o-container-content--v-margin c-content-grid">
+        <div class="c-podcast-links">
+          <?php if ($transcript) : ?>
+            <a href="<?= get_permalink($transcript) ?>" class="c-podcast-links__transcript">Read transcript</a>
+          <?php endif; ?>
+          <div class="c-podcast-links__subscribe">
+            <a href="https://itunes.apple.com/gb/podcast/lighthouse-podcast/id1029921850?mt=2" class="c-podcast-links__itunes">iTunes</a>
+            <a href="http://simplecast.fm/podcasts/1302/rss" class="c-podcast-links__rss">RSS</a>
+          </div>
+        </div>
         <?= the_content(); ?>
       </div>
     </section>

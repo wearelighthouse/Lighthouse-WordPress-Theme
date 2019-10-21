@@ -1,0 +1,33 @@
+.c-podcast-links {
+  @extend %u-flex;
+  @extend %u-fd-column;
+  @extend %u-ai-flex-start;
+  @extend %u-mv-2;
+
+  line-height: 1.6;
+  grid-column: 1;
+
+  a {
+    color: $color-orange;
+    transition: .1s text-decoration-color;
+    text-decoration-line: underline;
+
+    &:focus,
+    &:hover {
+      text-decoration-color: $color-gray-dark;
+    }
+  }
+
+  &__transcript {
+    @extend .type-static-subtitle;
+    @extend %u-mb-1;
+  }
+
+  &__subscribe {
+    @extend %u-flex;
+
+    & > *:not(:first-child) {
+      @extend %u-ml-2;
+    }
+  }
+}
