@@ -104,6 +104,12 @@
     @extend %u-mb-2--from-small;
   }
 
+  &__social {
+    .o-social-links {
+      flex-wrap: nowrap; // Override the socials wrapping for the footer
+    }
+  }
+
   &__links {
     @extend %u-flex;
     @extend %u-mh--2--upto-medium;
