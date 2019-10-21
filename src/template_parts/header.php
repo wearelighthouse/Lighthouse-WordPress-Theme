@@ -7,7 +7,7 @@
   ];
 
   $heroStyle = getPostMeta('hero_hero_style');
-  $headerStyle = (strpos($heroStyle, 'gray') !== false || is_singular('post')) ? ' u-color-blackcurrant' : ' u-color-white';
+  $headerStyle = (strpos($heroStyle, 'gray') !== false || is_singular('post') || is_singular('transcript')) ? ' u-color-blackcurrant' : ' u-color-white';
 
 ?>
 

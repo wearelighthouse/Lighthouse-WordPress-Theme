@@ -13,14 +13,24 @@
 
   // Add date to blog post hero banner & make the it the correct gradient style
   if (is_singular('post')) {
-    $text .= '<br><p>' . get_the_date('jS F Y', $post->ID) . '</p>';
+    $text .= '<time datetime="' . get_the_date('Y-m-d', $post->ID)  . '" class="c-hero__date">';
+    $text .= get_the_date('jS F Y', $post->ID);
+    $text .= '</time>';
     $heroStyle = 'gray-gradient-small';
+  }
+
+  if (is_singular('transcript')) {
+    $heroStyle = 'gray-standard';
   }
 
   // Put the text through WordPresses formatter to get <p>s etc.
   $text = wpautop($text);
 
   $modifierClass = ' c-hero--' . ($heroStyle ? $heroStyle : 'orange-pink');
+
+  if (is_singular('post')) {
+    $modifierClass .= ' c-hero--post';
+  }
 
   $bgcolor1 = getPostMeta('hero_hero_bg_color_1');
   $bgcolor2 = getPostMeta('hero_hero_bg_color_2');
