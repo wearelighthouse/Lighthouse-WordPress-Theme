@@ -21,6 +21,7 @@
 
   <?php // preconnect/s for Google Analytics, and... the Clutch Widget's fonts ?>
   <?php if (is_front_page()) : ?>
+    <link href="https://widget.clutch.co" rel="preconnect" crossorigin>
     <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
   <?php endif; ?>
