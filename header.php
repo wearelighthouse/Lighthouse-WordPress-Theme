@@ -1,8 +1,24 @@
-<!doctype html>
-
 <?php
   $dist = get_template_directory_uri() . '/dist';
+
+  if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    // ip from share internet
+    $userIP = $_SERVER['HTTP_CLIENT_IP'];
+  } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    // ip pass from proxy
+    $userIP = $_SERVER['HTTP_X_FORWARDED_FOR'];
+  } else {
+    $userIP = $_SERVER['REMOTE_ADDR'];
+  }
+
+  $excludedIPs = [
+    '172.18.0.1',
+    '194.12.10.131',
+    '185.212.156.11'
+  ];
 ?>
+
+<!DOCTYPE html>
 
 <html lang="en-GB">
 
@@ -19,41 +35,13 @@
   <script defer src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
   <script defer src="<?= get_template_directory_uri() ?>/node_modules/focus-visible/dist/focus-visible.min.js"></script>
 
-  <?php // preconnect/s for the Clutch Widget ?>
   <?php if (is_front_page()) : ?>
     <link href="https://widget.clutch.co" rel="preconnect" crossorigin>
   <?php endif; ?>
-<?php
 
-function getUserIpAddr(){
-    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-        // ip from share internet
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    } elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-        // ip pass from proxy
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    } else {
-        $ip = $_SERVER['REMOTE_ADDR'];
-    }
-    return $ip;
-}
-
-$userIP = getUserIpAddr();
-
-$ips = array(
-	'172.18.0.1',
-	'194.12.10.131',
-  '185.212.156.11',
-);
-
-
-	// only show if not us
-	if (!in_array($userIP, $ips)):
-?>
-  <script type="text/javascript">(function(o){var b="https://niblewren.co/anywhere/",t="67c40486554c4fc585318ff3e2c10aeefe65b8a136a641d895d0bf9c5e68d2ab",a=window.AutopilotAnywhere={_runQueue:[],run:function(){this._runQueue.push(arguments);}},c=encodeURIComponent,s="SCRIPT",d=document,l=d.getElementsByTagName(s)[0],p="t="+c(d.title||"")+"&u="+c(d.location.href||"")+"&r="+c(d.referrer||""),j="text/javascript",z,y;if(!window.Autopilot) window.Autopilot=a;if(o.app) p="devmode=true&"+p;z=function(src,asy){var e=d.createElement(s);e.src=src;e.type=j;e.async=asy;l.parentNode.insertBefore(e,l);};y=function(){z(b+t+'?'+p,true);};if(window.attachEvent){window.attachEvent("onload",y);}else{window.addEventListener("load",y,false);}})({});</script>
-<?php
-	endif;
-?>
+  <?php if (!in_array($userIP, $excludedIPs)) : ?>
+    <script type="text/javascript">(function(o){var b="https://niblewren.co/anywhere/",t="67c40486554c4fc585318ff3e2c10aeefe65b8a136a641d895d0bf9c5e68d2ab",a=window.AutopilotAnywhere={_runQueue:[],run:function(){this._runQueue.push(arguments);}},c=encodeURIComponent,s="SCRIPT",d=document,l=d.getElementsByTagName(s)[0],p="t="+c(d.title||"")+"&u="+c(d.location.href||"")+"&r="+c(d.referrer||""),j="text/javascript",z,y;if(!window.Autopilot) window.Autopilot=a;if(o.app) p="devmode=true&"+p;z=function(src,asy){var e=d.createElement(s);e.src=src;e.type=j;e.async=asy;l.parentNode.insertBefore(e,l);};y=function(){z(b+t+'?'+p,true);};if(window.attachEvent){window.attachEvent("onload",y);}else{window.addEventListener("load",y,false);}})({});</script>
+  <?php endif; ?>
 
 </head>
 
