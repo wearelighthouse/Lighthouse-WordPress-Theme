@@ -74,6 +74,7 @@
           <?= $text ?>
         </div>
       <?php endif; ?>
+
       <?php if ($clientLogoId) : ?>
         <div class="c-hero__client-logo-container" style="height: 75px">
           <img class="c-hero__client-logo"
@@ -81,6 +82,7 @@
             <?= $clientLogoAltAttr ?>/>
         </div>
       <?php endif; ?>
+
       <?php if (isset($heroImage)) : ?>
         <?= $heroImage ?>
       <?php elseif ($imageId) : ?>
@@ -89,5 +91,10 @@
         </div>
       <?php endif; ?>
     </div>
+    <?php if (is_front_page()) : ?>
+      <div class="c-hero__clutch">
+        <script defer src="https://widget.clutch.co/static/js/widget.js"></script><div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="393790"></div>
+      </div>
+    <?php endif ?>
   </div>
 </section>
