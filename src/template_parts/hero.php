@@ -91,9 +91,32 @@
         </div>
       <?php endif; ?>
     </div>
+
     <?php if (is_front_page()) : ?>
-      <div class="c-hero__clutch">
-        <script defer src="https://widget.clutch.co/static/js/widget.js"></script><div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="393790"></div>
+      <?php
+        // Slightly crazy Clutch widget HTML & JS.
+        // This is done to allow a "pretend" clutch link for tabbing to,
+        // rather than the horrible weird separate links the clutch iframe has.
+      ?>
+      <div class="clutch-container">
+        <script defer src="https://widget.clutch.co/static/js/widget.js"></script>
+        <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="393790">
+          <a href="https://clutch.co/profile/lighthouse-london#reviews" class="clutch-link" tabindex="-1" target="_blank" aria-label="See Lighthouse reviews on Clutch"></a>
+        </div>
+        <script>
+          <?php // Make the Clutch iframe non-tab-able ?>
+          window.addEventListener('load', () => {
+            var clutch = document.querySelector('.clutch-container');
+            var iframe = clutch.querySelector('iframe');
+            var link = clutch.querySelector('.clutch-link');
+
+            if (iframe) {
+              iframe.tabIndex="-1";
+              iframe.setAttribute('aria-hidden', 'true');
+              link.tabIndex="0";
+            }
+          });
+        </script>
       </div>
     <?php endif ?>
   </div>

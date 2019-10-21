@@ -1,0 +1,29 @@
+.clutch-container {
+  @extend %u-bg-color-white;
+  @extend %u-pos-absolute;
+  @extend %u-right;
+  @extend %u-bottom;
+  @extend %u-display-none--upto-medium;
+  width: 200px;
+
+  // Default (supplied by clutch) classname for the widget
+  .clutch-widget {
+    @extend %u-pos-relative;
+    padding-top: 7px;
+    padding-left: 7px;
+  }
+
+  // Extra clutch link we've squeezed into the clutch-widget <div>
+  // - is a sibling to the iframe containing the 'actual' widget
+  .clutch-link {
+    @extend %u-pos-absolute;
+    @extend %u-top;
+    @extend %u-right;
+    @extend %u-bottom;
+    @extend %u-left;
+
+    &:focus {
+      outline: 1px dotted currentColor;
+    }
+  }
+}

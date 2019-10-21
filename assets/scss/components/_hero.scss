@@ -80,15 +80,6 @@
     @extend %u-mt-8;  // More top-margin than a regular hero content (<p>?)
   }
 
-  &__clutch {
-    @extend %u-bg-color-white;
-    @extend %u-pos-absolute;
-    @extend %u-right;
-    @extend %u-bottom;
-    @extend %u-display-none--upto-medium;
-    width: 200px;
-  }
-
   &--orange-pink {
     #{$self}__text {
       @extend %u-color-white;
