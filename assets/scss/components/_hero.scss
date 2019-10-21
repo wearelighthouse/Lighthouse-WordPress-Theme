@@ -71,10 +71,13 @@
     }
   }
 
+  &--post #{$self}__text {
+    margin-bottom: 0;  // Cancel out the hero__text bottom padding (hack?)
+  }
+
   &__date {
     @extend %u-block;
     @extend %u-mt-8;  // More top-margin than a regular hero content (<p>?)
-    margin-bottom: -3rem;  // Cancel out the hero__text bottom padding (hack?)
   }
 
   &--orange-pink {
