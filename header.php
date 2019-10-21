@@ -19,11 +19,9 @@
   <script defer src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
   <script defer src="<?= get_template_directory_uri() ?>/node_modules/focus-visible/dist/focus-visible.min.js"></script>
 
-  <?php // preconnect/s for Google Analytics, and... the Clutch Widget's fonts ?>
+  <?php // preconnect/s for the Clutch Widget ?>
   <?php if (is_front_page()) : ?>
     <link href="https://widget.clutch.co" rel="preconnect" crossorigin>
-    <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
   <?php endif; ?>
 <?php
 
