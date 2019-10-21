@@ -99,7 +99,7 @@
         // rather than the horrible weird separate links the clutch iframe has.
       ?>
       <div class="clutch-container">
-        <script defer src="https://widget.clutch.co/static/js/widget.js"></script>
+        <script async src="https://widget.clutch.co/static/js/widget.js"></script>
         <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="393790">
           <a href="https://clutch.co/profile/lighthouse-london#reviews" class="clutch-link" tabindex="-1" target="_blank" rel="noopener" aria-label="See Lighthouse reviews on Clutch"></a>
         </div>
