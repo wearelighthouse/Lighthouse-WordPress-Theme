@@ -117,3 +117,11 @@ add_filter( 'embed_oembed_html', 'ev_youtube_nocookie_oembed' ); // WordPress
 attachTemplateToPage('services', 'archive-service.php');
 attachTemplateToPage('team', 'archive-team.php');
 attachTemplateToPage(['work', 'our work'], 'archive-work.php');
+
+function wpImageLinkDefault()
+{
+  if (get_option('image_default_link_type') !== 'none') {
+    update_option('image_default_link_type', 'none');
+  }
+}
+add_action('admin_init', 'wpImageLinkDefault', 10);

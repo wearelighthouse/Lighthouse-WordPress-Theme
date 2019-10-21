@@ -44,13 +44,18 @@
 
   p > a,
   li > a {
-    margin: -.05em -.1em;
-    padding: .05em .1em;
-    border-radius: 4px;
+    transition: .1s text-decoration-color;
+    text-decoration-color: $color-orange;
 
     &:focus,
     &:hover {
-      @extend %u-bg-color-gray-bluish;
+      text-decoration-color: $color-gray-dark;
     }
+  }
+
+  p > a > img {
+    @extend %u-width-100pc;
+    @extend %u-height-auto;
+    @extend %u-mv-4; // 6 (3rem) minus 2 (1rem) for the <p> margins
   }
 }
