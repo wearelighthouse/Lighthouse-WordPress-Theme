@@ -16,7 +16,7 @@ function imageShortcode($atts)
     return;
   }
 
-  $imgIdArray = array_map('trim', explode(',', $atts['id']));
+  $mediaIdArray = array_map('trim', explode(',', $atts['id']));
   $bgColorArray = array_map('trim', explode(',', $atts['background']));
   $singleBgColorAttr = (count($bgColorArray) === 1 && $bgColorArray[0] ? ' style="background:' . $bgColorArray[0] . '"' : '');
 
@@ -33,14 +33,30 @@ function imageShortcode($atts)
   }
   $output = '<div class="' . $className . '"' . $singleBgColorAttr . '>';
 
-  foreach ($imgIdArray as $i => $imgId) {
-    $img = lazyLoad(wp_get_attachment_image($imgId, 'original', ''));
-    if (!$img) {
-      echo 'Invalid image id in shortcode: "' . $imgId . '"';
+  foreach ($mediaIdArray as $i => $mediaId) {
+    $mediaType = get_post_mime_type($mediaId);
+    // Convert from WordPress video type to proper HTML video type string
+    if ($mediaType === 'video/mpeg') {
+      $mediaType = 'video/mp4';
+    }
+
+    // If its a video, wrap in <video> tags
+    if (strpos($mediaType, 'video') !== false) {
+      $video = '<video width="320" height="240" autoplay muted loop>';
+      $video .= '<source src="' . wp_get_attachment_url($mediaId) . '" type="' . $mediaType . '">';
+      $video .= '</video>';
+      $media = lazyLoad($video);
+
+    // If it's an image, get the <img>
+    } elseif (strpos($mediaType, 'image') !== false) {
+      $media = lazyLoad(wp_get_attachment_image($mediaId, 'original' , ''));
+    } else {
+      echo 'Invalid image or video ID in shortcode: "' . $mediaId . '"';
       return;
     }
+
     $bgColor = count($bgColorArray) > 1 ? ' style="background: ' . $bgColorArray[$i] . '"' : '';
-    $output .= '<div class="c-images__image"' . $bgColor . '>' . $img . '</div>';
+    $output .= '<div class="c-images__image"' . $bgColor . '>' . $media . '</div>';
   }
 
   $output .= '</div>';
