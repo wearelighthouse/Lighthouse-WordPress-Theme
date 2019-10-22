@@ -39,7 +39,9 @@
   h3:not(:first-child) + p,
   h4:not(:first-child) + p {
     margin-top: 2rem;
-    margin-top: calc((var(--container-width) / 20) + 3rem);
+    @include breakpoint(from-medium) {
+      margin-top: calc((var(--container-width) / 20) + 3rem);
+    }
   }
 
   p > a,
