@@ -29,14 +29,16 @@
   <meta name="description" content="<?= bloginfo('description') ?>">
   <?php wp_head(); ?>
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-  <link rel="stylesheet" type="text/css" href="<?= $dist ?>/font/fonts.css">
-  <link rel="stylesheet" type="text/css" href="<?= $dist ?>/css/style.css">
+  <link rel="preload" href="<?= $dist ?>/font/sailec/39E20B_0_0.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="<?= $dist ?>/font/sailec/39E20B_2_0.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="<?= $dist ?>/font/fonts.css" type="text/css">
+  <link rel="stylesheet" href="<?= $dist ?>/css/style.css" type="text/css">
   <script async src="<?= $dist ?>/js/main.js">></script>
   <script defer src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
   <script defer src="<?= get_template_directory_uri() ?>/node_modules/focus-visible/dist/focus-visible.min.js"></script>
 
   <?php if (is_front_page()) : ?>
-    <link href="https://widget.clutch.co" rel="preconnect" crossorigin>
+    <link rel="preconnect" href="https://widget.clutch.co" crossorigin>
   <?php endif; ?>
 
   <?php if (!in_array($userIP, $excludedIPs)) : ?>
