@@ -32,17 +32,17 @@
   <div class="c-case-study-block__background">
     <?php if ($caseStudySize === 'large' && $imgBackgroundId) : ?>
       <div class="c-case-study-block__image-background">
-        <?= lazyLoad(wp_get_attachment_image($imgBackgroundId, 'link-block-case-study-bg-large', '')) ?>
+        <?= lazyLoad(wp_get_attachment_image($imgBackgroundId, 'link-block-case-study-bg-large')) ?>
       </div>
     <?php endif; ?>
     <?php if ($caseStudySize === 'large' && $imgLargeId) : ?>
       <div class="c-case-study-block__image-large">
-        <?= wp_get_attachment_image($imgLargeId, $size = 'link-block-case-study-fg-large') ?>
+        <?= lazyload(wp_get_attachment_image($imgLargeId, 'link-block-case-study-fg-large')) ?>
       </div>
     <?php endif; ?>
     <?php if ($caseStudySize === 'small' && $imgMediumId) : ?>
       <div class="c-case-study-block__image-medium">
-        <?= wp_get_attachment_image($imgMediumId, $size = 'link-block-case-study-fg-medium') ?>
+        <?= lazyLoad(wp_get_attachment_image($imgMediumId, 'link-block-case-study-fg-medium')) ?>
       </div>
     <?php endif; ?>
   </div>
@@ -59,7 +59,7 @@
     <?php endif; ?>
     <?php if ($imgSmallId) : ?>
       <div class="c-case-study-block__image-small">
-        <?= wp_get_attachment_image($imgSmallId, $size = 'link-block-case-study-fg-small') ?>
+        <?= lazyLoad(wp_get_attachment_image($imgSmallId, 'link-block-case-study-fg-small')) ?>
       </div>
     <?php endif; ?>
     <?php if ($title) : ?>

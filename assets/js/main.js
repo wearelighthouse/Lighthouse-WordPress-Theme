@@ -7,7 +7,7 @@ if (document.readyState === "interactive" || document.readyState === "complete")
 function setupObservers(lozad) {
 
   const observerLoad = lozad('.js-lazy', {
-      rootMargin: '300px 0px', // syntax similar to that of CSS Margin
+      rootMargin: '500px 0px',
       loaded: function(element) {
         element.parentNode.classList.add('js-child-loading');
         element.classList.add('js-loading');
