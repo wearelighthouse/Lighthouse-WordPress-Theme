@@ -42,7 +42,7 @@ function imageShortcode($atts)
 
     // If its a video, wrap in <video> tags
     if (strpos($mediaType, 'video') !== false) {
-      $video = '<video width="320" height="240" autoplay muted loop>';
+      $video = '<video width="100%" height="auto" autoplay muted loop>';
       $video .= '<source src="' . wp_get_attachment_url($mediaId) . '" type="' . $mediaType . '">';
       $video .= '</video>';
       $media = lazyLoad($video);
