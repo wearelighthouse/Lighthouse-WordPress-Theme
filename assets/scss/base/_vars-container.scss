@@ -9,4 +9,8 @@ body {
   @include breakpoint(from-small) {
     --edge-gutter: 1rem;
   }
+
+  @include breakpoint(upto-tiny) {
+    --container-width: calc(100vw - 3rem);
+  }
 }

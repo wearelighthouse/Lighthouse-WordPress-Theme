@@ -24,6 +24,7 @@ $global-breakpoints: (
  *    from-breakpoint-a--upto-breakpoint-b (where breakpoint b > breakpoint a)
  */
 $global-breakpoints: map-merge($global-breakpoints, make-width-breakpoints((
+  tiny: 350px, // Old iPhones, super tiny screens
   small: 501px,  // Allows the "mobile view" on Chrome Desktop (it's min-width is 500px)
   medium: 801px,  // Just large enough to not display on portrait tablets
   large: $global-max-width,
