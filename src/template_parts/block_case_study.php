@@ -27,7 +27,8 @@
   $imgSmallId = getPostMeta('work_single_work_options_image_small_id', $caseStudyId);
 ?>
 
-<a href="<?= $linkURL ?>" class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?>">
+<a href="<?= $linkURL ?>"
+   class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?> js-half-onscreen-detect">
   <div class="c-case-study-block__background">
     <?php if ($caseStudySize === 'large' && $imgBackgroundId) : ?>
       <div class="c-case-study-block__image-background">

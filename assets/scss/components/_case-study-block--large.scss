@@ -89,12 +89,28 @@
     height: 31rem;
     margin-top: 7rem;
 
+    transition: .3s transform, .5s opacity;
+
+    &:not(.js-onscreen) {
+      opacity: 0;
+      // translateX defined in (even) and (odd)
+    }
+
+    &.js-onscreen {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
     #{$self}__background {
       width: calc(50% + 8rem);
       height: 100%;
     }
 
     &:nth-child(odd) {
+      &:not(.js-onscreen) {
+        transform: translateX(-100px);
+      }
+
       #{$self}__content {
         margin-left: calc(50% + 5rem);
       }
@@ -123,6 +139,10 @@
 
     &:nth-child(even) {
       align-items: flex-end;
+
+      &:not(.js-onscreen) {
+        transform: translateX(100px);
+      }
 
       #{$self}__content {
         width: 100%;
@@ -153,5 +173,4 @@
       }
     }
   }
-
 }

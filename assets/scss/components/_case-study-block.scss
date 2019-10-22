@@ -15,7 +15,7 @@
   // the words can be...
   pointer-events: none;
 
-  #{$self}__image-small {
+  &__image-small {
     @extend %u-display-none--from-small;
     @extend %u-pos-absolute;
     @extend %u-right;
@@ -29,17 +29,17 @@
     }
   }
 
-  #{$self}__title {
+  &__title {
     @extend %u-mt-6--upto-small;
     @extend %u-mt-4--from-small;
   }
 
-  #{$self}__logo {
+  &__logo {
     @extend %u-bg-color-currentColor;
   }
 
   // Gray contains the grey background and bg & fg images
-  #{$self}__background {
+  &__background {
     @extend %u-height-100pc--upto-small;
     @extend %u-width-100pc--upto-small;
     @extend %u-flex;
@@ -64,7 +64,7 @@
     }
   }
 
-  #{$self}__content {
+  &__content {
     @extend %u-flex;
     @extend %u-fd-column;
     @extend %u-ai-flex-start;
@@ -72,6 +72,14 @@
 
     & > * {
       pointer-events: all;
+    }
+  }
+
+  &:focus {
+    outline: none;
+
+    #{$self}__link {
+      outline: 1px dotted currentColor;
     }
   }
 
