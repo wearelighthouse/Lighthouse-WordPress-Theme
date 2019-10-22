@@ -20,13 +20,6 @@ return [
             'name' => 'Podcast embed',
             'id'   => 'podcast_embed',
             'type' => 'textarea_code'
-        ],
-        [
-            'name' => 'Transcript',
-            'id'   => 'transcript',
-            'type' => 'select',
-            'show_option_none' => true,
-            'options' => $transcriptArray
         ]
     ]
 ];

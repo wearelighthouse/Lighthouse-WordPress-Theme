@@ -4,7 +4,8 @@ function registerPostMetaboxes()
 {
 
     $groupInfo = [
-        'object_types' => ['post']
+        'object_types' => ['post'],
+        'context'      => 'after_title'
     ];
 
     $groupID = basename(__FILE__, '.php');

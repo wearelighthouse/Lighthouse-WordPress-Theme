@@ -1,5 +1,6 @@
 <?php
   $podcastEmbed = getPostMeta('post_post_podcast_embed', $post->ID);
+  $podcastID = get_page_by_path(str_replace('podcast-', '', $post->post_name), OBJECT, 'post');
 ?>
 
 <?php get_header(); ?>
@@ -10,12 +11,12 @@
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
     <section class="o-container-section o-container-section--bordered">
-      <?php if ($podcastEmbed): ?>
-        <div class="o-container-content o-container-content--v-margin">
-          <?= $podcastEmbed; ?>
-        </div>
-      <?php endif; ?>
       <div class="o-container-content o-container-content--v-margin c-content-grid">
+        <div class="c-podcast-links">
+          <?php if ($podcastID) : ?>
+            <a href="<?= get_permalink($podcastID) ?>" class="c-podcast-links__transcript">Listen to the podcast</a>
+          <?php endif; ?>
+        </div>
         <?= the_content(); ?>
       </div>
     </section>

@@ -18,7 +18,7 @@ function registerTranscriptPostType()
         ],
         'has_archive' => false,
         'rewrite' => [
-            'slug' => 'transcripts',
+            'slug' => 'transcript',
             'with_front' => false
         ],
         'public' => true,
