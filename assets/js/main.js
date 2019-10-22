@@ -32,7 +32,7 @@ function setupObservers(lozad) {
   observerLoad.observe();
 
   const observerView = lozad('.js-half-onscreen-detect', {
-      threshold: 0.5, // ratio of element convergence
+      threshold: 0.45,  // 'Technically' not ½, only requires 45% to be visible
       load: () => {},
       loaded: function(element) {
         element.classList.add('js-onscreen');
