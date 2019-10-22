@@ -38,8 +38,8 @@
   h2:not(:first-child) + p,
   h3:not(:first-child) + p,
   h4:not(:first-child) + p {
-    margin-top: 2rem;
     @include breakpoint(from-medium) {
+      margin-top: 2rem;
       margin-top: calc((var(--container-width) / 20) + 3rem);
     }
   }
