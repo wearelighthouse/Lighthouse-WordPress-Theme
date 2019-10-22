@@ -2,48 +2,49 @@
 
 function adShortcode($atts, $content = null)
 {
-
-	// get the vars
-	extract(shortcode_atts(array(
+	$atts = shortcode_atts([
 		'id' => '',
-		'text' => '',
-		'align' => '',
-	), $atts));
+		'align' => 'right',  // 'right' (default - Inline w/ <p>), 'left', 'center'.
+	], $atts);
 
-	// Get the page
-	$adPage = get_page($id);
+	// Get the page object
+	$adPage = get_page($atts['id']);
 
-	$adAlign = $align == 'center' ? 'center' : 'left';
+	// Figure out the post type
+	$postType = $adPage->post_type;
 
-	switch ($align) {
-		case 'center':
-			$adAlign = 'center';
+	// The orange text at the top of the ad
+	$label = '';
+
+	switch ($postType) {
+		case 'service':
+			$label = 'Our services';
+		case 'post':
+			$cats = get_the_category($atts['id']);
+			if (isset($cats[0]) && $cats[0] === 'podcast') {
+				$label = 'Product leadership podcast';
+			} else {
+				$label = 'Blog post';
+			}
 			break;
-		case 'left':
-			$adAlign = 'left';
-			break;
-		default:
-			$adAlign = 'right';
-
 	}
 
-	$adType = $adPage->post_type == 'work' ? ' ad__service' : ' ad__work';
+	if ($label) {
+		$label = '<div class="c-ad__label">' . $label . '</div>';
+	}
 
-	$ad = '<div class="ad ad__' . $adAlign . $adType . '">';
-	$ad .= '<div class="ad__content">';
-
-	if ($adPage->post_type == 'work') {
-  	// get case study block
-
+	if ($postType !== 'work') {
+		$button = '<div class="c-button c-button--underlined-light">Read more</div>';
 	} else {
-		$ad .= '<p class="ad__sub-title">What we do</p>';
-		$ad .= '<h3>' . $adPage->post_title . '</h3>';
-  	$ad .= '<p>' . strip_tags($text) . '</p>';
-  	$ad .= '<a href="' . get_permalink($id) . '">Read more</a>';
+		$button = '';
 	}
 
-  $ad .= '</div></div>';
+	$link = get_permalink($atts['id']);
+	$title = '<h3 class="c-ad__title">' . $adPage->post_title . '</h3>';
 
-	wp_reset_query();
+  $ad = '<a href="' . $link . '" class="c-ad c-ad--' . $postType . '"><div class="c-ad__background"></div>';
+	$ad .= $label . $title . wpautop($content) . $button;
+	$ad .= '</a>';
+
 	return $ad;
 }

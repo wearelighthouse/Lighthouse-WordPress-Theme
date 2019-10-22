@@ -1,58 +1,97 @@
-.ad {
 
-  border-bottom: 1px solid $color-gray;
-  border-top: 1px solid $color-gray;
-  padding: 2.5rem 0;
+.c-ad {
+  @extend %u-pad-6;
+  @extend %u-mv-6;
+  @extend %u-color-white;
+  @extend %u-flex;
+  @extend %u-fd-column;
+  @extend %u-ai-flex-start;
+  @extend %u-pos-relative;
+  grid-column: 2;
 
-  &__content {
-    position: relative;
-    padding: 3rem;
-    clip-path: polygon(100% 0, 100% 50%, 93% 100%, 0 100%, 0 0);
-    padding-right: 30%;
+  @include breakpoint(upto-small) {
+    padding: 2rem 1.5rem;
   }
 
-  &__service {
-    .ad__content {
-      background: $color-gray;
+  &__background {
+    @extend %u-z-index--1;
+    @extend %u-pos-absolute;
+    @extend %u-top;
+    @extend %u-right;
+    @extend %u-bottom;
+    @extend %u-left;
+    @extend %u-bg-color-blackcurrant;
+    clip-path: polygon(
+      100% 0,
+      100% 50%,
+      93% 100%,
+      0 100%,
+      0 0
+    );
+
+    &:before,
+    &:after {
+      @extend %u-content;
+      @extend %u-pos-absolute;
+    }
+
+    &:before {
+      @extend %u-bottom;
+      @extend %u-right;
+      @extend %u-round;
+      width: 40rem;
+      height: 40rem;
+      background: linear-gradient(90deg, transparent, rgba($color-white, .3));
+      transform: translate(40%, 40%) rotate(30deg);
+    }
+
+    &:after {
+      @extend %u-top;
+      @extend %u-left;
+      width: 40rem;
+      height: 40rem;
+      background: linear-gradient(transparent, rgba($color-white, .15));
+      transform: translate(-50%, -50%) rotate(45deg);
     }
   }
 
-  &__work {
-    .ad__content {
-      background: $color-blackcurrant;
-      color: $color-white;
-    }
+  &__label {
+    @extend %u-color-orange;
+    @extend %u-bold;
   }
 
-  h3 {
-    @include fontScale(24, 30);
-    font-weight: 700;
-    margin-bottom: 2rem;
+  &__title {
+    @extend .type-static-subtitle;
+    @extend %u-mt-2;
   }
 
   p {
-    margin:0.2rem 0 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 
-    &.ad__sub-title {
-      @include fontScale(14, 18);
-      color: $color-orange;
-      font-size: 1rem;
-      font-weight: 500;
-      margin-bottom: .2rem;
+    @include breakpoint(from-small) {
+      max-width: 66%;
     }
   }
 
-  a {
-    color: $color-white;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    font-weight: 700;
+  &:focus {
+    .c-button {
+      outline: 1px dotted currentColor;
+    }
+
+    .c-button:after {
+      background-size: 100% 100%;
+    }
   }
 
-  &__center {
-    margin:0 20%;
+  &:hover {
+    .c-button:after {
+      background-size: 100% 100%;
+    }
   }
 
-  &__column {
+  &--work {
+    background-color: $color-gray-light;
+    color: $color-blackcurrant;
   }
 }
