@@ -4,9 +4,9 @@ function quoteShortcode($atts, $content = null)
 {
 	// Get the lighthouse team names
 	$teamPosts = new WP_Query([
-	    'post_type' => 'team',
-	    'post_status' => 'any, trash', // Include binned (old) Lighthouse people
-	    'posts_per_page' => -1
+    'post_type' => 'team',
+    'post_status' => 'any, trash', // Include binned (old) Lighthouse people
+    'posts_per_page' => -1
 	]);
 
 	$teamPosts = $teamPosts->posts;

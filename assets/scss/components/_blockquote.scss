@@ -11,8 +11,7 @@
   }
 
   &--client p {
-    @extend %u-color-pink;
-    // @extend %u-color-gray-dark; // If we want to change to gray, it's gotta be this
+    @extend %u-color-gray-dark;
   }
 
   p {
