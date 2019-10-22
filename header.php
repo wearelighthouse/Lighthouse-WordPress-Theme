@@ -39,6 +39,7 @@
 
   <?php if (is_front_page()) : ?>
     <link rel="preconnect" href="https://widget.clutch.co" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
   <?php endif; ?>
 
   <?php if (!in_array($userIP, $excludedIPs)) : ?>
