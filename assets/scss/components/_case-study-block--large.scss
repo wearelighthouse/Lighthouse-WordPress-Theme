@@ -118,6 +118,7 @@
       #{$self}__background {
         left: 0;
         justify-content: flex-end; // Keep bg image near center of screen
+        pointer-events: none;
 
         &:before {
           clip-path: polygon(
@@ -128,6 +129,7 @@
             0 100%,
             0 0
           );
+          pointer-events: all;
         }
       }
 
