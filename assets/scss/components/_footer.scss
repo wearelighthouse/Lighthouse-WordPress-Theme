@@ -92,6 +92,7 @@
 
   &__lower {
     @extend %u-flex--from-medium;
+    @extend %u-fw-wrap;
     @extend %u-fd-column--upto-medium;
     @extend %u-ai-center--from-medium;
     @extend %u-jc-space-between--from-medium;
