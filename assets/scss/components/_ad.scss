@@ -67,8 +67,8 @@
   }
 
   p {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 
     @include breakpoint(from-small) {
       max-width: 66%;

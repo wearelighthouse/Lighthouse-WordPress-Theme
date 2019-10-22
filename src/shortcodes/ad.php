@@ -19,6 +19,7 @@ function adShortcode($atts, $content = null)
 	switch ($postType) {
 		case 'service':
 			$label = 'Our services';
+			break;
 		case 'post':
 			$cats = get_the_category($atts['id']);
 			if (isset($cats[0]) && $cats[0] === 'podcast') {
