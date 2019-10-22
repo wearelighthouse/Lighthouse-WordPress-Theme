@@ -1,0 +1,12 @@
+
+@media screen and (max-width: 782px) {
+  .c-header {
+    top: 46px;
+  }
+}
+
+@media screen and (min-width: 783px) {
+  .c-header {
+    top: 32px;
+  }
+}

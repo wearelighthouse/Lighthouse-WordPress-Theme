@@ -11,6 +11,10 @@
 
 ?>
 
+<?php if (is_admin_bar_showing()): ?>
+  <style><?= include(locate_template('src/template_parts/header_admin.css')) ?></style>
+<?php endif; ?>
+
 <header class="c-header js-header">
   <div class="c-header__mobile-bg" style="display: none"></div>
 
