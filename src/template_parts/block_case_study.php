@@ -31,7 +31,7 @@
   <div class="c-case-study-block__background">
     <?php if ($caseStudySize === 'large' && $imgBackgroundId) : ?>
       <div class="c-case-study-block__image-background">
-        <?= wp_get_attachment_image($imgBackgroundId, $size = 'link-block-case-study-bg-large') ?>
+        <?= lazyLoad(wp_get_attachment_image($imgBackgroundId, 'link-block-case-study-bg-large', '')) ?>
       </div>
     <?php endif; ?>
     <?php if ($caseStudySize === 'large' && $imgLargeId) : ?>
