@@ -80,8 +80,9 @@
       @extend %u-width-100pc;
       max-width: 410px;
       height: auto;
-      margin-right: 8%;
-      margin-left: 8%;
+      // Removed margins because Tom thought they were centered(?)
+      //margin-right: 8%;
+      //margin-left: 8%;
     }
   }
 
