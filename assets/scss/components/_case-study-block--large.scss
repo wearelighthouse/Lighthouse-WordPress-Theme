@@ -89,8 +89,8 @@
     height: 31rem;
     margin-top: 7rem;
     transition: .3s transform, .5s opacity;
-    --clip-dist-h: 82px;  // horizontal clip-path polygon distance
-    --clip-dist-v: 48px;  // vertical clip-path polygon distance
+    --clip-dist-h: 82px; // horizontal clip-path polygon distance
+    --clip-dist-v: 48px; // vertical clip-path polygon distance
 
     &.js-half-onscreen-detect:not(.js-onscreen) {
       opacity: 0;
@@ -105,6 +105,11 @@
     #{$self}__background {
       width: calc(50% + 8rem);
       height: 100%;
+      pointer-events: none; // Make the cut off corner not click-able
+    }
+
+    #{$self}__background:before {
+      pointer-events: all; // Make the cut off corner not click-able
     }
 
     &:nth-child(odd) {
@@ -119,7 +124,6 @@
       #{$self}__background {
         left: 0;
         justify-content: flex-end; // Keep bg image near center of screen
-        pointer-events: none;
 
         &:before {
           clip-path: polygon(
@@ -130,7 +134,6 @@
             0 100%,
             0 0
           );
-          pointer-events: all;
         }
       }
 
