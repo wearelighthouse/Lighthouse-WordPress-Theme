@@ -1,5 +1,4 @@
 <?php
-
   $text = getPostMeta('hero_hero_content');
 
   // If the hero content doesn't include an h1 (or doesn't exist at all),

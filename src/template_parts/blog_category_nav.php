@@ -1,5 +1,4 @@
 <?php
-
   $currentCatId = get_query_var('cat');
 
   // A bunch or menu item <a>s
@@ -21,7 +20,6 @@
     $classAttr .= '"';
     $menuItems .= '<a href="' . $link . '" ' . $classAttr . '>' . $name . '</a>';
   }
-
 ?>
 
 <nav class="c-blog-nav">

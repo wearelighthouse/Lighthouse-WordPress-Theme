@@ -1,11 +1,8 @@
 <?php
-
-$text = getPostMeta('contact_us_banner_text');
-
-$buttonText = getPostMeta('contact_us_banner_button_text');
-$buttonURL = getPostMeta('contact_us_banner_button_url');
-$clients = getPostMeta('contact_us_banner_clients');
-
+  $text = getPostMeta('contact_us_banner_text', $post->ID);
+  $buttonText = getPostMeta('contact_us_banner_button_text', $post->ID);
+  $buttonURL = getPostMeta('contact_us_banner_button_url', $post->ID);
+  $clients = getPostMeta('contact_us_banner_clients', $post->ID);
 ?>
 
 <?php if ($text || $buttonText) : ?>

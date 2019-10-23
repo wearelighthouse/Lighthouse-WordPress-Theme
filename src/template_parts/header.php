@@ -1,5 +1,4 @@
 <?php
-
   $navMenuSettings = [
     'theme_location' => 'header-menu',
     'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
@@ -8,7 +7,6 @@
 
   $heroStyle = getPostMeta('hero_hero_style');
   $headerStyle = (strpos($heroStyle, 'gray') !== false || is_singular('post') || is_singular('transcript')) ? ' u-color-blackcurrant' : ' u-color-white';
-
 ?>
 
 <?php if (is_admin_bar_showing()): ?>

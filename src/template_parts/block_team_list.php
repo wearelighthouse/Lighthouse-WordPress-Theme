@@ -1,5 +1,4 @@
 <?php
-
   $team = new WP_Query([
     'post_type' => 'team',
     'orderby' => 'menu_order',
@@ -8,7 +7,6 @@
     'posts_per_page' => -1,
     'post__not_in' => [ get_the_ID() ]
   ]);
-
 ?>
 
 <div class="o-container-content o-container-content--v-margin c-team-list">

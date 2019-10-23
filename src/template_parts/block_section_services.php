@@ -1,9 +1,7 @@
 <?php
-
   // There should be a global variable of sorts with some link blocks in
   $services = $globalBlocksServiceGroup;
   $layout = $globalBlocksServiceLayout;
-
 ?>
 
 <?php if ($services && is_array($services)) : ?>

@@ -1,26 +1,24 @@
 <?php
+  $mainContent = getOption('footer', 'main_content');
+  $contactBoxes = getOption('contact', 'group');
+  $footerLinks = getOption('footer', 'links');
+  $copyright = getOption('footer', 'copyright');
 
-$mainContent = getOption('footer', 'main_content');
-$contactBoxes = getOption('contact', 'group');
-$footerLinks = getOption('footer', 'links');
-$copyright = getOption('footer', 'copyright');
+  $socials = [];
 
-$socials = [];
-
-foreach(['twitter', 'facebook', 'linkedin', 'instagram'] as $site) {
-  $link = getOption('social', $site);
-  if ($link) {
-    array_push($socials, [
-      'type' => $site,
-      'link' => $link
-    ]);
+  foreach(['twitter', 'facebook', 'linkedin', 'instagram'] as $site) {
+    $link = getOption('social', $site);
+    if ($link) {
+      array_push($socials, [
+        'type' => $site,
+        'link' => $link
+      ]);
+    }
   }
-}
 
-$footerLinks = $footerLinks ? autoa($footerLinks) : null;
+  $footerLinks = $footerLinks ? autoa($footerLinks) : null;
 
-$clipClasses = is_404() ? '' : 'o-section-clip--corner-top-right o-section-clip--no-mobile';
-
+  $clipClasses = is_404() ? '' : 'o-section-clip--corner-top-right o-section-clip--no-mobile';
 ?>
 
 <footer class="o-container-section o-container-section--bordered">

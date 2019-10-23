@@ -1,7 +1,5 @@
 <?php
-
   $svgSpriteSheet = get_template_directory_uri() . '/dist/svg/sprites.svg';
-
 ?>
 
 <?php if (isset($socials) && !empty($socials) && isset($socials[0]['link'])) : ?>

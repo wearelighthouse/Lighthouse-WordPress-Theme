@@ -1,9 +1,8 @@
 <nav class="c-pagination">
 <?php
-  $args = array(
+  echo paginate_links([
     'prev_text' => __('←'),
     'next_text' => __('→'),
-  );
-  echo paginate_links( $args );
+  ]);
 ?>
 </nav>
