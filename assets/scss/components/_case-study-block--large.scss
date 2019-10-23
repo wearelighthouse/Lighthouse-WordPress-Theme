@@ -88,10 +88,11 @@
   @include breakpoint(from-small) {
     height: 31rem;
     margin-top: 7rem;
-
     transition: .3s transform, .5s opacity;
+    --clip-dist-h: 82px;  // horizontal clip-path polygon distance
+    --clip-dist-v: 48px;  // vertical clip-path polygon distance
 
-    &:not(.js-onscreen) {
+    &.js-half-onscreen-detect:not(.js-onscreen) {
       opacity: 0;
       // translateX defined in (even) and (odd)
     }
@@ -107,7 +108,7 @@
     }
 
     &:nth-child(odd) {
-      &:not(.js-onscreen) {
+      &.js-half-onscreen-detect:not(.js-onscreen) {
         transform: translateX(-100px);
       }
 
@@ -124,8 +125,8 @@
           clip-path: polygon(
             0 0,
             100% 0,
-            100% 82px,
-            calc(100% - 48px) 100%,
+            100% var(--clip-dist-h),
+            calc(100% - var(--clip-dist-v)) 100%,
             0 100%,
             0 0
           );
@@ -142,7 +143,7 @@
     &:nth-child(even) {
       align-items: flex-end;
 
-      &:not(.js-onscreen) {
+      &.js-half-onscreen-detect:not(.js-onscreen) {
         transform: translateX(100px);
       }
 
@@ -163,8 +164,8 @@
             0 0,
             100% 0,
             100% 100%,
-            48px 100%,
-            0 82px,
+            var(--clip-dist-v) 100%,
+            0 var(--clip-dist-h),
             0 0
           );
         }

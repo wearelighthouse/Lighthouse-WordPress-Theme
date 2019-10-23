@@ -9,6 +9,18 @@
       <?php foreach ($globalCaseStudyIds as $caseStudyId) : ?>
         <?php include(locate_template('src/template_parts/block_case_study.php')) ?>
       <?php endforeach; ?>
+
+      <?php if (is_front_page()) : ?>
+        <a href="<?= $linkURL ?>"
+           class="c-case-study-block c-case-study-block--large c-case-study-block--more js-half-onscreen-detect">
+           <div class="c-case-study-block__background"></div>
+           <div class="c-case-study-block__content">
+             <div class="c-case-study-block__link c-button c-button--underlined-dark">
+               See more of our work
+             </div>
+           </div>
+       </a>
+     <?php endif; ?>
     </div>
   </section>
 
