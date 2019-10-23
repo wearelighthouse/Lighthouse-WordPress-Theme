@@ -1,0 +1,44 @@
+.c-newsflash {
+  @extend %u-flex;
+  @extend %u-bg-color-blackcurrant;
+  @extend %u-color-white;
+  @extend %u-bold;
+  height: 2rem;
+  font-size: 17px;
+
+  &__inner {
+    @extend %u-flex;
+    @extend %u-ai-center;
+    @extend %u-jc-center;
+  }
+
+  a {
+    &:hover {
+      color: $color-orange;
+    }
+
+    &:focus {
+      ouline: 1px dotted white;
+    }
+  }
+
+  @include breakpoint(upto-small) {
+    height: 3rem;
+  }
+}
+
+.c-header {
+  pointer-events: none;
+
+  &__inner {
+    margin-top: 2rem;
+
+    @include breakpoint(upto-small) {
+      margin-top: 3rem;
+    }
+  }
+
+  & > * {
+    pointer-events: all;
+  }
+}
