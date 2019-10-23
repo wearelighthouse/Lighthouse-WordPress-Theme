@@ -61,7 +61,6 @@
 ?>
 
 <section class="o-container-section o-container-section--bordered <?= $frontPageSectionClass ?>">
-  <?php include(locate_template('src/template_parts/newsflash.php')) ?>
   <div class="c-hero<?= $modifierClass ?>">
     <div class="c-hero__background o-section-clip--ramp-bottom-right" <?= $customGradient ?>>
       <div></div>
