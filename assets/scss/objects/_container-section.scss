@@ -15,8 +15,9 @@
     padding-left: var(--edge-gutter);
   }
 
-  &--v-bordered {
-    padding-top: var(--edge-gutter);
-    padding-bottom: var(--edge-gutter);
-  }
+  // Unused
+  // &--v-bordered {
+  //   padding-top: var(--edge-gutter);
+  //   padding-bottom: var(--edge-gutter);
+  // }
 }

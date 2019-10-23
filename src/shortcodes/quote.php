@@ -29,45 +29,49 @@ function quoteShortcode($atts, $content = null)
 		'company_url' => ''
 	], $atts);
 
-	// is it one of us?
-	$lighthouseID = array_search($atts['name'], $team);
+	if ($atts['name']) {
+		// is it one of us?
+		$lighthouseID = array_search($atts['name'], $team);
 
-	if ($lighthouseID !== false) {
-		$class = 'c-blockquote c-blockquote--lighthouse';
-		$image = '<div class="c-blockquote__image c-blockquote__team-image">';
-		$image .= get_the_post_thumbnail($lighthouseID, 'bio-tiny');
-		$image .= '</div>';
+		if ($lighthouseID !== false) {
+			$class = 'c-blockquote c-blockquote--lighthouse';
+			$image = '<div class="c-blockquote__image c-blockquote__team-image">';
+			$image .= get_the_post_thumbnail($lighthouseID, 'bio-tiny');
+			$image .= '</div>';
 
-		$href = 'href="' . get_permalink($lighthouseID) . '"';
+			$href = 'href="' . get_permalink($lighthouseID) . '"';
 
-		$personTitle = getPostMeta('team_team_title', $lighthouseID);
-		$personTitle = $personTitle ? '<span class="c-blockquote__title">' . $personTitle . '</span>' : '';
+			$personTitle = getPostMeta('team_team_title', $lighthouseID);
+			$personTitle = $personTitle ? '<span class="c-blockquote__title">' . $personTitle . '</span>' : '';
 
-		$personName = '<span class="c-blockquote__name">' . $atts['name'] . '</span>';
+			$personName = '<span class="c-blockquote__name">' . $atts['name'] . '</span>';
 
-		$clutchScore = '';
+			$clutchScore = '';
+		} else {
+			$class = 'c-blockquote c-blockquote--client';
+			$image = '';
+			$personName = '<span class="c-blockquote__name">' . $atts['name'] . '</span>';
+
+			$personTitle = implode(', ', array_filter([$atts['title'], $atts['company']]));
+			$personTitle = $personTitle ? '<span class="c-blockquote__title">' . $personTitle . '</span>' : '';
+
+			$href = $atts['company_url'] ? 'href="' . $atts['company_url'] . '" target="_blank"' : '';
+
+			if ($clutch > 0) {
+				$clutchScore = '<div class="c-clutch"><div class="c-clutch__logo"></div><div class="c-clutch__score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div></div>';
+			}
+		}
+
+		if ($href) {
+			$person = '<a ' . $href . ' class="c-blockquote__person">' . $image . $personName . $personTitle . '</a>';
+		} else {
+			$person = '<div class="c-blockquote__person">' . $image . $personName . $personTitle . '</div>';
+		}
+
+		$footer = '<footer>' . $person . $clutchScore . '</footer>';
 	} else {
-		$class = 'c-blockquote c-blockquote--client';
-		$image = '';
-		$personName = '<span class="c-blockquote__name">' . $atts['name'] . '</span>';
-
-		$personTitle = implode(', ', array_filter([$atts['title'], $atts['company']]));
-		$personTitle = $personTitle ? '<span class="c-blockquote__title">' . $personTitle . '</span>' : '';
-
-	  $href = $atts['company_url'] ? 'href="' . $atts['company_url'] . '" target="_blank"' : '';
-
-		if ($clutch > 0) {
-      $clutchScore = '<div class="c-clutch u-ml-auto"><div class="c-clutch__logo"></div><div class="c-clutch__score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div></div>';
-    }
+		$footer = '';
 	}
-
-	if ($href) {
-		$person = '<a ' . $href . ' class="c-blockquote__person">' . $image . $personName . $personTitle . '</a>';
-	} else {
-		$person = '<div class="c-blockquote__person">' . $image . $personName . $personTitle . '</div>';
-	}
-
-	$footer = '<footer>' . $person . $clutchScore . '</footer>';
 
 	$quote = '<blockquote class="' . $class . '">' . wpautop($content) . $footer . '</blockquote>';
 

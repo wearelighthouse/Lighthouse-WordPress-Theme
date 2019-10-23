@@ -2,7 +2,7 @@
  * A container for text content, with a max width and optional vertical padding
  */
 .o-container-content {
-  @extend .u-mh-auto;
+  @extend %u-mh-auto;
   width: var(--container-width);
   max-width: $global-max-width;
 

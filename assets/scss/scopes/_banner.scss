@@ -1,18 +1,13 @@
 
 .s-banner {
 
-  @for $level from 1 through 5 {
-    h#{$level} {
-      // The dark colored text in the banners
-      em {
-        font-style: normal;
-        color: $color-blackcurrant;
-      }
-    }
-  }
-
   h1 {
     @extend .type-headline;
+
+    em {
+      font-style: normal;
+      color: $color-blackcurrant;
+    }
   }
 
   h2 {

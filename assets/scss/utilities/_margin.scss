@@ -1,26 +1,22 @@
 
 @include make-utility((
   alias: 'mh-auto',
-  class: true,
   margin-left: auto,
   margin-right: auto
 ));
 
 @include make-utility((
   alias: 'mt-auto',
-  class: true,
   margin-top: auto,
 ));
 
 @include make-utility((
   alias: 'mb-auto',
-  class: true,
   margin-bottom: auto,
 ));
 
 @include make-utility((
   alias: 'ml-auto',
-  class: true,
   margin-left: auto,
 ));
 
