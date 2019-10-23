@@ -1,0 +1,10 @@
+
+.c-case-study-block--more {
+  $self: '.c-case-study-block';
+  height: 8rem;
+
+  @include breakpoint(from-small) {
+    --clip-dist-h: 40px;  // horizontal clip-path polygon distance
+    --clip-dist-v: 18px;  // vertical clip-path polygon distance
+  }
+}
