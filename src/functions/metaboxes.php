@@ -80,9 +80,9 @@ function getPostMeta($metaName, $postID = null)
     }
 
     // Looking up WITHOUT page prefix failed, try the page prefix flipped...
-    // because sometimes e.g. archive_work should be work_archive, sigh.
+    // because sometimes e.g. archive_work_ should be work_archive_, sigh.
     if (!$postMeta) {
-      $pagePrefix = implode('_', array_reverse(explode('_', $pagePrefix)));
+      $pagePrefix = implode('_', array_reverse(explode('_', rtrim($pagePrefix, '_')))) . '_';
       $postMeta = get_post_meta($postID, $pagePrefix . $metaName, true);
     }
 
