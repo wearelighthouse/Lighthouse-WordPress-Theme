@@ -62,7 +62,7 @@ function getPostMeta($metaName, $postID = null)
     if (is_404()) {
         return '';
     }
-    
+
     $postID = $postID ? $postID : get_the_ID();
 
     if (!is_numeric($postID)) {
@@ -70,11 +70,20 @@ function getPostMeta($metaName, $postID = null)
         return false;
     }
 
-    $postMeta = get_post_meta($postID, getPagePrefix() . $metaName, true);
+    $pagePrefix = getPagePrefix();
+
+    $postMeta = get_post_meta($postID, $pagePrefix . $metaName, true);
 
     // Looking up variable WITH page prefix failed, try without
     if (!$postMeta) {
       $postMeta = get_post_meta($postID, $metaName, true);
+    }
+
+    // Looking up WITHOUT page prefix failed, try the page prefix flipped...
+    // because sometimes e.g. archive_work should be work_archive, sigh.
+    if (!$postMeta) {
+      $pagePrefix = implode(array_reverse(explode($pagePrefix, '_')));
+      $postMeta = get_post_meta($postID, $pagePrefix . $metaName, true);
     }
 
     if (is_wp_error($postMeta)) {
