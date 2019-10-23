@@ -55,7 +55,6 @@
 
       ga('create', 'UA-6737301-2', 'wearelighthouse.com');
       ga('send', 'pageview');
-      mixpanel.track("Page visit: Home");
     </script>
   <?php endif; ?>
 
