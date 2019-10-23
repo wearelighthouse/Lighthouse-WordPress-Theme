@@ -5,6 +5,7 @@
   @extend %u-bottom;
   @extend %u-display-none--upto-medium;
   width: 200px;
+  margin-right: 1px;
 
   // Default (supplied by clutch) classname for the widget
   .clutch-widget {
