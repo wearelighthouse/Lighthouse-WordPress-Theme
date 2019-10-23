@@ -27,6 +27,7 @@
   <title><?= wp_title('') ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="<?= bloginfo('description') ?>">
+  <meta name="theme-color" content="#151931"/>
   <?php wp_head(); ?>
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
   <link rel="preload" href="<?= $dist ?>/font/sailec/39E20B_0_0.woff2" as="font" type="font/woff2" crossorigin>
