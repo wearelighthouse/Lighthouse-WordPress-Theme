@@ -11,7 +11,7 @@
       <?php endforeach; ?>
 
       <?php if (is_front_page()) : ?>
-        <a href="<?= $linkURL ?>"
+        <a href="/our-work"
            class="c-case-study-block c-case-study-block--large c-case-study-block--more js-half-onscreen-detect">
            <div class="c-case-study-block__background"></div>
            <div class="c-case-study-block__content">

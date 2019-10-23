@@ -25,7 +25,6 @@
 @each $value in (flex-start, flex-end, center, space-between, space-around) {
   @include make-utility((
     alias: 'jc-' + $value,
-    class: true,
     justify-content: $value
   ));
 }
@@ -33,7 +32,6 @@
 @each $value in (flex-start, flex-end, center, stretch, baseline) {
   @include make-utility((
     alias: 'ai-' + $value,
-    class: true,
     align-items: $value
   ));
 }

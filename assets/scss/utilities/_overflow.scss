@@ -1,23 +1,31 @@
 
-$overflow-properties: (
-  ov: overflow,
-  ov-x: overflow-x,
-  ov-y: overflow-y
-);
+// No longer using overflow-x or overflow-y utilties at all
+//
+// $overflow-properties: (
+//   ov: overflow,
+//   ov-x: overflow-x,
+//   ov-y: overflow-y
+// );
+//
+// $overflow-values-classes: (
+//   visible: false,
+//   hidden: true,
+//   scroll: false,
+//   auto: false
+// );
+//
+// @each $property-alias, $property in ($overflow-properties) {
+//   @each $value, $is-class in ($overflow-values-classes) {
+//     @include make-utility((
+//       alias: $property-alias + '-' + $value,
+//       class: $is-class,
+//       $property: $value
+//     ));
+//   }
+// }
 
-$overflow-values-classes: (
-  visible: false,
-  hidden: true,
-  scroll: false,
-  auto: false
-);
-
-@each $property-alias, $property in ($overflow-properties) {
-  @each $value, $is-class in ($overflow-values-classes) {
-    @include make-utility((
-      alias: $property-alias + '-' + $value,
-      class: $is-class,
-      $property: $value
-    ));
-  }
-}
+@include make-utility((
+  alias: ov-hidden,
+  class: true,
+  overflow: hidden
+));
