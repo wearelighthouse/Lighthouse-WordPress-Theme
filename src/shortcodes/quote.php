@@ -70,6 +70,7 @@ function quoteShortcode($atts, $content = null)
 
 		$footer = '<footer>' . $person . $clutchScore . '</footer>';
 	} else {
+		$class = 'c-blockquote';
 		$footer = '';
 	}
 
