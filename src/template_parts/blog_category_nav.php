@@ -5,7 +5,7 @@
   $menuItems = '';
 
   // Get categories except the 'uncategorised' category
-  $categories = get_categories('exclude=1');
+  $categories = get_categories();
 
   $classAttr = 'class="c-blog-nav__item';
   $classAttr .= (!$currentCatId) ? ' c-blog-nav__item--current' : '';
