@@ -114,7 +114,7 @@ function modifyEmbeds($html, $url) {
     return '<div class="c-generic-embed">' . $html . '</div>';
   }
 }
-add_filter( 'embed_oembed_html', 'modifyEmbeds' ); // WordPress
+add_filter( 'embed_oembed_html', 'modifyEmbeds', 10, 2); // WordPress
 
 // Add "pseduo archive pages" for services, team, and work post types.
 // Note that 'has_archive' => false when declaring the post types.
