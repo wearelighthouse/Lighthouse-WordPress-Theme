@@ -44,6 +44,7 @@ function getPageFileName()
     if (is_front_page()) return 'front_page';
     if (get_page_template_slug()) return get_page_template_slug();
     if (is_archive() && get_queried_object()) return (get_queried_object()->name);
+    if (is_singular() && get_queried_object()) return (get_queried_object()->post_type . '_single');
     return '';
 }
 

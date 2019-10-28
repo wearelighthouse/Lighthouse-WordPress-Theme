@@ -20,7 +20,7 @@ return [
         [
             'name'    => 'Button URL',
             'id'      => 'button_url',
-            'default' => 'contact',
+            'default' => '/contact',
             'type'    => 'text_url'
         ],
         [
