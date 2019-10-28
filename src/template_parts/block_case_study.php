@@ -51,7 +51,7 @@
       <div class="c-case-study-block__logo"
            style="<?= $logoMask ?>">
         <?php if ($logoAlt) : ?>
-          <span class="o-dictate">
+          <span class="c-case-study-block__logo__alt">
             <?= $logoAlt ?>
           </span>
         <?php endif; ?>

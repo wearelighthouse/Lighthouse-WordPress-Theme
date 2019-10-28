@@ -35,7 +35,22 @@
   }
 
   &__logo {
-    @extend %u-bg-color-currentColor;
+    background-color: none;
+
+    &__alt {
+      @extend .type-subtitle;
+    }
+
+    // Edge pretends to support mask-image, when actually it doesn't.
+    // But this checks for it instead.
+    @supports(mask-repeat: no-repeat) {
+      background-color: currentColor;
+      outline: 1px solid red;
+
+      &__alt {
+        @extend .o-dictate;
+      }
+    }
   }
 
   // Gray contains the grey background and bg & fg images
