@@ -5,7 +5,9 @@ if (!isset($serviceArray)) {
 
     $servicePosts = new WP_Query([
         'post_type' => 'service',
-        'posts_per_page' => -1,
+        'orderby' => 'title',
+        'order' => 'ASC',
+        'posts_per_page' => -1
     ]);
 
     foreach ($servicePosts->posts as $servicePost){

@@ -5,7 +5,9 @@ if (!isset($workArray)) {
 
     $workPosts = new WP_Query([
         'post_type' => 'work',
-        'posts_per_page' => -1,
+        'orderby' => 'title',
+        'order' => 'ASC',
+        'posts_per_page' => -1
     ]);
 
     foreach ($workPosts->posts as $workPost){

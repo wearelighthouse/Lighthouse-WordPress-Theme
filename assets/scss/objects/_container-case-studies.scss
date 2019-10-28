@@ -16,7 +16,7 @@
     @extend %u-grid--from-medium;
 
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1rem;
+    grid-column-gap: 2rem;
 
     @include breakpoint(upto-large) {
       width: 100% !important;

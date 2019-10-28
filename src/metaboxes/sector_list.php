@@ -5,7 +5,9 @@ if (!isset($sectorArray)) {
 
     $sectorPosts = new WP_Query([
         'post_type' => 'sector',
-        'posts_per_page' => -1,
+        'orderby' => 'title',
+        'order' => 'ASC',
+        'posts_per_page' => -1
     ]);
 
     foreach ($sectorPosts->posts as $sectorPost){

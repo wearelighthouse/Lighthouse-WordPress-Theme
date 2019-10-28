@@ -5,7 +5,9 @@ if (!isset($transcriptArray)) {
 
     $transcriptPosts = new WP_Query([
         'post_type' => 'transcript',
-        'posts_per_page' => -1,
+        'orderby' => 'title',
+        'order' => 'ASC',
+        'posts_per_page' => -1
     ]);
 
     foreach ($transcriptPosts->posts as $transcriptPost){
