@@ -1,9 +1,12 @@
 
-.c-video-embed {
-  @extend %u-width-100pc;
-  @extend %u-pos-relative;
+.c-embed {
   margin-top: calc(var(--container-v-pad));
   margin-bottom: calc(var(--container-v-pad));
+}
+
+.c-embed--video {
+  @extend %u-width-100pc;
+  @extend %u-pos-relative;
   grid-column: 1 / -1;
 
   // Hacks to get the video to scale with 100% width properly >.>
@@ -20,7 +23,8 @@
   }
 }
 
-.c-generic-embed {
+.c-embed--generic {
+
   .twitter-tweet {
     @extend %u-mh-auto;
   }
