@@ -7,7 +7,21 @@
     @extend %u-fd-column--upto-medium;
     @extend %u-grid--from-medium;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    // Special styles for .c-service-blocks, these should probably not be here.
+    // But it kinda works, as they're just positioning?..
+    @include breakpoint(from-medium) {
+      .c-service-block__desc {
+        width: 50%;
+      }
+
+      .c-service-block__icon-container {
+        align-self: flex-end;
+        height: 0;
+        margin-bottom: 0;
+      }
+    }
   }
 
   &--2-column {

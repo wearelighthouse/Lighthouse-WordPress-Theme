@@ -15,7 +15,9 @@
 <?php endif; ?>
 
   <?php if ($icon) : ?>
-    <img class="c-service-block__icon" src="<?= $icon ?>" alt="<?= $iconAlt ?>"/>
+    <div class="c-service-block__icon-container">
+      <img class="c-service-block__icon" src="<?= $icon ?>" alt="<?= $iconAlt ?>"/>
+    </div>
   <?php endif; ?>
 
   <?php if ($title) : ?>

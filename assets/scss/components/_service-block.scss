@@ -13,14 +13,17 @@
     pointer-events: all;
   }
 
+  &__icon-container {
+    margin-bottom: 2.5rem;
+  }
+
   &__title {
-    margin-top: 1.2em;
-    margin-bottom: 1em;
+    margin-bottom: 2rem;
     pointer-events: all;
   }
 
   &__desc {
-    margin-bottom: 2em;
+    margin-bottom: 2.5rem;
 
     *:first-child {
       margin-top: 0;
