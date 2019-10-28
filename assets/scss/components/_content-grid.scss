@@ -56,6 +56,7 @@
     .o-team-links,
     .ad.ad__left,
     .clutch {
+      height: 0; // Fixes <h3> + <short p> _spaaaace_ <long p>, but is hacky.
       grid-column: 1;
     }
 
@@ -64,9 +65,9 @@
       transform: translateY(-2px);
     }
 
-    & > h2:not(:first-child) + p,
-    & > h3:not(:first-child) + p,
-    & > h4:not(:first-child) + p {
+    & > h2:not(:first-child) + *,
+    & > h3:not(:first-child) + *,
+    & > h4:not(:first-child) + * {
       margin-top: 2rem;
       margin-top: calc((var(--container-width) / 20) + 3rem);
     }
