@@ -109,9 +109,9 @@ add_filter('nav_menu_css_class', 'addCustomNavClasses', 100, 2);
 function modifyEmbeds($html, $url) {
   if (strpos($url, "youtube.com") !== false) {
     $html = str_replace('youtube.com', 'youtube-nocookie.com', $html);
-    return '<div class="c-video-embed">' . $html . '</div>';
+    return '<div class="c-embed c-embed--video">' . $html . '</div>';
   } else {
-    return '<div class="c-generic-embed">' . $html . '</div>';
+    return '<div class="c-embed c-embed--generic">' . $html . '</div>';
   }
 }
 add_filter( 'embed_oembed_html', 'modifyEmbeds', 10, 2); // WordPress
