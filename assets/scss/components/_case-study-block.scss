@@ -46,7 +46,12 @@
     @extend %u-ai-center;
     @extend %u-pos-absolute;
     @extend %u-top;
-    pointer-events: all;
+
+    // All inside the background (exluding pseudos like the background :before)
+    & > * {
+      @extend %u-z-index-1;
+      pointer-events: all;
+    }
 
     img {
       @extend %u-block;
@@ -60,7 +65,7 @@
       @extend %u-right;
       @extend %u-bottom;
       @extend %u-left;
-      @extend %u-z-index--1;
+      pointer-events: all;
     }
   }
 
