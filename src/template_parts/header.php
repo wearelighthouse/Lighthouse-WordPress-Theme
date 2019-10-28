@@ -21,7 +21,10 @@
   <div class="c-header__inner o-container-content <?= $headerStyle ?> ">
 
     <a href="/" class="c-header__home-link" aria-label="Home">
-      <svg viewBox="0 0 150 38" style="display: block; width: 150px; height: 38px;">
+      <svg viewBox="0 0 150 38"
+           style="display: block; width: 150px; height: 38px;"
+           role="img"
+           aria-label="Lighthouse">
         <use xlink:href="<?= get_template_directory_uri() ?>/dist/svg/lighthouse-logo.svg#a"></use>
       </svg>
     </a>

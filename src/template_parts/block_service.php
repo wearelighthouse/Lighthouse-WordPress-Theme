@@ -1,5 +1,7 @@
 <?php
   $icon = isset($service['icon']) ? $service['icon'] : false;
+  $iconID = isset($service['icon_id']) ? $service['icon_id'] : false;
+  $iconAlt = isset($iconID) ? get_post_meta($iconID, '_wp_attachment_image_alt', true) : '';
   $title = isset($service['title']) ? $service['title'] : '';
   $desc = isset($service['description']) ? $service['description'] : '';
   $linkText = isset($service['link_text']) ? $service['link_text'] : '';
@@ -13,7 +15,7 @@
 <?php endif; ?>
 
   <?php if ($icon) : ?>
-    <img class="c-service-block__icon" src="<?= $icon ?>"/>
+    <img class="c-service-block__icon" src="<?= $icon ?>" alt="<? $iconAlt ?>"/>
   <?php endif; ?>
 
   <?php if ($title) : ?>
