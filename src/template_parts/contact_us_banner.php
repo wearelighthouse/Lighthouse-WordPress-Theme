@@ -1,6 +1,5 @@
 <?php
   $text = getPostMeta('contact_us_banner_text');
-  //var_dump($text);
   $buttonText = getPostMeta('contact_us_banner_button_text');
   $buttonURL = getPostMeta('contact_us_banner_button_url');
   $clients = getPostMeta('contact_us_banner_clients');

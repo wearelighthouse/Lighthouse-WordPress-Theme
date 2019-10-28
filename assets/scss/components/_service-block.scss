@@ -4,16 +4,19 @@
   @extend %u-fd-column;
   @extend %u-ai-flex-start;
   @extend %u-mv-5;
+  pointer-events: none;
 
   $self: &;
 
   &__link {
     @extend %u-mt-auto;
+    pointer-events: all;
   }
 
   &__title {
     margin-top: 1.2em;
     margin-bottom: 1em;
+    pointer-events: all;
   }
 
   &__desc {
@@ -26,9 +29,27 @@
     *:last-child {
       margin-bottom: 0;
     }
+
+    &:hover {
+      cursor: text;
+    }
   }
 
   *:last-child {
     margin-bottom: 0;
+  }
+
+  &:focus {
+    outline: none;
+
+    #{$self}__link {
+      outline: 1px dotted currentColor;
+    }
+  }
+
+  &:hover {
+    #{$self}__link:after {
+      background-size: 100% 100%;
+    }
   }
 }

@@ -6,23 +6,36 @@
   $linkURL = isset($service['link_url']) ? $service['link_url'] : '';
 ?>
 
-<div class="c-service-block">
+<?php if ($linkText && $linkURL) : ?>
+  <a href="<?= $linkURL ?>" class="c-service-block">
+<?php else : ?>
+  <div class="c-service-block">
+<?php endif; ?>
+
   <?php if ($icon) : ?>
     <img class="c-service-block__icon" src="<?= $icon ?>"/>
   <?php endif; ?>
+
   <?php if ($title) : ?>
     <h3 class="c-service-block__title type-title">
       <?= $title ?>
     </h3>
   <?php endif; ?>
+
   <?php if ($desc) : ?>
     <div class="c-service-block__desc type-p">
       <?= wpautop($desc) ?>
     </div>
   <?php endif; ?>
+
   <?php if ($linkText && $linkURL) : ?>
-    <a class="c-service-block__link c-button c-button--underlined-dark" href="<?= $linkURL ?>">
+    <div class="c-service-block__link c-button c-button--underlined-dark">
       <?= $linkText ?>
-    </a>
+    </div>
   <?php endif; ?>
-</div>
+
+<?php if ($linkText && $linkURL) : ?>
+  </a>
+<?php else : ?>
+  </div>
+<?php endif; ?>
