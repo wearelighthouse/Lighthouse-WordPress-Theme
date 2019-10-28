@@ -99,6 +99,8 @@
   }
 
   &--pair {
+    @extend %u-width-100pc--upto-small;
+
     @include breakpoint(from-small--upto-medium) {
       &:last-child {
         margin-bottom: 0;

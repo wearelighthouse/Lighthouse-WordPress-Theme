@@ -4,10 +4,6 @@
   &--flex {
     @extend %u-flex;
     @extend %u-fw-wrap;
-
-    @include breakpoint(upto-small) {
-      width: 100% !important; // TODO: Figure out why important needed & remove
-    }
   }
 
   &--grid {
@@ -17,9 +13,9 @@
 
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2rem;
+  }
 
-    @include breakpoint(upto-large) {
-      width: 100% !important;
-    }
+  @include breakpoint(upto-small) {
+    width: 100% !important; // TODO: Figure out why important needed & remove
   }
 }
