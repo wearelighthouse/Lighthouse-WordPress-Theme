@@ -2,22 +2,30 @@
  * A container for text content, with a max width and optional vertical padding
  */
 .o-container-content {
+  $ieFallbackContainerVPad: 5rem;
+
   @extend %u-mh-auto;
   width: var(--container-width);
   max-width: $global-max-width;
 
   &--v-pad {
+    padding-top: $ieFallbackContainerVPad;
+    padding-bottom: $ieFallbackContainerVPad;
     padding-top: var(--container-v-pad);
     padding-bottom: var(--container-v-pad);
   }
 
   &--v-margin {
+    margin-top: $ieFallbackContainerVPad;
+    margin-bottom: $ieFallbackContainerVPad;
     margin-top: var(--container-v-pad);
     margin-bottom: var(--container-v-pad);
   }
 
   // Padding on top, collapsable margin on the bottom
   &--v-pad-margin {
+    margin-bottom: $ieFallbackContainerVPad;
+    padding-top: $ieFallbackContainerVPad;
     margin-bottom: var(--container-v-pad);
     padding-top: var(--container-v-pad);
   }

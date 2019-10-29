@@ -3,6 +3,7 @@
   @extend %u-flex;
   @extend %u-fd-column;
   @extend %u-jc-center;
+  @extend %u-ai-center; // Needed because mh-auto children aren't working in IE
   @extend %u-pos-relative;
 
   $self: &;

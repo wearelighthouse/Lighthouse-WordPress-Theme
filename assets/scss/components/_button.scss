@@ -73,7 +73,7 @@
   &--underlined-dark {
     @extend .type-cta;
     @extend %u-pos-relative;
-    padding-bottom: .5rem;
+    padding-bottom: 1rem;
     outline-offset: 3px;
 
     @supports (clip-path: polygon(0 0)) {
