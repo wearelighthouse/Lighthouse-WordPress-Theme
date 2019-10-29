@@ -100,19 +100,28 @@
       <aside class="clutch-container">
         <script async src="https://widget.clutch.co/static/js/widget.js"></script>
         <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="393790">
-          <a href="https://clutch.co/profile/lighthouse-london#reviews" class="clutch-link" tabindex="-1" target="_blank" rel="noopener" aria-label="See Lighthouse reviews on Clutch"></a>
+          <a href="https://clutch.co/profile/lighthouse-london#reviews" class="clutch-link" target="_blank" rel="noopener" style="position: relative">
+            <noscript>See Lighthouse reviews on Clutch</noscript>
+          </a>
         </div>
         <script>
           <?php // Make the Clutch iframe non-tab-able ?>
-          window.addEventListener('load', () => {
-            var clutch = document.querySelector('.clutch-container');
-            var iframe = clutch.querySelector('iframe');
-            var link = clutch.querySelector('.clutch-link');
+          window.addEventListener('load', function() {
+            var clutchContainer = document.querySelector('.clutch-container');
+            var clutchIframe = clutchContainer.querySelector('iframe');
+            var clutchLink = clutchContainer.querySelector('.clutch-link');
 
-            if (iframe) {
-              iframe.tabIndex="-1";
-              iframe.setAttribute('aria-hidden', 'true');
-              link.tabIndex="0";
+            if (clutchIframe) {
+              clutchIframe.tabIndex="-1";
+              clutchIframe.setAttribute('aria-hidden', 'true');
+            }
+
+            if (clutchLink) {
+              clutchLink.style.position = 'absolute';
+              clutchLink.setAttribute(
+                'aria-label',
+                'See Lighthouse reviews on Clutch'
+              );
             }
           });
         </script>
