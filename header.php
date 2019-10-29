@@ -32,6 +32,9 @@
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
   <link rel="preload" href="<?= $dist ?>/font/sailec/39E20B_0_0.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="<?= $dist ?>/font/sailec/39E20B_2_0.woff2" as="font" type="font/woff2" crossorigin>
+  <?php if (!is_404()) : ?>
+    <link rel="preload" href="<?= $dist ?>/font/tiempos/TiemposTextWeb-Semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <?php endif; ?>
   <link rel="stylesheet" href="<?= $dist ?>/font/fonts.css" type="text/css">
   <link rel="stylesheet" href="<?= $dist ?>/css/style.css" type="text/css">
   <script async crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=IntersectionObserver%2CObject.assign%2CNodeList.prototype.forEach"></script>
