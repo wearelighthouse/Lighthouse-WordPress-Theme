@@ -32,9 +32,9 @@
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
   <link rel="preload" href="<?= $dist ?>/font/sailec/39E20B_0_0.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="<?= $dist ?>/font/sailec/39E20B_2_0.woff2" as="font" type="font/woff2" crossorigin>
-  <?php if (!is_404()) : ?>
-    <link rel="preload" href="<?= $dist ?>/font/tiempos/TiemposTextWeb-Semibold.woff2" as="font" type="font/woff2" crossorigin>
-  <?php endif; ?>
+<?php if (!is_404()) : ?>
+  <link rel="preload" href="<?= $dist ?>/font/tiempos/TiemposTextWeb-Semibold.woff2" as="font" type="font/woff2" crossorigin>
+<?php endif; ?>
   <link rel="stylesheet" href="<?= $dist ?>/font/fonts.css" type="text/css">
   <link rel="stylesheet" href="<?= $dist ?>/css/style.css" type="text/css">
   <script async crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=IntersectionObserver%2CObject.assign%2CNodeList.prototype.forEach"></script>
@@ -42,9 +42,9 @@
   <script defer src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
   <script defer src="<?= get_template_directory_uri() ?>/node_modules/focus-visible/dist/focus-visible.min.js"></script>
 
-  <?php if (is_front_page()) : ?>
-    <link rel="preconnect" href="https://widget.clutch.co" crossorigin>
-  <?php endif; ?>
+<?php if (is_front_page()) : ?>
+  <link rel="preconnect" href="https://widget.clutch.co" crossorigin>
+<?php endif; ?>
 
   <?php if (!in_array($userIP, $excludedIPs) && !current_user_can('edit_pages')) : ?>
     <?php if (is_front_page()) : ?>
