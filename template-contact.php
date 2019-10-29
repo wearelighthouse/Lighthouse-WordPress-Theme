@@ -44,8 +44,109 @@
       <?php endif; ?>
     </section>
 
-    <section class="o-container-section o-copntainer-section--bordered">
-      <?php // TODO: Map ?>
+    <section class="o-container-section o-container-section--bordered">
+      <div id="map" style="height:600px;"></div>
+      <script>
+        function initMap() {
+          var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 51.524756, lng: -0.10722099999998},
+            zoom: 13,
+            styles: [
+              {
+                "featureType": "administrative",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#444444"
+                  }
+                ]
+              },
+              {
+                "featureType": "landscape",
+                "elementType": "all",
+                "stylers": [
+                  {
+                    "color": "#f2f2f2"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi",
+                "elementType": "all",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "road",
+                "elementType": "all",
+                "stylers": [
+                  {
+                    "saturation": -100
+                  },
+                  {
+                    "lightness": 45
+                  }
+                ]
+              },
+              {
+                "featureType": "road.highway",
+                "elementType": "all",
+                "stylers": [
+                  {
+                    "visibility": "simplified"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.arterial",
+                "elementType": "labels.icon",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "transit",
+                "elementType": "all",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "water",
+                "elementType": "all",
+                "stylers": [
+                  {
+                    "color": "#46bcec"
+                  },
+                  {
+                    "visibility": "on"
+                  }
+                ]
+              }
+            ]
+          });
+          var marker = new google.maps.Marker({
+            position: map.getCenter(),
+            map: map,
+            title: "Lighthouse",
+            icon: {
+              anchor: new google.maps.Point(5, 5),
+              size: new google.maps.Size(60,60),
+              url: '<?= get_stylesheet_directory_uri() ?>/dist/svg/lighthouse-marker.svg'
+            }
+          });
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPy3QpRscekSHWgNohLqPkyW1JIXTuIc8&callback=initMap"
+      async defer></script>
+
     </section>
 
   <?php endwhile; ?>
