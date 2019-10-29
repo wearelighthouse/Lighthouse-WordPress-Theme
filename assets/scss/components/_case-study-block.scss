@@ -41,11 +41,8 @@
       @extend .type-subtitle;
     }
 
-    // Edge pretends to support mask-image, when actually it doesn't.
-    // But this checks for it instead.
-    @supports(mask-repeat: no-repeat) {
+    @supports(mask-image: url('')) {
       background-color: currentColor;
-      outline: 1px solid red;
 
       &__alt {
         @extend .o-dictate;
