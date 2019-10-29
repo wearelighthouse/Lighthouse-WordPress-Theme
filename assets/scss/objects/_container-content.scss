@@ -2,6 +2,7 @@
  * A container for text content, with a max width and optional vertical padding
  */
 .o-container-content {
+  // IE doesn't like mixed units(?) in --container-v-pad, so we have a fallback
   $ieFallbackContainerVPad: 5rem;
 
   @extend %u-mh-auto;

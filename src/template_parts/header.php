@@ -25,7 +25,7 @@
            style="display: block; width: 150px; height: 38px;"
            role="img"
            aria-label="Lighthouse">
-        <use xlink:href="<?= get_template_directory_uri() ?>/dist/svg/lighthouse-logo.svg#a"></use>
+        <use href="<?= get_template_directory_uri() ?>/dist/svg/lighthouse-logo.svg#a"></use>
       </svg>
     </a>
 
