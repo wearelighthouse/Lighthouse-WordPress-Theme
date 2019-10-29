@@ -13,14 +13,14 @@ function setupObservers(lozad) {
         element.classList.add('js-loading');
 
         if (element.tagName === 'IMG') {
-          element.addEventListener('load', (event) => {
+          element.addEventListener('load', function(event) {
             element.parentNode.classList.remove('js-child-loading');
             element.classList.remove('js-loading');
             element.parentNode.classList.add('js-child-loaded');
             element.classList.add('js-loaded');
           });
         } else if (element.tagName === 'VIDEO') {
-          element.addEventListener('canplay', (event) => {
+          element.addEventListener('canplay', function(event) {
             element.parentNode.classList.remove('js-child-loading');
             element.classList.remove('js-loading');
             element.parentNode.classList.add('js-child-loaded');
@@ -31,11 +31,16 @@ function setupObservers(lozad) {
   });
   observerLoad.observe();
 
+  document.querySelectorAll('.js-half-onscreen-detect').forEach(function(element) {
+    element.classList.add('js-offscreen');
+  });
+
   const observerView = lozad('.js-half-onscreen-detect', {
       threshold: 0.45,  // 'Technically' not ½, only requires 45% to be visible
-      load: () => {},
+      load: function() {},
       loaded: function(element) {
         element.classList.add('js-onscreen');
+        element.classList.remove('js-offscreen');
       }
   });
   observerView.observe();
@@ -44,7 +49,7 @@ function setupObservers(lozad) {
 function init() {
 
   // Add JavaScript-has-loaded class to body
-  setTimeout(() => {
+  setTimeout(function() {
     document.body.classList.add('js-loaded');
   }, 0);
 
@@ -57,7 +62,7 @@ function init() {
   }
 
   // Add the keyboard shortcuts event listener
-  document.addEventListener('keydown', (event) => {
+  document.addEventListener('keydown', function(event) {
     if (event.altKey && event.code === 'KeyA') {
       addressToClipboard();
     }

@@ -41,7 +41,7 @@
       @extend .type-subtitle;
     }
 
-    @supports((mask-image: url('')) or (-webkit-mask-image: url(''))) {
+    @supports((mask-image: url()) or (-webkit-mask-image: url())) {
       background-color: currentColor;
 
       &__alt {

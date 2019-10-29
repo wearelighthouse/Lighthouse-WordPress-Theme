@@ -93,7 +93,7 @@
     --clip-dist-h: 82px; // horizontal clip-path polygon distance
     --clip-dist-v: 48px; // vertical clip-path polygon distance
 
-    &.js-half-onscreen-detect:not(.js-onscreen) {
+    &.js-offscreen {
       opacity: 0;
       // translateX defined in (even) and (odd)
     }
@@ -114,7 +114,7 @@
     }
 
     &:nth-child(odd) {
-      &.js-half-onscreen-detect:not(.js-onscreen) {
+      &.js-offscreen {
         transform: translateX(-100px);
       }
 
@@ -147,7 +147,7 @@
     &:nth-child(even) {
       align-items: flex-end;
 
-      &.js-half-onscreen-detect:not(.js-onscreen) {
+      &.js-offscreen {
         transform: translateX(100px);
       }
 

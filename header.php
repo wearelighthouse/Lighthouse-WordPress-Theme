@@ -34,6 +34,7 @@
   <link rel="preload" href="<?= $dist ?>/font/sailec/39E20B_2_0.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="<?= $dist ?>/font/fonts.css" type="text/css">
   <link rel="stylesheet" href="<?= $dist ?>/css/style.css" type="text/css">
+  <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=IntersectionObserver%2CObject.assign%2CNodeList.prototype.forEach"></script>
   <script async src="<?= $dist ?>/js/main.js">></script>
   <script defer src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
   <script defer src="<?= get_template_directory_uri() ?>/node_modules/focus-visible/dist/focus-visible.min.js"></script>
