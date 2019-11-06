@@ -3,6 +3,7 @@
   @extend %u-ai-flex-end;
   @extend %u-jc-center;
   @extend %u-pos-relative;
+  user-select: none;
   width: var(--size);
   overflow: hidden;
   border-radius: 0 0 calc(var(--size) / 2) calc(var(--size) / 2);
