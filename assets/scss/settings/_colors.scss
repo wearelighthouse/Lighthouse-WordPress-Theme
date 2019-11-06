@@ -22,9 +22,8 @@ $gradient-orange-pink: linear-gradient(135deg, #FC865B, #FC2489);
 $auto-colors: (
   'white': $color-white,
   'gray-dark': $color-gray-dark,
-  'black': $color-black,
   'blackcurrant': $color-blackcurrant,
-  'pink': $color-pink,
+  // 'pink': $color-pink, // Used in link styling, isn't needed 'ere
   'orange': $color-orange,
   'red': $color-red
 );
