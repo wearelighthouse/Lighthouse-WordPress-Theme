@@ -3,10 +3,22 @@
   width: 1px
 ));
 
-@each $value in (50, 100) {
-  @include make-utility((
-    alias: 'width-' + $value + $global-unit-percent,
-    class: true,
-    width: $value * 1%
-  ));
-}
+// Only width 100pc is used as a class, so we're splitting this up
+// @each $value in (50, 100) {
+//   @include make-utility((
+//     alias: 'width-' + $value + $global-unit-percent,
+//     class: true,
+//     width: $value * 1%
+//   ));
+// }
+
+@include make-utility((
+  alias: 'width-100' + $global-unit-percent,
+  class: true,
+  width: 100%
+));
+
+@include make-utility((
+  alias: 'width-50' + $global-unit-percent,
+  width: 50%
+));

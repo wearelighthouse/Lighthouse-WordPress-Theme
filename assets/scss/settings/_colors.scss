@@ -9,7 +9,8 @@ $color-gray-dark:    #7E7E81;
 $color-gray-deep:    #2B2B2B;
 $color-black:        #000000;
 $color-blackcurrant: #151931;
-$color-pink:         #FF268B;
+$color-pink-old:     #FF268B;
+$color-pink:         #E80070; // Only for text, is darker to hit 4.5:0 on white
 $color-orange-old:   #FC895B;
 $color-orange:       #E87523;
 $color-red:          #EE0700;
@@ -20,16 +21,20 @@ $gradient-orange-pink: linear-gradient(135deg, #FC865B, #FC2489);
 
 $auto-colors: (
   'white': $color-white,
-  'gray-bluish': $color-gray-bluish,
-  'gray-light': $color-gray-light,
-  'gray': $color-gray,
   'gray-dark': $color-gray-dark,
-  'gray-deep': $color-gray-deep,
   'black': $color-black,
   'blackcurrant': $color-blackcurrant,
   'pink': $color-pink,
   'orange': $color-orange,
-  'red': $color-red,
-  'transparent': transparent,
+  'red': $color-red
+);
+
+$auto-bg-colors: (
+  'white': $color-white,
+  'gray-bluish': $color-gray-bluish,
+  'gray-light': $color-gray-light,
+  'gray': $color-gray,
+  'gray-deep': $color-gray-deep,
+  'blackcurrant': $color-blackcurrant,
   'currentColor': currentColor
 );
