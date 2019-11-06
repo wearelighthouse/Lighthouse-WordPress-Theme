@@ -1,8 +1,18 @@
 
 .c-team-list {
-  @extend %u-grid--from-small;
+  @extend %u-grid--from-tiny;
 
-  @include breakpoint(from-small--upto-medium) {
+  @include breakpoint(from-tiny--upto-small) {
+    &__person:nth-child(odd) {
+      align-items: flex-start;
+    }
+
+    &__person:nth-child(even) {
+      align-items: flex-end;
+    }
+  }
+
+  @include breakpoint(upto-medium) {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -30,8 +40,7 @@
     @extend %u-ai-center;
     @extend %u-text-align-center;
     @extend %u-jc-flex-start;
-    @extend %u-ph-1;
-    //@extend %u-mt-auto;
+    @extend %u-ph-1--from-small;
 
     &:focus,
     &:hover {
