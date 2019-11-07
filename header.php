@@ -28,15 +28,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="<?= bloginfo('description') ?>">
   <meta name="theme-color" content="#151931"/>
+
+  <link rel="shortcut icon" type="image/x-icon" href="<?= $dist ?>/img/favicon32.png">
+  <link rel="shortcut icon" sizes="128x128" href="<?= $dist ?>/img/favicon128.png">
+  <link rel="shortcut icon" sizes="256x2568" href="<?= $dist ?>/img/favicon256.png">
+  <link rel="apple-touch-icon" sizes="256x256" href="<?= $dist ?>/img/favicon256.png">
+
   <?php wp_head(); ?>
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+
   <link rel="preload" href="<?= $dist ?>/font/sailec/39E20B_0_0.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="<?= $dist ?>/font/sailec/39E20B_2_0.woff2" as="font" type="font/woff2" crossorigin>
 <?php if (!is_404()) : ?>
   <link rel="preload" href="<?= $dist ?>/font/tiempos/TiemposTextWeb-Semibold.woff2" as="font" type="font/woff2" crossorigin>
 <?php endif; ?>
+
   <link rel="stylesheet" href="<?= $dist ?>/font/fonts.css" type="text/css">
   <link rel="stylesheet" href="<?= $dist ?>/css/style.css" type="text/css">
+
   <script async crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=IntersectionObserver%2CObject.assign%2CNodeList.prototype.forEach"></script>
   <script async src="<?= $dist ?>/js/main.js">></script>
   <script defer src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
