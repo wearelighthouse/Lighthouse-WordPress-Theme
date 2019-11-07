@@ -81,8 +81,9 @@
       max-width: 410px;
       height: auto;
       // Removed margins because Tom thought they were centered(?)
-      //margin-right: 8%;
-      //margin-left: 8%;
+      // Re-added margins cause all the imagery was designed to work with them...
+      margin-right: 8%;
+      margin-left: 8%;
     }
   }
 
