@@ -29,10 +29,11 @@
   <meta name="description" content="<?= bloginfo('description') ?>">
   <meta name="theme-color" content="#151931"/>
 
-  <link rel="shortcut icon" type="image/x-icon" href="<?= $dist ?>/img/favicon32.png">
-  <link rel="shortcut icon" sizes="128x128" href="<?= $dist ?>/img/favicon128.png">
-  <link rel="shortcut icon" sizes="256x2568" href="<?= $dist ?>/img/favicon256.png">
-  <link rel="apple-touch-icon" sizes="256x256" href="<?= $dist ?>/img/favicon256.png">
+  <link rel="shortcut icon" type="image/x-icon" href="<?= $dist ?>/img/favicon-32.png">
+  <link rel="shortcut icon" sizes="256x256" href="<?= $dist ?>/img/favicon-256.png">
+  <link rel="shortcut icon" sizes="512x512" href="<?= $dist ?>/img/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="<?= $dist ?>/img/favicon-large-128.png">
+  <link rel="apple-touch-icon" sizes="256x256" href="<?= $dist ?>/img/favicon-large-256.png">
 
   <?php wp_head(); ?>
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
