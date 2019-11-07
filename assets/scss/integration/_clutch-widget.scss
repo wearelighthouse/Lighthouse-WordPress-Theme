@@ -27,5 +27,9 @@
       outline: 1px dotted currentColor;
       outline-offset: -1px;
     }
+
+    &:hover {
+      @extend %u-underline;
+    }
   }
 }

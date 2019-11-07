@@ -12,6 +12,7 @@ require_once __DIR__ . '/src/functions/get_option.php';
 require_once __DIR__ . '/src/functions/gforms.php';
 require_once __DIR__ . '/src/functions/image_sizes.php';
 require_once __DIR__ . '/src/functions/lazy_load.php';
+require_once __DIR__ . '/src/functions/media_alt_col.php';
 require_once __DIR__ . '/src/functions/menus.php';
 require_once __DIR__ . '/src/functions/metaboxes.php';
 require_once __DIR__ . '/src/functions/plugins.php';

@@ -1,5 +1,5 @@
 
-@each $key, $value in ($auto-colors) {
+@each $key, $value in ($auto-bg-colors) {
   @include make-utility((
     alias: 'bg-color-' + $key,
     class: true,
