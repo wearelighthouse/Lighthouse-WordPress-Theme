@@ -50,12 +50,12 @@
       grid-column: 2;
     }
 
-    h2,
-    h3,
-    h4,
-    .o-team-links,
-    .ad.ad__left,
-    .clutch {
+    & > h2,
+    & > h3,
+    & > h4,
+    & > .o-team-links,
+    & > .ad.ad__left,
+    & > .clutch {
       height: 0; // Fixes <h3> + <short p> _spaaaace_ <long p>, but is hacky.
       grid-column: 1;
     }

@@ -10,6 +10,10 @@ function adShortcode($atts, $content = null)
 	// Get the page object
 	$adPage = get_page($atts['id']);
 
+	if (!$adPage) {
+		return false;
+	}
+
 	// Figure out the post type
 	$postType = $adPage->post_type;
 
@@ -31,7 +35,7 @@ function adShortcode($atts, $content = null)
 	}
 
 	if ($label) {
-		$label = '<div class="c-ad__label">' . $label . '</div>';
+		$label = '<div class="c-promo__label">' . $label . '</div>';
 	}
 
 	if ($postType !== 'work') {
@@ -41,9 +45,9 @@ function adShortcode($atts, $content = null)
 	}
 
 	$link = get_permalink($atts['id']);
-	$title = '<h3 class="c-ad__title">' . $adPage->post_title . '</h3>';
+	$title = '<h3 class="c-promo__title">' . $adPage->post_title . '</h3>';
 
-  $ad = '<a href="' . $link . '" class="c-ad c-ad--' . $postType . '"><div class="c-ad__background"></div>';
+  $ad = '<a href="' . $link . '" class="c-promo c-promo--' . $postType . '"><div class="c-promo__background"></div>';
 	$ad .= $label . $title . wpautop($content) . $button;
 	$ad .= '</a>';
 

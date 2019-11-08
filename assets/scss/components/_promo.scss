@@ -1,5 +1,7 @@
-
-.c-ad {
+/**
+ * Formerly c-ad, but that got blocked by some adblockers ROFL
+ */
+.c-promo {
   @extend %u-pad-6;
   @extend %u-mv-6;
   @extend %u-color-white;
@@ -7,6 +9,7 @@
   @extend %u-fd-column;
   @extend %u-ai-flex-start;
   @extend %u-pos-relative;
+  @extend %u-ov-hidden;
   grid-column: 2;
 
   @include breakpoint(upto-small) {
