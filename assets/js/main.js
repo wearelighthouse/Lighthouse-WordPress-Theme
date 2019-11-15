@@ -1,4 +1,4 @@
-if (document.readyState === "interactive" || document.readyState === "complete") {
+if (document.readyState === 'interactive' || document.readyState === 'complete') {
   interactiveInit();
 } else {
   document.addEventListener('DOMContentLoaded', interactiveInit);
@@ -8,11 +8,10 @@ if (document.readyState === "interactive" || document.readyState === "complete")
 if (document.readyState === 'complete') {
   completeInit();
 } else {
-  document.addEventListener('load', completeInit);
+  window.addEventListener('load', completeInit);
 }
 
 function interactiveInit() {
-
   // Add JavaScript-has-loaded class to body
   setTimeout(function() {
     document.body.classList.add('js-loaded');
@@ -85,7 +84,7 @@ function addressToClipboard() {
 }
 
 function addMenuToggleListener(button) {
-  button.addEventListener("click", toggleMenu);
+  button.addEventListener('click', toggleMenu);
 }
 
 function toggleMenu(e) {
