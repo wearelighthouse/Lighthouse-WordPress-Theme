@@ -1,11 +1,45 @@
 if (document.readyState === "interactive" || document.readyState === "complete") {
-  init();
+  interactiveInit();
 } else {
-  document.addEventListener('DOMContentLoaded', init);
+  document.addEventListener('DOMContentLoaded', interactiveInit);
 }
 
-function setupObservers(lozad) {
+// Do image lazy loading after the rest of the page (and lozad JS) has loaded
+if (document.readyState === 'complete') {
+  completeInit();
+} else {
+  document.addEventListener('load', completeInit);
+}
 
+function interactiveInit() {
+
+  // Add JavaScript-has-loaded class to body
+  setTimeout(function() {
+    document.body.classList.add('js-loaded');
+  }, 0);
+
+  // Add the menu button toggling event listener
+  addMenuToggleListener(document.getElementsByClassName('js-menu-button')[0]);
+}
+
+function completeInit() {
+  // Do lazy loading images
+  setupObservers(window.lozad);
+
+  // Add the keyboard shortcuts event listener
+  document.addEventListener('keydown', function(event) {
+    if (event.altKey && event.code === 'KeyA') {
+      addressToClipboard();
+    }
+  });
+}
+
+window.addEventListener('beforeunload', function (e) {
+  document.body.classList.add('js-unloading');
+});
+
+
+function setupObservers(lozad) {
   const observerLoad = lozad('.js-lazy', {
       rootMargin: '500px 0px',
       loaded: function(element) {
@@ -45,33 +79,6 @@ function setupObservers(lozad) {
   });
   observerView.observe();
 }
-
-function init() {
-
-  // Add JavaScript-has-loaded class to body
-  setTimeout(function() {
-    document.body.classList.add('js-loaded');
-  }, 0);
-
-  // Add the menu button toggling event listener
-  addMenuToggleListener(document.getElementsByClassName('js-menu-button')[0]);
-
-  // Not all pages have lozad for lazy loading, but on pages that do, set it up
-  if (window.lozad) {
-    setupObservers(window.lozad);
-  }
-
-  // Add the keyboard shortcuts event listener
-  document.addEventListener('keydown', function(event) {
-    if (event.altKey && event.code === 'KeyA') {
-      addressToClipboard();
-    }
-  });
-}
-
-window.addEventListener('beforeunload', function (e) {
-  document.body.classList.add('js-unloading');
-});
 
 function addressToClipboard() {
   navigator.clipboard.writeText('Unit 29, Finsbury Business Center, 40 Bowling Green Lane, London EC1R 0NE');
