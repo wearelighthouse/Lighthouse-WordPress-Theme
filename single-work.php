@@ -87,7 +87,7 @@
         <?php if ($contactText) : ?>
         	<div class="c-work-footer__box">
         		<p class="type-static-subtitle"><?= $contactText ?></p>
-            <a href="#" class="u-inline-block c-button c-button--underlined-dark" href="/contact/">
+            <a href="#" class="u-inline-block c-button c-button--underlined-dark" href="/contact">
               Get in touch
             </a>
         	</div>
