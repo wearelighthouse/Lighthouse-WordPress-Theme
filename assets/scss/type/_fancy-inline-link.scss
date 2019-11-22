@@ -1,0 +1,20 @@
+/**
+ * Has an underline that goes underneath it when you hover
+ */
+.type-fancy-inline-link {
+  $underlineHeight: .05em;
+
+  background-image: linear-gradient(
+    transparent calc(100% - #{$underlineHeight}),
+    currentColor calc(100% - #{$underlineHeight})
+  );
+
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size .2s;
+
+  &:focus,
+  &:hover {
+    background-size: calc(100% - 1px) 100%;
+  }
+}

@@ -18,8 +18,8 @@
   p > a,
   li > a,
   li > a {
+    @extend .type-fancy-inline-link;
     color: $color-pink;
-    text-decoration-line: underline;
   }
 
   em,

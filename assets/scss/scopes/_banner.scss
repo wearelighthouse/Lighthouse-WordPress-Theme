@@ -38,9 +38,4 @@
     @extend %u-display-none--upto-large;
   }
 
-  a:focus,
-  a:hover {
-    @extend %u-underline;
-  }
-
 }

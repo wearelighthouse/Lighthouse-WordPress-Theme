@@ -40,7 +40,8 @@
     @extend %u-mt-2--from-small;
 
     a {
-      @extend .type-inline-link-orange;
+      @extend %u-color-orange;
+      @extend .type-fancy-inline-link;
     }
   }
 

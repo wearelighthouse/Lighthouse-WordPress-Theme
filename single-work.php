@@ -68,10 +68,6 @@
       </section>
     <?php	endif; ?>
 
-    <?php
-
-    ?>
-
     <section class="o-container-content o-container-content--v-margin">
       <div class="c-work-footer">
 
