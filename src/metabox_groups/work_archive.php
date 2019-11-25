@@ -20,7 +20,8 @@ function registerWorkArchiveMetaboxes()
 
     addMetaboxes($groupInfo, [
         'case_study_list',
-        'contact_us_banner'
+        'contact_us_banner',
+        'sector_list'
     ], $groupID);
 }
 

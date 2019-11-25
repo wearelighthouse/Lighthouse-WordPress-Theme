@@ -1,15 +1,8 @@
 <?php
   $caseStudyIds = getPostMeta('work_archive_case_study_list_clients', $post->ID);
 
-  $sectors = get_posts([
-    'post_type' => 'sector',
-    'post_status' => 'publish',
-    'numberposts' => -1
-  ]);
-
+  $sectors = getPostMeta('work_archive_sector_list_sector', $post->ID);
   if ($sectors) {
-    $linkList = '';
-
     foreach ($sectors as $sector) {
       $linkList .= '<li><a class="c-tag" href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
     }
