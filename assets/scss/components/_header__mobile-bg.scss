@@ -5,7 +5,7 @@
   @extend %u-z-index--1;
   @extend %u-ov-hidden;
   display: block !important; // Overwrite inline
-  width: calc(100vw - var(--edge-gutter) * 2);
+  width: calc(100% - var(--edge-gutter) * 2);
   height: calc(100vh - var(--edge-gutter) * 2);
   transform: translateY(-100vh);
   transition: .2s transform;
