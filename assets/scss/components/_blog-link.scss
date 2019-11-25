@@ -37,7 +37,6 @@
 
     &__title {
       @extend .type-subtitle;
-      @extend %u-inline-block;
       @extend .type-fancy-inline-link;
       //margin-right: -.2em;
       //margin-left: -.2em;
