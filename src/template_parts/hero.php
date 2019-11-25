@@ -111,11 +111,6 @@
             var clutchIframe = clutchContainer.querySelector('iframe');
             var clutchLink = clutchContainer.querySelector('.clutch-link');
 
-            clutchIframe.onload = function() {
-              console.log("clutch Iframe loaded...");
-              console.log(clutchIframe);
-            }
-
             if (clutchIframe) {
               clutchIframe.tabIndex="-1";
               clutchIframe.setAttribute('aria-hidden', 'true');
