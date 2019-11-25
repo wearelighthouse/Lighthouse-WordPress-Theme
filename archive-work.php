@@ -2,7 +2,10 @@
   $caseStudyIds = getPostMeta('work_archive_case_study_list_clients', $post->ID);
 
   $sectors = getPostMeta('work_archive_sector_list_sector', $post->ID);
+
   if ($sectors) {
+    $linkList = '';
+
     foreach ($sectors as $sector) {
       $linkList .= '<li><a class="c-tag" href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
     }
@@ -34,7 +37,7 @@
         <div class="c-work-footer__box">
           <h3 class="type-cta">See more&hellip;</h3>
           <ul class="o-tag-list">
-            <?= $linkList; ?>
+            <?= $linkList ?>
           </ul>
         </div>
       <?php endif; ?>
