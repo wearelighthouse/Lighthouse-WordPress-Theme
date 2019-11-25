@@ -15,6 +15,7 @@
 
   &:focus,
   &:hover {
-    background-size: calc(100% - #{$underlineHeight}) 100%;
+    // 100% - 1px means it doesn't 100% go to the end of the link (horizontally)
+    background-size: calc(100% - 1px) 100%;
   }
 }

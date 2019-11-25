@@ -38,14 +38,17 @@
     &__title {
       @extend .type-subtitle;
       @extend %u-inline-block;
-      margin-right: -.2em;
-      margin-left: -.2em;
-      padding-right: .2em;
-      padding-left: .2em;
+      @extend .type-fancy-inline-link;
+      //margin-right: -.2em;
+      //margin-left: -.2em;
+      //padding-right: .2em;
+      //padding-left: .2em;
+      outline-offset: .2em;
 
       &:focus,
       &:hover {
-        @extend %u-underline;
+        // Get rid of the 100% - 1px stopping it going to the end of the link
+        background-size: 100% 100%;
         outline: none;
       }
 
