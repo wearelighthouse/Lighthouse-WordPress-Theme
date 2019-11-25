@@ -38,10 +38,6 @@
     &__title {
       @extend .type-subtitle;
       @extend .type-fancy-inline-link;
-      //margin-right: -.2em;
-      //margin-left: -.2em;
-      //padding-right: .2em;
-      //padding-left: .2em;
       outline-offset: .2em;
 
       &:focus,
