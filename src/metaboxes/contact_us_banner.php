@@ -14,13 +14,11 @@ return [
         [
             'name'    => 'Button Text',
             'id'      => 'button_text',
-            'default' => 'Contact us',
             'type'    => 'text_medium'
         ],
         [
             'name'    => 'Button URL',
             'id'      => 'button_url',
-            'default' => '/contact',
             'type'    => 'text_url'
         ],
         [
