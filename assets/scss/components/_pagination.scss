@@ -1,10 +1,11 @@
 .c-pagination {
   @extend .o-container-content;
-  @extend %u-text-align-center;
   @extend %u-mv-6;
+  @extend %u-flex;
+  @extend %u-jc-center;
 
   .page-numbers {
-
+    @extend %u-mh-1;
   }
 
   .page-number.current {
