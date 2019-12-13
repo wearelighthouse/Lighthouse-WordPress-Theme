@@ -56,7 +56,9 @@
 
   footer {
     @extend %u-flex;
-    @extend %u-ai-center;
+    @extend %u-fw-column--upto-small;
+    @extend %u-ai-flex-start--upto-small;
+    @extend %u-ai-center--from-small;
     @extend %u-jc-flex-start;
     @extend %u-pos-relative;
     @extend %u-mt-5;

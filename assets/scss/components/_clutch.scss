@@ -1,7 +1,8 @@
 .c-clutch {
   @extend %u-inline-flex;
   @extend %u-ai-center;
-  @extend %u-ml-auto;
+  @extend %u-ml-auto--from-medium;
+  @extend %u-mv-1;
 
   &__logo {
     width: 68px;
