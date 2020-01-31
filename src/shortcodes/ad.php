@@ -26,7 +26,7 @@ function adShortcode($atts, $content = null)
 			break;
 		case 'post':
 			$cats = get_the_category($atts['id']);
-			if (isset($cats[0]) && $cats[0] === 'podcast') {
+			if (isset($cats[0]) && strtolower($cats[0]->name) === 'podcast') {
 				$label = 'Product leadership podcast';
 			} else {
 				$label = 'Blog post';
