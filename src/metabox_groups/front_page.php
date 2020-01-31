@@ -14,7 +14,8 @@ function registerFrontPageMetaboxes()
         'blocks_service',
         'home_intro',
         'contact_us_banner',
-        'case_study_list'
+        'case_study_list',
+        'home_links',
     ], $groupID);
 
 }

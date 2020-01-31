@@ -14,6 +14,8 @@
     <?php $globalCaseStudyIds = getPostMeta('case_study_list_clients') ?>
     <?php include(locate_template('src/template_parts/block_section_case_study_large.php')) ?>
 
+    <?php include(locate_template('src/template_parts/home_links.php')) ?>
+
   <?php endwhile; ?>
 </main>
 
