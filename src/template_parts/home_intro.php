@@ -15,7 +15,7 @@
               $logoAlt = get_post_meta($client['logo_id'], '_wp_attachment_image_alt', true);
               $logoMeta = wp_get_attachment_metadata($client['logo_id']);
               $logoSize = 1.2;
-              $logoMask = "-webkit-mask-image: url({$logoSrc}); mask-image: url({$logoSrc}); mask-size: contain; -webkit-mask-size: contain; mask-repeat: none; -webkit-mask-repeat: none; width: " . ($logoMeta['width'] * $logoSize) . "px; height: " . ($logoMeta['height'] * $logoSize) . "px";
+              $logoMask = "-webkit-mask-image: url({$logoSrc}); mask-image: url({$logoSrc}); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: " . ($logoMeta['width'] * $logoSize) . "px; height: " . ($logoMeta['height'] * $logoSize) . "px";
               $alt = get_post_meta($client['logo_id'], '_wp_attachment_image_alt', true);
             ?>
             <div class="c-intro__clients__img-container" style="<?= $logoMask; ?>">

@@ -13,7 +13,6 @@ function registerFrontPageMetaboxes()
     addMetaboxes($groupInfo, [
         'blocks_service',
         'home_intro',
-        'contact_us_banner',
         'case_study_list',
         'home_links',
     ], $groupID);
