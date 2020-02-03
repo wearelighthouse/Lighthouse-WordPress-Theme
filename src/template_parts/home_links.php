@@ -14,7 +14,7 @@
               $alt = get_post_meta($link['graphic_id'], '_wp_attachment_image_alt', true);
             ?>
             <a href="<?= $link['url']; ?>" class="c-links__link">
-              <img src="<?= $logoSrc; ?>" />
+              <?= lazyLoad(wp_get_attachment_image($link['graphic_id'], '')) ?>
             </a>
           <?php endforeach; ?>
         </div>

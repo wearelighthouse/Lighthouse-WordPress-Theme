@@ -3,14 +3,14 @@
 
   h2 {
     line-height: 1.6;
-    margin-bottom:4rem;
+    margin-bottom: 4rem;
   }
 
   a {
     @extend .type-fancy-inline-link;
     outline-offset: .2em;
 
-    color:$color-pink-old;
+    color: $color-pink-old;
 
     &:focus,
     &:hover {
@@ -28,7 +28,7 @@
     @extend %u-mr--2--from-medium;
 
     &__img-container {
-      background:#C6C6CA;
+      background: #C6C6CA;
       margin: 1rem 2rem;
 
       span {
@@ -49,10 +49,9 @@
   @extend %u-fw-wrap;
   @extend %u-ai-center;
   @extend %u-jc-center;
-  @extend %u-mr--2--from-medium;
 
    &__link {
-     margin: 0rem 2rem;
+     margin: 0 2rem;
 
      img {
        display: block;
