@@ -37,6 +37,7 @@ require_once __DIR__ . '/src/options/footer.php';
 require_once __DIR__ . '/src/options/social.php';
 
 // Post Types
+require_once __DIR__ . '/src/post_types/pif.php';
 require_once __DIR__ . '/src/post_types/sector.php';
 require_once __DIR__ . '/src/post_types/service.php';
 require_once __DIR__ . '/src/post_types/team.php';
