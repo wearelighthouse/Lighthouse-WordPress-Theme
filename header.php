@@ -72,6 +72,8 @@
     </script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    <script> (function(){ window.ldfdr = window.ldfdr || {}; (function(d, s, ss, fs){ fs = d.getElementsByTagName(s)[0]; function ce(src){ var cs = d.createElement(s); cs.src = src; setTimeout(function(){fs.parentNode.insertBefore(cs,fs)}, 1); } ce(ss); })(document, 'script', 'https://lftracker.leadfeeder.com/lftracker_v1_JMvZ8g19KAP42pOd.js'); })(); </script>
+
   <?php endif; ?>
 
 </head>
