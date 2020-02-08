@@ -20,7 +20,7 @@
   "homepage": "https://github.com/wearelighthouse/lighthouse-wordpress-theme#readme",
   "devDependencies": {
     "browser-sync": "^2.26.7",
-    "del": "^4.1.1",
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-replace": "^1.0.0",
