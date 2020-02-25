@@ -40,7 +40,7 @@
   <link rel="preload" href="<?= $dist ?>/font/sailec/39E20B_0_0.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="<?= $dist ?>/font/sailec/39E20B_2_0.woff2" as="font" type="font/woff2" crossorigin>
 <?php if (!is_404()) : ?>
-  <link rel="preload" href="<?= $dist ?>/font/tiempos/TiemposTextWeb-Semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="<?= $dist ?>/font/tiempos/TiemposTextWeb-Semibold-min.woff2" as="font" type="font/woff2" crossorigin>
 <?php endif; ?>
 
   <link rel="stylesheet" href="<?= $dist ?>/font/fonts.css" type="text/css">
