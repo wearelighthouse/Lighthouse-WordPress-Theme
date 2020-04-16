@@ -4,7 +4,7 @@
   // If the hero content doesn't include an h1 (or doesn't exist at all),
   // then preappend the post_title as an <h1>
   if (strpos($text, '<h1>') === false) {
-    $text = "<h1>$post->post_title</h1>" . $text;
+    $text = "<h1>" . wptexturize($post->post_title) . "</h1>" . $text;
   }
 
   $imageId = getPostMeta('hero_hero_image_id');

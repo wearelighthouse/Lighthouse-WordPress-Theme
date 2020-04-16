@@ -1,6 +1,10 @@
 .c-blog-link {
   @extend %u-pv-7;
 
+  br {
+    @extend %u-display-none;
+  }
+
   &:not(:first-child) {
     border-top: 1px solid $color-gray;
   }
