@@ -8,6 +8,10 @@
       $transcriptID = get_page_by_path($post->post_name, OBJECT, 'transcript');
     }
   }
+
+  $postDate .= '<time datetime="' . get_the_date('Y-m-d', $post->ID)  . '" class="c-post-date">';
+  $postDate .= get_the_date('jS F Y', $post->ID);
+  $postDate .= '</time>';
 ?>
 
 <?php get_header(); ?>
@@ -23,9 +27,11 @@
           <?= $podcastEmbed; ?>
         </div>
       <?php endif; ?>
+
       <div class="o-container-content o-container-content--v-margin c-content-grid">
         <?php if ($podcastEmbed) : ?>
           <div class="c-podcast-links">
+            <?= $postDate ?>
             <?php if ($transcriptID) : ?>
               <a href="<?= get_permalink($transcriptID) ?>" class="c-podcast-links__transcript">Read transcript</a>
             <?php endif; ?>
@@ -34,7 +40,12 @@
               <a href="http://simplecast.fm/podcasts/1302/rss" class="c-podcast-links__rss">RSS</a>
             </div>
           </div>
+        <?php else : ?>
+          <div class="o-post-date-container">
+            <?= $postDate ?>
+          </div>
         <?php endif; ?>
+
         <?= the_content(); ?>
       </div>
     </section>

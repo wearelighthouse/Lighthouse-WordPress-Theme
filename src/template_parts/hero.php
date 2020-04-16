@@ -12,9 +12,9 @@
 
   // Add date to blog post hero banner & make the it the correct gradient style
   if (is_singular('post')) {
-    $text .= '<time datetime="' . get_the_date('Y-m-d', $post->ID)  . '" class="c-hero__date">';
-    $text .= get_the_date('jS F Y', $post->ID);
-    $text .= '</time>';
+    // $text .= '<time datetime="' . get_the_date('Y-m-d', $post->ID)  . '" class="c-hero__date">';
+    // $text .= get_the_date('jS F Y', $post->ID);
+    // $text .= '</time>';
     $heroStyle = 'gray-gradient-small';
   }
 

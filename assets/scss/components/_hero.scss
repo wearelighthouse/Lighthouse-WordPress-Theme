@@ -72,9 +72,9 @@
     }
   }
 
-  &--post #{$self}__text {
-    margin-bottom: 0;  // Cancel out the hero__text bottom padding (hack?)
-  }
+  // &--post #{$self}__text {
+  //   margin-bottom: 0;  // Cancel out the hero__text bottom padding (hack?)
+  // }
 
   &__date {
     @extend %u-block;
