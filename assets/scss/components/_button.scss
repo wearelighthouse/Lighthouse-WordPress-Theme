@@ -76,10 +76,6 @@
     padding-bottom: 1rem;
     outline-offset: 3px;
 
-    @supports (clip-path: polygon(0 0)) {
-      padding-bottom: 1.5rem; // Enough space for the underline
-    }
-
     &:after {
       @extend %u-block;
       @extend %u-pos-absolute;
@@ -88,8 +84,15 @@
       @extend %u-content;
       @extend %u-width-100pc;
       height: 2px;
+      background-repeat: no-repeat;
+      background-size: 0% 100%;
+      transition: .2s background-size;
+    }
 
-      @supports (clip-path: polygon(0 0)) {
+    @supports (clip-path: polygon(0 0)) {
+      padding-bottom: 1.5rem; // Enough space for the underline
+
+      &:not(:empty):after {
         clip-path: polygon(
           0 0,
           calc(100% - 22px) 0,
@@ -101,10 +104,11 @@
         );
         height: 10px;
       }
+    }
 
-      background-repeat: no-repeat;
-      background-size: 0% 100%;
-      transition: .2s background-size;
+    &:empty {
+      width: 110px; // About the same as "Read more"
+      padding-bottom: .5rem;
     }
 
     &::-moz-focus-inner {

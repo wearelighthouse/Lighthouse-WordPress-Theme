@@ -5,6 +5,7 @@ function adShortcode($atts, $content = null)
 	$atts = shortcode_atts([
 		'id' => '',
 		'align' => 'right',  // 'right' (default - Inline w/ <p>), 'left', 'center'.
+		'read_more' => 'Read more'
 	], $atts);
 
 	// Get the page object
@@ -26,8 +27,16 @@ function adShortcode($atts, $content = null)
 			break;
 		case 'post':
 			$cats = get_the_category($atts['id']);
+
+			// If the post we're linking to is a podcast:
 			if (isset($cats[0]) && strtolower($cats[0]->name) === 'podcast') {
 				$label = 'Product leadership podcast';
+
+				// If read more text is default, get rid of it
+				if ($atts['read_more'] === 'Read more') {
+					$atts['read_more'] = '';
+				}
+			// Otherwise we assume it's a blog post
 			} else {
 				$label = 'Blog post';
 			}
@@ -39,7 +48,7 @@ function adShortcode($atts, $content = null)
 	}
 
 	if ($postType !== 'work') {
-		$button = '<div class="c-button c-button--underlined-light">Read more</div>';
+		$button = '<div class="c-button c-button--underlined-light">' . $atts['read_more'] . '</div>';
 	} else {
 		$button = '';
 	}

@@ -67,6 +67,7 @@
   &__title {
     @extend .type-static-subtitle;
     @extend %u-mt-2;
+    line-height: 1.35;
   }
 
   p {
