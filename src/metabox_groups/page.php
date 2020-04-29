@@ -10,7 +10,7 @@ function registerPageMetaboxes()
     $groupID = basename(__FILE__, '.php');
 
     addMetaboxes($groupInfo, [
-        
+        'blocks_service',
     ], $groupID);
 
 }
