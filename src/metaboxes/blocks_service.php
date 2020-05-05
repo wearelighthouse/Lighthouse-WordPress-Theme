@@ -38,7 +38,7 @@ return [
                 [
                     'name' => 'Description',
                     'id'   => 'description',
-                    'type' => 'textarea_small'
+                    'type' => 'wysiwyg'
                 ],
                 [
                     'name' => 'Link Text',
