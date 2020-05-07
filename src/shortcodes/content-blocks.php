@@ -12,7 +12,7 @@ function contentBlocksShortcode($atts, $content = null)
 
 	$blocks = '</section>
 		 <section class="o-container-section o-container-section--h-bordered">
-		    <div class="o-container-content o-container-content--v-pad-margin o-container-services o-container-services--3-column">';
+		    <div class="o-container-content o-container-services o-container-services--' . $atts['columns'] . '-column">';
 
 	foreach ($blocksContent as $block) {
 		$blocks .= '<div class="c-service-block">';
