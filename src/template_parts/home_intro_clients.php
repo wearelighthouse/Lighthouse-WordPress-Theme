@@ -1,6 +1,5 @@
 <?php
   $clients = getPostMeta('front_page_home_intro_clients', $home->ID);
-  print_r($clients);
 ?>
       <?php if ($clients && isset($clients[0])) : ?>
         <div class="c-intro__clients c-cta-banner__right">
