@@ -100,17 +100,21 @@
       <aside class="clutch-container">
         <script async src="https://widget.clutch.co/static/js/widget.js"></script>
         <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="393790">
-          <a href="https://clutch.co/profile/lighthouse-london#reviews" class="clutch-link" target="_blank" rel="noopener" style="position: relative">
+          <a href="https://clutch.co/profile/lighthouse-london#reviews" target="_blank" rel="noopener" class="clutch-link" style="position: relative">
             <noscript>See Lighthouse reviews on Clutch</noscript>
           </a>
         </div>
-        <!--div class="goodfirm-widget" data-widget-type="goodfirms-widget-t8" data-widget-pattern="poweredby-star" data-height="60" data-company-id="37016"></div-->
+        <div class="goodfirm-widget" data-widget-type="goodfirms-widget-t8" data-widget-pattern="poweredby-star" data-company-id="37016">
+          <a href="https://www.goodfirms.co/company/lighthouse-london" target="_blank" rel="noopener" class="goodfirm-link" style="position: relative">
+            <noscript>See Lighthouse reviews on GoodFirms</noscript>
+          </a>
+        </div>
         <script>
-          <?php // Make the Clutch iframe non-tab-able ?>
           window.addEventListener('load', function() {
+            <?php // Make the Clutch and GoodForm iframe non-tab-able ?>
             var clutchContainer = document.querySelector('.clutch-container');
             var clutchIframe = clutchContainer.querySelector('iframe');
-            var clutchLink = clutchContainer.querySelector('.clutch-link');
+            var clutchLink = clutchContainer.querySelector('a');
 
             if (clutchIframe) {
               clutchIframe.tabIndex="-1";
@@ -122,6 +126,24 @@
               clutchLink.setAttribute(
                 'aria-label',
                 'See Lighthouse reviews on Clutch'
+              );
+            }
+
+            var goodfirmContainer = document.querySelector('.goodfirm-widget');
+            var goodfirmIFrame  = goodfirmContainer.querySelector('iframe');
+            var goodfirmLink = goodfirmContainer.querySelector('a');
+
+            if (goodfirmIFrame) {
+              goodfirmIFrame.tabIndex = '-1';
+              goodfirmIFrame.sandbox = true;
+              goodfirmIFrame.setAttribute('aria-hidden', 'true');
+            }
+
+            if (goodfirmLink) {
+              goodfirmLink.style.position = 'absolute';
+              goodfirmLink.setAttribute(
+                'aria-label',
+                'See Lighthouse reviews on GoodFirms'
               );
             }
           });

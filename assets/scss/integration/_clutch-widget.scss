@@ -3,45 +3,60 @@
   @extend %u-pos-absolute;
   @extend %u-right;
   @extend %u-bottom;
-  @extend %u-display-none--upto-medium;
-  display: flex;
-  width: 390px;
+  @extend %u-display-none--upto-tiny;
+  @extend %u-flex--from-tiny;
+  justify-content: center;
+  height: 60px;
 
-  // Default (supplied by clutch) classname for the widget
-  .clutch-widget {
-    @extend %u-pos-relative;
-    padding-top: 9px;
-    padding-bottom: 2px;
-    padding-left: 8px;
-    width: 200px;
+  @include breakpoint(upto-full) {
+    bottom: -30px;
   }
 
-  // Extra clutch link we've squeezed into the clutch-widget <div>
-  // - is a sibling to the iframe containing the 'actual' widget
-  .clutch-link {
-    @extend %u-pos-absolute;
-    @extend %u-top;
-    @extend %u-right;
-    @extend %u-bottom;
-    @extend %u-left;
-
-    &:focus {
-      outline: 1px dotted currentColor;
-      outline-offset: -1px;
-    }
-
-    &:hover {
-      @extend %u-underline;
-    }
+  @include breakpoint(upto-medium) {
+    bottom: -60px;
   }
 
-  .goodfirm-widget {
-    width: 180px;
-    height: 60px;
+  @include breakpoint(upto-small) {
+    bottom: -80px;
+    width: 100%;
+  }
+}
 
-    iframe {
-      margin-top: -15px;
-      height: 70px;
-    }
+// Default (supplied by clutch) classname for the widget
+.clutch-widget {
+  @extend %u-pos-relative;
+  width: 200px;
+  padding-top: 9px;
+  padding-bottom: 2px;
+  padding-left: 8px;
+}
+
+// Extra clutch link we've squeezed into the clutch-widget <div>
+// - is a sibling to the iframe containing the 'actual' widget
+.clutch-link,
+.goodfirm-link {
+  @extend %u-pos-absolute;
+  @extend %u-top;
+  @extend %u-right;
+  @extend %u-bottom;
+  @extend %u-left;
+
+  &:focus {
+    outline: 1px dotted currentColor;
+    outline-offset: -1px;
+  }
+
+  &:hover {
+    @extend %u-underline;
+  }
+}
+
+.goodfirm-widget {
+  @extend %u-pos-relative;
+  width: 160px;
+  height: 100%;
+
+  iframe {
+    margin-top: -15px;
   }
 }

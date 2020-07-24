@@ -8,6 +8,19 @@
 
   $self: &;
 
+  // Make room for clutch and GoodFirms widgets on phones
+  @include breakpoint(upto-full) {
+    margin-bottom: 30px;
+  }
+
+  @include breakpoint(upto-medium) {
+    margin-bottom: 60px;
+  }
+
+  @include breakpoint(upto-small) {
+    margin-bottom: 80px;
+  }
+
   &__content {
     @extend %u-pos-relative;
     @extend %u-flex;
