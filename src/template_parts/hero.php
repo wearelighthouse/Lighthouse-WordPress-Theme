@@ -99,6 +99,7 @@
       ?>
       <aside class="clutch-container">
         <script async src="https://widget.clutch.co/static/js/widget.js"></script>
+        <script async src="https://cdn.goodfirms.co/assets/js/widget.min.js"></script>
         <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="393790">
           <a href="https://clutch.co/profile/lighthouse-london#reviews" target="_blank" rel="noopener" class="clutch-link" style="position: relative">
             <noscript>See Lighthouse reviews on Clutch</noscript>
@@ -112,13 +113,25 @@
         <script>
           window.addEventListener('load', function() {
             <?php // Make the Clutch and GoodForm iframe non-tab-able ?>
-            var clutchContainer = document.querySelector('.clutch-container');
+            var clutchContainer = document.querySelector('.clutch-widget');
             var clutchIframe = clutchContainer.querySelector('iframe');
             var clutchLink = clutchContainer.querySelector('a');
+            var goodfirmContainer = document.querySelector('.goodfirm-widget');
+            var goodfirmIFrame  = goodfirmContainer.querySelector('iframe');
+            var goodfirmLink = goodfirmContainer.querySelector('a');
+
+            <?php // Allow both widgets iFrames 400ms to load so they can face in w/CSS nicely ?>
+            window.setTimeout(() => clutchContainer.classList.add('js-loaded'), 400);
+            window.setTimeout(() => goodfirmContainer.classList.add('js-loaded'), 400);
 
             if (clutchIframe) {
               clutchIframe.tabIndex="-1";
               clutchIframe.setAttribute('aria-hidden', 'true');
+            }
+
+            if (goodfirmIFrame) {
+              goodfirmIFrame.tabIndex = '-1';
+              goodfirmIFrame.setAttribute('aria-hidden', 'true');
             }
 
             if (clutchLink) {
@@ -127,16 +140,6 @@
                 'aria-label',
                 'See Lighthouse reviews on Clutch'
               );
-            }
-
-            var goodfirmContainer = document.querySelector('.goodfirm-widget');
-            var goodfirmIFrame  = goodfirmContainer.querySelector('iframe');
-            var goodfirmLink = goodfirmContainer.querySelector('a');
-
-            if (goodfirmIFrame) {
-              goodfirmIFrame.tabIndex = '-1';
-              goodfirmIFrame.sandbox = true;
-              goodfirmIFrame.setAttribute('aria-hidden', 'true');
             }
 
             if (goodfirmLink) {
