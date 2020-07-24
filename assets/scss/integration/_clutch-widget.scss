@@ -4,7 +4,8 @@
   @extend %u-right;
   @extend %u-bottom;
   @extend %u-display-none--upto-medium;
-  width: 202px;
+  display: flex;
+  width: 390px;
 
   // Default (supplied by clutch) classname for the widget
   .clutch-widget {
@@ -12,6 +13,7 @@
     padding-top: 9px;
     padding-bottom: 2px;
     padding-left: 8px;
+    width: 200px;
   }
 
   // Extra clutch link we've squeezed into the clutch-widget <div>
@@ -30,6 +32,16 @@
 
     &:hover {
       @extend %u-underline;
+    }
+  }
+
+  .goodfirm-widget {
+    width: 180px;
+    height: 60px;
+
+    iframe {
+      margin-top: -15px;
+      height: 70px;
     }
   }
 }

@@ -50,6 +50,7 @@
   <script async src="<?= $dist ?>/js/main.js">></script>
   <script async src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
   <script defer src="<?= get_template_directory_uri() ?>/node_modules/focus-visible/dist/focus-visible.min.js"></script>
+  <script type="text/javascript" src="https://cdn.goodfirms.co/assets/js/widget.min.js"></script>
 
 <?php if (is_front_page()) : ?>
   <link rel="preconnect" href="https://widget.clutch.co" crossorigin>

@@ -104,6 +104,7 @@
             <noscript>See Lighthouse reviews on Clutch</noscript>
           </a>
         </div>
+        <!--div class="goodfirm-widget" data-widget-type="goodfirms-widget-t8" data-widget-pattern="poweredby-star" data-height="60" data-company-id="37016"></div-->
         <script>
           <?php // Make the Clutch iframe non-tab-able ?>
           window.addEventListener('load', function() {
