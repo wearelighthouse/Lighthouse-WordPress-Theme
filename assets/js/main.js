@@ -24,13 +24,6 @@ function interactiveInit() {
 function completeInit() {
   // Do lazy loading images
   setupObservers(window.lozad);
-
-  // Add the keyboard shortcuts event listener
-  document.addEventListener('keydown', function(event) {
-    if (event.altKey && event.code === 'KeyA') {
-      addressToClipboard();
-    }
-  });
 }
 
 window.addEventListener('beforeunload', function (e) {
@@ -76,10 +69,6 @@ function setupObservers(lozad) {
       }
   });
   observerView.observe();
-}
-
-function addressToClipboard() {
-  navigator.clipboard.writeText('Unit 29, Finsbury Business Center, 40 Bowling Green Lane, London EC1R 0NE');
 }
 
 function addMenuToggleListener(button) {
