@@ -43,8 +43,8 @@
   <link rel="preload" href="<?= $dist ?>/font/tiempos/TiemposTextWeb-Semibold-min.woff2" as="font" type="font/woff2" crossorigin>
 <?php endif; ?>
 
-  <link rel="stylesheet" href="<?= $dist ?>/font/fonts.css" type="text/css">
-  <link rel="stylesheet" href="<?= $dist ?>/css/style.css" type="text/css">
+  <link rel="stylesheet" href="<?= $dist ?>/font/fonts.css">
+  <link rel="stylesheet" href="<?= $dist ?>/css/style.css">
 
   <script async crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=IntersectionObserver%2CObject.assign%2CNodeList.prototype.forEach"></script>
   <script async src="<?= $dist ?>/js/main.js">></script>

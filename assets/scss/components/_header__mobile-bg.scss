@@ -49,6 +49,10 @@
 }
 
 .c-header--mobile-menu-open > .c-header__mobile-bg {
+  width: 100%;
+  height: 100vh;
+  padding-top: var(--edge-gutter);
+
   &:before, &:after {
     opacity: 1;
   }

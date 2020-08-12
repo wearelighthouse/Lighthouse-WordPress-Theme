@@ -15,7 +15,7 @@
 
 <?php include(locate_template('src/template_parts/newsflash.php')) ?>
 
-<header class="c-header js-header">
+<header class="c-header">
   <div class="c-header__mobile-bg" style="display: none"></div>
 
   <div class="c-header__inner o-container-content <?= $headerStyle ?> ">
@@ -34,7 +34,7 @@
     </nav>
 
     <button role="switch"
-            class="c-menu-button c-menu-button--lines js-menu-button"
+            class="c-menu-button"
             aria-checked="false"
             aria-label="Open Menu">
     </button>
