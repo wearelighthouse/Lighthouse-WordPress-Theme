@@ -64,7 +64,7 @@ function adShortcode($atts, $content = null)
 
 	if ($postType === 'work') {
 		$button = '<div class="c-button c-button--underlined-dark">' . $atts['read_more'] . '</div>';
-		$title = '<h3 class="c-promo__work-title">' . (($content && $content !== '') ? wpautop($content) : $adPage->post_title) . '</h3>';
+		$title = '<h3 class="c-promo__work-title">' . (($content && $content !== '') ? $content : $adPage->post_title) . '</h3>';
 		$imgMediumId = getPostMeta('work_single_work_options_image_medium_id', $atts['id']);
 		$img = '<div class="c-promo__side-image">' . wp_get_attachment_image($imgMediumId, 'link-block-case-study-fg-medium') . '</div>';
 		$ad .= $img . $logo . $title . $button;
