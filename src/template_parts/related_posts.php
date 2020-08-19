@@ -3,13 +3,13 @@
     'post_type' => 'post',
     'post__not_in' => [$post->ID],
     'cat' => end(get_the_category())->cat_ID,
-    'posts_per_page' => 1
+    'posts_per_page' => 2
   ]);
 ?>
 
 <?php if ($relatedPostsQuery->have_posts()) : ?>
   <section class="o-container-content c-related-articles">
-    <div class="c-blog-nav o-dictate">
+    <div class="c-blog-nav">
       <h3 class="type-subtitle u-mb-8">Related Posts</h3>
     </div>
 
