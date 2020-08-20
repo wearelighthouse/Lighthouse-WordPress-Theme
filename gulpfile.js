@@ -8,6 +8,7 @@ const replace = require('gulp-replace');
 const sass = require('gulp-sass');
 const svgSprite = require('gulp-svg-sprite');
 const terser = require('gulp-terser');
+const purgecss = require('gulp-purgecss');
 
 const paths = {
   src: 'assets',
@@ -69,13 +70,16 @@ function cssMinifiy() {
   return gulp
     .src(paths.dist + '/css/*.css')
     .pipe(replace(/(\/\* dev-only:start \*\/[^]*\/\* dev-only:end \*\/)/g, ''))
+    .pipe(purgecss({ content: ['**/*.php', '**/*.html'] }))
     .pipe(cleanCSS({debug: true}, (details) => {
       var originalSize = details.stats.originalSize + 'B';
       var minifiedSize = details.stats.minifiedSize + 'B';
-      var gzipped = gzipSize.fileSync(details.path) + 'B';
-      console.log(`Minified ${details.name} from ${originalSize} to ${minifiedSize} (${gzipped} gzipped)`);
+      process.stdout.write((`Minified ${details.name} from ${originalSize} to ${minifiedSize} (`));
     }))
-    .pipe(gulp.dest(paths.dist + '/css'));
+    .pipe(gulp.dest(paths.dist + '/css'))
+    .on('finish', () => {
+      console.log(gzipSize.fileSync(paths.dist + '/css/style.css') + 'B gzipped)');
+    });
 }
 
 function svgSprites() {
