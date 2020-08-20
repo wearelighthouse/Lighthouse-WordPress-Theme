@@ -1,6 +1,5 @@
 
 .s-wysiwyg {
-
   p {
     @extend %u-mv-2;
     @extend .type-p;
@@ -16,7 +15,6 @@
   }
 
   p > a,
-  li > a,
   li > a {
     @extend .type-fancy-inline-link;
     color: $color-pink;

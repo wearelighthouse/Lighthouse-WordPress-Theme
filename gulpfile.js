@@ -172,7 +172,10 @@ exports.watch = gulp.series(
     images,
     svgs,
     svgSprites,
-    scss,
+    gulp.series(
+      scss,
+      cssMinifiy
+    ),
     js,
     jsLib
   ),

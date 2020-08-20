@@ -1,10 +1,13 @@
-@import
-'tools/_import',
-'settings/_import',
-'base/_import',
-'utilities/_import',
-'objects/_import',
-'scopes/_import',
-'type/_import',
-'components/_import',
-'integration/_import';
+/* purgecss start ignore */
+@import 'tools/_import';
+@import 'settings/_import';
+@import 'base/_import';
+/* purgecss end ignore */
+@import 'utilities/_import';
+@import 'objects/_import';
+/* purgecss start ignore */
+@import 'scopes/_import';
+@import 'type/_import';
+@import 'components/_import';
+@import 'integration/_import';
+/* purgecss end ignore */
