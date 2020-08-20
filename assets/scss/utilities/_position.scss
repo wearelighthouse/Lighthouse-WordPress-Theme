@@ -11,7 +11,6 @@
 
   // E.g. `@extend %u-right;` To align to right
   @include make-utility((
-    class: true,
     alias: $property,
     $property: 0
   ));
