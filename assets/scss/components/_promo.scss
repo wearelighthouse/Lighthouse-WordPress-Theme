@@ -2,6 +2,7 @@
  * Formerly c-ad, but that got blocked by some adblockers ROFL
  */
 .c-promo {
+  $self: &;
   @extend %u-pad-6;
   @extend %u-mv-6;
   @extend %u-color-white;
@@ -67,7 +68,7 @@
   &__title {
     @extend .type-static-subtitle;
     @extend %u-mt-2;
-    line-height: 1.35;
+    line-height: 1.4;
   }
 
   p {
@@ -95,8 +96,37 @@
     }
   }
 
+  &__work-title {
+    @extend #{$self}__title;
+    @extend %u-mv-4;
+  }
+
+  &__side-image {
+    @extend %u-display-none--upto-large;
+    @extend %u-pos-absolute;
+    top: 50%;
+    width: 200px;
+    height: 200px;
+    align-self: flex-end;
+    transform: translateY(-50%);
+
+    img {
+      @extend %u-width-100pc;
+      @extend %u-height-100pc;
+    }
+  }
+
+  &__side-image ~ &__work-title {
+    @include breakpoint(from-large) {
+      max-width: calc(100% - 200px - 2.5rem);
+    }
+  }
+
   &--work {
-    background-color: $color-gray-light;
     color: $color-blackcurrant;
+
+    #{$self}__background {
+      background-color: $color-gray-light;
+    }
   }
 }

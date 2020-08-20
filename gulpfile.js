@@ -101,7 +101,7 @@ function js() {
   return gulp
     .src(paths.src + '/js/main.js')
     .pipe(
-      terser({ keep_fnames: false, mangle: true })
+      terser({ keep_fnames: false, mangle: true, toplevel: true })
       .on('error', (error) => console.log(error.stack))
     )
     .pipe(gulp.dest(paths.dist + '/js'));

@@ -42,13 +42,19 @@
   }
 
   &--mobile-menu-open {
-    & > * {
+    padding: 0;
+
+    > * {
       color: $color-white !important;
     }
 
     #{$self}__mobile-bg,
     #{$self}__nav {
       transform: translateY(0);
+    }
+
+    #{$self}__inner {
+      padding-top: calc(2.5rem + var(--edge-gutter));
     }
   }
 }

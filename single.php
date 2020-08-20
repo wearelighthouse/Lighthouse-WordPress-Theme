@@ -22,47 +22,51 @@
 
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
-    <section class="o-container-section o-container-section--bordered">
-      <?php if ($podcastEmbed): ?>
-        <div class="o-container-content o-container-content--v-margin">
-          <?= $podcastEmbed; ?>
-        </div>
-      <?php endif; ?>
-
-      <div class="o-container-content o-container-content--v-margin c-content-grid">
-        <?php if ($podcastEmbed) : ?>
-          <div class="c-podcast-links">
-            <?= $postDate ?>
-            <?php if ($transcriptID) : ?>
-              <a href="<?= get_permalink($transcriptID) ?>" class="c-podcast-links__transcript">Read transcript</a>
-            <?php endif; ?>
-            <div class="c-podcast-links__subscribe">
-              <a href="https://itunes.apple.com/gb/podcast/lighthouse-podcast/id1029921850?mt=2" class="c-podcast-links__itunes">iTunes</a>
-              <a href="http://simplecast.fm/podcasts/1302/rss" class="c-podcast-links__rss">RSS</a>
-            </div>
-          </div>
-        <?php else : ?>
-          <div class="o-post-date-container">
-            <?= $postDate ?>
+    <div class="o-container-section o-container-section--bordered">
+      <section>
+        <?php if ($podcastEmbed): ?>
+          <div class="o-container-content o-container-content--v-margin">
+            <?= $podcastEmbed; ?>
           </div>
         <?php endif; ?>
 
-        <?= the_content(); ?>
-      </div>
-    </section>
+        <div class="o-container-content o-container-content--v-margin c-content-grid">
+          <?php if ($podcastEmbed) : ?>
+            <div class="c-podcast-links">
+              <?= $postDate ?>
+              <?php if ($transcriptID) : ?>
+                <a href="<?= get_permalink($transcriptID) ?>" class="c-podcast-links__transcript">Read transcript</a>
+              <?php endif; ?>
+              <div class="c-podcast-links__subscribe">
+                <a href="https://itunes.apple.com/gb/podcast/lighthouse-podcast/id1029921850?mt=2" class="c-podcast-links__itunes">iTunes</a>
+                <a href="http://simplecast.fm/podcasts/1302/rss" class="c-podcast-links__rss">RSS</a>
+              </div>
+            </div>
+          <?php else : ?>
+            <div class="o-post-date-container">
+              <?= $postDate ?>
+            </div>
+          <?php endif; ?>
 
-          <?php include(locate_template('src/template_parts/related_posts.php')) ?>
+          <?= the_content(); ?>
+        </div>
+      </section>
 
-<?php if ($transcript): ?>
-    <section class="o-container-section o-container-section--bordered c-transcript">
-      <div class="c-blog-nav">
-        <h3 class="type-subtitle u-mb-8">Transcript</h3>
-      </div>
-      <div class="o-container-content o-container-content--v-margin c-content-grid">
-        <?php echo apply_filters('the_content', $transcript); ?>
-      </div>
-    </section>
-<?php endif; ?>
+      <?php include(locate_template('src/template_parts/related_posts.php')) ?>
+
+      <?php if ($transcript): ?>
+      <section class="o-container-section o-container-section--bordered c-transcript">
+        <div class="c-blog-nav">
+          <h3 class="type-subtitle u-mb-8">Transcript</h3>
+        </div>
+        <div class="o-container-content o-container-content--v-margin c-content-grid">
+          <?php echo apply_filters('the_content', $transcript); ?>
+        </div>
+      </section>
+      <?php endif; ?>
+
+    </div>
+
   <?php endwhile; ?>
 </main>
 
