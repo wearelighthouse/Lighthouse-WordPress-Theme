@@ -8,7 +8,6 @@ const replace = require('gulp-replace');
 const sass = require('gulp-sass');
 const svgSprite = require('gulp-svg-sprite');
 const terser = require('gulp-terser');
-const purgecss = require('gulp-purgecss');
 
 const paths = {
   src: 'assets',
@@ -70,7 +69,6 @@ function cssMinifiy() {
   return gulp
     .src(paths.dist + '/css/*.css')
     .pipe(replace(/(\/\* dev-only:start \*\/[^]*\/\* dev-only:end \*\/)/g, ''))
-    .pipe(purgecss({ content: ['**/*.php', '**/*.html'] }))
     .pipe(cleanCSS({debug: true}, (details) => {
       var originalSize = details.stats.originalSize + 'B';
       var minifiedSize = details.stats.minifiedSize + 'B';

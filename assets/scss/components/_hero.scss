@@ -108,7 +108,9 @@
   &--gray-standard #{$self}__background,
   &--gray-gradient #{$self}__background,
   &--gray-gradient-small #{$self}__background, {
+    /* purgecss start ignore */
     @extend %u-bg-color-gray-bluish;
+    /* purgecss end ignore */
   }
 
   &--gray-gradient #{$self}__text {
