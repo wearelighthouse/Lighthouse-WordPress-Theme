@@ -22,6 +22,11 @@ return [
             'name' => 'Podcast embed',
             'id'   => 'podcast_embed',
             'type' => 'textarea_code'
-        ]
+          ],
+          [
+              'name' => 'Podcast transcript',
+              'id'   => 'podcast_transcript',
+              'type' => 'wysiwyg'
+          ]
     ]
 ];
