@@ -18,28 +18,20 @@ function interactiveInit() {
   }, 0);
 
   // Add the menu button toggling event listener
-  addMenuToggleListener(document.getElementsByClassName('js-menu-button')[0]);
+  addMenuToggleListener(document.querySelector('.c-menu-button'));
 }
 
 function completeInit() {
   // Do lazy loading images
   setupObservers(window.lozad);
-
-  // Add the keyboard shortcuts event listener
-  document.addEventListener('keydown', function(event) {
-    if (event.altKey && event.code === 'KeyA') {
-      addressToClipboard();
-    }
-  });
 }
 
 window.addEventListener('beforeunload', function (e) {
   document.body.classList.add('js-unloading');
 });
 
-
 function setupObservers(lozad) {
-  const observerLoad = lozad('.js-lazy', {
+  let observerLoad = lozad('.js-lazy', {
       rootMargin: '500px 0px',
       loaded: function(element) {
         element.parentNode.classList.add('js-child-loading');
@@ -68,7 +60,7 @@ function setupObservers(lozad) {
     element.classList.add('js-offscreen');
   });
 
-  const observerView = lozad('.js-half-onscreen-detect', {
+  let observerView = lozad('.js-half-onscreen-detect', {
       threshold: 0.45,  // 'Technically' not ½, only requires 45% to be visible
       load: function() {},
       loaded: function(element) {
@@ -79,19 +71,15 @@ function setupObservers(lozad) {
   observerView.observe();
 }
 
-function addressToClipboard() {
-  navigator.clipboard.writeText('Unit 29, Finsbury Business Center, 40 Bowling Green Lane, London EC1R 0NE');
-}
-
 function addMenuToggleListener(button) {
   button.addEventListener('click', toggleMenu);
 }
 
 function toggleMenu(e) {
-  const header = document.getElementsByClassName('js-header')[0];
+  let header = document.querySelector('.c-header');
   let button = e.target;
 
-  if (button.classList.toggle('js-menu-button--open')) {
+  if (button.getAttribute('aria-checked') === 'false') {
     // Open menu
     button.setAttribute('aria-checked', 'true');
     button.setAttribute('aria-label', 'Close Menu');
@@ -105,6 +93,4 @@ function toggleMenu(e) {
 
   // John would prefer classList.replace(), but it's not in iOS Safari or IE11
   header.classList.toggle('c-header--mobile-menu-open');
-  button.classList.toggle('c-menu-button--lines');
-  button.classList.toggle('c-menu-button--close');
 }
