@@ -9,11 +9,10 @@ $aliases: (
   'display-none'
 );
 
-@each $alias in $aliases  {
+@each $alias in $aliases {
   $value: strReplace($alias, 'display-');
   @include make-utility((
     alias: $alias,
-    class: true,
     display: unquote($value)
   ));
 }
@@ -23,6 +22,10 @@ $aliases: (
   class: true,
   box-sizing: border-box
 ));
+
+.u-inline-block {
+  @extend %u-inline-block;
+}
 
 .u-display-none--upto-medium {
   @extend %u-display-none--upto-medium;
