@@ -99,6 +99,10 @@
   &__work-title {
     @extend #{$self}__title;
     @extend %u-mv-4;
+
+    @include breakpoint(from-large) {
+      max-width: calc(100% - 200px - 2.5rem);
+    }
   }
 
   &__side-image {
@@ -113,12 +117,6 @@
     img {
       @extend %u-width-100pc;
       @extend %u-height-100pc;
-    }
-  }
-
-  &__side-image ~ &__work-title {
-    @include breakpoint(from-large) {
-      max-width: calc(100% - 200px - 2.5rem);
     }
   }
 
