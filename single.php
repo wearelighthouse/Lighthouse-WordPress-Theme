@@ -1,5 +1,6 @@
 <?php
   $podcastEmbed = getPostMeta('post_post_podcast_embed', $post->ID);
+  $transcript = getPostMeta('post_post_podcast_transcript', $post->ID);
 
   if ($podcastEmbed) {
     $transcriptID = get_page_by_path('podcast-' . $post->post_name, OBJECT, 'transcript');
@@ -50,6 +51,18 @@
       </div>
     </section>
 
+          <?php include(locate_template('src/template_parts/related_posts.php')) ?>
+
+<?php if ($transcript): ?>
+    <section class="o-container-section o-container-section--bordered c-transcript">
+      <div class="c-blog-nav">
+        <h3 class="type-subtitle u-mb-8">Transcript</h3>
+      </div>
+      <div class="o-container-content o-container-content--v-margin c-content-grid">
+        <?php echo apply_filters('the_content', $transcript); ?>
+      </div>
+    </section>
+<?php endif; ?>
   <?php endwhile; ?>
 </main>
 
