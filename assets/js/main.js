@@ -21,9 +21,25 @@ function interactiveInit() {
   addMenuToggleListener(document.querySelector('.c-menu-button'));
 }
 
+function addReferral(newReferralUrl) {
+  if (!newReferralUrl) {
+    return;
+  }
+
+  let existingReferralUrls = localStorage.getItem('referrals');
+
+  if (!existingReferralUrls) {
+    localStorage.setItem('referrals', newReferralUrl);
+  } else if (existingReferralUrls.split(',').length < 20) {
+    localStorage.setItem('referrals', existingReferralUrls + ',' + newReferralUrl);
+  }
+}
+
 function completeInit() {
   // Do lazy loading images
   setupObservers(window.lozad);
+  // Add document.referrer into cache
+  addReferral(document.referrer);
 }
 
 window.addEventListener('beforeunload', function (e) {

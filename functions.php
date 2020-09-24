@@ -135,3 +135,20 @@ function wpImageLinkDefault()
   }
 }
 add_action('admin_init', 'wpImageLinkDefault', 10);
+
+function populate_referrals($form)
+{
+  echo ("
+    <script>
+      document.addEventListener('DOMContentLoaded', function(event) {
+        var referralsInput = document.querySelector('input[value=\"referrals\"]');
+        if (referralsInput) {
+          referralsInput.value = localStorage.getItem('referrals');
+        }
+      });
+    </script>
+  ");
+
+  return $form;
+}
+add_filter('gform_pre_render', 'populate_referrals');
