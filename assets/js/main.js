@@ -28,6 +28,12 @@ function addReferral(newReferralUrl) {
 
   let existingReferralUrls = localStorage.getItem('referrals');
 
+  // Add timestamp
+  let datetime = new Date().toLocaleString('en-GB');
+  datetime = datetime.replace(', ', '-');  // Comma,separated to hypen-separated
+  datetime = datetime.replace(/:\d+$/g, '');  // Remove seconds from timestamp
+  newReferralUrl += `-${datetime}`;
+
   if (!existingReferralUrls) {
     localStorage.setItem('referrals', newReferralUrl);
   } else if (existingReferralUrls.split(',').length < 20) {
