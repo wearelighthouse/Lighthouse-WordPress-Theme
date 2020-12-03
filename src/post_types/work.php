@@ -6,7 +6,8 @@ function registerWorkPostType()
     $supports = [
         'title',
         'editor',
-        'excerpt'
+        'excerpt',
+        'thumbnail'
     ];
 
     register_post_type('work', [
@@ -28,7 +29,7 @@ function registerWorkPostType()
         'menu_icon' => 'dashicons-carrot',
         'supports' => $supports,
         'taxonomies' => [],
-        'hierarchical' => true
+        'hierarchical' => false
     ]);
 
 }
