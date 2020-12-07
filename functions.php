@@ -152,3 +152,37 @@ function populate_referrals($form)
   return $form;
 }
 add_filter('gform_pre_render', 'populate_referrals');
+
+add_action( 'enqueue_block_editor_assets', 'custom_block_assets' );
+
+function custom_block_assets(){
+
+  wp_enqueue_script(
+    'block',
+    get_template_directory_uri()  . '/block/block.js',
+    array( 'wp-blocks', 'wp-element','wp-editor', 'wp-components' ),
+    filemtime( dirname( __FILE__ ) . '/block/block.js' )
+  );
+
+  wp_enqueue_style(
+    'custom-css',
+    get_template_directory_uri()  . '/block/block.css',
+    array( 'wp-edit-blocks' ),
+    filemtime( dirname( __FILE__ ) . '/block/block.css' )
+  );
+
+}
+
+
+add_action( 'wp_enqueue_scripts', 'custom_block_front_end_assets' );
+
+function custom_block_front_end_assets(){
+
+  wp_enqueue_style(
+    'wp-block-custom-css',
+    get_template_directory_uri()  . '/block/custom.css',
+    array(),
+    filemtime( dirname( __FILE__ ) . '/block/custom.css' )
+  );
+
+}
