@@ -2,23 +2,15 @@ const { RichText, MediaUpload, PlainText } = wp.editor;
 const { registerBlockType } = wp.blocks;
 const { Button,SelectControl } = wp.components;
 
-// Import our CSS files
-//import './style.scss';
-//import './editor.scss';
 
 registerBlockType('custom/screen', {   
   title: 'Screen',
   //icon: 'heart',
   category: 'common',
   attributes: {
-    title: {
+    type: {
       source: 'text',
-      selector: '.screen__title'
-    },
-    body: {
-      type: 'array',
-      source: 'children',
-      selector: '.screen__body'
+      selector: '.screen__type'
     },
     imageAlt: {
       attribute: 'alt',
@@ -115,10 +107,8 @@ registerBlockType('custom/screen', {
       <div className="screen">
         { screenImage(attributes.imageUrl, attributes.imageAlt) }
         <div className="screen__content">
-          <h3 className="screen__title">{ attributes.title }</h3>
-          <div className="screen__body">
-            { attributes.body }
-          </div>
+          <h3 className="screen__type">{ attributes.type }</h3>
+          
         </div>
       </div>
     );
