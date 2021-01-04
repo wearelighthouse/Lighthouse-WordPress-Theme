@@ -82,8 +82,9 @@
       height: auto;
       // Removed margins because Tom thought they were centered(?)
       // Re-added margins cause all the imagery was designed to work with them...
-      margin-right: 8%;
-      margin-left: 8%;
+      // Re-removed because works better with current imagery (04/01/2021)
+      // margin-right: 8%;
+      // margin-left: 8%;
     }
   }
 
