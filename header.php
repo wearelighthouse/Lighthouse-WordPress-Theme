@@ -49,7 +49,6 @@
   <script async crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=IntersectionObserver%2CObject.assign%2CNodeList.prototype.forEach"></script>
   <script async src="<?= $dist ?>/js/main.js">></script>
   <script async src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
-  <script defer src="<?= get_template_directory_uri() ?>/node_modules/focus-visible/dist/focus-visible.min.js"></script>
 
 <?php if (is_front_page()) : ?>
   <link rel="preconnect" href="https://widget.clutch.co" crossorigin>

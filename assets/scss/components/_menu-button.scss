@@ -44,19 +44,18 @@
     }
   }
 
-  &:focus {
-    outline: none;
-  }
-
-  &:-moz-focusring {
-    outline: none;
-  }
-
   &:hover {
     cursor: pointer;
   }
 
-  &.focus-visible,
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 1px dotted currentColor !important;
+  }
+
   &:active {
     outline: 1px dotted currentColor !important;
   }

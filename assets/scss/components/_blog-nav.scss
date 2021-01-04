@@ -26,10 +26,13 @@
     &:focus,
     &:hover {
       border-bottom: 3px $color-orange solid;
+    }
+
+    &:focus:not(:focus-visible) {
       outline: none;
     }
 
-    &.focus-visible {
+    &:focus-visible {
       outline: 1px dotted currentColor;
     }
   }
