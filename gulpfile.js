@@ -69,7 +69,7 @@ function cssMinifiy() {
   return gulp
     .src(paths.dist + '/css/*.css')
     .pipe(replace(/(\/\* dev-only:start \*\/[^]*\/\* dev-only:end \*\/)/g, ''))
-    .pipe(cleanCSS({debug: true}, (details) => {
+    .pipe(cleanCSS({}, (details) => {
       var originalSize = details.stats.originalSize + 'B';
       var minifiedSize = details.stats.minifiedSize + 'B';
       var gzipped = gzipSize.fileSync(details.path) + 'B';
