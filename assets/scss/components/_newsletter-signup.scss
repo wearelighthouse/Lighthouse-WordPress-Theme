@@ -1,10 +1,30 @@
 .c-newsletter-signup {
   @extend %u-bg-color-gray-bluish;
-  @extend %u-pad-6;
+  //@extend %u-pad-6;
+  @extend %u-pv-6;
+  @extend %u-ph-6--from-large;
+  @extend %u-border-box;
   grid-column: 1 / -1;
 
+  // @include breakpoint(upto-small) {
+  //   padding-right: calc(4% + 1rem);
+  //   padding-left: calc(4% + 1rem);
+  // }
+
   @include breakpoint(from-large) {
-    padding-right: 320px;
+    margin-right: auto;
+    margin-left: auto;
+    width: var(--container-width);
+    max-width: $global-max-width;
+  }
+
+  &__inner {
+    @extend %u-border-box;
+    @extend .o-container-content;
+
+    @include breakpoint(from-large) {
+      padding-right: 320px;
+    }
   }
 
   &__heading {
@@ -14,7 +34,7 @@
 
   &__form {
     @extend %u-flex;
-    @extend %u-fd-column--upto-medium;
+    @extend %u-fd-column--upto-small;
   }
 
   &__text-input {
@@ -28,6 +48,7 @@
     background: none;
     font-size: unset;
     transition: background-color .15s;
+    min-width: 0;
 
     &::placeholder {
       opacity: 1;
@@ -49,8 +70,12 @@
   }
 
   &__button {
-    @extend %u-ml-6--from-medium;
-    @extend %u-mt-2--upto-medium;
+    @extend %u-ml-6--from-small;
+    @extend %u-mt-2--upto-small;
     @extend %u-fs-0;
   }
+}
+
+.c-newsletter-signup + .o-container-content {
+  margin-top: 0;
 }
