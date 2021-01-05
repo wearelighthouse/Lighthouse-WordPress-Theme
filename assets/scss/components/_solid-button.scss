@@ -1,0 +1,17 @@
+.c-solid-button {
+  @extend %u-bg-color-blackcurrant;
+  @extend %u-color-white;
+  @extend %u-sailec;
+  @extend %u-bold;
+  @extend %u-ph-3;
+  @extend %u-pv-2;
+  font-size: 18px;
+
+  &:not(:disabled) {
+    cursor: pointer;
+
+    &:hover {
+      @extend %u-underline;
+    }
+  }
+}

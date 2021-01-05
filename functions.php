@@ -48,6 +48,7 @@ require_once __DIR__ . '/src/post_types/work.php';
 require_once __DIR__ . '/src/shortcodes/ad.php';
 require_once __DIR__ . '/src/shortcodes/content-blocks.php';
 require_once __DIR__ . '/src/shortcodes/image.php';
+require_once __DIR__ . '/src/shortcodes/newsletter.php';
 require_once __DIR__ . '/src/shortcodes/clients.php';
 require_once __DIR__ . '/src/shortcodes/quote.php';
 require_once __DIR__ . '/src/shortcodes/screen.php';
@@ -58,6 +59,7 @@ function registerShortcodes()
   add_shortcode('quote', 'quoteShortcode');
   add_shortcode('image', 'imageShortcode');
   add_shortcode('ad', 'adShortcode');
+  add_shortcode('newsletter', 'newsletterShortcode');
   add_shortcode('blocks', 'contentBlocksShortcode');
   add_shortcode('clients', 'clientsShortcode');
 }

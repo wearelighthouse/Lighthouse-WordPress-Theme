@@ -1,0 +1,56 @@
+.c-newsletter-signup {
+  @extend %u-bg-color-gray-bluish;
+  @extend %u-pad-6;
+  grid-column: 1 / -1;
+
+  @include breakpoint(from-large) {
+    padding-right: 320px;
+  }
+
+  &__heading {
+    @extend .type-subtitle;
+    @extend %u-mb-3;
+  }
+
+  &__form {
+    @extend %u-flex;
+    @extend %u-fd-column--upto-medium;
+  }
+
+  &__text-input {
+    @extend %u-block;
+    @extend %u-pv-1;
+    @extend %u-fg-1;
+    @extend %u-sailec;
+    border: unset;
+    border-bottom: 2px solid $color-blackcurrant;
+    margin: 0;
+    background: none;
+    font-size: unset;
+    transition: background-color .15s;
+
+    &::placeholder {
+      opacity: 1;
+      color: $color-gray-dark;
+    }
+
+    &:focus {
+      outline: none;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      background-color: $color-white;
+    }
+  }
+
+  &__button {
+    @extend %u-ml-6--from-medium;
+    @extend %u-mt-2--upto-medium;
+    @extend %u-fs-0;
+  }
+}
