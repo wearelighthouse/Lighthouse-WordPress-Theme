@@ -11,7 +11,7 @@
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
     <section class="o-container-section o-container-section--bordered">
-      <div class="o-container-content o-container-content--v-margin c-content-grid">
+      <div class="o-container-content o-container-content--v-margin c-content-grid c-content-grid--transcript">
         <div class="c-podcast-links">
           <?php if ($podcastID) : ?>
             <a href="<?= get_permalink($podcastID) ?>" class="c-podcast-links__transcript">Listen to the podcast</a>

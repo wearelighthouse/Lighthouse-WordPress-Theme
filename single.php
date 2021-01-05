@@ -55,11 +55,11 @@
       <?php include(locate_template('src/template_parts/related_posts.php')) ?>
 
       <?php if ($transcript): ?>
-      <section class="o-container-section o-container-section--bordered c-transcript">
+      <section class="o-container-section o-container-section--bordered u-bg-color-gray-gradient">
         <div class="c-blog-nav">
-          <h3 class="type-subtitle u-mb-8">Transcript</h3>
+          <h2 class="type-subtitle u-mb-8">Transcript</h2>
         </div>
-        <div class="o-container-content o-container-content--v-margin c-content-grid">
+        <div class="o-container-content o-container-content--v-margin c-content-grid c-content-grid--transcript">
           <?php echo apply_filters('the_content', $transcript); ?>
         </div>
       </section>

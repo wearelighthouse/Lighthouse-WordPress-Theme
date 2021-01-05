@@ -24,5 +24,11 @@
     alias: 'bg-gradient--' + $key,
     class: true,
     background: $value
-  ))
+  ));
 }
+
+@include make-utility((
+  alias: 'bg-color-gray-gradient',
+  class: true,
+  background: linear-gradient(180deg, $color-gray-bluish, #fff)
+));

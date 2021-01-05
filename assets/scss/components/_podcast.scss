@@ -31,20 +31,3 @@
     }
   }
 }
-
-.c-transcript {
-  background-color: $color-gray-bluish;
-  background: linear-gradient(180deg, $color-gray-bluish, #fff);
-
-  .o-container-content {
-    h3 {
-      font-size: 22px;
-    }
-  }
-
-  .c-content-grid>h2:not(:first-child),
-  .c-content-grid>h3:not(:first-child),
-  .c-content-grid>h4:not(:first-child) {
-    margin-top: 2rem;
-  }
-}

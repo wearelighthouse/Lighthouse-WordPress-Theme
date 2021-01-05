@@ -36,7 +36,6 @@
   }
 
   @include breakpoint(from-medium) {
-
     display: grid;
     grid-column-gap: 3rem;
     grid-template-columns: 1fr 60%;
@@ -87,6 +86,23 @@
 
       & + p {
         margin-top: 0;
+      }
+    }
+  }
+
+  &--transcript {
+    h3 {
+      font-size: 22px;
+      line-height: 1.4;
+    }
+
+    & > h3:not(:first-child) {
+      margin-top: 2rem;
+    }
+
+    @include breakpoint(from-medium) {
+      & > h3:not(:first-child) + p {
+        margin-top: 2rem;
       }
     }
   }
