@@ -19,7 +19,7 @@
       <div class="c-blog-link">
         <div class="c-blog-link__info">
           <span class="c-blog-link__info__date"><?= get_the_date(get_option('date_format')) ?></span>
-          <span class="c-blog-link__info__category"><?= end(get_the_category())->name ?></span>
+          <span class="c-blog-link__info__category"><?= end($categories)->name ?></span>
         </div>
 
         <div class="c-blog-link__content">
