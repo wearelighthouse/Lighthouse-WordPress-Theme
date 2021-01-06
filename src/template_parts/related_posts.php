@@ -1,8 +1,10 @@
 <?php
+  $categories = get_the_category();
+
   $relatedPostsQuery = new WP_Query([
     'post_type' => 'post',
     'post__not_in' => [$post->ID],
-    'cat' => end(get_the_category())->cat_ID,
+    'cat' => end($categories)->cat_ID,
     'posts_per_page' => 2
   ]);
 ?>
