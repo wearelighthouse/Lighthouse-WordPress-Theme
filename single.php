@@ -10,7 +10,7 @@
     }
   }
 
-  $postDate .= '<time datetime="' . get_the_date('Y-m-d', $post->ID)  . '" class="c-post-date">';
+  $postDate = '<time datetime="' . get_the_date('Y-m-d', $post->ID)  . '" class="c-post-date">';
   $postDate .= get_the_date('jS F Y', $post->ID);
   $postDate .= '</time>';
 ?>
