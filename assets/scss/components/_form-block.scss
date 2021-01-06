@@ -1,0 +1,29 @@
+.c-form-block {
+  @extend %u-bg-color-gray-bluish;
+  @extend %u-pv-6;
+  @extend %u-ph-6--from-large;
+  @extend %u-border-box;
+  grid-column: 1 / -1;
+
+  @include breakpoint(from-large) {
+    margin-right: auto;
+    margin-left: auto;
+    width: var(--container-width);
+    max-width: $global-max-width;
+  }
+
+  .gform_wrapper {
+    @extend %gform--block;
+    @extend %u-border-box;
+    @extend .o-container-content;
+    max-width: 100%;
+
+    @include breakpoint(from-large) {
+      padding-right: 260px;
+    }
+  }
+}
+
+.c-form-block + .o-container-content {
+  margin-top: 0;
+}
