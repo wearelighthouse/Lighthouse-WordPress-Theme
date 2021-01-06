@@ -3,11 +3,11 @@
 function formBlockShortcode($atts, $content = null)
 {
 	$atts = shortcode_atts([
-		'form_id' => 1,
+		'id' => 1,
 	], $atts);
 
 	$formBlock = '<div class="c-form-block">';
-	$formBlock .= do_shortcode('[gravityform id="' . $atts['form_id'] . '" title="true" description="true"]');
+	$formBlock .= do_shortcode('[gravityform id="' . $atts['id'] . '" title="true" description="true"]');
 	$formBlock .= '</div>';
 
 	$formBlock = '</div>' . $formBlock . '<div class="o-container-content o-container-content--v-margin">';
