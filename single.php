@@ -49,6 +49,9 @@
           <?php endif; ?>
 
           <?= the_content(); ?>
+
+          <?php $newsletterFormId = RGFormsModel::get_form_id('Newsletter'); ?>
+          <?= do_shortcode('[form id="' . $newsletterFormId . '"]') ?>
         </div>
       </section>
 
