@@ -71,7 +71,7 @@ function adShortcode($atts, $content = null)
 	} else {
 		$button = '<div class="c-button c-button--underlined-light">' . $atts['read_more'] . '</div>';
 		$title = '<h3 class="c-promo__title">' . $adPage->post_title . '</h3>';
-		$ad .= ($logo ? $logo : $label) . $title . wpautop($content) . $button;
+		$ad .= (isset($logo) ? $logo : $label) . $title . wpautop($content) . $button;
 	}
 
 	$ad .= '</a>';
