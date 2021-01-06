@@ -16,7 +16,9 @@
   if ($logoSrc) {
     $logoAlt = get_post_meta($logoId, '_wp_attachment_image_alt', true);
     $logoMeta = wp_get_attachment_metadata($logoId);
-    $logoMask = "-webkit-mask-image: url({$logoSrc}); mask-image: url({$logoSrc}); width: {$logoMeta['width']}px; height: {$logoMeta['height']}px";
+    $logoWidth = isset($logoMeta['width']) ? $logoMeta['width'] : 0;
+    $logoHeight = isset($logoMeta['height']) ? $logoMeta['height'] : 0;
+    $logoMask = "-webkit-mask-image: url({$logoSrc}); mask-image: url({$logoSrc}); width: {$logoWidth}px; height: {$logoHeight}px";
   }
   $title = getPostMeta('work_single_work_options_link_block_title', $caseStudyId);
   $linkText = 'Find out more';
