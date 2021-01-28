@@ -2,7 +2,8 @@
   <?php while (have_posts()) : the_post(); ?>
 
     <?php
-      $category = end(get_the_category())->name;
+      $categories = get_the_category();
+      $category = end($categories)->name;
     ?>
 
     <div class="c-blog-link">
