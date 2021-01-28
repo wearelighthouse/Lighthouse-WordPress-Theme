@@ -1,10 +1,16 @@
 <section class="o-container-content">
-  <?php while (have_posts()) : the_post(); ?>
+  <?php $i = 0; while (have_posts()) : the_post(); ?>
 
     <?php
       $categories = get_the_category();
       $category = end($categories)->name;
+      $i++;
     ?>
+
+    <?php if ($i === 5): ?>
+      <?php $newsletterFormId = RGFormsModel::get_form_id('Newsletter'); ?>
+      <?= do_shortcode('[form id="' . $newsletterFormId . '"]') ?>
+    <?php endif; ?>
 
     <div class="c-blog-link">
       <div class="c-blog-link__info">
