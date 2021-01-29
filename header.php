@@ -52,7 +52,7 @@
 
 <?php if (is_front_page()) : ?>
   <link rel="preconnect" href="https://widget.clutch.co" crossorigin>
-  <link rel="preconnect" href="https://cdn.goodfirms.co" crossorigin>
+  <link rel="preconnect" href="https://assets.goodfirms.co" crossorigin>
 <?php endif; ?>
 
   <?php if (!in_array($userIP, $excludedIPs) && !current_user_can('edit_pages')) : ?>

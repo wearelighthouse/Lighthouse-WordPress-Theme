@@ -99,7 +99,7 @@
       ?>
       <aside class="clutch-container">
         <script async src="https://widget.clutch.co/static/js/widget.js"></script>
-        <script async src="https://cdn.goodfirms.co/assets/js/widget.min.js"></script>
+        <script async src="https://assets.goodfirms.co/assets/js/widget.min.js"></script>
         <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="393790">
           <a href="https://clutch.co/profile/lighthouse-london#reviews" target="_blank" rel="noopener" class="clutch-link" style="position: relative">
             <noscript>See Lighthouse reviews on Clutch</noscript>
