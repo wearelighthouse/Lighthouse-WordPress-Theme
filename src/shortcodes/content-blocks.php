@@ -8,32 +8,27 @@ function contentBlocksShortcode($atts, $content = null)
 
 	$blocksContent = explode( '[block]', $content);
 	array_shift($blocksContent);
-	//print_r($blocksContent);
 
 	$blocks = '</section>
 		 <section class="o-container-section o-container-section--h-bordered">
 		    <div class="o-container-content o-container-services o-container-services--' . $atts['columns'] . '-column">';
 
 	foreach ($blocksContent as $block) {
-		$blocks .= '<div class="c-service-block">';
-
+		$blocks .= '<div class="s-content s-content--marginless">';
 		$block = str_replace( '[/block]' , '', $block );
-		$block = str_replace( '<p>' , '', $block );
-		$block = str_replace( '</p>' , '', $block );
-		$block = str_replace( '<h3>', '<h3 class="c-service-block__title type-title">' ,$block );
-		$block = str_replace( '</h3>', '</h3><div class="c-service-block__desc type-p"><p>' , $block );
-
+		$block = str_replace( '<p></p>' , '', $block );
+		$pos = strpos($block, '</p>');
+		$block = substr_replace($block, '', $pos, strlen('</p>'));
+		$pos = strrpos($block, '<p>');
+		$block = substr_replace($block, '', $pos, strlen('<p>'));
 		$blocks .= $block;
-		$blocks .= '</p>    </div>
-		  </div>';
+		$blocks .= '</div>';
 	}
 
   $blocks .= '	          </div>
 		  </section>
 			<section class="o-container-section o-container-section--h-bordered">
 			<div class="o-container-content o-container-content--v-margin c-content-grid">';
-
-  //echo $blocks;
 
 	return $blocks;
 }

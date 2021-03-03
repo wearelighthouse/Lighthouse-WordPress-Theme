@@ -29,6 +29,12 @@
     margin-top: calc((var(--container-width) / 20) + 3rem);
   }
 
+  & > .c-images + h3:not(:first-child),
+  & > .c-images + h3:not(:first-child),
+  & > .c-images + h3:not(:first-child) {
+    margin-top: 2rem;
+  }
+
   & > h2:first-child,
   & > h3:first-child,
   & > h4:first-child {
@@ -41,6 +47,14 @@
     @include breakpoint(from-medium) {
       margin-top: 2rem;
       margin-top: calc((var(--container-width) / 20) + 3rem);
+    }
+  }
+
+  & > .c-images + h2:not(:first-child) + *,
+  & > .c-images + h3:not(:first-child) + *,
+  & > .c-images + h4:not(:first-child) + * {
+    @include breakpoint(from-medium) {
+      margin-top: 2rem;
     }
   }
 
@@ -59,5 +73,15 @@
     @extend %u-width-100pc;
     @extend %u-height-auto;
     @extend %u-mv-4; // 6 (3rem) minus 2 (1rem) for the <p> margins
+  }
+
+  &--marginless {
+    > *:first-child {
+      margin-top: 0 !important;
+    }
+
+    > *:last-child {
+      margin-bottom: 0 !important;
+    }
   }
 }
