@@ -19,11 +19,11 @@
       @extend %u-mv-2--upto-medium;
       @extend %u-mh-6--upto-medium;
       @extend %u-mh-2--from-medium;
-      transition: none;
 
       a {
         // Set this here as it's tricky to get in the with WP menu PHP
         @extend .c-button--simple;
+        transition: none;
       }
     }
 
@@ -42,7 +42,7 @@
       margin-top: 8rem;
       transform: translateY(50%); // Because it's "centered" in the header still
 
-      .menu-item {
+      .menu-item a {
         opacity: 0;
         transform: translateY(-100%);
       }
@@ -54,15 +54,8 @@
   }
 }
 
-.c-header--mobile-menu-open .c-header__nav {
-  .menu-item {
-    opacity: 1;
-    transform: translateY(0);
-
-    @for $i from 0 to 6 {
-      &:nth-child(#{$i}) {
-        transition: .1s transform $i * .07s, .7s opacity $i * .07s;
-      }
-    }
-  }
+.c-header--mobile-menu-open .c-header__nav .menu-item a {
+  opacity: 1;
+  transform: translateY(0);
+  transition: .1s transform calc(var(--i) * .07s), .7s opacity calc(var(--i) * .07s);
 }

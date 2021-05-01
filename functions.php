@@ -111,6 +111,13 @@ function addCustomNavClasses($classes = [], $menu_item = false)
 }
 add_filter('nav_menu_css_class', 'addCustomNavClasses', 100, 2);
 
+function addNavMenuItemIndexCssVar($atts, $item, $args)
+{
+  $atts['style'] = '--i: ' . $item->menu_order;
+  return $atts;
+}
+add_filter('nav_menu_link_attributes', 'addNavMenuItemIndexCssVar', 10, 3);
+
 // Changing wrapping oembeds from <p> to <div> with a specific classname, and...
 // add "nocookie" To WordPress oEmbeded Youtube Videos
 // from: https://wordpress.org/support/topic/video-shortcode-youtube-nocookie-not-working/
