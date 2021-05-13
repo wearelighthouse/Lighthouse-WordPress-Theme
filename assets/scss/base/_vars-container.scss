@@ -1,6 +1,6 @@
 body {
   --container-width: calc(68vw + 4rem);
-  --container-v-pad: calc(2rem + 4%);
+  --container-v-pad: Min(calc(2rem + 4%), 4rem);
   --edge-gutter: 0rem;
   // To start with, pretend the scrollbars are massive, that way anything with
   // width: 100vw - var(--scrollbar-width) things start at 0px width

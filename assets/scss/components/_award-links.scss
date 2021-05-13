@@ -1,0 +1,18 @@
+.c-award-links {
+  @extend %u-flex;
+  @extend %u-fw-wrap;
+  @extend %u-ai-center;
+  @extend %u-jc-center;
+  @extend %u-mv--1;
+
+  &__link {
+    @extend %u-mh-4;
+    @extend %u-mv-1;
+
+    img {
+      @extend %u-block;
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
