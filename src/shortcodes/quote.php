@@ -57,7 +57,7 @@ function quoteShortcode($wp_atts, $content = null)
 
 			$href = $atts['company_url'] ? 'href="' . $atts['company_url'] . '" target="_blank"' : '';
 
-			if (!array_key_exists('disable_clutch', $wp_atts) && $clutch > 0) {
+			if (!in_array('disable_clutch', $wp_atts) && $clutch > 0) {
 				$clutchScore = '<div class="c-clutch"><div class="c-clutch__logo"></div><div class="c-clutch__score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div></div>';
 			}
 		}
