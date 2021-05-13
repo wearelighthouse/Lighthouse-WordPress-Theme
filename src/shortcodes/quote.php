@@ -1,6 +1,6 @@
 <?php
 
-function quoteShortcode($atts, $content = null)
+function quoteShortcode($wp_atts, $content = null)
 {
 	// Get the lighthouse team names
 	$teamPosts = new WP_Query([
@@ -27,7 +27,7 @@ function quoteShortcode($atts, $content = null)
 		'title' => '',
 		'company' => '',
 		'company_url' => ''
-	], $atts);
+	], $wp_atts);
 
 	if ($atts['name']) {
 		// is it one of us?
@@ -57,7 +57,7 @@ function quoteShortcode($atts, $content = null)
 
 			$href = $atts['company_url'] ? 'href="' . $atts['company_url'] . '" target="_blank"' : '';
 
-			if ($clutch > 0) {
+			if (!array_key_exists('disable_clutch', $wp_atts) && $clutch > 0) {
 				$clutchScore = '<div class="c-clutch"><div class="c-clutch__logo"></div><div class="c-clutch__score" style="width:' . (65 * (($clutch/10) * 2)) . 'px"></div></div>';
 			}
 		}
