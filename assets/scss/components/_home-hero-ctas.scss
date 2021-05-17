@@ -3,15 +3,15 @@
   @extend %u-ai-center--from-small;
   @extend %u-ai-flex-start--upto-small;
   @extend %u-fd-column--upto-small;
-  margin: 0 -.75rem;
+  margin-top: 1.25rem;
+  margin-right: -.75rem;
+  margin-left: -.75rem;
 
   > * {
     margin: .75rem;
   }
 
   @include breakpoint(upto-small) {
-    margin-top: 1.25rem;
-
     > * {
       margin-top: .25rem;
       margin-bottom: .25rem;
