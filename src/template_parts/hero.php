@@ -71,6 +71,12 @@
       <?php if ($text) : ?>
         <div class="c-hero__text <?= $scope ?><?= (isset($heroImage) || $imageId) ? ' c-hero__text--with-image' : '' ?>">
           <?= $text ?>
+          <?php if (is_front_page()) : ?>
+            <div class="c-home-hero-ctas">
+              <a href="/contact" class="c-button c-button--pill">Get a quote</a>
+              <a href="mailto:hello@wearelighthouse.com" class="c-button c-button--simple c-button--chevron">Or send us an email</a>
+            </div>
+          <?php endif; ?>
         </div>
       <?php endif; ?>
 

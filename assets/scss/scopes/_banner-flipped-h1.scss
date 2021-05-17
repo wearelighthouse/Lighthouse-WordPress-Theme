@@ -23,7 +23,7 @@
     @extend %u-display-none--upto-medium;
   }
 
-  a {
+  a:not(.c-button) {
     @extend %u-underline;
   }
 

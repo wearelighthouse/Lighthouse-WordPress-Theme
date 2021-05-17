@@ -1,5 +1,5 @@
-
 .c-button {
+  -webkit-tap-highlight-color: transparent;
 
   &:focus {
     outline: none;
@@ -14,7 +14,6 @@
     padding-top: 6px;
     padding-bottom: 6px;
     outline-offset: 3px;
-    -webkit-tap-highlight-color: transparent;
 
     &:after {
       @extend %u-pos-absolute;
@@ -60,6 +59,56 @@
 
     &:active {
       outline: 1px dotted currentColor !important;
+    }
+  }
+
+  &--pill {
+    @extend %u-flex;
+    @extend %u-ai-center;
+    @extend %u-jc-center;
+    @extend %u-color-blackcurrant;
+    @extend %u-bg-color-white;
+    @extend %u-ph-2;
+    @extend %u-ph-3--from-small;
+    min-height: 3rem;
+    border-radius: 1e3px;
+    transition: background .1s, box-shadow .3s, transform .3s;
+
+    &:hover {
+      // simple version // box-shadow: 0 1px 12px rgba($color-blackcurrant, .15);
+      box-shadow: -3px 4px 0 rgba($color-blackcurrant, .9);
+      transform: translate(3px, -4px);
+      transition: background .1s, box-shadow .15s, transform .15s;
+    }
+
+    &:focus-visible {
+      text-decoration: underline;
+    }
+
+    &:active {
+      background: $color-gray-light;
+    }
+
+    &:hover:active {
+      box-shadow: -1px 2px 0 rgba($color-blackcurrant, .9);
+      transform: translate(1px, -2px);
+    }
+  }
+
+  &--chevron {
+    display: flex;
+    align-items: center;
+
+    &:before {
+      display: block;
+      width: .5em;
+      height: .5em;
+      order: 1;
+      border-top: .1em solid currentColor;
+      border-right: .1em solid currentColor;
+      margin-left: .5rem;
+      content: '';
+      transform: rotate(45deg);
     }
   }
 
