@@ -1,6 +1,6 @@
 
 .type-headline {
-  @include fontScale(36, 68);
+  @include fontScale(40, 68);
   @extend %u-sailec;
   @extend %u-bold;
   // line-height: 1.2; // Done in reset
