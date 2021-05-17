@@ -74,11 +74,18 @@
     border-radius: 1e3px;
     transition: background .1s, box-shadow .3s, transform .3s;
 
-    &:hover {
-      // simple version // box-shadow: 0 1px 12px rgba($color-blackcurrant, .15);
-      box-shadow: -3px 4px 0 rgba($color-blackcurrant, .9);
-      transform: translate(3px, -4px);
-      transition: background .1s, box-shadow .15s, transform .15s;
+    @media(hover: hover) {
+      &:hover {
+        // simple version // box-shadow: 0 1px 12px rgba($color-blackcurrant, .15);
+        box-shadow: -3px 4px 0 rgba($color-blackcurrant, .9);
+        transform: translate(3px, -4px);
+        transition: background .1s, box-shadow .15s, transform .15s;
+      }
+
+      &:hover:active {
+        box-shadow: -1px 2px 0 rgba($color-blackcurrant, .9);
+        transform: translate(1px, -2px);
+      }
     }
 
     &:focus-visible {
@@ -87,11 +94,6 @@
 
     &:active {
       background: $color-gray-light;
-    }
-
-    &:hover:active {
-      box-shadow: -1px 2px 0 rgba($color-blackcurrant, .9);
-      transform: translate(1px, -2px);
     }
   }
 
