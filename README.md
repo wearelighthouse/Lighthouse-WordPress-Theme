@@ -14,10 +14,9 @@ A WordPress Theme for the 2019 version of [wearelighthouse.com](https://wearelig
 
 ### Step-by-step
 
-1. Make a new folder to contain everything.
+1. Make a new folder to contain everything, and change directory into it.
 ```
-$ mkdir lighthouse
-$ cd lighthouse
+$ mkdir lighthouse && cd lighthouse
 ```
 
 2. Download and extract the latest version of [WordPress](https://wordpress.org/download/).
