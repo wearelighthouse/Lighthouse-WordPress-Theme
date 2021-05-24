@@ -31,11 +31,11 @@ $ curl -o wordpress.zip https://wordpress.org/latest.zip &&
 3. Clone this repo into the themes directory.
 ```
 $ cd wp-content/themes/ &&
-  git clone https://github.com/wearelighthouse/Lighthouse-WordPress-Theme.git &&
-  cd Lighthouse-WordPress-Theme
+  git clone https://github.com/wearelighthouse/Lighthouse-WordPress-Theme.git lighthouse &&
+  cd lighthouse
 ```
 
-4. Fetch the fonts
+4. Fetch the fonts (password is in the Lighthouse 1Pass)
 ```
 $ ./assets/font/fetch.sh
 ```
