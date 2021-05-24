@@ -29,15 +29,11 @@
 
   &__person {
     @extend %u-flex;
-    @extend %u-fd-column;
-    @extend %u-fw-wrap;
-    @extend %u-jc-center;
-    height: 64px;
+    @extend %u-ai-center;
     line-height: 1.6;
   }
 
   &__name {
-    @extend %u-block;
     @extend %u-bold;
   }
 

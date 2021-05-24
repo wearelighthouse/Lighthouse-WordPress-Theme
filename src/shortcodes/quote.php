@@ -42,18 +42,18 @@ function quoteShortcode($wp_atts, $content = null)
 			$href = 'href="' . get_permalink($lighthouseID) . '"';
 
 			$personTitle = getPostMeta('team_team_title', $lighthouseID);
-			$personTitle = $personTitle ? '<span class="c-blockquote__title">' . $personTitle . '</span>' : '';
+			$personTitle = $personTitle ? '<div class="c-blockquote__title">' . $personTitle . '</div>' : '';
 
-			$personName = '<span class="c-blockquote__name">' . $atts['name'] . '</span>';
+			$personName = '<div class="c-blockquote__name">' . $atts['name'] . '</div>';
 
 			$clutchScore = '';
 		} else {
 			$class = 'c-blockquote c-blockquote--client';
 			$image = '';
-			$personName = '<span class="c-blockquote__name">' . $atts['name'] . '</span>';
+			$personName = '<div class="c-blockquote__name">' . $atts['name'] . '</div>';
 
 			$personTitle = implode(', ', array_filter([$atts['title'], $atts['company']]));
-			$personTitle = $personTitle ? '<span class="c-blockquote__title">' . $personTitle . '</span>' : '';
+			$personTitle = $personTitle ? '<div class="c-blockquote__title">' . $personTitle . '</div>' : '';
 
 			$href = $atts['company_url'] ? 'href="' . $atts['company_url'] . '" target="_blank"' : '';
 
@@ -63,9 +63,9 @@ function quoteShortcode($wp_atts, $content = null)
 		}
 
 		if ($href) {
-			$person = '<a ' . $href . ' class="c-blockquote__person">' . $image . $personName . $personTitle . '</a>';
+			$person = '<a ' . $href . ' class="c-blockquote__person">' . $image . '<div class="c-blockquote__text">' . $personName . $personTitle . '</div></a>';
 		} else {
-			$person = '<div class="c-blockquote__person">' . $image . $personName . $personTitle . '</div>';
+			$person = '<div class="c-blockquote__person">' . $image . '<div class="c-blockquote__text">' . $personName . $personTitle . '</div></div>';
 		}
 
 		$footer = '<footer>' . $person . $clutchScore . '</footer>';
