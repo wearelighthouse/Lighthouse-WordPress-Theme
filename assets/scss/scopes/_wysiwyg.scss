@@ -1,6 +1,4 @@
-
 .s-wysiwyg {
-
   p {
     @extend %u-mv-2;
     @extend .type-p;
@@ -16,7 +14,6 @@
   }
 
   p > a,
-  li > a,
   li > a {
     @extend .type-fancy-inline-link;
     color: $color-pink;
@@ -38,8 +35,8 @@
     margin-bottom: 1rem;
 
     li {
-      margin: .7rem 0 .7rem 2rem;
       padding-left: 1rem;
+      margin: .7rem 0 .7rem 2rem;
     }
   }
 
@@ -60,5 +57,13 @@
     &:active {
       outline: 1px dotted currentColor;
     }
+  }
+
+  code {
+    @extend %u-bg-color-gray-light;
+    @extend %u-color-pink-dark;
+    padding: 2px;
+    border: 1px solid $color-gray;
+    font-size: .9em;
   }
 }

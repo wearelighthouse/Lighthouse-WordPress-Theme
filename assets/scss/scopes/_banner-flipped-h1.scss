@@ -1,6 +1,4 @@
-
 .s-banner-flipped-h1 {
-
   p:first-child {
     @extend .type-headline;
     margin: 0;
@@ -26,5 +24,4 @@
   a:not(.c-button) {
     @extend %u-underline;
   }
-
 }
