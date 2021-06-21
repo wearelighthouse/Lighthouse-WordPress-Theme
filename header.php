@@ -66,11 +66,13 @@
       (function(o){var b="https://niblewren.co/anywhere/",t="67c40486554c4fc585318ff3e2c10aeefe65b8a136a641d895d0bf9c5e68d2ab",a=window.AutopilotAnywhere={_runQueue:[],run:function(){this._runQueue.push(arguments);}},c=encodeURIComponent,s="SCRIPT",d=document,l=d.getElementsByTagName(s)[0],p="t="+c(d.title||"")+"&u="+c(d.location.href||"")+"&r="+c(d.referrer||""),j="text/javascript",z,y;if(!window.Autopilot) window.Autopilot=a;if(o.app) p="devmode=true&"+p;z=function(src,asy){var e=d.createElement(s);e.src=src;e.type=j;e.async=asy;l.parentNode.insertBefore(e,l);};y=function(){z(b+t+'?'+p,true);};if(window.attachEvent){window.attachEvent("onload",y);}else{window.addEventListener("load",y,false);}})({});
     </script>
 
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KLDQRTT');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-6737301-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-6737301-2');
+    </script>
 
     <script> (function(){ window.ldfdr = window.ldfdr || {}; (function(d, s, ss, fs){ fs = d.getElementsByTagName(s)[0]; function ce(src){ var cs = d.createElement(s); cs.src = src; setTimeout(function(){fs.parentNode.insertBefore(cs,fs)}, 1); } ce(ss); })(document, 'script', 'https://lftracker.leadfeeder.com/lftracker_v1_JMvZ8g19KAP42pOd.js'); })(); </script>
 
@@ -79,8 +81,5 @@
 </head>
 
 <body <?php body_class(); ?>>
-
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLDQRTT"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <?php get_template_part('src/template_parts/header') ?>
