@@ -14,7 +14,7 @@
       <li>
         <h3>Discovery</h3>
         <p>
-            Idea validation, Product audits, Innovation workshops, User research, Market analysis, Data analysis
+          Idea validation, Product audits, Innovation workshops, User research, Market analysis, Data analysis
         </p>
       </li>
       <li>
@@ -35,7 +35,7 @@
   <section>
     <h3>Productive collaboration</h3>
     <div>
-      <img src="assets/img/ellipse-12.png" alt="">
+      <img src="/assets/img/mask-group-2.png" alt="Collaboration">
       <ul>
         <li>
           <h5>Agile always</h5>
@@ -52,7 +52,7 @@
       </ul>
     </div>
     <div>
-      <img src="assets/img/ellipse-12.png" alt="">
+      <img src="/assets/img/mask-group.png" alt="Collaboration">
       <ul>
         <li>
           <h5>Direct collaboration</h5>
