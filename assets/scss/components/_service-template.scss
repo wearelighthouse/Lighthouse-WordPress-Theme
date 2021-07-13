@@ -1,0 +1,66 @@
+.c-service-template {
+  &__title {
+    @extend %u-vbold;
+    @include fontScale(28, 32);
+    @extend %u-color-orange-old;
+    font-family: 'Tiempos Text';
+    font-style: normal;
+    line-height: 42px;
+  }
+  &__icon-container {
+    height: 72px;
+  }
+}
+
+.c-service-template__item {
+  @extend %u-sailec;
+  @extend %u-color-blackcurrant;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 34px;
+  &::before {
+    content: '';
+    border-top: 2px solid $color-black;
+    width: 38px;
+    height: 0px;
+    position: absolute;
+  }
+  & li:first-child {
+    padding-top: 24px;
+  }
+}
+
+.c-service-template__image {
+  width: 637.49px;
+  height: 637.49px;
+  border-radius: 50%;
+  background: linear-gradient(
+    273.55deg,
+    #ffffff 12.53%,
+    rgba(255, 255, 255, 0) 77.75%
+  );
+}
+
+.c-service-template {
+  &__container {
+    display: flex;
+  }
+  &__fd-row {
+    @extend %fd-row;
+  }
+  &__fd-row-reverse {
+    @extend %fd-row-reverse;
+  }
+}
+
+.c-service-template__button {
+  @extend %u-sailec;
+  @extend %u-color-white;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+  background: $gradient-orange-new-pink;
+  border-radius: 30px;
+  padding: 15px 37px 16px 36px;
+  margin-top: 96px;
+}

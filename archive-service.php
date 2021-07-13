@@ -13,11 +13,11 @@
   <section class="o-container-section o-container-section--h-bordered">
     <div class="o-container-content o-container-content--v-pad-margin o-container-services o-container-services--3-column">
       <div>
-        <div class="c-service-block__icon-container">
+        <div class="c-service-template__icon-container">
           <img class="c-service-block__icon" src="https://wearelighthouse.com/wp-content/uploads/2019/10/icon-itl-discovery.svg" alt="">
         </div>
-        <h3 class="c-service-block__title type-title">Discovery</h3>
-        <ul>
+        <h3 class="c-service-block__title c-service-template__title">Discovery</h3>
+        <ul class="c-service-template__item">
           <li>Idea validation</li>
           <li>Product audits</li>
           <li>Innovation workshops</li>
@@ -27,22 +27,22 @@
         </ul>
       </div>
       <div>
-        <div class="c-service-block__icon-container">
-          <img class="c-service-block__icon" src="<?php echo get_template_directory_uri(); ?>/assets/svg/single/icon-itl-ux-design.svg" alt="">
+        <div class="c-service-template__icon-container">
+          <img class="c-service-block__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-ux-design.svg" alt="">
         </div>
-        <h3 class="c-service-block__title type-title">UX design</h3>
-        <ul>
+        <h3 class="c-service-block__title c-service-template__title">UX design</h3>
+        <ul class="c-service-template__item">
           <li>User journey mapping</li>
           <li>Wire framing</li>
           <li>User testing</li>
         </ul>    
       </div>
       <div>
-        <div class="c-service-block__icon-container">
-          <img class="c-service-block__icon" src="<?php echo get_template_directory_uri(); ?>/assets/svg/single/icon-itl-ui-design.svg" alt="">
+        <div class="c-service-template__icon-container">
+          <img class="c-service-block__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-ui-design.svg" alt="">
         </div>
-        <h3 class="c-service-block__title type-title">UI / Design</h3>
-        <ul>
+        <h3 class="c-service-block__title c-service-template__title">UI / Design</h3>
+        <ul class="c-service-template__item">
           <li>Interface design</li>
           <li>Design system creation</li>
           <li>UI prototypes</li>
@@ -51,15 +51,14 @@
         </ul>
       </div>
       <p>
-        <button><a href="/call-to-action">Call to action</a></button>
+        <button class="c-service-template__button"><a href="/call-to-action">Call to action</a></button>
       </p>
     </div>
   </section>
   <section class="o-container-section o-container-section--h-bordered">
     <div class="o-container-content o-container-content--v-pad-margin">
       <h3 class="c-service-block__title type-title">Productive collaboration</h3>
-      <div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mask-group.png" alt="Collaboration">
+      <div class="c-service-template__container c-service-template__fd-row">
         <ul>
           <li>
             <div class="c-service-block__icon-container">
@@ -80,9 +79,11 @@
             </p>
           </li>
         </ul>
+        <div>
+          <img class="c-service-template__image" src="<?php echo get_template_directory_uri(); ?>/assets/img/mask-group.png" alt="Collaboration">
+        </div>
       </div>
-      <div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mask-group-2.png" alt="Collaboration">
+      <div class="c-service-template__container c-service-template__fd-row-reverse">
         <ul>
           <li>
             <div class="c-service-block__icon-container">
@@ -97,23 +98,26 @@
             <div class="c-service-block__icon-container">
               <img class="c-service-block__icon" src="<?php echo get_template_directory_uri(); ?>/assets/svg/single/icon-itl-quality.svg" alt="">
             </div>
-            <h4 class="c-service-block__title type-title-small">High quality comms</h4>
+            <h4 class="c-service-block__title type-title">High quality comms</h4>
             <p>
               We’re on the ball with reports, updates and discussions. You’ll know what’s just happened and what’s up next.
             </p>
           </li>
         </ul>
+        <div>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mask-group-2.png" alt="Collaboration">
+        </div>
       </div>
       <p>
-        <button><a href="/call-to-action">Call to action</a></button>
+        <button class="c-service-template__button"><a href="/call-to-action">Call to action</a></button>
       </p>
     </div>
   </section>
   <section class="o-container-section o-container-section--h-bordered">
     <div class="o-container-content o-container-content--v-pad-margin">
       <blockquote class="c-blockquote c-blockquote--client">
-        <h3 class="c-blockquote-__title type-title">Client testimonial</h3>
-        <p>Lighthouse London immediately gave us confidence they were the right choice to support our business in one of the biggest projects we’ve ever undertaken</p>
+        <h3 class="c-blockquote-__title c-service-template__title">Client testimonial</h3>
+        <p class="c-service-template-p">Lighthouse London immediately gave us confidence they were the right choice to support our business in one of the biggest projects we’ve ever undertaken</p>
         <footer>
           <div class="c-blockquote__person">
             <div class="c-blockquote__text">
