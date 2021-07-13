@@ -12,12 +12,14 @@
 
   <section class="o-container-section o-container-section--h-bordered">
     <div class="o-container-content o-container-content--v-pad-margin o-container-services o-container-services--3-column">
-      <div>
-        <div class="c-service-template__icon-container">
-          <img class="c-service-block__icon" src="https://wearelighthouse.com/wp-content/uploads/2019/10/icon-itl-discovery.svg" alt="">
+      <div class="c-service-category">
+        <div class="c-service-category__icon-container">
+          <img class="c-service-category__icon" src="https://wearelighthouse.com/wp-content/uploads/2019/10/icon-itl-discovery.svg" alt="">
         </div>
-        <h3 class="c-service-block__title c-service-template__title">Discovery</h3>
-        <ul class="c-service-template__item">
+
+        <h2 class="c-service-category__title">Discovery</h2>
+
+        <ul class="c-service-category__content">
           <li>Idea validation</li>
           <li>Product audits</li>
           <li>Innovation workshops</li>
@@ -26,22 +28,28 @@
           <li>Data analysis</li>
         </ul>
       </div>
+
       <div>
         <div class="c-service-template__icon-container">
           <img class="c-service-block__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-ux-design.svg" alt="">
         </div>
-        <h3 class="c-service-block__title c-service-template__title">UX design</h3>
+
+        <h2 class="c-service-block__title c-service-template__title">UX design</h2>
+
         <ul class="c-service-template__item">
           <li>User journey mapping</li>
           <li>Wire framing</li>
           <li>User testing</li>
-        </ul>    
+        </ul>
       </div>
+
       <div>
         <div class="c-service-template__icon-container">
           <img class="c-service-block__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-ui-design.svg" alt="">
         </div>
-        <h3 class="c-service-block__title c-service-template__title">UI / Design</h3>
+
+        <h2 class="c-service-block__title c-service-template__title">UI / Design</h2>
+
         <ul class="c-service-template__item">
           <li>Interface design</li>
           <li>Design system creation</li>
@@ -50,6 +58,7 @@
           <li>Illustration / iconography</li>
         </ul>
       </div>
+
       <p>
         <button class="c-service-template__button"><a href="/call-to-action">Call to action</a></button>
       </p>
@@ -58,7 +67,7 @@
   <section class="o-container-section o-container-section--h-bordered">
     <div class="o-container-content o-container-content--v-pad-margin">
       <h3 class="c-service-block__title type-title">Productive collaboration</h3>
-      <div class="c-service-template__container c-service-template__fd-row">
+      <div class="c-service-template__container">
         <ul>
           <li>
             <div class="c-service-block__icon-container">
@@ -83,7 +92,7 @@
           <img class="c-service-template__image" src="<?php echo get_template_directory_uri(); ?>/assets/img/mask-group.png" alt="Collaboration">
         </div>
       </div>
-      <div class="c-service-template__container c-service-template__fd-row-reverse">
+      <div class="c-service-template__container">
         <ul>
           <li>
             <div class="c-service-block__icon-container">
@@ -130,7 +139,7 @@
       </blockquote>
     </div>
   </section>
-   
+
    <?php for ($section = 0; ((is_array($blockServices) && $section < count($blockServices)) || (is_array($caseStudyIds) && $section < count($caseStudyIds))) && $section < 60; $section++) : ?>
 
     <?php if ($blockServices && count($blockServices) > $section) : ?>

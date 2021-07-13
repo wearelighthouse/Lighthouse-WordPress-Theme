@@ -1,0 +1,33 @@
+.c-service-category {
+  &__icon-container {
+    height: 72px;
+  }
+
+  &__title {
+    @extend %u-vbold;
+    @include fontScale(28, 32);
+    @extend %u-color-orange-old;
+    font-family: 'Tiempos Text';
+    font-style: normal;
+    line-height: 42px;
+  }
+
+  &__content {
+    @extend %u-pos-relative;
+    @extend %u-sailec;
+    @extend %u-color-blackcurrant;
+    @extend %u-pt-4;
+    @extend %u-mt-4;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 34px;
+
+    &::before {
+      @extend %u-pos-absolute;
+      @extend %u-top;
+      content: '';
+      border-top: 2px solid $color-black;
+      width: 38px;
+    }
+  }
+}
