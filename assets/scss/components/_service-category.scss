@@ -18,8 +18,8 @@
     @extend %u-color-blackcurrant;
     @extend %u-pt-4;
     @extend %u-mt-4;
+    @include fontScale(18, 20);
     font-style: normal;
-    font-size: 20px;
     line-height: 34px;
 
     &::before {

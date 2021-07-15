@@ -29,28 +29,28 @@
         </ul>
       </div>
 
-      <div>
-        <div class="c-service-template__icon-container">
-          <img class="c-service-block__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-ux-design.svg" alt="">
+      <div class="c-service-category">
+        <div class="c-service-category__icon-container">
+          <img class="c-service-category__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-ux-design.svg" alt="">
         </div>
 
-        <h2 class="c-service-block__title c-service-template__title">UX design</h2>
+        <h2 class="c-service-category__title">UX design</h2>
 
-        <ul class="c-service-template__item">
+        <ul class="c-service-category__content">
           <li>User journey mapping</li>
           <li>Wire framing</li>
           <li>User testing</li>
         </ul>
       </div>
 
-      <div>
-        <div class="c-service-template__icon-container">
-          <img class="c-service-block__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-ui-design.svg" alt="">
+      <div class="c-service-category">
+        <div class="c-service-category__icon-container">
+          <img class="c-service-category__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-ui-design.svg" alt="">
         </div>
 
-        <h2 class="c-service-block__title c-service-template__title">UI / Design</h2>
+        <h2 class="c-service-category__title">UI / Design</h2>
 
-        <ul class="c-service-template__item">
+        <ul class="c-service-category__content">
           <li>Interface design</li>
           <li>Design system creation</li>
           <li>UI prototypes</li>
@@ -59,82 +59,98 @@
         </ul>
       </div>
 
-      <p>
-        <button class="c-service-template__button"><a href="/call-to-action">Call to action</a></button>
-      </p>
+      <div class="c-service-category__button-container c-service-template__button-container">
+        <button class="c-service-category__button c-service-template__button"><a href="/call-to-action">Call to action</a></button>
+      </div>
     </div>
   </section>
-  <section class="o-container-section o-container-section--h-bordered">
-    <div class="o-container-content o-container-content--v-pad-margin">
-      <h3 class="c-service-block__title type-title">Productive collaboration</h3>
-      <div class="c-service-template__container">
-        <ul>
-          <li>
-            <div class="c-service-block__icon-container">
-              <img class="c-service-block__icon" src="https://wearelighthouse.com/wp-content/uploads/2019/10/icon-itl-validation.svg" alt="">
+
+  <section>
+    <div class="c-service-content">
+      <div class="c-service-content__item">
+        <div class="c-service-content__item__right">
+          <img class="c-service-template__image" src="<?php echo get_template_directory_uri(); ?>/assets/img/mask-group.png" alt="Collaboration">
+        </div>
+
+        <div class="c-service-content__item__left">
+
+          <h3 class="c-service-content__title">Productive collaboration</h3>
+          <div class="c-service-content__item__container">
+            <div class="c-service-content__icon-container">
+              <img class="c-service-content__icon" src="https://wearelighthouse.com/wp-content/uploads/2019/10/icon-itl-validation.svg" alt="">
             </div>
-            <h4 class="c-service-block__title type-title">Agile always</h4>
+  
+            <h4 class="c-service-content__subtitle">Agile always</h4>
+  
             <p>
               We can work with any type of agile and will fit in seamlessly with your workflow. We speak the same language as engineers...
             </p>
-          </li>
-          <li>
-            <div class="c-service-block__icon-container">
-              <img class="c-service-block__icon" src="<?php echo get_template_directory_uri(); ?>/assets/svg/single/icon-itl-processes.svg" alt="">
+          </div>
+
+          <div class="c-service-content__item__container">
+            <div class="c-service-content__icon-container">
+              <img class="c-service-content__icon" src="<?php echo get_template_directory_uri(); ?>/assets/svg/single/icon-itl-processes.svg" alt="">
             </div>
-            <h4 class="c-service-block__title type-title">Efficient processes</h4>
+  
+            <h4 class="c-service-content__subtitle">Efficient processes</h4>
+  
             <p>
               We’ve fine tuned our processes to make sure we run like a well oiled machine.
             </p>
-          </li>
-        </ul>
-        <div>
-          <img class="c-service-template__image" src="<?php echo get_template_directory_uri(); ?>/assets/img/mask-group.png" alt="Collaboration">
+          </div>
         </div>
+
       </div>
-      <div class="c-service-template__container">
-        <ul>
-          <li>
-            <div class="c-service-block__icon-container">
-              <img class="c-service-block__icon" src="<?php echo get_template_directory_uri(); ?>/assets/svg/single/icon-itl-collaboration.svg" alt="">
+
+      <div class="c-service-content__item">
+        <div class="c-service-content__item__left">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mask-group-2.png" alt="Collaboration">
+        </div>
+
+        <div class="c-service-content__item__right">
+          <div class="c-service-content__item__container">
+            <div class="c-service-content__icon-container">
+              <img class="c-service-content__icon" src="<?php echo get_template_directory_uri(); ?>/assets/svg/single/icon-itl-collaboration.svg" alt="">
             </div>
-            <h4 class="c-service-block__title type-title">Direct collaboration</h4>
+
+            <h4 class="c-service-content__subtitle">Direct collaboration</h4>
+
             <p>
               You’ll work closely with the designers working on your product. No go-betweens, no mixed messages.
             </p>
-          </li>
-          <li>
-            <div class="c-service-block__icon-container">
-              <img class="c-service-block__icon" src="<?php echo get_template_directory_uri(); ?>/assets/svg/single/icon-itl-quality.svg" alt="">
+          </div>
+
+          <div class="c-service-content__item__container">
+            <div class="c-service-content__icon-container">
+              <img class="c-service-content__icon" src="<?php echo get_template_directory_uri(); ?>/assets/svg/single/icon-itl-quality.svg" alt="">
             </div>
-            <h4 class="c-service-block__title type-title">High quality comms</h4>
+
+            <h4 class="c-service-content__subtitle">High quality comms</h4>
             <p>
               We’re on the ball with reports, updates and discussions. You’ll know what’s just happened and what’s up next.
             </p>
-          </li>
-        </ul>
-        <div>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mask-group-2.png" alt="Collaboration">
+          </div>
+
+          <div class="c-service-template__button-container">
+            <button class=" c-service-template__button"><a href="/call-to-action">Call to action</a></button>
+          </div>
         </div>
+
       </div>
-      <p>
-        <button class="c-service-template__button"><a href="/call-to-action">Call to action</a></button>
-      </p>
     </div>
   </section>
-  <section class="o-container-section o-container-section--h-bordered">
-    <div class="o-container-content o-container-content--v-pad-margin">
-      <blockquote class="c-blockquote c-blockquote--client">
-        <h3 class="c-blockquote-__title c-service-template__title">Client testimonial</h3>
-        <p class="c-service-template-p">Lighthouse London immediately gave us confidence they were the right choice to support our business in one of the biggest projects we’ve ever undertaken</p>
-        <footer>
-          <div class="c-blockquote__person">
-            <div class="c-blockquote__text">
-              <div class="c-blockquote__name">Nick Meyers</div>
-              <div class="c-blockquote__title">Director of Technology</div>
-              <div class="c-blockquote__title">Digital Theatre+</div>
+
+  <section class="o-container-client-testimonial">
+    <div class="o-container-content o-container-content--v-margin">
+      <blockquote class="c-service-client-testimonial">
+        <h3 class="c-service-client-testimonial__title">Client testimonial</h3>
+        <p class="c-service-client-testimonial__p">Lighthouse London immediately gave us confidence they were the right choice to support our business in one of the biggest projects we’ve ever undertaken</p>
+        <footer class="c-service-client-testimonial__footer">
+            <div class="c-service-client-testimonial__footer-content">
+              <div class="c-service-client-testimonial__footer-name">Nick Meyers</div>
+              <div class="c-service-client-testimonial__footer-job">Director of Technology</div>
+              <div class="c-service-client-testimonial__footer-title">Digital Theatre+</div>
             </div>
-          </div>
         </footer>
       </blockquote>
     </div>

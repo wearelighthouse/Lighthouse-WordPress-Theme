@@ -1,0 +1,178 @@
+.c-service-content {
+  @extend %u-pos-relative;
+
+  &::before {
+    @extend %u-pos-absolute;
+    content: '';
+    width: 612.84px;
+    height: 612.84px;
+    background: linear-gradient(
+      298.92deg,
+      rgba(252, 137, 91, 0.3) 22.4%,
+      rgba(255, 38, 139, 0) 92.72%
+    );
+    transform: rotate(-135deg);
+    top: 43%;
+    left: -28.5%;
+  }
+
+  &__item {
+    @extend %u-flex;
+    @extend %u-jc-space-between;
+    @extend %u-pos-relative;
+    @extend %u-ov-hidden;
+
+    h4 {
+      @extend %u-vbold;
+      @extend %u-sailec;
+      @extend %u-color-blackcurrant;
+      font-style: normal;
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    p {
+      @extend %u-sailec;
+      @extend %u-color-blackcurrant;
+      margin: 0;
+      font-style: normal;
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    &:nth-child(odd) {
+      @extend %u-fd-row-reverse;
+      padding-bottom: 150px;
+
+      &::before {
+        @extend %u-pos-absolute;
+        content: '';
+        width: 637.49px;
+        height: 637.49px;
+        background: linear-gradient(
+          273.55deg,
+          #ffffff 12.53%,
+          rgba(255, 255, 255, 0) 77.75%
+        );
+        transform: rotate(75deg);
+        top: -15%;
+        left: 60%;
+        z-index: 1;
+      }
+
+      h3 {
+        @extend %u-vbold;
+        @include fontScale(28, 32);
+        @extend %u-color-blackcurrant;
+        font-family: 'Tiempos Text';
+        font-style: normal;
+        line-height: 42px;
+        margin-top: 64px;
+      }
+
+      & > div:nth-child(1) {
+        img {
+          @extend %u-pos-absolute;
+          width: 500px;
+          height: 500px;
+          border-radius: 50%;
+          top: 0%;
+          left: 65%;
+        }
+
+        &::before {
+          content: '';
+          @extend %u-pos-absolute;
+          width: 352.09px;
+          height: 352.09px;
+          background: linear-gradient(
+            66.38deg,
+            rgba(252, 118, 98, 0.3) 11.36%,
+            rgba(252, 59, 126, 0.3) 71.16%
+          );
+          transform: rotate(75deg);
+          z-index: 2;
+          top: 39%;
+          left: 71%;
+          border-radius: 50%;
+        }
+
+        &::after {
+          content: '';
+          @extend %u-pos-absolute;
+          width: 488.49px;
+          height: 488.49px;
+          background: linear-gradient(
+            298.92deg,
+            rgba(252, 137, 91, 0.2) 22.4%,
+            rgba(255, 38, 139, 0) 92.72%
+          );
+          transform: rotate(-135deg);
+          top: 7.5%;
+          left: 87.5%;
+          z-index: 1;
+        }
+      }
+
+      & > div:nth-child(2) {
+        width: 513px;
+        padding-left: 179px;
+        & div {
+          margin-top: 86px;
+        }
+
+        &:nth-child(1) img {
+          top: -20%;
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      padding-top: 70px;
+
+      & > div:nth-child(1) {
+        @extend %u-pos-relative;
+
+        img {
+          @extend %u-pos-absolute;
+          top: -23%;
+          left: 50%;
+          width: 427.21px;
+          height: 427.21px;
+          padding-left: 54px + 20px;
+        }
+      }
+
+      & > div:nth-child(2) {
+        width: 513px;
+        padding-right: 179px;
+
+        & div:nth-child(2) {
+          margin-top: 86px;
+
+          & img:nth-child(2) {
+            top: -20%;
+          }
+        }
+      }
+    }
+
+    &__container {
+      @extend %u-pos-relative;
+      padding-left: 83px;
+
+      &:nth-child(1) div img {
+        top: -10%;
+      }
+
+      & > div {
+        img {
+          @extend %u-pos-absolute;
+          top: 0%;
+          left: 0%;
+          width: 57px;
+        }
+      }
+    }
+  }
+}

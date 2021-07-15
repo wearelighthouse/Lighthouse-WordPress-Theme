@@ -1,0 +1,49 @@
+.o-container-client-testimonial {
+  background: linear-gradient(135deg, #fc895b 0%, #ff268b 100%);
+  margin: 0 20px;
+  margin-top: 80px;
+}
+
+.c-service-client-testimonial {
+  padding-top: 83px;
+  margin: 0;
+  &__title {
+    @extend %u-vbold;
+    @include fontScale(28, 32);
+    @extend %u-color-orange-old;
+    font-family: 'Tiempos Text';
+    font-style: normal;
+    line-height: 42px;
+    padding-bottom: 16px;
+  }
+  &__p {
+    @extend %u-sailec;
+    @extend %u-color-blackcurrant;
+    @include fontScale(28, 32);
+    font-style: normal;
+    line-height: 48px;
+    margin: 0;
+  }
+  &__footer {
+    padding-bottom: 73px;
+    &-name {
+      @extend %u-sailec;
+      font-style: normal;
+      @extend %u-vbold;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: right;
+      color: #151931;
+    }
+    &-job,
+    &-title {
+      @extend %u-sailec;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 12px;
+      line-height: 18px;
+      text-align: right;
+      color: #151931;
+    }
+  }
+}

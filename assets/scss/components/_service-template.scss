@@ -1,32 +1,20 @@
-.c-service-template__image {
-  width: 637.49px;
-  height: 637.49px;
-  border-radius: 50%;
-  background: linear-gradient(
-    273.55deg,
-    #ffffff 12.53%,
-    rgba(255, 255, 255, 0) 77.75%
-  );
-}
-
 .c-service-template {
-  &__container {
-    @extend %u-flex;
-
-    &:nth-child(odd) {
-      @extend %u-fd-row-reverse;
-    }
+  &__button-container {
+    margin: 0;
   }
-}
 
-.c-service-template__button {
-  @extend %u-sailec;
-  @extend %u-color-white;
-  font-style: normal;
-  font-size: 18px;
-  line-height: 22px;
-  background: $gradient-orange-new-pink;
-  border-radius: 30px;
-  padding: 15px 37px 16px 36px;
-  margin-top: 96px;
+  &__button {
+    @extend %u-sailec;
+    @extend %u-color-white;
+    @extend %u-pt-2;
+    @extend %u-pb-2;
+    @extend %u-pl-4;
+    @extend %u-pr-4;
+    @extend %u-mt-12;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 22px;
+    background: $gradient-orange-new-pink;
+    border-radius: 30px;
+  }
 }
