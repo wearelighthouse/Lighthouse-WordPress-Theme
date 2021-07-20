@@ -69,12 +69,12 @@
     <div class="c-service-content">
       <div class="c-service-content__item">
         <div class="c-service-content__item__right">
-          <img class="c-service-template__image" src="<?php echo get_template_directory_uri(); ?>/assets/img/mask-group.png" alt="Collaboration">
+          <img class="c-service-template__image" src="<?= get_template_directory_uri(); ?>/assets/img/mask-group.png" alt="Collaboration">
         </div>
 
         <div class="c-service-content__item__left">
-
           <h3 class="c-service-content__title">Productive collaboration</h3>
+
           <div class="c-service-content__item__container">
             <div class="c-service-content__icon-container">
               <img class="c-service-content__icon" src="https://wearelighthouse.com/wp-content/uploads/2019/10/icon-itl-validation.svg" alt="">
@@ -89,7 +89,7 @@
 
           <div class="c-service-content__item__container">
             <div class="c-service-content__icon-container">
-              <img class="c-service-content__icon" src="<?php echo get_template_directory_uri(); ?>/assets/svg/single/icon-itl-processes.svg" alt="">
+              <img class="c-service-content__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-processes.svg" alt="">
             </div>
   
             <h4 class="c-service-content__subtitle">Efficient processes</h4>
@@ -104,13 +104,13 @@
 
       <div class="c-service-content__item">
         <div class="c-service-content__item__left">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mask-group-2.png" alt="Collaboration">
+          <img src="<?= get_template_directory_uri(); ?>/assets/img/mask-group-2.png" alt="Collaboration">
         </div>
 
         <div class="c-service-content__item__right">
           <div class="c-service-content__item__container">
             <div class="c-service-content__icon-container">
-              <img class="c-service-content__icon" src="<?php echo get_template_directory_uri(); ?>/assets/svg/single/icon-itl-collaboration.svg" alt="">
+              <img class="c-service-content__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-collaboration.svg" alt="">
             </div>
 
             <h4 class="c-service-content__subtitle">Direct collaboration</h4>
@@ -122,7 +122,7 @@
 
           <div class="c-service-content__item__container">
             <div class="c-service-content__icon-container">
-              <img class="c-service-content__icon" src="<?php echo get_template_directory_uri(); ?>/assets/svg/single/icon-itl-quality.svg" alt="">
+              <img class="c-service-content__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-quality.svg" alt="">
             </div>
 
             <h4 class="c-service-content__subtitle">High quality comms</h4>
@@ -141,19 +141,23 @@
   </section>
 
   <section class="o-container-client-testimonial">
-    <div class="o-container-content o-container-content--v-margin">
-      <blockquote class="c-service-client-testimonial">
-        <h3 class="c-service-client-testimonial__title">Client testimonial</h3>
-        <p class="c-service-client-testimonial__p">Lighthouse London immediately gave us confidence they were the right choice to support our business in one of the biggest projects we’ve ever undertaken</p>
-        <footer class="c-service-client-testimonial__footer">
-            <div class="c-service-client-testimonial__footer-content">
-              <div class="c-service-client-testimonial__footer-name">Nick Meyers</div>
-              <div class="c-service-client-testimonial__footer-job">Director of Technology</div>
-              <div class="c-service-client-testimonial__footer-title">Digital Theatre+</div>
-            </div>
-        </footer>
-      </blockquote>
-    </div>
+    <!-- <div class="c-fancy-bg">
+      <div class="c-fancy-bg__service-client-testimonial"> -->
+        <div class="o-container-content">
+          <blockquote class="c-service-client-testimonial">
+            <h3 class="c-service-client-testimonial__title">Client testimonial</h3>
+            <p class="c-service-client-testimonial__p">Lighthouse London immediately gave us confidence they were the right choice to support our business in one of the biggest projects we’ve ever undertaken</p>
+            <footer class="c-service-client-testimonial__footer">
+                <div class="c-service-client-testimonial__footer-content">
+                  <div class="c-service-client-testimonial__footer-name">Nick Meyers</div>
+                  <div class="c-service-client-testimonial__footer-job">Director of Technology</div>
+                  <div class="c-service-client-testimonial__footer-title">Digital Theatre+</div>
+                </div>
+            </footer>
+          </blockquote>
+        </div>
+      <!-- </div>
+    </div> -->
   </section>
 
    <?php for ($section = 0; ((is_array($blockServices) && $section < count($blockServices)) || (is_array($caseStudyIds) && $section < count($caseStudyIds))) && $section < 60; $section++) : ?>

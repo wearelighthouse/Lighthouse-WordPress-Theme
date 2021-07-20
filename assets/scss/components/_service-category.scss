@@ -6,10 +6,10 @@
   &__title {
     @extend %u-vbold;
     @include fontScale(28, 32);
+    @include lineScale(38, 42);
     @extend %u-color-orange-old;
     font-family: 'Tiempos Text';
     font-style: normal;
-    line-height: 42px;
   }
 
   &__content {
@@ -19,8 +19,8 @@
     @extend %u-pt-4;
     @extend %u-mt-4;
     @include fontScale(18, 20);
+    @include lineScale(30, 34);
     font-style: normal;
-    line-height: 34px;
 
     &::before {
       @extend %u-pos-absolute;
@@ -28,6 +28,11 @@
       content: '';
       border-top: 2px solid $color-black;
       width: 38px;
+    }
+  }
+  &:not(:first-child) {
+    @include breakpoint(upto-small) {
+      margin-top: 96px;
     }
   }
 }

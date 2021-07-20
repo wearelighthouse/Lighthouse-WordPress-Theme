@@ -1,6 +1,17 @@
 .c-service-content {
   @extend %u-pos-relative;
 
+  @include breakpoint(upto-medium) {
+    position: unset;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 80px;
+  }
+
+  @include breakpoint(from-medium--upto-large) {
+    margin-left: 20px;
+  }
+
   &::before {
     @extend %u-pos-absolute;
     content: '';
@@ -14,38 +25,58 @@
     transform: rotate(-135deg);
     top: 43%;
     left: -28.5%;
+
+    @include breakpoint(upto-medium) {
+      display: none;
+    }
+
+    @include breakpoint(from-medium--upto-large) {
+      width: 512.84px;
+      height: 512.84px;
+      top: 48%;
+      left: -30.5%;
+    }
   }
 
   &__item {
-    @extend %u-flex;
-    @extend %u-jc-space-between;
     @extend %u-pos-relative;
     @extend %u-ov-hidden;
+
+    @include breakpoint(upto-medium) {
+      position: unset;
+      overflow: unset;
+    }
 
     h4 {
       @extend %u-vbold;
       @extend %u-sailec;
+      @include lineScale(24, 28);
       @extend %u-color-blackcurrant;
       font-style: normal;
       font-size: 18px;
-      line-height: 28px;
     }
 
     p {
       @extend %u-sailec;
+      @include lineScale(24, 28);
       @extend %u-color-blackcurrant;
       margin: 0;
       font-style: normal;
       font-size: 18px;
-      line-height: 28px;
     }
 
     &:nth-child(odd) {
       @extend %u-fd-row-reverse;
       padding-bottom: 150px;
+      @extend %u-pos-relative;
+
+      @include breakpoint(upto-medium) {
+        padding-bottom: unset;
+      }
 
       &::before {
         @extend %u-pos-absolute;
+        @extend %u-z-index-1;
         content: '';
         width: 637.49px;
         height: 637.49px;
@@ -57,16 +88,25 @@
         transform: rotate(75deg);
         top: -15%;
         left: 60%;
-        z-index: 1;
+
+        @include breakpoint(upto-medium) {
+          display: none;
+        }
+
+        @include breakpoint(from-medium--upto-large) {
+          width: 400px;
+          height: 400px;
+          top: 2%;
+        }
       }
 
       h3 {
         @extend %u-vbold;
         @include fontScale(28, 32);
+        @include lineScale(38, 42);
         @extend %u-color-blackcurrant;
         font-family: 'Tiempos Text';
         font-style: normal;
-        line-height: 42px;
         margin-top: 64px;
       }
 
@@ -78,11 +118,26 @@
           border-radius: 50%;
           top: 0%;
           left: 65%;
+
+          @include breakpoint(upto-medium) {
+            width: 300px;
+            height: 300px;
+            position: unset;
+            left: 0;
+          }
+
+          @include breakpoint(from-medium--upto-large) {
+            width: 400px;
+            height: 400px;
+            top: 0%;
+            left: 65%;
+          }
         }
 
         &::before {
-          content: '';
           @extend %u-pos-absolute;
+          @extend %u-z-index-2;
+          content: '';
           width: 352.09px;
           height: 352.09px;
           background: linear-gradient(
@@ -91,15 +146,29 @@
             rgba(252, 59, 126, 0.3) 71.16%
           );
           transform: rotate(75deg);
-          z-index: 2;
           top: 39%;
           left: 71%;
           border-radius: 50%;
+
+          @include breakpoint(upto-medium) {
+            display: none;
+          }
+
+          @include breakpoint(upto-medium) {
+            display: none;
+          }
+
+          @include breakpoint(from-medium--upto-large) {
+            width: 300px;
+            height: 300px;
+            top: 32%;
+          }
         }
 
         &::after {
-          content: '';
           @extend %u-pos-absolute;
+          @extend %u-z-index-1;
+          content: '';
           width: 488.49px;
           height: 488.49px;
           background: linear-gradient(
@@ -110,13 +179,33 @@
           transform: rotate(-135deg);
           top: 7.5%;
           left: 87.5%;
-          z-index: 1;
+
+          @include breakpoint(upto-medium) {
+            display: none;
+          }
+
+          @include breakpoint(from-medium--upto-large) {
+            width: 400px;
+            height: 400px;
+            top: 7%;
+            left: 92%;
+          }
         }
       }
 
       & > div:nth-child(2) {
         width: 513px;
         padding-left: 179px;
+
+        @include breakpoint(upto-medium) {
+          padding-left: unset;
+          width: unset;
+        }
+
+        @include breakpoint(from-medium--upto-large) {
+          padding-left: unset;
+        }
+
         & div {
           margin-top: 86px;
         }
@@ -129,9 +218,22 @@
 
     &:nth-child(even) {
       padding-top: 70px;
+      @extend %u-flex;
+      @extend %u-fd-row;
+      @extend %u-jc-space-between;
+
+      @include breakpoint(upto-medium) {
+        position: unset;
+        display: unset;
+      }
 
       & > div:nth-child(1) {
         @extend %u-pos-relative;
+
+        @include breakpoint(upto-medium) {
+          position: unset;
+          padding-top: 86px;
+        }
 
         img {
           @extend %u-pos-absolute;
@@ -140,12 +242,37 @@
           width: 427.21px;
           height: 427.21px;
           padding-left: 54px + 20px;
+
+          @include breakpoint(upto-medium) {
+            position: unset;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: 427.21px;
+            height: 100%;
+            padding-left: unset;
+          }
+
+          @include breakpoint(from-medium--upto-large) {
+            top: -15%;
+          }
         }
       }
 
       & > div:nth-child(2) {
         width: 513px;
         padding-right: 179px;
+
+        @include breakpoint(upto-medium) {
+          padding-right: unset;
+          width: unset;
+          padding-top: 86px;
+        }
+
+        @include breakpoint(from-medium--upto-large) {
+          padding-right: unset;
+          margin-left: 504px;
+        }
 
         & div:nth-child(2) {
           margin-top: 86px;
