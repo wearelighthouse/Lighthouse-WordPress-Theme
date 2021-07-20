@@ -79,9 +79,9 @@
             <div class="c-service-content__icon-container">
               <img class="c-service-content__icon" src="https://wearelighthouse.com/wp-content/uploads/2019/10/icon-itl-validation.svg" alt="">
             </div>
-  
+
             <h4 class="c-service-content__subtitle">Agile always</h4>
-  
+
             <p>
               We can work with any type of agile and will fit in seamlessly with your workflow. We speak the same language as engineers...
             </p>
@@ -91,9 +91,9 @@
             <div class="c-service-content__icon-container">
               <img class="c-service-content__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-processes.svg" alt="">
             </div>
-  
+
             <h4 class="c-service-content__subtitle">Efficient processes</h4>
-  
+
             <p>
               We’ve fine tuned our processes to make sure we run like a well oiled machine.
             </p>
@@ -140,24 +140,20 @@
     </div>
   </section>
 
-  <section class="o-container-client-testimonial">
-    <!-- <div class="c-fancy-bg">
-      <div class="c-fancy-bg__service-client-testimonial"> -->
-        <div class="o-container-content">
-          <blockquote class="c-service-client-testimonial">
-            <h3 class="c-service-client-testimonial__title">Client testimonial</h3>
-            <p class="c-service-client-testimonial__p">Lighthouse London immediately gave us confidence they were the right choice to support our business in one of the biggest projects we’ve ever undertaken</p>
-            <footer class="c-service-client-testimonial__footer">
-                <div class="c-service-client-testimonial__footer-content">
-                  <div class="c-service-client-testimonial__footer-name">Nick Meyers</div>
-                  <div class="c-service-client-testimonial__footer-job">Director of Technology</div>
-                  <div class="c-service-client-testimonial__footer-title">Digital Theatre+</div>
-                </div>
-            </footer>
-          </blockquote>
-        </div>
-      <!-- </div>
-    </div> -->
+  <section class="o-container-client-testimonial c-fancy-bg">
+    <div class="o-container-content">
+      <blockquote class="c-service-client-testimonial">
+        <h3 class="c-service-client-testimonial__title">Client testimonial</h3>
+        <p class="c-service-client-testimonial__p">Lighthouse London immediately gave us confidence they were the right choice to support our business in one of the biggest projects we’ve ever undertaken</p>
+        <footer class="c-service-client-testimonial__footer">
+            <div class="c-service-client-testimonial__footer-content">
+              <div class="c-service-client-testimonial__footer-name">Nick Meyers</div>
+              <div class="c-service-client-testimonial__footer-job">Director of Technology</div>
+              <div class="c-service-client-testimonial__footer-title">Digital Theatre+</div>
+            </div>
+        </footer>
+      </blockquote>
+    </div>
   </section>
 
    <?php for ($section = 0; ((is_array($blockServices) && $section < count($blockServices)) || (is_array($caseStudyIds) && $section < count($caseStudyIds))) && $section < 60; $section++) : ?>

@@ -1,0 +1,31 @@
+.c-fancy-bg {
+  @extend %u-pos-relative;
+  @extend %u-ov-hidden;
+  background: $gradient-orange-pink-light;
+
+  &:before,
+  &:after {
+    @extend %u-content;
+    @extend %u-pos-absolute;
+    pointer-events: none;
+  }
+
+  // &:before {
+  //   @extend %u-bottom;
+  //   @extend %u-left;
+  //   @extend %u-round;
+  //   width: calc(35rem + 25vw);
+  //   height: calc(35rem + 25vw);
+  //   background: linear-gradient(90deg, transparent, rgba($color-white, .1));
+  //   transform: translate(calc(-28rem + 22vw), calc(-15% + 37vw)) rotate(30deg);
+  // }
+
+  &:after {
+    top: 100%;
+    left: 50%;
+    width: calc(15rem + 35vw);
+    height: calc(15rem + 35vw);
+    background: linear-gradient(rgba($color-white, 0), rgba($color-white, .4));
+    transform: translate(calc(-50% - 5rem), calc(-50% + 5rem)) rotate(-45deg)
+  }
+}

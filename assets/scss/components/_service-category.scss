@@ -30,6 +30,7 @@
       width: 38px;
     }
   }
+
   &:not(:first-child) {
     @include breakpoint(upto-small) {
       margin-top: 96px;
