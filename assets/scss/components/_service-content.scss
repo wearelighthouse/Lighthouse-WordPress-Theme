@@ -111,8 +111,6 @@
       }
 
       & > div:nth-child(1) {
-        // @extend %u-pos-relative;
-
         img {
           @extend %u-pos-absolute;
           width: 500px;
