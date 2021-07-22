@@ -1,21 +1,21 @@
 // Global color variables
 
-$color-white: #ffffff;
-$color-gray-bluish: #f7f7f9;
-$color-gray-light: #f7f7f7;
-$color-gray: #dedee2;
-$color-gray-darkish: #a3a3ad;
-$color-gray-dark: #7e7e81;
-$color-gray-deep: #2b2b2b;
-$color-black: #000000;
-$color-blackcurrant: #151931;
-$color-pink-old: #ff268b;
-$color-pink: #e80070; // Only for text, is darker to hit 4.5:1 on white
-$color-pink-dark: #df006c; // Used in <code> to hit 4.5:1 on gray-light
-$color-orange-old: #fc895b;
-$color-orange: #e87523;
-$color-orange-new: #fc7662;
-$color-red: #ee0700;
+$color-white:         #ffffff;
+$color-gray-bluish:   #f7f7f9;
+$color-gray-light:    #f7f7f7;
+$color-gray:          #dedee2;
+$color-gray-darkish:  #a3a3ad;
+$color-gray-dark:     #7e7e81;
+$color-gray-deep:     #2b2b2b;
+$color-black:         #000000;
+$color-blackcurrant:  #151931;
+$color-pink-old:      #ff268b;
+$color-pink:          #e80070; // Only for text, is darker to hit 4.5:1 on white
+$color-pink-dark:     #df006c; // Used in <code> to hit 4.5:1 on gray-light
+$color-orange-old:    #fc895b;
+$color-orange:        #e87523;
+$color-orange-new:    #fc7662;
+$color-red:           #ee0700;
 
 $gradient-orange-pink: linear-gradient(135deg, #fc865b, #fc2489);
 $gradient-orange-new-pink: linear-gradient(
@@ -29,23 +29,23 @@ $gradient-orange-pink-light: linear-gradient(135deg, #FC895B26 0%, #FF268B26 100
 // Colors used to automatically generate font and background color utilities.
 
 $auto-colors: (
-  'white': $color-white,
-  'gray-dark': $color-gray-dark,
+  'white':        $color-white,
+  'gray-dark':    $color-gray-dark,
   'blackcurrant': $color-blackcurrant,
   // 'pink': $color-pink, // Used in link styling, isn't needed 'ere
-  'pink-dark': $color-pink-dark,
-  'orange': $color-orange,
-  'orange-old': $color-orange-old,
-  'orange-new': $color-orange-new,
-  'red': $color-red,
+  'pink-dark':    $color-pink-dark,
+  'orange':       $color-orange,
+  'orange-old':   $color-orange-old,
+  'orange-new':   $color-orange-new,
+  'red':          $color-red,
 );
 
 $auto-bg-colors: (
-  'white': $color-white,
-  'gray-bluish': $color-gray-bluish,
-  'gray-light': $color-gray-light,
-  'gray': $color-gray,
-  'gray-deep': $color-gray-deep,
+  'white':        $color-white,
+  'gray-bluish':  $color-gray-bluish,
+  'gray-light':   $color-gray-light,
+  'gray':         $color-gray,
+  'gray-deep':    $color-gray-deep,
   'blackcurrant': $color-blackcurrant,
   'currentColor': currentColor,
 );

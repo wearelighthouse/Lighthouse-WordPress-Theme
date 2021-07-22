@@ -23,9 +23,9 @@
     font-style: normal;
 
     &::before {
+      @extend %u-content;
       @extend %u-pos-absolute;
       @extend %u-top;
-      content: '';
       border-top: 2px solid $color-black;
       width: 38px;
     }

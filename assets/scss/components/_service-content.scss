@@ -13,8 +13,8 @@
   }
 
   &::before {
+    @extend %u-content;
     @extend %u-pos-absolute;
-    content: '';
     width: 612.84px;
     height: 612.84px;
     background: linear-gradient(
@@ -75,9 +75,9 @@
       }
 
       &::before {
+        @extend %u-content;
         @extend %u-pos-absolute;
         @extend %u-z-index-1;
-        content: '';
         width: 637.49px;
         height: 637.49px;
         background: linear-gradient(
@@ -134,10 +134,15 @@
           }
         }
 
-        &::before {
+        &:before,
+        &:after {
+          @extend %u-content;
           @extend %u-pos-absolute;
+          pointer-events: none;
+        }
+
+        &::before {
           @extend %u-z-index-2;
-          content: '';
           width: 352.09px;
           height: 352.09px;
           background: linear-gradient(
@@ -162,9 +167,7 @@
         }
 
         &::after {
-          @extend %u-pos-absolute;
           @extend %u-z-index-1;
-          content: '';
           width: 488.49px;
           height: 488.49px;
           background: linear-gradient(
@@ -291,8 +294,8 @@
       & > div {
         img {
           @extend %u-pos-absolute;
-          top: 0%;
-          left: 0%;
+          @extend %u-top;
+          @extend %u-left;
           width: 57px;
         }
       }
