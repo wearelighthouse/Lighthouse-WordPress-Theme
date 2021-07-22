@@ -142,6 +142,7 @@
 
   <section class="o-container-client-testimonial c-fancy-bg">
     <div class="o-container-content">
+
       <blockquote class="c-service-client-testimonial">
         <h3 class="c-service-client-testimonial__title">Client testimonial</h3>
         <p class="c-service-client-testimonial__p">Lighthouse London immediately gave us confidence they were the right choice to support our business in one of the biggest projects we’ve ever undertaken</p>
@@ -153,22 +154,209 @@
             </div>
         </footer>
       </blockquote>
+
     </div>
   </section>
 
-   <?php for ($section = 0; ((is_array($blockServices) && $section < count($blockServices)) || (is_array($caseStudyIds) && $section < count($caseStudyIds))) && $section < 60; $section++) : ?>
+  <section class="o-container-section o-container-section--h-bordered">
+    <div class="o-container-content">
+      <h2>Who are we for?</h2>
+      <div>
+          <p>Lighthouse partner with both well-established enterprise businesses seeking to inject life into under-performing applications, and funded startups ready to progress their product. These are typically headed up by seasoned founders who love the process as much as the outcome.</p>
+          <p>We'll help you find the right way forward, not the path of least resistance.</p>
+         <div class="c-home-intro__clients c-cta-banner__right">
+            
+        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/john-lewis.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/john-lewis.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 165.6px; height: 31.2px">
+          <span class="o-dictate">John Lewis logo</span>
+        </div>
+            
+        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/redbull.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/redbull.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 148.8px; height: 30px">
+          <span class="o-dictate">Red Bull logo</span>
+        </div>
+            
+        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/paypoint.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/paypoint.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 116.4px; height: 24px">
+          <span class="o-dictate">PayPoint logo</span>
+        </div>
+            
+        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/01/kuoni.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/01/kuoni.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 122.4px; height: 20.4px">
+          <span class="o-dictate">Kuoni logo</span>
+        </div>
+            
+        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/02/investec-logo.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/02/investec-logo.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 159.6px; height: 28.8px">
+          <span class="o-dictate">Investec logo</span>
+        </div>
 
-    <?php if ($blockServices && count($blockServices) > $section) : ?>
-      <?php $globalBlocksServiceGroup = [$blockServices[$section]]; ?>
-      <?php include(locate_template('src/template_parts/block_section_services.php')) ?>
-    <?php endif; ?>
+        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/07/total-logo-home.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/07/total-logo-home.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 117.6px; height: 36px">
+          <span class="o-dictate">Total logo</span>
+        </div>
+          
+        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/kpmg.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/kpmg.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 88.8px; height: 36px">
+        <span class="o-dictate">KPMG logo</span>
+      </div>
 
-    <?php if ($caseStudyIds) : ?>
-      <?php $globalCaseStudyIds = array_slice($caseStudyIds, $section * 2, ($section + 1) * 2); // Pairs of case studies ?>
-      <?php include(locate_template('src/template_parts/block_section_case_study_small.php')) ?>
-    <?php endif; ?>
+         <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/va.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/va.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 57.6px; height: 33.6px">
+          <span class="o-dictate">V&amp;A logo</span>
+        </div>
 
-  <?php endfor; ?>
+        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/twinings.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/twinings.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 127.2px; height: 28.8px">
+          <span class="o-dictate">Twinings logo</span>
+        </div>
+      </div>
+
+      <div class="c-service-template__button-container">
+        <button class=" c-service-template__button"><a href="/call-to-action">Call to action</a></button>
+      </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section">
+    <div class="o-container-content o-container-case-studies o-container-case-studies--flex"> 
+
+        <h2>Case studies</h2>
+
+        <a href="https://wearelighthouse.com/our-work/cap-hpi/" class="c-case-study-block c-case-study-block--large js-half-onscreen-detect js-onscreen" data-loaded="true">
+
+          <div class="c-case-study-block__background">
+            <div>
+              <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/car-icon.svg" alt>
+              <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/car.svg" alt>
+            </div>
+          </div>
+
+          <div class="c-case-study-block__content">
+
+            <div class="c-case-study-block__logo" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/09/Logos-HPI.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/09/Logos-HPI.svg); width: 50px; height: 42px">
+              <span class="c-case-study-block__logo__alt">HPI</span>
+            </div>
+
+            <div class="c-case-study-block__image-small">
+                <img class="js-lazy" data-src="https://wearelighthouse.com/wp-content/uploads/2019/09/hpi_cover_125.svg" alt="" loading="lazy" height="100" width="110">      
+            </div>
+
+            <h3 class="c-case-study-block__title">
+              <div href="https://wearelighthouse.com/our-work/cap-hpi/" class="c-case-study-block__title__link">
+               Selling and buying cars easily
+              </div>
+              <span class="c-case-study-block__title__plain">
+                Selling and buying cars easily
+              </span>
+            </h3>
+
+            <div href="https://wearelighthouse.com/our-work/cap-hpi/" class="c-case-study-block__link c-button c-button--underlined-dark">
+                Find out more      
+            </div>
+
+          </div>
+        </a>
+
+    </div>
+  </section>
+
+  <section class="o-container-section o-container-section--h-bordered">
+    <div class="o-container-content">
+
+      <a href="https://wearelighthouse.com/our-work/dots-action-children/" class="c-case-study-block c-case-study-block--small c-case-study-block--small--staggered js-half-onscreen-detect js-onscreen" data-loaded="true">
+        <div class="c-case-study-block__background">
+
+          <div class="c-case-study-block__image-medium js-child-loaded">
+            <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/activities.svg" alt>
+            <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/parent-wellbeing.svg" alt>
+          </div>
+
+          <div class="c-case-study-block__content">
+            <div class="c-case-study-block__logo" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/actionforchildren-logo.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/actionforchildren-logo.svg); width: 100px; height: 60px">
+              <span class="c-case-study-block__logo__alt">
+                Action for Children          
+              </span>
+            </div>
+
+            <h3 class="c-case-study-block__title">
+              <div href="https://wearelighthouse.com/our-work/dots-action-children/" class="c-case-study-block__title__link">A new parenting platform from an innovative charity
+              </div>
+            </h3>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wearelighthouse.com/our-work/dots-action-children/" class="c-case-study-block c-case-study-block--small js-half-onscreen-detect js-onscreen" data-loaded="true">
+        <div class="c-case-study-block__background">
+
+          <div class="c-case-study-block__image-medium js-child-loaded">
+            <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/activities.svg" alt>
+            <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/parent-wellbeing.svg" alt>   
+          </div>
+
+          <div class="c-case-study-block__content">
+
+            <div class="c-case-study-block__logo" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/actionforchildren-logo.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/actionforchildren-logo.svg); width: 100px; height: 60px">
+              <span class="c-case-study-block__logo__alt">
+                Action for Children          
+              </span>
+            </div>
+
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+            <p>Key statistic</p>
+            <p><span>50</span> Hours of discovery</p>
+          </div>
+
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="o-container-section o-container-section--h-bordered">
+    <div class="c-form-block">
+      <script type="text/javascript"></script>
+      <div class="gf_browser_chrome gform_wrapper gform_legacy_markup_wrapper" id="gform_wrapper_8">
+
+        <div class="gform_heading">
+            <h3 class="gform_title">Newsletter</h3>
+            <span class="gform_description">Our four favourite UX, product and innovation stories sent to your inbox, every month. All killer, no filler.
+            </span>
+        </div>
+
+        <form method="post" enctype="multipart/form-data" id="gform_8" action="/blog/" novalidate="" data-autopilot-anywhere="0001559750737583_12bcc64c3307490d99c963ddfe94609b">
+          <div class="gform_body gform-body">
+
+            <ul id="gform_fields_8" class="gform_fields top_label form_sublabel_below description_below">
+              <li id="field_8_1" class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
+                <label class="gfield_label" for="input_8_1">Email address
+                  <span class="gfield_required">
+                    <span class="gfield_required gfield_required_asterisk">*</span>
+                  </span>
+                </label>
+                <div class="ginput_container ginput_container_email">
+                  <input autocomplete="disabled" name="input_1" id="input_8_1" type="email" value="" class="large" placeholder="you@somewhere.com" aria-required="true" aria-invalid="false">
+                </div>
+              </li>
+            </ul>
+
+          </div>
+
+          <div class="gform_footer top_label">
+            <button type="submit" id="gform_submit_button_8" class="gform_button button" 
+              >Sign me up
+              <i class="fa fa-refresh"></i>
+            </button> 
+
+            <input type="hidden" class="gform_hidden" name="is_submit_8" value="1">
+            <input type="hidden" class="gform_hidden" name="gform_submit" value="8">
+            <input type="hidden" class="gform_hidden" name="gform_unique_id" value="">
+            <input type="hidden" class="gform_hidden" name="state_8" value="WyJbXSIsImMxOTYwZWY2YzU0YjM5M2E0YWJjMmQ1OGZjZjBmOWM4Il0=">
+            <input type="hidden" class="gform_hidden" name="gform_target_page_number_8" id="gform_target_page_number_8" value="0">
+            <input type="hidden" class="gform_hidden" name="gform_source_page_number_8" id="gform_source_page_number_8" value="1">
+            <input type="hidden" name="gform_field_values" value="">
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
 
 </main>
 
