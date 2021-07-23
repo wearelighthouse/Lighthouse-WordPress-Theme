@@ -101,12 +101,7 @@
       }
 
       h3 {
-        @extend %u-vbold;
-        @include fontScale(28, 32);
-        @include lineScale(38, 42);
         @extend %u-color-blackcurrant;
-        font-family: 'Tiempos Text';
-        font-style: normal;
         margin-top: 64px;
       }
 

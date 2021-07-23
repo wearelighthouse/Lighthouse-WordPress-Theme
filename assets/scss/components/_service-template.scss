@@ -1,4 +1,11 @@
 .c-service-template {
+  &__title {
+    @extend %u-tiempos;
+    @extend %u-vbold;
+    @include fontScale(28, 32);
+    @include lineScale(38, 42);
+    font-style: normal;
+  }
   &__button-container {
     margin: 0;
   }

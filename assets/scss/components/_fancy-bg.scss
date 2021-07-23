@@ -11,8 +11,6 @@
   }
 
   &:before {
-    @extend %u-bottom;
-    @extend %u-left;
     @extend %u-round;
     top: -50%;
     width: calc(15rem + 25vw);

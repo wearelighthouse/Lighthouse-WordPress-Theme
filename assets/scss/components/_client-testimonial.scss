@@ -9,12 +9,7 @@
   margin: 0;
 
   &__title {
-    @extend %u-vbold;
-    @include fontScale(28, 32);
     @extend %u-color-orange-old;
-    @include lineScale(38, 42);
-    font-family: 'Tiempos Text';
-    font-style: normal;
     padding-bottom: 16px;
   }
 

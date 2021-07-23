@@ -17,7 +17,7 @@
           <img class="c-service-category__icon" src="https://wearelighthouse.com/wp-content/uploads/2019/10/icon-itl-discovery.svg" alt="">
         </div>
 
-        <h2 class="c-service-category__title">Discovery</h2>
+        <h2 class="c-service-category__title c-service-template__title">Discovery</h2>
 
         <ul class="c-service-category__content">
           <li>Idea validation</li>
@@ -34,7 +34,7 @@
           <img class="c-service-category__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-ux-design.svg" alt="">
         </div>
 
-        <h2 class="c-service-category__title">UX design</h2>
+        <h2 class="c-service-category__title c-service-template__title">UX design</h2>
 
         <ul class="c-service-category__content">
           <li>User journey mapping</li>
@@ -48,7 +48,7 @@
           <img class="c-service-category__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-ui-design.svg" alt="">
         </div>
 
-        <h2 class="c-service-category__title">UI / Design</h2>
+        <h2 class="c-service-category__title c-service-template__title">UI / Design</h2>
 
         <ul class="c-service-category__content">
           <li>Interface design</li>
@@ -73,7 +73,7 @@
         </div>
 
         <div class="c-service-content__item__left">
-          <h3 class="c-service-content__title">Productive collaboration</h3>
+          <h3 class="c-service-content__title c-service-template__title">Productive collaboration</h3>
 
           <div class="c-service-content__item__container">
             <div class="c-service-content__icon-container">
@@ -144,7 +144,7 @@
     <div class="o-container-content">
 
       <blockquote class="c-service-client-testimonial">
-        <h3 class="c-service-client-testimonial__title">Client testimonial</h3>
+        <h3 class="c-service-client-testimonial__title c-service-template__title">Client testimonial</h3>
         <p class="c-service-client-testimonial__p">Lighthouse London immediately gave us confidence they were the right choice to support our business in one of the biggest projects we’ve ever undertaken</p>
         <footer class="c-service-client-testimonial__footer">
             <div class="c-service-client-testimonial__footer-content">
@@ -159,53 +159,53 @@
   </section>
 
   <section class="o-container-section o-container-section--h-bordered">
-    <div class="o-container-content">
-      <h2>Who are we for?</h2>
-      <div>
-          <p>Lighthouse partner with both well-established enterprise businesses seeking to inject life into under-performing applications, and funded startups ready to progress their product. These are typically headed up by seasoned founders who love the process as much as the outcome.</p>
-          <p>We'll help you find the right way forward, not the path of least resistance.</p>
-         <div class="c-home-intro__clients c-cta-banner__right">
+    <div class="o-container-content c-service-mission">
+      <h2 class="c-service-mission__title c-service-template__title">Who are we for?</h2>
+      <div class="c-service-mission__content">
+        <p class="c-service-mission__content-p">Lighthouse partner with both well-established enterprise businesses seeking to inject life into under-performing applications, and funded startups ready to progress their product. These are typically headed up by seasoned founders who love the process as much as the outcome.</p>
+        <p class="c-service-mission__content-p">We'll help you find the right way forward, not the path of least resistance.</p>
+        <div class="c-service-mission__content-logos c-home-intro__clients c-cta-banner__right">
             
-        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/john-lewis.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/john-lewis.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 165.6px; height: 31.2px">
-          <span class="o-dictate">John Lewis logo</span>
-        </div>
+          <div class="c-service-mission__content-logos--clients c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/john-lewis.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/john-lewis.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 165.6px; height: 31.2px">
+            <span class="o-dictate">John Lewis logo</span>
+          </div>
+              
+          <div class="c-service-mission__content-logos--clients c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/redbull.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/redbull.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 148.8px; height: 30px">
+            <span class="o-dictate">Red Bull logo</span>
+          </div>
             
-        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/redbull.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/redbull.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 148.8px; height: 30px">
-          <span class="o-dictate">Red Bull logo</span>
-        </div>
+          <div class="c-service-mission__content-logos--clients c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/paypoint.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/paypoint.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 116.4px; height: 24px">
+            <span class="o-dictate">PayPoint logo</span>
+          </div>
+              
+          <div class="c-service-mission__content-logos--clients c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/01/kuoni.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/01/kuoni.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 122.4px; height: 20.4px">
+            <span class="o-dictate">Kuoni logo</span>
+          </div>
             
-        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/paypoint.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/paypoint.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 116.4px; height: 24px">
-          <span class="o-dictate">PayPoint logo</span>
-        </div>
+          <div class="c-service-mission__content-logos--clients c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/02/investec-logo.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/02/investec-logo.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 159.6px; height: 28.8px">
+            <span class="o-dictate">Investec logo</span>
+          </div>
+
+          <div class="c-service-mission__content-logos--clients c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/07/total-logo-home.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/07/total-logo-home.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 117.6px; height: 36px">
+            <span class="o-dictate">Total logo</span>
+          </div>
             
-        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/01/kuoni.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/01/kuoni.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 122.4px; height: 20.4px">
-          <span class="o-dictate">Kuoni logo</span>
-        </div>
-            
-        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/02/investec-logo.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/02/investec-logo.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 159.6px; height: 28.8px">
-          <span class="o-dictate">Investec logo</span>
+          <div class="c-service-mission__content-logos--clients c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/kpmg.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/kpmg.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 88.8px; height: 36px">
+            <span class="o-dictate">KPMG logo</span>
+          </div>
+
+          <div class="c-service-mission__content-logos--clients c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/va.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/va.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 57.6px; height: 33.6px">
+            <span class="o-dictate">V&amp;A logo</span>
+          </div>
+
+          <div class="c-service-mission__content-logos--clients c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/twinings.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/twinings.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 127.2px; height: 28.8px">
+            <span class="o-dictate">Twinings logo</span>
+          </div>
         </div>
 
-        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/07/total-logo-home.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2020/07/total-logo-home.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 117.6px; height: 36px">
-          <span class="o-dictate">Total logo</span>
+        <div class="c-service-mission__content-button c-service-template__button-container">
+          <button class=" c-service-template__button"><a href="/call-to-action">Call to action</a></button>
         </div>
-          
-        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/kpmg.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/kpmg.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 88.8px; height: 36px">
-        <span class="o-dictate">KPMG logo</span>
-      </div>
-
-         <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/va.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/va.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 57.6px; height: 33.6px">
-          <span class="o-dictate">V&amp;A logo</span>
-        </div>
-
-        <div class="c-home-intro__clients__img-container" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/twinings.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/twinings.svg); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: 127.2px; height: 28.8px">
-          <span class="o-dictate">Twinings logo</span>
-        </div>
-      </div>
-
-      <div class="c-service-template__button-container">
-        <button class=" c-service-template__button"><a href="/call-to-action">Call to action</a></button>
-      </div>
 
       </div>
     </div>
@@ -229,10 +229,6 @@
 
             <div class="c-case-study-block__logo" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/09/Logos-HPI.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/09/Logos-HPI.svg); width: 50px; height: 42px">
               <span class="c-case-study-block__logo__alt">HPI</span>
-            </div>
-
-            <div class="c-case-study-block__image-small">
-                <img class="js-lazy" data-src="https://wearelighthouse.com/wp-content/uploads/2019/09/hpi_cover_125.svg" alt="" loading="lazy" height="100" width="110">      
             </div>
 
             <h3 class="c-case-study-block__title">
@@ -296,10 +292,11 @@
                 Action for Children          
               </span>
             </div>
-
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
-            <p>Key statistic</p>
-            <p><span>50</span> Hours of discovery</p>
+              <div>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+                <p>Key statistic</p>
+                <p><span>50</span> Hours of discovery</p>
+              </div>
           </div>
 
         </div>

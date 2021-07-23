@@ -4,12 +4,7 @@
   }
 
   &__title {
-    @extend %u-vbold;
-    @include fontScale(28, 32);
-    @include lineScale(38, 42);
     @extend %u-color-orange-old;
-    font-family: 'Tiempos Text';
-    font-style: normal;
   }
 
   &__content {
