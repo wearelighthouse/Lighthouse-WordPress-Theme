@@ -1,0 +1,157 @@
+.c-service-case-study {
+
+    &__parenting {
+        padding-bottom: 100px;
+        padding-top: 99px;
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(from-medium) {
+            display: flex;
+            flex-direction: row;
+            padding-top: unset;
+        }
+
+        &-block {
+            @extend %u-pos-relative;
+            width: 100%;
+            background: #F7F7F7;
+
+            &--image {
+                @extend %u-pos-absolute;
+                width: 128px;
+                height: 62px;
+                top: -36%;
+                left: 25%;
+
+            @include breakpoint(from-tiny) {
+                left: 50%;
+                top: -25%;
+                display: flex;
+                flex-direction: row;
+                margin-top: unset;
+                transform: translate(calc(-50% - 5rem), calc(-50% + 5rem));
+            }
+
+            @include breakpoint(from-medium) {
+               top: 20%;
+               left: 25%;
+               flex-direction: column;
+               transform: translate(calc(-50% - 5vw), calc(-50% + 5vw));
+            }
+
+                & img + img {
+                    margin-top: 14px;
+
+                    @include breakpoint(from-tiny) {
+                        margin-top: unset;
+                        margin-left: 14px;
+                    }
+
+                    @include breakpoint(from-medium) {
+                        margin-top: 14px;
+                        margin-left: unset;
+                    }
+                }
+            }
+        }
+
+        &-block:nth-child(odd) {
+            padding-top: 40px;
+            padding-bottom: 52px;
+
+            @include breakpoint(from-medium) {
+               margin-left: 34.59px;
+            }
+
+            @include breakpoint(from-tiny) {
+                padding-top: 80px;
+            }
+        }
+
+        &-block:nth-child(even) {
+            padding-top: 49px;
+            padding-bottom: 41px;
+
+            @include breakpoint(from-medium) {
+               margin-left: calc(37px + 21px);
+            }
+        }
+
+        &-block + &-block {
+            margin-top: 140px;
+
+            @include breakpoint(from-tiny) {
+                margin-top: 80px;
+            }
+
+            @include breakpoint(from-medium) {
+                margin-top: unset;
+            }
+        }
+
+        &-content {
+
+            padding-left: 36px;
+            padding-right: 36px;
+
+            @include breakpoint(from-medium) {
+                padding-left: 130px;
+            }
+
+            &--title {
+                @extend %u-sailec;
+                @extend %u-vbold;
+                @include fontScale(19, 23);
+                @include lineScale(25, 29);
+                @extend %u-color-black;
+                font-style: normal;
+                padding-top: 18px;
+                padding-bottom: 9px;
+            }
+
+            &--p {
+                 @extend %u-sailec;
+                 @extend %u-color-black;
+                font-style: normal;
+                font-size: 15px;
+                line-height: 19px;
+                margin: 0;
+            }
+
+            &--content {
+                & p:nth-child(2),
+                & p:nth-child(3) {
+                    @extend %u-sailec;
+                    @extend %u-vbold;
+                    font-style: normal;
+                    font-size: 10px;
+                    line-height: 12px;
+                    letter-spacing: 0.1em;
+                    color: rgba(3, 3, 3, 0.5);
+                    text-transform: uppercase;
+                }
+
+                & p:nth-child(1) {
+                    padding-top: 21px;
+                    padding-bottom: 29px;
+                }
+
+                & p:nth-child(2) {
+                    padding-bottom: 7px;
+                    width: 95px;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                }
+
+                & p:nth-child(3) span {
+                    @extend %u-tiempos;
+                    @include fontScale(26, 30);
+                    @include lineScale(35, 39);
+                    font-style: normal;
+                    font-weight: 500;
+                    color: rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+    }
+}

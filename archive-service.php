@@ -212,35 +212,30 @@
   </section>
 
   <section">
-    <div class="o-container-content o-container-case-studies o-container-case-studies--flex"> 
+    <div class="o-container-content c-service-case-study"> 
 
-        <h2>Case studies</h2>
+        <h2 class="c-service-case-study__title c-service-template__title">Case studies</h2>
 
-        <a href="https://wearelighthouse.com/our-work/cap-hpi/" class="c-case-study-block c-case-study-block--large js-half-onscreen-detect js-onscreen" data-loaded="true">
+        <a href="https://wearelighthouse.com/our-work/cap-hpi/" class="c-service-case-study__content" data-loaded="true">
 
-          <div class="c-case-study-block__background">
-            <div>
-              <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/car-icon.svg" alt>
-              <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/car.svg" alt>
-            </div>
+          <div class="c-service-case-study__content-background">
+              <img class="c-service-case-study__content-background--car-profile" src="<?= get_template_directory_uri(); ?>/assets/svg/single/car-icon.svg" alt>
+              <img class="c-service-case-study__content-background--car" src="<?= get_template_directory_uri(); ?>/assets/img/car.png" alt>
           </div>
 
-          <div class="c-case-study-block__content">
+          <div class="c-service-case-study__content-content">
 
             <div class="c-case-study-block__logo" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/09/Logos-HPI.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/09/Logos-HPI.svg); width: 50px; height: 42px">
               <span class="c-case-study-block__logo__alt">HPI</span>
             </div>
 
             <h3 class="c-case-study-block__title">
-              <div href="https://wearelighthouse.com/our-work/cap-hpi/" class="c-case-study-block__title__link">
+              <div href="https://wearelighthouse.com/our-work/cap-hpi/" class="c-service-case-study__content-subtitle c-case-study-block__title__link">
                Selling and buying cars easily
               </div>
-              <span class="c-case-study-block__title__plain">
-                Selling and buying cars easily
-              </span>
             </h3>
 
-            <div href="https://wearelighthouse.com/our-work/cap-hpi/" class="c-case-study-block__link c-button c-button--underlined-dark">
+            <div href="https://wearelighthouse.com/our-work/cap-hpi/" class="c-service-case-study__content-content--link c-case-study-block__link c-button c-button--underlined-dark">
                 Find out more      
             </div>
 
@@ -251,52 +246,52 @@
   </section>
 
   <section class="o-container-section o-container-section--h-bordered">
-    <div class="o-container-content">
+    <div class="o-container-content c-service-case-study__parenting">
 
-      <a href="https://wearelighthouse.com/our-work/dots-action-children/" class="c-case-study-block c-case-study-block--small c-case-study-block--small--staggered js-half-onscreen-detect js-onscreen" data-loaded="true">
-        <div class="c-case-study-block__background">
+      <a href="https://wearelighthouse.com/our-work/dots-action-children/" class="c-service-case-study__parenting-block data-loaded="true">
 
-          <div class="c-case-study-block__image-medium js-child-loaded">
+          <div class="c-service-case-study__parenting-block--image">
             <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/activities.svg" alt>
             <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/parent-wellbeing.svg" alt>
           </div>
 
-          <div class="c-case-study-block__content">
+        <div>
+          <div class="c-service-case-study__parenting-content">
             <div class="c-case-study-block__logo" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/actionforchildren-logo.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/actionforchildren-logo.svg); width: 100px; height: 60px">
               <span class="c-case-study-block__logo__alt">
                 Action for Children          
               </span>
             </div>
 
-            <h3 class="c-case-study-block__title">
+            <h3 class="c-service-case-study__parenting-content--title">
               <div href="https://wearelighthouse.com/our-work/dots-action-children/" class="c-case-study-block__title__link">A new parenting platform from an innovative charity
               </div>
             </h3>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            <p class="c-service-case-study__parenting-content--p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
           </div>
         </div>
       </a>
 
-      <a href="https://wearelighthouse.com/our-work/dots-action-children/" class="c-case-study-block c-case-study-block--small js-half-onscreen-detect js-onscreen" data-loaded="true">
-        <div class="c-case-study-block__background">
+      <a href="https://wearelighthouse.com/our-work/dots-action-children/" class="c-service-case-study__parenting-block" data-loaded="true">
 
-          <div class="c-case-study-block__image-medium js-child-loaded">
-            <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/activities.svg" alt>
-            <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/parent-wellbeing.svg" alt>   
-          </div>
+        <div class="c-service-case-study__parenting-block--image c-case-study-block__image-medium js-child-loaded">
+          <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/activities.svg" alt>
+          <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/parent-wellbeing.svg" alt>   
+        </div>
+        <div>
 
-          <div class="c-case-study-block__content">
+          <div class="c-service-case-study__parenting-content">
 
             <div class="c-case-study-block__logo" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/actionforchildren-logo.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/actionforchildren-logo.svg); width: 100px; height: 60px">
               <span class="c-case-study-block__logo__alt">
                 Action for Children          
               </span>
             </div>
-              <div>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
-                <p>Key statistic</p>
-                <p><span>50</span> Hours of discovery</p>
-              </div>
+            <div class="c-service-case-study__parenting-content--content">
+              <p class="c-service-case-study__parenting-content--p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+              <p>Key statistic</p>
+              <p><span>50</span> Hours of discovery</p>
+            </div>
           </div>
 
         </div>
