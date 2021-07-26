@@ -32,8 +32,8 @@
 
         &-logos { 
             @include breakpoint(from-large) {
-                @extend %u-flex;
-                @extend %u-fd-row;
+                display: flex;
+                flex-direction: row;
             }
 
            &--clients {
