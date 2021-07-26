@@ -1,0 +1,57 @@
+.c-service-mission {
+    padding-top: 80px;
+
+    @include breakpoint(from-medium) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 128px;
+    }
+
+    &__title {
+        @extend %u-color-blackcurrant;
+
+        @include breakpoint(from-tiny--upto-medium) {
+            padding-bottom: 32px;
+        }
+    }
+    
+    &__content {
+        &-p {
+            @extend %u-sailec;
+            @extend %u-color-black;
+            @include fontScale(18, 20);
+            @include lineScale(24, 28);
+            font-style: normal;
+            margin: 0;
+
+            &:nth-child(even) {
+                padding-bottom: 42px;
+                padding-top: 32px;
+            }
+        }
+
+        &-logos { 
+            @include breakpoint(from-large) {
+                @extend %u-flex;
+                @extend %u-fd-row;
+            }
+
+           &--clients {
+
+            @include breakpoint(from-large) {
+                &:nth-child(1),
+                &:nth-child(2), 
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6),
+                &:nth-child(7),
+                &:nth-child(8),
+                &:nth-child(9) {
+                    flex-basis: 33.33%;
+                }
+            }
+            }
+        }
+    }
+}
