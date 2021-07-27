@@ -301,7 +301,7 @@
   </section>
 
   <section class="o-container-section o-container-section--h-bordered">
-    <div class="c-form-block">
+    <div class="c-form-block c-service__form">
       <script type="text/javascript"></script>
       <div class="gf_browser_chrome gform_wrapper gform_legacy_markup_wrapper" id="gform_wrapper_8">
 
