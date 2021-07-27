@@ -1,10 +1,14 @@
 .c-service-case-study {
 
     &__parenting {
+        @extend %u-flex;
+        @extend %u-fd-column;
         padding-bottom: 100px;
         padding-top: 99px;
-        display: flex;
-        flex-direction: column;
+
+        @include breakpoint(from-tiny) {
+            padding-top: 35px;
+        }
 
         @include breakpoint(from-medium) {
             display: flex;
@@ -13,10 +17,24 @@
             margin-top: 99px;
         }
 
+         @include breakpoint(from-large) {
+             margin-top: 150px;
+         }
+
         &-block {
             @extend %u-pos-relative;
-            width: 100%;
-            background: #F7F7F7;
+            @extend %u-width-100pc;
+
+            &::after {
+                @extend %u-content;
+                @extend %u-width-100pc;
+                @extend %u-height-100pc;
+                @extend %u-pos-absolute;
+                @extend %u-top;
+                @extend %u-bg-color-gray-light;
+                clip-path: polygon(0px 0, calc(100% - 0px) 0, calc(100% - 0px) 50%, calc(100% - 50px) 100%, 0px 100%, 0px 0%);
+                z-index: -1;
+            }
 
             &--image {
                 @extend %u-pos-absolute;
@@ -55,29 +73,39 @@
                     }
                 }
             }
+
+            &:nth-child(odd) {
+                padding-top: 40px;
+                padding-bottom: 52px;
+    
+                @include breakpoint(from-medium) {
+                   margin-left: 34.59px;
+                }
+    
+                @include breakpoint(from-tiny) {
+                    padding-top: 80px;
+                }
+            }
+    
+            &:nth-child(even) {
+                padding-top: 49px;
+                padding-bottom: 41px;
+    
+                @include breakpoint(from-medium) {
+                   margin-left: calc(37px + 21px);
+                }
+
+                & div:nth-child(1) {
+                    @include breakpoint(from-medium) {
+                        top: 20%;
+                        left: 21%;
+                    }
+
+                }
+
+            }
         }
 
-        &-block:nth-child(odd) {
-            padding-top: 40px;
-            padding-bottom: 52px;
-
-            @include breakpoint(from-medium) {
-               margin-left: 34.59px;
-            }
-
-            @include breakpoint(from-tiny) {
-                padding-top: 80px;
-            }
-        }
-
-        &-block:nth-child(even) {
-            padding-top: 49px;
-            padding-bottom: 41px;
-
-            @include breakpoint(from-medium) {
-               margin-left: calc(37px + 21px);
-            }
-        }
 
         &-block + &-block {
             margin-top: 140px;
@@ -112,8 +140,8 @@
             }
 
             &--p {
-                 @extend %u-sailec;
-                 @extend %u-color-black;
+                @extend %u-sailec;
+                @extend %u-color-black;
                 font-style: normal;
                 font-size: 15px;
                 line-height: 19px;
@@ -148,9 +176,10 @@
                     @extend %u-tiempos;
                     @include fontScale(26, 30);
                     @include lineScale(35, 39);
+                     @extend %u-color-black;
                     font-style: normal;
                     font-weight: 500;
-                    color: rgba(0, 0, 0, 0.5);
+                    opacity: 0.5;
                 }
             }
         }

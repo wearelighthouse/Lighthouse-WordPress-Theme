@@ -32,7 +32,7 @@
         &-background {
             @extend %u-width-100pc;
             @extend %u-height-100pc;
-            position: relative;
+            @extend %u-pos-relative;
             background: #F8F8F8;
             max-width: 800px;
             padding-bottom: 99px;
@@ -42,28 +42,47 @@
             @include breakpoint(from-medium) {
                position: absolute;
                 width: 599.65px;
-                height: 347px;
+                height: 377px;
                 padding-bottom: unset;
             }
 
               @include breakpoint(from-large) {
-                    width: 799.65px;
+                    width: 776px;
+                    height: 407px;
+                    background-color: transparent;
+                    margin-bottom: 99px;
+
+                    &::before {
+                        height: 100%;
+                        width: 100%;
+                        background: #F8F8F8;
+                        position: absolute;
+                        clip-path: polygon(0px 0, calc(100% - 0px) 0, calc(100% - 0px) 50%, calc(100% - 0px) 100%, 50px 100%, 0px 17%);
+                        top: 0;
+                        content: '';
+                        z-index: -1;
+                    }
               }
 
             &--car-profile {
-                @extend %u-width-100pc;
                 @extend %u-height-100pc;
                 @extend %u-pos-absolute;
-                top: -15%;
-                left: 15%;
+                top: -17%;
+                left: 20%;
 
                 @include breakpoint(from-small--upto-medium) {
-                    left: 20%;
+                   left: 45%;
+                    top: -15%;
                 }
 
                 @include breakpoint(from-medium) {
-                    top: -10%;
-                    left: 22%;
+                    top: -12%;
+                    left: 45%;
+                }
+
+                 @include breakpoint(from-large) {
+                    top: -12%;
+                    left: 52%;
                 }
             }
 
