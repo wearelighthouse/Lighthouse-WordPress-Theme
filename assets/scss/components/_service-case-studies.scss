@@ -46,23 +46,31 @@
                 padding-bottom: unset;
             }
 
-              @include breakpoint(from-large) {
-                    width: 776px;
-                    height: 407px;
-                    background-color: transparent;
-                    margin-bottom: 99px;
+            @include breakpoint(from-large) {
+                width: 776px;
+                height: 458px;
+                background-color: transparent;
+                margin-bottom: 99px;
+                padding-top: unset;;
 
-                    &::before {
-                        height: 100%;
-                        width: 100%;
-                        background: #F8F8F8;
-                        position: absolute;
-                        clip-path: polygon(0px 0, calc(100% - 0px) 0, calc(100% - 0px) 50%, calc(100% - 0px) 100%, 50px 100%, 0px 17%);
-                        top: 0;
-                        content: '';
-                        z-index: -1;
-                    }
-              }
+                &::before {
+                    height: 100%;
+                    width: 100%;
+                    background: #F8F8F8;
+                    position: absolute;
+                    clip-path: polygon(0px 0, calc(100% - 0px) 0, calc(100% - 0px) 50%, calc(100% - 0px) 100%, 50px 100%, 0px 17%);
+                    top: 0;
+                    content: '';
+                    z-index: -1;
+                }
+            }
+
+            @include breakpoint(from-full) {
+                width: 800px;
+                height: 458px;
+                padding-top: unset;
+                margin-bottom: 0;
+            }
 
             &--car-profile {
                 @extend %u-height-100pc;
@@ -97,6 +105,7 @@
                 @include breakpoint(from-large) {
                     width: 673.15px;
                     padding-left: 84px;
+                    padding-top: 47px;
                 }
 
             }

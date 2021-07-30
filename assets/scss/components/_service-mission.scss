@@ -31,24 +31,18 @@
         }
 
         &-logos { 
-            @include breakpoint(from-large) {
-                display: flex;
-                flex-direction: row;
-            }
 
            &--clients {
 
             @include breakpoint(from-large) {
-                &:nth-child(1),
+                margin: 0;
+            }
+
+            @include breakpoint(from-large) {
                 &:nth-child(2), 
-                &:nth-child(3),
-                &:nth-child(4),
                 &:nth-child(5),
-                &:nth-child(6),
-                &:nth-child(7),
-                &:nth-child(8),
-                &:nth-child(9) {
-                    flex-basis: 33.33%;
+                &:nth-child(8) {
+                    margin: 1.5rem 2.5rem;
                 }
             }
             }

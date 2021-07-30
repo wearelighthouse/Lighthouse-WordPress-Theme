@@ -59,6 +59,13 @@
                transform: translate(calc(-50% - 5vw), calc(-50% + 5vw));
             }
 
+            @include breakpoint(from-large) {
+               top: 10%;
+               left: 27%;
+               flex-direction: column;
+               transform: translate(calc(-50% - 5vw), calc(-50% + 5vw));
+            }
+
                 & img + img {
                     margin-top: 14px;
 
@@ -99,6 +106,11 @@
                     @include breakpoint(from-medium) {
                         top: 20%;
                         left: 21%;
+                    }
+
+                    @include breakpoint(from-large) {
+                        top: 10%;
+                        left: 25%;
                     }
 
                 }
