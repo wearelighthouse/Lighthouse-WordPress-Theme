@@ -60,6 +60,19 @@
       overflow: unset;
     }
 
+    &__faded-image {
+      width: 300px;
+      height: 300px;
+      background-image:
+        linear-gradient(
+          298.92deg,
+          rgba(252, 137, 91, .5) 22.4%,
+          rgba(255, 38, 139, 0) 92.72%
+        ),
+        var(--bg-src);
+      // Placeholder image sizes
+    }
+
     h4 {
       @extend %u-vbold;
       @extend %u-sailec;
