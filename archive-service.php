@@ -66,37 +66,39 @@
   </section>
 
   <section>
-    <div class="c-service-content">
+    <div class="o-container-content c-service-content">
       <div class="c-service-content__item">
         <div class="c-service-content__item__right">
           <img class="c-service-template__image" src="<?= get_template_directory_uri(); ?>/assets/img/mask-group.png" alt="Collaboration">
         </div>
 
-        <div class="c-service-content__item__left">
+        <div class="c-service-content__item__left c-service-content__left">
           <h3 class="c-service-content__title c-service-template__title">Productive collaboration</h3>
 
-          <div class="c-service-content__item__container">
-            <div class="c-service-content__icon-container">
-              <img class="c-service-content__icon" src="https://wearelighthouse.com/wp-content/uploads/2019/10/icon-itl-validation.svg" alt="">
+          <div class="c-service-content__left-content">
+            <div class="c-service-content__item__container">
+              <div class="c-service-content__icon-container">
+                <img class="c-service-content__icon" src="https://wearelighthouse.com/wp-content/uploads/2019/10/icon-itl-validation.svg" alt="">
+              </div>
+  
+              <h4 class="c-service-content__subtitle">Agile always</h4>
+  
+              <p>
+                We can work with any type of agile and will fit in seamlessly with your workflow. We speak the same language as engineers...
+              </p>
             </div>
-
-            <h4 class="c-service-content__subtitle">Agile always</h4>
-
-            <p>
-              We can work with any type of agile and will fit in seamlessly with your workflow. We speak the same language as engineers...
-            </p>
-          </div>
-
-          <div class="c-service-content__item__container">
-            <div class="c-service-content__icon-container">
-              <img class="c-service-content__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-processes.svg" alt="">
+  
+            <div class="c-service-content__item__container">
+              <div class="c-service-content__icon-container">
+                <img class="c-service-content__icon" src="<?= get_template_directory_uri(); ?>/assets/svg/single/icon-itl-processes.svg" alt="">
+              </div>
+  
+              <h4 class="c-service-content__subtitle">Efficient processes</h4>
+  
+              <p>
+                We’ve fine tuned our processes to make sure we run like a well oiled machine.
+              </p>
             </div>
-
-            <h4 class="c-service-content__subtitle">Efficient processes</h4>
-
-            <p>
-              We’ve fine tuned our processes to make sure we run like a well oiled machine.
-            </p>
           </div>
         </div>
 
