@@ -65,7 +65,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="o-container-section o-service-collaboration">
     <div class="o-container-content c-service-content">
       <div class="c-service-content__item">
         <div class="c-service-content__item__right">

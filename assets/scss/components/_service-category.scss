@@ -27,7 +27,7 @@
   }
 
   &:not(:first-child) {
-    @include breakpoint(upto-small) {
+    @include breakpoint(upto-medium) {
       margin-top: 96px;
     }
   }
