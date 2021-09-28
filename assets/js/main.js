@@ -74,7 +74,7 @@ function swapEmailFromHelloToHi() {
 
   links.forEach(link => {
     link.href = link.href.replace('hello@wearelighthouse.com', 'hi@wearelighthouse.com');
-    link.innerText.replace('hello@wearelighthouse.com', 'hi@wearelighthouse.com');
+    link.innerText = link.innerText.replace('hello@wearelighthouse.com', 'hi@wearelighthouse.com');
   });
 }
 
