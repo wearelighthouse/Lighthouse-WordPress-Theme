@@ -42,7 +42,6 @@ function addReferral(newReferralUrl) {
 }
 
 function checkIfFromGoogleAd() {
-
   const fromGoogleAdLocalStorage = localStorage.getItem('cpc');
 
   if (fromGoogleAdLocalStorage) {
@@ -57,14 +56,10 @@ function checkIfFromGoogleAd() {
   }
 
   return false;
-
 }
 
 function swapEmailFromHelloToHi() {
-
   const fromGoogleAd = checkIfFromGoogleAd();
-
-  console.log(fromGoogleAd);
 
   if (!fromGoogleAd) {
     return;
