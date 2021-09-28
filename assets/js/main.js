@@ -41,37 +41,41 @@ function addReferral(newReferralUrl) {
   }
 }
 
-function checkIfFromGoogleAd(inLocalStorage) {
+function checkIfFromGoogleAd() {
 
-  if (!inLocalStorage) {
-    return
+  const fromGoogleAdLocalStorage = localStorage.getItem('cpc');
+
+  if (fromGoogleAdLocalStorage) {
+    return true;
   }
-
-  const alreadyInLocalStorage = localStorage.getItem('alreadyStoredInLocalStorage');
 
   const urlSearchParams = new URLSearchParams(window.location.search);
 
-  if (urlSearchParams.get('utm_medium')) {
-    inLocalStorage;
+  if (urlSearchParams.get('utm_medium') === 'cpc') {
+    localStorage.setItem('cpc', true);
+    return true;
   }
 
-  if (!alreadyInLocalStorage) {
-    localStorage.setItem('alreadyStoredInLocalStorage', inLocalStorage);
-  }
+  return false;
+
 }
 
-function swapEmailFromHelloToHi(inLocalStorage) {
+function swapEmailFromHelloToHi() {
 
-  checkIfFromGoogleAd(inLocalStorage);
+  const fromGoogleAd = checkIfFromGoogleAd();
 
-  if (inLocalStorage) {
-    const links = document.querySelectorAll('[href="mailto:hello@wearelighthouse.com"]');
+  console.log(fromGoogleAd);
 
-    links.forEach((link, i) => {
-      link.href = "mailto:hi@wearelighthouse.com";
-      link.innerText.replace('hello@wearelighthouse.com', 'hi@wearelighthouse.com');
-    })
+  if (!fromGoogleAd) {
+    return;
   }
+
+  const links = document.querySelectorAll('[href="mailto:hello@wearelighthouse.com"]');
+
+  links.forEach(link => {
+    link.href = link.href.replace('hello@wearelighthouse.com', 'hi@wearelighthouse.com');
+    link.innerText.replace('hello@wearelighthouse.com', 'hi@wearelighthouse.com');
+  });
 }
 
 function completeInit() {
@@ -79,7 +83,7 @@ function completeInit() {
   setupObservers(window.lozad);
   // Add document.referrer into cache
   addReferral(document.referrer);
-  swapEmailFromHelloToHi(document.referrer);
+  swapEmailFromHelloToHi();
 }
 
 window.addEventListener('beforeunload', function (e) {
