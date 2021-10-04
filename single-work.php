@@ -28,6 +28,11 @@
   }
 
   $contactText = getPostMeta('work_single_work_options_footer_contact_text');
+
+  $companyTitle = getPostMeta('work_single_company_stats_company');
+  $companies = getPostMeta('work_single_company_stats_company_stats', $post->ID);
+  $teamTitle = getPostMeta('work_single_team_stats_team');
+  $teams = getPostMeta('work_single_team_stats_team_stats', $post->ID);
 ?>
 
 <?php get_header(); ?>
@@ -43,6 +48,44 @@
     <section class="o-container-section o-container-section--bordered">
       <div class="o-container-content o-container-content--v-margin c-content-grid">
         <?= the_content(); ?>
+      </div>
+    </section>
+
+    <section class="o-container-section o-container-section--bordered">
+      <div class="o-container-content o-container-content--v-margin c-content-grid">
+
+        <div class="case-study-stat">
+          <?php if ($companyTitle): ?>
+            <h3 class="case-study-stat__title"><?= $companyTitle ?></h3>
+          <?php endif; ?>
+          <div class="case-study-stat__content">
+            <?php if ($companies): ?>
+            <?php foreach($companies as $company): ?>
+              <div class="case-study-stat__content--block">
+                <img src=<?= $company['company_icon']; ?> alt="">
+                <p><?= $company['company_text']; ?></p>
+              </div>
+            <?php endforeach; ?>
+            <?php endif; ?>
+          </div>
+        </div>
+
+        <div class="case-study-stat">
+          <?php if ($teamTitle): ?>
+            <h3 class="case-study-stat__title"><?= $teamTitle ?></h3>
+          <?php endif; ?>
+          <div class="case-study-stat__content">
+            <?php if ($teams):  ?>
+              <?php foreach($teams as $team): ?>
+                <div class="case-study-stat__content--block">
+                  <p><?= $team['stat_number'] ?></p>
+                  <p><?= $team['stat_text'] ?></p>
+                </div>
+              <?php endforeach; ?>
+            <?php endif; ?>
+          </div>
+        </div>
+
       </div>
     </section>
 
