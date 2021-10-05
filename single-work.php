@@ -33,6 +33,16 @@
   $companies = getPostMeta('work_single_company_stats_company_stats', $post->ID);
   $teamTitle = getPostMeta('work_single_team_stats_team');
   $teams = getPostMeta('work_single_team_stats_team_stats', $post->ID);
+  
+  $content = get_the_content();
+
+  if ($companyTitle && $teamTitle) {
+    $pattern ='#<h[1-5][^>]*>(.*?)</h[1-5]>#i';
+    $content = preg_replace($pattern, '', $content, 1);
+    $content = apply_filters( 'the_content', $content );
+    $content = str_replace( ']]>', ']]&gt;', $content );
+  }
+
 ?>
 
 <?php get_header(); ?>
@@ -45,47 +55,45 @@
 
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
-    <section class="o-container-section o-container-section--bordered">
+     <section class="o-container-section o-container-section--bordered">
       <div class="o-container-content o-container-content--v-margin c-content-grid">
-        <?= the_content(); ?>
-      </div>
-    </section>
+        <?php if ($content) : ?>
+          <div class="case-study-stat__container c-content-grid__left">
 
-    <section class="o-container-section o-container-section--bordered">
-      <div class="o-container-content o-container-content--v-margin c-content-grid">
-
-        <div class="case-study-stat">
-          <?php if ($companyTitle): ?>
-            <h3 class="case-study-stat__title"><?= $companyTitle ?></h3>
-          <?php endif; ?>
-          <div class="case-study-stat__content">
-            <?php if ($companies): ?>
-            <?php foreach($companies as $company): ?>
-              <div class="case-study-stat__content--block">
-                <img src=<?= $company['company_icon']; ?> alt="">
-                <p><?= $company['company_text']; ?></p>
+            <div class="case-study-stat">
+              <?php if ($companyTitle): ?>
+                <h3 class="case-study-stat__title"><?= $companyTitle ?></h3>
+              <?php endif; ?>
+              <div class="case-study-stat__content">
+                <?php if ($companies): ?>
+                <?php foreach($companies as $company): ?>
+                  <div class="case-study-stat__content--block">
+                    <img src=<?= $company['company_icon']; ?> alt="">
+                    <p><?= $company['company_text']; ?></p>
+                  </div>
+                <?php endforeach; ?>
+                <?php endif; ?>
               </div>
-            <?php endforeach; ?>
-            <?php endif; ?>
-          </div>
-        </div>
+            </div>
 
-        <div class="case-study-stat">
-          <?php if ($teamTitle): ?>
-            <h3 class="case-study-stat__title"><?= $teamTitle ?></h3>
-          <?php endif; ?>
-          <div class="case-study-stat__content">
-            <?php if ($teams):  ?>
-              <?php foreach($teams as $team): ?>
-                <div class="case-study-stat__content--block">
-                  <p><?= $team['stat_number'] ?></p>
-                  <p><?= $team['stat_text'] ?></p>
-                </div>
-              <?php endforeach; ?>
-            <?php endif; ?>
+            <div class="case-study-stat">
+              <?php if ($teamTitle): ?>
+                <h3 class="case-study-stat__title"><?= $teamTitle ?></h3>
+              <?php endif; ?>
+              <div class="case-study-stat__content">
+                <?php if ($teams):  ?>
+                  <?php foreach($teams as $team): ?>
+                    <div class="case-study-stat__content--block">
+                      <p><?= $team['stat_number'] ?></p>
+                      <p><?= $team['stat_text'] ?></p>
+                    </div>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+              </div>
+            </div>
           </div>
-        </div>
-
+          <?= $content; ?>
+        <?php endif; ?>
       </div>
     </section>
 
