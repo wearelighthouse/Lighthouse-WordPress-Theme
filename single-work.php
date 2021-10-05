@@ -42,7 +42,6 @@
     $content = apply_filters( 'the_content', $content );
     $content = str_replace( ']]>', ']]&gt;', $content );
   }
-
 ?>
 
 <?php get_header(); ?>
@@ -57,7 +56,7 @@
 
      <section class="o-container-section o-container-section--bordered">
       <div class="o-container-content o-container-content--v-margin c-content-grid">
-        <?php if ($content) : ?>
+    
           <div class="case-study-stat__container c-content-grid__left">
 
             <div class="case-study-stat">
@@ -92,8 +91,12 @@
               </div>
             </div>
           </div>
-          <?= $content; ?>
-        <?php endif; ?>
+
+          <?php if ($companyTitle && $teamTitle) : ?>
+            <?= $content; ?>
+          <?php else : ?>
+            <?php the_content() ?>
+          <?php endif; ?>
       </div>
     </section>
 
