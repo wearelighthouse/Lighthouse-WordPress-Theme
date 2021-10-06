@@ -20,9 +20,7 @@ function registerServiceArchiveMetaboxes()
 
     addMetaboxes($groupInfo, [
         'blocks_service',
-        'case_study_list',
-        'home_intro',
-        'client_testimonial'
+        'case_study_list'
     ], $groupID);
 }
 
