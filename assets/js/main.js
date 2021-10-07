@@ -73,12 +73,29 @@ function swapEmailFromHelloToHi() {
   });
 }
 
+function flipTheContent() {
+  const urlSearchParams = new URLSearchParams(window.location.search);
+
+  const links = document.querySelectorAll('a.c-case-study-block');
+
+  links.forEach((link, index) => {
+    if (urlSearchParams.get('left-to-right') === 'true') {
+      link.classList.remove('c-case-study-block--large');
+      link.classList.add('leftToRightOrRightToLeft')
+      return true
+    }
+
+    return false
+  });
+}
+
 function completeInit() {
   // Do lazy loading images
   setupObservers(window.lozad);
   // Add document.referrer into cache
   addReferral(document.referrer);
   swapEmailFromHelloToHi();
+  flipTheContent();
 }
 
 window.addEventListener('beforeunload', function (e) {
