@@ -8,7 +8,7 @@
     <div class="o-container-case-studies o-container-case-studies--flex">
       <?php foreach ($globalCaseStudyIds as $caseStudyId) : ?>
         <?php include(locate_template('src/template_parts/block_case_study.php')) ?>
-        <?php if (is_page( 'All case studies' )) : ?>
+        <?php if (is_page_template(('template-all-case-studies.php'))) : ?>
         <?php include(locate_template('src/template_parts/block_case_study.php')) ?>
         <?php endif; ?>
       <?php endforeach; ?>
