@@ -1,6 +1,5 @@
 <?php
   /* Template Name: All case studies */
-   // $caseStudyIds = getPostMeta('all_case_studies_template_all_case_study_list_clients', $post->ID);
 
    $caseStudyIds = get_posts([
      'fields' => 'ids',

@@ -19,7 +19,6 @@ require_once __DIR__ . '/src/functions/plugins.php';
 require_once __DIR__ . '/src/functions/pr.php';
 
 // Metabox Groups
-require_once __DIR__ . '/src/metabox_groups/all_case_studies_template.php';
 require_once __DIR__ . '/src/metabox_groups/contact_template.php';
 require_once __DIR__ . '/src/metabox_groups/front_page.php';
 require_once __DIR__ . '/src/metabox_groups/hero.php';
