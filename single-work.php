@@ -27,10 +27,11 @@
     }
   }
 
+ 
   $contactText = getPostMeta('work_single_work_options_footer_contact_text');
 
   $companyTitle = getPostMeta('work_single_company_stats_company');
-  $companies = getPostMeta('work_single_company_stats_company_stats', $post->ID);
+  // $companies = getPostMeta('work_single_company_stats_company_stats', $post->ID);
   $teamTitle = getPostMeta('work_single_team_stats_team');
   $teams = getPostMeta('work_single_team_stats_team_stats', $post->ID);
   
@@ -42,6 +43,10 @@
     $content = apply_filters( 'the_content', $content );
     $content = str_replace( ']]>', ']]&gt;', $content );
   }
+
+  $svgSpriteSheet = get_template_directory_uri() . '/dist/svg/sprites.svg';
+  $companies = getPostMeta('work_single_company_stats_company_stats', $post->ID);
+  
 ?>
 
 <?php get_header(); ?>
@@ -64,27 +69,33 @@
                 <h3 class="case-study-stat__title"><?= $companyTitle ?></h3>
               <?php endif; ?>
               <div class="case-study-stat__content">
-                <?php if ($companies): ?>
-                <?php foreach($companies as $company): ?>
-                  <div class="case-study-stat__content--block">
-                    <img src=<?= $company['company_icon']; ?> alt="">
-                    <p><?= $company['company_text']; ?></p>
-                  </div>
-                <?php endforeach; ?>
+                <?php if (isset($companies) && !empty($companies) && isset($companies[0]['company-text'])) : ?>
+                  <?php foreach($companies as $company) : ?>
+                    <div class="case-study-stat__content--block">
+                      <?php if (isset($company['type']) && $company['company-text']) : ?>
+                        <svg viewBox="0 0 32 32" role="presentation">
+                          <use href="<?= $svgSpriteSheet ?>#icon--<?= strToLower($company['type']) ?>"></use>
+                        </svg>
+                        <p><?= $company['company-text']; ?></p>
+                      <?php endif; ?>
+                    </div>
+                  <?php endforeach; ?>
                 <?php endif; ?>
               </div>
             </div>
 
             <div class="case-study-stat">
-              <?php if ($teamTitle): ?>
+              <?php if (isset($teamTitle)): ?>
                 <h3 class="case-study-stat__title"><?= $teamTitle ?></h3>
               <?php endif; ?>
               <div class="case-study-stat__content">
-                <?php if ($teams):  ?>
-                  <?php foreach($teams as $team): ?>
+                <?php if (isset($teams) && !empty($teams)):  ?>
+                  <?php foreach($teams as $team) : ?>
                     <div class="case-study-stat__content--block">
+                      <?php if (isset($team['stat_number']) && isset($team['stat_text'])) : ?>
                       <p><?= $team['stat_number'] ?></p>
                       <p><?= $team['stat_text'] ?></p>
+                      <?php endif; ?>
                     </div>
                   <?php endforeach; ?>
                 <?php endif; ?>

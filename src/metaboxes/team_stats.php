@@ -12,7 +12,7 @@ return [
             'id' => 'team_stats',
             'type' => 'group',
             'options' => [
-                'group_title'   => 'Stats {#}',
+                'group_title'   => 'Team {#}',
                 'add_button'    => 'Add New Stats',
                 'remove_button' => 'Remove Stats',
                 'sortable'      => true

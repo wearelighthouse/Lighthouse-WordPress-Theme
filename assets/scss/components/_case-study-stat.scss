@@ -4,8 +4,8 @@
         height: 0;
     }
     
-    @include breakpoint(upto-tiny) {
-      display: none;
+    @include breakpoint(upto-medium) {
+      padding-bottom: 56px;
     }
 }
 
@@ -18,7 +18,7 @@
         @include lineScale(30, 34);
         @extend %u-color-black;
         font-style: normal;
-        padding-bottom: 24px;
+        padding-bottom: 16px;
     }
 
     &__content--block {
@@ -33,7 +33,7 @@
         & p {
             @extend %u-sailec;
             @include fontScale(12, 14);
-            @include lineScale(30, 34);
+            @include lineScale(24, 26);
             @extend %u-color-black;
             font-style: normal;
             margin: 0;
@@ -41,36 +41,35 @@
     }
 
     &:nth-child(odd) {
-        padding-bottom: 37px;
+        padding-bottom: 48px;
 
-        & img {
-            height: 28px;
-            width: 28px;
+        & svg {
+            height: 32px;
+            width: 32px;
         }
 
         & p {
-            padding-left: 21px;
+            padding-left: 18px;
         }
     }
 
     &:nth-child(even) {
         p:nth-child(even) {
-            padding-left: 21px;
+            padding-left: 12px;
         }
         p:nth-child(odd) {
             @extend %u-flex;
             @extend %u-ai-center;
             @extend %u-jc-center;
-            @extend %u-sailec;
+            @extend %u-tiempos;
             @extend %u-vbold;
+            @include fontScale(20, 22);
             @include lineScale(30, 34);
             @extend %u-round;
-            border: 1px solid $color-black;
-            height: 26px;
-            width: 26px;
+            height: 34px;
+            width: 32px;
             font-style: normal;
-            font-size: 12px;
-            color: rgba(0, 0, 0, 0.5);
+            color: #FC7662;
         }
     }
 }

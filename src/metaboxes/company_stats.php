@@ -8,28 +8,37 @@ return [
             'id'   => 'company',
             'type' => 'text'
         ],
-        [
+       [
             'id' => 'company_stats',
             'type' => 'group',
             'options' => [
-                'group_title'   => 'Stats {#}',
+                'group_title'   => 'Company {#}',
                 'add_button'    => 'Add New Stats',
                 'remove_button' => 'Remove Stats',
                 'sortable'      => true
             ],
+
             'sub_fields' => [
                 [
-                    'name' => 'Stat Icon',
-                    'id'   => 'company_icon',
-                    'type' => 'file',
-                    'desc' => 'Preferably <a href="https://jakearchibald.github.io/svgomg" target="_blank">compressed SVGs</a>.'
+                    'name'    => 'Type',
+                    'id'      => 'type',
+                    'type'    => 'select',
+                    'default' => 'Revenue',
+                    'options' => [
+                        'Revenue' => 'Revenue',
+                        'Size' => 'Size',
+                        'Sector' => 'Sector',
+                        'Audience' => 'Audience',
+                        'Location' => 'Location',
+                    ]
                 ],
+            
                 [
                     'name' => 'Text',
-                    'id'   => 'company_text',
+                    'id'   => 'company-text',
                     'type' => 'text',
-                ],
+                ],  
             ]
-        ],
+        ]
     ]
 ];
