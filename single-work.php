@@ -62,10 +62,11 @@
      <section class="o-container-section o-container-section--bordered">
       <div class="o-container-content o-container-content--v-margin c-content-grid">
     
+        <?php if ($companyTitle && $teamTitle) : ?>
           <div class="case-study-stat__container c-content-grid__left">
 
             <div class="case-study-stat">
-              <?php if ($companyTitle): ?>
+              <?php if (isset($companyTitle)) : ?>
                 <h3 class="case-study-stat__title"><?= $companyTitle ?></h3>
               <?php endif; ?>
               <div class="case-study-stat__content">
@@ -73,9 +74,11 @@
                   <?php foreach($companies as $company) : ?>
                     <div class="case-study-stat__content--block">
                       <?php if (isset($company['type']) && $company['company-text']) : ?>
-                        <svg viewBox="0 0 32 32" role="presentation">
-                          <use href="<?= $svgSpriteSheet ?>#icon--<?= strToLower($company['type']) ?>"></use>
-                        </svg>
+                        <div>
+                          <svg viewBox="0 0 32 32" role="presentation" style="display: block; height: 32px; width: 32px;">
+                            <use href="<?= $svgSpriteSheet ?>#icon--<?= strToLower($company['type']) ?>"></use>
+                          </svg>
+                        </div>
                         <p><?= $company['company-text']; ?></p>
                       <?php endif; ?>
                     </div>
@@ -102,8 +105,6 @@
               </div>
             </div>
           </div>
-
-          <?php if ($companyTitle && $teamTitle) : ?>
             <?= $content; ?>
           <?php else : ?>
             <?php the_content() ?>
