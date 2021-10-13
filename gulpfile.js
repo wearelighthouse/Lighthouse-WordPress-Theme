@@ -5,7 +5,7 @@ const del = require('del');
 const gulp = require('gulp');
 const gzipSize = require('gzip-size');
 const replace = require('gulp-replace');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('node-sass'));
 const svgSprite = require('gulp-svg-sprite');
 const terser = require('gulp-terser');
 
@@ -83,9 +83,20 @@ function svgSprites() {
     mode: {
       symbol: {
         dest: '.',
-        sprite: './sprites.svg'
-      }
-    }
+        sprite: './sprites.svg',
+      },
+    },
+    svg: {
+      transform: [
+        function(svg) {
+          let globalDefs = '';
+
+          return svg
+            .replaceAll(/<defs>(.+?)<\/defs>/g, (_match, def) => { globalDefs += def })
+            .replace('<symbol', `<defs>${ globalDefs }</defs><symbol`);
+        },
+      ],
+    },
   };
 
   return gulp
