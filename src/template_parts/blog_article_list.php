@@ -8,8 +8,8 @@
     ?>
 
     <?php if ($i === 5): ?>
-      <?php $newsletterFormId = RGFormsModel::get_form_id('Newsletter'); ?>
-      <?= do_shortcode('[form id="' . $newsletterFormId . '"]') ?>
+      <?php $newsletterFormId = RGFormsModel::get_form_id('Newsletter form'); ?>
+      <?= do_shortcode('[gravityform id="' . $newsletterFormId . '"]') ?>
     <?php endif; ?>
 
     <div class="c-blog-link">
