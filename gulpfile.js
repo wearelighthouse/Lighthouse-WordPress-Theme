@@ -92,7 +92,7 @@ function svgSprites() {
           let globalDefs = '';
 
           return svg
-            .replace(/<defs>(.+?)<\/defs>/g, (_match, def) => { globalDefs += def })
+            .replace(/<defs>(.+?)<\/defs>/g, (_match, def) => { globalDefs += def; return ''; })
             .replace('<symbol', `<defs>${ globalDefs }</defs><symbol`);
         },
       ],
