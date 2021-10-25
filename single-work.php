@@ -27,14 +27,14 @@
     }
   }
 
- 
+
   $contactText = getPostMeta('work_single_work_options_footer_contact_text');
 
   $companyTitle = getPostMeta('work_single_company_stats_company');
   // $companies = getPostMeta('work_single_company_stats_company_stats', $post->ID);
   $teamTitle = getPostMeta('work_single_team_stats_team');
   $teams = getPostMeta('work_single_team_stats_team_stats', $post->ID);
-  
+
   $content = get_the_content();
 
   if ($companyTitle && $teamTitle) {
@@ -46,7 +46,7 @@
 
   $svgSpriteSheet = get_template_directory_uri() . '/dist/svg/sprites.svg';
   $companies = getPostMeta('work_single_company_stats_company_stats', $post->ID);
-  
+
 ?>
 
 <?php get_header(); ?>
@@ -61,7 +61,7 @@
 
      <section class="o-container-section o-container-section--bordered">
       <div class="o-container-content o-container-content--v-margin c-content-grid">
-    
+
         <?php if ($companyTitle && $teamTitle) : ?>
           <div class="case-study-stat__container c-content-grid__left">
 
@@ -74,11 +74,7 @@
                   <?php foreach($companies as $company) : ?>
                     <div class="case-study-stat__content--block">
                       <?php if (isset($company['type']) && $company['company-text']) : ?>
-                        <div>
-                          <svg viewBox="0 0 32 32" role="presentation" style="display: block; height: 32px; width: 32px;">
-                            <use href="<?= $svgSpriteSheet ?>#icon--<?= strToLower($company['type']) ?>"></use>
-                          </svg>
-                        </div>
+                        <img src="<?= get_template_directory_uri() ?>/dist/svg/<?= strToLower($company['type']) ?>.svg" alt="" width="32px" height="32px"/>
                         <p><?= $company['company-text']; ?></p>
                       <?php endif; ?>
                     </div>
