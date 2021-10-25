@@ -1,75 +1,50 @@
 .case-study-stat__container {
-
-    @include breakpoint(from-medium) {
-        height: 0;
-    }
-    
-    @include breakpoint(upto-medium) {
-      padding-bottom: 56px;
-    }
+    @extend %u-pb-6--upto-medium;
+    @extend %u-height-0--from-medium;
 }
 
 .case-study-stat {
-
     &__title {
         @extend %u-tiempos;
         @include fontScale(18, 20);
         @extend %u-vbold;
         @include lineScale(30, 34);
-        @extend %u-color-black;
-        font-style: normal;
-        padding-bottom: 16px;
+        @extend %u-pb-2;
     }
 
     &__content--block {
         @extend %u-flex;
-        @extend %u-ai-center;
-        @extend %u-fd-row;
-
-        &:not(:last-child) {
-            padding-bottom: 20px;
-        }
 
         & p {
-            @extend %u-sailec;
             @include fontScale(12, 14);
             @include lineScale(24, 26);
-            @extend %u-color-black;
-            font-style: normal;
             margin: 0;
+        }
+
+        & + & {
+            padding-top: 1.25rem;
+        }
+
+        *:first-child {
+            height: 24px;
+            width: 24px;
+            margin-right: .75rem;
         }
     }
 
-    &:nth-child(odd) {
-        padding-bottom: 48px;
-
-        & svg {
-            height: 32px;
-            width: 32px;
-        }
-
-        & p {
-            padding-left: 18px;
-        }
+    & + & {
+        @extend %u-pt-6;
     }
 
     &:nth-child(even) {
-        p:nth-child(even) {
-            padding-left: 12px;
-        }
         p:nth-child(odd) {
             @extend %u-flex;
             @extend %u-ai-center;
             @extend %u-jc-center;
             @extend %u-tiempos;
             @extend %u-vbold;
-            @include fontScale(20, 22);
-            @include lineScale(30, 34);
-            @extend %u-round;
-            height: 34px;
-            width: 32px;
-            font-style: normal;
-            color: #FC7662;
+            @extend %u-color-orange;
+            font-size: 22px;
         }
     }
 }

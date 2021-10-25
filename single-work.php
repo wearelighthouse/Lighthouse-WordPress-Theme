@@ -74,7 +74,7 @@
                   <?php foreach($companies as $company) : ?>
                     <div class="case-study-stat__content--block">
                       <?php if (isset($company['type']) && $company['company-text']) : ?>
-                        <img src="<?= get_template_directory_uri() ?>/dist/svg/<?= strToLower($company['type']) ?>.svg" alt="" width="32px" height="32px"/>
+                        <img src="<?= get_template_directory_uri() ?>/dist/svg/<?= strToLower($company['type']) ?>.svg" alt="" width="24px" height="24px"/>
                         <p><?= $company['company-text']; ?></p>
                       <?php endif; ?>
                     </div>
