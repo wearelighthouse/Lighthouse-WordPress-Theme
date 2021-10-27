@@ -1,10 +1,12 @@
 .case-study-stat__container {
-    @extend %u-pb-6--upto-medium;
-
     @include breakpoint(from-medium) {
         height: 0;
     }
-}  
+}
+
+.c-content-grid > .case-study-stat__container + h3 + p {
+    margin-top: 0;
+}
 
 .case-study-stat {
     &__title {
