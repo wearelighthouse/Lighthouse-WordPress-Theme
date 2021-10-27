@@ -38,8 +38,9 @@
   $content = get_the_content();
 
   if ($companyTitle && $teamTitle) {
-    $pattern ='#<h[1-5][^>]*>(.*?)</h[1-5]>#i';
-    $content = preg_replace($pattern, '', $content, 1);
+    $pattern ='#<h[1-5][^>]*>#i';
+    $replace = '<h3 class="u-display-none--from-medium">';
+    $content = preg_replace($pattern, $replace, $content, 1);
     $content = apply_filters( 'the_content', $content );
     $content = str_replace( ']]>', ']]&gt;', $content );
   }
@@ -62,7 +63,6 @@
      <section class="o-container-section o-container-section--bordered">
       <div class="o-container-content o-container-content--v-margin c-content-grid">
 
-        <?php if ($companyTitle && $teamTitle) : ?>
           <div class="case-study-stat__container c-content-grid__left">
 
             <div class="case-study-stat">
@@ -101,6 +101,7 @@
               </div>
             </div>
           </div>
+          <?php if ($companyTitle && $teamTitle) : ?>
             <?= $content; ?>
           <?php else : ?>
             <?php the_content() ?>

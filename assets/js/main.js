@@ -73,12 +73,30 @@ function swapEmailFromHelloToHi() {
   });
 }
 
+function margin0withFirstH3() {
+  const links = document.querySelector('.u-display-none--from-medium');
+  const container = document.querySelector('.case-study-stat__container ~ p');
+
+  if (!links) {
+    return;
+  }
+
+  links.style.margin = 0;
+  container.style.marginTop = 0;
+  
+  if (window.matchMedia("(max-width: 801px)").matches) {
+    links.style.marginBottom = '22px';
+  }
+  
+}
+
 function completeInit() {
   // Do lazy loading images
   setupObservers(window.lozad);
   // Add document.referrer into cache
   addReferral(document.referrer);
   swapEmailFromHelloToHi();
+  margin0withFirstH3();
 }
 
 window.addEventListener('beforeunload', function (e) {
