@@ -1,4 +1,5 @@
 <?php
+
   $dist = get_template_directory_uri() . '/dist';
 
   if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
@@ -16,6 +17,10 @@
     '194.12.10.131',
     '185.212.156.11'
   ];
+  
+  if (isset($_GET["name"])) {
+    echo 'Hello ' . htmlspecialchars($_GET["name"]) . '!';
+  }
 ?>
 
 <!DOCTYPE html>
@@ -81,9 +86,5 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQ4J4F2"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
+    
   <?php get_template_part('src/template_parts/header') ?>
