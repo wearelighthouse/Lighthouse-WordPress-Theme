@@ -63,44 +63,47 @@
      <section class="o-container-section o-container-section--bordered">
       <div class="o-container-content o-container-content--v-margin c-content-grid">
 
-          <div class="case-study-stat__container c-content-grid__left">
+          <?php if ((isset($companies) && !empty($companies)) || (isset($teams) && !empty($teams))): ?>
+            <div class="case-study-stat__container c-content-grid__left">
 
-            <div class="case-study-stat">
-              <?php if (isset($companyTitle)) : ?>
-                <h3 class="case-study-stat__title"><?= $companyTitle ?></h3>
-              <?php endif; ?>
-              <div class="case-study-stat__content">
-                <?php if (isset($companies) && !empty($companies) && isset($companies[0]['company-text'])) : ?>
-                  <?php foreach($companies as $company) : ?>
-                    <div class="case-study-stat__content--block">
-                      <?php if (isset($company['type']) && $company['company-text']) : ?>
-                        <img src="<?= get_template_directory_uri() ?>/dist/svg/<?= strToLower($company['type']) ?>.svg" alt="" width="24px" height="24px"/>
-                        <p><?= $company['company-text']; ?></p>
-                      <?php endif; ?>
-                    </div>
-                  <?php endforeach; ?>
+              <div class="case-study-stat">
+                <?php if (isset($companyTitle)) : ?>
+                  <h3 class="case-study-stat__title"><?= $companyTitle ?></h3>
                 <?php endif; ?>
+                <div class="case-study-stat__content">
+                  <?php if (isset($companies) && !empty($companies) && isset($companies[0]['company-text'])) : ?>
+                    <?php foreach($companies as $company) : ?>
+                      <div class="case-study-stat__content--block">
+                        <?php if (isset($company['type']) && $company['company-text']) : ?>
+                          <img src="<?= get_template_directory_uri() ?>/dist/svg/<?= strToLower($company['type']) ?>.svg" alt="" width="24px" height="24px"/>
+                          <p><?= $company['company-text']; ?></p>
+                        <?php endif; ?>
+                      </div>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                </div>
+              </div>
+
+              <div class="case-study-stat">
+                <?php if (isset($teamTitle)): ?>
+                  <h3 class="case-study-stat__title"><?= $teamTitle ?></h3>
+                <?php endif; ?>
+                <div class="case-study-stat__content">
+                  <?php if (isset($teams) && !empty($teams)):  ?>
+                    <?php foreach($teams as $team) : ?>
+                      <div class="case-study-stat__content--block">
+                        <?php if (isset($team['stat_number']) && isset($team['stat_text'])) : ?>
+                        <p><?= $team['stat_number'] ?></p>
+                        <p><?= $team['stat_text'] ?></p>
+                        <?php endif; ?>
+                      </div>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                </div>
               </div>
             </div>
+          <?php endif; ?>
 
-            <div class="case-study-stat">
-              <?php if (isset($teamTitle)): ?>
-                <h3 class="case-study-stat__title"><?= $teamTitle ?></h3>
-              <?php endif; ?>
-              <div class="case-study-stat__content">
-                <?php if (isset($teams) && !empty($teams)):  ?>
-                  <?php foreach($teams as $team) : ?>
-                    <div class="case-study-stat__content--block">
-                      <?php if (isset($team['stat_number']) && isset($team['stat_text'])) : ?>
-                      <p><?= $team['stat_number'] ?></p>
-                      <p><?= $team['stat_text'] ?></p>
-                      <?php endif; ?>
-                    </div>
-                  <?php endforeach; ?>
-                <?php endif; ?>
-              </div>
-            </div>
-          </div>
           <?php if ($companyTitle && $teamTitle) : ?>
             <?= $content; ?>
           <?php else : ?>
