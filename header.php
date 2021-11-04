@@ -17,10 +17,7 @@
     '194.12.10.131',
     '185.212.156.11'
   ];
-  
-  if (isset($_GET["name"])) {
-    echo 'Hello ' . htmlspecialchars($_GET["name"]) . '!';
-  }
+
 ?>
 
 <!DOCTYPE html>
@@ -86,5 +83,5 @@
 </head>
 
 <body <?php body_class(); ?>>
-    
+
   <?php get_template_part('src/template_parts/header') ?>
