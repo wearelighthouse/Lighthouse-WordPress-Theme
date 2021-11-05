@@ -22,6 +22,9 @@
       padding-right: 260px;
     }
   }
+  .gform_wrapper.gravity-theme .gform_footer {
+    @extend %u-ml-6--from-small;
+  }
 }
 
 .c-form-block + .o-container-content {

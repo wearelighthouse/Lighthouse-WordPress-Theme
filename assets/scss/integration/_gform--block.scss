@@ -26,6 +26,10 @@
   .gform_body {
     @extend %u-fg-1;
     flex-basis: 0;
+
+    @include breakpoint(from-small) {
+      align-self: end;
+    }
   }
 
   label {
@@ -69,6 +73,12 @@
     }
   }
 
+  .gform_footer.top_label {
+    @include breakpoint(from-small) {
+      padding: 0;
+    }
+  }
+
   .gform_footer {
     @extend %u-ml-6--from-small;
     @extend %u-mt-2--upto-small;
@@ -79,6 +89,10 @@
   .gform_button {
     @extend .c-solid-button;
     @extend %u-width-100pc--upto-medium;
+
+    &.button {
+      margin-bottom: unset;
+    }
   }
 
   .validation_error {
