@@ -34,33 +34,3 @@ function gform_form_input_rows($input, $field, $value, $lead_id, $form_id) {
   return str_replace("rows='10'", "rows='6'", $input);
 }
 add_filter('gform_field_content', 'gform_form_input_rows', 12, 5);
-
-// Defer all the enqueued (not in head) JavaScript
-
-function deferScripts($tag, $handle)
-{
-  return str_replace(' src', ' defer src', $tag);
-}
-
-if (!is_admin()) {
-  add_filter('script_loader_tag', 'deferScripts', 10, 2);
-}
-
-// Move Gforms scripts to the footer
-add_filter( 'gform_init_scripts_footer', '__return_true' );
-
-// Wrap the inline scripts in DOMContentLoaded event listeners
-// to ensure they aren't triggered before jQuery loads.
-add_filter( 'gform_cdata_open', 'wrap_gform_cdata_open' );
-function wrap_gform_cdata_open( $content = '' )
-{
-  $content = 'document.addEventListener( "DOMContentLoaded", function() { ';
-  return $content;
-}
-add_filter( 'gform_cdata_close', 'wrap_gform_cdata_close' );
-
-function wrap_gform_cdata_close( $content = '' )
-{
-  $content = ' }, false );';
-  return $content;
-}

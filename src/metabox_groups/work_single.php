@@ -14,7 +14,9 @@ function registerWorkSingleMetaboxes()
     addMetaboxes($groupInfo, [
         'work_options',
         'sector_list',
-        'service_list'
+        'service_list',
+        'company_stats',
+        'team_stats'
     ], $groupID);
 }
 
