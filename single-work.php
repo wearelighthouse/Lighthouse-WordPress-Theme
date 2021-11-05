@@ -27,7 +27,27 @@
     }
   }
 
+
   $contactText = getPostMeta('work_single_work_options_footer_contact_text');
+
+  $companyTitle = getPostMeta('work_single_company_stats_company');
+  // $companies = getPostMeta('work_single_company_stats_company_stats', $post->ID);
+  $teamTitle = getPostMeta('work_single_team_stats_team');
+  $teams = getPostMeta('work_single_team_stats_team_stats', $post->ID);
+
+  $content = get_the_content();
+
+  if ($companyTitle && $teamTitle) {
+    $pattern ='#<h[1-5][^>]*>#i';
+    $replace = '<h3 class="u-display-none--from-medium">';
+    $content = preg_replace($pattern, $replace, $content, 1);
+    $content = apply_filters( 'the_content', $content );
+    $content = str_replace( ']]>', ']]&gt;', $content );
+  }
+
+  $svgSpriteSheet = get_template_directory_uri() . '/dist/svg/sprites.svg';
+  $companies = getPostMeta('work_single_company_stats_company_stats', $post->ID);
+
 ?>
 
 <?php get_header(); ?>
@@ -40,9 +60,55 @@
 
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
-    <section class="o-container-section o-container-section--bordered">
+     <section class="o-container-section o-container-section--bordered">
       <div class="o-container-content o-container-content--v-margin c-content-grid">
-        <?= the_content(); ?>
+
+          <?php if ((isset($companies) && !empty($companies)) || (isset($teams) && !empty($teams))): ?>
+            <div class="case-study-stat__container c-content-grid__left">
+
+              <div class="case-study-stat">
+                <?php if (isset($companyTitle)) : ?>
+                  <h3 class="case-study-stat__title"><?= $companyTitle ?></h3>
+                <?php endif; ?>
+                <div class="case-study-stat__content">
+                  <?php if (isset($companies) && !empty($companies) && isset($companies[0]['company-text'])) : ?>
+                    <?php foreach($companies as $company) : ?>
+                      <div class="case-study-stat__content--block">
+                        <?php if (isset($company['type']) && $company['company-text']) : ?>
+                          <img src="<?= get_template_directory_uri() ?>/dist/svg/<?= strToLower($company['type']) ?>.svg" alt="" width="24px" height="24px"/>
+                          <p><?= $company['company-text']; ?></p>
+                        <?php endif; ?>
+                      </div>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                </div>
+              </div>
+
+              <div class="case-study-stat">
+                <?php if (isset($teamTitle)): ?>
+                  <h3 class="case-study-stat__title"><?= $teamTitle ?></h3>
+                <?php endif; ?>
+                <div class="case-study-stat__content">
+                  <?php if (isset($teams) && !empty($teams)):  ?>
+                    <?php foreach($teams as $team) : ?>
+                      <div class="case-study-stat__content--block">
+                        <?php if (isset($team['stat_number']) && isset($team['stat_text'])) : ?>
+                        <p><?= $team['stat_number'] ?></p>
+                        <p><?= $team['stat_text'] ?></p>
+                        <?php endif; ?>
+                      </div>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                </div>
+              </div>
+            </div>
+          <?php endif; ?>
+
+          <?php if ($companyTitle && $teamTitle) : ?>
+            <?= $content; ?>
+          <?php else : ?>
+            <?php the_content() ?>
+          <?php endif; ?>
       </div>
     </section>
 

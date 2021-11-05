@@ -1,0 +1,55 @@
+.case-study-stat__container {
+    @include breakpoint(from-medium) {
+        height: 0;
+    }
+}
+
+.c-content-grid > .case-study-stat__container + h3 + p {
+    margin-top: 0;
+}
+
+.case-study-stat {
+    &__title {
+        @extend %u-tiempos;
+        @include fontScale(18, 20);
+        @extend %u-vbold;
+        @include lineScale(30, 34);
+        @extend %u-pb-2;
+    }
+
+    &__content--block {
+        @extend %u-flex;
+
+        & p {
+            @include fontScale(12, 14);
+            @include lineScale(24, 26);
+            margin: 0;
+        }
+
+        & + & {
+            padding-top: 1.25rem;
+        }
+
+        *:first-child {
+            height: 24px;
+            width: 24px;
+            margin-right: .75rem;
+        }
+    }
+
+    & + & {
+        @extend %u-pt-6;
+    }
+
+    &:nth-child(even) {
+        p:nth-child(odd) {
+            @extend %u-flex;
+            @extend %u-ai-center;
+            @extend %u-jc-center;
+            @extend %u-tiempos;
+            @extend %u-vbold;
+            @extend %u-color-orange;
+            font-size: 22px;
+        }
+    }
+}
