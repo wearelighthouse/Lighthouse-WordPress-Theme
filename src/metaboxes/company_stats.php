@@ -3,11 +3,6 @@
 return [
     'title' => 'Company stats',
     'fields' => [
-        [
-            'name' => 'Company Title',
-            'id'   => 'company',
-            'type' => 'text'
-        ],
        [
             'id' => 'company_stats',
             'type' => 'group',
@@ -23,7 +18,8 @@ return [
                     'name'    => 'Type',
                     'id'      => 'type',
                     'type'    => 'select',
-                    'default' => 'Revenue',
+                    'default' => 'none',
+                    'show_option_none' => true,
                     'options' => [
                         'Revenue' => 'Revenue',
                         'Size' => 'Size',

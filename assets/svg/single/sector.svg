@@ -1,8 +1,9 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="16.0282" cy="9.25476" r="6.25476" fill="#151931"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M14.2643 16.6001C8.45748 17.4535 4 22.4562 4 28.5H28.0568C28.0568 22.4562 23.5993 17.4535 17.7925 16.6001L16.0284 22.2453L14.2643 16.6001Z" fill="url(#sector3)"/>
+<path d="M2 12.2593V7.62963L9.40741 12.2593V7.62963L16.8148 12.2593V8.09259L24.2222 12.2593V3H29.7778V28H2V12.2593Z" fill="url(#audience1)"/>
+<rect opacity="0.7" x="8.01855" y="16.4258" width="6.48148" height="6.48148" fill="#151931"/>
+<circle cx="20.981" cy="19.6666" r="3.7037" fill="#151931"/>
 <defs>
-<linearGradient id="sector3" x1="15.5638" y1="30.4113" x2="22.0448" y2="17.3793" gradientUnits="userSpaceOnUse">
+<linearGradient id="audience1" x1="52.9259" y1="17.8148" x2="-4.25848" y2="11.316" gradientUnits="userSpaceOnUse">
 <stop stop-color="#151931"/>
 <stop offset="1" stop-color="#151931" stop-opacity="0.01"/>
 </linearGradient>
