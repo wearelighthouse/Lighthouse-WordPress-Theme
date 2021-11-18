@@ -19,7 +19,7 @@ function registerServiceArchiveMetaboxes()
     $groupID = basename(__FILE__, '.php');
 
     addMetaboxes($groupInfo, [
-        'blocks_service',
+        'block_services',
         'client_testimonial',
         'home_intro',
         'block_service_collaboration',
