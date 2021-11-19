@@ -19,10 +19,17 @@ return [
             ],
             'sub_fields' => [
                 [
-                    'name' => 'Service Icon',
-                    'id'   => 'icon',
-                    'type' => 'file',
-                    'desc' => 'Preferably <a href="https://jakearchibald.github.io/svgomg" target="_blank">compressed SVGs</a>.'
+                    'name'    => 'Type',
+                    'id'      => 'type',
+                    'type'    => 'select',
+                    'default' => 'none',
+                    'show_option_none' => true,
+                    'options' => [
+                        'Agile always' => 'Agile always',
+                        'Efficient processes' => 'Efficient processes',
+                        'Direct collaboration' => 'Direct collaboration',
+                        'Comms quality' => 'Comms quality',
+                    ]
                 ],
                 [
                     'name' => 'Subtitle',

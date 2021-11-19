@@ -26,7 +26,7 @@
 
           <div class="c-service-content__left-content">
           <?php if ($collaborationServices) : ?>
-            <?php $collaborationBlocksServiceGroup = array_slice($collaborationServices, 2); ?>
+            <?php $collaborationBlocksServiceGroup = array_slice($collaborationServices, 0, 2); ?>
               <?php include(locate_template('src/template_parts/block_sections_collaboration.php')) ?>
           <?php endif; ?>
           </div>

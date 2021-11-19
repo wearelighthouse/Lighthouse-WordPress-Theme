@@ -1,10 +1,12 @@
 .c-service-mission {
     padding-top: 80px;
+    padding-bottom: 80px;
 
     @include breakpoint(from-medium) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding-top: 128px;
+        padding-bottom: 137px;
     }
 
     &__title {
@@ -14,7 +16,7 @@
             padding-bottom: 32px;
         }
     }
-    
+
     &__content {
         &-p {
             @extend %u-sailec;
@@ -28,6 +30,17 @@
                 padding-bottom: 42px;
                 padding-top: 32px;
             }
+        }
+
+        & p:nth-child(1) {
+            margin-top: 0;
+        }
+
+        & div img {
+            width: 100%;
+            max-width: 538px;
+            max-height: 221px;
+            height: 100%;
         }
 
         &-logos { 

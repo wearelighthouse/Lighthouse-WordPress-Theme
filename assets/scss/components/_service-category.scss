@@ -26,9 +26,15 @@
     }
   }
 
+  &:first-child {
+    & div img {
+      height: 100%;
+    }
+  } 
+
   &:not(:first-child) {
     @include breakpoint(upto-medium) {
-      margin-top: 96px;
+      margin-top: 55px;
     }
   }
 }

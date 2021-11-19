@@ -1,23 +1,16 @@
 .c-service-case-study {
     @extend %u-pos-relative;
-    // margin-top: 80px;
-    // padding-bottom: 80px;
-
-    // @include breakpoint(from-medium) {
-    //     margin-top: 137px;
-    //     padding-bottom: 99px;
-    // }
 
     &__title {
         @extend %u-color-blackcurrant;
-        // padding-bottom: 99px;
     }
 
     &__content {
 
         @include breakpoint(from-medium) {
             display: flex;
-            flex-direction: row-reverse;
+            margin-bottom: 6rem;
+            margin-top: 4rem;
         }
 
         &-subtitle {
@@ -25,19 +18,21 @@
             @include fontScale(28, 32);
             @include lineScale(50, 54);
             @extend %u-color-blackcurrant;
+            @extend %u-pb-8;
             font-weight: 600;
-            padding-bottom: 59px;
         }
 
         &-background {
             @extend %u-width-100pc;
             @extend %u-height-100pc;
             @extend %u-pos-relative;
+            @extend %u-pt-8;
             background: #F8F8F8;
             max-width: 800px;
             padding-bottom: 99px;
-            padding-top: 66px;
             z-index: -1;
+
+            // @extend %u-pos-absolute--from-medium;
 
             @include breakpoint(from-medium) {
                position: absolute;
@@ -50,8 +45,8 @@
                 width: 776px;
                 height: 458px;
                 background-color: transparent;
-                margin-bottom: 99px;
                 padding-top: unset;;
+                margin-top: 60px;
 
                 &::before {
                     height: 100%;
@@ -79,7 +74,7 @@
                 left: 20%;
 
                 @include breakpoint(from-small--upto-medium) {
-                   left: 45%;
+                    left: 45%;
                     top: -15%;
                 }
 
@@ -112,11 +107,12 @@
         }
 
         &-content {
-             padding-top: 33px;
+            @extend %u-pt-4;
 
             @include breakpoint(from-medium) {
                 width: 399px;
                 margin-right: auto;  
+                padding-top: unset;
             }
 
             &--link {
