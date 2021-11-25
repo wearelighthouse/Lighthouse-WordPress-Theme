@@ -33,7 +33,24 @@
       &.full-width {
         width: 100%;
       }
+
+      &.gform_hidden {
+        display: none;
+      }
+
+      &.hidden_label label {
+        @extend .o-dictate;
+      }
     }
+  }
+
+  .ginput_recaptcha::before {
+    display: none;
+  }
+
+  .grecaptcha-badge {
+    border: 2px solid $color-gray;
+    box-shadow: unset !important;
   }
 
   .ginput_container {

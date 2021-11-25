@@ -13,7 +13,7 @@ if (document.readyState === 'complete') {
 
 function interactiveInit() {
   // Add JavaScript-has-loaded class to body
-  setTimeout(function() {
+  setTimeout(function () {
     document.body.classList.add('js-loaded');
   }, 0);
 
@@ -41,11 +41,44 @@ function addReferral(newReferralUrl) {
   }
 }
 
+function checkIfFromGoogleAd() {
+  const fromGoogleAdLocalStorage = localStorage.getItem('cpc');
+
+  if (fromGoogleAdLocalStorage) {
+    return true;
+  }
+
+  const urlSearchParams = new URLSearchParams(window.location.search);
+
+  if (urlSearchParams.get('utm_medium') === 'cpc') {
+    localStorage.setItem('cpc', true);
+    return true;
+  }
+
+  return false;
+}
+
+function swapEmailFromHelloToHi() {
+  const fromGoogleAd = checkIfFromGoogleAd();
+
+  if (!fromGoogleAd) {
+    return;
+  }
+
+  const links = document.querySelectorAll('[href="mailto:hello@wearelighthouse.com"]');
+
+  links.forEach(link => {
+    link.href = link.href.replace('hello@wearelighthouse.com', 'hi@wearelighthouse.com');
+    link.innerText = link.innerText.replace('hello@wearelighthouse.com', 'hi@wearelighthouse.com');
+  });
+}
+
 function completeInit() {
   // Do lazy loading images
   setupObservers(window.lozad);
   // Add document.referrer into cache
   addReferral(document.referrer);
+  swapEmailFromHelloToHi();
 }
 
 window.addEventListener('beforeunload', function (e) {
@@ -54,41 +87,41 @@ window.addEventListener('beforeunload', function (e) {
 
 function setupObservers(lozad) {
   let observerLoad = lozad('.js-lazy', {
-      rootMargin: '500px 0px',
-      loaded: function(element) {
-        element.parentNode.classList.add('js-child-loading');
-        element.classList.add('js-loading');
+    rootMargin: '500px 0px',
+    loaded: function (element) {
+      element.parentNode.classList.add('js-child-loading');
+      element.classList.add('js-loading');
 
-        if (element.tagName === 'IMG') {
-          element.addEventListener('load', function(event) {
-            element.parentNode.classList.remove('js-child-loading');
-            element.classList.remove('js-loading');
-            element.parentNode.classList.add('js-child-loaded');
-            element.classList.add('js-loaded');
-          });
-        } else if (element.tagName === 'VIDEO') {
-          element.addEventListener('canplay', function(event) {
-            element.parentNode.classList.remove('js-child-loading');
-            element.classList.remove('js-loading');
-            element.parentNode.classList.add('js-child-loaded');
-            element.classList.add('js-loaded');
-          });
-        }
+      if (element.tagName === 'IMG') {
+        element.addEventListener('load', function (event) {
+          element.parentNode.classList.remove('js-child-loading');
+          element.classList.remove('js-loading');
+          element.parentNode.classList.add('js-child-loaded');
+          element.classList.add('js-loaded');
+        });
+      } else if (element.tagName === 'VIDEO') {
+        element.addEventListener('canplay', function (event) {
+          element.parentNode.classList.remove('js-child-loading');
+          element.classList.remove('js-loading');
+          element.parentNode.classList.add('js-child-loaded');
+          element.classList.add('js-loaded');
+        });
       }
+    }
   });
   observerLoad.observe();
 
-  document.querySelectorAll('.js-half-onscreen-detect').forEach(function(element) {
+  document.querySelectorAll('.js-half-onscreen-detect').forEach(function (element) {
     element.classList.add('js-offscreen');
   });
 
   let observerView = lozad('.js-half-onscreen-detect', {
-      threshold: 0.45,  // 'Technically' not ½, only requires 45% to be visible
-      load: function() {},
-      loaded: function(element) {
-        element.classList.add('js-onscreen');
-        element.classList.remove('js-offscreen');
-      }
+    threshold: 0.45,  // 'Technically' not ½, only requires 45% to be visible
+    load: function () { },
+    loaded: function (element) {
+      element.classList.add('js-onscreen');
+      element.classList.remove('js-offscreen');
+    }
   });
   observerView.observe();
 }
