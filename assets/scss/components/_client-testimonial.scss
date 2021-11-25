@@ -1,16 +1,16 @@
 .o-container-client-testimonial {
-  margin: 0 20px;
-  margin-top: 80px;
+  margin: 0 1.25rem;
+  margin-top: 5rem;
   background-color: rgba(255, 182, 193, 0.5);
 }
 
 .c-service-client-testimonial {
-  padding-top: 83px;
+  padding-top: 5.2rem;
   margin: 0;
 
   &__title {
     @extend %u-color-orange-old;
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
   }
 
   &__p {
@@ -18,12 +18,11 @@
     @extend %u-color-blackcurrant;
     @include fontScale(28, 32);
     @include lineScale(44, 48);
-    font-style: normal;
     margin: 0;
   }
 
   &__footer {
-    padding-bottom: 73px;
+    padding-bottom: 4.5rem;
     padding-top: 10px;
 
     &-name {
@@ -31,9 +30,8 @@
       @extend %u-sailec;
       @extend %u-text-align-right;
       @extend %u-color-blackcurrant;
-      font-style: normal;
       font-size: 16px;
-      line-height: 24px;
+      line-height: 1.5;
 
     }
 
@@ -42,9 +40,8 @@
       @extend %u-color-blackcurrant;
       @extend %u-sailec;
       @extend %u-text-align-right;
-      font-style: normal;
       font-size: 12px;
-      line-height: 18px;
+      line-height: 1.5;
     }
   }
 
@@ -52,8 +49,8 @@
   &__p,
   &__footer {
      @include breakpoint(upto-small) {
-       padding-left: 22px;
-       padding-right: 22px;
+       padding-left: 1.4rem;
+       padding-right: 1.4rem;
       }
   }
 }
