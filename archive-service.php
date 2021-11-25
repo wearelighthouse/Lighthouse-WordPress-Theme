@@ -14,18 +14,18 @@
     
   <?php if ($blockServices) : ?>
     <?php $globalBlocksServiceGroup = $blockServices; ?>
-      <?php include(locate_template('src/template_parts/block_sections_services.php')) ?>
+      <?php include(locate_template('src/template_parts/service_section_category.php')) ?>
   <?php endif; ?>
 
   <?php include(locate_template('src/template_parts/service_collaboration.php')) ?>
 
-  <?php include(locate_template('src/template_parts/client_testimonial.php')) ?>
+  <?php include(locate_template('src/template_parts/service_client_testimonial.php')) ?>
 
   <?php include(locate_template('src/template_parts/service_intro.php')) ?>
 
   <?php if ($caseStudyIds) : ?>
     <?php $globalCaseStudyIds = $caseStudyIds ?>
-      <?php include(locate_template('src/template_parts/service_section_case_study_large.php')) ?>
+      <?php include(locate_template('src/template_parts/service_section_case_study.php')) ?>
   <?php endif; ?>
 
   <section class="o-container-section o-container-section--h-bordered">

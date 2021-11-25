@@ -15,7 +15,11 @@
     @extend %u-mt-4;
     @include fontScale(18, 20);
     @include lineScale(30, 34);
-    font-style: normal;
+
+    & p {
+      @extend %u-mt;
+      @extend %u-mb;
+    }
 
     &::before {
       @extend %u-content;

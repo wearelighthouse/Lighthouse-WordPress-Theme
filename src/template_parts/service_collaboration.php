@@ -27,7 +27,7 @@
           <div class="c-service-content__left-content">
           <?php if ($collaborationServices) : ?>
             <?php $collaborationBlocksServiceGroup = array_slice($collaborationServices, 0, 2); ?>
-              <?php include(locate_template('src/template_parts/block_sections_collaboration.php')) ?>
+              <?php include(locate_template('src/template_parts/service_section_collaboration.php')) ?>
           <?php endif; ?>
           </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="c-service-content__item__right">
           <?php if ($collaborationServices) : ?>
             <?php $collaborationBlocksServiceGroup = array_slice($collaborationServices, 2, 3); ?>
-              <?php include(locate_template('src/template_parts/block_sections_collaboration.php')) ?>
+              <?php include(locate_template('src/template_parts/service_section_collaboration.php')) ?>
           <?php endif; ?>
 
           <?php if ($button) : ?>

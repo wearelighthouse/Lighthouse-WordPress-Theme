@@ -1,7 +1,6 @@
 <?php
-  $home = $post;
-  $introText = getPostMeta('service_archive_home_intro_text', $home->ID);
-  $serviceItroTitle = getPostMeta('service_archive_home_intro_title', $home->ID);
+  $introText = getPostMeta('service_archive_home_intro_text');
+  $serviceItroTitle = getPostMeta('service_archive_home_intro_title');
   $button = getPostMeta('service_archive_blocks_service_action');
 ?>
 

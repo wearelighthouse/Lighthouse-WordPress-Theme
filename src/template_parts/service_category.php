@@ -1,5 +1,4 @@
 <?php
-  // $icon = isset($service['icon']) ? $service['icon'] : false;
   $iconID = isset($service['icon_id']) ? $service['icon_id'] : false;
   $iconAlt = isset($iconID) ? get_post_meta($iconID, '_wp_attachment_image_alt', true) : '';
   $title = isset($service['title']) ? $service['title'] : '';

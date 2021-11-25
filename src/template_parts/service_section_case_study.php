@@ -14,7 +14,7 @@
         <?php endif; ?>
 
         <?php foreach ($globalCaseStudyIds as $caseStudyId) : ?>
-            <?php include(locate_template('src/template_parts/service_case_study.php')) ?>
+            <?php include(locate_template('src/template_parts/service_case_study_large.php')) ?>
         <?php endforeach; ?>
 
         <div class="c-service-case-study__parenting">
