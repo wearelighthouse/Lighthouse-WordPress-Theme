@@ -19,7 +19,7 @@
             @include lineScale(50, 54);
             @extend %u-color-blackcurrant;
             @extend %u-pb-8;
-            font-weight: 600;
+            @extend %u-vbold;
         }
 
         &-background {
@@ -29,7 +29,7 @@
             @extend %u-pt-8;
             background: #F8F8F8;
             max-width: 800px;
-            padding-bottom: 99px;
+            padding-bottom: 6.2rem;
             z-index: -1;
 
             // @extend %u-pos-absolute--from-medium;
@@ -46,7 +46,7 @@
                 height: 458px;
                 background-color: transparent;
                 padding-top: unset;;
-                margin-top: 60px;
+                margin-top: 3.75rem;
 
                 &::before {
                     height: 100%;
@@ -99,8 +99,8 @@
 
                 @include breakpoint(from-large) {
                     width: 673.15px;
-                    padding-left: 84px;
-                    padding-top: 47px;
+                    padding-left: 5.25rem;
+                    padding-top: 2.9rem;
                 }
 
             }

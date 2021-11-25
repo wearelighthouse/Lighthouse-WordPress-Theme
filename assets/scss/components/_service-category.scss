@@ -17,8 +17,8 @@
     @include lineScale(30, 34);
 
     & p {
-      @extend %u-mt;
-      @extend %u-mb;
+      margin-top: 0;
+      margin-bottom: 0;
     }
 
     &::before {
@@ -38,7 +38,7 @@
 
   &:not(:first-child) {
     @include breakpoint(upto-medium) {
-      margin-top: 55px;
+      margin-top: 3.4rem;
     }
   }
 }

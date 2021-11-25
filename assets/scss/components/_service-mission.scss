@@ -1,19 +1,19 @@
 .c-service-mission {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 
     @include breakpoint(from-medium) {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding-top: 128px;
-        padding-bottom: 137px;
+        padding-top: 8rem;
+        padding-bottom: 8.5rem;
     }
 
     &__title {
         @extend %u-color-blackcurrant;
 
         @include breakpoint(from-tiny--upto-medium) {
-            padding-bottom: 32px;
+            padding-bottom: 2rem;
         }
     }
 
@@ -23,12 +23,11 @@
             @extend %u-color-black;
             @include fontScale(18, 20);
             @include lineScale(24, 28);
-            font-style: normal;
             margin: 0;
 
             &:nth-child(even) {
-                padding-bottom: 42px;
-                padding-top: 32px;
+                padding-bottom: 2.6rem;
+                padding-top: 2rem;
             }
         }
 

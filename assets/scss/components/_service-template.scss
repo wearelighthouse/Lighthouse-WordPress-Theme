@@ -4,7 +4,6 @@
     @extend %u-vbold;
     @include fontScale(28, 32);
     @include lineScale(38, 42);
-    font-style: normal;
   }
   &__button-container {
     margin: 0;
@@ -18,9 +17,8 @@
     @extend %u-pl-4;
     @extend %u-pr-4;
     @extend %u-mt-12;
-    font-style: normal;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 1.2;
     background: $gradient-orange-new-pink;
     border-radius: 30px;
   }

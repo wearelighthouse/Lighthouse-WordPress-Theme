@@ -8,9 +8,9 @@
 
   @include breakpoint(upto-medium) {
     position: unset;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-top: 80px;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    padding-top: 5rem;
   }
 
   &__item {
@@ -45,7 +45,6 @@
       @extend %u-sailec;
       @include lineScale(24, 28);
       @extend %u-color-blackcurrant;
-      font-style: normal;
       font-size: 18px;
     }
 
@@ -54,12 +53,11 @@
       @include lineScale(24, 28);
       @extend %u-color-blackcurrant;
       margin: 0;
-      font-style: normal;
       font-size: 18px;
     }
 
     &:nth-child(odd) {
-      padding-bottom: 134px;
+      padding-bottom: 8.3rem;
 
       @include breakpoint(upto-medium) {
         padding-bottom: unset;
@@ -67,7 +65,7 @@
 
       h3 {
         @extend %u-color-blackcurrant;
-        margin-top: 82px;
+        margin-top: 5rem;
       }
 
       & > div:nth-child(1) {
@@ -80,7 +78,7 @@
         }
 
         &::before {
-          display: none;
+          @extend %u-display-none;
 
           @include breakpoint(from-large) {
             display: block;
@@ -104,7 +102,7 @@
         }
 
         &::after {
-          display: none;
+          @extend %u-display-none;
 
           @include breakpoint(from-large) {
             display: block;
@@ -140,7 +138,7 @@
         }
 
         & div {
-          margin-top: 86px;
+          margin-top: 5.4rem;
         }
 
         &:nth-child(1) img {
@@ -150,8 +148,7 @@
     }
 
     &:nth-child(even) {
-
-      position: relative;
+      @extend %u-pos-relative;
 
       &::before {
         @extend %u-content;
@@ -178,7 +175,7 @@
       }
 
       @include breakpoint(from-large) {
-        padding-top: 70px;
+        padding-top: 4.4rem;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -194,7 +191,7 @@
             max-width: 427.21px;
 
            @include breakpoint(from-large) {
-             padding-top: unset;
+            padding-top: unset;
             position: absolute;
             top: 0%;
             left: 0%;
@@ -216,7 +213,7 @@
         @include breakpoint(upto-large) {
           padding-right: unset;
           width: unset;
-          padding-top: 86px;
+          padding-top: 5.4rem;
         }
 
         @include breakpoint(from-large) {
@@ -224,7 +221,7 @@
         }
 
         & div:nth-child(2) {
-          margin-top: 86px;
+          margin-top: 5.4rem;
 
           & img:nth-child(2) {
             top: -20%;
@@ -235,7 +232,7 @@
 
     &__container {
       @extend %u-pos-relative;
-      padding-left: 83px;
+      padding-left: 5.2rem;
 
       &:nth-child(1) div img {
         top: -10%;
