@@ -12,4 +12,15 @@
     margin-top: 1.5rem;
     display: block !important;
   }
+
+  &__content {
+    @extend %u-flex;
+    @extend %u-ai-center;
+    flex-direction: row;
+  
+    & img {
+      margin-right: 1rem;
+      margin-top: 10px;
+    }
+  }
 }

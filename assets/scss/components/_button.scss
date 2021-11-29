@@ -190,4 +190,18 @@
     background-image: linear-gradient($color-orange, $color-orange);
   }
 
+  &--underlined-dark--more {
+    &:after {
+      width: 65%;
+    }
+    
+    @supports (clip-path: polygon(0 0)) {
+      padding-bottom: 1.5rem; // Enough space for the underline
+
+      &:not(:empty):after {
+        clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 7px, 100% 10px, calc(100% - 22px) 3px, 0 3px, 0 0);
+      }
+    }
+  }
+
 }

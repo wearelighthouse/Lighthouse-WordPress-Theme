@@ -17,10 +17,11 @@
         <a href="/our-work"
            class="c-case-study-block c-case-study-block--large c-case-study-block--more js-half-onscreen-detect">
            <div class="c-case-study-block__background"></div>
-           <div class="c-case-study-block__content">
-             <div class="c-case-study-block__link c-button c-button--underlined-dark">
-               See more of our work
-             </div>
+           <div class="c-case-study-block__content c-case-study-block--more__content">
+              <img src="<?= get_template_directory_uri() ?>/dist/svg/bubble.svg" alt="" width="58px" height="54px"/>
+              <div class="c-case-study-block__link c-button c-button--underlined-dark c-button--underlined-dark--more">
+                See more of our work
+              </div>
            </div>
        </a>
      <?php endif; ?>
