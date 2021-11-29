@@ -7,7 +7,11 @@
     $linkList = '';
 
     foreach ($sectors as $sector) {
-      $linkList .= '<li><a class="c-tag" href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
+      $linkList .= '<li>
+        <a class="c-tag" href="' . get_permalink($sector) . '">
+        <img src="' . get_template_directory_uri() . '/dist/svg/' . strToLower(get_the_title($sector)) . '.svg" alt="' . get_the_title($sector) . '" width="36px" height="36px">
+        <span>' . get_the_title($sector) . 
+        '</span></img></a></li>';
     }
   }
 ?>
