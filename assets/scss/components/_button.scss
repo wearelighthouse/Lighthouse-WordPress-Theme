@@ -15,7 +15,7 @@
     padding-bottom: 6px;
     outline-offset: 3px;
 
-    &:after {
+    &::after {
       @extend %u-pos-absolute;
       @extend %u-content;
       @extend %u-bg-color-currentColor;
@@ -26,11 +26,11 @@
       transition: all $transition-fast;
     }
 
-    &:hover:after {
+    &:hover::after {
       width: 1rem;
     }
 
-    &:focus:after {
+    &:focus::after {
       width: 100%;
     }
 
@@ -38,7 +38,7 @@
     &:focus-visible {
       outline: 1px dotted currentColor;
 
-      &:after {
+      &::after {
         width: 1rem;
       }
     }
@@ -48,12 +48,12 @@
       outline: none;
     }
 
-    &--flipped:after {
+    &--flipped::after {
       right: 0;
       left: auto;
     }
 
-    &--active:after {
+    &--active::after {
       width: 100% !important; // Boo
     }
 
@@ -101,7 +101,7 @@
     display: flex;
     align-items: center;
 
-    &:before {
+    &::before {
       display: block;
       width: .5em;
       height: .5em;
@@ -127,7 +127,7 @@
     padding-bottom: 1rem;
     outline-offset: 3px;
 
-    &:after {
+    &::after {
       @extend %u-block;
       @extend %u-pos-absolute;
       @extend %u-bottom;
@@ -143,7 +143,8 @@
     @supports (clip-path: polygon(0 0)) {
       padding-bottom: 1.5rem; // Enough space for the underline
 
-      &:not(:empty):after {
+      &:not(:empty)::after {
+        height: 10px;
         clip-path: polygon(
           0 0,
           calc(100% - 22px) 0,
@@ -153,7 +154,6 @@
           0 2px,
           0 0
         );
-        height: 10px;
       }
     }
 
@@ -166,8 +166,8 @@
       border: 0;
     }
 
-    &:focus:after,
-    &:hover:after {
+    &:focus::after,
+    &:hover::after {
       background-size: 100% 100%;
     }
 
@@ -180,28 +180,17 @@
     }
   }
 
-  &--underlined-dark:after {
+  &--underlined-dark::after {
     @extend %u-bg-color-gray;
     background-image: linear-gradient($color-blackcurrant, $color-blackcurrant);
   }
 
-  &--underlined-light:after {
+  &--underlined-light::after {
     @extend %u-bg-color-white;
     background-image: linear-gradient($color-orange, $color-orange);
   }
 
-  &--underlined-dark--more {
-    &:after {
-      width: 65%;
-    }
-    
-    @supports (clip-path: polygon(0 0)) {
-      padding-bottom: 1.5rem; // Enough space for the underline
-
-      &:not(:empty):after {
-        clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 7px, 100% 10px, calc(100% - 22px) 3px, 0 3px, 0 0);
-      }
-    }
+  &--short-underline::after {
+    width: 65%;
   }
-
 }
