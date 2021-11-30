@@ -1,17 +1,18 @@
-
 .o-tag-list {
+  @extend %u-flex;
+  @extend %u-fw-wrap;
+  gap: .8rem;
 
   li {
     @extend %u-inline-flex;
-    margin-right: .8rem;
-    margin-bottom: .8rem;
 
     & .c-tag {
       @extend %u-flex;
       @extend %u-fd-column;
+      gap: 5px;
 
       span {
-        margin-top: 5px;
+        @extend %u-mt-auto;
       }
     }
   }
