@@ -6,7 +6,7 @@
     margin-right: .8rem;
     margin-bottom: .8rem;
 
-    a {
+    & .c-tag {
       @extend %u-flex;
       @extend %u-fd-column;
 
