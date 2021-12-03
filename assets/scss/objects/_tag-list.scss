@@ -9,7 +9,7 @@
     & .c-tag {
       @extend %u-flex;
       @extend %u-fd-column;
-      gap: 5px;
+      gap: .25rem;
 
       span {
         @extend %u-mt-auto;
