@@ -41,7 +41,7 @@
     W = canvas.width = headerBackgroundElement.clientWidth;
     H = canvas.height = headerBackgroundElement.clientHeight;
     widthHeightRatio = (1 / (W + H)) * W;
-    maxParticles = Math.floor(W * H / 30000);
+    maxParticles = 4 + Math.floor(W * H / 30000);
     particles = [...Array(maxParticles)].map(p => new Particle);
   }
 
