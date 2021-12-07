@@ -161,3 +161,15 @@ function populate_referrals($form)
   return $form;
 }
 add_filter('gform_pre_render', 'populate_referrals');
+
+function enqueueResources()
+{
+  wp_enqueue_style(
+    'style',
+    get_stylesheet_directory_uri() . '/dist/css/style.css',
+    [],
+    filemtime(get_stylesheet_directory() . '/dist/css/style.css')
+  );
+}
+
+add_action('wp_enqueue_scripts', 'enqueueResources');
