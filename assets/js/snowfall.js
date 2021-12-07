@@ -47,14 +47,19 @@
 
   function step(timestamp) {
     const elapsed = timestamp - previousTimestamp;
+    const isRunningSmoothly = elapsed < 300; // Has updated in the last .3s?
     previousTimestamp = timestamp;
-    angle += elapsed / 3000;
-    particles.forEach(p => p._update(elapsed / 30));
-    ctx.clearRect(0, 0, W, H);
-    ctx.fillStyle = '#fffd';
-    ctx.beginPath();
-    particles.forEach(p => p.draw());
-    ctx.fill();
+
+    if (isRunningSmoothly) {
+      angle += elapsed / 3000;
+      particles.forEach(p => p._update(elapsed / 30));
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = '#fffd';
+      ctx.beginPath();
+      particles.forEach(p => p.draw());
+      ctx.fill();
+    }
+
     requestAnimationFrame(step);
   }
 
