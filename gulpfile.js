@@ -119,6 +119,19 @@ function js() {
 }
 
 /**
+ * Minify and copy JavaScript in snowfall.js (and anything it imports) to /dist
+ */
+function jsXmas() {
+  return gulp
+    .src(paths.src + '/js/snowfall.js')
+    .pipe(
+      terser({ keep_fnames: false, mangle: { properties: true } })
+      .on('error', (error) => console.log(error.stack))
+    )
+    .pipe(gulp.dest(paths.dist + '/js'));
+}
+
+/**
  * Copy any already-minified JavaScript libraries etc. over to /dist
  */
 function jsLib() {
@@ -163,6 +176,7 @@ function watch(cb) {
   gulp.watch(paths.src + '/js/**/*.js').on('all', (event, path) => {
     console.log('JavaScript changed: ' + path);
     js();
+    jsXmas();
     jsLib();
     browserSync.reload();
   });
@@ -181,6 +195,7 @@ exports.watch = gulp.series(
     svgSprites,
     scss,
     js,
+    jsXmas,
     jsLib
   ),
   watch
@@ -199,6 +214,7 @@ exports.default = gulp.series(
       cssMinifiy
     ),
     js,
+    jsXmas,
     jsLib
   )
 );
