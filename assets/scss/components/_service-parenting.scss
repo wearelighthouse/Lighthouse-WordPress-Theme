@@ -54,7 +54,7 @@
 
             @include breakpoint(from-large) {
                top: 10%;
-               left: 27%;
+               left: 23%;
                flex-direction: column;
                transform: translate(calc(-50% - 5vw), calc(-50% + 5vw));
             }
@@ -103,7 +103,7 @@
 
                     @include breakpoint(from-large) {
                         top: 10%;
-                        left: 25%;
+                        left: 21%;
                     }
 
                 }

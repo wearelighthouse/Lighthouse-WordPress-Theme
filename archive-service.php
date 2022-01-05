@@ -24,8 +24,13 @@
   <?php include(locate_template('src/template_parts/service_intro.php')) ?>
 
   <?php if ($caseStudyIds) : ?>
-    <?php $globalCaseStudyIds = $caseStudyIds ?>
-      <?php include(locate_template('src/template_parts/service_section_case_study.php')) ?>
+    <?php $globalCaseStudyIds = array_slice($caseStudyIds, 0, 1); ?>
+    <?php include(locate_template('src/template_parts/service_case_study_large.php')) ?>
+  <?php endif; ?>
+
+  <?php if ($caseStudyIds && count($caseStudyIds) > 0) : ?>
+    <?php $globalCaseStudyIds = array_slice($caseStudyIds, 1); ?>
+    <?php include(locate_template('src/template_parts/service_case_study_small.php')) ?>
   <?php endif; ?>
 
   <section class="o-container-section o-container-section--h-bordered">
