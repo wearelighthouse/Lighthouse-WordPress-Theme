@@ -1,0 +1,39 @@
+.c-social-proof {
+
+  &__item {
+    @extend .u-flex;
+    @extend .u-ai-center;
+    @extend .u-fd-row;
+    @extend .u-jc-space-between;
+    flex-wrap: wrap;
+  }
+
+  &__content {
+
+    & img {
+      margin-bottom: 2.25rem;
+    }
+
+    & div {
+      padding-bottom: 6px;
+    }
+  }
+
+  &__star {
+    width: 70px;
+    height: 13px;
+    background: url('../../dist/svg/social-proof-stars.svg') no-repeat 0 0;
+  }
+
+  &__text {
+    font-family: 'Sailec';
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12.5px;
+    color: #000000;
+
+    & span {
+      font-weight: 700;
+    }
+  }
+}
