@@ -14,12 +14,14 @@
                 <?php if ($stars > 0) : ?>
                     <div class="c-social-proof__star" style="width:' <?php (65 * (($stars/10) * 2)) ?>'px"></div>
                 <?php endif; ?>
-                <?php if ($socialProof['number-1'] && $socialProof['text-1']) : ?>
-                    <p class="c-social-proof__text"><span> Top <?= $socialProof['number-1'] ?></span> <?= $socialProof['text-1'] ?></p>
-                <?php endif; ?>
-                <?php if ($socialProof['number-2'] && $socialProof['text-2']) : ?>
-                    <p class="c-social-proof__text"><span> Top <?= $socialProof['number-2'] ?></span> <?= $socialProof['text-2'] ?></p>
-                <?php endif; ?>
+                <div>
+                    <?php if ($socialProof['number-1'] && $socialProof['text-1']) : ?>
+                        <p class="c-social-proof__text"><span> Top <?= $socialProof['number-1'] ?></span> <?= $socialProof['text-1'] ?></p>
+                    <?php endif; ?>
+                    <?php if ($socialProof['number-2'] && $socialProof['text-2']) : ?>
+                        <p class="c-social-proof__text"><span> Top <?= $socialProof['number-2'] ?></span> <?= $socialProof['text-2'] ?></p>
+                    <?php endif; ?>
+                </div>
                 </a>
             <?php endforeach; ?>
         </div>

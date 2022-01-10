@@ -1,17 +1,21 @@
 .c-social-proof {
 
   &__item {
-    @extend .u-flex;
-    @extend .u-ai-center;
-    @extend .u-fd-row;
-    @extend .u-jc-space-between;
-    flex-wrap: wrap;
+    @extend %u-flex;
+    @extend %u-ai-center;
+    @extend %u-fd-row;
+    @extend %u-jc-space-between;
+    @extend %u-fw-wrap;
+
+    & a + a {
+      @extend %u-mt-10--upto-small;
+    }
   }
 
   &__content {
 
     & img {
-      margin-bottom: 2.25rem;
+      @extend %u-mb-5;
     }
 
     & div {
@@ -26,14 +30,13 @@
   }
 
   &__text {
-    font-family: 'Sailec';
-    font-weight: 400;
+    @extend %u-sailec;
+    @extend %u-color-black;
     font-size: 10px;
     line-height: 12.5px;
-    color: #000000;
 
     & span {
-      font-weight: 700;
+      @extend %u-bold;
     }
   }
 }
