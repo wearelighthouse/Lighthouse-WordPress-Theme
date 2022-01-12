@@ -40,25 +40,16 @@ return [
                           ),
                 ],
                 [
-                    'name' => 'Number 1',
-                    'id'   => 'number-1',
-                    'type' => 'text_small',
+                    'name' => 'Text',
+                    'id'   => 'text',
+                    'type' => 'wysiwyg',
+                    'options' => [
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                    ],
+                    
                 ],
-                [
-                    'name' => 'Text 1',
-                    'id'   => 'text-1',
-                    'type' => 'text',
-                ],
-                [
-                    'name' => 'Number 2',
-                    'id'   => 'number-2',
-                    'type' => 'text_small',
-                ],
-                [
-                    'name' => 'Text 2',
-                    'id'   => 'text-2',
-                    'type' => 'text',
-                ],   
+                
             ]
         ]
     ]

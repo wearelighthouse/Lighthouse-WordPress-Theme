@@ -1,6 +1,5 @@
 <?php
   $socialProofs = getPostMeta('front_page_social_proof_social_proof');
-
 ?>
 
 <section class="o-container-section o-container-section--h-bordered">
@@ -14,13 +13,8 @@
                 <?php if ($stars > 0) : ?>
                     <div class="c-social-proof__star" style="width:' <?php (65 * (($stars/10) * 2)) ?>'px"></div>
                 <?php endif; ?>
-                <div>
-                    <?php if ($socialProof['number-1'] && $socialProof['text-1']) : ?>
-                        <p class="c-social-proof__text"><span> Top <?= $socialProof['number-1'] ?></span> <?= $socialProof['text-1'] ?></p>
-                    <?php endif; ?>
-                    <?php if ($socialProof['number-2'] && $socialProof['text-2']) : ?>
-                        <p class="c-social-proof__text"><span> Top <?= $socialProof['number-2'] ?></span> <?= $socialProof['text-2'] ?></p>
-                    <?php endif; ?>
+                <div class="c-social-proof__text">
+                    <?= wpautop($socialProof['text']) ?>
                 </div>
                 </a>
             <?php endforeach; ?>
