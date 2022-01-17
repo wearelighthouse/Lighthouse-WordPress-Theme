@@ -89,10 +89,10 @@
   .gform_button {
     @extend .c-solid-button;
     @extend %u-width-100pc--upto-medium;
+  }
 
-    &.button {
-      margin-bottom: unset;
-    }
+  .gform_footer.top_label .gform_button.button {
+    margin-bottom: unset; 
   }
 
   .validation_error {

@@ -22,8 +22,24 @@
       padding-right: 260px;
     }
   }
+
+  .gform_wrapper .gform_body .gfield input {
+    padding-left: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 18px;
+  
+    &:focus {
+      padding-left: 8px;
+    }
+  }
+
   .gform_wrapper.gravity-theme .gform_footer {
     @extend %u-ml-6--from-small;
+  }
+
+  .gform_wrapper.gravity-theme .gform_footer {
+    margin-top: 0;
   }
 }
 
