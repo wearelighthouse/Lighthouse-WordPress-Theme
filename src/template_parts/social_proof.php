@@ -9,11 +9,12 @@
             <?php foreach ($socialProofs as $socialProof) : ?>
                 <?php 
                     $stars = $socialProof['social-proof_score'];
+                    $socialLink = $socialProof['url'];
                     $logoSrc = $socialProof['social-proof-icon'];
                     $logoAlt = get_post_meta($socialProof['social-proof_icon_id'], '_wp_attachment_image_alt', true);
                 ?>
-                
-                <a href="<?php $socialProof['url']; ?>" class="c-social-proof__content">
+
+                <a href="<?= $socialLink ?>" class="c-social-proof__content">
                     <img src="<?= $logoSrc ?>" alt="<?= $logoAlt ?>"/>
                     <?php if ($stars > 0) : ?>
                         <div class="c-social-proof__star" style="width:' <?php (65 * (($stars/10) * 2)) ?>'px"></div>
