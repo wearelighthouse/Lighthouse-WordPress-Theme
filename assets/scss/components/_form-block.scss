@@ -28,6 +28,11 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     font-size: 18px;
+
+    @include breakpoint(upto-small) {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
   
     &:focus {
       padding-left: 8px;
