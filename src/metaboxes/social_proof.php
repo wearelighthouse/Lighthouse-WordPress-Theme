@@ -16,17 +16,10 @@ return [
 
             'sub_fields' => [
                 [
-                    'name'    => 'Type',
-                    'id'      => 'type',
-                    'type'    => 'select',
-                    'default' => 'none',
-                    'show_option_none' => true,
-                    'options' => [
-                        'Manifest' => 'Manifest',
-                        'Clutch' => 'Clutch',
-                        'GoodFirms' => 'GoodFirms',
-                        'TopDevelopers' => 'TopDevelopers',
-                    ]
+                    'name' => 'Social proof icon',
+                    'id'   => 'social-proof-icon',
+                    'type' => 'file',
+                    'desc' => '<a href="https://jakearchibald.github.io/svgomg" target="_blank">Compressed</a> SVGs with a stroke or fill color and an <a href="https://en-gb.wordpress.org/plugins/svg-support/">xml tag</a>, and alt tags in WordPress e.g. \'KPMG\' or \'V&A\''
                 ],
                 [
                     'name' => 'Social proof score',
@@ -49,7 +42,11 @@ return [
                     ],
                     
                 ],
-                
+                [
+                    'name' => 'URL',
+                    'id'   => 'url',
+                    'type' => 'text_url',
+                ]
             ]
         ]
     ]
