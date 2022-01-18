@@ -1,18 +1,25 @@
 .c-social-proof {
-  @extend %u-flex;
-  @extend %u-ai-center;
-  @extend %u-fd-row;
-  @extend %u-jc-space-between;
-  @extend %u-fw-wrap;
+  display: grid;
+  gap: 2rem 1rem;
 
-  & a + a {
-    @extend %u-mt-4--upto-small;
+  @include breakpoint(from-small) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @include breakpoint(from-large) {
+    grid-auto-flow: column;
+    justify-content: space-between;
   }
 
   &__link {
     @extend %u-pad-2;
     display: grid;
     grid-template-rows: repeat(3, 47px);
+
+    @include breakpoint(upto-large) {
+      flex-grow: 1;
+      flex-basis: 25%;
+    }
 
     & img {
       align-self: end;
