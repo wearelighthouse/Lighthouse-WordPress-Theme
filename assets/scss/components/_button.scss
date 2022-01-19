@@ -70,8 +70,8 @@
     @extend %u-bg-color-white;
     @extend %u-ph-2;
     @extend %u-ph-3--from-small;
+    @extend %u-border-radius-full;
     min-height: 3rem;
-    border-radius: 1e3px;
     transition: background .1s, box-shadow .3s, transform .3s;
 
     @media(hover: hover) {

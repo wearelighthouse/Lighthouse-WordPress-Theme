@@ -9,6 +9,16 @@
 ));
 
 @include make-utility((
+  alias: 'border-radius-md',
+  border-radius: 0.5rem
+));
+
+@include make-utility((
+  alias: 'border-radius-full',
+  border-radius: 1e3px
+));
+
+@include make-utility((
   alias: 'gray-borders',
   border-top: 1px $color-gray solid,
   border-bottom: 1px $color-gray solid
