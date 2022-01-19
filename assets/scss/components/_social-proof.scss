@@ -20,28 +20,28 @@
       align-self: end;
     }
 
+    &__star {
+      align-self: end;
+      width: 70px;
+      height: 13px;
+      background: url('../../dist/svg/social-proof-stars.svg') no-repeat 0 0;
+    }
+
+    &__text {
+      @extend %u-sailec;
+      @extend %u-color-black;
+      font-size: 13px;
+
+      & p {
+        margin: 0;
+        padding-top: 1rem;
+      }
+    }
+
     &:hover,
     &:focus-visible {
       @extend %u-bg-color-gray-light;
       border-radius: 0.5rem;
-    }
-  }
-
-  &__star {
-    align-self: end;
-    width: 70px;
-    height: 13px;
-    background: url('../../dist/svg/social-proof-stars.svg') no-repeat 0 0;
-  }
-
-  &__text {
-    @extend %u-sailec;
-    @extend %u-color-black;
-    font-size: 13px;
-
-    & p {
-      margin: 0;
-      padding-top: 1rem;
     }
   }
 }

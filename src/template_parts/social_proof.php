@@ -17,9 +17,9 @@
                     <a href="<?= $socialLink ?>" class="c-social-proof__link">
                         <img src="<?= $logoSrc ?>" alt="<?= $logoAlt ?>"/>
                         <?php if ($stars > 0) : ?>
-                            <div class="c-social-proof__star" style="width:' <?php (65 * (($stars/10) * 2)) ?>'px"></div>
+                            <div class="c-social-proof__link__star" style="width:' <?php (65 * (($stars/10) * 2)) ?>'px"></div>
                         <?php endif; ?>
-                        <div class="c-social-proof__text">
+                        <div class="c-social-proof__link__text">
                             <?= wpautop($socialProof['text']) ?>
                         </div>
                     </a>
