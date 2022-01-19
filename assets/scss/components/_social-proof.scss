@@ -16,11 +16,6 @@
     display: grid;
     grid-template-rows: 1fr 4rem 1fr;
 
-    @include breakpoint(upto-large) {
-      flex-grow: 1;
-      flex-basis: 25%;
-    }
-
     & img {
       align-self: end;
     }
