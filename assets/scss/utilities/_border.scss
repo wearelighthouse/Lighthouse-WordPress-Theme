@@ -1,7 +1,11 @@
-
 @include make-utility((
   alias: 'round',
   border-radius: 50%
+));
+
+@include make-utility((
+  alias: 'border-radius-sm',
+  border-radius: 0.25rem
 ));
 
 @include make-utility((
