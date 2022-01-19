@@ -16,6 +16,7 @@
     @extend %u-border-radius-md;
     display: grid;
     grid-template-rows: 1fr 4rem 1fr;
+    transition: background-color .2s;
 
     & img {
       align-self: end;
@@ -41,7 +42,7 @@
 
     &:hover,
     &:focus-visible {
-      @extend %u-bg-color-gray-light;
+      @extend %u-bg-color-gray-bluish;
     }
   }
 }
