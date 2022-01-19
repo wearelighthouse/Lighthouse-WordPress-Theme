@@ -15,7 +15,9 @@
                     ?>
 
                     <a href="<?= $socialLink ?>" class="c-social-proof__link">
-                        <img src="<?= $logoSrc ?>" alt="<?= $logoAlt ?>"/>
+                        <div class="c-social-proof__link__image-container">
+                            <img src="<?= $logoSrc ?>" alt="<?= $logoAlt ?>"/>
+                        </div>
                         <?php if ($stars > 0) : ?>
                             <div class="c-social-proof__link__star" style="width:' <?php (65 * (($stars/10) * 2)) ?>'px"></div>
                         <?php endif; ?>

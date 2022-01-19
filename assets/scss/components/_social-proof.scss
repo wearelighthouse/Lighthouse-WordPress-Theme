@@ -14,16 +14,16 @@
   &__link {
     @extend %u-pad-2;
     @extend %u-border-radius-md;
-    display: grid;
-    grid-template-rows: 1fr 4rem 1fr;
     transition: background-color .2s;
-
-    & img {
-      align-self: end;
+    
+    &__image-container {
+      @extend %u-flex;
+      @extend %u-ai-center;
+      min-height: 50px;
     }
 
     &__star {
-      align-self: end;
+      @extend %u-mt-3;
       width: 70px;
       height: 13px;
       background: url('../../dist/svg/social-proof-stars.svg') no-repeat 0 0;
@@ -34,9 +34,8 @@
       @extend %u-color-black;
       font-size: 13px;
 
-      & p {
-        margin: 0;
-        padding-top: 1rem;
+      > *:last-child {
+        margin-bottom: 0;
       }
     }
 
