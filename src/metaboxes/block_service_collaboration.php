@@ -19,27 +19,19 @@ return [
             ],
             'sub_fields' => [
                 [
-                    'name'    => 'Type',
-                    'id'      => 'type',
-                    'type'    => 'select',
-                    'default' => 'none',
-                    'show_option_none' => true,
+                    'name' => 'Colaboration Icon',
+                    'id'   => 'icon',
+                    'type' => 'file',
+                    'desc' => 'Preferably <a href="https://jakearchibald.github.io/svgomg" target="_blank">compressed SVGs</a>.'
+                ],
+                [
+                    'name'    => 'Text',
+                    'id'      => 'text',
+                    'type'    => 'wysiwyg',
                     'options' => [
-                        'Agile always' => 'Agile always',
-                        'Efficient processes' => 'Efficient processes',
-                        'Direct collaboration' => 'Direct collaboration',
-                        'Comms quality' => 'Comms quality',
-                    ]
-                ],
-                [
-                    'name' => 'Subtitle',
-                    'id'   => 'subTitle',
-                    'type' => 'text'
-                ],
-                [
-                    'name' => 'Description',
-                    'id'   => 'description',
-                    'type' => 'textarea_small'
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                    ],
                 ],
             ]
             

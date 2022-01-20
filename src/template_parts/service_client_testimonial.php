@@ -1,6 +1,6 @@
 <?php
     $clientTestimonialTitle = getPostMeta('service_archive_client_testimonial_title');
-    $clientTestimonialDesc = getPostMeta('service_archive_client_testimonial_description');
+    $clientTestimonialDesc = getPostMeta('service_archive_client_testimonial_text');
 ?>
 
 <section class="o-container-client-testimonial c-fancy-bg">
@@ -8,10 +8,10 @@
         <blockquote class="c-service-client-testimonial">
             <?php if ($clientTestimonialTitle && $clientTestimonialDesc) : ?>
                 <h3 class="c-service-client-testimonial__title c-service-template__title">
-                <?= $clientTestimonialTitle ?>
+                    <?= $clientTestimonialTitle ?>
                 </h3>
                 <p class="c-service-client-testimonial__p">
-                <?= $clientTestimonialDesc ?>
+                     <?= $clientTestimonialDesc ?>
                 </p>
             <?php endif; ?>
 

@@ -2,7 +2,7 @@
   // There should be a global variable of sorts with some link blocks in
   $services = $globalBlocksServiceGroup;
   $layout = $globalBlocksServiceLayout;
-  $button = getPostMeta('service_archive_block_services_action');
+  $button = getPostMeta('service_archive_blocks_service_action');
 
 ?>
 

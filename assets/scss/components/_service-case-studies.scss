@@ -32,10 +32,12 @@
             padding-bottom: 6.2rem;
             z-index: -1;
 
-            // @extend %u-pos-absolute--from-medium;
+            @include breakpoint(upto-small) {
+                padding-bottom: 8rem;
+            }
 
             @include breakpoint(from-medium) {
-               position: absolute;
+                position: absolute;
                 width: 599.65px;
                 height: 377px;
                 padding-bottom: unset;
@@ -70,8 +72,13 @@
             &--car-profile {
                 @extend %u-height-100pc;
                 @extend %u-pos-absolute;
-                top: -17%;
+                top: -15%;
                 left: 20%;
+                display: block;
+
+                @include breakpoint(upto-small) {
+                    display: none;
+                }
 
                 @include breakpoint(from-small--upto-medium) {
                     left: 45%;
@@ -84,7 +91,7 @@
                 }
 
                  @include breakpoint(from-large) {
-                    top: -12%;
+                    // top: -12%;
                     left: 52%;
                 }
             }
@@ -92,6 +99,11 @@
             &--car {
                 @extend %u-width-100pc;
                 @extend %u-height-100pc;
+                display: block;
+
+                @include breakpoint(upto-small) {
+                    display: none;
+                }
 
                 @include breakpoint(from-medium) {
                     height: 291.79px;
@@ -108,6 +120,7 @@
 
         &-content {
             @extend %u-pt-4;
+            position: unset;
 
             @include breakpoint(from-medium) {
                 width: 399px;
@@ -118,7 +131,17 @@
             &--link {
                  width: 136px;
              }
+
+             @include breakpoint(upto-small) {
+                position: absolute;
+            }
         }
+    }
+
+    &__image-small {
+        top: -2.5rem;
+        transform: unset;
+        right: 0;
     }
 
 }

@@ -1,9 +1,9 @@
 <?php
   $caseStudyIds = getPostMeta('service_archive_case_study_list_clients', $post->ID);
   $introText = getPostMeta('service_archive_home_intro_text');
-  $blockServices = getPostMeta('service_archive_block_services_group');
-  $globalBlocksServiceLayout = getPostMeta('service_archive_block_services_layout');
-  $globalBlocksServiceGroup = getPostMeta('service_single_block_services_group');
+  $blockServices = getPostMeta('service_archive_blocks_service_group');
+  $globalBlocksServiceLayout = getPostMeta('service_archive_blocks_service_layout');
+  $globalBlocksServiceGroup = getPostMeta('service_archive_blocks_service_group');
 ?>
 
 <?php get_header(); ?>

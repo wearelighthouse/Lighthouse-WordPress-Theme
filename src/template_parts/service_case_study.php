@@ -51,7 +51,7 @@
         </div>
       <?php endif; ?>
       <?php if ($imgSmallId) : ?>
-        <div class="c-case-study-block__image-small">
+        <div class="c-case-study-block__image-small c-service-case-study__image-small">
           <?= lazyLoad(wp_get_attachment_image($imgSmallId, 'link-block-case-study-fg-small')) ?>
         </div>
       <?php endif; ?>
@@ -73,41 +73,41 @@
 <?php endif; ?>
 
 <?php if ($caseStudySize === 'small') : ?>
-<div class="c-service-case-study__parenting">
-  <?php for ($i = 0; $i < 2; $i++) : ?>
-    <a href="<?= $linkURL ?>" class="c-service-case-study__parenting-block data-loaded="true">
-      <div class="c-service-case-study__parenting-block--image">
-          <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/activities.svg" alt>
-          <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/parent-wellbeing.svg" alt>
-      </div>
+  <div class="c-service-case-study__parenting">
+    <?php for ($i = 0; $i < 2; $i++) : ?>
+      <a href="<?= $linkURL ?>" class="c-service-case-study__parenting-block data-loaded="true">
+        <div class="c-service-case-study__parenting-block--image">
+            <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/activities.svg" alt>
+            <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/parent-wellbeing.svg" alt>
+        </div>
 
-      <div>
-          <div class="c-service-case-study__parenting-content">
-              <div class="c-case-study-block__logo" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/actionforchildren-logo.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/actionforchildren-logo.svg); width: 100px; height: 60px">
-              <span class="c-case-study-block__logo__alt">
-                  Action for Children
-              </span>
-              </div>
-              
-              <?php if (!$i) : ?>  
-                <h3 class="c-service-case-study__parenting-content--title">
-                  <div href="https://wearelighthouse.com/our-work/dots-action-children/" class="c-case-study-block__title__link">A new parenting platform from an innovative charity
-                  </div>
-                </h3>
-                <p class="c-service-case-study__parenting-content--p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-              <?php endif; ?>
-
-              <?php if ($i) : ?>
-                <div class="c-service-case-study__parenting-content--content">
-                  <p class="c-service-case-study__parenting-content--p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
-                  <p>Key statistic</p>
-                  <p><span>50</span> Hours of discovery</p>
+        <div>
+            <div class="c-service-case-study__parenting-content">
+                <div class="c-case-study-block__logo" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/actionforchildren-logo.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/actionforchildren-logo.svg); width: 100px; height: 60px">
+                <span class="c-case-study-block__logo__alt">
+                    Action for Children
+                </span>
                 </div>
-              <?php endif; ?>
+                
+                <?php if (!$i) : ?>  
+                  <h3 class="c-service-case-study__parenting-content--title">
+                    <div href="https://wearelighthouse.com/our-work/dots-action-children/" class="c-case-study-block__title__link">A new parenting platform from an innovative charity
+                    </div>
+                  </h3>
+                  <p class="c-service-case-study__parenting-content--p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                <?php endif; ?>
 
-          </div>
-      </div>
-    </a>
-  <?php endfor; ?>
-</div>
+                <?php if ($i) : ?>
+                  <div class="c-service-case-study__parenting-content--content">
+                    <p class="c-service-case-study__parenting-content--p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+                    <p>Key statistic</p>
+                    <p><span>50</span> Hours of discovery</p>
+                  </div>
+                <?php endif; ?>
+
+            </div>
+        </div>
+      </a>
+    <?php endfor; ?>
+  </div>
 <?php endif; ?>

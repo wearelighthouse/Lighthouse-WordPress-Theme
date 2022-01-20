@@ -6,12 +6,15 @@ return [
         [
             'name' => 'Title',
             'id'   => 'title',
-            'type' => 'text'
+            'type' => 'text',
         ],
         [
-            'name' => 'Descriptions',
-            'id'   => 'description',
-            'type' => 'textarea_small'
+            'name' => 'Intro paragraph',
+            'id'   => 'text',
+            'type' => 'wysiwyg',
+            'options' => [
+              'textarea_rows' => 9
+            ]
         ],
     ]
 ];
