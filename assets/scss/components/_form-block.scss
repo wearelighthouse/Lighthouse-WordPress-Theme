@@ -34,8 +34,9 @@
       padding-bottom: 8px;
     }
 
-    &:focus {
-      padding-left: 8px;
+    &:focus,
+    &:not(:placeholder-shown) {
+      padding-left: .5rem;
     }
   }
 
