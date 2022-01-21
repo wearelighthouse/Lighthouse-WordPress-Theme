@@ -12,6 +12,7 @@
 
     <?php include(locate_template('src/template_parts/latest_posts.php')) ?>
     <?php include(locate_template('src/template_parts/home_links.php')) ?>
+    <?php include(locate_template('src/template_parts/social_proof.php')) ?>
 
   <?php endwhile; ?>
 </main>
