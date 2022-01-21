@@ -1,9 +1,14 @@
 .c-form-block {
   @extend %u-bg-color-gray-bluish;
   @extend %u-pv-6;
-  @extend %u-ph-6--from-large;
+  @extend %u-ph-6--from-medium;
   @extend %u-border-box;
   grid-column: 1 / -1;
+
+  @include breakpoint(upto-medium) {
+    width: 100vw;
+    margin-left: calc(-1 * (100vw - var(--container-width)) / 2);
+  }
 
   @include breakpoint(from-large) {
     margin-right: auto;
@@ -21,6 +26,26 @@
     @include breakpoint(from-large) {
       padding-right: 260px;
     }
+  }
+
+  .gform_wrapper .gform_body .gfield input {
+    @extend %u-pv-1;
+    @extend %u-pv-2--from-small;
+    @extend %u-pl-0;
+    font-size: 18px;
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      padding-left: .5rem;
+    }
+  }
+
+  .gform_wrapper.gravity-theme .gform_footer {
+    @extend %u-ml-6--from-small;
+  }
+
+  .gform_wrapper.gravity-theme .gform_footer {
+    margin-top: 0;
   }
 }
 
