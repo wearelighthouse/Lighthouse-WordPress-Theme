@@ -22,7 +22,13 @@
                             <?php endif; ?>
                         </div>
 
-                        <div class="c-social-proof__link__stars"></div>
+                        <img
+                            class="c-social-proof__link__stars"
+                            width="70px" height="12px"
+                            src="<?= get_template_directory_uri() ?>/dist/svg/social-proof-stars.svg"
+                            alt="5 stars"
+                            loading="lazy"
+                        />
 
                         <div class="c-social-proof__link__text">
                             <?= wpautop($text) ?>
