@@ -8,21 +8,26 @@
             <div class="c-social-proof">
                 <?php foreach ($socialProofs as $socialProof) : ?>
                     <?php
-                        $stars = $socialProof['social-proof_score'];
+                        $stars = isset($socialProof['score']) ? $socialProof['score'] : 0;
                         $socialLink = $socialProof['url'];
-                        $logoSrc = $socialProof['social-proof-icon'];
-                        $logoAlt = get_post_meta($socialProof['social-proof-icon_id'], '_wp_attachment_image_alt', true);
+                        $logoSrc = isset($socialProof['icon']) ? $socialProof['icon'] : '';
+                        $logoAlt = isset($socialProof['icon_id']) ? get_post_meta($socialProof['icon_id'], '_wp_attachment_image_alt', true) : '';
+                        $text = isset($socialProof['text']) ? $socialProof['text'] : '';
                     ?>
 
                     <a href="<?= $socialLink ?>" class="c-social-proof__link">
                         <div class="c-social-proof__link__image-container">
-                            <img src="<?= $logoSrc ?>" alt="<?= $logoAlt ?>"/>
+                            <?php if ($logoSrc) : ?>
+                                <img src="<?= $logoSrc ?>" alt="<?= $logoAlt ?>"/>
+                            <?php endif; ?>
                         </div>
+
                         <?php if ($stars > 0) : ?>
                             <div class="c-social-proof__link__star" style="width:' <?php (65 * (($stars/10) * 2)) ?>'px"></div>
                         <?php endif; ?>
+
                         <div class="c-social-proof__link__text">
-                            <?= wpautop($socialProof['text']) ?>
+                            <?= wpautop($text) ?>
                         </div>
                     </a>
                 <?php endforeach; ?>

@@ -16,13 +16,13 @@ return [
             'sub_fields' => [
                 [
                     'name' => 'Social proof icon',
-                    'id'   => 'social-proof-icon',
+                    'id'   => 'icon',
                     'type' => 'file',
                     'desc' => '<a href="https://jakearchibald.github.io/svgomg" target="_blank">Compressed</a> SVGs with an <a href="https://en-gb.wordpress.org/plugins/svg-support/">xml tag</a>, and alt tags in WordPress e.g. \'KPMG\' or \'V&A\''
                 ],
                 [
                     'name' => 'Social proof score',
-                    'id'   => 'social-proof_score',
+                    'id'   => 'score',
                     'type' => 'select',
                     'show_option_none' => true,
                     'options'          => [
