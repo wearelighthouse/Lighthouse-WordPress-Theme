@@ -15,6 +15,7 @@ function registerFrontPageMetaboxes()
         'home_intro',
         'case_study_list',
         'home_links',
+        'social_proof',
     ], $groupID);
 
 }

@@ -4,11 +4,6 @@ return [
     'title' => 'Team stats',
     'fields' => [
         [
-            'name' => 'Team Title',
-            'id'   => 'team',
-            'type' => 'text'
-        ],
-        [
             'id' => 'team_stats',
             'type' => 'group',
             'options' => [
