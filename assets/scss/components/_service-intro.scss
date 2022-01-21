@@ -1,0 +1,94 @@
+.c-service-intro {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    @include breakpoint(from-medium) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 8rem;
+        padding-bottom: 8.5rem;
+    }
+
+    &__title {
+        @extend %u-color-blackcurrant;
+
+        @include breakpoint(from-tiny--upto-medium) {
+            padding-bottom: 2rem;
+        }
+    }
+
+    &__content {
+
+        &-p {
+            @extend %u-sailec;
+            @extend %u-color-black;
+            @include fontScale(18, 20);
+            @include lineScale(24, 28);
+            margin: 0;
+
+            &:nth-child(even) {
+                padding-bottom: 2.6rem;
+                padding-top: 2rem;
+            }
+        }
+
+        & p:nth-child(1) {
+            margin-top: 0;
+        }
+
+        &__clients {
+            @extend %u-flex;
+            @extend %u-fw-wrap;
+            @extend %u-ai-center;
+            @extend %u-jc-center;
+            @extend %u-fd-row;
+            @extend %u-mh--2--from-medium;
+
+            @include breakpoint(upto-small) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        
+            &__img-container {
+                background: $color-gray-darkish;
+                margin: 1rem 2rem;
+            }
+
+            &__img-container:nth-child(1),
+            &__img-container:nth-child(2),
+            &__img-container:nth-child(3),
+            &__img-container:nth-child(5) {
+                flex-basis: 20%;
+            }
+
+            &__img-container:nth-child(4),
+            &__img-container:nth-child(6) {
+                flex-basis: 15%;
+            }
+
+            &__img-container:nth-child(7),
+            &__img-container:nth-child(8) {
+                flex-basis: 10%;
+            }
+
+            &__img-container:nth-child(9) {
+                flex-basis: 15%;
+            }
+
+            &__img-container:nth-child(1),
+            &__img-container:nth-child(2),
+            &__img-container:nth-child(3),
+            &__img-container:nth-child(4),
+            &__img-container:nth-child(5),
+            &__img-container:nth-child(6),
+            &__img-container:nth-child(7),
+            &__img-container:nth-child(8), 
+            &__img-container:nth-child(9) {
+
+                @include breakpoint(upto-small) {
+                    flex-basis: unset;
+                }
+            }
+        }
+    }
+}
