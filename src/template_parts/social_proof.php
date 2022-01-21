@@ -22,9 +22,7 @@
                             <?php endif; ?>
                         </div>
 
-                        <?php if ($stars > 0) : ?>
-                            <div class="c-social-proof__link__star" style="width:' <?php (65 * (($stars/10) * 2)) ?>'px"></div>
-                        <?php endif; ?>
+                        <div class="c-social-proof__link__stars"></div>
 
                         <div class="c-social-proof__link__text">
                             <?= wpautop($text) ?>
