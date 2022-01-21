@@ -11,26 +11,25 @@ return [
                 'group_title'   => 'Social Proof {#}',
                 'add_button'    => 'Add New Social Proof',
                 'remove_button' => 'Remove Social Proof',
-                'sortable'      => true
+                'sortable'      => true,
             ],
-
             'sub_fields' => [
                 [
                     'name' => 'Social proof icon',
                     'id'   => 'social-proof-icon',
                     'type' => 'file',
-                    'desc' => '<a href="https://jakearchibald.github.io/svgomg" target="_blank">Compressed</a> SVGs with a stroke or fill color and an <a href="https://en-gb.wordpress.org/plugins/svg-support/">xml tag</a>, and alt tags in WordPress e.g. \'KPMG\' or \'V&A\''
+                    'desc' => '<a href="https://jakearchibald.github.io/svgomg" target="_blank">Compressed</a> SVGs with an <a href="https://en-gb.wordpress.org/plugins/svg-support/">xml tag</a>, and alt tags in WordPress e.g. \'KPMG\' or \'V&A\''
                 ],
                 [
                     'name' => 'Social proof score',
                     'id'   => 'social-proof_score',
                     'type' => 'select',
                     'show_option_none' => true,
-                    'options'          => array(
-                                '5'   => '5',
-                                '4.5' => '4.5',
-                                '4'   => '4',
-                          ),
+                    'options'          => [
+                        '5'   => '5',
+                        '4.5' => '4.5',
+                        '4'   => '4',
+                    ],
                 ],
                 [
                     'name' => 'Text',
@@ -40,13 +39,12 @@ return [
                         'media_buttons' => false,
                         'textarea_rows' => 3,
                     ],
-                    
                 ],
                 [
                     'name' => 'URL',
                     'id'   => 'url',
                     'type' => 'text_url',
-                ]
+                ],
             ]
         ]
     ]
