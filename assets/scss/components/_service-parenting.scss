@@ -17,6 +17,8 @@
         &-block {
             @extend %u-pos-relative;
             @extend %u-width-100pc;
+            padding-top: 2.5rem;
+            padding-bottom: 3.2rem;
 
             &::after {
                 @extend %u-content;
@@ -31,96 +33,41 @@
 
             &--image {
                 @extend %u-pos-absolute;
-                width: 128px;
-                height: 62px;
-                top: -36%;
-                left: 25%;
+                top: 0.5rem;
+                right: 0;
+                transform: translateY(-50%);
 
-            @include breakpoint(from-tiny) {
-                left: 50%;
-                top: -25%;
-                display: flex;
-                flex-direction: row;
-                margin-top: unset;
-                transform: translate(calc(-50% - 5rem), calc(-50% + 5rem));
-            }
-
-            @include breakpoint(from-medium) {
-               top: 20%;
-               left: 25%;
-               flex-direction: column;
-               transform: translate(calc(-50% - 5vw), calc(-50% + 5vw));
-            }
-
-            @include breakpoint(from-large) {
-               top: 10%;
-               left: 23%;
-               flex-direction: column;
-               transform: translate(calc(-50% - 5vw), calc(-50% + 5vw));
-            }
-
-                & img + img {
-                    margin-top: 14px;
-
-                    @include breakpoint(from-tiny) {
-                        margin-top: unset;
-                        margin-left: 14px;
-                    }
-
-                    @include breakpoint(from-medium) {
-                        margin-top: 14px;
-                        margin-left: unset;
-                    }
+                @include breakpoint(from-small) {
+                    left: -10%;
+                    top: -2.5rem;
+                    transform: translateY(50%);
                 }
-            }
 
-            &:nth-child(odd) {
-                padding-top: 2.5rem;
-                padding-bottom: 3.2rem;
-    
                 @include breakpoint(from-medium) {
-                   margin-left: 2rem;
+                    left: -12%;
+                    top: -1rem;
                 }
-    
-                @include breakpoint(from-tiny) {
-                    padding-top: 3rem;
+
+
+                & img {
+                    width: 125px;
+                    height: 125px;
+                    @include breakpoint(from-small) {
+                        width: unset;
+                        height: unset;
+                    }
                 }
             }
-    
-            &:nth-child(even) {
-                padding-top: 3rem;
-                padding-bottom: 2.5rem;
-    
-                @include breakpoint(from-medium) {
-                   margin-left: calc(37px + 21px);
-                }
 
-                & div:nth-child(1) {
-                    @include breakpoint(from-medium) {
-                        top: 20%;
-                        left: 21%;
-                    }
-
-                    @include breakpoint(from-large) {
-                        top: 10%;
-                        left: 21%;
-                    }
-
-                }
-
-            }
         }
 
-
         &-block + &-block {
-            margin-top: 8.8rem;
-
-            @include breakpoint(from-tiny) {
-                margin-top: 5rem;
-            }
+            margin-top: 5rem;
 
             @include breakpoint(from-medium) {
                 margin-top: unset;
+                margin-left: 4rem;
+
             }
         }
 
@@ -128,8 +75,8 @@
             padding-left: 2rem;
             padding-right: 2rem;
 
-            @include breakpoint(from-medium) {
-                padding-left: 8rem;
+            @include breakpoint(from-small) {
+                padding-left: 9rem;
             }
 
             &--title {
@@ -148,6 +95,7 @@
                 font-size: 15px;
                 line-height: 1.3;
                 margin: 0;
+                padding-right: 2rem;
             }
 
             &--content {

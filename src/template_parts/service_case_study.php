@@ -88,10 +88,8 @@
     <?php for ($i = 0; $i < 2; $i++) : ?>
       <a href="<?= $linkURL ?>" class="c-service-case-study__parenting-block data-loaded="true">
         <div class="c-service-case-study__parenting-block--image">
-            <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/activities.svg" alt>
-            <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/parent-wellbeing.svg" alt>
+            <img src="<?= get_template_directory_uri(); ?>/assets/svg/single/parentings.svg" alt>
         </div>
-
         <div>
             <div class="c-service-case-study__parenting-content">
                 <div class="c-case-study-block__logo" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/actionforchildren-logo.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/10/actionforchildren-logo.svg); width: 100px; height: 60px">
