@@ -32,14 +32,25 @@
 <?php if ($caseStudySize === 'large') : ?>
   <a href="<?= $linkURL ?>"
    class="c-service-case-study__content c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?> js-half-onscreen-detect">
-    <div class="c-service-case-study__content-background">
-        <img class="c-service-case-study__content-background--car-profile" src="<?= get_template_directory_uri(); ?>/assets/svg/single/car-icon.svg" alt>
-        <img class="c-service-case-study__content-background--car" src="<?= get_template_directory_uri(); ?>/assets/img/car.png" alt>
+    <div class="c-service-case-study__content__background"> 
+      <?php if ($caseStudySize === 'large' && $imgBackgroundId) : ?>
+        <div class="c-case-study-block__image-background">
+          <?= lazyLoad(wp_get_attachment_image($imgBackgroundId, 'link-block-case-study-bg-large')) ?>
+        </div>
+      <?php endif; ?>
+      <?php if ($caseStudySize === 'large' && $imgLargeId) : ?>
+        <div class="c-service-case-study__content__background__illustration">
+          <?= lazyload(wp_get_attachment_image($imgLargeId, 'link-block-case-study-fg-large')) ?>
+        </div>
+      <?php endif; ?>
+      <?php if ($caseStudySize === 'small' && $imgMediumId) : ?>
+        <div class="c-case-study-block__image-medium">
+          <?= lazyLoad(wp_get_attachment_image($imgMediumId, 'link-block-case-study-fg-medium')) ?>
+        </div>
+      <?php endif; ?>
     </div>
+
     <div class="c-service-case-study__content-content">
-      <div class="c-case-study-block__logo" style="-webkit-mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/09/Logos-HPI.svg); mask-image: url(https://wearelighthouse.com/wp-content/uploads/2019/09/Logos-HPI.svg); width: 50px; height: 42px">
-        <span class="c-case-study-block__logo__alt">HPI</span>
-      </div>
       <?php if ($logoSrc) : ?>
         <div class="c-case-study-block__logo"
             style="<?= $logoMask ?>">
