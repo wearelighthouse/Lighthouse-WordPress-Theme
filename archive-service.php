@@ -17,7 +17,7 @@
       <?php include(locate_template('src/template_parts/service_section_category.php')) ?>
   <?php endif; ?>
 
-  <?php include(locate_template('src/template_parts/service_collaboration.php')) ?>
+  <?php include(locate_template('src/template_parts/service_section_collaboration.php')) ?>
 
   <?php include(locate_template('src/template_parts/service_client_testimonial.php')) ?>
 

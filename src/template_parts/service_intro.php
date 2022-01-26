@@ -41,11 +41,9 @@
         <?php endif; ?>
 
         <?php if ($button) : ?>
-          <div class="c-service-template__button-container">
-              <button class="c-service-template__button">
-                  <a href="/call-to-action"><?= $button ?></a>
-              </button>
-          </div>
+          <button class="c-service-template__button">
+              <a href="/call-to-action"><?= $button ?></a>
+          </button>
         <?php endif; ?>
 
     </div>

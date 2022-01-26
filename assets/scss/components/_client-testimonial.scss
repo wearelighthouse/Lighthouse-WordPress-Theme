@@ -5,12 +5,12 @@
 }
 
 .c-service-client-testimonial {
-  padding-top: 5.2rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   margin: 0;
 
   &__title {
     @extend %u-color-orange-old;
-    padding-bottom: 1rem;
   }
 
   &__p {
@@ -18,14 +18,14 @@
     @extend %u-color-blackcurrant;
     @include fontScale(28, 32);
     @include lineScale(44, 48);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     margin: 0;
   }
 
   &__footer {
-    padding-bottom: 4.5rem;
-    padding-top: 10px;
 
-    &-name {
+    &__name {
       @extend %u-vbold;
       @extend %u-sailec;
       @extend %u-text-align-right;
@@ -35,8 +35,8 @@
 
     }
 
-    &-job,
-    &-title {
+    &__job,
+    &__title {
       @extend %u-color-blackcurrant;
       @extend %u-sailec;
       @extend %u-text-align-right;

@@ -5,9 +5,6 @@
     @include fontScale(28, 32);
     @include lineScale(38, 42);
   }
-  &__button-container {
-    margin: 0;
-  }
 
   &__button {
     @extend %u-sailec;

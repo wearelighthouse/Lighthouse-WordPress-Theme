@@ -16,11 +16,9 @@
             <?php endif; ?>
 
             <footer class="c-service-client-testimonial__footer">
-                <div class="c-service-client-testimonial__footer-content">
-                    <div class="c-service-client-testimonial__footer-name">Nick Meyers</div>
-                    <div class="c-service-client-testimonial__footer-job">Director of Technology</div>
-                    <div class="c-service-client-testimonial__footer-title">Digital Theatre+</div>
-                </div>
+                <div class="c-service-client-testimonial__footer__name">Nick Meyers</div>
+                <div class="c-service-client-testimonial__footer__job">Director of Technology</div>
+                <div class="c-service-client-testimonial__footer__title">Digital Theatre+</div>
             </footer>
         </blockquote>
     </div>
