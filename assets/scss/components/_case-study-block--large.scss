@@ -146,6 +146,7 @@
       }
     }
 
+    #{$self}--align-right,
     &:nth-child(even) {
       align-items: flex-end;
 

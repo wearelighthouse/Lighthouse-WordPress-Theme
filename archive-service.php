@@ -25,7 +25,7 @@
 
   <?php if ($caseStudyIds) : ?>
     <?php $globalCaseStudyIds = array_slice($caseStudyIds, 0, 1); ?>
-    <?php include(locate_template('src/template_parts/service_case_study_large.php')) ?>
+    <?php include(locate_template('src/template_parts/block_section_case_study_large.php')) ?>
   <?php endif; ?>
 
   <?php if ($caseStudyIds && count($caseStudyIds) > 0) : ?>
