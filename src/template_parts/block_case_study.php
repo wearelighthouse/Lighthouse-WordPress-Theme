@@ -30,8 +30,10 @@
 ?>
 
 <a href="<?= $linkURL ?>"
-   class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?> c-case-study-block--align-right js-half-onscreen-detect">
+   class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?> <?= $globalcaseStudyAlignRight ? 'c-case-study-block--align-right' : '' ?> js-half-onscreen-detect">
+   
   <div class="c-case-study-block__background">
+    
     <?php if ($caseStudySize === 'large' && $imgBackgroundId) : ?>
       <div class="c-case-study-block__image-background">
         <?= lazyLoad(wp_get_attachment_image($imgBackgroundId, 'link-block-case-study-bg-large')) ?>

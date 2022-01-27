@@ -4,6 +4,7 @@
   $blockServices = getPostMeta('service_archive_blocks_service_group');
   $globalBlocksServiceLayout = getPostMeta('service_archive_blocks_service_layout');
   $globalBlocksServiceGroup = getPostMeta('service_archive_blocks_service_group');
+  $globalIntro = getPostMeta('service_archive_case_study_list_title');
 ?>
 
 <?php get_header(); ?>
@@ -23,9 +24,19 @@
 
   <?php include(locate_template('src/template_parts/service_intro.php')) ?>
 
+    <?php if (isset($globalIntro)) : ?>
+      <div class="o-container-content">
+        <h2 class="type-title"><?= $globalIntro ?></h2>
+      </div>
+
+      <?php $globalIntro = ''; ?>
+    <?php endif; ?>
+
   <?php if ($caseStudyIds) : ?>
     <?php $globalCaseStudyIds = array_slice($caseStudyIds, 0, 1); ?>
+    <?php $globalcaseStudyAlignRight = true; ?>
     <?php include(locate_template('src/template_parts/block_section_case_study_large.php')) ?>
+    <?php $globalcaseStudyAlignRight = false; ?>
   <?php endif; ?>
 
   <?php if ($caseStudyIds && count($caseStudyIds) > 0) : ?>
