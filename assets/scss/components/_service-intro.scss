@@ -12,7 +12,7 @@
     &__title {
         @extend %u-color-blackcurrant;
 
-        @include breakpoint(from-tiny--upto-medium) {
+        @include breakpoint(upto-medium) {
             padding-bottom: 2rem;
         }
     }
