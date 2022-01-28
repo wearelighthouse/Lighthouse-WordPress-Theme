@@ -40,11 +40,17 @@
       }
     }
 
+    &__text,
     &__subtitle {
       @extend %u-sailec;
       @include lineScale(24, 28);
       @extend %u-color-blackcurrant;
       font-size: 18px;
+      margin: 0;
+    }
+
+    &__subtitle {
+      font-weight: 500;
     }
 
     &:nth-child(odd) {
@@ -72,8 +78,8 @@
 
           @include breakpoint(from-large) {
             display: block;
-            width: 352.09px;
-            height: 352.09px;
+            width: 300px;
+            height: 300px;
             background: linear-gradient(
               66.38deg,
               rgba(252, 118, 98, 0.3) 11.36%,

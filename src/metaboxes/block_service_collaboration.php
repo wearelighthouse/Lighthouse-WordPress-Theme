@@ -25,6 +25,11 @@ return [
                     'desc' => 'Preferably <a href="https://jakearchibald.github.io/svgomg" target="_blank">compressed SVGs</a>.'
                 ],
                 [
+                    'name' => 'SubTitle',
+                    'id'   => 'sub-title',
+                    'type' => 'text'
+                ],
+                [
                     'name'    => 'Text',
                     'id'      => 'text',
                     'type'    => 'wysiwyg',

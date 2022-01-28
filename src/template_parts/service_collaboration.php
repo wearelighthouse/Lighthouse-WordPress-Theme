@@ -14,12 +14,17 @@
                 <div class="c-service-content__icon-container">
                     <img class="c-service-content__icon" src="<?= $icon ?>" alt="<?= $iconAlt ?>"/>
                 </div>
-            <?php endif; ?>
-            <div class="c-service-content__subtitle">
-                <?php if (isset($service['text'])) : ?>
-                 <?= wpautop( $service['text'] ) ?>
                 <?php endif; ?>
-            </div>
+            <?php if (isset($service['text']) || isset($service['sub-title']) ) : ?>
+                <div>
+                    <h3 class="c-service-content__item__subtitle">
+                        <?= $service['sub-title'] ?>
+                    </h3>
+                    <p class="c-service-content__item__text">
+                        <?= $service['text'] ?>
+                    </p>
+                </div>
+            <?php endif; ?>
         </div>
     <?php endforeach; ?>
 <?php endif; ?>
