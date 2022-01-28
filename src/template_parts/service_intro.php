@@ -6,14 +6,15 @@
 ?>
 
 <section class="o-container-section o-container-section--h-bordered">
-  <div class="o-container-content c-service-intro">
-  <?php if ($serviceItroTitle) : ?>
-        <h2 class="c-service-intro__title c-service-template__title">
-           <?= $serviceItroTitle ?>
-        </h2>
-    <?php endif; ?>
+  <div class="o-container-content">
+    <div class="c-service-intro">
+      <?php if ($serviceItroTitle) : ?>
+          <h2 class="c-service-intro__title c-service-template__title">
+            <?= $serviceItroTitle ?>
+          </h2>
+      <?php endif; ?>
 
-    <div class="c-service-intro__content">
+      <div class="c-service-intro__content">
         <?php if ($introText) : ?>
             <?= $introText ?>
         <?php endif; ?>
@@ -40,12 +41,15 @@
           </div>
         <?php endif; ?>
 
-        <?php if ($button) : ?>
-          <button class="c-service-template__button">
-              <a href="/call-to-action"><?= $button ?></a>
-          </button>
-        <?php endif; ?>
-
+      </div>
     </div>
+
+    <?php if ($button) : ?>
+      <div class="c-service-template__button-container">
+        <button class="c-service-template__button">
+            <a href="/call-to-action"><?= $button ?></a>
+        </button>
+      </div>
+    <?php endif; ?>
   </div>
 </section>

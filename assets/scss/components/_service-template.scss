@@ -6,6 +6,12 @@
     @include lineScale(38, 42);
   }
 
+  &__button-container {
+    @extend %u-flex;
+    @extend %u-jc-center;
+    @extend %u-mt-12;
+  }
+
   &__button {
     @extend %u-sailec;
     @extend %u-color-white;
@@ -13,7 +19,6 @@
     @extend %u-pb-2;
     @extend %u-pl-4;
     @extend %u-pr-4;
-    @extend %u-mt-12;
     font-size: 18px;
     line-height: 1.2;
     background: $gradient-orange-new-pink;

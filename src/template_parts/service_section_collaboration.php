@@ -45,15 +45,15 @@
               <?php include(locate_template('src/template_parts/service_collaboration.php')) ?>
           <?php endif; ?>
 
-          <?php if ($button) : ?>
-            <div class="c-service-template__button-container">
-                <button class="c-service-template__button">
-                    <a href="/call-to-action"><?= $button ?></a>
-                </button>
-            </div>
-          <?php endif; ?>
         </div>
-
+        
       </div>
+      <?php if ($button) : ?>
+        <div class="c-service-template__button-container">
+            <button class="c-service-template__button">
+                <a href="/call-to-action"><?= $button ?></a>
+            </button>
+        </div>
+      <?php endif; ?>
     </div>
   </section>

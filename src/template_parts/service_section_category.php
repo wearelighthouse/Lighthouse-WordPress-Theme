@@ -7,7 +7,8 @@
 
 <?php if ($services && is_array($services)) : ?>
   <section class="o-container-section o-container-section--h-bordered">
-    <div class="o-container-content o-container-content--v-pad-margin o-container-services--<?= $layout ?>">
+    <div class="o-container-content o-container-content--v-pad-margin">
+      <div class="o-container-services--<?= $layout ?>">
       <?php foreach ($services as $service) : ?>
         <?php
           $icon = isset($service['icon']) ? $service['icon'] : false;
@@ -55,8 +56,10 @@
           </div>
         <?php endif; ?>
       <?php endforeach; ?>
+      </div>
+      
       <?php if ($button) : ?>
-        <div>
+        <div class="c-service-template__button-container">
             <button class="c-service-template__button">
                 <a href="/call-to-action"><?= $button ?></a>
             </button>
