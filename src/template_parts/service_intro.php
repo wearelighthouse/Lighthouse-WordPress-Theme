@@ -16,7 +16,7 @@
 
       <div class="c-service-intro__content">
         <?php if ($introText) : ?>
-            <?= $introText ?>
+            <?= wpautop($introText) ?>
         <?php endif; ?>
 
         <?php if ($clients && isset($clients[0])) : ?>
