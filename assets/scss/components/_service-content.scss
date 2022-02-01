@@ -4,7 +4,7 @@
    @extend %u-ov-hidden;
 }
 
-.c-service-content {
+.c-service-collaboration {
 
   @include breakpoint(upto-medium) {
     position: unset;
@@ -13,57 +13,77 @@
     padding-top: 5rem;
   }
 
-  &__item {
+  &__title {
+    @extend %u-color-blackcurrant;
+  }
 
-    &__faded-image {
-      width: 300px;
-      height: 300px;
-      background-image: var(--bg-src);
+  &__item {
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+
+    @include breakpoint(upto-tiny) {
+      padding-bottom: unset;
+    }
+
+    &__image-right, 
+    &__image-left {
+      @extend %u-pos-absolute;
+      @extend %u-round;
       background-repeat: no-repeat;
+      background-position: center;
       background-size: cover;
-      border-radius: 50%;
+    }
+
+    &__image-right {
+      @extend %u-display-none--upto-tiny;
+      width: 427.21px;
+      height: 427.21px;
+      background-image:
+      linear-gradient(-10deg, #FFFFFF 12%, rgba(255, 255, 255, 0.3) 100%),
+      var(--bg-src);
+      top: 12%;
+
+      @include breakpoint(from-medium) {
+        top: 5%;
+      }
 
       @include breakpoint(from-large) {
-        position: absolute;
-        top: 0%;
-        right: -9%;
         background-image:
-        linear-gradient(0deg, #FFFFFF 12.53%, rgba(255, 255, 255, 0) 77.75%),
+        linear-gradient(-10deg, #FFFFFF 12%, rgba(255, 255, 255, 0) 100%),
         var(--bg-src);
+        top: 0%;
+        right: -7%;
         background-size: contain;
-         width: 537.49px;
-         height: 537.49px;
+        width: 537.49px;
+        height: 537.49px;
+        background-position: unset;
       }
 
-       @include breakpoint(from-full) {
-        right: -5%;
+    }
+
+    &__image-left {
+      @extend %u-display-none--upto-tiny;
+      width: 523.22px;
+      height: 523.22px;
+      background-image: var(--bg-src);
+      left: -10%;
+      top: 5%;
+
+      @include breakpoint(from-large) {
+        left: -10%;
+        top: 5%;
       }
     }
 
-    &__text,
-    &__subtitle {
-      @extend %u-sailec;
-      @include lineScale(24, 28);
-      @extend %u-color-blackcurrant;
-      font-size: 18px;
-      margin: 0;
-    }
+    & + & {
+      margin-top: 5rem;
 
-    &__subtitle {
-      font-weight: 500;
+      @include breakpoint(upto-tiny) {
+       margin-top: unset;
+      }
     }
 
     &:nth-child(odd) {
-      padding-bottom: 8.3rem;
-
-      @include breakpoint(upto-medium) {
-        padding-bottom: unset;
-      }
-
-      h3 {
-        @extend %u-color-blackcurrant;
-        margin-top: 5rem;
-      }
 
       & > div:nth-child(1) {
 
@@ -74,48 +94,26 @@
         }
 
         &::before {
-          @extend %u-display-none;
+          @extend %u-round;
+          @extend %u-z-index-2;
+          width: 300px;
+          height: 300px;
+          background: linear-gradient(66.38deg, rgba(252, 118, 98, 0.3) 11.36%, rgba(252, 59, 126, 0.3) 71.16%);
+          top: 45%;
+          left: 17%;
 
           @include breakpoint(from-large) {
-            display: block;
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(
-              66.38deg,
-              rgba(252, 118, 98, 0.3) 11.36%,
-              rgba(252, 59, 126, 0.3) 50%
-            );
-            transform: translate(calc(-50% - 13rem), calc(-50% - 9rem));
-            top: 45%;
-            left: 100%;
-            border-radius: 50%;
-            z-index: 2;
-          }
-
-          @include breakpoint(from-full) {
-            transform: translate(calc(-50% - 12rem), calc(-50% - 9rem));
+            width: 342px;
+            height: 342px;
+            top: 48%;
+            left: 12%;
           }
         }
       }
 
       & > div:nth-child(2) {
-        width: 513px;
-
-        @include breakpoint(upto-medium) {
-          padding-left: unset;
-          width: unset;
-        }
-
-        @include breakpoint(from-medium--upto-large) {
-          padding-left: unset;
-        }
-
-        & div {
-          margin-top: 5.4rem;
-        }
-
-        &:nth-child(1) img {
-          top: -20%;
+        @include breakpoint(from-medium) {
+          margin-right: auto;
         }
       }
     }
@@ -123,91 +121,91 @@
     &:nth-child(even) {
       @extend %u-pos-relative;
 
-      &::before {
-        @extend %u-content;
-        @extend %u-pos-absolute;
-        background: linear-gradient(
-            298.92deg,
-            rgba(252, 137, 91, 0.3) 22.4%,
-            rgba(255, 38, 139, 0) 92.72%
-          );
-          left: 0%;
-          width: 613px;
-          height: 613px;
-          top: 0%;
-           transform: translate(calc(-50% - 10rem), calc(-50% + 17rem)) rotate(-135deg);
-           z-index: -1;
-
-        @include breakpoint(from-large) {
-          transform: translate(calc(-50% - 15rem), calc(-50% + 12rem)) rotate(-135deg);
-        }
-
-        @include breakpoint(from-full) {
-          transform: translate(calc(-50% - 27rem), calc(-50% + 12rem)) rotate(-135deg);
-        }
+      @include breakpoint(from-large) {
+        padding-bottom: unset;
       }
 
-      @include breakpoint(from-large) {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+      &::before {
+        @extend %u-display-none--upto-tiny;
+        @extend %u-content;
+        @extend %u-pos-absolute;
+        @extend %u-top;
+        background: linear-gradient(
+          298.92deg,
+          rgba(252, 137, 91, 0.3) 22.4%,
+          rgba(255, 38, 139, 0) 92.72%
+        );
+        left: 15%;
+        width: 613px;
+        height: 613px;
+        transform: translate(calc(-50% - 13rem), calc(-50% + 17rem)) rotate(-135deg);
+        z-index: -1;
+
+        @include breakpoint(from-medium) {
+        left: 5%;
+        }
+
+        @include breakpoint(from-large) {
+          left: 0%;
+        }
       }
 
       & > div:nth-child(1) {
+        &:before {
+          @extend %u-content;
+          @extend %u-pos-absolute;
+          pointer-events: none;
+        }
 
-        padding-top: 70px;
-
-        img {
-            width: 100%;
-            height: 100%;
-            max-width: 427.21px;
-
-           @include breakpoint(from-large) {
-            padding-top: unset;
-            position: absolute;
-            top: 0%;
-            left: 0%;
-            width: 427.21px;
-            height: 427.21px;
-            transform: translate(calc(-50% + 8rem), calc(-50% + 12rem));
-            padding-bottom: unset;
-          }
-
-          @include breakpoint(from-full) {
-            transform: translate(calc(-50% + 2rem), calc(-50% + 12rem));
-          }
+        &:before {
+          @extend %u-round;
+          @extend %u-display-none--from-large;
+          width: 429px;
+          height: 429px;
+          background: linear-gradient(-45deg, #FFFFFF 12%, rgba(255, 255, 255, 0.1) 100%);
+          transform: rotate(75deg);
+          top: 9%;
+          left: 9%;
         }
       }
 
       & > div:nth-child(2) {
-        width: 513px;
-
-        @include breakpoint(upto-large) {
-          padding-right: unset;
-          width: unset;
-          padding-top: 5.4rem;
-        }
+        margin-top: 3rem;
 
         @include breakpoint(from-large) {
-          padding-right: unset;
-        }
-
-        & div:nth-child(2) {
-          margin-top: 5.4rem;
-
-          & img:nth-child(2) {
-            top: -20%;
-          }
+         margin-left: auto;
+         margin-top: 5rem;
         }
       }
     }
 
-    &__container {
+    &__content-container {
+      width: 513px;
+
+      @include breakpoint(upto-medium) {
+        width: unset;
+      }
+    }
+
+    &__content + &__content {
+      margin-top: 5.4rem;
+    }
+
+    &__content {
       @extend %u-pos-relative;
       padding-left: 5.2rem;
 
-      &:nth-child(1) div img {
-        top: -10%;
+      &__subtitle, 
+      &__text {
+        @extend %u-sailec;
+        @include lineScale(24, 28);
+        @extend %u-color-blackcurrant;
+        font-size: 18px;
+        margin: 0;
+      }
+
+      &__subtitle {
+        font-weight: 500;
       }
 
       & > div {
@@ -217,6 +215,10 @@
           @extend %u-left;
           width: 57px;
         }
+      }
+
+      &:nth-child(1) div img {
+        top: -10%;
       }
     }
   }
