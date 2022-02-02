@@ -1,0 +1,37 @@
+.c-service-skills {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  & div:first-child {
+    height: 72px;
+    margin-bottom: 1.5rem;
+  }
+
+  & h3 {
+    @extend %u-color-orange-old;
+    margin-bottom: unset;
+    @extend %u-pos-relative;
+    @extend %u-pb-4;
+
+    &::before {
+      @extend %u-content;
+      @extend %u-pos-absolute;
+      @extend %u-bottom;
+      border-bottom: 2px solid $color-black;
+      width: 38px;
+    }
+  }
+
+  & div:nth-child(3) {
+    @extend %u-pt-4;
+  }
+
+  &__button {
+
+    @include breakpoint(from-medium) {
+      margin-top: unset;
+      margin-bottom: 6rem;
+    }
+
+  }
+}

@@ -5,6 +5,7 @@
   $globalBlocksServiceLayout = getPostMeta('service_archive_blocks_service_layout');
   $globalBlocksServiceGroup = getPostMeta('service_archive_blocks_service_group');
   $globalIntro = getPostMeta('service_archive_case_study_list_title');
+  $button = getPostMeta('service_archive_blocks_service_action');
 ?>
 
 <?php get_header(); ?>
@@ -15,7 +16,16 @@
     
   <?php if ($blockServices) : ?>
     <?php $globalBlocksServiceGroup = $blockServices; ?>
-      <?php include(locate_template('src/template_parts/service_section_category.php')) ?>
+      <?php $globalSkillsWithOrangeTitle = true; ?>
+      <?php include(locate_template('src/template_parts/block_section_services.php')) ?>
+
+        <?php if ($button) : ?>
+          <div class="c-service-skills__button c-service-template__button-container">
+              <button class="c-service-template__button">
+                  <a href="/call-to-action"><?= $button ?></a>
+              </button>
+          </div>  
+        <?php endif; ?>
   <?php endif; ?>
 
   <?php include(locate_template('src/template_parts/service_section_collaboration.php')) ?>
