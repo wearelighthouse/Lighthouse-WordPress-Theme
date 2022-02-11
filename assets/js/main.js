@@ -73,12 +73,32 @@ function swapEmailFromHelloToHi() {
   });
 }
 
+function addClassname() {
+  const getPage = document.querySelector('.page-template-default');
+  const main = getPage.querySelector('main');
+  const section = main.querySelectorAll('section');
+  const container = section[2].querySelector('div.o-container-services');
+  const contents = container.querySelectorAll('div');
+
+  if (getPage) {
+    container.classList.add('c-current-roles');
+    contents[0].classList.add('c-current-roles__bg-pink');
+    contents[1].classList.add('c-current-roles__bg-black');
+
+  } else {
+    container.classList.remove('c-current-roles');
+    contents[0].classList.remove('c-current-roles__bg-pink');
+    contents[1].classList.remove('c-current-roles__bg-pink'); 
+  } 
+}
+
 function completeInit() {
   // Do lazy loading images
   setupObservers(window.lozad);
   // Add document.referrer into cache
   addReferral(document.referrer);
   swapEmailFromHelloToHi();
+  addClassname();
 }
 
 window.addEventListener('beforeunload', function (e) {

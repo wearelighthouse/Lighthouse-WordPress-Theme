@@ -1,0 +1,49 @@
+.c-current-roles {
+    @extend .s-content;
+
+    & div {
+        color: white;
+        border-radius: 8px;
+        padding-top: 1.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 3rem;
+
+        & h3 {
+            margin-bottom: 0;
+        }
+
+        & p {
+            margin: 0;
+        }
+        
+        & p > a {
+            color: white;
+            @extend .c-button--underlined-dark;
+            background-image: unset;
+            background-repeat: unset;
+            background-size: unset;
+            transition: unset;
+    
+            &:hover {
+                background-size: unset;
+            }
+        } 
+    } 
+
+    &__bg-pink {
+        background: linear-gradient(135deg, #FC895B 0%, #FF268B 100%);
+
+        & h3 > img.emoji {
+            display: none !important;
+        }
+    }
+
+    &__bg-black {
+        background: #151931;
+
+        h3 > a img.emoji {
+            display: none !important;
+        }
+    }
+}
