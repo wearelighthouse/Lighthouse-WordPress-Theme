@@ -3,6 +3,9 @@
     $collaborationServices = getPostMeta('service_archive_block_service_collaboration_group');
     $collaborationBlocksServiceGroup = getPostMeta('service_archive_block_service_collaboration_group');
     $button = getPostMeta('service_archive_blocks_service_action');
+
+    $maskImageRight = getPostMeta('service_archive_block_service_collaboration_mask_image_right');
+    $maskImageLeft = getPostMeta('service_archive_block_service_collaboration_mask_image_left')
 ?>
 
 <section class="o-container-section o-service-collaboration">
@@ -15,12 +18,14 @@
 
       <div class="c-service-collaboration__content"> 
         <div class="c-service-collaboration__item">
+          <?php if ($maskImageRight) : ?>
             <div
               class="c-service-collaboration__item__image-right"
-              style="--bg-src: url('<?= get_template_directory_uri(); ?>/assets/img/mask-group.png')"
+              style="--bg-src: url('<?= $maskImageRight ?>')"
             >
               <div class="o-dictate">Collaboration</div>
             </div>
+          <?php endif; ?>
 
           <div class="c-service-collaboration__item__content-container">
               <?php if ($collaborationServices) : ?>
@@ -31,12 +36,14 @@
         </div>
 
         <div class="c-service-collaboration__item">
+          <?php if ($maskImageLeft) : ?>
             <div
               class="c-service-collaboration__item__image-left"
-              style="--bg-src: url('<?= get_template_directory_uri(); ?>/assets/img/mask-group-2.png')"
+              style="--bg-src: url('<?= $maskImageLeft; ?>')"
             >
               <div class="o-dictate">Collaboration</div>
             </div>
+          <?php endif; ?>
 
           <div class="c-service-collaboration__item__content-container">
             <?php if ($collaborationServices) : ?>
