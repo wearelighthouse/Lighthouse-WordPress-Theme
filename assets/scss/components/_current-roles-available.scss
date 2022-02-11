@@ -1,8 +1,7 @@
 .c-current-roles {
-    @extend .s-content;
 
     & div {
-        color: white;
+        @extend %u-color-white;
         border-radius: 8px;
         padding-top: 1.5rem;
         padding-left: 2rem;
@@ -18,7 +17,7 @@
         }
         
         & p > a {
-            color: white;
+            @extend %u-color-white;
             @extend .c-button--underlined-dark;
             background-image: unset;
             background-repeat: unset;
@@ -29,10 +28,45 @@
                 background-size: unset;
             }
         } 
-    } 
+    }
+    
+    &__bg-pink,
+    &__bg-black {
+        @extend %u-pos-relative;
+        @extend %u-ov-hidden;
+
+        &:before,
+        &::after {
+            @extend %u-content;
+            @extend %u-pos-absolute;
+            pointer-events: none;
+            left: 0%;
+            top: 0%;
+            background: rgba($color-white, 0.09);
+        }
+
+        &::before {
+            width: calc(25rem + 25vw);
+            height: calc(25rem + 25vw);
+        }
+
+        &::after {
+            border-radius: 50%;
+            width: calc(20rem + 20vw);
+            height: calc(15rem + 20vw);
+        }
+    }
 
     &__bg-pink {
         background: linear-gradient(135deg, #FC895B 0%, #FF268B 100%);
+
+        &::before {
+            transform: translate(0%, calc(12% + 5rem)) rotate(-45deg);
+        }
+
+        &::after {
+            transform: translate(calc(-30vw + 50px), calc(15vw + -50%)) rotate(10deg);
+        }
 
         & h3 > img.emoji {
             display: none !important;
@@ -40,7 +74,15 @@
     }
 
     &__bg-black {
-        background: #151931;
+        @extend %u-bg-color-blackcurrant;
+
+        &::before {
+            transform: translate(calc(-50% - 10rem), calc(-25% + -6rem)) rotate(-45deg);
+        }
+
+        &::after {
+            transform: translate(calc(10vw + 50px), calc(26vw + -50%)) rotate(10deg);
+        }
 
         h3 > a img.emoji {
             display: none !important;
