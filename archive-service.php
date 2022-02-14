@@ -42,7 +42,7 @@
   <?php endif; ?>
 
   <?php if ($caseStudyIds && count($caseStudyIds) > 0) : ?>
-    <?php $globalCaseStudyIds = array_slice($caseStudyIds, 1); ?>
+    <?php $globalCaseStudyIds = $caseStudyIds; ?>
     <?php $globalcasestudysmallbigger = true; ?>
     <?php include(locate_template('src/template_parts/block_section_case_study_small.php')) ?>
     <?php $globalcasestudysmallbigger = false; ?>

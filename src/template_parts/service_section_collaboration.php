@@ -10,55 +10,53 @@
 
 <section class="o-container-section o-service-collaboration">
     <div class="o-container-content c-service-collaboration">
-      <?php if ($collaborationTitle) : ?>
-        <h3 class="c-service-collaboration__title c-service-template__title">
-            <?= $collaborationTitle ?>
-        </h3>
-      <?php endif; ?>
+      <?php if ($collaborationServices) : ?>
+        <?php if ($collaborationTitle) : ?>
+          <h3 class="c-service-collaboration__title c-service-template__title">
+              <?= $collaborationTitle ?>
+          </h3>
+        <?php endif; ?> 
 
-      <div class="c-service-collaboration__content"> 
-        <div class="c-service-collaboration__item">
-          <?php if ($maskImageRight) : ?>
-            <div
-              class="c-service-collaboration__item__image-right"
-              style="--bg-src: url('<?= $maskImageRight ?>')"
-            >
-              <div class="o-dictate">Collaboration</div>
-            </div>
-          <?php endif; ?>
+        <div class="c-service-collaboration__content"> 
+          <div class="c-service-collaboration__item">
+            <?php if ($maskImageRight) : ?>
+              <div
+                class="c-service-collaboration__item__image-right"
+                style="--bg-src: url('<?= $maskImageRight ?>')"
+              >
+                <div class="o-dictate">Collaboration</div>
+              </div>
+            <?php endif; ?>
 
-          <div class="c-service-collaboration__item__content-container">
-              <?php if ($collaborationServices) : ?>
+              <div class="c-service-collaboration__item__content-container">
                 <?php $collaborationBlocksServiceGroup = array_slice($collaborationServices, 0, 2); ?>
                 <?php include(locate_template('src/template_parts/service_collaboration.php')) ?>
-              <?php endif; ?>
+              </div>
           </div>
-        </div>
 
-        <div class="c-service-collaboration__item">
-          <?php if ($maskImageLeft) : ?>
-            <div
-              class="c-service-collaboration__item__image-left"
-              style="--bg-src: url('<?= $maskImageLeft; ?>')"
-            >
-              <div class="o-dictate">Collaboration</div>
-            </div>
-          <?php endif; ?>
-
-          <div class="c-service-collaboration__item__content-container">
-            <?php if ($collaborationServices) : ?>
-              <?php $collaborationBlocksServiceGroup = array_slice($collaborationServices, 2, 3); ?>
-              <?php include(locate_template('src/template_parts/service_collaboration.php')) ?>
+          <div class="c-service-collaboration__item">
+            <?php if ($maskImageLeft) : ?>
+              <div
+                class="c-service-collaboration__item__image-left"
+                style="--bg-src: url('<?= $maskImageLeft; ?>')"
+              >
+                <div class="o-dictate">Collaboration</div>
+              </div>
             <?php endif; ?>
+
+                <div class="c-service-collaboration__item__content-container">
+                  <?php $collaborationBlocksServiceGroup = array_slice($collaborationServices, 2, 3); ?>
+                  <?php include(locate_template('src/template_parts/service_collaboration.php')) ?>
+                </div>
+              </div>
           </div>
         </div>
-      </div>
-      
-      <?php if ($button) : ?>
         <div class="c-service-template__button-container">
-            <button class="c-service-template__button">
-                <a href="/call-to-action"><?= $button ?></a>
-            </button>
+          <?php if ($button) : ?>
+          <button class="c-service-template__button">
+            <a href="/call-to-action"><?= $button ?></a>
+          </button>
+          <?php endif; ?>
         </div>
       <?php endif; ?>
     </div>
