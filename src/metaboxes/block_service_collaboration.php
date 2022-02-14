@@ -51,5 +51,10 @@ return [
             ]
             
         ],
+        [
+            'name' => 'Action',
+            'id'   => 'action',
+            'type' => 'text'
+        ],
     ]
 ];

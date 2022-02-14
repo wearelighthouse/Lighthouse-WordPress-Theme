@@ -18,7 +18,7 @@
   }
 
   &__item {
-    padding-bottom: 5rem;
+    // padding-bottom: 5rem;
     padding-top: 5rem;
 
     @include breakpoint(upto-tiny) {
@@ -110,26 +110,40 @@
 
       }
 
+      &::after {
+        @extend %u-content;
+        @extend %u-pos-absolute;
+        pointer-events: none;
+      }
+
+      &::after {
+        @extend %u-round;
+        @extend %u-display-none--from-large;
+        width: 429px;
+        height: 429px;
+        background: linear-gradient(-45deg, #FFFFFF 12%, rgba(255, 255, 255, 0.1) 100%);
+        transform: rotate(75deg);
+        top: 9%;
+        left: 9%;
+      }
+
       @include breakpoint(from-large) {
         left: -10%;
         top: 5%;
       }
     }
 
-    & + & {
-      margin-top: 5rem;
-
-      @include breakpoint(upto-tiny) {
-       margin-top: unset;
-      }
-    }
-
     &:nth-child(odd) {
 
       & .c-service-collaboration__item__content-container {
+        &:nth-child(2) {
+          padding-bottom: 5rem;
+        }
+
         @include breakpoint(from-medium) {
           margin-right: auto;
         }
+       
       }
     }
 
@@ -138,25 +152,6 @@
 
       @include breakpoint(from-large) {
         padding-bottom: unset;
-      }
-
-      & > div:nth-child(1) {
-        &::after {
-          @extend %u-content;
-          @extend %u-pos-absolute;
-          pointer-events: none;
-        }
-
-        &::after {
-          @extend %u-round;
-          @extend %u-display-none--from-large;
-          width: 429px;
-          height: 429px;
-          background: linear-gradient(-45deg, #FFFFFF 12%, rgba(255, 255, 255, 0.1) 100%);
-          transform: rotate(75deg);
-          top: 9%;
-          left: 9%;
-        }
       }
 
       & .c-service-collaboration__item__content-container {
