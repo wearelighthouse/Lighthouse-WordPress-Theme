@@ -1,6 +1,6 @@
 .c-service-intro {
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    // padding-bottom: 5rem;
 
     @include breakpoint(from-medium) {
         display: grid;
@@ -90,5 +90,13 @@
                 }
             }
         }
+    }
+}
+
+.c-service-intro ~ .c-service-template__button-container {
+    margin-bottom: 4rem;
+
+    @include breakpoint(from-small) {
+        margin-bottom: unset;
     }
 }

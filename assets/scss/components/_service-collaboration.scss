@@ -18,8 +18,15 @@
   }
 
   &__item {
-    // padding-bottom: 5rem;
-    padding-top: 5rem;
+    @include breakpoint(from-tiny) {
+      padding-bottom: 2rem;
+      padding-top: 2rem;
+    }
+
+    @include breakpoint(from-small) {
+      padding-bottom: 5rem;
+      padding-top: 5rem;
+    }
 
     @include breakpoint(upto-tiny) {
       padding-bottom: unset;
@@ -36,12 +43,18 @@
 
     &__image-right {
       @extend %u-display-none--upto-tiny;
-      width: 427.21px;
-      height: 427.21px;
+
+      width: 337px;
+      height: 337px;
       background-image:
-      linear-gradient(-10deg, #FFFFFF 12%, rgba(255, 255, 255, 0.3) 100%),
-      var(--bg-src);
-      top: 12%;
+        linear-gradient(-10deg, #FFFFFF 12%, rgba(255, 255, 255, 0.3) 100%),
+        var(--bg-src);
+
+      @include breakpoint(from-small) {
+        width: 437px;
+        height: 437px;
+        top: 12%;
+      }
 
       @include breakpoint(from-medium) {
         top: 5%;
@@ -54,8 +67,8 @@
         top: 0%;
         right: -7%;
         background-size: contain;
-        width: 537.49px;
-        height: 537.49px;
+        width: 537px;
+        height: 537px;
         background-position: unset;
       }
 
@@ -68,11 +81,16 @@
       &::before {
         @extend %u-round;
         @extend %u-z-index-2;
-        width: 300px;
-        height: 300px;
+        width: 232px;
+        height: 232px;
         background: linear-gradient(66.38deg, rgba(252, 118, 98, 0.3) 11.36%, rgba(252, 59, 126, 0.3) 71.16%);
-        top: 45%;
+        top: 50%;
         left: 17%;
+
+        @include breakpoint(from-small) {
+          width: 272px;
+          height: 272px;
+        }
 
         @include breakpoint(from-large) {
           width: 342px;
@@ -86,46 +104,63 @@
 
     &__image-left {
       @extend %u-display-none--upto-tiny;
-      width: 523.22px;
-      height: 523.22px;
+      @extend %u-top;
+      width: 398px;
+      height: 398px;
       background-image: var(--bg-src);
       left: -10%;
-      top: 5%;
 
-      &::before {
-        @extend %u-display-none--upto-tiny;
-        @extend %u-content;
-        @extend %u-pos-absolute;
-        @extend %u-top;
-        background: linear-gradient(
-          298.92deg,
-          rgba(252, 137, 91, 0.3) 22.4%,
-          rgba(255, 38, 139, 0) 89%
-        );
-        left: 0%;
-        width: 613px;
-        height: 613px;
-        transform: translate(calc(-50% - 5rem), calc(-50% + 17rem)) rotate(-135deg);
-        z-index: -1;
-
+      @include breakpoint(from-small) {
+        width: 523.22px;
+        height: 523.22px;
+        top: 5%;
       }
 
+      &::before,
       &::after {
         @extend %u-content;
         @extend %u-pos-absolute;
         pointer-events: none;
       }
 
+      &::before {
+        @extend %u-display-none--upto-tiny;
+        @extend %u-top;
+        @extend %u-left;
+        background: linear-gradient(
+          298.92deg,
+          rgba(252, 137, 91, 0.3) 22.4%,
+          rgba(255, 38, 139, 0) 89%
+        );
+        width: 483px;
+        height: 483px;
+        transform: translate(calc(-50% - 5rem), calc(-50% + 13rem)) rotate(-135deg);
+        z-index: -1;
+
+        @include breakpoint(from-small) {
+          width: 613px;
+          height: 613px;
+          transform: translate(calc(-50% - 5rem), calc(-50% + 17rem)) rotate(-135deg);
+        }
+
+      }
+
       &::after {
         @extend %u-round;
         @extend %u-display-none--from-large;
-        width: 429px;
-        height: 429px;
+        width: 326px;
+        height: 326px;
         background: linear-gradient(-45deg, #FFFFFF 12%, rgba(255, 255, 255, 0.1) 100%);
         transform: rotate(75deg);
         top: 9%;
         left: 9%;
+
+        @include breakpoint(from-small) {
+          width: 429px;
+          height: 429px;
+        }
       }
+
 
       @include breakpoint(from-large) {
         left: -10%;
@@ -134,6 +169,7 @@
     }
 
     &:nth-child(odd) {
+      padding-top: 5rem;
 
       & .c-service-collaboration__item__content-container {
         &:nth-child(2) {
@@ -150,12 +186,19 @@
     &:nth-child(even) {
       @extend %u-pos-relative;
 
+      @include breakpoint(upto-tiny) {
+        padding-bottom: unset;
+      }
+
       @include breakpoint(from-large) {
         padding-bottom: unset;
       }
 
       & .c-service-collaboration__item__content-container {
-        margin-top: 3rem;
+
+        @include breakpoint(from-small) {
+          margin-top: 3rem;
+        }
 
         @include breakpoint(from-large) {
           margin-left: auto
