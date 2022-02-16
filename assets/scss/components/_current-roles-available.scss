@@ -20,6 +20,10 @@
             color: rgba($color-white, 0.9);
         }
         
+        & p :not(:first-child) {
+            margin-top: 5rem;
+        }
+
         & p > a {
             @extend %u-color-white;
             @extend .c-button--underlined-dark;
@@ -71,10 +75,6 @@
         &::after {
             transform: translate(calc(-30vw + 50px), calc(15vw + -50%)) rotate(10deg);
         }
-
-        & h3 > img.emoji {
-            display: none !important;
-        }
     }
 
     &__bg-black {
@@ -86,10 +86,6 @@
 
         &::after {
             transform: translate(calc(10vw + 50px), calc(26vw + -50%)) rotate(10deg);
-        }
-
-        h3 > a img.emoji {
-            display: none !important;
         }
     }
 }
