@@ -13,6 +13,12 @@
 <main>
 
   <?php include(locate_template('src/template_parts/hero.php')) ?>
+
+  <section class="o-container-section o-container-section--h-bordered">
+    <div class="o-container-content o-container-content--v-pad-margin c-service-content">
+        <?= the_content(); ?>
+    </din>
+  </section>
     
   <?php if ($blockServices) : ?>
     <?php $globalBlocksServiceGroup = $blockServices; ?>

@@ -25,3 +25,26 @@
     border-radius: 30px;
   }
 }
+
+.c-service-content {
+  & p {
+    @extend %u-sailec;
+    @extend %u-color-blackcurrant;
+    @include fontScale(24, 26);
+    @include lineScale(36, 40);
+    margin: 0;
+
+    & > a {
+      color: #ff268b;
+      outline-offset: 0.2em;
+      background-image: linear-gradient(transparent calc(100% - 0.07em),currentColor calc(100% - 0.07em));
+      background-repeat: no-repeat;
+      background-size: 0 100%;
+      transition: background-size .2s;
+      
+      &:hover {
+        background-size: calc(100% - 1px) 100%;
+      }
+    }
+  }
+}
