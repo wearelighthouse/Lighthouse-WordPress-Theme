@@ -2,7 +2,7 @@
 
     & div {
         @extend %u-color-white;
-        border-radius: 8px;
+        border-radius: 0.5rem;
         padding-top: 1.5rem;
         padding-left: 2rem;
         padding-right: 2rem;
@@ -27,14 +27,7 @@
         & p > a {
             @extend %u-color-white;
             @extend .c-button--underlined-dark;
-            background-image: unset;
-            background-repeat: unset;
-            background-size: unset;
-            transition: unset;
-    
-            &:hover {
-                background-size: unset;
-            }
+            background-image: none;
         } 
     }
     
@@ -47,9 +40,9 @@
         &::after {
             @extend %u-content;
             @extend %u-pos-absolute;
+            @extend %u-top;
+            @extend %u-left;
             pointer-events: none;
-            left: 0%;
-            top: 0%;
             background: rgba($color-white, 0.09);
         }
 
