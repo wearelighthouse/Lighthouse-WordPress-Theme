@@ -49,6 +49,10 @@
       grid-column: 2;
     }
 
+    & > .c-blockquote {
+      grid-column: 1 / 3;
+    }
+
     & > h2,
     & > h3,
     & > h4,

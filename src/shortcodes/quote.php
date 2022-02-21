@@ -48,7 +48,7 @@ function quoteShortcode($wp_atts, $content = null)
 
 			$clutchScore = '';
 		} else {
-			$class = 'c-blockquote c-blockquote--client';
+			$class = 'c-blockquote c-blockquote--client ';
 			$image = '';
 			$personName = '<div class="c-blockquote__name">' . $atts['name'] . '</div>';
 
