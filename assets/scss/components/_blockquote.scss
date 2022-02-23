@@ -11,6 +11,10 @@
     @extend %u-color-orange;
   }
 
+  &--lighthouse p > a {
+    color: $color-black;
+  }
+
   &--client p {
     @extend %u-color-gray-dark;
   }
