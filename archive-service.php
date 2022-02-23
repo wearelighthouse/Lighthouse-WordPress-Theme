@@ -6,6 +6,7 @@
   $globalBlocksServiceGroup = getPostMeta('service_archive_blocks_service_group');
   $globalIntro = getPostMeta('service_archive_case_study_list_title');
   $button = getPostMeta('service_archive_blocks_service_action');
+  $content = get_the_content()
 ?>
 
 <?php get_header(); ?>
@@ -14,12 +15,14 @@
 
   <?php include(locate_template('src/template_parts/hero.php')) ?>
 
+<?php if ($content) : ?>
   <section class="o-container-section o-container-section--h-bordered">
     <div class="o-container-content o-container-content--v-pad-margin c-service-content">
         <?= the_content(); ?>
     </din>
   </section>
-    
+<?php endif; ?>
+  
   <?php if ($blockServices) : ?>
     <?php $globalBlocksServiceGroup = $blockServices; ?>
       <?php $globalSkillsWithOrangeTitle = true; ?>
