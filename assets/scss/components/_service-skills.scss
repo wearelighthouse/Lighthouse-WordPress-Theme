@@ -2,13 +2,15 @@
   margin-top: 0;
   margin-bottom: 0;
 
-  & > div:first-child {
+  & div:first-child {
+    @extend %u-flex;
+    @extend %u-ai-center;
+    height: 72px;
+    margin-bottom: 1.5rem;
+
     @include breakpoint(upto-medium) {
       margin-top: 2rem;
     }
-    
-    height: 72px;
-    margin-bottom: 1.5rem;
   }
 
   & h3 {
