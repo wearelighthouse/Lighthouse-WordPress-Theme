@@ -30,6 +30,12 @@
   if (is_singular('post')) {
     $modifierClass .= ' c-hero--post';
   }
+    
+  $textWithImage = (isset($heroImage) || $imageId);
+
+  if (is_singular('team')) {
+    $textWithTeamImage = $textWithImage ? 'c-hero__text--with-team-image' : '';
+  }
 
   $bgcolor1 = getPostMeta('hero_hero_bg_color_1');
   $bgcolor2 = getPostMeta('hero_hero_bg_color_2');
@@ -69,7 +75,7 @@
     </div>
     <div class="o-container-content o-container-content--v-pad c-hero__content">
       <?php if ($text) : ?>
-        <div class="c-hero__text <?= $scope ?><?= (isset($heroImage) || $imageId) ? ' c-hero__text--with-image' : '' ?>">
+        <div class="c-hero__text <?= $scope ?><?= $textWithImage ? ' c-hero__text--with-image' : '' ?> <?= $textWithTeamImage ?>">
           <?= $text ?>
 
           <?php if (is_front_page() || is_singular([ 'sector', 'service' ]) || is_page([ 'services' ])) : ?>
