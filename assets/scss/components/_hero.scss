@@ -37,11 +37,12 @@
   // Some magic numbers for sizing & text-container-sizing
   // for hero banners with images on desktop
   @include breakpoint(from-medium) {
-    &--post #{$self}__text {
+    &--post #{$self}__text,
+    &__text--with-image {
       max-width: 66%;
     }
 
-    &__text--with-image {
+    &__text--with-team-image {
       max-width: 55%;
     }
   }
