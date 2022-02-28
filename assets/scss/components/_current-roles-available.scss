@@ -25,7 +25,7 @@
 
         & p > a {
             @extend %u-color-white;
-            @extend .c-button--underlined-dark;
+            @extend .c-button--underlined-light;
             background-image: none;
         } 
     }
