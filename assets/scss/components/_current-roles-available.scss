@@ -2,11 +2,10 @@
 
     & div {
         @extend %u-color-white;
-        border-radius: 0.5rem;
-        padding-top: 1.5rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-bottom: 3rem;
+        @extend %u-ph-4;
+        @extend %u-pt-3;
+        @extend %u-pb-6;
+        @extend %u-border-radius-md;
 
         & h3 {
             margin-bottom: 0;
@@ -52,14 +51,14 @@
         }
 
         &::after {
-            border-radius: 50%;
+            @extend %u-round;
             width: calc(20rem + 20vw);
             height: calc(15rem + 20vw);
         }
     }
 
     &__bg-pink {
-        background: linear-gradient(135deg, #FC895B 0%, #FF268B 100%);
+        background: $gradient-orange-pink;
 
         &::before {
             transform: translate(0%, calc(12% + 5rem)) rotate(-45deg);
