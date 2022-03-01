@@ -1,5 +1,6 @@
 <?php
   $caseStudySize = 'large';
+  $caseStudyIndex = 1;
 ?>
 
 <?php if (isset($globalCaseStudyIds) && !empty($globalCaseStudyIds)) : ?>
@@ -9,8 +10,9 @@
       <?php foreach ($globalCaseStudyIds as $caseStudyId) : ?>
         <?php include(locate_template('src/template_parts/block_case_study.php')) ?>
         <?php if (is_page_template(('template-all-case-studies.php'))) : ?>
-        <?php include(locate_template('src/template_parts/block_case_study.php')) ?>
+          <?php include(locate_template('src/template_parts/block_case_study.php')) ?>
         <?php endif; ?>
+        <?php $caseStudyIndex++; ?>
       <?php endforeach; ?>
 
       <?php if (is_front_page()) : ?>
