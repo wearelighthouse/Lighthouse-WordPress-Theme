@@ -57,7 +57,7 @@
         <div class="c-service-template__button-container">
           <?php if ($button) : ?>
           <button class="c-service-template__button">
-            <a href="/call-to-action"><?= $button ?></a>
+            <a href="https://wearelighthouse.com/contact/"><?= $button ?></a>
           </button>
           <?php endif; ?>
         </div>
