@@ -113,34 +113,4 @@
     }
   }
 
-  &--bg-full-width {
-    #{$self}__image-medium {
-      width: 129px;
-      height: 139px;
-    }
-
-    @include breakpoint(from-small) {
-      #{$self}__background {
-  
-        &:before {
-          width: 465px;
-          margin-right: unset;
-        }
-      }
-    }
-
-    #{$self}__title {
-      &__link {
-        font-size: 23px;
-      }
-    }
-
-    #{$self}__content {
-      @include breakpoint(from-small) {
-        left: calc(100px + 15%);
-      }
-    }
-
-  }
-
 }

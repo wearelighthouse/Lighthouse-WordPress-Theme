@@ -52,9 +52,7 @@
 
   <?php if ($caseStudyIds && count($caseStudyIds) > 1) : ?>
     <?php $globalCaseStudyIds = array_slice($caseStudyIds, 1) ?>
-    <?php $globalcasestudysmallbigger = true; ?>
     <?php include(locate_template('src/template_parts/block_section_case_study_small.php')) ?>
-    <?php $globalcasestudysmallbigger = false; ?>
   <?php endif; ?>
 
   <section class="o-container-section o-container-section--h-bordered">
