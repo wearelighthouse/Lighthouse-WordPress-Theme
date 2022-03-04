@@ -37,10 +37,19 @@
       @extend %u-sailec;
       @extend %u-color-black;
       font-size: 13px;
-
+     
       > *:last-child {
         margin-bottom: 0;
       }
+
+      > *:not(:first-child) {
+        @extend %u-mt-1;
+      }
+
+      > *:not(:last-child) {
+        @extend %u-mb-1;
+      }
+      
     }
 
     &:hover,
