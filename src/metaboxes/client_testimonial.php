@@ -4,8 +4,8 @@ return [
     'title' => 'Client testimonial',
     'fields' => [
         [
-            'name' => 'Intro paragraph',
-            'id'   => 'text',
+            'name' => 'Quote',
+            'id'   => 'quote',
             'type' => 'wysiwyg',
             'options' => [
               'textarea_rows' => 9
@@ -17,13 +17,8 @@ return [
             'type' => 'text',
         ],
         [
-            'name' => 'Role',
-            'id'   => 'role',
-            'type' => 'text',
-        ],
-        [
-            'name' => 'Company',
-            'id'   => 'company',
+            'name' => 'Title',
+            'id'   => 'title',
             'type' => 'text',
         ],
     ]

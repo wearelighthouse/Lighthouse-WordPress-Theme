@@ -1,37 +1,36 @@
 <?php
-    $clientTestimonialDesc = getPostMeta('service_archive_client_testimonial_text');
+    $clientTestimonialDesc = getPostMeta('service_archive_client_testimonial_quote');
     $clientTestimonialName = getPostMeta('service_archive_client_testimonial_name');
-    $clientTestimonialRole = getPostMeta('service_archive_client_testimonial_role');
-    $clientTestimonialCompany = getPostMeta('service_archive_client_testimonial_company');
+    $clientTestimonialTitle = getPostMeta('service_archive_client_testimonial_title');
 ?>
 
 <?php if (isset($clientTestimonialDesc) && !empty($clientTestimonialDesc)) : ?>
     <section class="o-container-client-testimonial c-fancy-bg">
         <div class="o-container-content">
-            <blockquote class="c-service-client-testimonial">
+            <blockquote class="c-blockquote c-blockquote--client">
                 <?php if ($clientTestimonialDesc) : ?>
-                    <p class="c-service-client-testimonial__quote">
+                    <p>
                         <?= $clientTestimonialDesc ?>
                     </p>
                 <?php endif; ?>
                 
-                <?php if ($clientTestimonialName || $clientTestimonialRole || $clientTestimonialCompany) : ?>
-                    <footer class="c-service-client-testimonial__footer">
-                        <?php if ($clientTestimonialName) : ?>
-                            <div class="c-service-client-testimonial__footer__name">
-                                <?= $clientTestimonialName ?>
+                <?php if ($clientTestimonialName || $clientTestimonialTitle) : ?>
+                    <footer>
+                        <div class="c-blockquote__person">
+                            <div class="c-blockquote__text">
+                                <?php if ($clientTestimonialName) : ?>
+                                    <div class=" c-blockquote__name">
+                                        <?= $clientTestimonialName ?>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($clientTestimonialTitle) : ?>
+                                    <div class="c-blockquote__title">
+                                        <?= $clientTestimonialTitle ?>
+                                    </div>
+                                <?php endif; ?>
+                                
                             </div>
-                        <?php endif; ?>
-                        <?php if ($clientTestimonialRole) : ?>
-                            <div class="c-service-client-testimonial__footer__role">
-                                <?= $clientTestimonialRole ?>
-                            </div>
-                        <?php endif; ?>
-                        <?php if ($clientTestimonialCompany) : ?>
-                            <div class="c-service-client-testimonial__footer__company">
-                                <?= $clientTestimonialCompany ?>
-                            </div>
-                        <?php endif; ?>
+                        </div>
                     </footer>
                 <?php endif; ?>
             </blockquote>
