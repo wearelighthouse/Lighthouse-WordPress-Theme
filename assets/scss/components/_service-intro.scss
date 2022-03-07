@@ -19,16 +19,13 @@
 
     &__content {
 
-        &-p {
-            @extend %u-sailec;
+        & p {
+            @extend .type-p;
             @extend %u-color-black;
-            @include fontScale(18, 20);
-            @include lineScale(24, 28);
             margin: 0;
 
             &:nth-child(even) {
-                padding-bottom: 2.6rem;
-                padding-top: 2rem;
+                @extend %u-pv-4;
             }
         }
 

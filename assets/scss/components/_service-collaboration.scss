@@ -224,10 +224,8 @@
 
       &__subtitle, 
       &__text {
-        @extend %u-sailec;
-        @include lineScale(24, 28);
+        @extend .type-p;
         @extend %u-color-blackcurrant;
-        font-size: 18px;
         margin: 0;
       }
 
