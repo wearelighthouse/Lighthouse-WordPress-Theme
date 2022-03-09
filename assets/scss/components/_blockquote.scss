@@ -1,4 +1,3 @@
-
 .c-blockquote {
   @extend %u-gray-borders;
   @extend %u-pv-5;
@@ -11,10 +10,6 @@
     @extend %u-color-orange;
   }
 
-  &--lighthouse p a {
-    color: $color-gray-dark;
-  }
-
   &--client p {
     @extend %u-color-gray-dark;
   }
@@ -23,6 +18,19 @@
     @extend .type-quote;
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  p a {
+    color: unset;
+    // 100% - 1px means it doesn't 100% go to the end of the link (horizontally)
+    background-size: calc(100% - 1px) 100%;
+    // Right-align the background (1px from the end)
+    background-position-x: calc(100% - 1px);
+
+    &:hover,
+    &:focus {
+      background-size: 1rem 100%;
+    }
   }
 
   &__image {
