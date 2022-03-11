@@ -26,7 +26,8 @@ function quoteShortcode($wp_atts, $content = null)
 		'name' => '',
 		'title' => '',
 		'company' => '',
-		'company_url' => ''
+		'company_url' => '',
+		'width' => ''
 	], $wp_atts);
 
 	if ($atts['name']) {
@@ -74,7 +75,11 @@ function quoteShortcode($wp_atts, $content = null)
 		$footer = '';
 	}
 
-	$quote = '<blockquote class="' . $class . '">' . wpautop($content) . $footer . '</blockquote>';
+	if ($atts['width']) {
+		$fullWidth = 'c-blockquote--full-width';
+	}
+
+	$quote = '<blockquote class="' . $class . ' ' . $fullWidth . '">' . wpautop($content) . $footer . '</blockquote>';
 
 	wp_reset_query();
 	return $quote;
