@@ -16,8 +16,11 @@
     transition: background-color .2s;
 
     @include breakpoint(upto-small) {
-      padding-left: 0;
-      padding-right: 0;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      border-radius: unset;
     }
 
     &__image-container {
@@ -38,15 +41,15 @@
       @extend %u-color-black;
       font-size: 13px;
      
-      > *:last-child {
+      > p:last-child {
         margin-bottom: 0;
       }
 
-      > *:not(:first-child) {
+      > p:not(:first-child) {
         @extend %u-mt-1;
       }
 
-      > *:not(:last-child) {
+      > p:not(:last-child) {
         @extend %u-mb-1;
       }
       
