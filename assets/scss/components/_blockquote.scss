@@ -18,6 +18,10 @@
   &--full-width {
     @extend %u-pv-7--from-large;
     @extend %u-ph-7--from-large;
+
+    p {
+      @include fontScale(24, 32);
+    }
   }
 
   p {
