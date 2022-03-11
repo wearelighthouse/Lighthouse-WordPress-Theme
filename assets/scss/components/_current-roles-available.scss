@@ -25,7 +25,6 @@
 
         & p > a {
             @extend %u-color-white;
-            @extend .c-button--underlined-light;
             background-image: none;
         } 
     }
@@ -67,6 +66,10 @@
         &::after {
             transform: translate(calc(-30vw + 50px), calc(15vw + -50%)) rotate(10deg);
         }
+
+        & p > a {
+            @extend .c-button--underlined-dark;
+        }
     }
 
     &__bg-black {
@@ -78,6 +81,10 @@
 
         &::after {
             transform: translate(calc(10vw + 50px), calc(26vw + -50%)) rotate(10deg);
+        }
+
+        & p > a {
+            @extend .c-button--underlined-light;
         }
     }
 }
