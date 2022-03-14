@@ -14,6 +14,19 @@
     @extend %u-color-gray-dark;
   }
 
+  &--full-width {
+    @extend %u-pv-7--from-large;
+    @extend %u-ph-7--from-large;
+
+    p {
+      @include fontScale(24, 32);
+    }
+  }
+
+  @at-root .c-content-grid &--full-width {
+    grid-column: 1 / -1;
+  }
+
   p {
     @extend .type-quote;
     margin-top: 0;

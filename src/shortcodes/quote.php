@@ -26,7 +26,7 @@ function quoteShortcode($wp_atts, $content = null)
 		'name' => '',
 		'title' => '',
 		'company' => '',
-		'company_url' => ''
+		'company_url' => '',
 	], $wp_atts);
 
 	if ($atts['name']) {
@@ -72,6 +72,10 @@ function quoteShortcode($wp_atts, $content = null)
 	} else {
 		$class = 'c-blockquote c-blockquote--unattributed';
 		$footer = '';
+	}
+
+	if (is_int(array_search('full_width', $wp_atts))) {
+		$class .= ' c-blockquote--full-width';
 	}
 
 	$quote = '<blockquote class="' . $class . '">' . wpautop($content) . $footer . '</blockquote>';
