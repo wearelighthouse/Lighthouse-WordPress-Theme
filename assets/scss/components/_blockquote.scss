@@ -1,4 +1,3 @@
-
 .c-blockquote {
   @extend %u-gray-borders;
   @extend %u-pv-5;
@@ -22,6 +21,10 @@
     p {
       @include fontScale(24, 32);
     }
+  }
+
+  @at-root .c-content-grid &--full-width {
+    grid-column: 1 / -1;
   }
 
   p {
