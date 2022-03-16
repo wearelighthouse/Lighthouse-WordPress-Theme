@@ -56,13 +56,13 @@
   <?php include(locate_template('src/template_parts/service_section_collaboration.php')) ?>
 
   <section class="o-container-section o-container-section--h-bordered">
-    <div class="o-container-content">
+    <div class="o-container-content o-container-content--v-pad-margin">
       <?php if ($content) : ?>
         <?= $content2; ?>
       <?php endif; ?>
     </div>
   </section>
-  
+
   <?php include(locate_template('src/template_parts/service_intro.php')) ?>
 
   <?php if ($caseStudyIds) : ?>

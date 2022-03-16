@@ -1,11 +1,10 @@
 .c-service-intro {
     padding-top: 5rem;
-    // padding-bottom: 5rem;
 
     @include breakpoint(from-medium) {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding-top: 8rem;
+        padding-top: 3rem;
         padding-bottom: unset;
     }
 
