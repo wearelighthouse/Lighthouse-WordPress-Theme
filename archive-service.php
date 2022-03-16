@@ -6,8 +6,24 @@
   $globalBlocksServiceGroup = getPostMeta('service_archive_blocks_service_group');
   $globalIntro = getPostMeta('service_archive_case_study_list_title');
   $button = getPostMeta('service_archive_blocks_service_action');
-  $content = get_the_content()
+  $content = get_the_content();
+  $pattern = "#([[quote])(.*?)(\[\/quote\])#i";
+  
+  if ($content) {
+    $content = preg_replace($pattern, '', $content);
+    $content = apply_filters( 'the_content', $content );
+    $content = str_replace( ']]>', ']]&gt;', $content );
+  }
+
+  $content2 = get_the_content();
+
+  $matches = [];
+  preg_match($pattern, $content2, $matches);
+  $content2 = $matches[0];
+  $content2 = apply_filters('the_content', $content2);
+  $content = str_replace( ']]>', ']]&gt;', $content );
 ?>
+
 
 <?php get_header(); ?>
 
@@ -15,13 +31,13 @@
 
   <?php include(locate_template('src/template_parts/hero.php')) ?>
 
-<?php if ($content) : ?>
+<?php //if ($content) : ?>
   <section class="o-container-section o-container-section--h-bordered">
     <div class="o-container-content o-container-content--v-pad-margin c-service-content">
-        <?= the_content(); ?>
+        <?= $content; ?>
     </din>
   </section>
-<?php endif; ?>
+<?php //endif; ?>
   
   <?php if ($blockServices) : ?>
     <?php $globalBlocksServiceGroup = $blockServices; ?>
@@ -39,8 +55,14 @@
 
   <?php include(locate_template('src/template_parts/service_section_collaboration.php')) ?>
 
-  <?php include(locate_template('src/template_parts/service_client_testimonial.php')) ?>
-
+  <section class="o-container-section o-container-section--h-bordered">
+    <div class="o-container-content">
+      <?php if ($content) : ?>
+        <?= $content2; ?>
+      <?php endif; ?>
+    </div>
+  </section>
+  
   <?php include(locate_template('src/template_parts/service_intro.php')) ?>
 
   <?php if ($caseStudyIds) : ?>
