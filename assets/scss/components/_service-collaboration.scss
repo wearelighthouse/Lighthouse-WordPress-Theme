@@ -15,25 +15,20 @@
 
   &__title {
     @extend %u-color-blackcurrant;
+
+    @include breakpoint(upto-small) {
+      padding-bottom: 5rem;
+    }
   }
 
   &__item {
-    @include breakpoint(from-tiny) {
-      padding-bottom: 2rem;
-      padding-top: 2rem;
-    }
-
     @include breakpoint(from-small) {
-      padding-bottom: 5rem;
       padding-top: 5rem;
-    }
-
-    @include breakpoint(upto-tiny) {
-      padding-bottom: unset;
     }
 
     &__image-right, 
     &__image-left {
+      @extend %u-display-none--upto-small;
       @extend %u-pos-absolute;
       @extend %u-round;
       background-repeat: no-repeat;
@@ -42,8 +37,6 @@
     }
 
     &__image-right {
-      @extend %u-display-none--upto-tiny;
-
       width: 337px;
       height: 337px;
       background-image:
@@ -103,7 +96,6 @@
     }
 
     &__image-left {
-      @extend %u-display-none--upto-tiny;
       @extend %u-top;
       width: 398px;
       height: 398px;
@@ -169,7 +161,6 @@
     }
 
     &:nth-child(odd) {
-      padding-top: 5rem;
 
       & .c-service-collaboration__item__content-container {
         &:nth-child(2) {
@@ -185,14 +176,6 @@
 
     &:nth-child(even) {
       @extend %u-pos-relative;
-
-      @include breakpoint(upto-tiny) {
-        padding-bottom: unset;
-      }
-
-      @include breakpoint(from-large) {
-        padding-bottom: unset;
-      }
 
       & .c-service-collaboration__item__content-container {
 
