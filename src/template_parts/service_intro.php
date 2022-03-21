@@ -15,34 +15,34 @@
             </h2>
         <?php endif; ?>
 
-        <div class="c-service-intro__content">
-          <?php if ($introText) : ?>
-              <?= wpautop($introText) ?>
-          <?php endif; ?>
+        <?php if ($introText) : ?>
+          <div class="c-service-intro__text type-p">
+            <?= wpautop($introText) ?>
+          </div>
+        <?php endif; ?>
 
-          <?php if ($clients && isset($clients[0])) : ?>
-            <div class="c-service-intro__content__clients">
-              <?php foreach ($clients as $client) : ?>
-                <?php
-                  $logoSrc = isset($client['logo']) ? $client['logo'] : '';
-                  $logoId = isset($client['logo_id']) ? $client['logo_id'] : 0;
-                  $logoAlt = get_post_meta($logoId, '_wp_attachment_image_alt', true);
-                  $logoMeta = wp_get_attachment_metadata($client['logo_id']);
-                  $logoSize = 1.2;
-                  $logoWidth = isset($logoMeta['width']) ? $logoMeta['width'] : 0;
-                  $logoHeight = isset($logoMeta['height']) ? $logoMeta['height'] : 0;
-                  $logoMask = "-webkit-mask-image: url({$logoSrc}); mask-image: url({$logoSrc}); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: " . ($logoWidth * $logoSize) . "px; height: " . ($logoHeight * $logoSize) . "px";
-                  $alt = get_post_meta($logoId, '_wp_attachment_image_alt', true);
-                ?>
+        <?php if ($clients && isset($clients[0])) : ?>
+          <div class="c-service-intro__clients">
+            <?php foreach ($clients as $client) : ?>
+              <?php
+                $logoSrc = isset($client['logo']) ? $client['logo'] : '';
+                $logoId = isset($client['logo_id']) ? $client['logo_id'] : 0;
+                $logoAlt = get_post_meta($logoId, '_wp_attachment_image_alt', true);
+                $logoMeta = wp_get_attachment_metadata($client['logo_id']);
+                $logoSize = 1.2;
+                $logoWidth = isset($logoMeta['width']) ? $logoMeta['width'] : 0;
+                $logoHeight = isset($logoMeta['height']) ? $logoMeta['height'] : 0;
+                $logoMask = "-webkit-mask-image: url({$logoSrc}); mask-image: url({$logoSrc}); mask-size: contain; -webkit-mask-size: contain; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; width: " . ($logoWidth * $logoSize) . "px; height: " . ($logoHeight * $logoSize) . "px";
+                $alt = get_post_meta($logoId, '_wp_attachment_image_alt', true);
+              ?>
 
-                <div class="c-service-intro__content__clients__img-container" style="<?= $logoMask; ?>; height: 25.5px">
-                  <span class="o-dictate"><?= $alt ?> logo</span>
-                </div>
-              <?php endforeach; ?>
-            </div>
-          <?php endif; ?>
+              <div class="c-service-intro__clients__img-container" style="<?= $logoMask; ?>">
+                <span class="o-dictate"><?= $alt ?> logo</span>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
 
-        </div>
       </div>
 
       <?php if ($button) : ?>
