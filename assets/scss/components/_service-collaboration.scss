@@ -6,6 +6,8 @@
 
 .c-service-collaboration {
 
+  $self: '.c-service-collaboration';
+
   @include breakpoint(upto-medium) {
     position: unset;
     margin-left: 1.25rem;
@@ -162,7 +164,7 @@
 
     &:nth-child(odd) {
 
-      & .c-service-collaboration__item__content-container {
+      & #{$self}__item__content-container {
         &:nth-child(2) {
           padding-bottom: 5rem;
         }
@@ -177,10 +179,11 @@
     &:nth-child(even) {
       @extend %u-pos-relative;
 
-      & .c-service-collaboration__item__content-container {
+      & #{$self}__item__content-container {
+        @extend %u-mt-6--from-small;
 
-        @include breakpoint(from-small) {
-          margin-top: 3rem;
+        @include breakpoint(upto-small) {
+          margin-top: 5rem;
         }
 
         @include breakpoint(from-large) {
@@ -229,5 +232,23 @@
         top: -10%;
       }
     }
+
   }
+
+  #{$self}__content--grid-column {
+    @extend %u-flex--from-medium;
+    gap: 0 2rem;
+
+    #{$self}__item__content-container {
+      width: unset;
+    }
+  
+    #{$self}__item:nth-child(even) #{$self}__item__content-container {
+      
+      @include breakpoint(from-small) {
+        margin-top: unset;
+      }
+    }
+  }
+
 }

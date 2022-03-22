@@ -3,7 +3,9 @@
     $collaborationServices = getPostMeta('service_archive_block_service_collaboration_group');
     $button = getPostMeta('service_archive_block_service_collaboration_action');
     $maskImageRight = getPostMeta('service_archive_block_service_collaboration_mask_image_right');
-    $maskImageLeft = getPostMeta('service_archive_block_service_collaboration_mask_image_left')
+    $maskImageLeft = getPostMeta('service_archive_block_service_collaboration_mask_image_left');
+    
+    $ifMaskImageClass = !$maskImageRight && !$maskImageLeft ? 'c-service-collaboration__content--grid-column' : '';
 ?>
 
 <?php if (isset($collaborationServices) && !empty($collaborationServices)) : ?>
@@ -15,7 +17,7 @@
           </h3>
         <?php endif; ?> 
 
-        <div class="c-service-collaboration__content"> 
+        <div class="c-service-collaboration__content <?= $ifMaskImageClass ?>">
           <div class="c-service-collaboration__item">
             <?php if ($collaborationServices && count($collaborationServices) >= 2) : ?>
               <?php if ($maskImageRight) : ?>
