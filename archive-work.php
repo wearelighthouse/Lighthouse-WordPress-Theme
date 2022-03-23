@@ -1,13 +1,21 @@
 <?php
   $caseStudyIds = getPostMeta('work_archive_case_study_list_clients', $post->ID);
+  $sectorIds = getPostMeta('work_archive_sector_list_sector', $post->ID);
 
-  $sectors = getPostMeta('work_archive_sector_list_sector', $post->ID);
-
-  if ($sectors) {
+  if ($sectorIds) {
     $linkList = '';
 
-    foreach ($sectors as $sector) {
-      $linkList .= '<li><a class="c-tag" href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
+    foreach ($sectorIds as $sectorId) {
+      $slug = get_post($sectorId)->post_name;
+
+      $linkList .= ('
+        <li>
+          <a class="c-tag" href="' . get_permalink($sectorId) . '">
+            <img src="' . get_template_directory_uri() . '/dist/svg/' . $slug . '.svg" alt="" width="36px" height="36px">
+            <span>' . get_the_title($sectorId) . '</span>
+          </a>
+        </li>
+      ');
     }
   }
 ?>

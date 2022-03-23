@@ -173,7 +173,6 @@ exports.clean = clean;
 exports.watch = gulp.series(
   clean,
   gulp.parallel(
-    browserSyncInit,
     fonts,
     fontCSS,
     images,
@@ -183,6 +182,7 @@ exports.watch = gulp.series(
     js,
     jsLib
   ),
+  browserSyncInit,
   watch
 );
 

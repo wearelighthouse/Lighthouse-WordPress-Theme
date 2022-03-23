@@ -3,7 +3,7 @@
   $self: '.c-case-study-block';
 
   @include breakpoint(from-small) {
-    height: 8rem;
+    height: 5rem;
     --clip-dist-h: 40px;  // horizontal clip-path polygon distance
     --clip-dist-v: 18px;  // vertical clip-path polygon distance
   }
@@ -12,4 +12,19 @@
     margin-top: 1.5rem;
     display: block !important;
   }
+
+  &__content {
+    @extend %u-ai-center;
+  
+    & img {
+      margin-right: 1rem;
+      margin-top: 10px;
+    }
+  }
+}
+
+.c-case-study-block--large:nth-child(odd) .c-case-study-block--more__content {
+  @extend %u-fd-row;
+  margin-left: auto;
+  margin-right: auto;
 }
