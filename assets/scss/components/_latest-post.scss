@@ -1,0 +1,42 @@
+.c-latest-post {
+  $self: '.c-blog-link';
+
+  @extend %u-flex;
+  @extend %u-fd-row;
+  @extend %u-fd-column--upto-medium;
+  @extend %u-pt-8--from-medium;
+  @extend %u-pb-8--from-medium;
+
+  & > #{$self} {
+    flex: 1;
+    display: unset;
+    @extend %u-pt-2--from-medium;
+    @extend %u-pb-2--from-medium;
+
+    &:not(:first-child) {
+        border-top: none;
+    }
+  }
+
+  & #{$self}__info__category {
+    text-align: right;
+    @include fontScale(14, 16);
+  }
+
+  &::before {
+    @extend %u-block;
+    @extend %u-content-none;
+    align-self: stretch;
+    border: 1px solid $color-gray;
+    @extend %u-border-box;
+  }
+
+  & #{$self}:nth-child(odd) {
+    order: -1;
+  }
+
+  @include breakpoint(from-medium) {
+    gap: 4rem;
+  }
+
+}
