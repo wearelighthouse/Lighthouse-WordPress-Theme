@@ -1,21 +1,11 @@
-<?php
-  $query = get_queried_object();
-  
-  $chackQuery = $query->name === 'Article' ? 'Article, Product Stories' : $query->name;
-  
-  $siglePost = get_posts([
-    'post-type' => 'post',
-    'category_name' => $chackQuery,
-    'posts_per_page' => 10,
-  ]);
-  
-?>
+<?php if (have_posts()) : ?>
+  <section class="o-container-content">
+    <?php $i = 0; while (have_posts()) : the_post(); ?>
 
-<section class="o-container-content">
-  <?php for ($i = 0; $i < count($siglePost); $i++) : ?>
-  <?php
-      $categories = get_the_category($siglePost[$i]->ID);
+    <?php
+      $categories = get_the_category();
       $category = end($categories)->name;
+      $i++;
     ?>
     
     <?php if ($i === 5): ?>
@@ -33,12 +23,11 @@
 
       <div class="c-blog-link__content">
         <a href="<?= the_permalink(); ?>" class="c-blog-link__content__title">
-          <?= $siglePost[$i]->post_title; ?>
+          <?= the_title(); ?>
         </a>
-        <div class="c-blog-link__content__excerpt"><?= $siglePost[$i]->post_excerpt; ?></div>
+        <div class="c-blog-link__content__excerpt"><?= the_excerpt(); ?></div>
       </div>
     </div>
-    
-  <?php endfor; ?>
-</section>
-
+    <?php endwhile; ?>
+  </section>
+<?php endif; ?>
