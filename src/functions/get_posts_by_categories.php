@@ -1,14 +1,34 @@
-<?php 
+<?php
 
 function getPostsType($query){
-    // $navQuery = get_queried_object();
+    if (!$query->is_main_query()) {
+        return;
+    }
 
-    $category_ids = array(2, 4);
-    
-    if ($query->is_home() && $query->is_main_query()) {
+    if (!$query->is_category('article')) {
+        return;
+    }
 
-        $query->set('category__in', $category_ids);
+    $articleCategory = get_category_by_slug('article');
+    $productStoriesCategory = get_category_by_slug('product-stories');
+
+    if ($articleCategory && $productStoriesCategory) {
+      $query->set('tax_query', [
+        'relation' => 'OR',
+        [
+          'taxonomy' => 'category',
+          'field' => 'term_id',
+          'terms' => $articleCategory->term_id,
+          'operator' => 'IN'
+        ],
+        [
+          'taxonomy' => 'category',
+          'field' => 'term_id',
+          'terms' => $productStoriesCategory->term_id,
+          'operator' => 'IN'
+        ],
+      ]);
     }
 }
-        
+
 add_action('pre_get_posts', 'getPostsType');
