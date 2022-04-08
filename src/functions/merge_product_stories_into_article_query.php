@@ -1,6 +1,7 @@
 <?php
 
-function getPostsType($query){
+function mergeProductStoriesIntoArticleQuery($query)
+{
     if (!$query->is_main_query()) {
         return;
     }
@@ -31,4 +32,4 @@ function getPostsType($query){
     }
 }
 
-add_action('pre_get_posts', 'getPostsType');
+add_action('pre_get_posts', 'mergeProductStoriesIntoArticleQuery');
