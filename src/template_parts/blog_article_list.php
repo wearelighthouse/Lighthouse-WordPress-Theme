@@ -15,7 +15,7 @@
       
     <div class="c-blog-link">
       <div class="c-blog-link__info">
-        <!-- <span class="c-blog-link__info__date"><?= get_the_date(get_option('date_format')) ?></span> -->
+        <span class="c-blog-link__info__date"><?= get_the_date(get_option('date_format')) ?></span>
         <?php if ($category && $category !== 'Uncategorised') : ?>
           <span class="c-blog-link__info__category"><?= $category; ?></span>
         <?php endif; ?>
