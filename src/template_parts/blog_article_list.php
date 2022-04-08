@@ -1,17 +1,18 @@
-<section class="o-container-content">
-  <?php $i = 0; while (have_posts()) : the_post(); ?>
+<?php if (have_posts()) : ?>
+  <section class="o-container-content">
+    <?php $i = 0; while (have_posts()) : the_post(); ?>
 
     <?php
       $categories = get_the_category();
       $category = end($categories)->name;
       $i++;
     ?>
-
+    
     <?php if ($i === 5): ?>
       <?php $newsletterFormId = RGFormsModel::get_form_id('Newsletter'); ?>
       <?= do_shortcode('[form id="' . $newsletterFormId . '"]') ?>
-    <?php endif; ?>
-
+      <?php endif; ?>
+      
     <div class="c-blog-link">
       <div class="c-blog-link__info">
         <span class="c-blog-link__info__date"><?= get_the_date(get_option('date_format')) ?></span>
@@ -27,6 +28,6 @@
         <div class="c-blog-link__content__excerpt"><?= the_excerpt(); ?></div>
       </div>
     </div>
-
-  <?php endwhile; ?>
-</section>
+    <?php endwhile; ?>
+  </section>
+<?php endif; ?>
