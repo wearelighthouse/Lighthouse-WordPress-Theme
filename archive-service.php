@@ -62,6 +62,14 @@
 
   <?php include(locate_template('src/template_parts/service_intro.php')) ?>
 
+  <?php if (isset($globalIntro)) : ?>
+    <div class="o-container-content">
+      <h2 class="type-title c-service-case-studies__title"><?= $globalIntro ?></h2>
+    </div>
+
+    <?php $globalIntro = ''; ?>
+  <?php endif; ?>
+
   <?php if ($caseStudyIds) : ?>
     <?php $globalCaseStudyIds = array_slice($caseStudyIds, 0, 1); ?>
     <?php $globalcaseStudyAlignRight = true; ?>
@@ -71,7 +79,9 @@
 
   <?php if ($caseStudyIds && count($caseStudyIds) > 1) : ?>
     <?php $globalCaseStudyIds = array_slice($caseStudyIds, 1) ?>
+    <?php $globalcaseStudyServiceAlignement = true; ?>
     <?php include(locate_template('src/template_parts/block_section_case_study_small.php')) ?>
+    <?php $globalcaseStudyServiceAlignement = false; ?>
   <?php endif; ?>
 
   <section class="o-container-section o-container-section--h-bordered">
