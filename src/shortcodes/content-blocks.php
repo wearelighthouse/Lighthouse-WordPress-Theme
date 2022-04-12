@@ -18,8 +18,8 @@ function contentBlocksShortcode($atts, $content = null)
 		$blockClassName = 's-content s-content--marginless';
 
 		if ($atts['style'] === 'jobs') {
-			$isEven = $index % 2 === 0;
-			$blockClassName .= ' c-current-role c-current-role--' . ($isEven ? 'bg-black' : 'bg-pink');
+			$isOdd = $index % 2 === 0;
+			$blockClassName .= ' c-current-role c-current-role--' . ($isOdd ? 'bg-pink' : 'bg-black');
 		}
 
 		$blocks .= '<div class="' . $blockClassName . '">';
