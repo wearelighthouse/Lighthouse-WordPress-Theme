@@ -12,14 +12,14 @@ function contentBlocksShortcode($atts, $content = null)
 
 	$blocks = '</section>
 		 <section class="o-container-section o-container-section--h-bordered">
-		    <div class="o-container-content o-container-services o-container-services--' . $atts['columns'] . '-column' . ($atts['style'] === 'jobs' ? ' c-current-roles' : '') . '">';
+		    <div class="o-container-content o-container-services o-container-services--' . $atts['columns'] . '-column">';
 
 	foreach ($blocksContent as $index => $block) {
 		$blockClassName = 's-content s-content--marginless';
 
 		if ($atts['style'] === 'jobs') {
 			$isEven = $index % 2 === 0;
-			$blockClassName .= ' c-current-roles__' . ($isEven ? 'bg-black' : 'bg-pink');
+			$blockClassName .= ' c-current-role c-current-role--' . ($isEven ? 'bg-black' : 'bg-pink');
 		}
 
 		$blocks .= '<div class="' . $blockClassName . '">';
