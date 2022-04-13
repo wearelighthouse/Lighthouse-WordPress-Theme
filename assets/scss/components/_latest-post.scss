@@ -57,9 +57,9 @@
   &::before {
     @extend %u-block;
     @extend %u-content-none;
-    align-self: stretch;
-    border: 1px solid $color-gray;
-    @extend %u-border-box;
+    background: #DEDEE2;
+    min-width: 2px;
+    min-height: 2px;
   }
 
   & #{$self}:nth-child(odd) {
