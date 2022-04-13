@@ -32,9 +32,11 @@
             </div>
 
             <div class="c-blog-link__content">
-              <a href="<?= the_permalink(); ?>" class="c-blog-link__content__title">
-                <?= the_title(); ?>
-              </a>
+              <div>
+                <a href="<?= the_permalink(); ?>" class="c-blog-link__content__title">
+                  <?= the_title(); ?>
+                </a>
+              </div>
               <div class="c-blog-link__content__excerpt"><?= the_excerpt(); ?></div>
             </div>
           </div>

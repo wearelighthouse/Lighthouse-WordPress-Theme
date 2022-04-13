@@ -9,9 +9,11 @@
 
   & > #{$self} {
     flex: 1;
-    display: unset;
-    @extend %u-pt-2--from-medium;
-    @extend %u-pb-2--from-medium;
+
+    @include breakpoint(from-medium) {
+      display: flex;
+      flex-direction: column;
+    }
 
     &:not(:first-child) {
         border-top: none;
@@ -21,6 +23,16 @@
   & #{$self}__info__category {
     text-align: right;
     @include fontScale(14, 16);
+  }
+
+  & #{$self}__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    &__excerpt {
+      margin-top: auto;
+    }
   }
 
   &::before {
@@ -38,5 +50,4 @@
   @include breakpoint(from-medium) {
     gap: 4rem;
   }
-
 }
