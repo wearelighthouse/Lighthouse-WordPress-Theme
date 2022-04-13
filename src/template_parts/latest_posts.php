@@ -8,6 +8,7 @@
   <?php foreach($categories as $cat) : ?>
 
     <?php 
+      $catLink = get_category_link($cat);
       $catName;
     
       if($cat->cat_name !== 'Uncategorized') {
@@ -28,7 +29,9 @@
 
           <div class="c-blog-link">
             <div class="c-blog-link__info">
-              <span class="c-blog-link__info__category"><?= $catname ?></span>
+              <a href="<?= $catLink ?>" class="c-blog-link__info__category">
+               <?= $catname ?>
+              </a>
             </div>
 
             <div class="c-blog-link__content">

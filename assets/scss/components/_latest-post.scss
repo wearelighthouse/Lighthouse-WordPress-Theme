@@ -13,6 +13,7 @@
     @include breakpoint(from-medium) {
       display: flex;
       flex-direction: column;
+      align-items: flex-end;
     }
 
     &:not(:first-child) {
@@ -21,8 +22,26 @@
   }
 
   & #{$self}__info__category {
-    text-align: right;
     @include fontScale(14, 16);
+
+    @extend .type-subtitle;
+    @extend .type-fancy-inline-link;
+    outline-offset: .2em;
+
+    &:focus,
+    &:hover {
+      // Get rid of the 100% - 1px stopping it going to the end of the link
+      background-size: 100% 100%;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 1px dotted currentColor;
+    }
+    
   }
 
   & #{$self}__content {
