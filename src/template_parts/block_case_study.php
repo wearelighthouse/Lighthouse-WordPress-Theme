@@ -25,7 +25,7 @@
   $linkURL = get_the_permalink($caseStudyId);
   $imgBackgroundId = getPostMeta('work_single_work_options_image_background_id', $caseStudyId);
   $imgBackgroundMirroredId = getPostMeta('work_single_work_options_image_background_mirrored_id', $caseStudyId);
-  $checkIfMirroredImgBackgroundIsExist = ($imgBackgroundMirroredId && ($caseStudyIndex % 2 === 0)) ? $imgBackgroundMirroredId : $imgBackgroundId;
+  $checkIfMirroredImgBackgroundIsExist = ($imgBackgroundMirroredId && $caseStudyIndex % 2 === 0) ? $imgBackgroundMirroredId : $imgBackgroundId;
 
   $imgLargeId = getPostMeta('work_single_work_options_image_large_id', $caseStudyId);
   $imgMediumId = getPostMeta('work_single_work_options_image_medium_id', $caseStudyId);
@@ -35,8 +35,8 @@
 <a href="<?= $linkURL ?>"
    class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?> js-half-onscreen-detect">
   <div class="c-case-study-block__background">
-    <?php if ($caseStudySize === 'large' && $imgBackgroundId) : ?>
-      <div class="c-case-study-block__image-background <?= $caseStudyIndex % 2 === 0 ? 'u-mirrored' : '' ?>">
+    <?php if ($caseStudySize === 'large' && ($checkIfMirroredImgBackgroundIsExist || $imgBackgroundMirroredId)) : ?>
+      <div class="c-case-study-block__image-background <?= (!$imgBackgroundMirroredId && $caseStudyIndex % 2 === 0) ? 'u-mirrored' : '' ?>">
         <?= lazyLoad(wp_get_attachment_image($checkIfMirroredImgBackgroundIsExist, 'link-block-case-study-bg-large')) ?>
       </div>
     <?php endif; ?>
