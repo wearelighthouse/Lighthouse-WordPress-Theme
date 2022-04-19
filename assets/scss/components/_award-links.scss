@@ -3,11 +3,17 @@
   @extend %u-fw-wrap;
   @extend %u-ai-center;
   @extend %u-jc-center;
-  @extend %u-mv--1;
+  gap: 2rem;
 
   &__link {
-    @extend %u-mh-4;
-    @extend %u-mv-1;
+    @extend %u-pad-2;
+    @extend %u-border-radius-md;
+    transition: background-color .2s;
+
+    &:hover,
+    &:focus-visible {
+      @extend %u-bg-color-gray-bluish;
+    }
 
     img {
       @extend %u-block;
