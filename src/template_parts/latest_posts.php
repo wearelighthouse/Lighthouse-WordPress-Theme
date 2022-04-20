@@ -1,35 +1,59 @@
 <?php
   $postsPerPage = 1;
-
-  $latestPostsQuery = new WP_Query([
-    'post_type' => 'post',
-    'post__not_in' => [$post->ID],
-    'posts_per_page' => 1
-  ]);
+  $categories = get_categories();
+  
 ?>
 
-<?php if ($latestPostsQuery->have_posts()) : ?>
-  <section class="o-container-content c-related-articles">
-    <div class="c-blog-nav">
-      <h3 class="type-subtitle u-mb-8">Latest Post<?= $postsPerPage > 1 ? 's' : ''?></h3>
-    </div>
+<section class="o-container-content c-latest-post">
 
-    <?php while ($latestPostsQuery->have_posts()) : $latestPostsQuery->the_post(); ?>
-      <div class="c-blog-link">
-        <div class="c-blog-link__info">
-          <span class="c-blog-link__info__date"><?= get_the_date(get_option('date_format')) ?></span>
-          <span class="c-blog-link__info__category"><?= get_the_category()[0]->name ?></span>
-        </div>
+  <?php $i = 0; ?>
+  <?php foreach($categories as $cat) : ?>
 
-        <div class="c-blog-link__content">
-          <a href="<?= the_permalink(); ?>" class="c-blog-link__content__title">
-            <?= the_title(); ?>
-          </a>
-          <div class="c-blog-link__content__excerpt"><?= the_excerpt(); ?></div>
-        </div>
-      </div>
+    <?php 
+      $catLink = get_category_link($cat);
+      $catName;
+    
+      if($cat->cat_name !== 'Uncategorized') {
+        $catName = $cat->cat_name === 'Article' ? 'Article, Product Story' : $cat->cat_name;
+      }
 
-    <?php endwhile; ?>
-    <?php wp_reset_postdata(); ?>
-  </section>
-<?php endif; ?>
+      $relatedPostsQuery = new WP_Query([
+        'post_type' => 'post',
+        'category_name' => $catName,
+        'posts_per_page' => $postsPerPage
+      ]);
+    
+    ?>
+    <?php if ($relatedPostsQuery->have_posts()) : ?>
+
+      <?php while ($relatedPostsQuery->have_posts()) : $relatedPostsQuery->the_post(); ?>
+
+        <?php $catname = get_the_category()[0]->name;?>
+
+          <?php if($i > 0) : ?>
+            <hr>
+          <?php endif; ?>
+
+          <div class="c-blog-link c-blog-link--latest">
+            <div class="c-blog-link__info">
+              <a href="<?= $catLink ?>" class="c-blog-link__info__category">
+               <?= $catname ?>
+              </a>
+            </div>
+
+            <div class="c-blog-link__content">
+              <div>
+                <a href="<?= the_permalink(); ?>" class="c-blog-link__content__title">
+                  <?= the_title(); ?>
+                </a>
+              </div>
+              <div class="c-blog-link__content__excerpt"><?= the_excerpt(); ?></div>
+            </div>
+          </div>
+
+        <?php endwhile; ?>
+      <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
+    <?php $i++; ?>
+  <?php endforeach; ?>
+</section>
