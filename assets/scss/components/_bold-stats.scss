@@ -1,3 +1,27 @@
 .c-bold-stat-bg {
-    background-color: aqua;
+
+    $slef: '.c-bold-stat';
+
+    background: linear-gradient(135deg, #DEDEE2 0%, rgba(255, 255, 255, 0.37) 96.35%);
+
+    #{$slef}__title {
+        @extend %u-tiempos;
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    #{$slef}__description {
+        @extend %u-sailec;
+        font-size: 20px;
+        line-height: 34px;
+        color: #7E7E81;
+    }
+
+    #{$slef}__statistic {
+        @extend %u-tiempos;
+        @extend %u-vbold;
+        font-size: 60px;
+        line-height: 46px;
+        letter-spacing: -4px;
+    }
 }

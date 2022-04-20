@@ -10,18 +10,20 @@ function statisticBlockShortcode($wp_atts, $content = null)
 
 
 	$statistic = '</section>
-		 <section class="o-container-section o-container-section--bordered c-bold-stat-bg">
-		  	<div class="o-container-content o-container-content--v-margin c-bold-stat">';
+		 <section class="o-container-section o-container-section--bordered">
+		 <div class="c-bold-stat-bg">
+		  	<div class="o-container-content o-container-content--v-pad c-bold-stat">';
 
-	$title = '<h3 class="c-stats-bold__title">' . $atts['title'] . '</h3>';
-	$descriptions = '<p class="c-stats-bold__description">' . $atts['description'] . '</p>';
-	$statistics = '<p class="c-stats-bold__statistic">' . $atts['statistics'] . '</p>';
+	$title = '<h3 class="c-bold-stat__title">' . $atts['title'] . '</h3>';
+	$descriptions = '<p class="c-bold-stat__description">' . $atts['description'] . '</p>';
+	$statistics = '<p class="c-bold-stat__statistic">' . $atts['statistics'] . '</p>';
 
 	$statistic .= $title;
 	$statistic .= $descriptions;
 	$statistic .= $statistics;
 
-  	$statistic .= '</div>
+  	$statistic .= '</div> 
+	  			</div>
 		  </section>
 			<section class="o-container-section o-container-section--bordered">
 			<div class="o-container-content o-container-content--v-margin c-content-grid">';
