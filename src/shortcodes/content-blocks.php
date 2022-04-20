@@ -3,7 +3,8 @@
 function contentBlocksShortcode($atts, $content = null)
 {
 	$atts = shortcode_atts([
-		'columns' => '3'
+		'columns' => '3',
+		'style' => '',
 	], $atts);
 
 	$blocksContent = explode( '[block]', $content);
@@ -13,8 +14,15 @@ function contentBlocksShortcode($atts, $content = null)
 		 <section class="o-container-section o-container-section--h-bordered">
 		    <div class="o-container-content o-container-services o-container-services--' . $atts['columns'] . '-column">';
 
-	foreach ($blocksContent as $block) {
-		$blocks .= '<div class="s-content s-content--marginless">';
+	foreach ($blocksContent as $index => $block) {
+		$blockClassName = 's-content s-content--marginless';
+
+		if ($atts['style'] === 'jobs') {
+			$isOdd = $index % 2 === 0;
+			$blockClassName .= ' c-current-role c-current-role--' . ($isOdd ? 'bg-pink' : 'bg-black');
+		}
+
+		$blocks .= '<div class="' . $blockClassName . '">';
 		$block = str_replace( '[/block]' , '', $block );
 		$block = str_replace( '<p></p>' , '', $block );
 		$pos = strpos($block, '</p>');
