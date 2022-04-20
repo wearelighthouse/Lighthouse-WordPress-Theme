@@ -9,6 +9,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/functions/attach_template.php';
 require_once __DIR__ . '/src/functions/autoa.php';
 require_once __DIR__ . '/src/functions/get_option.php';
+require_once __DIR__ . '/src/functions/merge_product_stories_into_article_query.php';
 require_once __DIR__ . '/src/functions/gforms.php';
 require_once __DIR__ . '/src/functions/image_sizes.php';
 require_once __DIR__ . '/src/functions/lazy_load.php';

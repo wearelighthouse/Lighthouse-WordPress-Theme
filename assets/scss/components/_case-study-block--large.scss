@@ -111,10 +111,6 @@
       pointer-events: none; // Make the cut off corner not click-able
     }
 
-    #{$self}__background:before {
-      pointer-events: all; // Make the cut off corner not click-able
-    }
-
     &:nth-child(odd) {
       &.js-offscreen {
         transform: translateX(-100px);
@@ -127,17 +123,17 @@
       #{$self}__background {
         left: 0;
         justify-content: flex-end; // Keep bg image near center of screen
+        overflow: hidden;
 
-        &:before {
-          clip-path: polygon(
-            0 0,
-            100% 0,
-            100% var(--clip-dist-h),
-            calc(100% - var(--clip-dist-v)) 100%,
-            0 100%,
-            0 0
-          );
-        }
+        clip-path: polygon(
+          0 0,
+          100% 0,
+          100% var(--clip-dist-h),
+          calc(100% - var(--clip-dist-v)) 100%,
+          0 100%,
+          0 0
+        );
+
       }
 
       #{$self}__image-large {
@@ -163,17 +159,17 @@
       #{$self}__background {
         right: 0;
         justify-content: flex-start; // Keep bg image near center of screen
+        overflow: hidden;
 
-        &:before {
-          clip-path: polygon(
-            0 0,
-            100% 0,
-            100% 100%,
-            var(--clip-dist-v) 100%,
-            0 var(--clip-dist-h),
-            0 0
-          );
-        }
+        clip-path: polygon(
+          0 0,
+          100% 0,
+          100% 100%,
+          var(--clip-dist-v) 100%,
+          0 var(--clip-dist-h),
+          0 0
+        );
+
       }
 
       #{$self}__image-large {
