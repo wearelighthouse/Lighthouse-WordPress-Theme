@@ -23,9 +23,14 @@
   $title = getPostMeta('work_single_work_options_link_block_title', $caseStudyId);
   $linkText = 'Find out more';
   $linkURL = get_the_permalink($caseStudyId);
-  $imgBackgroundId = getPostMeta('work_single_work_options_image_background_id', $caseStudyId);
+  $imgBackgroundStandardId = getPostMeta('work_single_work_options_image_background_id', $caseStudyId);
   $imgBackgroundMirroredId = getPostMeta('work_single_work_options_image_background_mirrored_id', $caseStudyId);
-  $checkIfMirroredImgBackgroundIsExist = ($imgBackgroundMirroredId && $caseStudyIndex % 2 === 0) ? $imgBackgroundMirroredId : $imgBackgroundId;
+
+  if ($caseStudyIndex % 2 === 0) {
+    $imgBackgroundId = $imgBackgroundMirroredId ? $imgBackgroundMirroredId : $imgBackgroundStandardId;
+  } else {
+    $imgBackgroundId = $imgBackgroundStandardId;
+  }
 
   $imgLargeId = getPostMeta('work_single_work_options_image_large_id', $caseStudyId);
   $imgMediumId = getPostMeta('work_single_work_options_image_medium_id', $caseStudyId);
@@ -35,9 +40,9 @@
 <a href="<?= $linkURL ?>"
    class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?> js-half-onscreen-detect">
   <div class="c-case-study-block__background">
-    <?php if ($caseStudySize === 'large' && ($checkIfMirroredImgBackgroundIsExist || $imgBackgroundMirroredId)) : ?>
+    <?php if ($caseStudySize === 'large' && $imgBackgroundId) : ?>
       <div class="c-case-study-block__image-background <?= (!$imgBackgroundMirroredId && $caseStudyIndex % 2 === 0) ? 'u-mirrored' : '' ?>">
-        <?= lazyLoad(wp_get_attachment_image($checkIfMirroredImgBackgroundIsExist, 'link-block-case-study-bg-large')) ?>
+        <?= lazyLoad(wp_get_attachment_image($imgBackgroundId, 'link-block-case-study-bg-large')) ?>
       </div>
     <?php endif; ?>
     <?php if ($caseStudySize === 'large' && $imgLargeId) : ?>
