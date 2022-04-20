@@ -5,6 +5,8 @@
 ?>
 
 <section class="o-container-content c-latest-post">
+
+  <?php $i = 0; ?>
   <?php foreach($categories as $cat) : ?>
 
     <?php 
@@ -23,11 +25,16 @@
     
     ?>
     <?php if ($relatedPostsQuery->have_posts()) : ?>
+
       <?php while ($relatedPostsQuery->have_posts()) : $relatedPostsQuery->the_post(); ?>
 
         <?php $catname = get_the_category()[0]->name;?>
 
-          <div class="c-blog-link">
+          <?php if($i > 0) : ?>
+            <hr>
+          <?php endif; ?>
+
+          <div class="c-blog-link c-blog-link--latest">
             <div class="c-blog-link__info">
               <a href="<?= $catLink ?>" class="c-blog-link__info__category">
                <?= $catname ?>
@@ -43,8 +50,10 @@
               <div class="c-blog-link__content__excerpt"><?= the_excerpt(); ?></div>
             </div>
           </div>
-      <?php endwhile; ?>
+
+        <?php endwhile; ?>
       <?php wp_reset_postdata(); ?>
     <?php endif; ?>
+    <?php $i++; ?>
   <?php endforeach; ?>
 </section>
