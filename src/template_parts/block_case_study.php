@@ -58,8 +58,10 @@
   </div>
   <div class="c-case-study-block__content">
     <?php if ($logoSrc) : ?>
-      <div class="c-case-study-block__logo"
-           style="<?= $logoMask ?>">
+      <div
+        class="c-case-study-block__logo"
+        style="<?= $logoMask ?>"
+      >
         <?php if ($logoAlt) : ?>
           <span class="c-case-study-block__logo__alt">
             <?= $logoAlt ?>
