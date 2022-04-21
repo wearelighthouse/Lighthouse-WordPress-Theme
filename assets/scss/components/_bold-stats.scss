@@ -16,7 +16,7 @@
   }
 
   #{$slef}__title,
-  #{$slef}__statistic {
+  #{$slef}__number {
     @extend %u-tiempos;
     background: linear-gradient(#FC865B, #FC2489);
     -webkit-background-clip: text;
@@ -40,7 +40,7 @@
     padding-top: 1.5rem;
   }
 
-  #{$slef}__statistic {
+  #{$slef}__number {
     @extend %u-vbold;
     font-size: clamp(8rem, 20vw, 16rem); 
     line-height: 194px;
