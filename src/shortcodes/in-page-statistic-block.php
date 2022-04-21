@@ -14,8 +14,8 @@ function statisticBlockShortcode($wp_atts, $content = null)
 		 <div class="c-bold-stat-bg">
 		  	<div class="o-container-content o-container-content--v-pad c-bold-stat">';
 
-	$title = '<h3 class="c-bold-stat__title">' . $atts['title'] . '</h3>';
-	$descriptions = '<p class="c-bold-stat__description">' . $atts['description'] . '</p>';
+	$title = '<div class="c-bold-stat__content"><h3 class="c-bold-stat__title">' . $atts['title'] . '</h3>';
+	$descriptions = '<p class="c-bold-stat__description">' . $atts['description'] . '</p></div>';
 	$statistics = '<p class="c-bold-stat__statistic">' . $atts['statistics'] . '</p>';
 
 	$statistic .= $title;

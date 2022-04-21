@@ -1,27 +1,49 @@
 .c-bold-stat-bg {
 
-    $slef: '.c-bold-stat';
+  $slef: '.c-bold-stat';
+  background: linear-gradient(135deg, #DEDEE2 0%, rgba(255, 255, 255, 0.37) 96.35%);
 
-    background: linear-gradient(135deg, #DEDEE2 0%, rgba(255, 255, 255, 0.37) 96.35%);
-
-    #{$slef}__title {
-        @extend %u-tiempos;
-        font-size: 26px;
-        line-height: 34px;
+  #{$slef} {
+    @include breakpoint(from-medium) {
+      display: grid;
+      grid-column-gap: 3rem;
+      grid-template-columns: 1fr 60%;
     }
 
-    #{$slef}__description {
-        @extend %u-sailec;
-        font-size: 20px;
-        line-height: 34px;
-        color: #7E7E81;
+    & p {
+      @extend %u-m-0;
     }
+  }
 
-    #{$slef}__statistic {
-        @extend %u-tiempos;
-        @extend %u-vbold;
-        font-size: 60px;
-        line-height: 46px;
-        letter-spacing: -4px;
-    }
+  #{$slef}__title,
+  #{$slef}__statistic {
+    @extend %u-tiempos;
+    background: linear-gradient(#FC865B, #FC2489);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  #{$slef}__title {
+    @include fontScale(24, 26);
+    @include lineScale(30, 34);
+    width: min-content;
+  }
+
+  #{$slef}__description {
+    @extend %u-sailec;
+    @include fontScale(18, 20);
+    @include lineScale(30, 34);
+    @extend %u-color-gray-dark;
+    width: 200px;
+    padding-top: 1.5rem;
+  }
+
+  #{$slef}__statistic {
+    @extend %u-vbold;
+    font-size: clamp(8rem, 20vw, 16rem); 
+    line-height: 194px;
+    letter-spacing: -2px;
+  }
 }
