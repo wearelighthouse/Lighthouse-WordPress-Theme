@@ -4,14 +4,14 @@
   background: linear-gradient(135deg, #DEDEE2 0%, rgba(255, 255, 255, 0.37) 96.35%);
 
   #{$slef} {
-    @extend %u-flex;
-    @extend %u-fd-column;
-    @extend %u-jc-space-between--from-medium;
-    @extend %u-ai-center--from-medium;
-    
+    @extend %u-pt-6;
 
     @include breakpoint(from-medium) {
-      flex-direction: row;
+      display: grid;
+      grid-column-gap: 3rem;
+      grid-template-columns: 1fr 60%;
+      align-items: center;
+      padding-top: revert;
     }
 
     & p {
@@ -46,8 +46,7 @@
 
   #{$slef}__number {
     @extend %u-vbold;
-    font-size: clamp(8rem, 20vw, 16rem); 
-    line-height: 194px;
-    letter-spacing: -2px;
+    font-size: clamp(8rem, 18vw, 16rem); 
+    letter-spacing: -4px;
   }
 }

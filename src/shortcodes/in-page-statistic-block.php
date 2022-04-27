@@ -12,7 +12,7 @@ function statisticBlockShortcode($wp_atts, $content = null)
 	$statistic = '</section>
 		 <section class="o-container-section o-container-section--bordered">
 		 <div class="c-bold-stat-bg">
-		  	<div class="o-container-content o-container-content--v-pad c-bold-stat">';
+		  	<div class="o-container-content c-bold-stat">';
 
 	$title = '<div class="c-bold-stat__text"><h3 class="c-bold-stat__title c-bold-stat__title">' . $atts['title'] . '</h3>';
 	$descriptions = '<p class="c-bold-stat__description c-bold-stat__description">' . $atts['description'] . '</p></div>';
