@@ -1,7 +1,7 @@
 .c-bold-stat-bg {
 
   $slef: '.c-bold-stat';
-  background: linear-gradient(135deg, #DEDEE2 0%, rgba(255, 255, 255, 0.37) 96.35%);
+  background: linear-gradient(160deg, $color-gray-bluish, rgba($color-gray-bluish, 0.5));
 
   #{$slef} {
     @extend %u-pt-6;
@@ -22,7 +22,7 @@
   #{$slef}__title,
   #{$slef}__number {
     @extend %u-tiempos;
-    background: linear-gradient(#FC865B, #FC2489);
+    background: linear-gradient(160deg, #2b221f, #fd0378);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
