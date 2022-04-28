@@ -22,11 +22,11 @@
   #{$slef}__title,
   #{$slef}__number {
     @extend %u-tiempos;
-    background: linear-gradient(160deg, #2b221f, #fd0378);
+    background: linear-gradient(160deg, $color-orange-old, $color-pink-old);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
+    // text-fill-color: transparent;
   }
 
   #{$slef}__title {
@@ -46,7 +46,7 @@
 
   #{$slef}__number {
     @extend %u-vbold;
-    font-size: clamp(8rem, 18vw, 16rem); 
+    font-size: clamp(7rem, 18vw, 16rem); 
     letter-spacing: -4px;
   }
 }
