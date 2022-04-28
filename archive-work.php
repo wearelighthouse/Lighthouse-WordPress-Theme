@@ -1,6 +1,7 @@
 <?php
   $caseStudyIds = getPostMeta('work_archive_case_study_list_clients', $post->ID);
   $sectorIds = getPostMeta('work_archive_sector_list_sector', $post->ID);
+  $srcQueryVar = get_query_var('src');
 
   if ($sectorIds) {
     $linkList = '';
@@ -23,7 +24,6 @@
 <?php get_header(); ?>
 
 <main>
-
   <?php include(locate_template('src/template_parts/hero.php')) ?>
 
   <?php if ($caseStudyIds) : ?>
