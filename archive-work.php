@@ -3,6 +3,17 @@
   $sectorIds = getPostMeta('work_archive_sector_list_sector', $post->ID);
   $srcQueryVar = get_query_var('src');
 
+  if ($srcQueryVar) {
+    $home = get_page_by_title('Home');
+    $homeCaseStudy = getPostMeta('front_page_case_study_list_clients', $home->ID);
+
+    $clean1 = array_diff($caseStudyIds, $homeCaseStudy);
+    $clean2 = array_diff($homeCaseStudy, $caseStudyIds);
+    $newCaseStudyIds = array_merge($clean1, $clean2);
+    
+    $caseStudyIds = $newCaseStudyIds;
+  }
+
   if ($sectorIds) {
     $linkList = '';
 
