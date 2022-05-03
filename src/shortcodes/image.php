@@ -6,7 +6,8 @@ function imageShortcode($atts)
   $atts = shortcode_atts([
     'id' => '',
     'size' => 'large',
-    'background' => ''
+    'background' => '',
+    'caption' => ''
   ], $atts);
 
   $allowedImgSizes = ['', 'small', 'medium', 'large', 'full'];
@@ -56,7 +57,14 @@ function imageShortcode($atts)
     }
 
     $bgColor = count($bgColorArray) > 1 ? ' style="background: ' . $bgColorArray[$i] . '"' : '';
-    $output .= '<div class="c-images__image"' . $bgColor . '>' . $media . '</div>';
+    $output .= '<div class="c-images__image"' . $bgColor . '>';
+    $output .= $media;
+
+    if ($atts['caption']) {
+      $output .= '<p>' . $atts['caption'] . '</p>';
+    }
+
+    $output .= '</div>';
   }
 
   $output .= '</div>';
