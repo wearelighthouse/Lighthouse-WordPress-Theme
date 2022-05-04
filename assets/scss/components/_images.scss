@@ -13,7 +13,7 @@
     @extend %u-flex;
     @extend %u-ai-center;
     @extend %u-jc-center;
-    flex-direction: column;
+    @extend %u-fd-column;
     @extend %u-width-100pc--upto-medium;
     @extend %u-width-50pc--from-medium;
 
