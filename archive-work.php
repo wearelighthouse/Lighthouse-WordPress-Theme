@@ -3,7 +3,7 @@
   $sectorIds = getPostMeta('work_archive_sector_list_sector', $post->ID);
   $srcQueryVar = get_query_var('src');
 
-  if ($srcQueryVar) {
+  if ($srcQueryVar == "home-see-more") {
     $home = get_page_by_title('Home');
     $homeCaseStudies = getPostMeta('front_page_case_study_list_clients', $home->ID);
 
