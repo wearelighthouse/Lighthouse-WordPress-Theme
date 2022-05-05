@@ -5,13 +5,13 @@
 
   if ($srcQueryVar) {
     $home = get_page_by_title('Home');
-    $homeCaseStudy = getPostMeta('front_page_case_study_list_clients', $home->ID);
+    $homeCaseStudies = getPostMeta('front_page_case_study_list_clients', $home->ID);
 
-    $clean1 = array_diff($caseStudyIds, $homeCaseStudy);
-    $clean2 = array_diff($homeCaseStudy, $caseStudyIds);
-    $newCaseStudyIds = array_merge($clean1, $clean2);
+    $caseStudyIds1 = array_diff($caseStudyIds, $homeCaseStudies);
+    $caseStudyIds2 = array_diff($homeCaseStudies, $caseStudyIds);
+    $removedDuplicateCaseStudyIds = array_merge($caseStudyIds1, $caseStudyIds2);
     
-    $caseStudyIds = $newCaseStudyIds;
+    $caseStudyIds = $removedDuplicateCaseStudyIds;
   }
 
   if ($sectorIds) {
