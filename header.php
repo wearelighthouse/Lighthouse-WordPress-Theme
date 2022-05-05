@@ -58,10 +58,21 @@
 
   <?php if (!in_array($userIP, $excludedIPs) && !current_user_can('edit_pages')) : ?>
     <?php if (is_front_page()) : ?>
+      <link rel="preconnect" href="https://snid.snitcher.com">
       <link rel="preconnect" href="https://www.google-analytics.com">
       <link rel="preconnect" href="https://www.googletagmanager.com">
       <link rel="preconnect" href="https://niblewren.co">
     <?php endif; ?>
+
+    <!-- Snitcher analytics code -->
+    <script>
+      !function(s,n,i,t,c,h){s.SnitchObject=i;s[i]||(s[i]=function(){
+      (s[i].q=s[i].q||[]).push(arguments)});s[i].l=+new Date;c=n.createElement(t);
+      h=n.getElementsByTagName(t)[0];c.src='//snid.snitcher.com/8417699.js';
+      h.parentNode.insertBefore(c,h)}(window,document,'snid','script');
+
+      snid('verify', '8417699');
+    </script>
 
     <script>
       (function(o){var b="https://niblewren.co/anywhere/",t="67c40486554c4fc585318ff3e2c10aeefe65b8a136a641d895d0bf9c5e68d2ab",a=window.AutopilotAnywhere={_runQueue:[],run:function(){this._runQueue.push(arguments);}},c=encodeURIComponent,s="SCRIPT",d=document,l=d.getElementsByTagName(s)[0],p="t="+c(d.title||"")+"&u="+c(d.location.href||"")+"&r="+c(d.referrer||""),j="text/javascript",z,y;if(!window.Autopilot) window.Autopilot=a;if(o.app) p="devmode=true&"+p;z=function(src,asy){var e=d.createElement(s);e.src=src;e.type=j;e.async=asy;l.parentNode.insertBefore(e,l);};y=function(){z(b+t+'?'+p,true);};if(window.attachEvent){window.attachEvent("onload",y);}else{window.addEventListener("load",y,false);}})({});
