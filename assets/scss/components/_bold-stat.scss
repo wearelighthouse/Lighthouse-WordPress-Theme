@@ -26,7 +26,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    // text-fill-color: transparent;
   }
 
   #{$slef}__title {
@@ -37,9 +36,9 @@
 
   #{$slef}__description {
     @extend %u-sailec;
+    @extend %u-color-gray-darker;
     @include fontScale(18, 20);
     @include lineScale(30, 34);
-    @extend %u-color-gray-dark;
     width: 200px;
     padding-top: 1.5rem;
   }
@@ -47,6 +46,6 @@
   #{$slef}__number {
     @extend %u-vbold;
     font-size: clamp(7rem, 18vw, 16rem); 
-    letter-spacing: -4px;
+    letter-spacing: -0.015em;
   }
 }
