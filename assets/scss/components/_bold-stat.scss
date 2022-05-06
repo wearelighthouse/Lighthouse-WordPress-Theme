@@ -1,9 +1,9 @@
 .c-bold-stat-bg {
 
-  $slef: '.c-bold-stat';
+  $self: '.c-bold-stat';
   background: linear-gradient(160deg, $color-gray-bluish, rgba($color-gray-bluish, 0.5));
 
-  #{$slef} {
+  #{$self} {
     @extend %u-pt-6;
 
     @include breakpoint(from-medium) {
@@ -19,8 +19,8 @@
     }
   }
 
-  #{$slef}__title,
-  #{$slef}__number {
+  #{$self}__title,
+  #{$self}__number {
     @extend %u-tiempos;
     background: linear-gradient(160deg, $color-orange-old, $color-pink-old);
     -webkit-background-clip: text;
@@ -28,13 +28,13 @@
     background-clip: text;
   }
 
-  #{$slef}__title {
+  #{$self}__title {
     @include fontScale(24, 26);
     @include lineScale(30, 34);
     width: min-content;
   }
 
-  #{$slef}__description {
+  #{$self}__description {
     @extend %u-sailec;
     @extend %u-color-gray-darker;
     @include fontScale(18, 20);
@@ -43,7 +43,7 @@
     padding-top: 1.5rem;
   }
 
-  #{$slef}__number {
+  #{$self}__number {
     @extend %u-vbold;
     font-size: clamp(7rem, 18vw, 16rem); 
     letter-spacing: -0.015em;
