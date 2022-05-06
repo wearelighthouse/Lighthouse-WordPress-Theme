@@ -1,0 +1,51 @@
+.c-bold-stat-bg {
+
+  $self: '.c-bold-stat';
+  background: linear-gradient(160deg, $color-gray-bluish, rgba($color-gray-bluish, 0.5));
+
+  #{$self} {
+    @extend %u-pt-6;
+
+    @include breakpoint(from-medium) {
+      display: grid;
+      grid-column-gap: 3rem;
+      grid-template-columns: 1fr 60%;
+      align-items: center;
+      padding-top: revert;
+    }
+
+    & p {
+      @extend %u-m-0;
+    }
+  }
+
+  #{$self}__title,
+  #{$self}__number {
+    @extend %u-tiempos;
+    background: linear-gradient(160deg, $color-orange-old, $color-pink-old);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  #{$self}__title {
+    @include fontScale(24, 26);
+    @include lineScale(30, 34);
+    width: min-content;
+  }
+
+  #{$self}__description {
+    @extend %u-sailec;
+    @extend %u-color-gray-darker;
+    @include fontScale(18, 20);
+    @include lineScale(30, 34);
+    width: 200px;
+    padding-top: 1.5rem;
+  }
+
+  #{$self}__number {
+    @extend %u-vbold;
+    font-size: clamp(7rem, 18vw, 16rem); 
+    letter-spacing: -0.015em;
+  }
+}

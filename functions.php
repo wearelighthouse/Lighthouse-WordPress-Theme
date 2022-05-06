@@ -48,6 +48,7 @@ require_once __DIR__ . '/src/post_types/work.php';
 
 // Shortcodes
 require_once __DIR__ . '/src/shortcodes/ad.php';
+require_once __DIR__ . '/src/shortcodes/bold-stat.php';
 require_once __DIR__ . '/src/shortcodes/content-blocks.php';
 require_once __DIR__ . '/src/shortcodes/image.php';
 require_once __DIR__ . '/src/shortcodes/form-block.php';
@@ -60,6 +61,7 @@ function registerShortcodes()
   add_shortcode('screen', 'screenShortcode');
   add_shortcode('quote', 'quoteShortcode');
   add_shortcode('image', 'imageShortcode');
+  add_shortcode('statistic', 'statisticBlockShortcode');
   add_shortcode('ad', 'adShortcode');
   add_shortcode('form', 'formBlockShortcode');
   add_shortcode('blocks', 'contentBlocksShortcode');
