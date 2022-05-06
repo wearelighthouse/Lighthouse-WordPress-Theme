@@ -18,6 +18,7 @@ require_once __DIR__ . '/src/functions/menus.php';
 require_once __DIR__ . '/src/functions/metaboxes.php';
 require_once __DIR__ . '/src/functions/plugins.php';
 require_once __DIR__ . '/src/functions/pr.php';
+require_once __DIR__ . '/src/functions/query_vars.php';
 
 // Metabox Groups
 require_once __DIR__ . '/src/metabox_groups/contact_template.php';
@@ -172,5 +173,4 @@ function enqueueResources()
     filemtime(get_stylesheet_directory() . '/dist/css/style.css')
   );
 }
-
 add_action('wp_enqueue_scripts', 'enqueueResources');

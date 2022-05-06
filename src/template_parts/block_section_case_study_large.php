@@ -20,7 +20,7 @@
       <?php if (is_front_page()) : ?>
         <div class="o-container-content">
           <a
-            href="/our-work"
+            href="/our-work?src=home-see-more"
             class="c-case-study-block c-case-study-block--large c-case-study-block--more js-half-onscreen-detect"
             aria-labelledby="see-more-text"
           >
