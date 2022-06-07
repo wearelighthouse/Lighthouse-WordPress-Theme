@@ -58,7 +58,6 @@
 
   <?php if (!in_array($userIP, $excludedIPs) && !current_user_can('edit_pages')) : ?>
     <?php if (is_front_page()) : ?>
-      <link rel="preconnect" href="https://snid.snitcher.com">
       <link rel="preconnect" href="https://www.google-analytics.com">
       <link rel="preconnect" href="https://www.googletagmanager.com">
       <link rel="preconnect" href="https://niblewren.co">
