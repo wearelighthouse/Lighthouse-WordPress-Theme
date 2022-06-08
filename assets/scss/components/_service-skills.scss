@@ -1,12 +1,14 @@
 .c-service-skills {
   margin-top: 0;
   margin-bottom: 0;
+  display: grid;
+  grid-template-rows: 72px 0.5fr 1fr;
 
   & div:first-child {
     @extend %u-flex;
     @extend %u-ai-center;
     height: 72px;
-    margin-bottom: 1.5rem;
+    margin-bottom: unset;
 
     @include breakpoint(upto-medium) {
       margin-top: 2rem;
@@ -18,7 +20,8 @@
     margin-bottom: unset;
     @extend %u-pos-relative;
     @extend %u-pb-4;
-
+    align-self: end;
+  
     &::before {
       @extend %u-content;
       @extend %u-pos-absolute;
