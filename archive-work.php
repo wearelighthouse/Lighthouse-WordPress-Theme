@@ -1,6 +1,18 @@
 <?php
   $caseStudyIds = getPostMeta('work_archive_case_study_list_clients', $post->ID);
   $sectorIds = getPostMeta('work_archive_sector_list_sector', $post->ID);
+  $srcQueryVar = get_query_var('src');
+
+  if ($srcQueryVar == "home-see-more") {
+    $home = get_page_by_title('Home');
+    $homeCaseStudies = getPostMeta('front_page_case_study_list_clients', $home->ID);
+
+    $caseStudyIds1 = array_diff($caseStudyIds, $homeCaseStudies);
+    $caseStudyIds2 = array_diff($homeCaseStudies, $caseStudyIds);
+    $removedDuplicateCaseStudyIds = array_merge($caseStudyIds1, $caseStudyIds2);
+    
+    $caseStudyIds = $removedDuplicateCaseStudyIds;
+  }
 
   if ($sectorIds) {
     $linkList = '';
@@ -23,7 +35,6 @@
 <?php get_header(); ?>
 
 <main>
-
   <?php include(locate_template('src/template_parts/hero.php')) ?>
 
   <?php if ($caseStudyIds) : ?>

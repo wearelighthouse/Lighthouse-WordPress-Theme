@@ -9,6 +9,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/functions/attach_template.php';
 require_once __DIR__ . '/src/functions/autoa.php';
 require_once __DIR__ . '/src/functions/get_option.php';
+require_once __DIR__ . '/src/functions/merge_product_stories_into_article_query.php';
 require_once __DIR__ . '/src/functions/gforms.php';
 require_once __DIR__ . '/src/functions/image_sizes.php';
 require_once __DIR__ . '/src/functions/lazy_load.php';
@@ -17,6 +18,7 @@ require_once __DIR__ . '/src/functions/menus.php';
 require_once __DIR__ . '/src/functions/metaboxes.php';
 require_once __DIR__ . '/src/functions/plugins.php';
 require_once __DIR__ . '/src/functions/pr.php';
+require_once __DIR__ . '/src/functions/query_vars.php';
 
 // Metabox Groups
 require_once __DIR__ . '/src/metabox_groups/contact_template.php';
@@ -46,6 +48,7 @@ require_once __DIR__ . '/src/post_types/work.php';
 
 // Shortcodes
 require_once __DIR__ . '/src/shortcodes/ad.php';
+require_once __DIR__ . '/src/shortcodes/bold-stat.php';
 require_once __DIR__ . '/src/shortcodes/content-blocks.php';
 require_once __DIR__ . '/src/shortcodes/image.php';
 require_once __DIR__ . '/src/shortcodes/form-block.php';
@@ -58,6 +61,7 @@ function registerShortcodes()
   add_shortcode('screen', 'screenShortcode');
   add_shortcode('quote', 'quoteShortcode');
   add_shortcode('image', 'imageShortcode');
+  add_shortcode('statistic', 'statisticBlockShortcode');
   add_shortcode('ad', 'adShortcode');
   add_shortcode('form', 'formBlockShortcode');
   add_shortcode('blocks', 'contentBlocksShortcode');
@@ -171,5 +175,4 @@ function enqueueResources()
     filemtime(get_stylesheet_directory() . '/dist/css/style.css')
   );
 }
-
 add_action('wp_enqueue_scripts', 'enqueueResources');

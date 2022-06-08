@@ -1,0 +1,18 @@
+.c-latest-post {
+
+  @extend %u-flex;
+  @extend %u-fd-row;
+  @extend %u-fd-column--upto-medium;
+  @extend %u-pt-8--from-medium;
+  @extend %u-pb-8--from-medium;
+
+  & > hr {
+    @extend %u-bg-color-gray;
+    min-width: 2px;
+    min-height: 2px;
+  }
+
+  @include breakpoint(from-medium) {
+    gap: 4rem;
+  }
+}

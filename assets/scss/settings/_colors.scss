@@ -6,6 +6,7 @@ $color-gray-light:    #f7f7f7;
 $color-gray:          #dedee2;
 $color-gray-darkish:  #a3a3ad;
 $color-gray-dark:     #7e7e81;
+$color-gray-darker:   #717174;
 $color-gray-deep:     #2b2b2b;
 $color-black:         #000000;
 $color-blackcurrant:  #151931;
@@ -31,6 +32,7 @@ $gradient-orange-pink-light: linear-gradient(135deg, #FC895B26 0%, #FF268B26 100
 $auto-colors: (
   'white':        $color-white,
   'gray-dark':    $color-gray-dark,
+  'gray-darker':  $color-gray-darker,
   'blackcurrant': $color-blackcurrant,
   // 'pink': $color-pink, // Used in link styling, isn't needed 'ere
   'pink-dark':    $color-pink-dark,
