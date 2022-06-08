@@ -15,6 +15,10 @@
     grid-column-gap: 2rem;
   }
 
+  &--service-alignment {
+    gap: 5rem 0rem;
+  }
+
   @include breakpoint(upto-small) {
     width: 100% !important; // TODO: Figure out why important needed & remove
   }

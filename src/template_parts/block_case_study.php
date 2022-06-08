@@ -40,7 +40,7 @@
 <a href="<?= $linkURL ?>"
    class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?> 
    <?= $globalcaseStudyAlignRight ? 'c-case-study-block--align-right' : '' ?> 
-   <?= $globalcasestudysmallbigger ? 'c-case-study-block--small--bg-full-width' : '' ?> js-half-onscreen-detect"
+   <?= $globalcaseStudyServiceAlignement ? 'c-case-study-block--small--service-alignment' : '' ?> js-half-onscreen-detect"
 >
    
   <div class="c-case-study-block__background">

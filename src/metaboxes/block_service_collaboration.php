@@ -9,6 +9,16 @@ return [
             'type' => 'text',
         ],
         [
+            'name' => 'Mask image right',
+            'id'   => 'mask_image_right',
+            'type' => 'file',
+        ],
+        [
+            'name' => 'Mask image left',
+            'id'   => 'mask_image_left',
+            'type' => 'file',
+        ],
+        [
             'id' => 'group',
             'type' => 'group',
             'options' => [
@@ -40,6 +50,11 @@ return [
                 ],
             ]
             
+        ],
+        [
+            'name' => 'Action',
+            'id'   => 'action',
+            'type' => 'text'
         ],
     ]
 ];

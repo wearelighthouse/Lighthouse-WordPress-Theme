@@ -5,22 +5,24 @@
   $clients = getPostMeta('service_archive_home_intro_clients');
 ?>
 
-<section class="o-container-section o-container-section--h-bordered">
-  <div class="o-container-content">
-    <div class="c-service-intro">
-      <?php if ($serviceItroTitle) : ?>
-          <h2 class="c-service-intro__title c-service-template__title">
-            <?= $serviceItroTitle ?>
-          </h2>
-      <?php endif; ?>
+<?php if ($serviceItroTitle || $introText) : ?>
+  <section class="o-container-section o-container-section--h-bordered">
+    <div class="o-container-content">
+      <div class="c-service-intro">
+        <?php if ($serviceItroTitle) : ?>
+            <h2 class="c-service-intro__title c-service-template__title">
+              <?= $serviceItroTitle ?>
+            </h2>
+        <?php endif; ?>
 
-      <div class="c-service-intro__content">
         <?php if ($introText) : ?>
+          <div class="c-service-intro__text type-p">
             <?= wpautop($introText) ?>
+          </div>
         <?php endif; ?>
 
         <?php if ($clients && isset($clients[0])) : ?>
-          <div class="c-service-intro__content__clients">
+          <div class="c-service-intro__clients">
             <?php foreach ($clients as $client) : ?>
               <?php
                 $logoSrc = isset($client['logo']) ? $client['logo'] : '';
@@ -34,7 +36,7 @@
                 $alt = get_post_meta($logoId, '_wp_attachment_image_alt', true);
               ?>
 
-              <div class="c-service-intro__content__clients__img-container" style="<?= $logoMask; ?>; height: 25.5px">
+              <div class="c-service-intro__clients__img-container" style="<?= $logoMask; ?>">
                 <span class="o-dictate"><?= $alt ?> logo</span>
               </div>
             <?php endforeach; ?>
@@ -42,14 +44,14 @@
         <?php endif; ?>
 
       </div>
-    </div>
 
-    <?php if ($button) : ?>
-      <div class="c-service-template__button-container">
-        <button class="c-service-template__button">
-            <a href="/call-to-action"><?= $button ?></a>
-        </button>
-      </div>
-    <?php endif; ?>
-  </div>
-</section>
+      <?php if ($button) : ?>
+        <div class="c-service-template__button-container">
+          <button class="c-service-template__button">
+              <a href="https://wearelighthouse.com/contact/"><?= $button ?></a>
+          </button>
+        </div>
+      <?php endif; ?>
+    </div>
+  </section>
+<?php endif; ?>
