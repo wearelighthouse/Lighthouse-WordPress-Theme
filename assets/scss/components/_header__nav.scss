@@ -18,7 +18,8 @@
     .menu-item {
       @extend %u-mv-2--upto-medium;
       @extend %u-mh-6--upto-medium;
-      @extend %u-mh-2--from-medium;
+      @extend %u-mh-1--from-medium;
+      @extend %u-mh-2--from-large;
 
       a {
         // Set this here as it's tricky to get in the with WP menu PHP

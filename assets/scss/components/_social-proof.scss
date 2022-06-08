@@ -1,0 +1,63 @@
+.c-social-proof {
+  @extend %u-grid;
+  gap: 2rem 1rem;
+
+  @include breakpoint(from-small) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @include breakpoint(from-large) {
+    grid-template-columns: repeat(4, 25%);
+  }
+
+  &__link {
+    @extend %u-pad-2;
+    @extend %u-border-radius-md;
+    transition: background-color .2s;
+
+    @include breakpoint(upto-tiny) {
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      border-radius: unset;
+    }
+
+    &__image-container {
+      @extend %u-flex;
+      @extend %u-ai-center;
+      min-height: 50px;
+    }
+
+    &__stars {
+      @extend %u-mt-3;
+      width: 70px;
+      height: 13px;
+      background: url('../../dist/svg/social-proof-stars.svg') no-repeat 0 0;
+    }
+
+    &__text {
+      @extend %u-sailec;
+      @extend %u-color-black;
+      font-size: 13px;
+     
+      > p:last-child {
+        margin-bottom: 0;
+      }
+
+      > p:not(:first-child) {
+        @extend %u-mt-1;
+      }
+
+      > p:not(:last-child) {
+        @extend %u-mb-1;
+      }
+      
+    }
+
+    &:hover,
+    &:focus-visible {
+      @extend %u-bg-color-gray-bluish;
+    }
+  }
+}

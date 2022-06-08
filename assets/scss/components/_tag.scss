@@ -6,8 +6,8 @@
 .c-tag {
   @extend .type-p--small;
   @extend %u-bg-color-gray-light;
+  @extend %u-border-radius-sm;
   padding: .5rem .8rem;
-  border-radius: 4px;
 
   &:focus,
   &:hover {

@@ -22,6 +22,12 @@ return [
             'desc' => 'Background image that sits inside the gray background section in Case Study Link Blocks.'
         ],
         [
+            'name' => 'Illustration Background Mirrored',
+            'id'   => 'image_background_mirrored',
+            'type' => 'file',
+            'desc' => 'Background image that sits inside the gray background section in Case Study Link Blocks.'
+        ],
+        [
             'name' => 'Illustration (Large)',
             'id'   => 'image_large',
             'type' => 'file',

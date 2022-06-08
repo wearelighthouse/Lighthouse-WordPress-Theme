@@ -1,13 +1,33 @@
 <?php
   $caseStudyIds = getPostMeta('work_archive_case_study_list_clients', $post->ID);
+  $sectorIds = getPostMeta('work_archive_sector_list_sector', $post->ID);
+  $srcQueryVar = get_query_var('src');
 
-  $sectors = getPostMeta('work_archive_sector_list_sector', $post->ID);
+  if ($srcQueryVar == "home-see-more") {
+    $home = get_page_by_title('Home');
+    $homeCaseStudies = getPostMeta('front_page_case_study_list_clients', $home->ID);
 
-  if ($sectors) {
+    $caseStudyIds1 = array_diff($caseStudyIds, $homeCaseStudies);
+    $caseStudyIds2 = array_diff($homeCaseStudies, $caseStudyIds);
+    $removedDuplicateCaseStudyIds = array_merge($caseStudyIds1, $caseStudyIds2);
+    
+    $caseStudyIds = $removedDuplicateCaseStudyIds;
+  }
+
+  if ($sectorIds) {
     $linkList = '';
 
-    foreach ($sectors as $sector) {
-      $linkList .= '<li><a class="c-tag" href="' . get_permalink($sector) . '">' . get_the_title($sector) . '</a></li>';
+    foreach ($sectorIds as $sectorId) {
+      $slug = get_post($sectorId)->post_name;
+
+      $linkList .= ('
+        <li>
+          <a class="c-tag" href="' . get_permalink($sectorId) . '">
+            <img src="' . get_template_directory_uri() . '/dist/svg/' . $slug . '.svg" alt="" width="36px" height="36px">
+            <span>' . get_the_title($sectorId) . '</span>
+          </a>
+        </li>
+      ');
     }
   }
 ?>
@@ -15,7 +35,6 @@
 <?php get_header(); ?>
 
 <main>
-
   <?php include(locate_template('src/template_parts/hero.php')) ?>
 
   <?php if ($caseStudyIds) : ?>

@@ -4,15 +4,15 @@
 # They're not hosted on GitHub due to licence conditions.
 #
 # To zip up this file, from within a fonts/ directory, run:
-# $ zip -er fonts.zip sailec/* tiempos/*
+# $ zip -er9 fonts.zip sailec tiempos
 #
 
 echo "Fetching font files. The password is in the Lighthouse 1Pass!"
 cd assets/font
 
 # Try wget, if that fails, use curl:
-wget -O fonts.zip https://www.dropbox.com/s/wlbtno0c6tf8ooe/fonts.zip?dl=0 || \
-curl -L -o fonts.zip https://www.dropbox.com/s/wlbtno0c6tf8ooe/fonts.zip?dl=0
+wget -O fonts.zip https://drive.google.com/uc?export=download\&id=1sJCRhTucWoYCEY6XtXMGOUK-mBtOQEyB || \
+curl -L -o fonts.zip https://drive.google.com/uc?export=download\&id=1sJCRhTucWoYCEY6XtXMGOUK-mBtOQEyB
 
 echo "Extracting files then removing the .zip"
 unzip -q fonts.zip
