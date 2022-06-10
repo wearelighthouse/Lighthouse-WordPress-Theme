@@ -54,17 +54,15 @@
 
 <main>
   <?php while (have_posts()) : the_post(); 
-    $parentID = wp_get_post_parent_id($post);
-    $children = $parentID ? get_children(['post_parent' => $parentID, 'orderby' => 'title', 'order' => 'ASC'])
-                          : get_children(['post_parent' => get_the_ID(), 'orderby' => 'title', 'order' => 'ASC']);
+
+    $children = get_children(['post_parent' => get_the_ID(), 'orderby' => 'title', 'order' => 'ASC']);
+    
     $caseStudys = [];
 
     if (!empty($children)) {
       foreach ($children as $caseStudy) {
-        if (array_search($caseStudy->ID, array_column($caseStudys, 'id')) === FALSE) {
-          if (is_user_logged_in() || $caseStudy->post_status === 'publish') {
-            $caseStudys[] = (string)$caseStudy->ID;
-          }
+        if (is_user_logged_in() || $caseStudy->post_status === 'publish') {
+          $caseStudys[] = (string)$caseStudy->ID;
         }
       }
     }
