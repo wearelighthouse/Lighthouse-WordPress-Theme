@@ -62,7 +62,7 @@
 
   <?php include(locate_template('src/template_parts/service_intro.php')) ?>
 
-  <?php if (isset($globalIntro)) : ?>
+  <?php if ($globalIntro) : ?>
     <div class="o-container-content">
       <h2 class="type-title c-service-case-studies__title"><?= $globalIntro ?></h2>
     </div>
