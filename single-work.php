@@ -53,10 +53,15 @@
 <script src="<?= get_template_directory_uri()?>/dist/js/scrollbar-width.min.js"></script>
 
 <main>
-  <?php while (have_posts()) : the_post(); 
+  <?php while (have_posts()) : the_post();
 
-    $children = get_children(['post_parent' => get_the_ID(), 'orderby' => 'title', 'order' => 'ASC']);
-    
+    $children = get_children([
+      'post_type' => get_post_type(),
+      'post_parent' => get_the_ID(),
+      'orderby' => 'title',
+      'order' => 'ASC',
+    ]);
+
     $caseStudys = [];
 
     if (!empty($children)) {
@@ -114,7 +119,7 @@
 
       </div>
     </section>
-    
+
     <?php if ($caseStudys) : ?>
       <?php $globalCaseStudyIds = $caseStudys ?>
       <?php include(locate_template('src/template_parts/block_section_case_study_large.php')) ?>
