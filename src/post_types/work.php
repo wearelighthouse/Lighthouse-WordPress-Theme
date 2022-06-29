@@ -7,7 +7,8 @@ function registerWorkPostType()
         'title',
         'editor',
         'excerpt',
-        'thumbnail'
+        'thumbnail',
+        'page-attributes',
     ];
 
     register_post_type('work', [
@@ -29,7 +30,7 @@ function registerWorkPostType()
         'menu_icon' => 'dashicons-carrot',
         'supports' => $supports,
         'taxonomies' => [],
-        'hierarchical' => false
+        'hierarchical' => true,
     ]);
 
 }
