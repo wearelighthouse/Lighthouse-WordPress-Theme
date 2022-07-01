@@ -73,12 +73,37 @@ function swapEmailFromHelloToHi() {
   });
 }
 
+function storeThePrefillOrigin() {
+  sessionStorage.setItem('prefill_Origin', "If%20You%20Could");
+
+  let getElement = document.querySelectorAll('.c-content-grid');
+
+  getElement.forEach(element => {
+    let para = element.querySelectorAll('p');
+
+    para.forEach(el => {
+      let anchor = el.querySelectorAll('a');
+      anchor.forEach(an => {
+        let link = an.getAttribute('href');
+        
+        if (!link.includes('prefill_Origin')) {
+          const getSession = sessionStorage.getItem('prefill_Origin');
+          let appendUrl = `${link}&prefill_Origin=${getSession}`;
+          console.log(appendUrl);
+        }
+      })
+    })
+
+  })
+}
+
 function completeInit() {
   // Do lazy loading images
   setupObservers(window.lozad);
   // Add document.referrer into cache
   addReferral(document.referrer);
   swapEmailFromHelloToHi();
+  storeThePrefillOrigin();
 }
 
 window.addEventListener('beforeunload', function (e) {
