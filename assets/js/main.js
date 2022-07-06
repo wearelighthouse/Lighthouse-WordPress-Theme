@@ -73,23 +73,12 @@ function swapEmailFromHelloToHi() {
   });
 }
 
-function removeSpaceCharacter() {
-  let emptydivs = document.querySelectorAll('.u-hide-if-empty');
-
-  for (let i = 0; i < emptydivs.length; i++) {
-    if(emptydivs[i].innerHTML.replace(/^\s*/, "").replace(/\s*$/, "") == "") {
-      emptydivs[i].style.display = 'none';
-    }
-  }
-}
-
 function completeInit() {
   // Do lazy loading images
   setupObservers(window.lozad);
   // Add document.referrer into cache
   addReferral(document.referrer);
   swapEmailFromHelloToHi();
-  removeSpaceCharacter();
 }
 
 window.addEventListener('beforeunload', function (e) {

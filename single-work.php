@@ -44,7 +44,7 @@
   }
 
   $svgSpriteSheet = get_template_directory_uri() . '/dist/svg/sprites.svg';
-
+  
 ?>
 
 <?php get_header(); ?>

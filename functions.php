@@ -176,3 +176,15 @@ function enqueueResources()
   );
 }
 add_action('wp_enqueue_scripts', 'enqueueResources');
+
+function removeSpaceBetweenShortcodes($content) {
+  if ( is_singular() && in_the_loop() && is_main_query() ) {
+    $pattern = '/\[\/image\][\s]{4}\[image/';
+    $replace = '[/image][image';
+    return preg_replace($pattern, $replace, $content);
+  }
+
+  return $content;
+}
+
+add_filter( 'the_content',  'removeSpaceBetweenShortcodes', 1);
