@@ -80,10 +80,10 @@ function storeThePrefillOrigin() {
   
   links.forEach(link => {
     const getSession = sessionStorage.getItem('prefill_Origin');
-    const pattern = '/&prefill_Origin=\w+/g';
-    const replace = `&prefill_Origin=${getSession}`;
-    link.href.replace(pattern, replace);
-    console.log(link.href);
+
+    let linkHref = link.href.split('&')[0];
+    let replacement = `${linkHref}&prefill_Origin=${getSession}`
+    link.href = linkHref.replace(linkHref, replacement);
   })
 }
 
