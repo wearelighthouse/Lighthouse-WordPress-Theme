@@ -80,11 +80,10 @@ function storeThePrefillOrigin() {
   
   links.forEach(link => {
     const getSession = sessionStorage.getItem('prefill_Origin');
-
     let linkHref = link.href.split('&')[0];
-    let replacement = `${linkHref}&prefill_Origin=${getSession}`
+    let replacement = `${linkHref}&prefill_Origin=${getSession}`;
     link.href = linkHref.replace(linkHref, replacement);
-  })
+  });
 }
 
 function completeInit() {
