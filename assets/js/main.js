@@ -76,24 +76,14 @@ function swapEmailFromHelloToHi() {
 function storeThePrefillOrigin() {
   sessionStorage.setItem('prefill_Origin', "If%20You%20Could");
 
-  let getElement = document.querySelectorAll('.c-content-grid');
-
-  getElement.forEach(element => {
-    let para = element.querySelectorAll('p');
-
-    para.forEach(el => {
-      let anchor = el.querySelectorAll('a');
-      anchor.forEach(an => {
-        let link = an.getAttribute('href');
-        
-        if (!link.includes('prefill_Origin')) {
-          const getSession = sessionStorage.getItem('prefill_Origin');
-          let appendUrl = `${link}&prefill_Origin=${getSession}`;
-          console.log(appendUrl);
-        }
-      })
-    })
-
+  const links = document.querySelectorAll('[href*="prefill_Origin"]');
+  
+  links.forEach(link => {
+    const getSession = sessionStorage.getItem('prefill_Origin');
+    const pattern = '/&prefill_Origin=\w+/g';
+    const replace = `&prefill_Origin=${getSession}`;
+    link.href.replace(pattern, replace);
+    console.log(link.href);
   })
 }
 
