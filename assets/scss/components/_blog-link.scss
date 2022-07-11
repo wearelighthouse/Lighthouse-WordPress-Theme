@@ -19,6 +19,7 @@
 
   &__info {
     @extend %u-flex;
+    @extend %u-ai-baseline;
     @extend %u-fd-column--from-medium;
     @include fontScale(16, 18);
 
@@ -32,6 +33,21 @@
       @extend %u-uppercase;
       @extend %u-ml-auto--upto-medium;
       @extend %u-text-align-right--upto-medium;
+    }
+
+    &__category-icon {
+      @extend %u-text-align-right--upto-medium;
+      @extend %u-ml-auto--upto-medium;
+      @extend .type-p--small;
+      @extend %u-sailec;
+      @extend %u-color-blackcurrant;
+      @extend %u-flex;
+      @extend %u-ai-center;
+      background: #FAF4E1;
+      border-radius: 4px;
+      padding: 10px 12px;
+      gap: 10px;
+      width: fit-content;
     }
   }
 
