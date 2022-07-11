@@ -73,8 +73,17 @@ function swapEmailFromHelloToHi() {
   });
 }
 
-function storeThePrefillOrigin() {
-  sessionStorage.setItem('prefill_Origin', "If%20You%20Could");
+function saveThePrefillOrigin() {
+  const prefillOrigin = new URLSearchParams(window.location.search).get('prefill_Origin');
+
+  if (!prefillOrigin) {
+    return;
+  }
+
+  sessionStorage.setItem('prefill_Origin', prefillOrigin);
+}
+
+function swapThePrefillOrigin() {
   const prefillOrigin = sessionStorage.getItem('prefill_Origin');
 
   if (prefillOrigin === null) {
@@ -99,7 +108,8 @@ function completeInit() {
   // Add document.referrer into cache
   addReferral(document.referrer);
   swapEmailFromHelloToHi();
-  storeThePrefillOrigin();
+  saveThePrefillOrigin();
+  swapThePrefillOrigin();
 }
 
 window.addEventListener('beforeunload', function (e) {
