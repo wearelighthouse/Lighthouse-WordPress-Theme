@@ -13,6 +13,7 @@
     @extend %u-pad-2;
     @extend %u-text-align-center;
     @extend %u-bold;
+    @extend %u-pb-4;
     border-bottom: 3px $color-gray solid;
 
     @include breakpoint(from-small) {
