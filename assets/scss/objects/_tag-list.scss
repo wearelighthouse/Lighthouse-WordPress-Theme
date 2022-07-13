@@ -15,5 +15,15 @@
         @extend %u-mt-auto;
       }
     }
+
+    & .c-tag.c-tag-blog {
+      @extend %u-fd-row;
+      @extend %u-ai-center;
+      gap: 10px;
+
+      & span {
+        margin-top: 0px;
+      }
+    }
   }
 }

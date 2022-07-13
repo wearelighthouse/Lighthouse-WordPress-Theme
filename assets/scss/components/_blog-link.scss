@@ -15,6 +15,7 @@
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: 3fr 7fr;
+    grid-template-rows: 75px 1fr;
   }
 
   &__info {
@@ -23,35 +24,25 @@
     @extend %u-fd-column--from-medium;
     @include fontScale(16, 18);
 
-    &__date,
-    &__category {
+    &__date {
       @extend %u-mb-3;
     }
 
     &__category {
-      @extend %u-bold;
-      @extend %u-uppercase;
-      @extend %u-ml-auto--upto-medium;
-      @extend %u-text-align-right--upto-medium;
-    }
-
-    &__category-icon {
-      @extend %u-text-align-right--upto-medium;
-      @extend %u-ml-auto--upto-medium;
       @extend .type-p--small;
-      @extend %u-sailec;
-      @extend %u-color-blackcurrant;
+      @extend %u-border-radius-sm;
+      background: #FAF4E1;
+      @extend %u-ml-auto--upto-medium;
       @extend %u-flex;
       @extend %u-ai-center;
-      background: #FAF4E1;
-      border-radius: 4px;
       padding: 10px 12px;
       gap: 10px;
-      width: fit-content;
     }
   }
 
   &__content {
+    grid-row: 1 / -1;
+    grid-column: 2 / -1;
 
     &__title {
       @extend .type-subtitle;
@@ -124,6 +115,14 @@
       &__excerpt {
         margin-top: auto;
       }
+    }
+  }
+
+  &__tag {
+    margin-top: .8rem;
+
+    @include breakpoint(upto-medium) {
+      margin-top: 1.5rem;
     }
   }
 }
