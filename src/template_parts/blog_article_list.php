@@ -18,7 +18,7 @@
         
           $linkList .= ('
             <li>
-              <a class="c-tag c-tag-blog" href="' . get_permalink($tag) . '">
+              <a class="c-tag c-blog-tag" href="' . get_permalink($tag) . '">
                 <img src="' . get_template_directory_uri() . '/dist/svg/' . $slug . '.svg" alt="" width="20px" height="20px">
                 <span>' . $name . '</span>
               </a>
@@ -56,7 +56,7 @@
       </div>
       <?php if ($tags) : ?>
         <div class="c-blog-link__tag">
-          <ul class="o-tag-list">
+          <ul class="o-tag-list o-blog-tag-list">
             <?= $linkList ?>
           </ul>
         </div>
