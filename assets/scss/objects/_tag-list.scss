@@ -16,7 +16,8 @@
       }
     }
 
-    & .c-tag.c-blog-tag {
+    & .c-tag.c-blog-tag,
+    & .c-tag.c-blog-hero-tag {
       @extend %u-fd-row;
       @extend %u-ai-center;
       gap: 10px;
@@ -26,8 +27,8 @@
       }
     }
   }
-}
 
-.o-tag-list.o-blog-tag-list {
-  @extend %u-fd-column--from-medium;
+  &.o-blog-tag-list {
+    @extend %u-fd-column--from-medium;
+  }
 }

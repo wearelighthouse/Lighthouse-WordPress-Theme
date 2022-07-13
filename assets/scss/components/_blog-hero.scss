@@ -1,0 +1,15 @@
+.c-blog-hero {
+  @extend %u-mt-8;
+  @extend %u-flex;
+  @extend %u-fw-wrap;
+  @extend %u-ai-center;
+  gap: 1.75rem;
+
+  @include breakpoint(from-medium) {
+    gap: 2.875rem;
+  }
+
+  &__date {
+    margin-top: 0;
+  }
+}
