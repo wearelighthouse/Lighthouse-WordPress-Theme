@@ -19,10 +19,11 @@
         foreach ($tags as $tag) {
           $slug = $tag->slug;
           $name = $tag->name;
+          $link = get_tag_link($tag);
         
           $linkList .= ('
             <li>
-              <a class="c-tag c-blog-hero-tag" href="' . get_permalink($tag) . '">
+              <a class="c-tag c-blog-hero-tag" href="' . $link . '">
                 <img src="' . get_template_directory_uri() . '/dist/svg/' . $slug . '.svg" alt="" width="20px" height="20px">
                 <span>' . $name . '</span>
               </a>
