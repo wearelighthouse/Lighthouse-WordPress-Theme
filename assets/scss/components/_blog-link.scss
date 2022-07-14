@@ -29,6 +29,13 @@
     }
 
     &__category {
+      @extend %u-bold;
+      @extend %u-uppercase;
+      @extend %u-ml-auto--upto-medium;
+      @extend %u-text-align-right--upto-medium;
+    }
+
+    &__category-icon {
       @extend .type-p--small;
       @extend %u-border-radius-sm;
       background: #FAF4E1;
