@@ -29,13 +29,6 @@
     }
 
     &__category {
-      @extend %u-bold;
-      @extend %u-uppercase;
-      @extend %u-ml-auto--upto-medium;
-      @extend %u-text-align-right--upto-medium;
-    }
-
-    &__category-icon {
       @extend .type-p--small;
       @extend %u-border-radius-sm;
       background: #FAF4E1;
@@ -44,6 +37,10 @@
       @extend %u-ai-center;
       padding: 10px 12px;
       gap: 10px;
+
+      &:hover {
+        @extend %u-underline;
+      }
     }
   }
 
@@ -92,17 +89,8 @@
     }
 
     #{$self}__info__category {
-      @include fontScale(14, 16);
-  
-      @extend .type-subtitle;
-      @extend .type-fancy-inline-link;
+      @extend %u-mb-3--upto-medium;
       outline-offset: .2em;
-  
-      &:focus,
-      &:hover {
-        // Get rid of the 100% - 1px stopping it going to the end of the link
-        background-size: 100% 100%;
-      }
   
       &:focus:not(:focus-visible) {
         outline: none;

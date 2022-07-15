@@ -34,6 +34,11 @@
     $heroStyle = 'gray-gradient-small';
   }
 
+  if (is_tag()) {
+    $text = "<h1>" . single_tag_title($prefix='', $display=false) . "</h1>";
+    $text .= "<p>" . tag_description() . "</p>";
+  }
+
   if (is_singular('transcript')) {
     $heroStyle = 'gray-standard';
   }
@@ -101,7 +106,7 @@
             </div>
           <?php endif; ?>
 
-          <?php if ($tags) : ?>
+          <?php if (isset($tags)) : ?>
             <div class="c-blog-hero">
               <time datetime="' . get_the_date('Y-m-d', $post->ID)  . '" class="c-hero__date c-blog-hero__date">
                 <?= get_the_date('jS M Y', $post->ID) ?>

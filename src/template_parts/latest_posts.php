@@ -29,7 +29,8 @@
           <div class="c-blog-link c-blog-link--latest">
             <div class="c-blog-link__info">
               <a href="<?= $catLink ?>" class="c-blog-link__info__category">
-                <?= $cat->cat_name ?>
+               <img src="<?= get_template_directory_uri() ?>/dist/svg/<?= $cat->slug ?>.svg" alt="" width="20px" height="20px"/>
+                <span><?= $cat->cat_name ?></span>
               </a>
             </div>
 
