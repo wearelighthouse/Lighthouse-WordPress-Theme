@@ -107,8 +107,8 @@
           <?php endif; ?>
 
           <?php if (isset($tags)) : ?>
-            <div class="c-blog-hero">
-              <time datetime="' . get_the_date('Y-m-d', $post->ID)  . '" class="c-hero__date c-blog-hero__date">
+            <div class="o-date-and-tags">
+              <time datetime="' . get_the_date('Y-m-d', $post->ID)  . '" class="c-hero__date">
                 <?= get_the_date('jS M Y', $post->ID) ?>
               </time>
               <ul class="o-tag-list">

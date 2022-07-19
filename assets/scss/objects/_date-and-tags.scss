@@ -1,4 +1,4 @@
-.c-blog-hero {
+.o-date-and-tags {
   @extend %u-mt-8;
   @extend %u-flex;
   @extend %u-fw-wrap;
@@ -9,7 +9,7 @@
     gap: 2.875rem;
   }
 
-  &__date {
+  .c-hero__date {
     margin-top: 0;
   }
 }
