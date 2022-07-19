@@ -9,6 +9,11 @@ return [
             'type' => 'text'
         ],
         [
+            'name' => 'Flag emoji',
+            'id'   => 'flag',
+            'type' => 'text'
+        ],
+        [
             'name' => 'Social',
             'id'   => 'social',
             'type' => 'group',

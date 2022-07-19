@@ -13,6 +13,7 @@
   <?php foreach($team->posts as $person) : ?>
     <?php
       $teamTitleShort = getPostMeta('team_team_title', $person->ID);
+      $teamFlag = getPostMeta('team_team_flag', $person->ID);
     ?>
     <div class="c-team-list__person">
     	<a href="<?= get_the_permalink($person->ID); ?>" class="c-team-list__content">
@@ -21,6 +22,7 @@
     		</div>
   			<h3 class="c-team-list__name"><?= $person->post_title; ?></h3>
   			<p class="c-team-list__title"><?= $teamTitleShort; ?></p>
+        <div class="c-team-list__flag"><?= $teamFlag ?></div>
     	</a>
     </div>
   <?php endforeach; ?>
