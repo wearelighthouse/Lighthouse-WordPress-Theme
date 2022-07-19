@@ -17,7 +17,7 @@
     }
 
     & .c-tag.c-blog-tag,
-    & .c-tag.c-blog-hero-tag {
+    & .c-tag.c-tag--blog-hero {
       @extend %u-fd-row;
       @extend %u-ai-center;
       gap: 10px;
