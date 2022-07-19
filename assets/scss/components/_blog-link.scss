@@ -15,27 +15,38 @@
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: 3fr 7fr;
+    grid-template-rows: 75px 1fr;
   }
 
   &__info {
     @extend %u-flex;
+    @extend %u-ai-baseline;
     @extend %u-fd-column--from-medium;
     @include fontScale(16, 18);
 
-    &__date,
-    &__category {
+    &__date {
       @extend %u-mb-3;
     }
 
     &__category {
-      @extend %u-bold;
-      @extend %u-uppercase;
+      @extend .type-p--small;
+      @extend %u-border-radius-sm;
+      @extend %u-bg-color-yellow-light;
       @extend %u-ml-auto--upto-medium;
-      @extend %u-text-align-right--upto-medium;
+      @extend %u-flex;
+      @extend %u-ai-center;
+      padding: 10px 12px;
+      gap: 10px;
+
+      &:hover {
+        @extend %u-underline;
+      }
     }
   }
 
   &__content {
+    grid-row: 1 / -1;
+    grid-column: 2 / -1;
 
     &__title {
       @extend .type-subtitle;
@@ -78,36 +89,35 @@
     }
 
     #{$self}__info__category {
-      @include fontScale(14, 16);
-  
-      @extend .type-subtitle;
-      @extend .type-fancy-inline-link;
+      @extend %u-mb-3--upto-medium;
       outline-offset: .2em;
-  
-      &:focus,
-      &:hover {
-        // Get rid of the 100% - 1px stopping it going to the end of the link
-        background-size: 100% 100%;
-      }
-  
+
       &:focus:not(:focus-visible) {
         outline: none;
       }
-  
+
       &:focus-visible {
         outline: 1px dotted currentColor;
       }
-      
+
     }
 
     #{$self}__content {
       display: flex;
       flex-direction: column;
       flex-grow: 1;
-  
+
       &__excerpt {
         margin-top: auto;
       }
+    }
+  }
+
+  &__tag {
+    margin-top: .8rem;
+
+    @include breakpoint(upto-medium) {
+      margin-top: 1.5rem;
     }
   }
 }

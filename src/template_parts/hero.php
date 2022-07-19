@@ -12,10 +12,31 @@
 
   // Add date to blog post hero banner & make the it the correct gradient style
   if (is_singular('post')) {
-    // $text .= '<time datetime="' . get_the_date('Y-m-d', $post->ID)  . '" class="c-hero__date">';
-    // $text .= get_the_date('jS F Y', $post->ID);
-    // $text .= '</time>';
+    $tags = get_the_tags($post->ID);
+      if ($tags) {
+        $linkList = '';
+    
+        foreach ($tags as $tag) {
+          $slug = $tag->slug;
+          $name = $tag->name;
+          $link = get_tag_link($tag);
+        
+          $linkList .= ('
+            <li>
+              <a class="c-tag c-blog-hero-tag" href="' . $link . '">
+                <img src="' . get_template_directory_uri() . '/dist/svg/' . $slug . '.svg" alt="" width="20px" height="20px">
+                <span>' . $name . '</span>
+              </a>
+            </li>
+          ');
+        }
+      }
     $heroStyle = 'gray-gradient-small';
+  }
+
+  if (is_tag()) {
+    $text = "<h1>" . single_tag_title($prefix='', $display=false) . "</h1>";
+    $text .= "<p>" . tag_description() . "</p>";
   }
 
   if (is_singular('transcript')) {
@@ -82,6 +103,17 @@
             <div class="c-home-hero-ctas">
               <a href="/contact" class="c-button c-button--pill">Get a quote</a>
               <a href="mailto:hello@wearelighthouse.com" class="c-button c-button--simple c-button--chevron">Or send us an email</a>
+            </div>
+          <?php endif; ?>
+
+          <?php if (isset($tags)) : ?>
+            <div class="o-date-and-tags">
+              <time datetime="' . get_the_date('Y-m-d', $post->ID)  . '" class="c-hero__date">
+                <?= get_the_date('jS M Y', $post->ID) ?>
+              </time>
+              <ul class="o-tag-list">
+                <?= $linkList ?>
+              </ul>
             </div>
           <?php endif; ?>
         </div>

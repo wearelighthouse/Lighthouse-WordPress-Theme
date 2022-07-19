@@ -1,0 +1,15 @@
+.o-date-and-tags {
+  @extend %u-mt-8;
+  @extend %u-flex;
+  @extend %u-fw-wrap;
+  @extend %u-ai-center;
+  gap: 1.75rem;
+
+  @include breakpoint(from-medium) {
+    gap: 2.875rem;
+  }
+
+  .c-hero__date {
+    margin-top: 0;
+  }
+}

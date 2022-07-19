@@ -17,6 +17,7 @@ $color-pink-dark:    #DF006C; // Used in <code> to hit 4.5:1 on gray-light
 $color-orange-old:   #FC895B;
 $color-orange:       #E87523;
 $color-red:          #EE0700;
+$color-yellow-light: #FAF4E1;
 
 $gradient-orange-pink: linear-gradient(135deg, #FC865B, #FC2489);
 
@@ -41,5 +42,6 @@ $auto-bg-colors: (
   'gray': $color-gray,
   'gray-deep': $color-gray-deep,
   'blackcurrant': $color-blackcurrant,
+  'yellow-light': $color-yellow-light,
   'currentColor': currentColor
 );
