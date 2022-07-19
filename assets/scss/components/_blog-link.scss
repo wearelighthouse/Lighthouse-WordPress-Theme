@@ -31,7 +31,7 @@
     &__category {
       @extend .type-p--small;
       @extend %u-border-radius-sm;
-      background: #FAF4E1;
+      @extend %u-bg-color-yellow-light;
       @extend %u-ml-auto--upto-medium;
       @extend %u-flex;
       @extend %u-ai-center;
@@ -91,22 +91,22 @@
     #{$self}__info__category {
       @extend %u-mb-3--upto-medium;
       outline-offset: .2em;
-  
+
       &:focus:not(:focus-visible) {
         outline: none;
       }
-  
+
       &:focus-visible {
         outline: 1px dotted currentColor;
       }
-      
+
     }
 
     #{$self}__content {
       display: flex;
       flex-direction: column;
       flex-grow: 1;
-  
+
       &__excerpt {
         margin-top: auto;
       }
