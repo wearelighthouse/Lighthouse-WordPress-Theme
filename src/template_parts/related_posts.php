@@ -32,7 +32,7 @@
             
               $linkList .= ('
                 <li>
-                  <a class="c-tag c-blog-tag" href="' . $link . '">
+                  <a class="c-tag c-tag--blog" href="' . $link . '">
                     <img src="' . get_template_directory_uri() . '/dist/svg/' . $slug . '.svg" alt="" width="20px" height="20px">
                     <span>' . $name . '</span>
                   </a>

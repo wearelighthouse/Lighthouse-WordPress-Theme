@@ -73,6 +73,37 @@
         margin-bottom: 0;
       }
     }
+
+    &__feature-logo {
+      @include fontScale(17, 20);
+      @extend %u-flex;
+      @extend %u-ai-center;
+      gap: 1.125rem;
+      color: #EF4D37;
+      margin-bottom: 2.125rem;
+      flex-wrap: wrap;
+      width: fit-content;
+      outline-offset: .2em;
+
+      & p {
+        margin: 0;
+        @extend .type-fancy-inline-link;
+      }
+
+      &:focus p,
+      &:hover p {
+        // Get rid of the 100% - 1px stopping it going to the end of the link
+        background-size: 100% 100%;
+      }
+
+      &:focus:not(:focus-visible) {
+        outline: none;
+      }
+
+      &:focus-visible {
+        outline: 1px dotted currentColor;
+      }
+    }
   }
 
   &--latest {
@@ -119,5 +150,9 @@
     @include breakpoint(upto-medium) {
       margin-top: 1.5rem;
     }
+  }
+
+  &--feature {
+    background: #F7F7F9;
   }
 }

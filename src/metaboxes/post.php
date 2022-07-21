@@ -22,11 +22,27 @@ return [
             'name' => 'Podcast embed',
             'id'   => 'podcast_embed',
             'type' => 'textarea_code'
-          ],
-          [
-              'name' => 'Podcast transcript',
-              'id'   => 'podcast_transcript',
-              'type' => 'wysiwyg'
-          ]
+        ],
+        [
+            'name' => 'Podcast transcript',
+            'id'   => 'podcast_transcript',
+            'type' => 'wysiwyg'
+        ],
+        [
+            'name' => 'Featured logo',
+            'id'   => 'logo',
+            'type' => 'file',
+            'desc' => '<a href="https://jakearchibald.github.io/svgomg" target="_blank">Compressed</a> SVGs with an <a href="https://en-gb.wordpress.org/plugins/svg-support/">xml tag</a>, and alt tags in WordPress e.g. \'KPMG\' or \'V&A\''
+        ],
+        [
+            'name' => 'URL',
+            'id'   => 'url',
+            'type' => 'text_url',
+        ],
+        [
+            'name' => 'Text',
+            'id'   => 'text',
+            'type' => 'text',
+        ],
     ]
 ];
