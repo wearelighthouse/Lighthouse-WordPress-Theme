@@ -69,7 +69,7 @@ function adShortcode($atts, $content = null)
 		$img = '<div class="c-promo__side-image">' . wp_get_attachment_image($imgMediumId, 'link-block-case-study-fg-medium') . '</div>';
 		$ad .= $img . $logo . $title . $button;
 	} else {
-		$button = '<div class="c-button c-button--underlined-light">' . $atts['read_more'] . '</div>';
+		$button = '<div class="c-button c-button--underlined-orange">' . $atts['read_more'] . '</div>';
 		$title = '<h3 class="c-promo__title">' . $adPage->post_title . '</h3>';
 		$ad .= (isset($logo) ? $logo : $label) . $title . wpautop($content) . $button;
 	}
