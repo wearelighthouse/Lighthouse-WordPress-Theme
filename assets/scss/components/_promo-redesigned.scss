@@ -58,9 +58,11 @@
   }
 
   &__title {
-    @extend .type-static-subtitle;
     @extend %u-mt-2--upto-medium;
-    line-height: 1.4;
+    @extend %u-tiempos;
+    @extend %u-vbold;
+    @include fontScale(34, 38);
+    @include lineScale(40,  54);
     background: linear-gradient(135deg, $color-orange-old 0%, $color-pink-old 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -74,7 +76,7 @@
     line-height: 34px;
 
     @include breakpoint(from-small) {
-      max-width: 70%;
+      max-width: 90%;
     }
   }
 

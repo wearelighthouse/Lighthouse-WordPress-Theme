@@ -5,7 +5,7 @@ function adShortcode($atts, $content = null)
 	$atts = shortcode_atts([
 		'id' => '',
 		'align' => 'right',  // 'right' (default - Inline w/ <p>), 'left', 'center'.
-		'read_more' => 'Read more'
+		'read_more' => 'Read article'
 	], $atts);
 
 	// Get the page object
