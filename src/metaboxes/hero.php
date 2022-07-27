@@ -9,7 +9,10 @@ return [
             'type' => 'wysiwyg',
             'desc' => 'Use italics to indicate that text should display <b>black</b> rather than the standard <b>white</b> header text color.<br>Shift + enter puts in newlines without splitting into separate headings or paragraphs.<br>If no <b>Heading 1</b> is included, the page title will be used.',
             'options' => [
-              'textarea_rows' => 9
+              'textarea_rows' => 9,
+              'tinymce' => [
+                'toolbar1' => 'formatselect bold italic bullist numlist superscript alignleft aligncenter alignright link wp_more fullscreen wp_adv',
+              ]
             ]
         ],
         [
