@@ -1,0 +1,27 @@
+.c-hero__text--with-team-image {
+  & p {
+    margin: 0px;
+    margin-top: 20px;
+
+    @include breakpoint(from-medium) {
+      margin-top: 1rem;
+    }
+  }
+
+  & p + p {
+    margin-top: 23px;
+
+    @include breakpoint(from-medium) {
+      margin-top: 50px;
+    }
+  }
+
+  & p:last-child {
+    @include fontScale(16, 18);
+    line-height: 34px;
+
+    @include breakpoint(from-medium) {
+      width: 386px;
+    }
+  }
+}
