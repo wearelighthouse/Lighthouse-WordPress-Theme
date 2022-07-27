@@ -9,10 +9,10 @@ return [
             'type' => 'wysiwyg',
             'desc' => 'Use italics to indicate that text should display <b>black</b> rather than the standard <b>white</b> header text color.<br>Shift + enter puts in newlines without splitting into separate headings or paragraphs.<br>If no <b>Heading 1</b> is included, the page title will be used.',
             'options' => [
-              'textarea_rows' => 9,
-              'tinymce' => [
-                'toolbar1' => 'formatselect bold italic bullist numlist superscript alignleft aligncenter alignright link wp_more fullscreen wp_adv',
-              ]
+                'textarea_rows' => 9,
+                'tinymce' => [
+                    'toolbar1' => 'formatselect bold italic bullist numlist superscript alignleft aligncenter alignright link wp_more fullscreen wp_adv',
+                ]
             ]
         ],
         [
@@ -28,15 +28,15 @@ return [
         ],
         [
 	        'name'    => 'Custom Gradient Start', 'cmb2',
-          'id'      => 'bg_color_1',
-          'type'    => 'colorpicker',
-          'default' => '#ffffff'
+            'id'      => 'bg_color_1',
+            'type'    => 'colorpicker',
+            'default' => '#ffffff'
         ],
         [
 	        'name'    => 'Custom Gradient End', 'cmb2',
-          'id'      => 'bg_color_2',
-          'type'    => 'colorpicker',
-          'default' => '#ffffff'
+            'id'      => 'bg_color_2',
+            'type'    => 'colorpicker',
+            'default' => '#ffffff'
         ],
         [
             'name' => 'Illustration',
