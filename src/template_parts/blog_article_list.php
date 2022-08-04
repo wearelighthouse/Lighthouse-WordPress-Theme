@@ -12,12 +12,15 @@
 
       if ($tags) {
         $linkList = '';
-    
+
+        // Limit to only two tags
+        $tags = array_slice($tags, 0, 2);
+
         foreach ($tags as $tag) {
           $slug = $tag->slug;
           $name = $tag->name;
           $link = get_tag_link($tag);
-        
+
           $linkList .= ('
             <li>
               <a class="c-tag c-blog-tag" href="' . $link . '">
@@ -31,12 +34,12 @@
 
       $i++;
     ?>
-    
+
     <?php if ($i === 5): ?>
       <?php $newsletterFormId = RGFormsModel::get_form_id('Newsletter'); ?>
       <?= do_shortcode('[form id="' . $newsletterFormId . '"]') ?>
       <?php endif; ?>
-      
+
     <div class="c-blog-link">
       <div class="c-blog-link__info">
         <span class="c-blog-link__info__date"><?= get_the_date(get_option('date_format')) ?></span>
