@@ -16,14 +16,11 @@
     @extend %u-pv-2;
     @extend %u-ph-4;
     background: $gradient-orange-new-pink;
-    border-radius: 30px;
+    border-radius: 2rem;
 
-    & a {
+    span {
       @extend .type-p--small;
       @extend %u-color-white;
-    }
-
-    & a {
       @extend .type-p--small;
       @extend %u-color-white;
       outline-offset: 0.2em;
@@ -31,12 +28,12 @@
       background-repeat: no-repeat;
       background-size: 0 100%;
       transition: background-size .2s;
-
-      &:hover {
-        background-size: calc(100% - 1px) 100%;
-      }
     }
 
+    &:focus span,
+    &:hover span {
+      background-size: calc(100% - 1px) 100%;
+    }
   }
 }
 
@@ -45,7 +42,7 @@
     @extend .type-p;
     @extend %u-color-blackcurrant;
     margin: 0;
-    
+
     & > a {
       color: $color-pink-old;
       outline-offset: 0.2em;
@@ -53,7 +50,7 @@
       background-repeat: no-repeat;
       background-size: 0 100%;
       transition: background-size .2s;
-      
+
       &:hover {
         background-size: calc(100% - 1px) 100%;
       }

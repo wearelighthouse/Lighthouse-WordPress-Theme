@@ -1,7 +1,7 @@
 <?php
   $introText = getPostMeta('service_archive_home_intro_text');
   $serviceItroTitle = getPostMeta('service_archive_home_intro_title');
-  $button = getPostMeta('service_archive_blocks_service_action');
+  $button = getPostMeta('page_blocks_service_action');
   $clients = getPostMeta('service_archive_home_intro_clients');
 ?>
 
@@ -10,9 +10,9 @@
     <div class="o-container-content">
       <div class="c-service-intro">
         <?php if ($serviceItroTitle) : ?>
-            <h2 class="c-service-intro__title c-service-template__title">
-              <?= $serviceItroTitle ?>
-            </h2>
+          <h2 class="c-service-intro__title c-service-template__title">
+            <?= $serviceItroTitle ?>
+          </h2>
         <?php endif; ?>
 
         <?php if ($introText) : ?>
@@ -42,14 +42,13 @@
             <?php endforeach; ?>
           </div>
         <?php endif; ?>
-
       </div>
 
       <?php if ($button) : ?>
         <div class="c-service-template__button-container">
-          <button class="c-service-template__button">
-              <a href="https://wearelighthouse.com/contact/"><?= $button ?></a>
-          </button>
+          <a href="/contact" class="c-service-template__button">
+            <span><?= $button ?></span>
+          </a>
         </div>
       <?php endif; ?>
     </div>

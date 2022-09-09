@@ -1,10 +1,10 @@
-<?php 
+<?php
     $collaborationTitle = getPostMeta('service_archive_block_service_collaboration_title');
     $collaborationServices = getPostMeta('service_archive_block_service_collaboration_group');
     $button = getPostMeta('service_archive_block_service_collaboration_action');
     $maskImageRight = getPostMeta('service_archive_block_service_collaboration_mask_image_right');
     $maskImageLeft = getPostMeta('service_archive_block_service_collaboration_mask_image_left');
-    
+
     $ifMaskImageClass = !$maskImageRight && !$maskImageLeft ? 'c-service-collaboration__content--grid-column' : '';
 ?>
 
@@ -15,7 +15,7 @@
           <h3 class="c-service-collaboration__title c-service-template__title">
               <?= $collaborationTitle ?>
           </h3>
-        <?php endif; ?> 
+        <?php endif; ?>
 
         <div class="c-service-collaboration__content <?= $ifMaskImageClass ?>">
           <div class="c-service-collaboration__item">
@@ -29,7 +29,7 @@
                 </div>
               <?php endif; ?>
             <?php endif; ?>
-              
+
                 <div class="c-service-collaboration__item__content-container">
                   <?php $collaborationBlocksServiceGroup = array_slice($collaborationServices, 0, 2); ?>
                   <?php include(locate_template('src/template_parts/service_collaboration.php')) ?>
@@ -58,9 +58,9 @@
         </div>
         <div class="c-service-template__button-container">
           <?php if ($button) : ?>
-          <button class="c-service-template__button">
-            <a href="https://wearelighthouse.com/contact/"><?= $button ?></a>
-          </button>
+            <a href="/contact" class="c-service-template__button">
+              <span><?= $button ?></span>
+            </a>
           <?php endif; ?>
         </div>
       </div>

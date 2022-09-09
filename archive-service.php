@@ -43,9 +43,9 @@
 
         <?php if ($button) : ?>
           <div class="c-service-skills__button c-service-template__button-container">
-              <button class="c-service-template__button">
-                  <a href="https://wearelighthouse.com/contact/"><?= $button ?></a>
-              </button>
+            <a href="/contact" class="c-service-template__button">
+              <span><?= $button ?></span>
+            </a>
           </div>
         <?php endif; ?>
   <?php endif; ?>
@@ -89,8 +89,8 @@
   <?php if ($newsletterFormId): ?>
     <section class="o-container-section o-container-section--h-bordered">
       <div class="c-service__form o-container-content">
-          <?= do_shortcode('[form id="' . $newsletterFormId . '"]') ?>
-      </din>
+        <?= do_shortcode('[form id="' . $newsletterFormId . '"]') ?>
+      </div>
     </section>
   <?php endif; ?>
 </main>
