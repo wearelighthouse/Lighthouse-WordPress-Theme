@@ -1,22 +1,22 @@
 // Global color variables
 
-$color-white:         #ffffff;
-$color-gray-bluish:   #f7f7f9;
-$color-gray-light:    #f7f7f7;
-$color-gray:          #dedee2;
-$color-gray-darkish:  #a3a3ad;
-$color-gray-dark:     #7e7e81;
-$color-gray-darker:   #717174;
-$color-gray-deep:     #2b2b2b;
-$color-black:         #000000;
-$color-blackcurrant:  #151931;
-$color-pink-old:      #ff268b;
-$color-pink:          #e80070; // Only for text, is darker to hit 4.5:1 on white
-$color-pink-dark:     #df006c; // Used in <code> to hit 4.5:1 on gray-light
-$color-orange-old:    #fc895b;
-$color-orange:        #e87523;
-$color-orange-new:    #fc7662;
-$color-red:           #ee0700;
+$color-white:        #FFFFFF;
+$color-gray-bluish:  #F7F7F9;
+$color-gray-light:   #F7F7F7;
+$color-gray:         #DEDEE2;
+$color-gray-darkish: #A3A3AD;
+$color-gray-dark:    #7E7E81;
+$color-gray-darker:  #717174;
+$color-gray-deep:    #2B2B2B;
+$color-black:        #000000;
+$color-blackcurrant: #151931;
+$color-pink-old:     #FF268B;
+$color-pink:         #E80070; // Only for text, is darker to hit 4.5:1 on white
+$color-pink-dark:    #DF006C; // Used in <code> to hit 4.5:1 on gray-light
+$color-orange-old:   #FC895B;
+$color-orange:       #E87523;
+$color-red:          #EE0700;
+$color-yellow-light: #FAF4E1;
 
 $gradient-orange-pink: linear-gradient(135deg, #fc865b, #fc2489);
 $gradient-orange-new-pink: linear-gradient(
@@ -50,5 +50,6 @@ $auto-bg-colors: (
   'gray':         $color-gray,
   'gray-deep':    $color-gray-deep,
   'blackcurrant': $color-blackcurrant,
-  'currentColor': currentColor,
+  'yellow-light': $color-yellow-light,
+  'currentColor': currentColor
 );

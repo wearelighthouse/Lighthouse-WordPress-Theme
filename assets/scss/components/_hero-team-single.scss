@@ -1,0 +1,10 @@
+.c-hero__text--with-team-image {
+  & p:last-child {
+    @include fontScale(16, 18);
+    margin-top: 2em;
+
+    @include breakpoint(from-medium) {
+      width: 386px;
+    }
+  }
+}

@@ -53,7 +53,25 @@
 <script src="<?= get_template_directory_uri()?>/dist/js/scrollbar-width.min.js"></script>
 
 <main>
-  <?php while (have_posts()) : the_post(); ?>
+  <?php while (have_posts()) : the_post();
+
+    $children = get_children([
+      'post_type' => get_post_type(),
+      'post_parent' => get_the_ID(),
+      'orderby' => 'title',
+      'order' => 'ASC',
+    ]);
+
+    $caseStudys = [];
+
+    if (!empty($children)) {
+      foreach ($children as $caseStudy) {
+        if (is_user_logged_in() || $caseStudy->post_status === 'publish') {
+          $caseStudys[] = (string)$caseStudy->ID;
+        }
+      }
+    }
+  ?>
 
     <?php include(locate_template('src/template_parts/hero.php')) ?>
 
@@ -98,8 +116,14 @@
           <?php else : ?>
             <?php the_content() ?>
           <?php endif; ?>
+
       </div>
     </section>
+
+    <?php if ($caseStudys) : ?>
+      <?php $globalCaseStudyIds = $caseStudys ?>
+      <?php include(locate_template('src/template_parts/block_section_case_study_large.php')) ?>
+    <?php endif; ?>
 
     <?php if ($stats): ?>
       <section class="o-container-section o-container-section--bordered">

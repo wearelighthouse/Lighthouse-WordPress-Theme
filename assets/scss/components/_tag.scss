@@ -13,4 +13,7 @@
   &:hover {
     @extend %u-underline;
   }
+  &.c-tag--blog-hero {
+    @extend %u-bg-color-white;
+  }
 }

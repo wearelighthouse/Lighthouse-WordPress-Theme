@@ -1,6 +1,15 @@
 <?php
   $text = getPostMeta('hero_hero_content');
 
+  if (is_tag()) {
+    $text = tag_description();
+
+    if (strpos(tag_description(), '<h1>') === false) {
+      $text = "<h1>" . single_tag_title($prefix='', $display=false) . "</h1>";
+      $text .= tag_description();
+    }
+  }
+
   // If the hero content doesn't include an h1 (or doesn't exist at all),
   // then preappend the post_title as an <h1>
   if (strpos($text, '<h1>') === false) {
@@ -12,9 +21,25 @@
 
   // Add date to blog post hero banner & make the it the correct gradient style
   if (is_singular('post')) {
-    // $text .= '<time datetime="' . get_the_date('Y-m-d', $post->ID)  . '" class="c-hero__date">';
-    // $text .= get_the_date('jS F Y', $post->ID);
-    // $text .= '</time>';
+    $tags = get_the_tags($post->ID);
+      if ($tags) {
+        $linkList = '';
+
+        foreach ($tags as $tag) {
+          $slug = $tag->slug;
+          $name = $tag->name;
+          $link = get_tag_link($tag);
+
+          $linkList .= ('
+            <li>
+              <a class="c-tag c-tag--blog-hero" href="' . $link . '">
+                <img src="' . get_template_directory_uri() . '/dist/svg/' . $slug . '.svg" alt="" width="20px" height="20px">
+                <span>' . $name . '</span>
+              </a>
+            </li>
+          ');
+        }
+      }
     $heroStyle = 'gray-gradient-small';
   }
 
@@ -30,12 +55,10 @@
   if (is_singular('post')) {
     $modifierClass .= ' c-hero--post';
   }
-    
+
   $textWithImage = (isset($heroImage) || $imageId);
 
-  if (is_singular('team')) {
-    $textWithTeamImage = $textWithImage ? 'c-hero__text--with-team-image' : '';
-  }
+  $textWithTeamImage = is_singular('team') && $textWithImage ? 'c-hero__text--with-team-image' : '';
 
   $bgcolor1 = getPostMeta('hero_hero_bg_color_1');
   $bgcolor2 = getPostMeta('hero_hero_bg_color_2');
@@ -82,6 +105,17 @@
             <div class="c-home-hero-ctas">
               <a href="/contact" class="c-button c-button--pill">Get a quote</a>
               <a href="mailto:hello@wearelighthouse.com" class="c-button c-button--simple c-button--chevron">Or send us an email</a>
+            </div>
+          <?php endif; ?>
+
+          <?php if (isset($tags)) : ?>
+            <div class="o-date-and-tags">
+              <time datetime="' . get_the_date('Y-m-d', $post->ID)  . '" class="c-hero__date">
+                <?= get_the_date('jS M Y', $post->ID) ?>
+              </time>
+              <ul class="o-tag-list">
+                <?= $linkList ?>
+              </ul>
             </div>
           <?php endif; ?>
         </div>

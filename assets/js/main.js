@@ -73,12 +73,43 @@ function swapEmailFromHelloToHi() {
   });
 }
 
+function saveThePrefillOrigin() {
+  const prefillOrigin = new URLSearchParams(window.location.search).get('prefill_Origin');
+
+  if (!prefillOrigin) {
+    return;
+  }
+
+  sessionStorage.setItem('prefill_Origin', prefillOrigin);
+}
+
+function swapThePrefillOrigin() {
+  const prefillOrigin = sessionStorage.getItem('prefill_Origin');
+
+  if (prefillOrigin === null) {
+    return;
+  }
+
+  const links = document.querySelectorAll('[href*="prefill_Origin"]');
+
+  links.forEach(link => {
+    const newUrl = new URL(link.href);
+    const newSearchParams = new URLSearchParams(link.href);
+
+    newSearchParams.set('prefill_Origin', prefillOrigin);
+    newUrl.search = newSearchParams;
+    link.href = newUrl;
+  });
+}
+
 function completeInit() {
   // Do lazy loading images
   setupObservers(window.lozad);
   // Add document.referrer into cache
   addReferral(document.referrer);
   swapEmailFromHelloToHi();
+  saveThePrefillOrigin();
+  swapThePrefillOrigin();
 }
 
 window.addEventListener('beforeunload', function (e) {

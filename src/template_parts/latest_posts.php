@@ -1,7 +1,6 @@
 <?php
   $postsPerPage = 1;
-  $categories = get_categories();
-  
+  $categories = get_categories(); 
 ?>
 
 <section class="o-container-content c-latest-post">
@@ -11,15 +10,10 @@
 
     <?php 
       $catLink = get_category_link($cat);
-      $catName;
-    
-      if($cat->cat_name !== 'Uncategorized') {
-        $catName = $cat->cat_name === 'Article' ? 'Article, Product Story' : $cat->cat_name;
-      }
-
+  
       $relatedPostsQuery = new WP_Query([
         'post_type' => 'post',
-        'category_name' => $catName,
+        'category_name' => $cat->cat_name,
         'posts_per_page' => $postsPerPage
       ]);
     
@@ -28,8 +22,6 @@
 
       <?php while ($relatedPostsQuery->have_posts()) : $relatedPostsQuery->the_post(); ?>
 
-        <?php $catname = get_the_category()[0]->name;?>
-
           <?php if($i > 0) : ?>
             <hr>
           <?php endif; ?>
@@ -37,7 +29,8 @@
           <div class="c-blog-link c-blog-link--latest">
             <div class="c-blog-link__info">
               <a href="<?= $catLink ?>" class="c-blog-link__info__category">
-               <?= $catname ?>
+               <img src="<?= get_template_directory_uri() ?>/dist/svg/<?= $cat->slug ?>.svg" alt="" width="20px" height="20px"/>
+                <span><?= $cat->cat_name ?></span>
               </a>
             </div>
 
