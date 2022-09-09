@@ -1,59 +1,42 @@
 @each $value in (capitalize, lowercase, uppercase) {
-  @include make-utility(
-    (
-      alias: $value,
-      text-transform: $value,
-    )
-  );
+  @include make-utility((
+    alias: $value,
+    text-transform: $value,
+  ));
 }
 
 @each $value in (left, center, right) {
-  @include make-utility(
-    (
-      text-align: $value,
-    )
-  );
+  @include make-utility((
+    text-align: $value
+  ));
 }
 
-@include make-utility(
-  (
-    alias: bold,
-    font-weight: 500
-         // Actually "semibold", but avoids browsers trying to make bold,
-  )
-);
+@include make-utility((
+  alias: bold,
+  font-weight: 500 // Actually "semibold", but avoids browsers trying to make bolder
+));
 
-@include make-utility(
-  (
-    alias: vbold,
-    font-weight: 600    // Actually ",
-  )
-);
+@include make-utility((
+  alias: vbold,
+  font-weight: 600 // Actually "bold"
+));
 
-@include make-utility(
-  (
-    alias: underline,
-    text-decoration: underline,
-  )
-);
+@include make-utility((
+  alias: underline,
+  text-decoration: underline
+));
 
-@include make-utility(
-  (
-    alias: nowrap,
-    white-space: nowrap,
-  )
-);
+@include make-utility((
+  alias: nowrap,
+  white-space: nowrap
+));
 
-@include make-utility(
-  (
-    alias: sailec,
-    font-family: unquote('Sailec, sans-serif'),
-  )
-);
+@include make-utility((
+  alias: sailec,
+  font-family: unquote('Sailec, sans-serif')
+));
 
-@include make-utility(
-  (
-    alias: tiempos,
-    font-family: unquote('Tiempos, sans-serif'),
-  )
-);
+@include make-utility((
+  alias: tiempos,
+  font-family: unquote('Tiempos, sans-serif')
+));
