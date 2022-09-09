@@ -1,12 +1,12 @@
 <?php
   $caseStudyIds = getPostMeta('service_archive_case_study_list_clients', $post->ID);
   $introText = getPostMeta('service_archive_home_intro_text');
-  $blockServices = getPostMeta('service_archive_blocks_service_group');
-  $globalBlocksServiceLayout = getPostMeta('service_archive_blocks_service_layout');
-  $globalBlocksServiceGroup = getPostMeta('service_archive_blocks_service_group');
+  $blockServices = getPostMeta('page_blocks_service_group');
+  $globalBlocksServiceLayout = getPostMeta('page_blocks_service_layout');
+  $globalBlocksServiceGroup = getPostMeta('page_blocks_service_group');
   $globalIntro = getPostMeta('service_archive_case_study_list_title');
-  $button = getPostMeta('service_archive_blocks_service_action');
-  
+  $button = getPostMeta('page_blocks_service_action');
+
   $contentParagraphs = get_the_content();
   $pattern = "/([[quote])(.*?)(\[\/quote\])/i";
 
@@ -35,7 +35,7 @@
     </din>
   </section>
 <?php endif; ?>
-  
+
   <?php if ($blockServices) : ?>
     <?php $globalBlocksServiceGroup = $blockServices; ?>
       <?php $globalSkillsWithOrangeTitle = true; ?>
@@ -46,7 +46,7 @@
               <button class="c-service-template__button">
                   <a href="https://wearelighthouse.com/contact/"><?= $button ?></a>
               </button>
-          </div>  
+          </div>
         <?php endif; ?>
   <?php endif; ?>
 
@@ -84,13 +84,15 @@
     <?php $globalcaseStudyServiceAlignement = false; ?>
   <?php endif; ?>
 
-  <section class="o-container-section o-container-section--h-bordered">
-    <div class="c-service__form o-container-content">
-      <?php $newsletterFormId = RGFormsModel::get_form_id('Newsletter'); ?>
-        <?= do_shortcode('[form id="' . $newsletterFormId . '"]') ?>
-    </din>
-  </section>
-      
+  <?php $newsletterFormId = RGFormsModel::get_form_id('Newsletter'); ?>
+
+  <?php if ($newsletterFormId): ?>
+    <section class="o-container-section o-container-section--h-bordered">
+      <div class="c-service__form o-container-content">
+          <?= do_shortcode('[form id="' . $newsletterFormId . '"]') ?>
+      </din>
+    </section>
+  <?php endif; ?>
 </main>
 
 <?php get_footer(); ?>
