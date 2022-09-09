@@ -30,24 +30,24 @@ $gradient-orange-pink-light: linear-gradient(135deg, #FC895B26 0%, #FF268B26 100
 // Colors used to automatically generate font and background color utilities.
 
 $auto-colors: (
-  'white':        $color-white,
-  'gray-dark':    $color-gray-dark,
-  'gray-darker':  $color-gray-darker,
+  'white': $color-white,
+  'gray-dark': $color-gray-dark,
+  'gray-darker': $color-gray-darker,
   'blackcurrant': $color-blackcurrant,
   // 'pink': $color-pink, // Used in link styling, isn't needed 'ere
-  'pink-dark':    $color-pink-dark,
-  'orange':       $color-orange,
-  'orange-old':   $color-orange-old,
-  'red':          $color-red,
-  'black':        $color-black,
+  'pink-dark': $color-pink-dark,
+  'orange': $color-orange,
+  'orange-old': $color-orange-old,
+  'red': $color-red,
+  'black': $color-black
 );
 
 $auto-bg-colors: (
-  'white':        $color-white,
-  'gray-bluish':  $color-gray-bluish,
-  'gray-light':   $color-gray-light,
-  'gray':         $color-gray,
-  'gray-deep':    $color-gray-deep,
+  'white': $color-white,
+  'gray-bluish': $color-gray-bluish,
+  'gray-light': $color-gray-light,
+  'gray': $color-gray,
+  'gray-deep': $color-gray-deep,
   'blackcurrant': $color-blackcurrant,
   'yellow-light': $color-yellow-light,
   'currentColor': currentColor
