@@ -15,8 +15,10 @@
   &__button {
     @extend %u-pv-2;
     @extend %u-ph-4;
+    @extend %u-width-100pc--upto-small;
     background: $gradient-orange-new-pink;
     border-radius: 2rem;
+    text-align: center;
 
     span {
       @extend .type-p--small;

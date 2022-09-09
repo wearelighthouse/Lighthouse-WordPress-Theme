@@ -9,10 +9,6 @@
     @extend %u-ai-center;
     height: 72px;
     margin-bottom: unset;
-
-    @include breakpoint(upto-medium) {
-      margin-top: 2rem;
-    }
   }
 
   & h3 {
@@ -21,7 +17,7 @@
     @extend %u-pos-relative;
     @extend %u-pb-4;
     align-self: end;
-  
+
     &::before {
       @extend %u-content;
       @extend %u-pos-absolute;

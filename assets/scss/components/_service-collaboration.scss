@@ -28,9 +28,9 @@
       padding-top: 5rem;
     }
 
-    &__image-right, 
+    &__image-right,
     &__image-left {
-      @extend %u-display-none--upto-small;
+      @extend %u-display-none--upto-large;
       @extend %u-pos-absolute;
       @extend %u-round;
       background-repeat: no-repeat;
@@ -172,7 +172,7 @@
         @include breakpoint(from-medium) {
           margin-right: auto;
         }
-       
+
       }
     }
 
@@ -208,7 +208,7 @@
       @extend %u-pos-relative;
       padding-left: 5.2rem;
 
-      &__subtitle, 
+      &__subtitle,
       &__text {
         @extend .type-p;
         @extend %u-color-blackcurrant;
@@ -242,9 +242,9 @@
     #{$self}__item__content-container {
       width: unset;
     }
-  
+
     #{$self}__item:nth-child(even) #{$self}__item__content-container {
-      
+
       @include breakpoint(from-small) {
         margin-top: unset;
       }
