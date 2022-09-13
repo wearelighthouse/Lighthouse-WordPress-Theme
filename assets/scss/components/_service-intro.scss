@@ -1,0 +1,50 @@
+.c-service-intro {
+  padding-top: 5rem;
+
+  @include breakpoint(from-medium) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 3rem;
+    padding-bottom: unset;
+  }
+
+  &__title {
+    @extend %u-color-blackcurrant;
+
+    @include breakpoint(upto-medium) {
+        padding-bottom: 2rem;
+    }
+  }
+
+  &__text {
+    & p {
+      margin: 0;
+
+      &:nth-child(even) {
+        @extend %u-pv-4;
+      }
+    }
+  }
+
+  &__clients {
+    @extend %u-flex;
+    @extend %u-fw-wrap;
+    @extend %u-ai-center;
+    @extend %u-jc-center;
+    @extend %u-mh--2--from-medium;
+    grid-column: 2 / -1;
+
+    &__img-container {
+      margin: 1rem 1rem;
+      background: $color-gray-darkish;
+    }
+  }
+}
+
+.c-service-intro ~ .c-service-template__button-container {
+    margin-bottom: 4rem;
+
+    @include breakpoint(from-small) {
+        margin-bottom: unset;
+    }
+}

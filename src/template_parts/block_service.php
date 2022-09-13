@@ -9,9 +9,9 @@
 ?>
 
 <?php if ($linkText && $linkURL) : ?>
-  <a href="<?= $linkURL ?>" class="c-service-block">
+  <a href="<?= $linkURL ?>" class="c-service-block <?= $globalSkillsWithOrangeTitle ? 'c-service-skills' : '' ?>">
 <?php else : ?>
-  <div class="c-service-block">
+  <div class="c-service-block <?= $globalSkillsWithOrangeTitle ? 'c-service-skills' : '' ?>">
 <?php endif; ?>
 
   <?php if ($icon) : ?>

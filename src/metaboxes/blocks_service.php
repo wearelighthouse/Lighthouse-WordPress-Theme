@@ -52,6 +52,11 @@ return [
                     'type' => 'text_url'
                 ]
             ]
-        ]
+        ],
+        [
+            'name' => 'Action',
+            'id'   => 'action',
+            'type' => 'text'
+        ],
     ]
 ];

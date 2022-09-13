@@ -4,6 +4,11 @@ return [
     'title' => 'Home intro',
     'fields' => [
         [
+            'name' => 'Title',
+            'id'   => 'title',
+            'type' => 'text',
+        ],
+        [
             'name' => 'Intro paragraph',
             'id'   => 'text',
             'type' => 'wysiwyg',

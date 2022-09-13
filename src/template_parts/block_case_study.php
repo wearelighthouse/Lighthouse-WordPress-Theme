@@ -38,8 +38,13 @@
 ?>
 
 <a href="<?= $linkURL ?>"
-   class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?> js-half-onscreen-detect">
+   class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?> 
+   <?= $globalcaseStudyAlignRight ? 'c-case-study-block--align-right' : '' ?> 
+   <?= $globalcaseStudyServiceAlignement ? 'c-case-study-block--small--service-alignment' : '' ?> js-half-onscreen-detect"
+>
+   
   <div class="c-case-study-block__background">
+    
     <?php if ($caseStudySize === 'large' && $imgBackgroundId) : ?>
       <div class="c-case-study-block__image-background <?= (!$imgBackgroundMirroredId && $caseStudyIndex % 2 === 0) ? 'u-mirrored' : '' ?>">
         <?= lazyLoad(wp_get_attachment_image($imgBackgroundId, 'link-block-case-study-bg-large')) ?>

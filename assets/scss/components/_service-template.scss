@@ -1,0 +1,61 @@
+.c-service-template {
+  &__title {
+    @extend %u-tiempos;
+    @extend %u-vbold;
+    @include fontScale(28, 32);
+    @include lineScale(38, 42);
+  }
+
+  &__button-container {
+    @extend %u-flex;
+    @extend %u-jc-center;
+    @extend %u-mt-12;
+  }
+
+  &__button {
+    @extend %u-pv-2;
+    @extend %u-ph-4;
+    @extend %u-width-100pc--upto-small;
+    background: $gradient-orange-new-pink;
+    border-radius: 2rem;
+    text-align: center;
+
+    span {
+      @extend .type-p--small;
+      @extend %u-color-white;
+      @extend .type-p--small;
+      @extend %u-color-white;
+      outline-offset: 0.2em;
+      background-image: linear-gradient(transparent calc(100% - 0.07em),currentColor calc(100% - 0.07em));
+      background-repeat: no-repeat;
+      background-size: 0 100%;
+      transition: background-size .2s;
+    }
+
+    &:focus span,
+    &:hover span {
+      background-size: calc(100% - 1px) 100%;
+    }
+  }
+}
+
+.c-service-content {
+  & p {
+    @extend .type-p;
+    @extend %u-color-blackcurrant;
+    margin: 0;
+
+    & > a {
+      color: $color-pink-old;
+      outline-offset: 0.2em;
+      background-image: linear-gradient(transparent calc(100% - 0.07em),currentColor calc(100% - 0.07em));
+      background-repeat: no-repeat;
+      background-size: 0 100%;
+      transition: background-size .2s;
+
+      &:hover {
+        background-size: calc(100% - 1px) 100%;
+      }
+    }
+  }
+}
