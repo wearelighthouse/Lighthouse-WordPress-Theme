@@ -36,9 +36,11 @@
     ?>
 
     <?php if ($i === 5): ?>
+    </section>
       <?php $newsletterFormId = RGFormsModel::get_form_id('Newsletter'); ?>
       <?= do_shortcode('[form id="' . $newsletterFormId . '"]') ?>
-      <?php endif; ?>
+    <section>
+    <?php endif; ?>
 
     <div class="c-blog-link">
       <div class="c-blog-link__info">
