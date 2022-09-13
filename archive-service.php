@@ -88,9 +88,7 @@
 
   <?php if ($newsletterFormId): ?>
     <section class="o-container-section o-container-section--h-bordered">
-      <div class="c-service__form o-container-content">
-        <?= do_shortcode('[form id="' . $newsletterFormId . '"]') ?>
-      </div>
+      <?= do_shortcode('[form id="' . $newsletterFormId . '"]') ?>
     </section>
   <?php endif; ?>
 </main>
