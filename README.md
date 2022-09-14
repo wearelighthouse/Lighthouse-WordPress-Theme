@@ -15,55 +15,81 @@ A WordPress Theme for the 2019 version of [wearelighthouse.com](https://wearelig
 ### Installation
 
 1. Make a new folder to contain everything, and change directory into it.
-```
-$ mkdir lighthouse && cd lighthouse
-```
+   ```
+   mkdir lighthouse && cd lighthouse
+   ```
 
 2. Download and extract the latest version of [WordPress](https://wordpress.org/download/).
-```
-$ curl -o wordpress.zip https://wordpress.org/latest.zip &&
-  unzip -q wordpress.zip &&
-  rm -r wordpress.zip &&
-  cp -r wordpress/. . &&
-  rm -r wordpress
-```
+   ```
+   curl -o wordpress.zip https://wordpress.org/latest.zip &&
+   unzip -q wordpress.zip &&
+   rm -r wordpress.zip &&
+   cp -r wordpress/. . &&
+   rm -r wordpress
+   ```
 
 3. Clone this repo into the themes directory.
-```
-$ cd wp-content/themes/ &&
-  git clone https://github.com/wearelighthouse/Lighthouse-WordPress-Theme.git lighthouse &&
-  cd lighthouse
-```
+   ```
+   cd wp-content/themes/ &&
+   git clone https://github.com/wearelighthouse/Lighthouse-WordPress-Theme.git lighthouse &&
+   cd lighthouse
+   ```
 
 4. Fetch the fonts (password is in the Lighthouse 1Pass)
-```
-$ ./assets/font/fetch.sh
-```
+   ```
+   ./assets/font/fetch.sh
+   ```
 
 5. Create your own .env from .env.example - then if not using defaults, edit it to change the database details.
-```
-$ cp .env.example .env
-```
+   ```
+   cp .env.example .env
+   ```
 
 6. Install PHP dependencies.
-```
-$ composer install
-```
+   ```
+   composer install
+   ```
 
 7. Install NPM dependencies.
-```
-$ npm i
-```
+   ```
+   npm i
+   ```
 
-8. Start the docker container. See the [Makefile](/Makefile) for other docker commands.
-```
-$ make up
-```
+8. Start the docker container.
+   ```
+   make up
+   ```
 
 9. Get browserSync running and watching for local file changes.
-```
-$ npm run watch
-```
+   ```
+   npm run watch
+   ```
+
+### Commands
+
+#### Docker
+
+`make up` - Start up the docker container, so that WordPress is accessible on localhost.
+
+`make down` - Stop the docker container - it's recommended that this is done before switching to any other projects.  
+
+`make bash` - Open up a CLI inside teh docker container - usful for debugging or checking that the correct dependencies are installed.  
+
+See [Makefile](Makefile) for more.
+
+#### Front-end
+
+`npm run build` - Build production version of css, fonts, images, JavaScript, etc. into `/dist`.
+
+`npm run watch` - Run local hot-reloading server on [localhost:3000](localhost:3000)`. This also builds resources into `/dist`, but without minification.
+
+See [package.json](package.json) and [gulpfile.js](gulpfile.js) for more.
+
+#### Notes
+
+To do both start-up commands at once, you can `make up && npm run watch`. It's helpful to have an alias like `makerun` for that.
+
+Both `npm run build` and `npm run watch` **remove** the `/dist` directory before re-creating it. It is also not a commited directory, so **do not** put important files in there manually. You can manually remove it with `rm -r dist/`.
 
 ### WordPress Setup
 
@@ -83,7 +109,7 @@ $ npm run watch
 
 7. Footer info and Contact Details _are not_ pulled over with the export/import. The best way to do that right now is just to copy/paste the contents fo the metaboxes from the live site ([related issue](https://github.com/wearelighthouse/Lighthouse-WordPress-Theme/issues/49)).
 
-8. For local development, it makes sense to turn on `WP_DEBUG`. That's done by editing `wp-config.php` which sits at the top level o the WordPress installation folder structure, and it needs to be changed from `false` to `true`:  
-```
-define( 'WP_DEBUG', true );
-```
+8. For local development, `WP_DEBUG` should be changed from `false` to `true` inside `wp-config.php` (which sits at the top level of the WordPress installation folder structure)
+   ```
+   define( 'WP_DEBUG', true );
+   ```
