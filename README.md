@@ -110,6 +110,6 @@ Both `npm run build` and `npm run watch` **remove** the `/dist` directory before
 7. Footer info and Contact Details _are not_ pulled over with the export/import. The best way to do that right now is just to copy/paste the contents fo the metaboxes from the live site ([related issue](https://github.com/wearelighthouse/Lighthouse-WordPress-Theme/issues/49)).
 
 8. For local development, `WP_DEBUG` should be changed from `false` to `true` inside `wp-config.php` (which sits at the top level of the WordPress installation folder structure)
-   ```
+   ```php
    define( 'WP_DEBUG', true );
    ```
