@@ -81,4 +81,9 @@ $ npm run watch
    
 6. The header navigation at the top of the site should be pulled through by the export/import, however it might not be selected to actually display in the right position. To check that, go to Appearance -> Settings, then check the 'Header Menu' Display location.
 
+7. Footer info and Contact Details _are not_ pulled over with the export/import. The best way to do that right now is just to copy/paste the contents fo the metaboxes from the live site ([related issue](https://github.com/wearelighthouse/Lighthouse-WordPress-Theme/issues/49)).
 
+8. For local development, it makes sense to turn on `WP_DEBUG`. That's done by editing `wp-config.php` which sits at the top level o the WordPress installation folder structure, and it needs to be changed from `false` to `true`:  
+```
+define( 'WP_DEBUG', true );
+```
