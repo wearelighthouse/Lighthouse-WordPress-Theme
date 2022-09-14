@@ -69,7 +69,7 @@ $ npm run watch
 
 1. Go through the local WordPress installation. The `host` for your database is probably `db` not `localhost`.
 
-2. Select the Lighthouse WordPress Theme in the themes menu.
+2. Select the Lighthouse WordPress Theme in Appearance -> Themes.
 
 3. To match the neat URLs on the live site, go to Settings -> Permalinks, then select 'Custom Structure', and paste in `/blog/%postname%/`.
    ![image](https://user-images.githubusercontent.com/462459/190123657-da72e0ba-22fb-4ca3-876e-9b43a0fd4de1.png)
