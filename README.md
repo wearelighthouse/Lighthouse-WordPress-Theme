@@ -3,7 +3,7 @@
 A WordPress Theme for the 2019 version of [wearelighthouse.com](https://wearelighthouse.com/)
 
 
-## Installation (for local development)
+## Local Development
 
 ### Prerequisites
 
@@ -12,7 +12,7 @@ A WordPress Theme for the 2019 version of [wearelighthouse.com](https://wearelig
 - [Composer](https://getcomposer.org/)
 
 
-### Step-by-step
+### Installation
 
 1. Make a new folder to contain everything, and change directory into it.
 ```
@@ -40,7 +40,7 @@ $ cd wp-content/themes/ &&
 $ ./assets/font/fetch.sh
 ```
 
-5. Create your own .env from .env.example - then edit it to change the database details.
+5. Create your own .env from .env.example - then if not using defaults, edit it to change the database details.
 ```
 $ cp .env.example .env
 ```
@@ -60,9 +60,25 @@ $ npm i
 $ make up
 ```
 
-9. Get browserSync running and watching for local file changes. For other build tasks, see [gulpfile.js](/gulpfile.js).
+9. Get browserSync running and watching for local file changes.
 ```
 $ npm run watch
 ```
 
-10. If required, go through the local WordPress installation. The `host` for your database is probably `db` not `localhost`. Then select the Lighthouse WordPress Theme in the themes menu.
+### WordPress Setup
+
+1. Go through the local WordPress installation. The `host` for your database is probably `db` not `localhost`.
+
+2. Select the Lighthouse WordPress Theme in the themes menu.
+
+3. To match the neat URLs on the live site, go to Settings -> Permalinks, then select 'Custom Structure', and paste in `/blog/%postname%/`.
+   ![image](https://user-images.githubusercontent.com/462459/190123657-da72e0ba-22fb-4ca3-876e-9b43a0fd4de1.png)
+
+4. We use the standard WordPress export/importer for copying over site data (Tools -> Export/Import). As the database is so large, it can struggle with images, so we either have to play around with `wp-config.php` ([related issue](https://github.com/wearelighthouse/Lighthouse-WordPress-Theme/issues/48)), or just add in aimages where they're needed to test with for local development.
+
+5. We set static pages for the Homepage and the Posts page. To do that, if site data has been imported so the pages already exist, go to Settings -> Reading, and choose `Home` and `Blog`.
+   ![image](https://user-images.githubusercontent.com/462459/190124381-f91b3099-24a4-4748-9fee-acd10ca6c97f.png)
+   
+6. The header navigation at the top of the site should be pulled through by the export/import, however it might not be selected to actually display in the right position. To check that, go to Appearance -> Settings, then check the 'Header Menu' Display location.
+
+
