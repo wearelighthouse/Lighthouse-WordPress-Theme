@@ -131,12 +131,6 @@
     }
   }
 
-  &__side-image ~ &__work-title {
-    @include breakpoint(from-large) {
-      max-width: calc(100% - 200px - 2.5rem);
-    }
-  }
-
   &--work {
     color: $color-blackcurrant;
 
