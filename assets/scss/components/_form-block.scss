@@ -3,12 +3,6 @@
   @extend %u-pv-6;
   @extend %u-ph-6--from-medium;
   @extend %u-border-box;
-  grid-column: 1 / -1;
-
-  @include breakpoint(upto-medium) {
-    width: 100vw;
-    margin-left: calc(-1 * (100vw - var(--container-width)) / 2);
-  }
 
   @include breakpoint(from-large) {
     margin-right: auto;
