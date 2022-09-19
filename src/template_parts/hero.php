@@ -1,6 +1,15 @@
 <?php
   $text = getPostMeta('hero_hero_content');
 
+  if (is_tag()) {
+    $text = tag_description();
+
+    if (strpos(tag_description(), '<h1>') === false) {
+      $text = "<h1>" . single_tag_title($prefix='', $display=false) . "</h1>";
+      $text .= tag_description();
+    }
+  }
+
   // If the hero content doesn't include an h1 (or doesn't exist at all),
   // then preappend the post_title as an <h1>
   if (strpos($text, '<h1>') === false) {
@@ -15,12 +24,12 @@
     $tags = get_the_tags($post->ID);
       if ($tags) {
         $linkList = '';
-    
+
         foreach ($tags as $tag) {
           $slug = $tag->slug;
           $name = $tag->name;
           $link = get_tag_link($tag);
-        
+
           $linkList .= ('
             <li>
               <a class="c-tag c-tag--blog-hero" href="' . $link . '">
@@ -32,11 +41,6 @@
         }
       }
     $heroStyle = 'gray-gradient-small';
-  }
-
-  if (is_tag()) {
-    $text = "<h1>" . single_tag_title($prefix='', $display=false) . "</h1>";
-    $text .= "<p>" . tag_description() . "</p>";
   }
 
   if (is_singular('transcript')) {
@@ -51,12 +55,10 @@
   if (is_singular('post')) {
     $modifierClass .= ' c-hero--post';
   }
-    
+
   $textWithImage = (isset($heroImage) || $imageId);
 
-  if (is_singular('team')) {
-    $textWithTeamImage = $textWithImage ? 'c-hero__text--with-team-image' : '';
-  }
+  $textWithTeamImage = is_singular('team') && $textWithImage ? 'c-hero__text--with-team-image' : '';
 
   $bgcolor1 = getPostMeta('hero_hero_bg_color_1');
   $bgcolor2 = getPostMeta('hero_hero_bg_color_2');

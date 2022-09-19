@@ -34,25 +34,19 @@
     @extend %u-mv-4; // Should be enough for Dans Lego person hair
   }
 
-  &__content {
+  &__flag {
+    @extend %u-pos-absolute;
+    @extend %u-bottom;
+    @extend %u-translateY-50pc;
+    opacity: 0;
+    font-size: 1.75rem; // Flag size is based on font size as it's an emoji
+    transition: .1s opacity;
+  }
+
+  &__media {
+    @extend %u-pos-relative;
     @extend %u-flex;
-    @extend %u-fd-column;
-    @extend %u-ai-center;
-    @extend %u-text-align-center;
-    @extend %u-jc-flex-start;
-    @extend %u-ph-1--from-small;
-
-    &:focus,
-    &:hover {
-      #{$self}__name {
-        @extend %u-underline;
-      }
-
-      #{$self}__image:after {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+    @extend %u-jc-center;
   }
 
   &__image {
@@ -73,4 +67,29 @@
     margin-bottom: 0;
   }
 
+  &__content {
+    @extend %u-flex;
+    @extend %u-fd-column;
+    @extend %u-ai-center;
+    @extend %u-text-align-center;
+    @extend %u-jc-flex-start;
+    @extend %u-ph-1--from-small;
+    @extend %u-pos-relative;
+
+    &:focus,
+    &:hover {
+      #{$self}__name {
+        @extend %u-underline;
+      }
+
+      #{$self}__image:after {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      #{$self}__flag {
+        opacity: 1;
+      }
+    }
+  }
 }
