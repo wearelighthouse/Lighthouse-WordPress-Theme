@@ -121,6 +121,7 @@
   // We use @supports clip-path to figure out if we can make the underline bent
   //  - if we can, we add clip-path and override defaults for padding & height.
   &--underlined-light,
+  &--underlined-orange,
   &--underlined-dark {
     @extend .type-cta;
     @extend %u-pos-relative;
@@ -188,6 +189,10 @@
   &--underlined-light::after {
     @extend %u-bg-color-white;
     background-image: linear-gradient($color-orange, $color-orange);
+  }
+
+  &--underlined-orange::after {
+    background: linear-gradient(135deg, $color-orange-old 0%, $color-pink-old 100%);
   }
 
   &--short-underline::after {
