@@ -10,12 +10,12 @@
     
       <?php foreach ($globalCaseStudyIds as $caseStudyId) : ?>
         <?php include(locate_template('src/template_parts/block_case_study.php')) ?>
+        <?php $caseStudyIndex++; ?>
 
         <?php if (is_page_template(('template-all-case-studies.php'))) : ?>
           <?php include(locate_template('src/template_parts/block_case_study.php')) ?>
+          <?php $caseStudyIndex++; ?>
         <?php endif; ?>
-
-        <?php $caseStudyIndex++; ?>
       <?php endforeach; ?>
 
       <?php if (is_front_page()) : ?>
