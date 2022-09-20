@@ -1,20 +1,26 @@
 /**
- * Formerly c-ad, but that got blocked by some adblockers ROFL
+ * Formerly c-ad, but that got blocked by some adblockers lol
  */
-.c-promo {
+ .c-promo {
+  @at-root .c-content-grid & {
+      grid-column: 1 / -1;
+  }
+
   $self: &;
-  @extend %u-pad-6;
   @extend %u-mv-6;
-  @extend %u-color-white;
+  @extend %u-mh-auto;
+  @extend %u-pv-4;
+  @extend %u-pad-6--from-small;
   @extend %u-flex;
   @extend %u-fd-column;
   @extend %u-ai-flex-start;
   @extend %u-pos-relative;
-  @extend %u-ov-hidden;
-  grid-column: 2;
+  @extend %u-grid--from-medium;
+  grid-column-gap: 3rem;
+  grid-template-columns: 1fr 60%;
 
   @include breakpoint(upto-small) {
-    padding: 2rem 1.5rem;
+    width: var(--container-width);
   }
 
   &__background {
@@ -24,60 +30,66 @@
     @extend %u-right;
     @extend %u-bottom;
     @extend %u-left;
-    @extend %u-bg-color-blackcurrant;
-    clip-path: polygon(
-      100% 0,
-      100% 50%,
-      93% 100%,
-      0 100%,
-      0 0
-    );
+    background: linear-gradient(135deg, rgba($color-orange-old, .1) 0%, rgba($color-pink-old, .1) 100%);
+    grid-column: 1 / -1;
 
-    &:before,
-    &:after {
-      @extend %u-content;
-      @extend %u-pos-absolute;
+    @include breakpoint(upto-small) {
+      margin-right: calc((100vw - var(--container-width)) / -2);
+      margin-left: calc((100vw - var(--container-width)) / -2);
     }
 
-    &:before {
-      @extend %u-bottom;
-      @extend %u-right;
-      @extend %u-round;
-      width: 40rem;
-      height: 40rem;
-      background: linear-gradient(90deg, transparent, rgba($color-white, .3));
-      transform: translate(40%, 40%) rotate(30deg);
+    @include breakpoint(from-small) {
+      clip-path: polygon(
+        100% 0,
+        100% 50%,
+        93% 100%,
+        0 100%,
+        0 0
+      );
     }
 
-    &:after {
-      @extend %u-top;
-      @extend %u-left;
-      width: 40rem;
-      height: 40rem;
-      background: linear-gradient(transparent, rgba($color-white, .15));
-      transform: translate(-50%, -50%) rotate(45deg);
+    @include breakpoint(from-medium) {
+      margin-left: -3rem;
+      margin-right: -3rem;
     }
   }
 
   &__label {
-    @extend %u-color-orange;
     @extend %u-bold;
+    @extend %u-color-blackcurrant;
+    grid-column: 1 / 2;
     font-size: 18px;
   }
 
   &__title {
-    @extend .type-static-subtitle;
-    @extend %u-mt-2;
-    line-height: 1.4;
+    @extend %u-mt-3--upto-medium;
+    @extend %u-tiempos;
+    @extend %u-vbold;
+    @include fontScale(34, 38);
+    @include lineScale(40,  54);
+    background: linear-gradient(135deg, $color-orange-old 0%, $color-pink-old 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   p {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    @extend %u-mv-3;
 
     @include breakpoint(from-small) {
-      max-width: 70%;
+      max-width: 90%;
     }
+  }
+
+  & .c-button--underlined-orange {
+    background: linear-gradient(135deg, $color-orange-old 0%, $color-pink-old 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  & .c-button {
+    width: fit-content;
   }
 
   &:focus {
@@ -86,12 +98,14 @@
     }
 
     .c-button:after {
+      background-image: linear-gradient($color-blackcurrant, $color-blackcurrant);
       background-size: 100% 100%;
     }
   }
 
   &:hover {
     .c-button:after {
+      background-image: linear-gradient($color-blackcurrant, $color-blackcurrant);
       background-size: 100% 100%;
     }
   }
@@ -104,6 +118,7 @@
   &__side-image {
     @extend %u-display-none--upto-large;
     @extend %u-pos-absolute;
+    grid-column: 1;
     top: 50%;
     width: 200px;
     height: 200px;
@@ -113,12 +128,6 @@
     img {
       @extend %u-width-100pc;
       @extend %u-height-100pc;
-    }
-  }
-
-  &__side-image ~ &__work-title {
-    @include breakpoint(from-large) {
-      max-width: calc(100% - 200px - 2.5rem);
     }
   }
 
