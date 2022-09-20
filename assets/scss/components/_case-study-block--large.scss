@@ -142,6 +142,7 @@
       }
     }
 
+    &#{$self}--align-right,
     &:nth-child(even) {
       align-items: flex-end;
 
@@ -174,6 +175,25 @@
 
       #{$self}__image-large {
         justify-content: flex-end;
+      }
+    }
+
+    &#{$self}--align-right {
+      #{$self}__content {
+        margin-left: 0;
+        margin-right: calc(50% + 6.3rem);
+      }
+
+      #{$self}__background {
+        left: unset;
+        width: calc(50% + 15rem);
+      }
+
+      #{$self}__image-large {
+        top: unset;
+        padding-right: 2rem;
+        align-items: unset;
+        height: 100%;
       }
     }
   }
