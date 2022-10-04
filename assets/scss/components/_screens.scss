@@ -1,11 +1,9 @@
-
 .c-screens {
+  $self: &;
   @extend %u-pos-relative;
   @extend %u-flex;
   @extend %u-ai-center;
   @extend %u-fw-wrap;
-
-  $self: &;
 
   margin-top: calc(var(--container-v-pad) * 1.5);
   margin-bottom: calc(var(--container-v-pad) * 1.5);
@@ -35,10 +33,6 @@
         transform: translateX(-50%);
       }
     }
-
-    @include breakpoint(from-medium) {
-
-    }
   }
 
   &__device {
@@ -52,7 +46,7 @@
       transition: .2s opacity .8s;
     }
 
-    & > * {
+    > * {
       @extend %u-block;
       @extend %u-width-100pc;
       @extend %u-height-auto;
@@ -60,15 +54,15 @@
 
     &--desktop {
       // 36px from 100vw @ 1440px, scaling down at "half speed"
-      --titleBarSize: calc(1.25vw + 18px);
-      --titleBarMax: 36px;
+      $titleBarSize: calc(1.25vw + 18px);
+      $titleBarMax: 36px;
 
       @extend %u-ov-hidden;
       @extend %u-bg-color-gray-bluish;
       width: var(--container-width);
       max-width: $global-max-width;
       height: 0;
-      padding-bottom: calc(var(--container-width) * .54 + var(--titleBarSize) - 1px);
+      padding-bottom: calc(var(--container-width) * .54 + #{$titleBarSize} - 1px);
       border-radius: 7px;
 
       @include breakpoint(from-full) {
@@ -81,8 +75,8 @@
         @extend %u-bg-color-gray-deep;
         @extend %u-ai-center;
         @extend %u-jc-flex-start;
-        height: var(--titleBarSize);
-        max-height: var(--titleBarMax);
+        height: $titleBarSize;
+        max-height: $titleBarMax;
 
         // Animated image loading line
         box-shadow: -1035px 2px $color-orange;
@@ -104,13 +98,13 @@
         @include breakpoint(upto-full) {
           // These are all calculated from --titleBarSize,
           // with 100 / 36 * intended px size / 100
-          top: calc(.389 * var(--titleBarSize)); // 14px;
-          width: calc(.25 * var(--titleBarSize));
-          height: calc(.25 * var(--titleBarSize));
+          top: calc(.389 * #{$titleBarSize}); // 14px;
+          width: calc(.25 * #{$titleBarSize});
+          height: calc(.25 * #{$titleBarSize});
           // The dots
-          box-shadow: calc(.444 * var(--titleBarSize)) 0 0 #444,
-                      calc(.861 * var(--titleBarSize)) 0 0 #444,
-                      calc(1.27 * var(--titleBarSize)) 0 0 #444;
+          box-shadow: calc(.444 * #{$titleBarSize}) 0 0 #444,
+                      calc(.861 * #{$titleBarSize}) 0 0 #444,
+                      calc(1.27 * #{$titleBarSize}) 0 0 #444;
         }
       }
 
@@ -139,7 +133,7 @@
 
       border-radius: 34px;
 
-      & > * {
+      > * {
         @extend %u-z-index-1;
       }
 
@@ -177,7 +171,7 @@
         }
       }
 
-      & > *,
+      > *,
       &:before {
         width: 260px;
         height: 562px;
@@ -291,7 +285,7 @@
   }
 
   // Remove the margin-top of a screen shortcode following a screen shortcode
-  & + #{$self} {
+  + #{$self} {
     margin-top: 0;
   }
 }
