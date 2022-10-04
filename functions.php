@@ -122,9 +122,9 @@ function addNavMenuItemIndexCssVar($atts, $item, $args)
 }
 add_filter('nav_menu_link_attributes', 'addNavMenuItemIndexCssVar', 10, 3);
 
-// Changing wrapping oembeds from <p> to <div> with a specific classname, and...
-// add "nocookie" To WordPress oEmbeded Youtube Videos
-// from: https://wordpress.org/support/topic/video-shortcode-youtube-nocookie-not-working/
+// Changing wrapping oembeds from <p> to <div> with a specific classname, and
+// add "nocookie" To WordPress oEmbeded Youtube Videos.
+// From https://wordpress.org/support/topic/video-shortcode-youtube-nocookie-not-working/
 function modifyEmbeds($html, $url) {
   if (strpos($url, "youtube.com") !== false) {
     $html = str_replace('youtube.com', 'youtube-nocookie.com', $html);
@@ -133,7 +133,7 @@ function modifyEmbeds($html, $url) {
     return '<div class="c-embed c-embed--generic">' . $html . '</div>';
   }
 }
-add_filter( 'embed_oembed_html', 'modifyEmbeds', 10, 2); // WordPress
+add_filter('embed_oembed_html', 'modifyEmbeds', 10, 2);
 
 // Add "pseduo archive pages" for services, team, and work post types.
 // Note that 'has_archive' => false when declaring the post types.
