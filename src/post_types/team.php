@@ -6,7 +6,8 @@ function registerTeamPostType()
     $supports = [
         'title',
         'editor',
-        'thumbnail'
+        'thumbnail',
+        'page-attributes',
     ];
 
     register_post_type('team', [
