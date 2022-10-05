@@ -45,6 +45,11 @@ function screenShortcode($atts)
       $output .= ' c-screens--desktop';
     }
   }
+
+	if (!$atts['background']) {
+		$output .= ' u-bg-color-gray-light';
+	}
+
   $output .= '">';
 
 	if ($atts['background']) {

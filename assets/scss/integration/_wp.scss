@@ -5,3 +5,9 @@ a > img.emoji {
   margin-right: .2em !important;
   margin-left: .2em !important;
 }
+
+.admin-bar .c-screens {
+  @include breakpoint(from-large) {
+    min-height: calc(100vh - var(--edge-gutter) * 2 - 32px);
+  }
+}
