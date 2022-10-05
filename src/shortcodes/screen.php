@@ -47,7 +47,7 @@ function screenShortcode($atts)
   }
 
 	if (!$atts['background']) {
-		$output .= ' bg-color-gray-light';
+		$output .= ' u-bg-color-gray-light';
 	}
 
   $output .= '">';

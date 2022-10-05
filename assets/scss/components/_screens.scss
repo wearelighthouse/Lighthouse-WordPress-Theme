@@ -6,9 +6,14 @@
   @extend %u-fw-wrap;
   @extend %u-border-box;
 
-  row-gap: calc(var(--container-v-pad) * 2);
+  align-content: center;
+  padding: Min(calc(2rem + 4vw), 4rem);
+  row-gap: Min(calc(2rem + 4vw), 4rem);
   column-gap: 6rem;
-  min-height: calc(100vh - var(--edge-gutter) * 2);
+
+  @include breakpoint(from-large) {
+    min-height: calc(100vh - var(--edge-gutter) * 2);
+  }
 
   &__background {
     @extend %u-pos-absolute;
