@@ -4,9 +4,11 @@
   @extend %u-flex;
   @extend %u-ai-center;
   @extend %u-fw-wrap;
+  @extend %u-border-box;
 
-  margin-top: calc(var(--container-v-pad) * 1.5);
-  margin-bottom: calc(var(--container-v-pad) * 1.5);
+  row-gap: calc(var(--container-v-pad) * 2);
+  column-gap: 6rem;
+  min-height: calc(100vh - var(--edge-gutter) * 2);
 
   &__background {
     @extend %u-pos-absolute;
@@ -37,9 +39,6 @@
 
   &__device {
     @extend %u-pos-relative;
-
-    margin-top: calc(var(--container-v-pad) / 2);
-    margin-bottom: calc(var(--container-v-pad) / 2);
 
     .js-lazy {
       opacity: 0;
@@ -129,7 +128,6 @@
 
     &--mobile {
       @extend %u-flex;
-      @extend %u-mh-6--from-small;
 
       border-radius: 34px;
 
@@ -247,11 +245,6 @@
 
     @include breakpoint(from-large) {
       flex-wrap: nowrap;
-
-      .c-screens__device--mobile {
-        margin-left: 6rem;
-        margin-right: 6rem;
-      }
     }
 
     @include breakpoint(from-large--upto-full) {
@@ -266,12 +259,6 @@
 
   &--mobile-desktop {
     @extend %u-jc-flex-start--from-large--upto-full;
-
-    @include breakpoint(from-full) {
-      .c-screens__device--mobile {
-        margin-left: 0;
-      }
-    }
   }
 
   &--desktop-mobile {
