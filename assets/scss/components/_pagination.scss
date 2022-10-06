@@ -3,21 +3,42 @@
   @extend %u-mv-6;
   @extend %u-flex;
   @extend %u-jc-center;
+  @extend %u-fw-wrap;
+  @extend %u-mh--2;
+  gap: .5rem;
+  width: unset;
 
   .page-numbers {
-    @extend %u-mh-1;
+    padding-inline: .5rem;
+    padding-block: .25rem;
+    transition: background-color .2s;
   }
 
-  .page-number.current {
-
+  .page-numbers.dots {
+    padding-inline: .25rem;
   }
 
-  .page-number.prev {
+  a.page-numbers {
+    @extend %u-border-radius-sm;
 
+    &:focus-visible {
+      outline: 2px solid currentColor;
+    }
   }
 
-  .page-number.next {
+  a.page-numbers:not(.prev):not(.next) {
+    @extend %u-bg-color-gray-light;
 
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
   }
 
+  a.page-numbers.prev,
+  a.page-numbers.next {
+    &:hover {
+      @extend %u-bg-color-gray-light;
+    }
+  }
 }
