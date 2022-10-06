@@ -12,7 +12,7 @@
            class="c-social-link c-social-link--<?= $socialLinksStyle ?>"
            aria-label="<?= $label ?>">
           <svg viewBox="0 0 40 40" style="display: block; height: 40px; width: 40px;" role="presentation">
-            <use href="<?= $svgSpriteSheet ?>#icon--<?= strToLower($social['type']) ?>"></use>
+            <use href="<?= $svgSpriteSheet ?>#<?= strToLower($social['type']) ?>"></use>
           </svg>
         </a>
       <?php endif; ?>

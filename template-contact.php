@@ -25,7 +25,7 @@
             <a href="<?= isset($block['link_url']) ? $block['link_url'] : '' ?>" class="c-contact-block">
               <div class="c-social-link c-social-link--dark">
                 <svg viewBox="0 0 40 40" style="display: block; height: 40px; width: 40px;">
-                  <use href="<?= $svgSpriteSheet ?>#icon--<?= strToLower($block['type']) ?>"></use>
+                  <use href="<?= $svgSpriteSheet ?>#<?= strToLower($block['type']) ?>"></use>
                 </svg>
               </div>
               <?php if (isset($block['title'])) : ?>
