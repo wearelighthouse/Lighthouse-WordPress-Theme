@@ -9,12 +9,13 @@
   width: unset;
 
   .page-numbers {
+    padding-inline: .5rem;
     padding-block: .25rem;
     transition: background-color .2s;
   }
 
-  .page-numbers:not(.dots) {
-    padding-inline: .5rem;
+  .page-numbers.dots {
+    padding-inline: .25rem;
   }
 
   a.page-numbers {
