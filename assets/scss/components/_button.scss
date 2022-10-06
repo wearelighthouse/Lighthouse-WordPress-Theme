@@ -114,10 +114,6 @@
     }
   }
 
-  &--underlined {
-    @include error('Use just c-button--underlined-dark or c-button--underlined-light, instead of c-button--underlined');
-  }
-
   // We use @supports clip-path to figure out if we can make the underline bent
   //  - if we can, we add clip-path and override defaults for padding & height.
   &--underlined-light,
