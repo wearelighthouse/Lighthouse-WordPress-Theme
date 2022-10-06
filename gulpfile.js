@@ -4,7 +4,6 @@ const concatCSS = require('gulp-concat-css');
 const del = require('del');
 const gulp = require('gulp');
 const gzipSize = require('gzip-size');
-const replace = require('gulp-replace');
 const sass = require('gulp-sass')(require('node-sass'));
 const svgSprite = require('gulp-svg-sprite');
 const terser = require('gulp-terser');
@@ -68,7 +67,6 @@ function scss() {
 function cssMinifiy() {
   return gulp
     .src(paths.dist + '/css/*.css')
-    .pipe(replace(/(\/\* dev-only:start \*\/[^]*\/\* dev-only:end \*\/)/g, ''))
     .pipe(cleanCSS({}, (details) => {
       var originalSize = details.stats.originalSize + 'B';
       var minifiedSize = details.stats.minifiedSize + 'B';
