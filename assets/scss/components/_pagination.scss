@@ -3,16 +3,18 @@
   @extend %u-mv-6;
   @extend %u-flex;
   @extend %u-jc-center;
+  @extend %u-fw-wrap;
+  @extend %u-mh--2;
   gap: .5rem;
+  width: unset;
 
   .page-numbers {
-    padding-inline: .5rem;
     padding-block: .25rem;
     transition: background-color .2s;
   }
 
-  .page-numbers.dots {
-    padding-inline: .25rem;
+  .page-numbers:not(.dots) {
+    padding-inline: .5rem;
   }
 
   a.page-numbers {
