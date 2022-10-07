@@ -38,26 +38,26 @@
 ?>
 
 <a href="<?= $linkURL ?>"
-   class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?> 
-   <?= $globalcaseStudyAlignRight ? 'c-case-study-block--align-right' : '' ?> 
-   <?= $globalcaseStudyServiceAlignement ? 'c-case-study-block--small--service-alignment' : '' ?> js-half-onscreen-detect"
+   class="c-case-study-block c-case-study-block--<?= $caseStudySize ?><?= $staggeredClass ?>
+   <?= isset($globalcaseStudyAlignRight) && $globalcaseStudyAlignRight ? 'c-case-study-block--align-right' : '' ?>
+   <?= isset($globalcaseStudyServiceAlignment) && $globalcaseStudyServiceAlignment ? 'c-case-study-block--small--service-alignment' : '' ?> js-half-onscreen-detect"
 >
-   
+
   <div class="c-case-study-block__background">
-    
+
     <?php if ($caseStudySize === 'large' && $imgBackgroundId) : ?>
       <div class="c-case-study-block__image-background <?= (!$imgBackgroundMirroredId && $caseStudyIndex % 2 === 0) ? 'u-mirrored' : '' ?>">
-        <?= lazyLoad(wp_get_attachment_image($imgBackgroundId, 'link-block-case-study-bg-large')) ?>
+        <?= wp_get_attachment_image($imgBackgroundId, 'link-block-case-study-bg-large') ?>
       </div>
     <?php endif; ?>
     <?php if ($caseStudySize === 'large' && $imgLargeId) : ?>
       <div class="c-case-study-block__image-large">
-        <?= lazyload(wp_get_attachment_image($imgLargeId, 'link-block-case-study-fg-large')) ?>
+        <?= wp_get_attachment_image($imgLargeId, 'link-block-case-study-fg-large') ?>
       </div>
     <?php endif; ?>
     <?php if ($caseStudySize === 'small' && $imgMediumId) : ?>
       <div class="c-case-study-block__image-medium">
-        <?= lazyLoad(wp_get_attachment_image($imgMediumId, 'link-block-case-study-fg-medium')) ?>
+        <?= wp_get_attachment_image($imgMediumId, 'link-block-case-study-fg-medium') ?>
       </div>
     <?php endif; ?>
   </div>
@@ -76,7 +76,7 @@
     <?php endif; ?>
     <?php if ($imgSmallId) : ?>
       <div class="c-case-study-block__image-small">
-        <?= lazyLoad(wp_get_attachment_image($imgSmallId, 'link-block-case-study-fg-small')) ?>
+        <?= wp_get_attachment_image($imgSmallId, 'link-block-case-study-fg-small') ?>
       </div>
     <?php endif; ?>
     <?php if ($title) : ?>

@@ -24,9 +24,9 @@
         }
       ?>
 
-      <div class="o-container-content o-container-content--v-margin o-container-case-studies 
+      <div class="o-container-content o-container-content--v-margin o-container-case-studies
       <?= $caseStudyCountainerClass ?>
-      <?= $globalcaseStudyServiceAlignement ? 'o-container-case-studies--service-alignment' : '' ?>
+      <?= $globalcaseStudyServiceAlignment ? 'o-container-case-studies--service-alignment' : '' ?>
       ">
         <?php foreach ($globalCaseStudyIds as $i => $caseStudyId) : ?>
           <?php include(locate_template('src/template_parts/block_case_study.php')) ?>

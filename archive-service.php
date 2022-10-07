@@ -79,9 +79,9 @@
 
   <?php if ($caseStudyIds && count($caseStudyIds) > 1) : ?>
     <?php $globalCaseStudyIds = array_slice($caseStudyIds, 1) ?>
-    <?php $globalcaseStudyServiceAlignement = true; ?>
+    <?php $globalcaseStudyServiceAlignment = true; ?>
     <?php include(locate_template('src/template_parts/block_section_case_study_small.php')) ?>
-    <?php $globalcaseStudyServiceAlignement = false; ?>
+    <?php $globalcaseStudyServiceAlignment = false; ?>
   <?php endif; ?>
 
   <?php $newsletterFormId = RGFormsModel::get_form_id('Newsletter'); ?>

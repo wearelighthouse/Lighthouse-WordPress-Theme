@@ -11,11 +11,28 @@ if (document.readyState === 'complete') {
   window.addEventListener('load', completeInit);
 }
 
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+
+  return (
+    rect.top < window.innerHeight &&
+    rect.left < window.innerWidth &&
+    rect.bottom > 0 &&
+    rect.right > 0
+  );
+}
+
 function interactiveInit() {
   // Add JavaScript-has-loaded class to body
   setTimeout(function () {
     document.body.classList.add('js-loaded');
   }, 0);
+
+  document.querySelectorAll('.js-half-onscreen-detect').forEach(function (element) {
+    if (!isInViewport(element)) {
+      element.classList.add('js-offscreen');
+    }
+  });
 
   // Add the menu button toggling event listener
   addMenuToggleListener(document.querySelector('.c-menu-button'));
@@ -104,7 +121,7 @@ function swapThePrefillOrigin() {
 
 function completeInit() {
   // Do lazy loading images
-  setupObservers(window.lozad);
+  setupObservers();
   // Add document.referrer into cache
   addReferral(document.referrer);
   swapEmailFromHelloToHi();
@@ -116,7 +133,51 @@ window.addEventListener('beforeunload', function (e) {
   document.body.classList.add('js-unloading');
 });
 
-function setupObservers(lozad) {
+function setupObservers() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.parentNode.classList.add('js-child-loading');
+        entry.target.classList.add('js-loading');
+
+        if (entry.target.tagName === 'IMG') {
+          entry.target.addEventListener('load', function (event) {
+            entry.target.parentNode.classList.remove('js-child-loading');
+            entry.target.classList.remove('js-loading');
+            entry.target.parentNode.classList.add('js-child-loaded');
+            entry.target.classList.add('js-loaded');
+          });
+        } else if (entry.target.tagName === 'VIDEO') {
+          entry.target.addEventListener('canplay', function (event) {
+            entry.target.parentNode.classList.remove('js-child-loading');
+            entry.target.classList.remove('js-loading');
+            entry.target.parentNode.classList.add('js-child-loaded');
+            entry.target.classList.add('js-loaded');
+          });
+        }
+      }
+    });
+  }, {rootMargin: '500px 0px'});
+
+  document.querySelectorAll('.js-lazy').forEach((element) => {
+    observer.observe(element);
+  });
+
+  const halfOnscreenObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('js-onscreen');
+        entry.target.classList.remove('js-offscreen');
+      }
+    });
+  }, { threshold: 0.45 });
+
+  document.querySelectorAll('.js-half-onscreen-detect').forEach(function (element) {
+    halfOnscreenObserver.observe(element);
+  });
+}
+
+function setupObserversOld(lozad) {
   let observerLoad = lozad('.js-lazy', {
     rootMargin: '500px 0px',
     loaded: function (element) {
