@@ -129,18 +129,6 @@ window.addEventListener('beforeunload', () => {
 });
 
 function setupObservers() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.parentNode.classList.add('js-child-loaded');
-      }
-    });
-  }, {rootMargin: '500px 0px'});
-
-  document.querySelectorAll('.js-lazy').forEach((element) => {
-    observer.observe(element);
-  });
-
   const halfOnscreenObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {

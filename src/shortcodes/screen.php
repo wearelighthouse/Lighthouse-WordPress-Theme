@@ -75,13 +75,13 @@ function screenShortcode($atts)
 		// If its a video, wrap in <video> tags
 		if (strpos($mediaType, 'video') !== false) {
       $video = '<video width="320" height="240" autoplay muted loop>';
-      $video .= '<source src="' . wp_get_attachment_url($mediaId) . '" type="' . $mediaType . '">';
+      $video .= '<source src="' . wp_get_attachment_url($mediaId) . '" type="' . $mediaType . '" class="c-screens__media">';
       $video .= '</video>';
       $output .= $video;
 
 		// If it's an image, get the <img>
 		} elseif (strpos($mediaType, 'image') !== false) {
-			$output .= wp_get_attachment_image($mediaId, 'original' , '', ['class' => 'js-lazy']);
+			$output .= wp_get_attachment_image($mediaId, 'original' , '', ['class' => 'c-screens__media']);
 
 		// If it's something else, just print the string
 		} else {

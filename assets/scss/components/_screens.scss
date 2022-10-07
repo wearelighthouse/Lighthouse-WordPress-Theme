@@ -45,7 +45,7 @@
   &__device {
     @extend %u-pos-relative;
 
-    .js-lazy {
+    #{$self}__media {
       opacity: 0;
       transition: .2s opacity .8s;
     }
@@ -117,7 +117,7 @@
         box-shadow: 0 2px $color-orange;
       }
 
-      &.js-onscreen.js-child-loaded > .js-lazy {
+      &.js-onscreen > #{$self}__media {
         opacity: 1 !important;
       }
 
@@ -144,7 +144,7 @@
       $loadTime: .4s;
       $loadDelay: .4s;
 
-      .js-lazy {
+      #{$self}__media {
         transition: $fadeTime opacity #{$loadTime * 1};
       }
 
@@ -154,7 +154,7 @@
 
       @include breakpoint(from-large) {
         & + & {
-          .js-lazy {
+          #{$self}__media {
             transition: $fadeTime opacity #{$loadTime * 2};
           }
 
@@ -164,7 +164,7 @@
         }
 
         & + & + & {
-          .js-lazy {
+          #{$self}__media {
             transition: $fadeTime opacity #{$loadTime * 3};
           }
 
@@ -226,7 +226,7 @@
         width: 228px;
       }
 
-      &.js-onscreen.js-child-loaded > .js-lazy {
+      &.js-onscreen > #{$self}__media {
         opacity: 1 !important;
       }
     }
