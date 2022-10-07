@@ -26,7 +26,7 @@ function interactiveInit() {
   setTimeout(() => document.body.classList.add('js-loaded'));
 
   document.querySelectorAll('.js-half-onscreen-detect').forEach((element) => {
-    element.classList.toggle('js-offscreen', !isInViewport(element));
+    element.classList.add('js-offscreen');
   });
 
   // Add the menu button toggling event listener
