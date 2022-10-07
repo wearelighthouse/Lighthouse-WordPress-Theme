@@ -132,24 +132,7 @@ function setupObservers() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.parentNode.classList.add('js-child-loading');
-        entry.target.classList.add('js-loading');
-
-        if (entry.target.tagName === 'IMG') {
-          // entry.target.addEventListener('load', function (event) {
-            entry.target.parentNode.classList.remove('js-child-loading');
-            entry.target.classList.remove('js-loading');
-            entry.target.parentNode.classList.add('js-child-loaded');
-            entry.target.classList.add('js-loaded');
-          // });
-        } else if (entry.target.tagName === 'VIDEO') {
-          entry.target.addEventListener('canplay', function (event) {
-            entry.target.parentNode.classList.remove('js-child-loading');
-            entry.target.classList.remove('js-loading');
-            entry.target.parentNode.classList.add('js-child-loaded');
-            entry.target.classList.add('js-loaded');
-          });
-        }
+        entry.target.parentNode.classList.add('js-child-loaded');
       }
     });
   }, {rootMargin: '500px 0px'});
