@@ -13,7 +13,7 @@
       ?>
 
       <a href="<?= $link['url']; ?>" class="c-award-links__link">
-        <?= lazyLoad(wp_get_attachment_image($link['graphic_id'], '')) ?>
+        <?= wp_get_attachment_image($link['graphic_id'], '') ?>
       </a>
 
     <?php endforeach; ?>

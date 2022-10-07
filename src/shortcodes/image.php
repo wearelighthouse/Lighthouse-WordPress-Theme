@@ -46,11 +46,11 @@ function imageShortcode($atts)
       $video = '<video width="100%" height="auto" autoplay muted loop>';
       $video .= '<source src="' . wp_get_attachment_url($mediaId) . '" type="' . $mediaType . '">';
       $video .= '</video>';
-      $media = lazyLoad($video);
+      $media = $video;
 
     // If it's an image, get the <img>
     } elseif (strpos($mediaType, 'image') !== false) {
-      $media = lazyLoad(wp_get_attachment_image($mediaId, 'original' , ''));
+      $media = wp_get_attachment_image($mediaId, 'original' , '');
     } else {
       echo 'Invalid image or video ID in shortcode: "' . $mediaId . '"';
       return;

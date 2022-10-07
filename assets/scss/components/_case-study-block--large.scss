@@ -88,6 +88,10 @@
     }
   }
 
+  &.js-offscreen {
+    transition: none;
+  }
+
   @include breakpoint(from-small) {
     height: 31rem;
     margin-top: 7rem;

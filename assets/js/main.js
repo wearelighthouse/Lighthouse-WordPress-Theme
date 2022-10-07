@@ -11,11 +11,30 @@ if (document.readyState === 'complete') {
   window.addEventListener('load', completeInit);
 }
 
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+
+  return (
+    rect.top < window.innerHeight &&
+    rect.left < window.innerWidth &&
+    rect.bottom > 0 &&
+    rect.right > 0
+  );
+}
+
 function interactiveInit() {
-  // Add JavaScript-has-loaded class to body
-  setTimeout(function () {
-    document.body.classList.add('js-loaded');
-  }, 0);
+  setTimeout(() => document.body.classList.add('js-loaded'));
+
+  document.querySelectorAll('.js-half-onscreen-detect').forEach((element) => {
+    element.classList.add('js-offscreen');
+
+    setTimeout(() => {
+      if (isInViewport(element)) {
+        element.classList.remove('js-offscreen');
+        element.classList.add('js-onscreen');
+      }
+    });
+  });
 
   // Add the menu button toggling event listener
   addMenuToggleListener(document.querySelector('.c-menu-button'));
@@ -103,58 +122,30 @@ function swapThePrefillOrigin() {
 }
 
 function completeInit() {
-  // Do lazy loading images
-  setupObservers(window.lozad);
-  // Add document.referrer into cache
+  setupObservers();
   addReferral(document.referrer);
   swapEmailFromHelloToHi();
   saveThePrefillOrigin();
   swapThePrefillOrigin();
 }
 
-window.addEventListener('beforeunload', function (e) {
+window.addEventListener('beforeunload', () => {
   document.body.classList.add('js-unloading');
 });
 
-function setupObservers(lozad) {
-  let observerLoad = lozad('.js-lazy', {
-    rootMargin: '500px 0px',
-    loaded: function (element) {
-      element.parentNode.classList.add('js-child-loading');
-      element.classList.add('js-loading');
-
-      if (element.tagName === 'IMG') {
-        element.addEventListener('load', function (event) {
-          element.parentNode.classList.remove('js-child-loading');
-          element.classList.remove('js-loading');
-          element.parentNode.classList.add('js-child-loaded');
-          element.classList.add('js-loaded');
-        });
-      } else if (element.tagName === 'VIDEO') {
-        element.addEventListener('canplay', function (event) {
-          element.parentNode.classList.remove('js-child-loading');
-          element.classList.remove('js-loading');
-          element.parentNode.classList.add('js-child-loaded');
-          element.classList.add('js-loaded');
-        });
+function setupObservers() {
+  const halfOnscreenObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('js-onscreen');
+        entry.target.classList.remove('js-offscreen');
       }
-    }
-  });
-  observerLoad.observe();
+    });
+  }, { threshold: 0.45 });
 
-  document.querySelectorAll('.js-half-onscreen-detect').forEach(function (element) {
-    element.classList.add('js-offscreen');
+  document.querySelectorAll('.js-half-onscreen-detect').forEach((element) => {
+    halfOnscreenObserver.observe(element);
   });
-
-  let observerView = lozad('.js-half-onscreen-detect', {
-    threshold: 0.45,  // 'Technically' not ½, only requires 45% to be visible
-    load: function () { },
-    loaded: function (element) {
-      element.classList.add('js-onscreen');
-      element.classList.remove('js-offscreen');
-    }
-  });
-  observerView.observe();
 }
 
 function addMenuToggleListener(button) {

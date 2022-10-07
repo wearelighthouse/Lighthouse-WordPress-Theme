@@ -54,12 +54,7 @@ function screenShortcode($atts)
 
 	if ($atts['background']) {
     $backgroundSrc = wp_get_attachment_url($atts['background']);
-    $backgroundImg = '<img src=' . $backgroundSrc .  '>';
-
-    if (wp_check_filetype($backgroundSrc)['ext'] !== 'svg') {
-      $backgroundImg = lazyLoad($backgroundImg);
-    }
-
+    $backgroundImg = '<img src=" . $backgroundSrc .  " loading="lazy">';
     $output .= '<div class="c-screens__background">' . $backgroundImg . '</div>';
 	}
 
@@ -80,13 +75,13 @@ function screenShortcode($atts)
 		// If its a video, wrap in <video> tags
 		if (strpos($mediaType, 'video') !== false) {
       $video = '<video width="320" height="240" autoplay muted loop>';
-      $video .= '<source src="' . wp_get_attachment_url($mediaId) . '" type="' . $mediaType . '">';
+      $video .= '<source src="' . wp_get_attachment_url($mediaId) . '" type="' . $mediaType . '" class="c-screens__media">';
       $video .= '</video>';
-      $output .= lazyLoad($video);
+      $output .= $video;
 
 		// If it's an image, get the <img>
 		} elseif (strpos($mediaType, 'image') !== false) {
-			$output .= lazyLoad(wp_get_attachment_image($mediaId, 'original' , ''));
+			$output .= wp_get_attachment_image($mediaId, 'original' , '', ['class' => 'c-screens__media']);
 
 		// If it's something else, just print the string
 		} else {
