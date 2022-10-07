@@ -115,9 +115,7 @@ function swapThePrefillOrigin() {
 }
 
 function completeInit() {
-  // Do lazy loading images
   setupObservers();
-  // Add document.referrer into cache
   addReferral(document.referrer);
   swapEmailFromHelloToHi();
   saveThePrefillOrigin();
