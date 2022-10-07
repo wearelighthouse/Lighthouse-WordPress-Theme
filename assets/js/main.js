@@ -27,6 +27,13 @@ function interactiveInit() {
 
   document.querySelectorAll('.js-half-onscreen-detect').forEach((element) => {
     element.classList.add('js-offscreen');
+
+    setTimeout(() => {
+      if (isInViewport(element)) {
+        element.classList.remove('js-offscreen');
+        element.classList.add('js-onscreen');
+      }
+    });
   });
 
   // Add the menu button toggling event listener
