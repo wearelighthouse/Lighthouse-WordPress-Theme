@@ -54,7 +54,7 @@ function screenShortcode($atts)
 
 	if ($atts['background']) {
     $backgroundSrc = wp_get_attachment_url($atts['background']);
-    $backgroundImg = '<img src=" . $backgroundSrc .  " loading="lazy">';
+    $backgroundImg = '<img src="' . $backgroundSrc .  '" loading="lazy">';
     $output .= '<div class="c-screens__background">' . $backgroundImg . '</div>';
 	}
 
