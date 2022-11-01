@@ -33,6 +33,8 @@
   }
 
   &--lg {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 1.5rem;
 
     @include breakpoint(from-medium) {
@@ -51,7 +53,6 @@
       text-decoration-thickness: 2px;
       padding-inline: 1rem;
       padding-block: 0.8rem;
-      min-width: 12ch;
     }
   }
 }
