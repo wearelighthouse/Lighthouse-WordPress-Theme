@@ -45,7 +45,7 @@
 
   #{$self}__number {
     @extend %u-vbold;
-    font-size: clamp(7rem, 18vw, 16rem); 
+    font-size: clamp(7rem, 16.5vw, 14.5rem);
     letter-spacing: -0.015em;
   }
 }
