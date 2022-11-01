@@ -10,7 +10,7 @@
     $caseStudyIds1 = array_diff($caseStudyIds, $homeCaseStudies);
     $caseStudyIds2 = array_diff($homeCaseStudies, $caseStudyIds);
     $removedDuplicateCaseStudyIds = array_merge($caseStudyIds1, $caseStudyIds2);
-    
+
     $caseStudyIds = $removedDuplicateCaseStudyIds;
   }
 
@@ -53,9 +53,9 @@
     <div class="c-work-footer">
 
       <?php if (isset($linkList)) : ?>
-        <div class="c-work-footer__box">
+        <div class="c-work-footer__box" style="width: unset">
           <h3 class="type-cta">See more&hellip;</h3>
-          <ul class="o-tag-list">
+          <ul class="o-tag-list o-tag-list--lg">
             <?= $linkList ?>
           </ul>
         </div>

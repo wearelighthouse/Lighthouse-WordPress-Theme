@@ -31,4 +31,27 @@
   &.o-blog-tag-list {
     @extend %u-fd-column--from-medium;
   }
+
+  &--lg {
+    gap: 1.5rem;
+
+    @include breakpoint(from-medium) {
+      gap: 2.5rem;
+    }
+
+    > * {
+      flex-basis: 30%;
+      flex-grow: 1;
+    }
+
+    .c-tag {
+      width: 100%;
+      font-weight: 500;
+      font-size: 18px;
+      text-decoration-thickness: 2px;
+      padding-inline: 1rem;
+      padding-block: 0.8rem;
+      min-width: 12ch;
+    }
+  }
 }
