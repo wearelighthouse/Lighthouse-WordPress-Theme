@@ -38,16 +38,16 @@
 
   <?php if ($blockServices) : ?>
     <?php $globalBlocksServiceGroup = $blockServices; ?>
-      <?php $globalSkillsWithOrangeTitle = true; ?>
-      <?php include(locate_template('src/template_parts/block_section_services.php')) ?>
+    <?php $globalSkillsWithOrangeTitle = true; ?>
+    <?php include(locate_template('src/template_parts/block_section_services.php')) ?>
 
-        <?php if ($button) : ?>
-          <div class="c-service-skills__button c-service-template__button-container o-container-content">
-            <a href="/contact" class="c-service-template__button">
-              <span><?= $button ?></span>
-            </a>
-          </div>
-        <?php endif; ?>
+    <?php if ($button) : ?>
+      <div class="c-service-skills__button c-service-template__button-container o-container-content">
+        <a href="/contact" class="c-service-template__button">
+          <span><?= $button ?></span>
+        </a>
+      </div>
+    <?php endif; ?>
   <?php endif; ?>
 
   <?php include(locate_template('src/template_parts/service_section_collaboration.php')) ?>
