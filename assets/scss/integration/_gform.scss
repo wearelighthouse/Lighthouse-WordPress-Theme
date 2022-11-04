@@ -19,3 +19,12 @@
 .fa {
   font-style: normal !important;
 }
+
+.gfield.recaptcha {
+  width: 100% !important;
+  margin-bottom: 0 !important;
+
+  .ginput_recaptcha {
+    width: auto;
+  }
+}
