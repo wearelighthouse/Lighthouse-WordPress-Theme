@@ -2,7 +2,8 @@
 @each $direction in (row, row-reverse, column, column-reverse) {
   @include make-utility((
     alias: 'fd-' + $direction,
-    flex-direction: $direction
+    flex-direction: $direction,
+    class: true,
   ));
 }
 
