@@ -1,0 +1,28 @@
+.c-cta-block {
+  @extend %u-color-white;
+  @extend %u-bg-color-blackcurrant;
+  @extend %u-pv-8;
+  margin-left: calc(-1 * var(--edge-gutter));
+  width: 100vw;
+
+  h2 {
+    @extend %u-mb-5;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .button {
+    @extend %u-mh-auto;
+    @extend %u-mt-4;
+    @extend %u-inline-flex;
+    @extend %u-ai-center;
+    @extend %u-ph-3;
+    @extend %u-pv-2;
+    gap: .75rem;
+    font-size: 20px;
+    border-radius: 2rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, #FC895B 0%, #FF268B 100%);
+  }
+}
