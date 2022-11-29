@@ -49,6 +49,7 @@ require_once __DIR__ . '/src/post_types/work.php';
 require_once __DIR__ . '/src/shortcodes/ad.php';
 require_once __DIR__ . '/src/shortcodes/bold-stat.php';
 require_once __DIR__ . '/src/shortcodes/content-blocks.php';
+require_once __DIR__ . '/src/shortcodes/cta-block.php';
 require_once __DIR__ . '/src/shortcodes/image.php';
 require_once __DIR__ . '/src/shortcodes/form-block.php';
 require_once __DIR__ . '/src/shortcodes/clients.php';
@@ -64,6 +65,7 @@ function registerShortcodes()
   add_shortcode('ad', 'adShortcode');
   add_shortcode('form', 'formBlockShortcode');
   add_shortcode('blocks', 'contentBlocksShortcode');
+  add_shortcode('cta-block', 'ctaBlockShortcode');
   add_shortcode('clients', 'clientsShortcode');
 }
 add_action( 'init', 'registerShortcodes');

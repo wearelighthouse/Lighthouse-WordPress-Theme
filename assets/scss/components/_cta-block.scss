@@ -1,0 +1,48 @@
+.c-cta-block {
+  @extend %u-color-white;
+  @extend %u-bg-color-blackcurrant;
+  @extend %u-pv-8;
+  @extend %u-mh-auto;
+  @extend %u-pos-relative;
+  isolation: isolate;
+  width: 100%;
+
+  h2 {
+    @extend %u-mb-5;
+    @extend %u-bold;
+    @extend .type-h1;
+    line-height: 1.5;
+  }
+
+  .button {
+    @extend %u-mh-auto;
+    @extend %u-mt-4;
+    @extend %u-inline-flex;
+    @extend %u-ai-center;
+    @extend %u-ph-3;
+    @extend %u-pv-2;
+    @extend %u-border-radius-full;
+    @extend .type-cta;
+    gap: .75rem;
+    background: linear-gradient(135deg, #FC895B 0%, #FF268B 100%);
+
+    svg {
+      transition: transform .2s;
+    }
+
+    &:hover svg {
+      transform: translateX(2px);
+    }
+  }
+
+  &__bg {
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    @include breakpoint(upto-large) {
+      opacity: .5;
+    }
+  }
+}
