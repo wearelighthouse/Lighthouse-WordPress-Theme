@@ -15,7 +15,7 @@ function ctaBlockShortcode($atts, $content = null)
     <path d="M14.5 18L13.1 16.55L16.65 13H4.5V11H16.65L13.1 7.45L14.5 6L20.5 12L14.5 18Z" fill="white"/>
   </svg>';
 
-	$button = '<a href="/" class="button">' . $atts['link_text'] . $svg . '</a>';
+	$button = '<a href="' . $atts['link_url'] . '" class="button">' . $atts['link_text'] . $svg . '</a>';
 
 	$svg = '<svg xmlns="http://www.w3.org/2000/svg" width="768" height="480" aria-hidden="true" viewBox="0 0 768 480" class="c-cta-block__bg">
 		<g filter="url(#a)">
