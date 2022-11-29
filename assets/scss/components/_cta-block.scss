@@ -3,6 +3,8 @@
   @extend %u-bg-color-blackcurrant;
   @extend %u-pv-8;
   @extend %u-mh-auto;
+  @extend %u-pos-relative;
+  isolation: isolate;
   width: 100%;
 
   h2 {
@@ -30,6 +32,17 @@
 
     &:hover svg {
       transform: translateX(2px);
+    }
+  }
+
+  &__bg {
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    @include breakpoint(upto-large) {
+      opacity: .5;
     }
   }
 }
