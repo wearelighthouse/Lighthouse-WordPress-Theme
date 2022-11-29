@@ -28,3 +28,8 @@
     width: auto;
   }
 }
+
+// Display the floaty recaptcha above other elements like the footer
+.grecaptcha-badge {
+  z-index: 1;
+}
