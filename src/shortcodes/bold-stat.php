@@ -10,7 +10,7 @@ function statisticBlockShortcode($wp_atts, $content = null)
 
 
 	$statistic = '</section>
-		 <section class="o-container-section">
+		 <section class="o-container-section o-container-section--h-bordered">
 		 <div class="c-bold-stat-bg">
 		  	<div class="o-container-content c-bold-stat">';
 
