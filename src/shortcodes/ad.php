@@ -33,7 +33,7 @@ function adShortcode($atts, $content = null)
 				$label = 'Product leadership podcast';
 
 				// If read more text is default, get rid of it
-				if ($atts['read_more'] === 'Read more') {
+				if ($atts['read_more'] === 'Read article') {
 					$atts['read_more'] = '';
 				}
 			// Otherwise we assume it's a blog post
