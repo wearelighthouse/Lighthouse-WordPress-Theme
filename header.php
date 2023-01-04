@@ -47,7 +47,6 @@
 
   <link rel="stylesheet" href="<?= $dist ?>/font/fonts.css">
   <script async src="<?= $dist ?>/js/main.js">></script>
-  <script defer src="<?= $dist ?>/js/snowfall.js"></script>
 
 <?php if (is_front_page()) : ?>
   <link rel="preconnect" href="https://widget.clutch.co" crossorigin>
