@@ -5,7 +5,7 @@ function adShortcode($atts, $content = null)
 	$atts = shortcode_atts([
 		'id' => '',
 		'align' => 'right',  // 'right' (default - Inline w/ <p>), 'left', 'center'.
-		'read_more' => 'Read article'
+		'read_more' => 'Read more'
 	], $atts);
 
 	// Get the page object
@@ -33,7 +33,7 @@ function adShortcode($atts, $content = null)
 				$label = 'Product leadership podcast';
 
 				// If read more text is default, get rid of it
-				if ($atts['read_more'] === 'Read article') {
+				if ($atts['read_more'] === 'Read more') {
 					$atts['read_more'] = '';
 				}
 			// Otherwise we assume it's a blog post
