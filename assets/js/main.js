@@ -103,11 +103,11 @@ function swapEmailFromHelloToHi() {
     return;
   }
 
-  const links = document.querySelectorAll('[href="mailto:hello@wearelighthouse.com"]');
+  const links = document.querySelectorAll('[href$="@wearelighthouse.com"]');
 
   links.forEach(link => {
-    link.href = link.href.replace('hello@wearelighthouse.com', 'hi@wearelighthouse.com');
-    link.innerText = link.innerText.replace('hello@wearelighthouse.com', 'hi@wearelighthouse.com');
+    link.href = link.href.replace('hello', 'hi');
+    link.innerText = link.innerText.replace('hello', 'hi');
   });
 }
 
