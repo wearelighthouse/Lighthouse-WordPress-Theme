@@ -77,6 +77,25 @@ function checkIfFromGoogleAd() {
   return false;
 }
 
+function saveUtmSource() {
+  const utm = new URL(window.location.href).searchParams.get('utm_source');
+
+  if (utm) {
+    localStorage.setItem('utm_source', utm);
+  }
+}
+
+function addSourceToEmail() {
+  const utm = localStorage.getItem('utm_source');
+
+  if (!utm) {
+    return;
+  }
+
+  const links = document.querySelectorAll('[href$="@wearelighthouse.com"]');
+  links.forEach(link => link.href = link.href.replace('@', `+${utm.split('.')[0]}@`));
+}
+
 function swapEmailFromHelloToHi() {
   const fromGoogleAd = checkIfFromGoogleAd();
 
@@ -124,6 +143,8 @@ function swapThePrefillOrigin() {
 function completeInit() {
   setupObservers();
   addReferral(document.referrer);
+  saveUtmSource();
+  addSourceToEmail();
   swapEmailFromHelloToHi();
   saveThePrefillOrigin();
   swapThePrefillOrigin();
