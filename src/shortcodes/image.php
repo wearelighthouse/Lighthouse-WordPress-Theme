@@ -7,7 +7,11 @@ function imageShortcode($atts)
     'id' => '',
     'size' => 'large',
     'background' => '',
-    'caption' => ''
+    'caption' => '',
+    'loop' => '',
+    'autoplay' => '',
+    'controls' => '',
+    'muted' => ''
   ], $atts);
 
   $allowedImgSizes = ['', 'small', 'medium', 'large', 'full'];
@@ -43,7 +47,13 @@ function imageShortcode($atts)
 
     // If its a video, wrap in <video> tags
     if (strpos($mediaType, 'video') !== false) {
-      $video = '<video width="100%" height="auto" autoplay muted loop>';
+
+      $controls = $atts['controls'] == 'on' ? ' controls' : '';	
+      $loop = $atts['loop'] == 'on' ? ' loop' : '';		
+      $autoplay = $atts['autoplay'] == 'on' ? ' autoplay' : '';
+      $muted = $atts['muted'] == 'on' ? ' muted' : '';
+
+      $video = '<video width="100%" height="auto" '.$autoplay.$muted.$loop.$controls.'>';
       $video .= '<source src="' . wp_get_attachment_url($mediaId) . '" type="' . $mediaType . '">';
       $video .= '</video>';
       $media = $video;
