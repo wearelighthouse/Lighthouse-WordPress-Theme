@@ -8,10 +8,10 @@ function imageShortcode($atts)
     'size' => 'large',
     'background' => '',
     'caption' => '',
-    'loop' => '',
-    'autoplay' => '',
-    'controls' => '',
-    'muted' => ''
+    'loop' => 'on',
+    'autoplay' => 'on',
+    'controls' => 'off',
+    'muted' => 'on'
   ], $atts);
 
   $allowedImgSizes = ['', 'small', 'medium', 'large', 'full'];
