@@ -4,7 +4,7 @@
 
     em {
       font-style: normal;
-      color: $color-blackcurrant;
+      color: var(--em-color, $color-blackcurrant);
     }
   }
 

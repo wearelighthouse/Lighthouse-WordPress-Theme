@@ -39,6 +39,12 @@ return [
             'default' => '#ffffff'
         ],
         [
+	        'name'    => '&lt;em&gt; Colour', 'cmb2',
+            'id'      => 'em_color',
+            'type'    => 'colorpicker',
+            'default' => '#151931',
+        ],
+        [
             'name' => 'Illustration',
             'id'   => 'image',
             'type' => 'file',

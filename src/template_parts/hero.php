@@ -68,6 +68,8 @@
     $customGradient = '';
   }
 
+  $emColor = getPostMeta('hero_hero_em_color');
+
   // From page has a 100vh header instead of as-big-as-it-needs-to-be
   // Has been temporarily removed because it's toooo tall. CSS was also commented out.
   $frontPageSectionClass = is_front_page() ? '' : '';
@@ -98,7 +100,10 @@
     </div>
     <div class="o-container-content o-container-content--v-pad c-hero__content">
       <?php if ($text) : ?>
-        <div class="c-hero__text <?= $scope ?><?= $textWithImage ? ' c-hero__text--with-image' : '' ?> <?= $textWithTeamImage ?>">
+        <div
+          class="c-hero__text <?= $scope ?><?= $textWithImage ? ' c-hero__text--with-image' : '' ?> <?= $textWithTeamImage ?>"
+          style="<?= $emColor ? '--em-color: ' . $emColor : ''; ?>"
+        >
           <?= $text ?>
 
           <?php if (is_front_page() || is_singular([ 'sector', 'service' ]) || is_page([ 'services' ])) : ?>
