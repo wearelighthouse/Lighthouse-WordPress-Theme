@@ -7,7 +7,7 @@
 
   &--lighthouse p,
   &--unattributed p {
-    color: var(--quote-color, $color-orange);
+    @extend %u-color-orange;
   }
 
   &--client p {

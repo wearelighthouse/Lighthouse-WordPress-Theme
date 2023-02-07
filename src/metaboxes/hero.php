@@ -45,7 +45,7 @@ return [
             'default' => '#151931',
         ],
         [
-	        'name'    => 'Blockquote Text Colour', 'cmb2',
+	        'name'    => 'Client Blockquote Text Colour', 'cmb2',
             'id'      => 'quote_color',
             'type'    => 'colorpicker',
             'default' => '',
