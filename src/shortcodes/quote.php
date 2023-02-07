@@ -2,6 +2,8 @@
 
 function quoteShortcode($wp_atts, $content = null)
 {
+	$quoteColor = getPostMeta('hero_hero_quote_color');
+
 	// Get the lighthouse team names
 	$teamPosts = new WP_Query([
     'post_type' => 'team',
@@ -28,6 +30,8 @@ function quoteShortcode($wp_atts, $content = null)
 		'company' => '',
 		'company_url' => '',
 	], $wp_atts);
+
+	$style = $quoteColor ? 'style="--quote-color:' . $quoteColor . '"' : '';
 
 	if ($atts['name']) {
 		// is it one of us?
@@ -78,7 +82,7 @@ function quoteShortcode($wp_atts, $content = null)
 		$class .= ' c-blockquote--full-width';
 	}
 
-	$quote = '<blockquote class="' . $class . '">' . wpautop($content) . $footer . '</blockquote>';
+	$quote = '<blockquote class="' . $class . '"' . $style . '>' . wpautop($content) . $footer . '</blockquote>';
 
 	wp_reset_query();
 	return $quote;
