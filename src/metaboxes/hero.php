@@ -45,6 +45,12 @@ return [
             'default' => '#151931',
         ],
         [
+	        'name'    => 'Blockquote Text Colour', 'cmb2',
+            'id'      => 'quote_color',
+            'type'    => 'colorpicker',
+            'default' => '',
+        ],
+        [
             'name' => 'Illustration',
             'id'   => 'image',
             'type' => 'file',
