@@ -59,7 +59,7 @@
       'post_type' => get_post_type(),
       'post_parent' => get_the_ID(),
       'orderby' => 'title',
-      'order' => 'ASC',
+      'order' => 'menu_order',
     ]);
 
     $caseStudys = [];
