@@ -1,7 +1,7 @@
 
 .c-images {
-  @extend %u-flex;
-  @extend %u-fw-wrap;
+  @extend %u-grid;
+  row-gap: Min(calc(2rem + 4vw), 4rem);
 
   $self: &;
 
@@ -14,8 +14,6 @@
     @extend %u-ai-center;
     @extend %u-jc-center;
     @extend %u-fd-column;
-    @extend %u-width-100pc--upto-medium;
-    @extend %u-width-50pc--from-medium;
 
     img {
       @extend %u-width-100pc;
@@ -61,10 +59,6 @@
       width: var(--container-width);
       max-width: $global-max-width;
     }
-  }
-
-  & > :first-child:last-child {
-    width: 100%;
   }
 
   &--multi-bg-color {
