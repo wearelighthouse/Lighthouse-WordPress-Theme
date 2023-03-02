@@ -16,6 +16,11 @@
     $text = "<h1>" . wptexturize($post->post_title) . "</h1>" . $text;
   }
 
+  if (is_page_template('template-beacon-results.php')) {
+    $text = "<h1>Your team is currently at stage" . $maturity_level . ", <em>" . $maturity_description[$maturity_level-1] . "</em></h1>
+          <p>" . $content[$maturity_level-1]['intro'] . "</p>";
+  }
+
   $imageId = getPostMeta('hero_hero_image_id');
   $heroStyle = getPostMeta('hero_hero_style');
 
