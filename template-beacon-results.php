@@ -159,11 +159,6 @@
       <div class="o-container-content o-container-content--v-margin s-content">
 
         <div class="o-container-content o-container-content--v-margin c-content-grid">
-          <?php the_content(); ?>
-
-          <h2>Your team is currently at stage <?php echo $maturity_level; ?>, <em><?php echo $maturity_description[$maturity_level-1]; ?></em></h2>
-
-          <p><?php echo $content[$maturity_level-1]['intro']; ?></p>
 
           <h3>Purpose<br />
           <?php echo $purpose_average . '%'; ?></h3>
@@ -177,6 +172,7 @@
           <?php echo $process_average . '%'; ?></h3>
           <p><?php echo $content[$maturity_level-1]['process']; ?></p>
 
+          <?php if ($maturity_level < 5) { ?>
           <h2>What can I do to progress to stage <?php echo ($maturity_level+1);?>, <?php echo $maturity_description[$maturity_level]; ?> </h2>
         </div>
         <div class="o-container-content o-container-services o-container-services--3-column">
@@ -189,6 +185,7 @@
           <div class="s-content s-content--marginless">
             <p><?php echo $content[$maturity_level-1]['actions'][2]; ?></p>
           </div>
+          <?php } ?>
         </div>
       </div>
 
