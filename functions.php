@@ -179,7 +179,7 @@ function enqueueResources()
 add_action('wp_enqueue_scripts', 'enqueueResources');
 
 function custom_query_vars_filter($vars) {
-  $vars[] .= 'entry';
+  $vars[] = 'entry';
   return $vars;
 }
 add_filter( 'query_vars', 'custom_query_vars_filter' );
