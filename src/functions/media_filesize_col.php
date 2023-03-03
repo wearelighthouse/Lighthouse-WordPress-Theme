@@ -28,17 +28,6 @@ function filesizeColSortable($cols)
     return $cols;
 }
 
-function mediafilesizes_run_metadata() {
-    $attachments = get_posts(['post_type' => 'attachment', 'numberposts' => -1]);
-
-    if ($attachments) {
-        foreach ($attachments as $post) {
-            setup_postdata($post);
-            update_post_meta($post->ID, 'file_size', wp_filesize(get_attached_file($post->ID)));
-        }
-    }
-}
-
 function filesizeOrderby($query)
 {
     if (!is_admin() || !($query->is_main_query())) {
@@ -62,4 +51,20 @@ add_action('manage_upload_sortable_columns', 'filesizeColSortable');
 add_action('pre_get_posts', 'filesizeOrderby');
 add_action('admin_head', 'filesizeColWidth');
 
-mediafilesizes_run_metadata();
+function runFilesizeMeta()
+{
+    global $pagenow;
+
+    if ($pagenow === 'media-new.php' || $pagenow === 'upload.php') {
+        $attachments = get_posts(['post_type' => 'attachment', 'numberposts' => -1]);
+
+        if ($attachments) {
+            foreach ($attachments as $post) {
+                setup_postdata($post);
+                update_post_meta($post->ID, 'file_size', wp_filesize(get_attached_file($post->ID)));
+            }
+        }
+    }
+}
+
+add_action('admin_init', 'runFilesizeMeta', 10);
