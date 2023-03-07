@@ -103,6 +103,19 @@
     <?php $globalcaseStudyServiceAlignment = false; ?>
   <?php endif; ?>
 
+  <section class="o-container-content o-container-content--v-margin">
+    <div class="c-work-footer" style="flex-direction: column">
+      <?php if (isset($linkList)) : ?>
+        <div class="c-work-footer__box" style="width: unset">
+          <h3 class="type-cta">Industries we work in</h3>
+          <ul class="o-tag-list o-tag-list--lg">
+            <?= $linkList ?>
+          </ul>
+        </div>
+      <?php endif; ?>
+    </div>
+  </section>
+
   <?php $newsletterFormId = RGFormsModel::get_form_id('Newsletter'); ?>
 
   <?php if ($newsletterFormId): ?>
@@ -110,21 +123,6 @@
       <?= do_shortcode('[form id="' . $newsletterFormId . '"]') ?>
     </section>
   <?php endif; ?>
-
-  <section class="o-container-content o-container-content--v-margin">
-    <div class="c-work-footer" style="flex-direction: column">
-
-      <?php if (isset($linkList)) : ?>
-        <div class="c-work-footer__box" style="width: unset">
-          <h3 class="type-cta">See more&hellip;</h3>
-          <ul class="o-tag-list o-tag-list--lg">
-            <?= $linkList ?>
-          </ul>
-        </div>
-      <?php endif; ?>
-
-    </div>
-  </section>
 </main>
 
 <?php get_footer(); ?>
