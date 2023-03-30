@@ -93,9 +93,9 @@
   //   margin-bottom: 0;  // Cancel out the hero__text bottom padding (hack?)
   // }
 
-  &__date {
-    @extend %u-block;
-    @extend %u-mt-8;  // More top-margin than a regular hero content (<p>?)
+  &__tag-list {
+    @extend %u-mt-6;
+    @extend %u-mb-2;
   }
 
   &--orange-pink {
