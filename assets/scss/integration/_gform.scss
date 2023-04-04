@@ -33,3 +33,93 @@
 .grecaptcha-badge {
   z-index: 1;
 }
+
+.gform_wrapper.gravity-theme {
+  // Reset weird gravity form radio/checkbox max width
+  .gfield-choice-input.gfield-choice-input + label {
+    max-width: unset;
+  }
+
+  .ginput_container.ginput_container_email {
+    @extend %u-bg-color-gray-bluish;
+
+    &:before,
+    &:after {
+      @extend %u-z-index-1;
+    }
+
+    input {
+      @extend %u-pv-2;
+      background: unset;
+      font-size: 18px;
+    }
+  }
+
+  .gchoice.gchoice {
+    @extend %u-mv-1;
+
+    input {
+      @extend .o-dictate;
+    }
+
+    label {
+      @extend %u-pos-relative;
+      @extend %u-inline-flex;
+      @extend %u-ai-center;
+      @extend %u-color-gray-darker;
+      padding-top: .125rem;
+      padding-bottom: .125rem;
+      transition: color .2s;
+    }
+
+    label:before,
+    label:after {
+      @extend %u-inline-block;
+      @extend %u-round;
+      @extend %u-fs-0;
+      @extend %u-border-box;
+      height: 1.5rem;
+      width: 1.5rem;
+      content: '';
+      transition: all .2s;
+    }
+
+    label:before {
+      @extend %u-pos-relative;
+      margin-right: .75rem;
+      border: 2px solid $color-gray-darkish;
+    }
+
+    label:after {
+      @extend %u-bg-color-gray-bluish;
+      @extend %u-pos-absolute;
+      @extend %u-left;
+      background-clip: padding-box;
+      border: 5px solid transparent;
+      transform: scale(0);
+    }
+
+    input:checked + label:before {
+      border-color: $color-blackcurrant;
+    }
+
+    input:checked + label:after {
+      @extend %u-bg-color-blackcurrant;
+      transform: scale(1);
+    }
+
+    input:checked + label,
+    label:hover {
+      @extend %u-color-blackcurrant;
+    }
+
+    label:hover:before {
+      border: 2px solid $color-blackcurrant;
+    }
+
+
+    input:focus + label:before {
+      border: 2px solid $color-blackcurrant;
+    }
+  }
+}
