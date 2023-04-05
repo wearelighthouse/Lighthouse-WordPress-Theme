@@ -80,6 +80,7 @@
   }
 
   .gchoice {
+    @extend %u-pos-relative;
     @extend %u-mv-1;
 
     input {
