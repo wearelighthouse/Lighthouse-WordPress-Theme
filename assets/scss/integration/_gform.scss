@@ -34,10 +34,34 @@
   z-index: 1;
 }
 
-.gform_wrapper.gravity-theme {
+// Double selector to override gravity-theme
+.gform_wrapper.gravity-theme.gravity-theme {
   // Reset weird gravity form radio/checkbox max width
   .gfield-choice-input.gfield-choice-input + label {
     max-width: unset;
+  }
+
+  .gsection.field_sublabel_below.field_description_below {
+    @extend %u-ph-0;
+    @extend %u-pb-6;
+    @extend %u-mh-2;
+    @extend %u-mv-3;
+  }
+
+  .gsection_title {
+    @extend %u-bold;
+    font-size: 26px;
+  }
+
+  .gfield_label {
+    @extend %u-bold;
+    @extend %u-mb-3;
+    font-size: inherit;
+  }
+
+  // ⦿ label
+  .gfield_radio label {
+    font-size: 18px;
   }
 
   .ginput_container.ginput_container_email {
@@ -55,7 +79,7 @@
     }
   }
 
-  .gchoice.gchoice {
+  .gchoice {
     @extend %u-mv-1;
 
     input {
@@ -115,7 +139,7 @@
 
     label:hover:before {
       border: 2px solid $color-blackcurrant;
-    }
+  }
 
 
     input:focus + label:before {
