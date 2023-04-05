@@ -36,6 +36,37 @@
 
 // Double selector to override gravity-theme
 .gform_wrapper.gravity-theme.gravity-theme {
+  .gf_progressbar {
+    @extend %u-border-radius-full;
+    height: 2rem;
+    padding: .25rem;
+    background: $color-gray-bluish-2;
+  }
+
+  .gf_progressbar_percentage {
+    @extend %u-flex;
+    @extend %u-ai-center;
+    @extend %u-jc-center;
+    @extend %u-border-radius-full;
+    @extend %u-bold;
+    background: $gradient-blackcurrant;
+    font-size: 15px;
+    height: 1.5rem;
+
+    &:not(.percentbar_100) {
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+    }
+
+    span {
+      font-size: 15px;
+    }
+  }
+
+  .gform_fields {
+    width: unset;
+  }
+
   // Reset weird gravity form radio/checkbox max width
   .gfield-choice-input.gfield-choice-input + label {
     max-width: unset;
@@ -61,7 +92,7 @@
 
   // ⦿ label
   .gfield_radio label {
-    font-size: 18px;
+    font-size: inherit;
   }
 
   .ginput_container.ginput_container_email {
@@ -81,7 +112,6 @@
 
   .gchoice {
     @extend %u-pos-relative;
-    @extend %u-mv-1;
 
     input {
       @extend .o-dictate;
@@ -92,9 +122,16 @@
       @extend %u-inline-flex;
       @extend %u-ai-center;
       @extend %u-color-gray-darker;
-      padding-top: .125rem;
-      padding-bottom: .125rem;
+      @extend %u-border-radius-md;
+      margin-left: -.75rem;
+      margin-right: -.75rem;
+      padding-top: .5rem;
+      padding-right: .75rem;
+      padding-bottom: .5rem;
+      padding-left: 3rem;
       transition: color .2s;
+      line-height: 1.5;
+      transition: all .2s;
     }
 
     label:before,
@@ -103,6 +140,8 @@
       @extend %u-round;
       @extend %u-fs-0;
       @extend %u-border-box;
+      top: .625rem;
+      left: .75rem;
       height: 1.5rem;
       width: 1.5rem;
       content: '';
@@ -110,7 +149,7 @@
     }
 
     label:before {
-      @extend %u-pos-relative;
+      @extend %u-pos-absolute;
       margin-right: .75rem;
       border: 2px solid $color-gray-darkish;
     }
@@ -138,13 +177,98 @@
       @extend %u-color-blackcurrant;
     }
 
+    label:hover,
+    input:focus-visible + label {
+      background-color: $color-gray-light;
+    }
+
     label:hover:before {
       border: 2px solid $color-blackcurrant;
-  }
-
+    }
 
     input:focus + label:before {
       border: 2px solid $color-blackcurrant;
     }
+  }
+
+  .button {
+    @extend %u-inline-flex;
+    @extend %u-ai-center;
+    @extend %u-jc-center;
+    @extend %u-border-radius-full;
+    @extend %u-bold;
+    @extend %u-ph-3;
+    @extend %u-pv-1;
+    @extend %u-sailec;
+    cursor: pointer;
+    font-size: 18px;
+    border: 0;
+    min-height: 3.5rem;
+    min-width: 8rem;
+    outline-offset: 2px;
+    transition: all .2s;
+    outline: 2px solid transparent;
+
+    &:hover {
+      filter: brightness(.95);
+    }
+
+    &:hover:active {
+      filter: brightness(1);
+    }
+
+  }
+
+  @include breakpoint(upto-small) {
+    .button {
+      width: 100%;
+      margin: 0;
+    }
+
+    .button + .button {
+      margin-top: .5rem;
+    }
+  }
+
+  .button[type="submit"]:after {
+    content: none;
+  }
+
+  .button[type="submit"],
+  .button.gform_next_button {
+    background: $gradient-yellow;
+
+    &:focus-visible {
+      outline-color: $color-blackcurrant;
+    }
+  }
+
+  .button.gform_previous_button {
+    color: inherit;
+    border: 2px solid $color-blackcurrant;
+
+    &:focus-visible {
+      outline: 2px solid $color-yellow-dark;
+    }
+  }
+}
+
+/* Beacon form styles */
+.gform_wrapper form[action*="/beacon/"] {
+  .gform_fields {
+    margin-bottom: 2rem;
+
+    .gfield {
+      flex-direction: column;
+      width: unset;
+    }
+  }
+
+  .ginput_container_email,
+  .ginput_container_radio,
+  .gfield_validation_message {
+    margin-left: 0;
+    max-width: 38rem;
+    order: unset;
   }
 }

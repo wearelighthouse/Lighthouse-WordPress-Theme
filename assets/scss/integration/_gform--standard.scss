@@ -108,6 +108,7 @@
     margin: 2px;
     border: none;
     font-size: unset;
+    width: inherit;
 
     &:focus {
       outline: none; // Reset
