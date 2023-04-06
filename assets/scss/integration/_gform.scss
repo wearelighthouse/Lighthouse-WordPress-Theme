@@ -36,6 +36,17 @@
 
 // Double selector to override gravity-theme
 .gform_wrapper.gravity-theme.gravity-theme {
+  // Gravity Forms temporarily focuses a 'form anchor' at the top of the form
+  // when swapping between steps, to scroll to the top. This stops it getting
+  // visually focused. It's not re-focusable as it gets tabindex="-1" after ~1s
+  .gform_anchor:focus {
+    outline: none;
+  }
+
+  input:focus::placeholder {
+    opacity: 0;
+  }
+
   .gf_progressbar {
     @extend %u-border-radius-full;
     height: 2rem;
@@ -264,6 +275,7 @@
     }
   }
 
+  .gf_progressbar_wrapper,
   .ginput_container_email,
   .ginput_container_radio,
   .gfield_validation_message {
