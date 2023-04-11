@@ -2,6 +2,10 @@
   /* Template Name: Beacon Results */
 
   function average_array($a) {
+    if (count($a) === 0) {
+      return 0;
+    }
+
     $a = array_filter($a);
     $average = array_sum($a)/count($a);
     return (number_format($average, 2) * 20);
