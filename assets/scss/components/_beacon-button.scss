@@ -1,0 +1,32 @@
+.c-beacon-button {
+  @extend %u-inline-flex;
+  @extend %u-ai-center;
+  @extend %u-jc-center;
+  @extend %u-border-radius-full;
+  @extend %u-bold;
+  @extend %u-ph-3;
+  @extend %u-pv-1;
+  @extend %u-sailec;
+  @extend %u-border-box;
+  cursor: pointer;
+  font-size: 18px;
+  border: 0;
+  min-height: 3.5rem;
+  min-width: 8rem;
+  outline-offset: 2px;
+  transition: all .2s;
+  outline: 2px solid transparent;
+  background: $gradient-yellow;
+
+  &:focus-visible {
+    outline-color: $color-blackcurrant;
+  }
+
+  &:hover {
+    filter: brightness(.95);
+  }
+
+  &:hover:active {
+    filter: brightness(1);
+  }
+}

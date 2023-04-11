@@ -1,0 +1,58 @@
+.c-beacon-card {
+  width: 380px;
+  max-width: 100%;
+  transform: skewY(-9deg);
+  margin-block: 2rem;
+  background: hsl(51, 100%, 61);
+  border-radius: 2rem;
+
+  > * {
+    border: 1px solid rgba(0, 0, 0, .1);
+    position: relative;
+  }
+
+  > :not(:last-child) {
+    border-bottom: 0;
+  }
+
+  > :first-child {
+    border-radius: 2rem 2rem 0 0;
+  }
+
+  > :last-child {
+    border-radius: 0 0 2rem 2rem;
+  }
+
+  @for $i from 1 through 5 {
+    > :nth-child(#{$i}) {
+      background: hsl(51, 100%, 55 + $i * 6);
+      color: rgba(0, 0, 0, .93 - $i / 10);
+      z-index: 5 - $i;
+    }
+  }
+
+  span {
+    height: 100px;
+    display: grid;
+    place-items: center;
+    transform: skewY(9deg);
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &::after {
+    @extend %u-tiempos;
+    position: absolute;
+    content: var(--content);
+    z-index: 5;
+    font-size: 200px;
+    font-weight: bold;
+    inset: 0;
+    display: grid;
+    transform: translateY(-.05em) skewY(9deg);
+    place-items: center;
+    color: $color-white;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, .1);
+  }
+}

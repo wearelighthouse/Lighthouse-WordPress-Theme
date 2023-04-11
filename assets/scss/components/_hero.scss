@@ -89,6 +89,18 @@
     }
   }
 
+  &__beacon-card-container {
+    max-width: 100%;
+
+    @include breakpoint(from-large) {
+      max-width: 34%;
+    }
+
+    @include breakpoint(from-large) {
+      transform: translateX(90px);
+    }
+  }
+
   // &--post #{$self}__text {
   //   margin-bottom: 0;  // Cancel out the hero__text bottom padding (hack?)
   // }
