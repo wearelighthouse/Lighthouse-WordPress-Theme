@@ -3,11 +3,11 @@
 ?>
 
 <section class="o-container-section o-container-section--bordered">
-  <div class="c-hero">
+  <div class="c-hero" style="margin: 0;">
     <div class="o-container-content o-container-content--v-pad c-hero__content" style="flex-direction: initial;">
       <div
         class="c-hero__text s-banner s-beacon-links c-hero__text--with-image"
-        style="padding-top: 3rem; <?= $emColor ? '--em-color: ' . $emColor : '' ?>"
+        style="padding-top: 3rem; margin-bottom: 0; <?= $emColor ? '--em-color: ' . $emColor : '' ?>"
       >
         <h1>
           Your team is current at stage <?= $maturity_level ?>, <em><?= array_keys($content)[$maturity_level - 1] ?></em>

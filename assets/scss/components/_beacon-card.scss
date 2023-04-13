@@ -2,9 +2,15 @@
   width: 380px;
   max-width: 100%;
   transform: skewY(-9deg);
-  background: hsl(51, 100%, 61);
-  border-radius: 2rem;
   container-type: inline-size;
+
+  &::before {
+    @extend %u-pos-absolute;
+    content: '';
+    inset: 0;
+    border-radius: 9cqw;
+    background: hsl(51, 100%, 61);
+  }
 
   > * {
     border: 1px solid rgba(0, 0, 0, .1);
@@ -16,11 +22,11 @@
   }
 
   > :first-child {
-    border-radius: 2rem 2rem 0 0;
+    border-radius: 9cqw 9cqw 0 0;
   }
 
   > :last-child {
-    border-radius: 0 0 2rem 2rem;
+    border-radius: 0 0 9cqw 9cqw;
   }
 
   @for $i from 1 through 5 {
@@ -62,7 +68,7 @@
     }
 
     > * {
-      background: hsl(51, 100%, 61)
+      background: hsl(51, 100%, 61);
     }
   }
 
@@ -70,7 +76,7 @@
     &[data-level="#{$levelIndex}"] {
       @for $segmentIndex from 0 through 5 - $levelIndex {
         > :nth-child(#{$segmentIndex}) {
-          background: hsl(51, 100%, 85);
+          background: hsl(51, 100%, 91);
         }
       }
     }

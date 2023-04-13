@@ -13,7 +13,8 @@
 
 @include make-utility((
   alias: bold,
-  font-weight: 500 // Actually "semibold", but avoids browsers trying to make bolder
+  font-weight: 500, // Actually "semibold", but avoids browsers trying to make bolder
+  class: true
 ));
 
 @include make-utility((
