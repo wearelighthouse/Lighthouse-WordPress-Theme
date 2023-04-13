@@ -37,8 +37,12 @@
 // Gravity Forms temporarily focuses a 'form anchor' at the top of the form
 // when swapping between steps, to scroll to the top. This stops it getting
 // visually focused. It's not re-focusable as it gets tabindex="-1" after ~1s
-.gform_anchor:focus {
-  outline: none;
+.gform_anchor {
+  scroll-margin: Min(calc(2rem + 4vw), 4rem);
+
+  &:focus {
+    outline: none;
+  }
 }
 
 // Double selector to override gravity-theme
@@ -264,7 +268,7 @@
 }
 
 /* Beacon form styles */
-.gform_wrapper form[action*="/beacon/"] {
+.gform_wrapper form[action*="/beacon"] {
   .gform_fields {
     margin-bottom: 2rem;
 

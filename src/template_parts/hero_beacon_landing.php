@@ -24,17 +24,17 @@
 
 <section class="o-container-section o-container-section--bordered">
   <div class="c-hero">
-    <div class="o-container-content o-container-content--v-pad c-hero__content" style="flex-direction: initial; flex-wrap: wrap;">
+    <div class="o-container-content o-container-content--v-pad c-hero__content" style="flex-direction: initial;">
       <?php if ($text) : ?>
         <div
           class="c-hero__text s-banner s-beacon-links c-hero__text--with-image"
-          style="padding-top: 6rem; <?= $emColor ? '--em-color: ' . $emColor : '' ?>"
+          style="padding-top: 3rem; <?= $emColor ? '--em-color: ' . $emColor : '' ?>"
         >
           <?= $text ?>
         </div>
       <?php endif; ?>
 
-      <div class="c-hero__beacon-card-container">
+      <div class="c-hero__beacon-card-container u-display-none--upto-medium">
         <div class="c-beacon-card">
           <div><span>Luminous</span></div>
           <div><span>Bright</span></div>

@@ -2,9 +2,9 @@
   width: 380px;
   max-width: 100%;
   transform: skewY(-9deg);
-  margin-block: 2rem;
   background: hsl(51, 100%, 61);
   border-radius: 2rem;
+  container-type: inline-size;
 
   > * {
     border: 1px solid rgba(0, 0, 0, .1);
@@ -32,7 +32,7 @@
   }
 
   span {
-    height: 100px;
+    aspect-ratio: 4 / 1;
     display: grid;
     place-items: center;
     transform: skewY(9deg);
@@ -43,16 +43,16 @@
 
   &::after {
     @extend %u-tiempos;
-    position: absolute;
+    @extend %u-color-white;
+    @extend %u-pos-absolute;
     content: var(--content);
     z-index: 5;
-    font-size: 200px;
+    font-size: 54cqw;
     font-weight: bold;
     inset: 0;
     display: grid;
     transform: translateY(-.05em) skewY(9deg);
     place-items: center;
-    color: $color-white;
     -webkit-text-stroke: 1px rgba(0, 0, 0, .1);
   }
 }

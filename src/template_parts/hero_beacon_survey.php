@@ -23,19 +23,19 @@
 ?>
 
 <section class="o-container-section o-container-section--bordered">
-  <div class="c-hero">
-    <div class="o-container-content o-container-content--v-pad c-hero__content" style="flex-direction: initial; flex-wrap: wrap;">
+  <div class="c-hero" style="margin: 0;">
+    <div class="o-container-content o-container-content--v-pad c-hero__content" style="flex-direction: initial; padding-bottom: 0;">
       <?php if ($text) : ?>
         <div
           class="c-hero__text s-banner s-beacon-links c-hero__text--with-image"
-          style="padding-top: 6rem; <?= $emColor ? '--em-color: ' . $emColor : '' ?>"
+          style="margin: 0; <?= $emColor ? '--em-color: ' . $emColor : '' ?>"
         >
           <?= $text ?>
         </div>
       <?php endif; ?>
 
-      <div class="c-hero__beacon-card-container">
-        <div class="c-beacon-card" style="--content: '?'">
+      <div class="c-hero__beacon-card-container u-display-none--upto-medium">
+        <div class="c-beacon-card" style="max-width: 190px; --content: '?'">
           <div><span></span></div>
           <div><span></span></div>
           <div><span></span></div>
