@@ -23,12 +23,12 @@
 ?>
 
 <section class="o-container-section o-container-section--bordered">
-  <div class="c-hero">
+  <div class="c-hero" style="margin: 0;">
     <div class="o-container-content o-container-content--v-pad c-hero__content" style="flex-direction: initial;">
       <?php if ($text) : ?>
         <div
           class="c-hero__text s-banner s-beacon-links c-hero__text--with-image"
-          style="padding-top: 3rem; <?= $emColor ? '--em-color: ' . $emColor : '' ?>"
+          style="padding-top: 3rem; margin: 0; <?= $emColor ? '--em-color: ' . $emColor : '' ?>"
         >
           <?= $text ?>
         </div>
