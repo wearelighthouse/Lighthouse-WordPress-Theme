@@ -11,7 +11,8 @@
     is_singular('post') ||
     is_singular('transcript') ||
     is_page_template('template-beacon-survey.php') ||
-    is_page_template('template-beacon-landing.php')
+    is_page_template('template-beacon-landing.php') ||
+    is_page_template('template-beacon-results.php')
   ) ? ' u-color-blackcurrant' : ' u-color-white';
 ?>
 

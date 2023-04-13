@@ -19,18 +19,9 @@
   $entry = GFAPI::get_entry( $entry_id );
   // print_r($entry);
 
-  $purpose = $people = $process = array();
-
-  $maturity_description = array(
-    'Faint',
-    'Flickering',
-    'Emerging',
-    'Bright',
-    'Luminous'
-  );
+  $purpose = $people = $process = [];
 
   foreach ($entry as $k => $v) {
-
     switch ($k) {
       case 2:
       case 3:
@@ -61,138 +52,136 @@
       case 22:
         $process[] = $v;
       break;
-
     }
-
   }
 
-  $purpose_average = average_array($purpose);
-  $people_average = average_array($people);
-  $process_average = average_array($process);
-  $total_score = ( ($purpose_average + $people_average + $process_average) / 3 );
+  $scores = [
+    'Purpose' => round(average_array($purpose)),
+    'People' => round(average_array($people)),
+    'Process' => round(average_array($process)),
+  ];
 
-  if ($total_score < 20) {
+  $totalScore = round(($scores['Purpose'] + $scores['People'] + $scores['Process']) / 3);
+
+  if ($totalScore < 20) {
     $maturity_level = 1;
-  } elseif ($total_score < 40) {
+  } elseif ($totalScore < 40) {
     $maturity_level = 2;
-  } elseif ($total_score < 60) {
+  } elseif ($totalScore < 60) {
     $maturity_level = 3;
-  } elseif ($total_score < 80) {
+  } elseif ($totalScore < 80) {
     $maturity_level = 4;
   } else {
     $maturity_level = 5;
   }
 
-  $content = array();
+  $content = [
+    'Flickering' => [
+      'intro' => "This typically means your teams decision making is based on assumptions from stakeholders with no input or research from users. Features are implemented as and when requested regardless of value to customer.",
+      'sections' => [
+        'Purpose' => "Usually at this level, decisions are made from the top down with no team or user involvement. There's often no roadmap created or shared which results in a disconnect for the team who don't understand what they're working towards.",
+        'People' => "Often we see teams that are siloed and unsure of their responsibilities. This can be the case both within and across teams. Lack of resources and duplication can be common as team members take on unnecessary work.",
+        'Process' => "Generally we find at this level that no methods of user research are utilised or understood, resulting in no research data to aid in decision making. 'Design' is often thought to be high-fidelity designs only.",
+      ],
+      'actions' => [
+        "Raise and build awareness for UCD within the business by identifying allies to support avocacy.",
+        "Source the skills needed. This could be by upskilling your existing team with training, hiring specialists or enlisting outside help to get the process started",
+        "Make sure stakeholders understand the importance of user-centric practises and how it will benefit the business."
+      ],
+    ],
+    'Faint' => [
+      'intro' => "This typically means that your team have given some consideration to users. However, data can often be misinterpreted or used only to solve specific problems rather than inform wider strategy and direction.",
+      'sections' => [
+        'Purpose' => "At this level, user research is usually not primary data and can be used biasedly. It is used to solve immediate issues on a small scale. A roadmap often exists but is not formal and is short sighted in its objectives.",
+        'People' => "We find that teams at this level understand some roles more than others, which can result in a mismatch of velocity in different areas of the team. Access to training can be limited and team members aren't always confident sharing honest opinons.",
+        'Process' => "Desk research, secondary data or feedback from ticketing systems are commonly the only source of user data. Sometimes there may be a dedicated designer within the team but they'll often have limited to no research skills. Designs are typically created directly from user feedback at face value without iteration.",
+      ],
+      'actions' => [
+        "Begin to introduce more UCD activities, to help build an understanding of users.",
+        "Create a more user-centric culture, by starting to involve non-designers in the discovery and design process. Encourage senior leadership and engineers to speak to users, or listen into user research.",
+        "Create case studies of successful UX projects, to build awareness but also people who can champion UX internally."
+      ],
+    ],
+    'Emerging' => [
+      'intro' => "This typically means your team have a basic understanding of and use user-centric practises. Roadmaps are often arbitrary and aren't understood or remembered by the team.",
+      'sections' => [
+        'Purpose' => "Commonly teams at this level consider user insights but they are not central when forming strategy. Product visions & roadmaps have been defined but usually have little impact due to lack of review and iteration.",
+        'People' => "For emerging teams, individuals usually understand what is expected of them, but need to be encouraged to collaborate. Generally, estimates and team velocity is loosely tracked but often does not match expectations for team members or the roadmap.",
+        'Process' => "It is common for some basic, ad-hoc forms of research to be used, but are often only conducted by a select few in the team. Results are typically not widely shared and necessary tools can be viewed as not valuable. Physical design assets are usually seen as more valuable than user insights.",
+      ],
+      'actions' => [
+        "Focus on continuing to build and maintain a healthy design culture at all levels of the organisation. Encourage guilds or working groups for people interested in UX.",
+        "Use design and insights from research, to more heavily influence the organisational roadmap where possible. Use case studies and projects to tell compelling stories of how design can make a tangible difference to the bottom-line.",
+        "Be specifc with the benefits of design; use analytics and the language of the business, to ensure design and UX is taken seriously alongside other disciplines."
+      ],
+    ],
+    'Bright' => [
+      'intro' => "This typically means your team is data-driven and using user research to drive a product strategy that links directly into business goals. Product vision is clear and acts as a guide post for decision making",
+      'sections' => [
+        'Purpose' => "User insights are typically seen as key to decision making and forming strategy for Bright teams. KPIs and metrics are often included to track launches and reviewed regularly. These teams usually feel confident defining work based on product vision.",
+        'People' => "Team responsibilities are often well established and expectations are being met. They generally work collaboratively within individual product teams but routinely have limited amounts of natural cross-collaboration at the organisational level. Team velocity and expectations are usually tracked and well matched.",
+        'Process' => "Typically, a number of research methods are used by experienced individuals. Results are documented and made available to anyone wishing the access them. A selection of tools are usually available as well as utilization of sketching and early feedback before proceeding to high-fidelity designs.",
+      ],
+      'actions' => [
+        "Build on the existing team and processes, by encouraging a collaborative culture without silos. Encourage designers, researchers and product people to regularly share success and failure stories. ",
+        "Ensure that design practices continue to improve at scale, by focussing on how you can utilise design ops and designers in management roles.",
+        "Be proactive with a UX strategy, and ensure it aligns to the wider organisal objectives. Push to ensure product, design and engineering are treated as equals."
+      ],
+    ],
+    'Luminous' => [
+      'intro' => "This typically means that your team are effectively including user-centred practises at all stages of product development. The team is empowered, efficient and fully understand the goals they're working toward to achieve success.",
+      'sections' => [
+        'Purpose' => "We often find teams at this level are making product decisions that are fundamentally user-centric and such practises are seen as important to the business. Roadmaps normally exists at a team level and organisation level to connect into a wider strategy.",
+        'People' => "A trusting and open feedback culture is usually fostered by the team, as well as collaboration across the organisation. They commonly have good access to resources and training, with clear structure and expectations.",
+        'Process' => "A variety of research methods are often used and conducted by specialists throughout product development. Typically, results are shared beyond the team. Brainstorming, sketching and ideation are encouraged and a design system is in place to ensure consistency of outputs.",
+      ],
+      'actions' => [
+        "Be proud of your culture and processes, and use it to foster development and recruitment. Encourage designers to share case studies externally and be actively involved in the product and design community.",
+        "Don't get complacent; continue to encourage growth in the team, by pushing development into less obvious specialisms and areas of design and research.",
+        "Focus on establishing and maintaining user-centred outcome metrics at the highest levels of your organisation."
+      ],
+    ],
+  ];
 
-  // Flickering
-  $content[0] = array(
-    'intro' => "This typically means your teams decision making is based on assumptions from stakeholders with no input or research from users. Features are implemented as and when requested regardless of value to customer.",
-     'purpose' => "Usually at this level, decisions are made from the top down with no team or user involvement. There's often no roadmap created or shared which results in a disconnect for the team who don't understand what they're working towards.",
-     'people' => "Often we see teams that are siloed and unsure of their responsibilities. This can be the case both within and across teams. Lack of resources and duplication can be common as team members take on unnecessary work.",
-     'process' => "Generally we find at this level that no methods of user research are utilised or understood, resulting in no research data to aid in decision making. 'Design' is often thought to be high-fidelity designs only.",
-     'actions' => array(
-       "Raise and build awareness for UCD within the business by identifying allies to support avocacy.",
-       "Source the skills needed. This could be by upskilling your existing team with training, hiring specialists or enlisting outside help to get the process started",
-       "Make sure stakeholders understand the importance of user-centric practises and how it will benefit the business."
-     )
-  );
-
-  // Faint
-  $content[1] = array(
-    'intro' => "This typically means that your team have given some consideration to users. However, data can often be misinterpreted or used only to solve specific problems rather than inform wider strategy and direction.",
-     'purpose' => "At this level, user research is usually not primary data and can be used biasedly. It is used to solve immediate issues on a small scale. A roadmap often exists but is not formal and is short sighted in its objectives.",
-     'people' => "We find that teams at this level understand some roles more than others, which can result in a mismatch of velocity in different areas of the team. Access to training can be limited and team members aren't always confident sharing honest opinons.",
-     'process' => "Desk research, secondary data or feedback from ticketing systems are commonly the only source of user data. Sometimes there may be a dedicated designer within the team but they'll often have limited to no research skills. Designs are typically created directly from user feedback at face value without iteration.",
-     'actions' => array(
-       "Begin to introduce more UCD activities, to help build an understanding of users.",
-       "Create a more user-centric culture, by starting to involve non-designers in the discovery and design process. Encourage senior leadership and engineers to speak to users, or listen into user research.",
-       "Create case studies of successful UX projects, to build awareness but also people who can champion UX internally."
-     )
-  );
-
-  // Emerging
-  $content[2] = array(
-     'intro' => "This typically means your team have a basic understanding of and use user-centric practises. Roadmaps are often arbitrary and aren't understood or remembered by the team.",
-     'purpose' => "Commonly teams at this level consider user insights but they are not central when forming strategy. Product visions & roadmaps have been defined but usually have little impact due to lack of review and iteration.",
-     'people' => "For emerging teams, individuals usually understand what is expected of them, but need to be encouraged to collaborate. Generally, estimates and team velocity is loosely tracked but often does not match expectations for team members or the roadmap.",
-     'process' => "It is common for some basic, ad-hoc forms of research to be used, but are often only conducted by a select few in the team. Results are typically not widely shared and necessary tools can be viewed as not valuable. Physical design assets are usually seen as more valuable than user insights.",
-     'actions' => array(
-       "Focus on continuing to build and maintain a healthy design culture at all levels of the organisation. Encourage guilds or working groups for people interested in UX.",
-       "Use design and insights from research, to more heavily influence the organisational roadmap where possible. Use case studies and projects to tell compelling stories of how design can make a tangible difference to the bottom-line.",
-       "Be specifc with the benefits of design; use analytics and the language of the business, to ensure design and UX is taken seriously alongside other disciplines."
-     )
-  );
-
-  // Bright
-  $content[3] = array(
-     'intro' => "This typically means your team is data-driven and using user research to drive a product strategy that links directly into business goals. Product vision is clear and acts as a guide post for decision making",
-     'purpose' => "User insights are typically seen as key to decision making and forming strategy for Bright teams. KPIs and metrics are often included to track launches and reviewed regularly. These teams usually feel confident defining work based on product vision.",
-     'people' => "Team responsibilities are often well established and expectations are being met. They generally work collaboratively within individual product teams but routinely have limited amounts of natural cross-collaboration at the organisational level. Team velocity and expectations are usually tracked and well matched.",
-     'process' => "Typically, a number of research methods are used by experienced individuals. Results are documented and made available to anyone wishing the access them. A selection of tools are usually available as well as utilization of sketching and early feedback before proceeding to high-fidelity designs.",
-     'actions' => array(
-       "Build on the existing team and processes, by encouraging a collaborative culture without silos. Encourage designers, researchers and product people to regularly share success and failure stories. ",
-       "Ensure that design practices continue to improve at scale, by focussing on how you can utilise design ops and designers in management roles.",
-       "Be proactive with a UX strategy, and ensure it aligns to the wider organisal objectives. Push to ensure product, design and engineering are treated as equals."
-     )
-  );
-
-  // Luminous
-  $content[4] = array(
-     'intro' => "This typically means that your team are effectively including user-centred practises at all stages of product development. The team is empowered, efficient and fully understand the goals they're working toward to achieve success.",
-     'purpose' => "We often find teams at this level are making product decisions that are fundamentally user-centric and such practises are seen as important to the business. Roadmaps normally exists at a team level and organisation level to connect into a wider strategy.",
-     'people' => "A trusting and open feedback culture is usually fostered by the team, as well as collaboration across the organisation. They commonly have good access to resources and training, with clear structure and expectations.",
-     'process' => "A variety of research methods are often used and conducted by specialists throughout product development. Typically, results are shared beyond the team. Brainstorming, sketching and ideation are encouraged and a design system is in place to ensure consistency of outputs.",
-     'actions' => array(
-       "Be proud of your culture and processes, and use it to foster development and recruitment. Encourage designers to share case studies externally and be actively involved in the product and design community.",
-       "Don't get complacent; continue to encourage growth in the team, by pushing development into less obvious specialisms and areas of design and research.",
-       "Focus on establishing and maintaining user-centred outcome metrics at the highest levels of your organisation."
-     )
-  );
-
-  //print_r($content);
+  $resultContent = array_values($content)[$maturity_level - 1];
 ?>
 
 <?php get_header(); ?>
 
 <main>
   <?php while (have_posts()) : the_post(); ?>
-    <?php include(locate_template('src/template_parts/hero.php')) ?>
+    <?php include(locate_template('src/template_parts/hero_beacon_results.php')) ?>
 
     <section class="o-container-section o-container-section--bordered">
       <div class="o-container-content o-container-content--v-margin s-content">
-
         <div class="o-container-content o-container-content--v-margin c-content-grid">
 
-          <h3>Purpose<br />
-          <?php echo $purpose_average . '%'; ?></h3>
-          <p><?php echo $content[$maturity_level-1]['purpose']; ?></p>
+          <?php foreach (['Purpose', 'People', 'Process'] as $sectionName): ?>
+            <h3>
+              <?= $sectionName ?>
+              <br />
+              <span class="type-h1 u-color-yellow-dark"><?= $scores[$sectionName] . '%'; ?></span>
+            </h3>
+            <p><?= $resultContent['sections'][$sectionName]; ?></p>
+          <?php endforeach; ?>
 
-          <h3>People<br />
-          <?php echo $people_average . '%'; ?></h3>
-          <p><?php echo $content[$maturity_level-1]['people']; ?></p>
-
-          <h3>Process<br />
-          <?php echo $process_average . '%'; ?></h3>
-          <p><?php echo $content[$maturity_level-1]['process']; ?></p>
-
-          <?php if ($maturity_level < 5) { ?>
-          <h2>What can I do to progress to stage <?php echo ($maturity_level+1);?>, <?php echo $maturity_description[$maturity_level]; ?> </h2>
+          <?php if ($maturity_level < 5): ?>
+          <h2>What can I do to progress to stage <?= $maturity_level + 1 ?>, <span class="u-color-yellow-dark"><?= array_keys($content)[$maturity_level] ?>?</span></h2>
         </div>
         <div class="o-container-content o-container-services o-container-services--3-column">
           <div class="s-content s-content--marginless">
-            <p><?php echo $content[$maturity_level-1]['actions'][0]; ?></p>
+            <p><?= $resultContent['actions'][0]; ?></p>
           </div>
           <div class="s-content s-content--marginless">
-            <p><?php echo $content[$maturity_level-1]['actions'][1]; ?></p>
+            <p><?= $resultContent['actions'][1]; ?></p>
           </div>
           <div class="s-content s-content--marginless">
-            <p><?php echo $content[$maturity_level-1]['actions'][2]; ?></p>
+            <p><?= $resultContent['actions'][2]; ?></p>
           </div>
-          <?php } ?>
+          <?php endif; ?>
         </div>
       </div>
-
+    </section>
   <?php endwhile; ?>
 </main>
 

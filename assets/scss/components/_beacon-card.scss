@@ -55,4 +55,24 @@
     place-items: center;
     -webkit-text-stroke: 1px rgba(0, 0, 0, .1);
   }
+
+  &[data-level] {
+    &::after {
+      font-size: 18cqw;
+    }
+
+    > * {
+      background: hsl(51, 100%, 61)
+    }
+  }
+
+  @for $levelIndex from 1 through 5 {
+    &[data-level="#{$levelIndex}"] {
+      @for $segmentIndex from 0 through 5 - $levelIndex {
+        > :nth-child(#{$segmentIndex}) {
+          background: hsl(51, 100%, 85);
+        }
+      }
+    }
+  }
 }
