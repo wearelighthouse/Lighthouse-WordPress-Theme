@@ -113,3 +113,13 @@ Both `npm run build` and `npm run watch` **remove** the `/dist` directory before
    ```php
    define( 'WP_DEBUG', true );
    ```
+
+## Cookies
+
+We're using [Cookie Consent](https://github.com/orestbida/cookieconsent) for the cookie banner that pops up when you visit the site. It's settings and some inline style overrides are in [cookie-consent.php](cookie-consent.php) - those are kept separate from our other JavaScript and CSS, so that they can be modified without having to run local build tools.
+
+Some scripts and their cookies, for example Google Tag Manager, are _never_ loaded when you're logged into the CMS, and/or when running the site locally. So to test accepting/rejecting of cookies, it's easiest to open up the live site in a private or icognito window.
+
+### Upgrading Cookie Consent
+
+Because we're loading a static version from a CDN, dependabot _will not_ notify us of updates to the library. To upgrade, the version numbers in the stylesheet `<link>` in [header.php](header.php), and in the JavaScript `<script>` in [cookie-consent.php](cookie-consent.php) would need to be updated.
