@@ -7,18 +7,12 @@
     }
 
     $a = array_filter($a);
-    $average = array_sum($a)/count($a);
-    return (number_format($average, 2) * 20);
+    $average = array_sum($a) / count($a);
+    return number_format($average, 2) * 20;
   }
 
-  //print_r($wp_query->query_vars);
-
-  $entry_id = get_query_var( 'entry', 12007);
-  // echo $entry_id;
-  // Get the form
-  $entry = GFAPI::get_entry( $entry_id );
-  // print_r($entry);
-
+  $entry_id = get_query_var('entry', 0);
+  $entry = GFAPI::get_entry($entry_id);
   $purpose = $people = $process = [];
 
   foreach ($entry as $k => $v) {
