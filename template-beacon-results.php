@@ -1,16 +1,6 @@
 <?php
   /* Template Name: Beacon Results */
 
-  function average_array($a) {
-    if (count($a) === 0) {
-      return 0;
-    }
-
-    $a = array_filter($a);
-    $average = array_sum($a) / count($a);
-    return number_format($average, 2) * 20;
-  }
-
   $entry_id = get_query_var('entry', 0);
   $entry = GFAPI::get_entry($entry_id);
   $purpose = $people = $process = [];
@@ -38,7 +28,7 @@
       break;
 
       case 16:
-      case 16:
+      case 17:
       case 18:
       case 19:
       case 20:
@@ -49,10 +39,19 @@
     }
   }
 
+  function average_array($a) {
+    if (count($a) === 0) {
+      return 0;
+    }
+
+    $a = array_filter($a);
+    return array_sum($a) / count($a);
+  }
+
   $scores = [
-    'Purpose' => round(average_array($purpose)),
-    'People' => round(average_array($people)),
-    'Process' => round(average_array($process)),
+    'Purpose' => round(average_array($purpose) * 20),
+    'People' => round(average_array($people) * 20),
+    'Process' => round(average_array($process) * 20),
   ];
 
   $totalScore = round(($scores['Purpose'] + $scores['People'] + $scores['Process']) / 3);
