@@ -21,7 +21,8 @@ function registerServiceArchiveMetaboxes()
     addMetaboxes($groupInfo, [
         'home_intro',
         'block_service_collaboration',
-        'case_study_list'
+        'case_study_list',
+        'sector_list',
     ], $groupID);
 }
 

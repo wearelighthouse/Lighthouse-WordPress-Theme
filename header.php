@@ -41,17 +41,19 @@
 
   <link rel="preload" href="<?= $dist ?>/font/sailec/39E20B_0_0.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="<?= $dist ?>/font/sailec/39E20B_2_0.woff2" as="font" type="font/woff2" crossorigin>
-<?php if (!is_404()) : ?>
-  <link rel="preload" href="<?= $dist ?>/font/tiempos/TiemposTextWeb-Semibold.woff2" as="font" type="font/woff2" crossorigin>
-<?php endif; ?>
+  <?php if (!is_404()) : ?>
+    <link rel="preload" href="<?= $dist ?>/font/tiempos/TiemposTextWeb-Semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <?php endif; ?>
 
   <link rel="stylesheet" href="<?= $dist ?>/font/fonts.css">
-  <script async src="<?= $dist ?>/js/main.js">></script>
+  <script async src="<?= $dist ?>/js/main.js"></script>
 
-<?php if (is_front_page()) : ?>
-  <link rel="preconnect" href="https://widget.clutch.co" crossorigin>
-  <link rel="preconnect" href="https://assets.goodfirms.co" crossorigin>
-<?php endif; ?>
+  <?php if (is_front_page()) : ?>
+    <link rel="preconnect" href="https://widget.clutch.co" crossorigin>
+    <link rel="preconnect" href="https://assets.goodfirms.co" crossorigin>
+  <?php endif; ?>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.css" media="print" onload="this.media='all'">
 
   <?php if (!in_array($userIP, $excludedIPs) && !current_user_can('edit_pages')) : ?>
     <?php if (is_front_page()) : ?>
@@ -59,33 +61,27 @@
       <link rel="preconnect" href="https://www.googletagmanager.com">
     <?php endif; ?>
 
-    <!-- Usercentrics cookie banner & JS to hide thumb button -->
-    <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="SoXyXtr2y" async></script>
-    <script>
-      window.addEventListener('DOMContentLoaded',(()=>{new MutationObserver((l=>{l.forEach((m=>{'usercentrics-root'===m.target.id&&m.target.shadowRoot?.styleSheets[0]?.addRule('[data-testid="uc-privacy-button"]','display:none')}))})).observe(document.body,{subtree:true,childList:true,attributeFilter:['style']})}));
-    </script>
-  
-    <script defer type="text/javascript" src="https://api.pirsch.io/pirsch.js"
+    <script defer type="text/plain" data-cookiecategory="analytics" src="https://api.pirsch.io/pirsch.js"
       id="pirschjs"
       data-code="MZef0CIPKNUjqB4dVCaIJ78IBVCIZvhu"></script>
-    <script type="text/javascript">
+    <script type="text/plain" data-cookiecategory="analytics">
       window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
       heap.load("3334188507");
     </script>
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script type="text/plain" data-cookiecategory="analytics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NQ4J4F2');</script>
     <!-- End Google Tag Manager -->
-
   <?php endif; ?>
-
 </head>
 
 <body <?php body_class(); ?>>
+  <?php include(locate_template('cookie-consent.php')) ?>
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQ4J4F2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->

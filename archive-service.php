@@ -19,6 +19,25 @@
   $contentQuote = preg_match($pattern, $contentQuote, $matches);
   $contentQuote = $matches[0];
   $contentQuote = apply_filters('the_content', $contentQuote);
+
+  $sectorIds = getPostMeta('service_archive_sector_list_sector', $post->ID);
+
+  if ($sectorIds) {
+    $linkList = '';
+
+    foreach ($sectorIds as $sectorId) {
+      $slug = get_post($sectorId)->post_name;
+
+      $linkList .= ('
+        <li>
+          <a class="c-tag" href="' . get_permalink($sectorId) . '">
+            <img src="' . get_template_directory_uri() . '/dist/svg/' . $slug . '.svg" alt="" width="36px" height="36px">
+            <span>' . get_the_title($sectorId) . '</span>
+          </a>
+        </li>
+      ');
+    }
+  }
 ?>
 
 
@@ -83,6 +102,19 @@
     <?php include(locate_template('src/template_parts/block_section_case_study_small.php')) ?>
     <?php $globalcaseStudyServiceAlignment = false; ?>
   <?php endif; ?>
+
+  <section class="o-container-content o-container-content--v-margin">
+    <div class="c-work-footer" style="flex-direction: column">
+      <?php if (isset($linkList)) : ?>
+        <div class="c-work-footer__box" style="width: unset">
+          <h3 class="type-cta">Industries we work in</h3>
+          <ul class="o-tag-list o-tag-list--lg">
+            <?= $linkList ?>
+          </ul>
+        </div>
+      <?php endif; ?>
+    </div>
+  </section>
 
   <?php $newsletterFormId = RGFormsModel::get_form_id('Newsletter'); ?>
 

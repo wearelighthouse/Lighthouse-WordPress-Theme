@@ -13,6 +13,7 @@ require_once __DIR__ . '/src/functions/merge_product_stories_into_article_query.
 require_once __DIR__ . '/src/functions/gforms.php';
 require_once __DIR__ . '/src/functions/image_sizes.php';
 require_once __DIR__ . '/src/functions/media_alt_col.php';
+require_once __DIR__ . '/src/functions/media_filesize_col.php';
 require_once __DIR__ . '/src/functions/menus.php';
 require_once __DIR__ . '/src/functions/metaboxes.php';
 require_once __DIR__ . '/src/functions/plugins.php';
@@ -179,7 +180,7 @@ function enqueueResources()
 add_action('wp_enqueue_scripts', 'enqueueResources');
 
 function custom_query_vars_filter($vars) {
-  $vars[] .= 'entry';
+  $vars[] = 'entry';
   return $vars;
 }
 add_filter( 'query_vars', 'custom_query_vars_filter' );

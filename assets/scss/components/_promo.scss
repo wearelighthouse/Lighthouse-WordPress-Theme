@@ -3,7 +3,9 @@
  */
  .c-promo {
   @at-root .c-content-grid & {
-      grid-column: 1 / -1;
+    @extend %u-border-box;
+    @extend %u-width-100pc;
+    grid-column: 1 / -1;
   }
 
   $self: &;
