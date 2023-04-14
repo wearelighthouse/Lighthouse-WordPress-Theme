@@ -72,6 +72,13 @@
     }
   }
 
+  &[data-level="1"],
+  &[data-level="2"] {
+    &::after {
+      color: hsla(18, 98%, 17%, .5);
+    }
+  }
+
   @for $levelIndex from 1 through 5 {
     &[data-level="#{$levelIndex}"] {
       @for $segmentIndex from 0 through 5 - $levelIndex {
