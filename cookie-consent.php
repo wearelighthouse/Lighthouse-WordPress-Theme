@@ -12,7 +12,7 @@
         'en': {
           consent_modal: {
             title: 'Privacy Settings',
-            description: 'This site uses third-party website tracking technologies to provide and continually improve our services, and to display advertisements according to users\' interests. <button type="button" data-cc="c-settings" class="cc-link">Privacy Policy</button>',
+            description: 'This site uses third-party website tracking technologies to provide and continually improve our services, and to display advertisements according to users\' interests. For more information, see our <a class="cc-link" href="https://wearelighthouse.com/privacy-policy/">Privacy Policy</a>.',
             primary_btn: {
               text: 'Accept all',
               role: 'accept_all'              // 'accept_selected' or 'accept_all'
