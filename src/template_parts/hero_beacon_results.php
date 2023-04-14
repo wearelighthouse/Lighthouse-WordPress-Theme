@@ -16,7 +16,7 @@
       </div>
 
       <div class="c-hero__beacon-card-container u-display-none--upto-medium">
-        <div class="c-beacon-card" style="--content: '<?= $totalScore ?>%'" data-level="<?= $maturity_level ?>">
+        <div class="c-beacon-card" style="--content: '<?= round($totalScore) ?>%'" data-level="<?= $maturity_level ?>">
           <div><span></span></div>
           <div><span></span></div>
           <div><span></span></div>

@@ -39,22 +39,23 @@
     }
   }
 
-  function average_array($a) {
+  function value_array_to_percent($a) {
     if (count($a) === 0) {
       return 0;
     }
 
     $a = array_filter($a);
-    return array_sum($a) / count($a);
+    $average = array_sum($a) / count($a);
+    return $average * 20;
   }
 
   $scores = [
-    'Purpose' => round(average_array($purpose) * 20),
-    'People' => round(average_array($people) * 20),
-    'Process' => round(average_array($process) * 20),
+    'Purpose' => value_array_to_percent($purpose),
+    'People' => value_array_to_percent($people),
+    'Process' => value_array_to_percent($process),
   ];
 
-  $totalScore = round(($scores['Purpose'] + $scores['People'] + $scores['Process']) / 3);
+  $totalScore = ($scores['Purpose'] + $scores['People'] + $scores['Process']) / 3;
 
   if ($totalScore < 20) {
     $maturity_level = 1;
@@ -85,7 +86,7 @@
           <h3>
             <?= $sectionName ?>
             <br />
-            <span class="u-color-yellow-dark" style="font-size: 48px; line-height: 1.2"><?= $scores[$sectionName] . '%'; ?></span>
+            <span class="u-color-yellow-dark" style="font-size: 48px; line-height: 1.2"><?= round($scores[$sectionName]) . '%'; ?></span>
           </h3>
           <p><?= $resultContent['sections'][$sectionName]; ?></p>
         <?php endforeach; ?>
