@@ -46,7 +46,7 @@
 
     $a = array_filter($a);
     $average = array_sum($a) / count($a);
-    return $average * 20;
+    return $average * 25 - 25;
   }
 
   $scores = [
@@ -107,13 +107,13 @@
           </div>
         </div>
 
+        <h2 class="type-h1 u-bold">
         <?php if ($maturity_level < 5): ?>
-          <h2 class="type-h1 u-bold">
-            What can I do to progress to stage <?= $maturity_level + 1 ?>, <span class="u-color-yellow-dark"><?= array_keys($content)[$maturity_level] ?>?</span>
-          </h2>
-        <?php else: ?>
-          <h2>What can you do to progress from this stage?</h2>
-        <?php endif; ?>
+          What can I do to progress to stage <?= $maturity_level + 1 ?>, <span class="u-color-yellow-dark"><?= array_keys($content)[$maturity_level] ?>?</span>
+          <?php else: ?>
+            What can you do to progress from this stage?
+          <?php endif; ?>
+        </h2>
       </div>
 
       <div class="o-container-content o-container-content--v-margin o-container-services o-container-services--3-column">
