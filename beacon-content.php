@@ -1,7 +1,7 @@
 <?php
 
 // Minify SVG from designs: https://jakearchibald.github.io/svgomg/
-// Fix conflicting SVG gradient IDs: https://codepen.io/burntcustard/pen/ZEqOJNB
+// Fix conflicting SVG gradient IDs: https://codepen.io/burntcustard/full/ZEqOJNB
 
 $content = [
   'flickering' => [
