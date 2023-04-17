@@ -15,12 +15,12 @@ $content = [
         'text' => "Raise and build awareness for UCD within the business by identifying allies to support avocacy.",
       ],
       [
-        'icon' => '',
+        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 76"><circle cx="20" cy="18.7" r="11.8" fill="url(#b)" opacity=".5"/><path fill="url(#c)" d="m8.2 43.1 26 26 26-26h-52Z"/><path fill="url(#d)" d="M34.2 69.1 21 56.1l33.7-33.8 13.1 13.1-33.7 33.7Z"/><defs><linearGradient id="b" x1="20" x2="36.6" y1="35.4" y2="18.7" gradientUnits="userSpaceOnUse"><stop stop-color="#151931"/><stop offset="1" stop-color="#151931" stop-opacity="0"/></linearGradient><linearGradient id="c" x1="19" x2="-7.2" y1="20.1" y2="76.8" gradientUnits="userSpaceOnUse"><stop stop-color="#151931"/><stop offset="1" stop-color="#151931" stop-opacity="0"/></linearGradient><linearGradient id="d" x1="75.3" x2="108" y1="84.8" y2="4.6" gradientUnits="userSpaceOnUse"><stop stop-color="#151931"/><stop offset="1" stop-color="#151931" stop-opacity="0"/></linearGradient></defs></svg>',
         'title' => 'Training',
         'text' => "Source the skills needed. This could be by upskilling your existing team with training, hiring specialists or enlisting outside help to get the process started",
       ],
       [
-        'icon' => '',
+        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" width="77" height="77" fill="none" viewBox="0 0 77 77"><circle cx="38.4" cy="22.36" r="14.86" fill="#151931"/><path fill="url(#e)" fill-rule="evenodd" d="M34.21 39.81A28.57 28.57 0 0 0 9.83 68.07h57.14a28.57 28.57 0 0 0-24.38-28.26l-4.19 13.4-4.19-13.4Z" clip-rule="evenodd"/><defs><linearGradient id="e" x1="37.3" x2="52.69" y1="72.61" y2="41.66" gradientUnits="userSpaceOnUse"><stop stop-color="#151931"/><stop offset="1" stop-color="#151931" stop-opacity=".01"/></linearGradient></defs></svg>',
         'title' => 'Stakeholder buy-in',
         'text' => "Make sure stakeholders understand the importance of user-centric practises and how it will benefit the business.",
       ],
