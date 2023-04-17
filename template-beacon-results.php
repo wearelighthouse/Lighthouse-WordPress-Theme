@@ -1,6 +1,8 @@
 <?php
   /* Template Name: Beacon Results */
 
+  // 'Pass Field Data via Query String' in Form->Settings->Confirmations must be set to:
+  // &entry={entry_id}
   $entry_id = get_query_var('entry', 0);
   $entry = GFAPI::get_entry($entry_id);
   $purpose = $people = $process = [];
