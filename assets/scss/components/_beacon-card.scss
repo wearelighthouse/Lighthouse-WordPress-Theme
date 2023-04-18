@@ -59,7 +59,7 @@
     display: grid;
     transform: translateY(-.05em) skewY(9deg);
     place-items: center;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, .1);
+    -webkit-text-stroke: 1.5px #e5d684;
   }
 
   &[data-level] {

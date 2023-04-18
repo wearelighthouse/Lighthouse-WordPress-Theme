@@ -250,6 +250,7 @@
 
   .button[type="submit"],
   .button.gform_next_button {
+    @extend %u-color-black;
     background: $gradient-yellow;
 
     &:focus-visible {
@@ -258,7 +259,7 @@
   }
 
   .button.gform_previous_button {
-    color: inherit;
+    @extend %u-color-black;
     border: 2px solid $color-blackcurrant;
 
     &:focus-visible {

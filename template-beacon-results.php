@@ -42,11 +42,12 @@
   }
 
   function value_array_to_percent($a) {
+    $a = array_filter($a);
+
     if (count($a) === 0) {
       return 0;
     }
 
-    $a = array_filter($a);
     $average = array_sum($a) / count($a);
     return $average * 25 - 25;
   }

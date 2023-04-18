@@ -10,7 +10,7 @@
         style="padding-top: 3rem; margin-bottom: 0; <?= $emColor ? '--em-color: ' . $emColor : '' ?>"
       >
         <h1>
-          Your team is current at stage <?= $maturity_level ?>, <em><?= array_keys($content)[$maturity_level - 1] ?></em>
+          Your team is at stage <?= $maturity_level ?>, <em><?= array_keys($content)[$maturity_level - 1] ?></em>
         </h1>
         <p><?= $resultContent['intro'] ?></p>
       </div>
