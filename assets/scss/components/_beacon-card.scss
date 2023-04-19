@@ -13,7 +13,7 @@
   }
 
   > * {
-    border: 1px solid rgba(0, 0, 0, .1);
+    border: 1.5px solid rgba(0, 0, 0, .1);
     position: relative;
   }
 
@@ -76,6 +76,7 @@
   &[data-level="2"] {
     &::after {
       color: hsla(18, 98%, 17%, .5);
+      -webkit-text-stroke: unset;
     }
   }
 

@@ -24,23 +24,23 @@
 
 <section class="o-container-section o-container-section--bordered">
   <div class="c-hero" style="margin: 0;">
-    <div class="o-container-content o-container-content--v-pad c-hero__content" style="flex-direction: initial;">
+    <div class="o-container-content o-container-content--v-pad c-hero__content" style="flex-direction: initial; justify-content: space-between;">
       <?php if ($text) : ?>
         <div
           class="c-hero__text s-banner s-beacon-links c-hero__text--with-image"
-          style="padding-top: 3rem; margin: 0; <?= $emColor ? '--em-color: ' . $emColor : '' ?>"
+          style="margin: 0; <?= $emColor ? '--em-color: ' . $emColor : '' ?>"
         >
           <?= $text ?>
         </div>
       <?php endif; ?>
 
-      <div class="c-hero__beacon-card-container u-display-none--upto-medium">
-        <div class="c-beacon-card">
-          <div><span>Luminous</span></div>
-          <div><span>Bright</span></div>
-          <div><span>Emerging</span></div>
-          <div><span>Faint</span></div>
-          <div><span>Flickering</span></div>
+      <div class="u-display-none--upto-medium">
+        <div class="c-beacon-card" style="max-width: 190px">
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
         </div>
       </div>
     </div>

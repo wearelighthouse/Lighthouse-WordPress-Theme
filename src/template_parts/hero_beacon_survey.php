@@ -24,7 +24,7 @@
 
 <section class="o-container-section o-container-section--bordered">
   <div class="c-hero" style="margin: 0;">
-    <div class="o-container-content o-container-content--v-pad c-hero__content" style="flex-direction: initial; padding-bottom: 0;">
+    <div class="o-container-content o-container-content--v-pad c-hero__content" style="flex-direction: initial; justify-content: space-between; padding-bottom: 0;">
       <?php if ($text) : ?>
         <div
           class="c-hero__text s-banner s-beacon-links c-hero__text--with-image"
@@ -34,7 +34,7 @@
         </div>
       <?php endif; ?>
 
-      <div class="c-hero__beacon-card-container u-display-none--upto-medium">
+      <div class="u-display-none--upto-medium">
         <div class="c-beacon-card" style="max-width: 190px; --content: '?'">
           <div><span></span></div>
           <div><span></span></div>
