@@ -8,6 +8,7 @@
 
   & > hr {
     @extend %u-bg-color-gray;
+    @extend %u-fg-1;
     min-width: 2px;
     min-height: 2px;
   }

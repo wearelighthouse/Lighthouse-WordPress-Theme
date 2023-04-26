@@ -53,7 +53,9 @@
     box-shadow: unset !important;
   }
 
-  .ginput_container {
+  .ginput_container_text,
+  .ginput_container_email,
+  .ginput_container_textarea {
     @extend %u-flex;
     @extend %u-pos-relative;
     @extend %u-width-100pc;
@@ -106,6 +108,7 @@
     margin: 2px;
     border: none;
     font-size: unset;
+    width: inherit;
 
     &:focus {
       outline: none; // Reset

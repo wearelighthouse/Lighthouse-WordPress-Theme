@@ -33,3 +33,258 @@
 .grecaptcha-badge {
   z-index: 1;
 }
+
+// Gravity Forms temporarily focuses a 'form anchor' at the top of the form
+// when swapping between steps, to scroll to the top. This stops it getting
+// visually focused. It's not re-focusable as it gets tabindex="-1" after ~1s
+.gform_anchor {
+  scroll-margin: Min(calc(2rem + 4vw), 4rem);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Double selector to override gravity-theme
+.gform_wrapper.gravity-theme.gravity-theme {
+  input:focus::placeholder {
+    opacity: 0;
+  }
+
+  .gf_progressbar {
+    @extend %u-border-radius-full;
+    height: 2rem;
+    padding: .25rem;
+    background: $color-gray-bluish-2;
+  }
+
+  .gf_progressbar_percentage {
+    @extend %u-flex;
+    @extend %u-ai-center;
+    @extend %u-jc-center;
+    @extend %u-border-radius-full;
+    @extend %u-bold;
+    background: $gradient-blackcurrant;
+    font-size: 15px;
+    height: 1.5rem;
+
+    &:not(.percentbar_100) {
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+    }
+
+    span {
+      font-size: 15px;
+    }
+  }
+
+  .gform_fields {
+    width: unset;
+  }
+
+  // Reset weird gravity form radio/checkbox max width
+  .gfield-choice-input.gfield-choice-input + label {
+    max-width: unset;
+  }
+
+  .gsection.field_sublabel_below.field_description_below {
+    @extend %u-ph-0;
+    @extend %u-pb-6;
+    @extend %u-mh-2;
+    @extend %u-mv-3;
+  }
+
+  .gsection_title {
+    @extend %u-bold;
+    font-size: 26px;
+  }
+
+  .gfield_label {
+    @extend %u-bold;
+    @extend %u-mb-3;
+    font-size: inherit;
+  }
+
+  // ⦿ label
+  .gfield_radio label {
+    font-size: inherit;
+  }
+
+  .ginput_container.ginput_container_email {
+    @extend %u-bg-color-gray-bluish;
+
+    &:before,
+    &:after {
+      @extend %u-z-index-1;
+    }
+
+    input {
+      @extend %u-pv-2;
+      background: unset;
+      font-size: 18px;
+    }
+  }
+
+  .gchoice {
+    @extend %u-pos-relative;
+
+    input {
+      @extend .o-dictate;
+    }
+
+    label {
+      @extend %u-pos-relative;
+      @extend %u-inline-flex;
+      @extend %u-ai-center;
+      @extend %u-color-gray-darker;
+      @extend %u-border-radius-md;
+      margin-left: -.75rem;
+      margin-right: -.75rem;
+      padding-top: .5rem;
+      padding-right: .75rem;
+      padding-bottom: .5rem;
+      padding-left: 3rem;
+      transition: color .2s;
+      line-height: 1.5;
+      transition: all .2s;
+    }
+
+    label:before,
+    label:after {
+      @extend %u-inline-block;
+      @extend %u-round;
+      @extend %u-fs-0;
+      @extend %u-border-box;
+      top: .625rem;
+      left: .75rem;
+      height: 1.5rem;
+      width: 1.5rem;
+      content: '';
+      transition: all .2s;
+    }
+
+    label:before {
+      @extend %u-pos-absolute;
+      margin-right: .75rem;
+      border: 2px solid $color-gray-darkish;
+    }
+
+    label:after {
+      @extend %u-bg-color-gray-bluish;
+      @extend %u-pos-absolute;
+      @extend %u-left;
+      background-clip: padding-box;
+      border: 5px solid transparent;
+      transform: scale(0);
+    }
+
+    input:checked + label:before {
+      border-color: $color-blackcurrant;
+    }
+
+    input:checked + label:after {
+      @extend %u-bg-color-blackcurrant;
+      transform: scale(1);
+    }
+
+    input:checked + label,
+    label:hover {
+      @extend %u-color-blackcurrant;
+    }
+
+    label:hover,
+    input:focus-visible + label {
+      background-color: $color-gray-light;
+    }
+
+    label:hover:before {
+      border: 2px solid $color-blackcurrant;
+    }
+
+    input:focus + label:before {
+      border: 2px solid $color-blackcurrant;
+    }
+  }
+
+  .button {
+    @extend %u-inline-flex;
+    @extend %u-ai-center;
+    @extend %u-jc-center;
+    @extend %u-border-radius-full;
+    @extend %u-bold;
+    @extend %u-ph-3;
+    @extend %u-pv-1;
+    @extend %u-sailec;
+    cursor: pointer;
+    font-size: 18px;
+    border: 0;
+    min-height: 3.5rem;
+    min-width: 8rem;
+    outline-offset: 2px;
+    transition: all .2s;
+    outline: 2px solid transparent;
+
+    &:hover {
+      filter: brightness(.95);
+    }
+
+    &:hover:active {
+      filter: brightness(1);
+    }
+  }
+
+  @include breakpoint(upto-small) {
+    .button {
+      width: 100%;
+      margin: 0;
+    }
+
+    .button + .button {
+      margin-top: .5rem;
+    }
+  }
+
+  .button[type="submit"]:after {
+    content: none;
+  }
+
+  .button[type="submit"],
+  .button.gform_next_button {
+    @extend %u-color-black;
+    background: $gradient-yellow;
+
+    &:focus-visible {
+      outline-color: $color-blackcurrant;
+    }
+  }
+
+  .button.gform_previous_button {
+    @extend %u-color-black;
+    border: 2px solid $color-blackcurrant;
+
+    &:focus-visible {
+      outline: 2px solid $color-yellow-dark;
+    }
+  }
+}
+
+/* Beacon form styles */
+.gform_wrapper form[action*="/beacon"] {
+  .gform_fields {
+    margin-bottom: 2rem;
+
+    .gfield {
+      flex-direction: column;
+      width: unset;
+    }
+  }
+
+  .gf_progressbar_wrapper,
+  .ginput_container_email,
+  .ginput_container_radio,
+  .gfield_validation_message {
+    margin-left: 0;
+    max-width: 38rem;
+    order: unset;
+  }
+}

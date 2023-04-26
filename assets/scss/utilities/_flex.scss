@@ -37,6 +37,11 @@
     align-items: $value,
     class: true
   ));
+
+  @include make-utility((
+    alias: 'as-' + $value,
+    align-self: $value
+  ));
 }
 
 @each $value in (0, 1) {

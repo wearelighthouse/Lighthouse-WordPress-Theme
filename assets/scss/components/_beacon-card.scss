@@ -1,0 +1,92 @@
+.c-beacon-card {
+  width: 380px;
+  max-width: 100%;
+  transform: skewY(-9deg);
+  container-type: inline-size;
+
+  &::before {
+    @extend %u-pos-absolute;
+    content: '';
+    inset: 0;
+    border-radius: 9cqw;
+    background: hsl(51, 100%, 61);
+  }
+
+  > * {
+    border: 1.5px solid rgba(0, 0, 0, .1);
+    position: relative;
+  }
+
+  > :not(:last-child) {
+    border-bottom: 0;
+  }
+
+  > :first-child {
+    border-radius: 9cqw 9cqw 0 0;
+  }
+
+  > :last-child {
+    border-radius: 0 0 9cqw 9cqw;
+  }
+
+  @for $i from 1 through 5 {
+    > :nth-child(#{$i}) {
+      background: hsl(51, 100%, 55 + $i * 6);
+      color: rgba(0, 0, 0, .93 - $i / 10);
+      z-index: 5 - $i;
+    }
+  }
+
+  span {
+    aspect-ratio: 4 / 1;
+    display: grid;
+    place-items: center;
+    transform: skewY(9deg);
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &::after {
+    @extend %u-tiempos;
+    @extend %u-color-white;
+    @extend %u-pos-absolute;
+    content: var(--content);
+    z-index: 5;
+    font-size: 54cqw;
+    font-weight: bold;
+    inset: 0;
+    display: grid;
+    transform: translateY(-.05em) skewY(9deg);
+    place-items: center;
+    -webkit-text-stroke: 1.5px #e5d684;
+  }
+
+  &[data-level] {
+    &::after {
+      font-size: 18cqw;
+    }
+
+    > * {
+      background: hsl(51, 100%, 61);
+    }
+  }
+
+  &[data-level="1"],
+  &[data-level="2"] {
+    &::after {
+      color: hsla(18, 98%, 17%, .5);
+      -webkit-text-stroke: unset;
+    }
+  }
+
+  @for $levelIndex from 1 through 5 {
+    &[data-level="#{$levelIndex}"] {
+      @for $segmentIndex from 0 through 5 - $levelIndex {
+        > :nth-child(#{$segmentIndex}) {
+          background: hsl(51, 100%, 91);
+        }
+      }
+    }
+  }
+}

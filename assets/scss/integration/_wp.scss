@@ -11,3 +11,7 @@ a > img.emoji {
     min-height: calc(100vh - var(--edge-gutter) * 2 - 32px);
   }
 }
+
+#wpadminbar {
+  overflow: clip;
+}

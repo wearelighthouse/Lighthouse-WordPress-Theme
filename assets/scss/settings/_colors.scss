@@ -2,6 +2,7 @@
 
 $color-white:        #FFFFFF;
 $color-gray-bluish:  #F7F7F9;
+$color-gray-bluish-2:#F0F0F4;
 $color-gray-light:   #F7F7F7;
 $color-gray:         #DEDEE2;
 $color-gray-darkish: #A3A3AD;
@@ -17,6 +18,10 @@ $color-orange-old:   #FC895B;
 $color-orange:       #E87523;
 $color-red:          #EE0700;
 $color-yellow-light: #FAF4E1;
+$color-yellow-dark:  #E5B300;
+
+$gradient-yellow: linear-gradient(#FFE033, #FFD800);
+$gradient-blackcurrant: linear-gradient(-90deg, #414458, #686b7c);
 
 $gradient-orange-pink: linear-gradient(135deg, #fc865b, #fc2489);
 $gradient-orange-new-pink: linear-gradient(
@@ -39,6 +44,7 @@ $auto-colors: (
   'orange': $color-orange,
   'orange-old': $color-orange-old,
   'red': $color-red,
+  'yellow-dark': $color-yellow-dark,
   'black': $color-black
 );
 
@@ -47,6 +53,7 @@ $auto-bg-colors: (
   'gray-bluish': $color-gray-bluish,
   'gray-light': $color-gray-light,
   'gray': $color-gray,
+  'gray-dark': $color-gray-dark,
   'gray-deep': $color-gray-deep,
   'blackcurrant': $color-blackcurrant,
   'yellow-light': $color-yellow-light,

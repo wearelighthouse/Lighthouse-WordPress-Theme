@@ -38,7 +38,6 @@
 
   input {
     @extend %u-block;
-    @extend %u-pv-1;
     @extend %u-sailec;
     @extend %u-width-100pc;
     @extend %u-pv-2;
@@ -92,7 +91,7 @@
   }
 
   .gform_footer.top_label .gform_button.button {
-    margin-bottom: unset; 
+    margin-bottom: unset;
   }
 
   .validation_error {
