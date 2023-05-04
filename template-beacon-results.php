@@ -95,7 +95,7 @@
         <?php endforeach; ?>
       </div>
 
-      <div class="o-container-content o-container-content--v-margin c-latest-post" style="padding: 0">
+      <div class="o-container-content o-container-content--v-margin c-latest-post u-fd-column" style="padding: 0">
         <hr/>
       </div>
 
