@@ -18,8 +18,8 @@
               role: 'accept_all'              // 'accept_selected' or 'accept_all'
             },
             secondary_btn: {
-              text: 'Reject all',
-              role: 'accept_necessary'        // 'settings' or 'accept_necessary'
+              text: 'Settings',
+              role: 'settings'        // 'settings' or 'accept_necessary'
             }
           },
           settings_modal: {
