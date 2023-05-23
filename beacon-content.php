@@ -5,7 +5,7 @@
 
 $content = [
   'flickering' => [
-    'intro' => "This typically means your teams decision making is based on assumptions from stakeholders with no input or research from users. Features are implemented as and when requested regardless of value to customer.",
+    'intro' => "This typically means your teams' decision making is based on assumptions from stakeholders with no input or research from users. Features are implemented as and when requested regardless of value to customer.",
     'sections' => [
       'Purpose' => "Usually at this level, decisions are made from the top down with no team or user involvement. There's often no roadmap created or shared which results in a disconnect for the team who don't understand what they're working towards.",
       'People' => "Often we see teams that are siloed and unsure of their responsibilities. This can be the case both within and across teams. Lack of resources and duplication can be common as team members take on unnecessary work.",
