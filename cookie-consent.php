@@ -11,8 +11,8 @@
       languages: {
         'en': {
           consent_modal: {
-            title: 'Privacy Settings',
-            description: 'This site uses third-party website tracking technologies to provide and continually improve our services, and to display advertisements according to users\' interests. For more information, see our <a class="cc-link" href="https://wearelighthouse.com/privacy-policy/">Privacy Policy</a>.',
+            title: 'Privacy settings',
+            description: 'We use some functional cookies to improve your experience on our site, and some completely anonymised first party cookies which help us analyse site usage. You can read more about this in our <a class="cc-link" href="https://wearelighthouse.com/privacy-policy/">privacy policy</a>.',
             primary_btn: {
               text: 'Accept all',
               role: 'accept_all'              // 'accept_selected' or 'accept_all'
@@ -37,7 +37,7 @@
             blocks: [
               {
                 title: 'Cookie usage 📢',
-                description: 'I use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="#" class="cc-link">privacy policy</a>.',
+                description: 'We use cookies to ensure the basic functionalities of the website and to enhance your online experience. We don’t collect any personally identifiable information with our cookies. We use anonymised first party cookies which help us analyse site usage, and some functional third party cookies which are mainly there to tell us if you’re human or robot. 🤖 You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="#" class="cc-link">privacy policy</a>.',
               },
               {
                 title: 'Strictly necessary cookies',
@@ -50,7 +50,7 @@
               },
               {
                 title: 'Performance and Analytics cookies',
-                description: 'These cookies allow the website to remember the choices you have made in the past',
+                description: 'We collect anonymised data about our web traffic via Google Analytics 4 using first party cookies. This data is used internally to create statistics and analyse them so we can understand our users / their needs and optimise our site. GA4 does not log or store IP addresses, or collect any other personally identifiable information',
                 toggle: {
                   value: 'analytics',     // your cookie category
                   enabled: false,
@@ -83,7 +83,7 @@
               },
               {
                 title: 'More information',
-                description: 'For any queries in relation to our policy on cookies and your choices, see our <a class="cc-link" href="https://wearelighthouse.com/privacy-policy/">Privacy Policy</a>.',
+                description: 'For any queries in relation to our policy on cookies and your choices, see our <a class="cc-link" href="https://wearelighthouse.com/privacy-policy/">privacy policy</a>.',
               },
             ],
           },
