@@ -74,6 +74,8 @@
     })(window,document,'script','dataLayer','GTM-NQ4J4F2');</script>
     <!-- End Google Tag Manager -->
   <?php endif; ?>
+  
+  <script src="https://cdn.popupsmart.com/bundle.js" data-id="40967" async defer></script>
 </head>
 
 <body <?php body_class(); ?>>
