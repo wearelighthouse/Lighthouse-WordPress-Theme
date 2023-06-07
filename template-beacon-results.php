@@ -131,10 +131,12 @@
     </section>
   <?php endwhile; ?>
   
+  <section class="o-container-section o-container-section--bordered">
   <?php echo do_shortcode( '[cta-block link_text="Get in touch" link_url="https://wearelighthouse.com/contact/"]
 <h2 style="text-align: center;">Start your maturity journey</h2>
 <p style="text-align: center;">Talk to us about how we can support you becoming a more mature product organisation 🚀.</p>
 [/cta-block]'); ?>
+  </section>
 </main>
 
 <?php get_footer(); ?>
