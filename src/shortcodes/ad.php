@@ -30,7 +30,7 @@ function adShortcode($atts, $content = null)
 
 			// If the post we're linking to is a podcast:
 			if (isset($cats[0]) && strtolower($cats[0]->name) === 'podcast') {
-				$label = 'Product leadership podcast';
+				$label = 'Lighthouse podcast';
 
 				// If read more text is default, get rid of it
 				if ($atts['read_more'] === 'Read more') {
