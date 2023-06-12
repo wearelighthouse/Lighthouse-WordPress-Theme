@@ -110,7 +110,8 @@
     font-size: inherit;
   }
 
-  .ginput_container.ginput_container_email {
+  .ginput_container.ginput_container_email,
+  .ginput_container.ginput_container_text {
     @extend %u-bg-color-gray-bluish;
 
     &:before,
@@ -281,6 +282,7 @@
 
   .gf_progressbar_wrapper,
   .ginput_container_email,
+  .ginput_container_text,
   .ginput_container_radio,
   .gfield_validation_message {
     margin-left: 0;
