@@ -48,6 +48,7 @@ require_once __DIR__ . '/src/post_types/work.php';
 
 // Shortcodes
 require_once __DIR__ . '/src/shortcodes/ad.php';
+require_once __DIR__ . '/src/shortcodes/beacon-button.php';
 require_once __DIR__ . '/src/shortcodes/bold-stat.php';
 require_once __DIR__ . '/src/shortcodes/content-blocks.php';
 require_once __DIR__ . '/src/shortcodes/cta-block.php';
