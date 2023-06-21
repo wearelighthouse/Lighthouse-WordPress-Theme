@@ -31,6 +31,8 @@
           style="margin: 0; <?= $emColor ? '--em-color: ' . $emColor : '' ?>"
         >
           <?= $text ?>
+          <p><a href="/beacon-survey/?email=<?php echo $email; ?>&company=<?php echo $company; ?>">Start the survey</a></p>
+          <p><span style="color: #999999">The survey has 21 questions and will take under 10 minutes to complete</span></p>
         </div>
       <?php endif; ?>
 
