@@ -69,6 +69,7 @@ function registerShortcodes()
   add_shortcode('blocks', 'contentBlocksShortcode');
   add_shortcode('cta-block', 'ctaBlockShortcode');
   add_shortcode('clients', 'clientsShortcode');
+  add_shortcode('beacon-button', 'beaconButtonShortcode');
 }
 add_action( 'init', 'registerShortcodes');
 
