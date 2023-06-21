@@ -1,0 +1,11 @@
+<?php
+
+function beaconButtonShortcode($atts, $content = null)
+{
+	$atts = shortcode_atts([
+	], $atts);
+
+	$output = '<p><a href="/beacon-survey/?email=' . $email . '&company=' . $company . '">Start the survey</a></p>';
+ 
+	return $output;
+}
