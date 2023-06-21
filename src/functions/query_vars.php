@@ -5,6 +5,8 @@
  */
 function src_query_vars($qvars) {
   $qvars[] = 'src';
+  $qvars[] = 'email';
+  $qvars[] = 'company';
   return $qvars;
 }
 add_filter('query_vars', 'src_query_vars');
