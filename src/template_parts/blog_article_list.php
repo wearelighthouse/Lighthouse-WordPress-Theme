@@ -35,13 +35,6 @@
       $i++;
     ?>
 
-    <?php if ($i === 5): ?>
-    </section>
-      <?php $newsletterFormId = RGFormsModel::get_form_id('Newsletter'); ?>
-      <?= do_shortcode('[form id="' . $newsletterFormId . '"]') ?>
-    <section>
-    <?php endif; ?>
-
     <div class="c-blog-link">
       <div class="c-blog-link__info">
         <span class="c-blog-link__info__date"><?= get_the_date(get_option('date_format')) ?></span>
